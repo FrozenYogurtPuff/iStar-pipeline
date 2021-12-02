@@ -978,8 +978,8 @@ to O
 display O
 several B-Resource
 entities I-Resource
-( B-Resource
-cases I-Resource
+( O
+cases B-Resource
 , O
 suspects B-Resource
 ) O
@@ -2575,7 +2575,7 @@ in O
 the B-Resource
 rulebook I-Resource
 , O
-" I-Resource
+" O
 How I-Resource
 to I-Resource
 Play I-Resource
@@ -3326,8 +3326,8 @@ shall O
 interface O
 with O
 HATS-SML B-Actor
-( B-Resource
-version I-Resource
+( O
+version B-Resource
 2 I-Resource
 . I-Resource
 0 I-Resource
@@ -4747,7 +4747,7 @@ services I-Resource
 . O
 
 PO B-Resource
-( I-Resource
+( O
 Purchase I-Resource
 Order I-Resource
 ) O
@@ -5644,7 +5644,7 @@ a B-Resource
 Graphical I-Resource
 User I-Resource
 Interface I-Resource
-( I-Resource
+( O
 GUI I-Resource
 ) O
 that O
@@ -6281,8 +6281,8 @@ to O
 add O
 new B-Resource
 objects I-Resource
-( B-Resource
-names I-Resource
+( O
+names B-Resource
 , O
 types B-Resource
 and O
@@ -7105,7 +7105,7 @@ Traffic I-Resource
 Management I-Resource
 Data I-Resource
 Dictionary I-Resource
-( I-Resource
+( O
 TMDD I-Resource
 ) O
 . O
@@ -8663,7 +8663,7 @@ of I-Resource
 exposed I-Resource
 and I-Resource
 non-exposed I-Resource
-( I-Resource
+( O
 i I-Resource
 . I-Resource
 e I-Resource
@@ -8898,8 +8898,8 @@ Pontis I-Actor
 graphical I-Actor
 user I-Actor
 interface I-Actor
-( B-Resource
-GUI I-Resource
+( O
+GUI B-Resource
 ) O
 . O
 
@@ -11318,7 +11318,7 @@ the B-Actor
 Chrysler I-Actor
 Fast I-Actor
 Feedback I-Actor
-( I-Actor
+( O
 telematics I-Actor
 demonstration I-Actor
 ) O
@@ -11349,7 +11349,7 @@ Snow I-Actor
 and I-Actor
 Ice I-Actor
 Management I-Actor
-( I-Actor
+( O
 SEMSIM I-Actor
 ) O
 using O
@@ -11377,7 +11377,7 @@ Authority I-Actor
 for I-Actor
 Regional I-Actor
 Transportation I-Actor
-( I-Actor
+( O
 SMART I-Actor
 ) O
 Transit I-Actor
@@ -11453,7 +11453,7 @@ Detroit B-Actor
 Department I-Actor
 of I-Actor
 Transportation I-Actor
-( I-Actor
+( O
 DDOT I-Actor
 ) O
 Transit I-Actor
@@ -11565,14 +11565,14 @@ Commission I-Actor
 for I-Actor
 Oakland I-Actor
 County I-Actor
-( I-Actor
+( O
 RCOC I-Actor
 ) O
 Road I-Actor
 Weather I-Actor
 Information I-Actor
 Systems I-Actor
-( I-Actor
+( O
 RWIS I-Actor
 ) O
 using O
@@ -11621,7 +11621,7 @@ Department I-Actor
 of I-Actor
 Natural I-Actor
 Resources I-Actor
-( I-Actor
+( O
 MDNR I-Actor
 ) O
 weather I-Actor
@@ -11651,7 +11651,7 @@ Automated I-Actor
 Weather I-Actor
 Observing I-Actor
 System I-Actor
-( I-Actor
+( O
 AWOS I-Actor
 ) O
 using O
@@ -11695,7 +11695,7 @@ collect O
 Origin B-Resource
 / I-Resource
 Destination I-Resource
-( I-Resource
+( O
 O I-Resource
 / I-Resource
 D I-Resource
@@ -11756,7 +11756,7 @@ Michigan I-Actor
 Traffic I-Actor
 Management I-Actor
 System I-Actor
-( I-Actor
+( O
 WMTMS I-Actor
 ) O
 using O
@@ -11807,7 +11807,7 @@ Commission I-Actor
 of I-Actor
 Macomb I-Actor
 County I-Actor
-( I-Actor
+( O
 RCMC I-Actor
 ) O
 system I-Actor
@@ -11931,7 +11931,7 @@ from O
 Traffic B-Actor
 Management I-Actor
 Systems I-Actor
-( I-Actor
+( O
 TMS I-Actor
 ) O
 using O
@@ -11950,7 +11950,7 @@ to O
 collect O
 work B-Resource
 zone I-Resource
-( I-Resource
+( O
 lane I-Resource
 closure I-Resource
 ) O
@@ -12108,7 +12108,7 @@ Traffic B-Resource
 Management I-Resource
 Data I-Resource
 Dictionary I-Resource
-( I-Resource
+( O
 TMDD I-Resource
 ) O
 format I-Resource
@@ -12377,7 +12377,7 @@ at I-Resource
 least I-Resource
 30 I-Resource
 days I-Resource
-( I-Resource
+( O
 configurable I-Resource
 ) O
 worth I-Resource
@@ -12677,8 +12677,8 @@ content B-Resource
 from O
 physical B-Resource
 media I-Resource
-( B-Resource
-DVDs I-Resource
+( O
+DVDs B-Resource
 , O
 external B-Resource
 drives I-Resource
@@ -12690,7 +12690,7 @@ or O
 via O
 electronic B-Resource
 transfer I-Resource
-( I-Resource
+( O
 FTP I-Resource
 ) O
 from O
@@ -12872,7 +12872,7 @@ using O
 Cyclic B-Resource
 Redundancy I-Resource
 Check I-Resource
-( I-Resource
+( O
 CRCs I-Resource
 ) O
 or I-Resource
@@ -16681,7 +16681,7 @@ they O
 can O
 specify O
 one B-Resource
-( I-Resource
+( O
 or I-Resource
 more I-Resource
 ) O
@@ -16737,7 +16737,7 @@ NOT I-Resource
 and O
 certain B-Resource
 symbols I-Resource
-( I-Resource
+( O
 eg I-Resource
 . I-Resource
 ” I-Resource
@@ -16788,7 +16788,7 @@ change O
 his B-Resource
 account I-Resource
 information I-Resource
-( I-Resource
+( O
 eg I-Resource
 . O
 password I-Resource
@@ -16884,8 +16884,8 @@ to O
 upgrade O
 a B-Actor
 Member I-Actor
-( B-Resource
-of I-Resource
+( O
+of B-Resource
 his I-Resource
 own I-Resource
 department I-Resource
@@ -17730,7 +17730,7 @@ set O
 at O
 any B-Resource
 level I-Resource
-( I-Resource
+( O
 department I-Resource
 or I-Resource
 category I-Resource
@@ -18054,7 +18054,7 @@ collection I-Resource
 , O
 or O
 a B-Resource
-" I-Resource
+" O
 just-in-time I-Resource
 " O
 warehouse I-Resource
@@ -18087,7 +18087,7 @@ has O
 been O
 in O
 status B-Resource
-" I-Resource
+" O
 missing I-Resource
 " O
 for O
@@ -18584,7 +18584,7 @@ of I-Actor
 scientists I-Actor
 at I-Actor
 RAL I-Actor
-( I-Actor
+( O
 and I-Actor
 also I-Actor
 outside I-Actor
@@ -18779,7 +18779,7 @@ one B-Resource
 or I-Resource
 more I-Resource
 objects I-Resource
-( I-Resource
+( O
 files I-Resource
 or I-Resource
 archives I-Resource
@@ -18819,7 +18819,7 @@ drag O
 and O
 drop O
 objects B-Resource
-( I-Resource
+( O
 files I-Resource
 or I-Resource
 archives I-Resource
@@ -18856,7 +18856,7 @@ is O
 demanded O
 by O
 PeaZip B-Actor
-( I-Actor
+( O
 or I-Actor
 other I-Actor
 applications I-Actor
@@ -19139,7 +19139,7 @@ correctly O
 process O
 large B-Resource
 collections I-Resource
-( I-Resource
+( O
 I I-Resource
 / I-Resource
 O I-Resource
@@ -19256,7 +19256,7 @@ in O
 the B-Resource
 converted I-Resource
 ﬁles I-Resource
-( I-Resource
+( O
 e I-Resource
 . I-Resource
 g I-Resource
@@ -19809,7 +19809,7 @@ able O
 to O
 receive O
 acknowledgement B-Resource
-( I-Resource
+( O
 RET I-Resource
 ) O
 messages I-Resource
@@ -20218,7 +20218,7 @@ backup O
 all B-Resource
 system I-Resource
 data I-Resource
-( I-Resource
+( O
 configuration I-Resource
 , O
 default I-Resource
@@ -20529,7 +20529,7 @@ two B-Resource
 existing I-Resource
 pdf I-Resource
 documents I-Resource
-( I-Resource
+( O
 e I-Resource
 . I-Resource
 g I-Resource

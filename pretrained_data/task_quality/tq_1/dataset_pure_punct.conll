@@ -326,7 +326,7 @@ solution O
 should O
 send B-Intention
 alerts I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -604,7 +604,7 @@ trails I-Intention
 for I-Intention
 specified I-Intention
 cases I-Intention
-( I-Intention
+( O
 without I-Intention
 affecting I-Intention
 the I-Intention
@@ -645,7 +645,7 @@ capture B-Intention
 and I-Intention
 store I-Intention
 violations I-Intention
-( I-Intention
+( O
 i I-Intention
 . I-Intention
 e I-Intention
@@ -666,8 +666,8 @@ access I-Intention
 ) O
 , O
 and O
-( B-Intention
-where I-Intention
+( O
+where B-Intention
 violations I-Intention
 can I-Intention
 validly I-Intention
@@ -717,7 +717,7 @@ organised I-Intention
 by I-Intention
 workstation I-Intention
 and I-Intention
-( I-Intention
+( O
 where I-Intention
 technically I-Intention
 appropriate I-Intention
@@ -826,7 +826,7 @@ for I-Intention
 groups I-Intention
 or I-Intention
 users I-Intention
-( I-Intention
+( O
 such I-Intention
 as I-Intention
 access I-Intention
@@ -1048,7 +1048,7 @@ to O
 display B-Intention
 several I-Intention
 entities I-Intention
-( I-Intention
+( O
 cases I-Intention
 , O
 suspects I-Intention
@@ -1172,7 +1172,7 @@ small I-Intention
 number I-Intention
 of I-Intention
 interactions I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -2360,7 +2360,7 @@ the I-Intention
 game I-Intention
 initialisation I-Intention
 functions I-Intention
-( I-Intention
+( O
 as I-Intention
 opposed I-Intention
 to I-Intention
@@ -2405,7 +2405,7 @@ and I-Intention
 icons I-Intention
 during I-Intention
 gameplay I-Intention
-( I-Intention
+( O
 as I-Intention
 opposed I-Intention
 to I-Intention
@@ -2705,7 +2705,7 @@ in I-Intention
 the I-Intention
 rulebook I-Intention
 , O
-" I-Intention
+" O
 How I-Intention
 to I-Intention
 Play I-Intention
@@ -3652,7 +3652,7 @@ shall O
 interface B-Intention
 with I-Intention
 HATS-SML I-Intention
-( I-Intention
+( O
 version I-Intention
 2 I-Intention
 . I-Intention
@@ -4499,7 +4499,7 @@ has B-Intention
 the I-Intention
 appropriate I-Intention
 privilege I-Intention
-( I-Intention
+( O
 i I-Intention
 . I-Intention
 e I-Intention
@@ -4613,7 +4613,7 @@ must O
 record B-Intention
 the I-Intention
 score I-Intention
-( I-Intention
+( O
 time I-Intention
 and I-Intention
 number I-Intention
@@ -5127,7 +5127,7 @@ by I-Intention
 the I-Intention
 Despatch I-Intention
 Point I-Intention
-( I-Intention
+( O
 Seller I-Intention
 ) O
 to I-Intention
@@ -5135,7 +5135,7 @@ inform I-Intention
 the I-Intention
 Delivery I-Intention
 Point I-Intention
-( I-Intention
+( O
 Buyer I-Intention
 ) O
 that I-Intention
@@ -5160,14 +5160,14 @@ sent B-Intention
 by I-Intention
 the I-Intention
 Originator I-Intention
-( I-Intention
+( O
 Buyer I-Intention
 ) O
 to I-Intention
 the I-Intention
 Sales I-Intention
 Point I-Intention
-( I-Intention
+( O
 Seller I-Intention
 ) O
 to I-Intention
@@ -5199,12 +5199,12 @@ by I-Intention
 the I-Intention
 Sales I-Intention
 Point I-Intention
-( I-Intention
+( O
 Seller I-Intention
 ) O
 to I-Intention
 Originator I-Intention
-( I-Intention
+( O
 Buyer I-Intention
 ) O
 to I-Intention
@@ -5239,7 +5239,7 @@ by I-Intention
 the I-Intention
 Order I-Intention
 Point I-Intention
-( I-Intention
+( O
 Buyer I-Intention
 ) O
 to I-Intention
@@ -5247,7 +5247,7 @@ inform I-Intention
 the I-Intention
 Sales I-Intention
 Point I-Intention
-( I-Intention
+( O
 Seller I-Intention
 ) O
 that I-Intention
@@ -5273,7 +5273,7 @@ by I-Intention
 the I-Intention
 Sales I-Intention
 Point I-Intention
-( I-Intention
+( O
 Seller I-Intention
 ) O
 to I-Intention
@@ -5281,7 +5281,7 @@ inform I-Intention
 the I-Intention
 Order I-Intention
 Point I-Intention
-( I-Intention
+( O
 Buyer I-Intention
 ) O
 of I-Intention
@@ -6193,7 +6193,7 @@ a I-Intention
 Graphical I-Intention
 User I-Intention
 Interface I-Intention
-( I-Intention
+( O
 GUI I-Intention
 ) O
 that I-Intention
@@ -6400,7 +6400,7 @@ domain I-Intention
 of I-Intention
 privacy I-Intention
 policies I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -6893,7 +6893,7 @@ to O
 add B-Intention
 new I-Intention
 objects I-Intention
-( I-Intention
+( O
 names I-Intention
 , O
 types I-Intention
@@ -7142,7 +7142,7 @@ disseminate I-Intention
 National I-Intention
 Weather I-Intention
 Service I-Intention
-( I-Intention
+( O
 NWS I-Intention
 ) O
 watches I-Intention
@@ -7241,7 +7241,7 @@ accept B-Intention
 environmental I-Intention
 data I-Intention
 from I-Intention
-( I-Intention
+( O
 roadway I-Intention
 ) O
 vehicles I-Intention
@@ -7717,7 +7717,7 @@ Traffic I-Intention
 Management I-Intention
 Data I-Intention
 Dictionary I-Intention
-( I-Intention
+( O
 TMDD I-Intention
 ) O
 . O
@@ -8668,7 +8668,7 @@ the O
 ability O
 to O
 see B-Intention
-( I-Intention
+( O
 at I-Intention
 a I-Intention
 glance I-Intention
@@ -8740,7 +8740,7 @@ be I-Intention
 printed I-Intention
 out I-Intention
 clearly I-Intention
-( I-Intention
+( O
 i I-Intention
 . I-Intention
 e I-Intention
@@ -9282,7 +9282,7 @@ of I-Intention
 exposed I-Intention
 and I-Intention
 non-exposed I-Intention
-( I-Intention
+( O
 i I-Intention
 . I-Intention
 e I-Intention
@@ -9306,7 +9306,7 @@ lists I-Intention
 of I-Intention
 action I-Intention
 items I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -9434,7 +9434,7 @@ that I-Intention
 use I-Intention
 common I-Intention
 terminology I-Intention
-( I-Intention
+( O
 where I-Intention
 available I-Intention
 ) O
@@ -9517,7 +9517,7 @@ Pontis I-Intention
 graphical I-Intention
 user I-Intention
 interface I-Intention
-( I-Intention
+( O
 GUI I-Intention
 ) O
 . O
@@ -10133,7 +10133,7 @@ modify I-Intention
 or I-Intention
 back I-Intention
 up I-Intention
-( I-Intention
+( O
 to I-Intention
 removable I-Intention
 storage I-Intention
@@ -10189,7 +10189,7 @@ to I-Intention
 a I-Intention
 virtual I-Intention
 folder I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -11937,7 +11937,7 @@ the I-Intention
 Chrysler I-Intention
 Fast I-Intention
 Feedback I-Intention
-( I-Intention
+( O
 telematics I-Intention
 demonstration I-Intention
 ) O
@@ -11968,7 +11968,7 @@ Snow I-Intention
 and I-Intention
 Ice I-Intention
 Management I-Intention
-( I-Intention
+( O
 SEMSIM I-Intention
 ) O
 using I-Intention
@@ -11996,7 +11996,7 @@ Authority I-Intention
 for I-Intention
 Regional I-Intention
 Transportation I-Intention
-( I-Intention
+( O
 SMART I-Intention
 ) O
 Transit I-Intention
@@ -12072,7 +12072,7 @@ Detroit I-Intention
 Department I-Intention
 of I-Intention
 Transportation I-Intention
-( I-Intention
+( O
 DDOT I-Intention
 ) O
 Transit I-Intention
@@ -12184,14 +12184,14 @@ Commission I-Intention
 for I-Intention
 Oakland I-Intention
 County I-Intention
-( I-Intention
+( O
 RCOC I-Intention
 ) O
 Road I-Intention
 Weather I-Intention
 Information I-Intention
 Systems I-Intention
-( I-Intention
+( O
 RWIS I-Intention
 ) O
 using I-Intention
@@ -12240,7 +12240,7 @@ Department I-Intention
 of I-Intention
 Natural I-Intention
 Resources I-Intention
-( I-Intention
+( O
 MDNR I-Intention
 ) O
 weather I-Intention
@@ -12270,7 +12270,7 @@ Automated I-Intention
 Weather I-Intention
 Observing I-Intention
 System I-Intention
-( I-Intention
+( O
 AWOS I-Intention
 ) O
 using I-Intention
@@ -12314,7 +12314,7 @@ collect B-Intention
 Origin I-Intention
 / I-Intention
 Destination I-Intention
-( I-Intention
+( O
 O I-Intention
 / I-Intention
 D I-Intention
@@ -12375,7 +12375,7 @@ Michigan I-Intention
 Traffic I-Intention
 Management I-Intention
 System I-Intention
-( I-Intention
+( O
 WMTMS I-Intention
 ) O
 using I-Intention
@@ -12426,7 +12426,7 @@ Commission I-Intention
 of I-Intention
 Macomb I-Intention
 County I-Intention
-( I-Intention
+( O
 RCMC I-Intention
 ) O
 system I-Intention
@@ -12550,7 +12550,7 @@ from I-Intention
 Traffic I-Intention
 Management I-Intention
 Systems I-Intention
-( I-Intention
+( O
 TMS I-Intention
 ) O
 using I-Intention
@@ -12569,7 +12569,7 @@ to O
 collect B-Intention
 work I-Intention
 zone I-Intention
-( I-Intention
+( O
 lane I-Intention
 closure I-Intention
 ) O
@@ -12609,7 +12609,7 @@ DUAP O
 System O
 shall O
 cache B-Intention
-( I-Intention
+( O
 both I-Intention
 raw I-Intention
 and I-Intention
@@ -12727,7 +12727,7 @@ Traffic I-Intention
 Management I-Intention
 Data I-Intention
 Dictionary I-Intention
-( I-Intention
+( O
 TMDD I-Intention
 ) O
 format I-Intention
@@ -12996,7 +12996,7 @@ at I-Intention
 least I-Intention
 30 I-Intention
 days I-Intention
-( I-Intention
+( O
 configurable I-Intention
 ) O
 worth I-Intention
@@ -13193,7 +13193,7 @@ file I-Intention
 quality I-Intention
 , O
 duplication I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -13296,7 +13296,7 @@ content I-Intention
 from I-Intention
 physical I-Intention
 media I-Intention
-( I-Intention
+( O
 DVDs I-Intention
 , O
 external I-Intention
@@ -13309,7 +13309,7 @@ or I-Intention
 via I-Intention
 electronic I-Intention
 transfer I-Intention
-( I-Intention
+( O
 FTP I-Intention
 ) O
 from I-Intention
@@ -13491,7 +13491,7 @@ using I-Intention
 Cyclic I-Intention
 Redundancy I-Intention
 Check I-Intention
-( I-Intention
+( O
 CRCs I-Intention
 ) O
 or I-Intention
@@ -13520,7 +13520,7 @@ file I-Intention
 quality I-Intention
 , O
 duplication I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -13781,7 +13781,7 @@ received I-Intention
 from I-Intention
 other I-Intention
 functions I-Intention
-( I-Intention
+( O
 for I-Intention
 example I-Intention
 , O
@@ -13845,7 +13845,7 @@ NLM I-Intention
 Digital I-Intention
 Repository I-Intention
 functions I-Intention
-( I-Intention
+( O
 for I-Intention
 example I-Intention
 , O
@@ -14753,7 +14753,7 @@ text I-Intention
 or I-Intention
 an I-Intention
 attachment I-Intention
-( I-Intention
+( O
 as I-Intention
 described I-Intention
 above I-Intention
@@ -14917,7 +14917,7 @@ to I-Intention
 their I-Intention
 mobile I-Intention
 telephone I-Intention
-( I-Intention
+( O
 via I-Intention
 SMS I-Intention
 ) O
@@ -17163,7 +17163,7 @@ distribute B-Intention
 documents I-Intention
 to I-Intention
 students I-Intention
-( I-Intention
+( O
 example I-Intention
 syllabus I-Intention
 ) O
@@ -17378,7 +17378,7 @@ they O
 can O
 specify B-Intention
 one I-Intention
-( I-Intention
+( O
 or I-Intention
 more I-Intention
 ) O
@@ -17434,7 +17434,7 @@ NOT I-Intention
 and I-Intention
 certain I-Intention
 symbols I-Intention
-( I-Intention
+( O
 eg I-Intention
 . I-Intention
 ” I-Intention
@@ -17485,7 +17485,7 @@ change B-Intention
 his I-Intention
 account I-Intention
 information I-Intention
-( I-Intention
+( O
 eg I-Intention
 . O
 password I-Intention
@@ -17581,7 +17581,7 @@ to I-Intention
 upgrade I-Intention
 a I-Intention
 Member I-Intention
-( I-Intention
+( O
 of I-Intention
 his I-Intention
 own I-Intention
@@ -17659,7 +17659,7 @@ edit I-Intention
 the I-Intention
 user I-Intention
 accounts I-Intention
-( I-Intention
+( O
 upgrade I-Intention
 , O
 downgrade I-Intention
@@ -18155,7 +18155,7 @@ for I-Intention
 items I-Intention
 by I-Intention
 keyword I-Intention
-( I-Intention
+( O
 basic I-Intention
 search I-Intention
 ) O
@@ -18172,7 +18172,7 @@ and I-Intention
 / I-Intention
 or I-Intention
 discount I-Intention
-( I-Intention
+( O
 advanced I-Intention
 search I-Intention
 ) O
@@ -18391,7 +18391,7 @@ set I-Intention
 at I-Intention
 any I-Intention
 level I-Intention
-( I-Intention
+( O
 department I-Intention
 or I-Intention
 category I-Intention
@@ -18626,7 +18626,7 @@ modules I-Intention
 The O
 system O
 supports B-Intention
-( I-Intention
+( O
 but I-Intention
 does I-Intention
 not I-Intention
@@ -18715,7 +18715,7 @@ collection I-Intention
 , O
 or I-Intention
 a I-Intention
-" I-Intention
+" O
 just-in-time I-Intention
 " O
 warehouse I-Intention
@@ -18748,7 +18748,7 @@ has I-Intention
 been I-Intention
 in I-Intention
 status I-Intention
-" I-Intention
+" O
 missing I-Intention
 " O
 for I-Intention
@@ -19416,7 +19416,7 @@ one I-Intention
 or I-Intention
 more I-Intention
 objects I-Intention
-( I-Intention
+( O
 files I-Intention
 or I-Intention
 archives I-Intention
@@ -19428,7 +19428,7 @@ more I-Intention
 compressed I-Intention
 archive I-Intention
 volumes I-Intention
-( I-Intention
+( O
 sizing I-Intention
 less I-Intention
 or I-Intention
@@ -19456,7 +19456,7 @@ drag B-Intention
 and I-Intention
 drop I-Intention
 objects I-Intention
-( I-Intention
+( O
 files I-Intention
 or I-Intention
 archives I-Intention
@@ -19476,7 +19476,7 @@ allows O
 users O
 to O
 encrypt B-Intention
-( I-Intention
+( O
 “lock” I-Intention
 ) O
 archives I-Intention
@@ -19493,7 +19493,7 @@ is I-Intention
 demanded I-Intention
 by I-Intention
 PeaZip I-Intention
-( I-Intention
+( O
 or I-Intention
 other I-Intention
 applications I-Intention
@@ -19776,7 +19776,7 @@ correctly I-Intention
 process I-Intention
 large I-Intention
 collections I-Intention
-( I-Intention
+( O
 I I-Intention
 / I-Intention
 O I-Intention
@@ -19803,7 +19803,7 @@ dealing I-Intention
 with I-Intention
 hardware I-Intention
 failures I-Intention
-( I-Intention
+( O
 out I-Intention
 of I-Intention
 scope I-Intention
@@ -19893,7 +19893,7 @@ in I-Intention
 the I-Intention
 converted I-Intention
 ﬁles I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -19944,7 +19944,7 @@ external I-Intention
 tools I-Intention
 and I-Intention
 services I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -20293,7 +20293,7 @@ the I-Intention
 ELSS I-Intention
 logbook I-Intention
 data I-Intention
-( I-Intention
+( O
 including I-Intention
 landing I-Intention
 declarations I-Intention
@@ -20446,7 +20446,7 @@ able O
 to O
 receive B-Intention
 acknowledgement I-Intention
-( I-Intention
+( O
 RET I-Intention
 ) O
 messages I-Intention
@@ -20699,7 +20699,7 @@ state I-Intention
 of I-Intention
 an I-Intention
 appliance I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
@@ -20855,7 +20855,7 @@ backup B-Intention
 all I-Intention
 system I-Intention
 data I-Intention
-( I-Intention
+( O
 configuration I-Intention
 , O
 default I-Intention
@@ -21166,7 +21166,7 @@ two I-Intention
 existing I-Intention
 pdf I-Intention
 documents I-Intention
-( I-Intention
+( O
 e I-Intention
 . I-Intention
 g I-Intention
