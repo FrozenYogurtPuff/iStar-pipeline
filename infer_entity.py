@@ -24,6 +24,7 @@ import re
 import numpy as np
 import torch
 from torch.nn import CrossEntropyLoss
+from torch.nn.functional import softmax
 from torch.utils.data import DataLoader, SequentialSampler, TensorDataset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
@@ -94,6 +95,9 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
     nb_eval_steps = 0
     preds = None
     trues = None
+    input_ids = None
+    valid_mask = None
+
     model.eval()
     for batch in tqdm(eval_dataloader, desc="Evaluating"):
         batch = tuple(t.to(args.device) for t in batch)
@@ -116,22 +120,37 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
         if preds is None:
             preds = logits.detach().cpu().numpy()
             trues = inputs["labels"].detach().cpu().numpy()
+            input_ids = inputs["input_ids"].detach().cpu().numpy()
+            valid_mask = inputs["valid_mask"].detach().cpu().numpy()
         else:
             preds = np.append(preds, logits.detach().cpu().numpy(), axis=0)
             trues = np.append(trues, inputs["labels"].detach().cpu().numpy(), axis=0)
+            input_ids = np.append(trues, inputs["input_ids"].detach().cpu().numpy(), axis=0)
+            valid_mask = np.append(trues, inputs["valid_mask"].detach().cpu().numpy(), axis=0)
 
     eval_loss = eval_loss / nb_eval_steps
-    preds = np.argmax(preds, axis=2)
+    preds_argmax = np.argmax(preds, axis=2)
+
     label_map = {i: label for i, label in enumerate(labels)}
 
     preds_list = [[] for _ in range(preds.shape[0])]
+    matrix = [[] for _ in range(preds.shape[0])]
+    tokens_bert = list()
 
     for i in range(trues.shape[0]):
+        tokens = list()
         for j in range(trues.shape[1]):
+            if valid_mask[i, j] != 0 and input_ids[i, j] not in [101, 102]:
+                tokens.append(tokenizer.convert_ids_to_tokens(int(input_ids[i, j])))
             if trues[i, j] != pad_token_label_id:
-                preds_list[i].append(label_map[preds[i][j]])
+                res = softmax(torch.from_numpy(preds[i, j, :]))
+                matrix[i].append(res.tolist())
+                preds_list[i].append(label_map[preds_argmax[i][j]])
+        assert len(tokens) == len(matrix[i])
+        tokens_bert.append(tokens)
 
-    return preds_list
+
+    return matrix, preds_list, tokens_bert
 
 
 # 制作数据集
@@ -190,10 +209,10 @@ def read_examples_from_json(data):
 
 
 def predict_entity(data):
-    predictions = evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix='test')
+    matrix, preds_list, tokens_bert = evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix='test')
 
     # TODO: 改为json输出
-    return predictions
+    return preds_list, matrix, tokens_bert
 
 
 parser = argparse.ArgumentParser()

@@ -12,7 +12,8 @@ def getNounSpan(token):
         if child.dep_ in ['conj', 'appos']:
             token_list += getNounSpan(child)
     flag = True
-    while token.pos_ in ['NOUN', 'PROPN', 'PRON', 'ADJ'] or token.dep_ =='compound' or (token.tag_ == 'JJ' and token.dep_ in ['amod', 'advmod']):
+    while token.pos_ in ['NOUN', 'PROPN', 'PRON', 'ADJ'] or token.dep_ == 'compound' or (
+            token.tag_ == 'JJ' and token.dep_ in ['amod', 'advmod']):
         if token.i != border:
             token = token.nbor(-1)
         else:
@@ -25,9 +26,25 @@ def getNounSpan(token):
     return token_list
 
 
+def simple_noun_chunks(doc):
+    sentences = nlp(doc)
+    preds_list = list()
+    for sent in sentences.sents:
+        preds_cur = list()
+        chunks = list(sent.noun_chunks)
+        for chunk in chunks:
+            preds_cur.append((chunk.start - sent.start, chunk.end - sent.start - 1))
+        preds_list.append(preds_cur)
+    return preds_list
+
+
 def pred_entity(doc):
     sentences = nlp(doc)
+    results = list()
+    tokens = list()
+    preds = list()
     for sent in sentences.sents:
+        tokens.append([i.text for i in sent])
 
         # Entity
         entity = []
@@ -87,6 +104,8 @@ def pred_entity(doc):
 
         entity = sorted(entity, key=lambda x: x[0])
 
+        entity = [(en[0], en[1] - 1) for en in entity]
+
         # Remove duplicate
         cur_idx = 0
         while cur_idx < len(entity) - 1:
@@ -98,10 +117,12 @@ def pred_entity(doc):
 
         result = ['O' for _ in range(len(sent))]
         for en in entity:
-            for i, idx in enumerate(range(en[0], en[1])):
+            for i, idx in enumerate(range(en[0], en[1] + 1)):
                 if i == 0:
                     result[idx] = 'B'
                 else:
                     result[idx] = 'I'
 
-        return result
+        results.append(result)
+        preds.append(entity)
+    return results, tokens, preds
