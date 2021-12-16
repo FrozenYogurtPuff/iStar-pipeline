@@ -1,7 +1,9 @@
 import re
 
-from infer_task import predict_task
-from infer_entity import predict_entity
+from infer_task import predict_task as bert_task
+from infer_entity import predict_entity as bert_entity
+from dependency import pred_entity as dep_entity
+
 
 sent = 'Teacher Y asks student A to fill out a loan form and write down the following: information ' \
        'about the teacher in the classroom, the reason for borrowing the classroom, and the time ' \
@@ -14,22 +16,26 @@ def sent_tokenize(sent):
 
 def get_bert_task(sent):
     data = [{'sent': sent}]
-    return predict_task(data)
+    return bert_task(data)
 
 
 def get_bert_entity(sent):
     data = [{'sent': sent}]
-    return predict_entity(data)
+    return bert_entity(data)
 
 
 def output_pretty(tok, pred):
-    for i in zip(tok, pred[0]):
+    for i in zip(tok, pred):
         print(i)
 
 
-pred = get_bert_entity(sent)
+pred = get_bert_entity(sent)[0]
 tok = sent_tokenize(sent)
 output_pretty(tok, pred)
 
-pred = get_bert_task(sent)
-output_pretty(tok, pred)
+# pred = get_bert_task(sent)
+# output_pretty(tok, pred)
+
+result = dep_entity(sent)
+print('!!', result)
+print(output_pretty(tok, result))
