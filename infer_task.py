@@ -59,7 +59,7 @@ TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 DATA_DIR = 'pretrained_data/task_quality/tq_1/'
 MODEL_TYPE = 'bert'
 MODEL_NAME_OR_PATH = 'bert-base-cased'
-OUTPUT_DIR = 'pretrained_model/task_quality/'
+OUTPUT_DIR = 'pretrained_model/old_task_quality/'
 LABEL = 'pretrained_data/task_quality/tq_1/labels.txt'
 print_log = False
 
