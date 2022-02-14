@@ -3,8 +3,8 @@ import json
 
 import en_core_web_lg
 
-from src.infer.infer_task import predict_task as bert_task
-from src.infer.infer_entity import predict_entity as bert_entity
+from src.deeplearning.infer import predict_task as bert_task
+from src.deeplearning.infer import predict_entity as bert_entity
 from dependency import pred_entity as dep_entity
 from dependency import pred_task as dep_task
 from dependency import simple_noun_chunks as simp_entity

@@ -34,14 +34,14 @@ from transformers import (
     AutoTokenizer,
 )
 
-from src.models.model_ner import (
+from src.deeplearning.models.model_ner import (
     MODEL_FOR_SOFTMAX_NER_MAPPING,
     MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
     AutoModelForSoftmaxNer,
 )
 
-from src.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file
-from src.utils.utils_ner import InputExample
+from src.deeplearning.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file
+from src.deeplearning.utils.utils_ner import InputExample
 
 try:
     from torch.utils.tensorboard import SummaryWriter

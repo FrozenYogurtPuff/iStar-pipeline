@@ -22,7 +22,7 @@ import random
 
 import numpy as np
 import torch
-from src.utils.utils_metrics import get_entities_bio, f1_score, classification_report
+from src.network.utils.utils_metrics import get_entities_bio, f1_score, classification_report
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, TensorDataset
 from torch.utils.data.distributed import DistributedSampler
@@ -35,14 +35,14 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 
-from src.models import (
+from src.network.models import (
     MODEL_FOR_SOFTMAX_NER_MAPPING,
     MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
     AutoModelForSoftmaxNer,
 )
 
-from src.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file, collate_fn
-from src.utils.utils_adversarial import FGM, PGD
+from src.network.utils import convert_examples_to_features, get_labels, read_examples_from_file, collate_fn
+from src.network.utils.utils_adversarial import FGM, PGD
 
 
 try:

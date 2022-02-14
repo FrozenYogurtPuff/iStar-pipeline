@@ -9,8 +9,8 @@ import en_core_web_lg
 import logging
 
 #   BERT 深度学习
-from src.infer.infer_entity import predict_entity
-from src.infer.infer_task import predict_task
+from src.deeplearning.infer.infer_entity import predict_entity
+from src.deeplearning.infer.infer_task import predict_task
 
 nlp: spacy.language.Language = en_core_web_lg.load()
 
