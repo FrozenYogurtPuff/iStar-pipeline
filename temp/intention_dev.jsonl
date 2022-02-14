@@ -1,0 +1,235 @@
+{"id": 0, "text": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.", "labels": [[28, 148, "Intention"]]}
+{"id": 1, "text": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.", "labels": [[16, 64, "Intention"]]}
+{"id": 2, "text": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).", "labels": [[27, 123, "Intention"]]}
+{"id": 3, "text": "This functionality can be used by external auditors who wish to examine or analyse system activity.", "labels": [[64, 98, "Intention"]]}
+{"id": 4, "text": "The System must allow only admin-users to set up user profiles and allocate users to groups.", "labels": [[16, 91, "Intention"]]}
+{"id": 5, "text": "The System should allow a user to stipulate which other users or groups can access cases.", "labels": [[18, 88, "Intention"]]}
+{"id": 6, "text": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.", "labels": [[22, 190, "Intention"]]}
+{"id": 7, "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide following responses.", "labels": [[114, 141, "Intention"], [10, 96, "Intention"]]}
+{"id": 8, "text": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines.", "labels": [[34, 71, "Intention"], [82, 176, "Intention"]]}
+{"id": 9, "text": "The System must allow persistent defaults for data entry where desirable.", "labels": [[16, 72, "Intention"]]}
+{"id": 10, "text": "System Administrator: Is generally the owner that takes care of maintenance for the Web Store system.", "labels": [[50, 100, "Intention"]]}
+{"id": 11, "text": "When creating a new account on Web Store it will default as a customer account.", "labels": [[5, 40, "Intention"], [49, 78, "Intention"]]}
+{"id": 12, "text": "Later if the account needs to be upgraded the administrator can accomplish this via the administrator interface.", "labels": [[64, 111, "Intention"], [21, 41, "Intention"]]}
+{"id": 13, "text": "Customers will be able to create accounts to store their profiles, contact information, purchase history, and confirm orders.", "labels": [[26, 124, "Intention"]]}
+{"id": 14, "text": "Products will be stored in multi-tiered categories; a category can contain sub categories or products. The inventory management will allow for administrators to update the categories, the products placed in categories, and the specific product details.", "labels": [[14, 50, "Intention"], [161, 251, "Intention"]]}
+{"id": 15, "text": "Customers will also be able to add products into the shopping cart.", "labels": [[31, 66, "Intention"]]}
+{"id": 16, "text": "Customers will be able to search for products matching their search criteria.", "labels": [[26, 76, "Intention"]]}
+{"id": 17, "text": "The system will feature an API to allow customers to build custom plug-ins to be able to meet their needs.", "labels": [[16, 105, "Intention"]]}
+{"id": 18, "text": "The plug-in API will be well documented and specifications will be provided to plug-in developers.", "labels": [[21, 97, "Intention"]]}
+{"id": 19, "text": "University administrator and IT Administrators have the control on the entire inventory", "labels": [[47, 87, "Intention"]]}
+{"id": 20, "text": "Any administrative level user can delegate another user to execute some or all his authorized actions. And this user acquires the role of inventory administrator", "labels": [[34, 101, "Intention"], [117, 161, "Intention"]]}
+{"id": 21, "text": "There is one heating and cooling unit that corresponds to one thermostat in each of four quadrants on each of three floors of the office building.", "labels": [[43, 145, "Intention"]]}
+{"id": 22, "text": "The MultiMahjongClient must send this join information to the MultiMahjongServer.", "labels": [[28, 80, "Intention"]]}
+{"id": 23, "text": "The user will be able to end the game at any stage of the game.", "labels": [[25, 62, "Intention"]]}
+{"id": 24, "text": "The user will then be able to quit the program or begin/join a new game.", "labels": [[30, 46, "Intention"], [50, 71, "Intention"]]}
+{"id": 25, "text": "Client authentication ensures that an authorised client/operator is operating the equipment.", "labels": [[22, 91, "Intention"]]}
+{"id": 26, "text": "The communication system shall include functionality to transfer stored data to central storage and processing after restoration of the communication.", "labels": [[56, 95, "Intention"], [100, 149, "Intention"]]}
+{"id": 27, "text": "SwRI shall provide APAF system maintenance.", "labels": [[11, 42, "Intention"]]}
+{"id": 28, "text": "ASPERA-3 and MEX OA IDFS data and any APAF-generated intermediate files of ASPERA-3 and MEX OA cleaned-up telemetry shall be provided to all ASPERA-3 Co-I\u2019s.", "labels": [[122, 156, "Intention"]]}
+{"id": 29, "text": "The HATS-GUI shall suggest a file name for the user whenever it prompts the user to enter a file name.", "labels": [[19, 101, "Intention"]]}
+{"id": 30, "text": "When a user selects the View/Text menu option, the HATS-GUI shall prompt a user to select a pretty-printed text file in the current application.", "labels": [[12, 45, "Intention"], [66, 143, "Intention"]]}
+{"id": 31, "text": "The user shall be able to control the display by choosing the color and shapes of displayed nodes based on node type.", "labels": [[26, 116, "Intention"]]}
+{"id": 32, "text": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline.", "labels": [[26, 126, "Intention"]]}
+{"id": 33, "text": "At the main title screen, the user will be able to view a general help screen to reveal basic instructions on game play.", "labels": [[51, 119, "Intention"]]}
+{"id": 34, "text": "Enable agents to broadcast a message to all the agents within the same local network.", "labels": [[17, 84, "Intention"]]}
+{"id": 35, "text": "Enable agents to multicast a message to all the agents within the same multicast address.", "labels": [[17, 88, "Intention"]]}
+{"id": 36, "text": "This agent should maintain a list of agents who are allowed to get the keys.", "labels": [[18, 75, "Intention"]]}
+{"id": 37, "text": "The tool returns the current user\u2019s privileges to those of the general user.", "labels": [[9, 75, "Intention"]]}
+{"id": 38, "text": "The user must undo and redo its last thousand actions.", "labels": [[14, 53, "Intention"]]}
+{"id": 39, "text": "The product must record the score (time and number of counts) of a play associated with the name of a user.", "labels": [[17, 106, "Intention"]]}
+{"id": 40, "text": "The system must allow a member of the network to send a bulk request on all or a large part of its driver\u2019s smart card holders to a particular or all members of the network.", "labels": [[49, 172, "Intention"]]}
+{"id": 41, "text": "The color translator allows old scheme to new scheme paint number translation, given a paint number, collection and a target collection.", "labels": [[21, 135, "Intention"]]}
+{"id": 42, "text": "The color sample matcher will allow the user to graphically select with a hardware pointing device the color or blended color group they wish to use in a color search.", "labels": [[48, 166, "Intention"]]}
+{"id": 43, "text": "Sales Point is responsible for all communication with the Buyer up to and including the acceptance of a Purchase Order.", "labels": [[12, 118, "Intention"]]}
+{"id": 44, "text": "RFQ is sent by the Originator (Buyer) to the Sales Point (Seller) to request the Seller to supply terms and conditions under which the it is willing to supply goods or services.", "labels": [[7, 176, "Intention"]]}
+{"id": 45, "text": "Analysis is the scenario where the user wants to perform post processing on the data, such as the model performance evaluation studies on the output.", "labels": [[49, 148, "Intention"]]}
+{"id": 46, "text": "All GridBGC users shall be required to have valid NCAR Gatekeeper accounts to use the system.", "labels": [[24, 92, "Intention"]]}
+{"id": 47, "text": "The user shall be prompted at the beginning of the session for their credentials, once logged in they will not be prompted for additional or different credentials.", "labels": [[15, 162, "Intention"]]}
+{"id": 48, "text": "The system shall allow the user to select individual parameters as needed.", "labels": [[35, 73, "Intention"]]}
+{"id": 49, "text": "Magistrate, Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "labels": [[19, 134, "Intention"]]}
+{"id": 50, "text": "Task Force on Indigent Defense, Standing committee of the Texas Judicial Council responsible for establishing standards for Indigent Defense Services.", "labels": [[81, 149, "Intention"]]}
+{"id": 51, "text": "The RLCS Application will also allow for remote access through a firewall via outside telecommunications networks by authorized users.", "labels": [[31, 133, "Intention"]]}
+{"id": 52, "text": "The RLCS Application will allow an operator to view system status and issue commands to change device status as well as configure the system and generate reports.", "labels": [[47, 161, "Intention"]]}
+{"id": 53, "text": "The RLCS will provide access to system status data, to external systems through a firewall.", "labels": [[14, 90, "Intention"]]}
+{"id": 54, "text": "The RLCS software shall send to and receive data from the field device I/O cards through I/O driver software.", "labels": [[24, 108, "Intention"]]}
+{"id": 55, "text": "The RLCS shall support remote system administration and maintenance of the system.", "labels": [[15, 81, "Intention"]]}
+{"id": 56, "text": "Ability to delete a privacy policy from the repository", "labels": [[11, 54, "Intention"]]}
+{"id": 57, "text": "Ability to save the current version of the repository so that we can do evolution analysis", "labels": [[11, 90, "Intention"]]}
+{"id": 58, "text": "Ability to add, delete and update scenarios", "labels": [[11, 43, "Intention"]]}
+{"id": 59, "text": "The system shall allow the analysts to request a new classification type of goals and also allow the project manager to create that classification type.", "labels": [[39, 81, "Intention"], [120, 151, "Intention"]]}
+{"id": 60, "text": "The system will allow analysts and guest to choose a policy and a goal and then the system will allow analysts and guests to view the total occurrences of that particular goal in the chosen policy.", "labels": [[44, 70, "Intention"], [125, 196, "Intention"]]}
+{"id": 61, "text": "The system shall allow analysts to view scenarios associated with individual scenarios.", "labels": [[17, 22, "Intention"], [35, 86, "Intention"]]}
+{"id": 62, "text": "The system shall allow analysts to add a scenario to the system.", "labels": [[35, 63, "Intention"]]}
+{"id": 63, "text": "The system shall provide the ability to delete a scenario from a project without deleting it from the system", "labels": [[17, 108, "Intention"]]}
+{"id": 64, "text": "The system shall allow analysts to graphically view the allowable flows for specific types within an organization and across multiple organizations given a set of access control policies.", "labels": [[35, 113, "Intention"], [118, 186, "Intention"]]}
+{"id": 65, "text": "The system shall provide a way to capture the mined goalsinformation from the user\u2019s privacy preferences into a database corresponding to the user\u2019s privacy preferences.", "labels": [[17, 168, "Intention"]]}
+{"id": 66, "text": "The Clarus system shall be able to access in-situ environmental observations from data collectors.", "labels": [[35, 97, "Intention"]]}
+{"id": 67, "text": "The Clarus system shall accept weather hazard reports containing the hazard type, location, and timeframe.", "labels": [[24, 105, "Intention"]]}
+{"id": 68, "text": "The Clarus system shall process data as they are received.", "labels": [[24, 57, "Intention"]]}
+{"id": 69, "text": "The Clarus system shall accept environmental data from (roadway) vehicles.", "labels": [[24, 73, "Intention"]]}
+{"id": 70, "text": "The Clarus system shall accept environmental data from service patrol vehicles.", "labels": [[24, 78, "Intention"]]}
+{"id": 71, "text": "The Clarus system shall be able to receive weather data from weather service providers.", "labels": [[35, 86, "Intention"]]}
+{"id": 72, "text": "The Clarus system shall provide notification of data quality conditions to data collectors.", "labels": [[24, 90, "Intention"]]}
+{"id": 73, "text": "The Clarus system shall not modify original observations.", "labels": [[24, 56, "Intention"]]}
+{"id": 74, "text": "The Clarus system shall allow human intervention to override automatically applied quality assessment.", "labels": [[24, 101, "Intention"]]}
+{"id": 75, "text": "The Clarus system shall be able to implement quality control rules for each environmental parameter.", "labels": [[35, 99, "Intention"]]}
+{"id": 76, "text": "The Clarus system shall be able to implement quality control rules for specific environmental situations.", "labels": [[35, 104, "Intention"]]}
+{"id": 77, "text": "The Clarus system shall be able to base its quality control process on values from multiple observations.", "labels": [[35, 104, "Intention"]]}
+{"id": 78, "text": "The Clarus system shall be able to use multiple algorithms for its quality control process.", "labels": [[35, 90, "Intention"]]}
+{"id": 79, "text": "The Clarus system shall be able to disseminate data based on spatial queries.", "labels": [[35, 76, "Intention"]]}
+{"id": 80, "text": "The Clarus program shall alert users to system modifications.", "labels": [[25, 60, "Intention"]]}
+{"id": 81, "text": "The Clarus system shall log data transactions.", "labels": [[24, 45, "Intention"]]}
+{"id": 82, "text": "The Clarus system shall acquire, process, and disseminate hydrologic data.", "labels": [[24, 73, "Intention"]]}
+{"id": 83, "text": "The Clarus system shall accept data through a Clarus standard interface.", "labels": [[24, 71, "Intention"]]}
+{"id": 84, "text": "The Clarus system shall transfer data as efficiently as possible.", "labels": [[24, 64, "Intention"]]}
+{"id": 85, "text": "The Clarus system shall allow service providers to select specific desired data sets.", "labels": [[51, 84, "Intention"]]}
+{"id": 86, "text": "The Clarus system shall disseminate data using standard Internet protocols.", "labels": [[24, 74, "Intention"]]}
+{"id": 87, "text": "The Clarus system shall be able to collect data from sources within 5 minutes of them becoming available.", "labels": [[35, 104, "Intention"]]}
+{"id": 88, "text": "The Clarus system shall be able to receive all reported environmental data during a fifteen minute time interval.", "labels": [[35, 112, "Intention"]]}
+{"id": 89, "text": "The Clarus system shall accept data only from approved sources.", "labels": [[24, 62, "Intention"]]}
+{"id": 90, "text": "The Clarus program shall provide an environment that has redundant communication for the Clarus system.", "labels": [[25, 102, "Intention"]]}
+{"id": 91, "text": "The Clarus program shall define data quality assurance methods and criteria.", "labels": [[25, 75, "Intention"]]}
+{"id": 92, "text": "The Clarus program shall define quality control rules for environmental observations.", "labels": [[25, 84, "Intention"]]}
+{"id": 93, "text": "The VMU will create the vouchers and sell it to clients through distributors.", "labels": [[13, 32, "Intention"], [37, 76, "Intention"]]}
+{"id": 94, "text": "Users shall only be allowed to set daily reminders for themselves.", "labels": [[17, 65, "Intention"]]}
+{"id": 95, "text": "Systems supporting OM should provide a manual or automatic means of updating the status of case records as the case definition changes.", "labels": [[29, 134, "Intention"]]}
+{"id": 96, "text": "The user shall be able to view the data stored in the Physical Inventory tables through the Pontis graphical user interface (GUI).", "labels": [[26, 129, "Intention"]]}
+{"id": 97, "text": "The user shall be able to view the data stored in the Project Planning tables through the GUI.", "labels": [[26, 93, "Intention"]]}
+{"id": 98, "text": "The system shall be capable of creating cost and deterioration elicitation records for Pontis users.", "labels": [[31, 99, "Intention"]]}
+{"id": 99, "text": "The system shall be capable of updating preservation action costs based on expert elicitations.", "labels": [[31, 94, "Intention"]]}
+{"id": 100, "text": "The user shall be able to edit or delete existing programs.", "labels": [[26, 58, "Intention"]]}
+{"id": 101, "text": "The user shall be able to edit or delete existing projects.", "labels": [[26, 58, "Intention"]]}
+{"id": 102, "text": "The system shall be capable of authorizing access to Pontis functionalities depending on the user\u2019s privileges during log-in process.", "labels": [[31, 132, "Intention"]]}
+{"id": 103, "text": "The System requires the user to select the nature of a player in the current game.", "labels": [[32, 81, "Intention"]]}
+{"id": 104, "text": "All EIRENE mobile equipment shall comply with all environmental, EMC and physical specifications defined in the GSM standard", "labels": [[34, 124, "Intention"]]}
+{"id": 105, "text": "System operator responsible for maintaining executable code, requiring full access to all aspects of the system.", "labels": [[32, 111, "Intention"]]}
+{"id": 106, "text": "Browse, query, and download individual sampling station data and metadata", "labels": [[0, 73, "Intention"]]}
+{"id": 107, "text": "Visualize time-series data", "labels": [[0, 26, "Intention"]]}
+{"id": 108, "text": "Visualize, query, and download spatial data", "labels": [[0, 43, "Intention"]]}
+{"id": 109, "text": "The Data Management portion of the system shall permit user access from the corporate Intranet and, if a user is authorized for outside access through the corporate firewall, from an Internet connection at the user\u2019s home.", "labels": [[48, 94, "Intention"], [113, 221, "Intention"]]}
+{"id": 110, "text": "The system shall display all the available components of the product to configure", "labels": [[17, 81, "Intention"]]}
+{"id": 111, "text": "The system shall display all the matching products based on the search", "labels": [[17, 70, "Intention"]]}
+{"id": 112, "text": "The system shall allow user to create profile and set his credential.", "labels": [[28, 68, "Intention"]]}
+{"id": 113, "text": "The system shall authenticate user credentials to view the profile.", "labels": [[17, 66, "Intention"]]}
+{"id": 114, "text": "The system shall display the customer support contact numbers on the screen.", "labels": [[17, 75, "Intention"]]}
+{"id": 115, "text": "The system shall send an order confirmation to the user through email.", "labels": [[17, 69, "Intention"]]}
+{"id": 116, "text": "The system shall display different shipping options provided by shipping department.", "labels": [[17, 83, "Intention"]]}
+{"id": 117, "text": "The system shall calculate tax for the order.", "labels": [[17, 44, "Intention"]]}
+{"id": 118, "text": "The system shall allow user to view detailed sitemap.", "labels": [[28, 52, "Intention"]]}
+{"id": 119, "text": "The system shall display all the available promotions to the user.", "labels": [[17, 65, "Intention"]]}
+{"id": 120, "text": "The system shall allow user to confirm the purchase.", "labels": [[28, 51, "Intention"]]}
+{"id": 121, "text": "The system shall confirm all transactions with the customer\u2019s web browser.", "labels": [[17, 73, "Intention"]]}
+{"id": 122, "text": "The system shall not leave any cookies on the customer\u2019s computer containing any of the user\u2019s confidential information.", "labels": [[17, 119, "Intention"]]}
+{"id": 123, "text": "Broadcast voice calls provide one-way voice communications from a single user to multiple users in a pre-defined local area, all of whom are members of the same call group.", "labels": [[22, 171, "Intention"]]}
+{"id": 124, "text": "The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups.", "labels": [[48, 78, "Intention"], [111, 149, "Intention"]]}
+{"id": 125, "text": "It shall be possible for an incoming call or data message for one user to be forwarded to another user using functionality provided by the network.", "labels": [[73, 146, "Intention"]]}
+{"id": 126, "text": "The DUAP System shall collect probe vehicle data.", "labels": [[22, 48, "Intention"]]}
+{"id": 127, "text": "The DUAP Input Services shall be able to collect probe vehicle data from the MDOT fleet using the MDOT probe vehicle data interface.", "labels": [[41, 131, "Intention"]]}
+{"id": 128, "text": "The DUAP Input Services shall be able to collect probe vehicle data from the car rental fleets using the car rental fleets\u2019 interfaces.", "labels": [[41, 134, "Intention"]]}
+{"id": 129, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the Road Commission of Macomb County (RCMC) system using the RCMC system interface.", "labels": [[41, 157, "Intention"]]}
+{"id": 130, "text": "The System shall provide the capability to operate in an Open Mode, within which authorized customers shall be allowed read-only access to requested Data Products. This is the nominal system mode.", "labels": [[17, 162, "Intention"]]}
+{"id": 131, "text": "The System shall provide the capability to operate in a Degraded System Mode, within which the system generates a subset of products based upon priority and availability of system resources.", "labels": [[17, 189, "Intention"]]}
+{"id": 132, "text": "The System shall be capable of aggregating Data Products up to and including one orbit.", "labels": [[31, 86, "Intention"]]}
+{"id": 133, "text": "System generates an error log.", "labels": [[7, 29, "Intention"]]}
+{"id": 134, "text": "Has the option of sending a configurable automatic system confirmation receipt of SIP to producer based on type of resource, file, producer, etc.", "labels": [[18, 144, "Intention"]]}
+{"id": 135, "text": "Performs virus checking on SIP.", "labels": [[0, 30, "Intention"]]}
+{"id": 136, "text": "Generates confirmation, statistical and error reports for the AIP process.", "labels": [[0, 73, "Intention"]]}
+{"id": 137, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 138, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 139, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 140, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 141, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 142, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 143, "text": "Monitors and ensures that AIPs are not corrupted during transfers.", "labels": [[0, 65, "Intention"]]}
+{"id": 144, "text": "Has capability to create, maintain, and access customized user views of the contents of this storage.", "labels": [[18, 100, "Intention"]]}
+{"id": 145, "text": "The query request may require data to be sourced from different storage locations.", "labels": [[22, 81, "Intention"]]}
+{"id": 146, "text": "Able to add and edit terms of agreement, based on access of level of user.", "labels": [[8, 73, "Intention"]]}
+{"id": 147, "text": "Audits system operations, performance and usage.", "labels": [[0, 47, "Intention"]]}
+{"id": 148, "text": "Summarizes reports and provides repository performance information and repository holdings inventory reports to Preservation Planning.", "labels": [[0, 133, "Intention"]]}
+{"id": 149, "text": "Receives migration packages from Preservation Planning.", "labels": [[0, 54, "Intention"]]}
+{"id": 150, "text": "Develops and implements plans for system evolution.", "labels": [[0, 50, "Intention"]]}
+{"id": 151, "text": "Receives change requests, actions and tools from the Manage System Configuration function.", "labels": [[0, 89, "Intention"]]}
+{"id": 152, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 153, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 154, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 155, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 156, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 157, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Intention"]]}
+{"id": 158, "text": "The system must be able to capture and organize voice clips that can be used where appropriate.", "labels": [[27, 94, "Intention"]]}
+{"id": 159, "text": "Actors should be able to search for pages at the course level, since most actors will be searching for material in a given course.", "labels": [[86, 129, "Intention"], [25, 61, "Intention"]]}
+{"id": 160, "text": "The system should display grade information such as the grade for each assignment, averages, and overall grade to the actor to whom the grades belong.", "labels": [[18, 149, "Intention"]]}
+{"id": 161, "text": "Course administrators can also track how they have changed a score over time using the timestamps associated with each change to the gradebook.", "labels": [[31, 142, "Intention"]]}
+{"id": 162, "text": "The system must provide a blog engine.", "labels": [[16, 37, "Intention"]]}
+{"id": 163, "text": "A system will be considered to meet this requirement if it has a single administrative interface rather than individual links for editing each page.", "labels": [[59, 147, "Intention"]]}
+{"id": 164, "text": "Furthermore, this interface must allow administrators to easily change themes and other setting that affect page layout across the entire courseware system.", "labels": [[57, 155, "Intention"]]}
+{"id": 165, "text": "The system will provide information that can be used to assist in the calibration of ground water models.", "labels": [[16, 104, "Intention"]]}
+{"id": 166, "text": "The system will provide standard reports that are published as hardcopy or web-accessible documents.", "labels": [[16, 99, "Intention"]]}
+{"id": 167, "text": "This system is in line with the objectives of the CWM Information Technology initiative presented to the Governing Board in June 2002.", "labels": [[15, 133, "Intention"]]}
+{"id": 168, "text": "Track the relocation of active water use within the SWUCA.", "labels": [[0, 57, "Intention"]]}
+{"id": 169, "text": "Ability to track requested and permitted quantities.", "labels": [[0, 51, "Intention"]]}
+{"id": 170, "text": "The CAISO shall from time to time undertake performance tests, with or without prior notification.", "labels": [[16, 97, "Intention"]]}
+{"id": 171, "text": "Users: in order to get familiar with the idea of the project and suggest other features that would make it even more functional.", "labels": [[19, 127, "Intention"]]}
+{"id": 172, "text": "User can create a new database locked by a Master Key.", "labels": [[9, 53, "Intention"]]}
+{"id": 173, "text": "The user also can print all data in order to keep them with him even when a computer is not available.", "labels": [[18, 101, "Intention"]]}
+{"id": 174, "text": "End users/Desktop: users with no particular knowledge on computer programming. They just use the database for organizing their data and to keep them safe.", "labels": [[89, 153, "Intention"], [25, 77, "Intention"]]}
+{"id": 175, "text": "System administrators: administrators working on computers that support a lot of accounts and personal data for other users.", "labels": [[38, 123, "Intention"]]}
+{"id": 176, "text": "Mediator passes the service requirements to the PA.", "labels": [[9, 50, "Intention"]]}
+{"id": 177, "text": "Service Registry encapsulates the resource and service information for each CDN.", "labels": [[17, 79, "Intention"]]}
+{"id": 178, "text": "In the face of traffic surges, Service Registry supplies any necessary local resource information to the mediator.", "labels": [[48, 113, "Intention"]]}
+{"id": 179, "text": "End users request for content from CDN Web server.", "labels": [[10, 49, "Intention"]]}
+{"id": 180, "text": "Local Peering Agent communicates with the Peering Agent of peers to discover external resources.", "labels": [[20, 95, "Intention"]]}
+{"id": 181, "text": "Service requirements are received from the mediator.", "labels": [[21, 51, "Intention"]]}
+{"id": 182, "text": "Local Peering Agent receives service requirements from the mediator.", "labels": [[20, 67, "Intention"]]}
+{"id": 183, "text": "Local Peering Agent in conjunction with the mediator interacts with external Peering Agent through inter-Peering Agent communication protocol.", "labels": [[53, 141, "Intention"]]}
+{"id": 184, "text": "Else, mediator re-evaluates service requirements and sends to the local Peering Agent to perform re-negotiation.", "labels": [[15, 111, "Intention"]]}
+{"id": 185, "text": "Peering Agent exchange content availability and load information to identify an optimal peer to handle user requests.", "labels": [[14, 116, "Intention"]]}
+{"id": 186, "text": "Primary CDN has already acquired sufficient external resources.", "labels": [[24, 62, "Intention"]]}
+{"id": 187, "text": "The user should write his/her username, password and select in which domain he/she is.", "labels": [[16, 85, "Intention"]]}
+{"id": 188, "text": "Users should have an adequate computer, network connection, and webcam with microphone.", "labels": [[13, 86, "Intention"]]}
+{"id": 189, "text": "Users will be able to upload their documents, and eventually transfer them between other users/computers.", "labels": [[22, 44, "Intention"], [61, 104, "Intention"]]}
+{"id": 190, "text": "Students will be able to use this same feature when working on projects as teams, giving them the ability to all work on one document at the same time.", "labels": [[25, 80, "Intention"], [109, 150, "Intention"]]}
+{"id": 191, "text": "This function allows the user to log o\ufb00 their account.", "labels": [[33, 53, "Intention"]]}
+{"id": 192, "text": "A moderator can change the Group Permissions of any group that falls under his jurisdiction.", "labels": [[16, 91, "Intention"]]}
+{"id": 193, "text": "A moderator can change or overwrite the bibliographical details of every publication owned by the department of group he/she is connected to.", "labels": [[16, 140, "Intention"]]}
+{"id": 194, "text": "the actor can download all the publications in a search result by clicking on the Download button next to \u201dAll\u201d at the bottom of the screen.", "labels": [[14, 139, "Intention"]]}
+{"id": 195, "text": "The user can then select which flagged items should be included on the next e-Blast.", "labels": [[18, 83, "Intention"]]}
+{"id": 196, "text": "The system should be able to print the donor\u201fs current credit amount on the donation receipt.", "labels": [[29, 92, "Intention"]]}
+{"id": 197, "text": "Users should also be able to add to their wish lists the categories of items that have been sold over the past 15 days.", "labels": [[29, 118, "Intention"]]}
+{"id": 198, "text": "Management Processes shall provide a development and training environment with the ability to migrate configurations to a production environment.", "labels": [[27, 144, "Intention"]]}
+{"id": 199, "text": "The software developer shall provide complete data specifications for authority records, bibliographic records, order records, item records, hold/request records, and other records maintained or accessed by Management Processes.", "labels": [[29, 227, "Intention"]]}
+{"id": 200, "text": "The software developer shall provide a thorough high-level description of major processes, including bibliographic record import and export, validation of bibliographic records against internal and external authority sources, and standard reports.", "labels": [[29, 246, "Intention"]]}
+{"id": 201, "text": "Management Processes are part of an enterprise-level Library Automation System.", "labels": [[25, 78, "Intention"]]}
+{"id": 202, "text": "The system supports (but does not require) streamlined staff login methods, for example staff member swipes a card to log into a terminal or the staff member logs into a terminal by using his/her individual login and password.", "labels": [[11, 74, "Intention"], [101, 137, "Intention"], [158, 225, "Intention"]]}
+{"id": 203, "text": "The system provides a utility and reports for identifying item records to purge, based on customizable criteria such as: an item has been in status \"missing\" for more than X months.", "labels": [[11, 180, "Intention"]]}
+{"id": 204, "text": "The software developer shall provide complete data specifications for authority records, bibliographic records, order records, item records, hold/request records, and other records maintained or accessed by the System Administration Module.", "labels": [[29, 239, "Intention"]]}
+{"id": 205, "text": "System upgrades and updates include written guidelines for updating servers and clients.", "labels": [[7, 87, "Intention"]]}
+{"id": 206, "text": "System supports scheduling of maintenance tasks, reports, and data exports.", "labels": [[7, 74, "Intention"]]}
+{"id": 207, "text": "Users can access a group of file management tools, that are not strictly archivingrelated.", "labels": [[10, 89, "Intention"]]}
+{"id": 208, "text": "Users are allowed to make modifications over offered by PeaZip functions, so as to adapt them to their preference and cover their needs more adequately.", "labels": [[83, 113, "Intention"], [118, 151, "Intention"], [21, 72, "Intention"]]}
+{"id": 209, "text": "A VCD will facilitate electronic Tendering by providing cross-border data and document solution that contains the necessary attestations and certificates typically required in eTendering.", "labels": [[11, 186, "Intention"]]}
+{"id": 210, "text": "The tools shall be able to scale to process large collections using distributed processing and data transport.", "labels": [[27, 109, "Intention"]]}
+{"id": 211, "text": "System shall display the hyperlinks and descriptions for the user to perform the desired functions as specified in the related UIS.", "labels": [[13, 130, "Intention"]]}
+{"id": 212, "text": "The Project Team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments.", "labels": [[22, 166, "Intention"]]}
+{"id": 213, "text": "The system shall log errors, warnings, and informational messages to an external log file on the application server.", "labels": [[17, 115, "Intention"]]}
+{"id": 214, "text": "The ELSS must output the data as an XML file for transmission to the UK fisheries administrations\u2019 ERS system.", "labels": [[14, 109, "Intention"]]}
+{"id": 215, "text": "The ELSS must provide data capture screens for the entry of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations\u2019 ERS system.", "labels": [[14, 197, "Intention"]]}
+{"id": 216, "text": "The ELSS must be able to receive acknowledgement (RET) messages transmitted from the UK fisheries administrations\u2019 ERS system.", "labels": [[25, 125, "Intention"]]}
+{"id": 217, "text": "A thermostat unit shall communicate, through wireless signals, with the master control unit.", "labels": [[24, 91, "Intention"]]}
+{"id": 218, "text": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home.", "labels": [[43, 121, "Intention"]]}
+{"id": 219, "text": "These requirements are not expected to be ful\ufb01lled by the initial release of Mashbot, but should be implemented in the next major release.", "labels": [[97, 137, "Intention"], [23, 84, "Intention"]]}
+{"id": 220, "text": "Publishers may schedule or immediately initiate actions put forth by contributors and those approved by approvers.", "labels": [[15, 113, "Intention"]]}
+{"id": 221, "text": "Mashbot will provide an interface for authenticating a user account to an external service account", "labels": [[13, 98, "Intention"]]}
+{"id": 222, "text": "The system is con\ufb01gurable to e-mail warnings about multiple failed login attempts from the same user.", "labels": [[11, 100, "Intention"]]}
+{"id": 223, "text": "The users have the ability to bulk rotate pages in different documents.", "labels": [[30, 70, "Intention"]]}
+{"id": 224, "text": "The Technology Architecture describes the logical software and hardware capabilities that are required to support the deployment of business, data, and application services.", "labels": [[28, 172, "Intention"]]}
+{"id": 225, "text": "The Application Architecture provides a blueprint for the individual application systems to be deployed, their interactions, and their relationships to the core business processes of the organization.", "labels": [[29, 199, "Intention"]]}
+{"id": 226, "text": "The Data Architecture describes the structure of an organization's logical and physical data assets and data management resources.", "labels": [[22, 129, "Intention"]]}
+{"id": 227, "text": "The HATS-GUI shall interface with HATS-SML (version 2.0) in order to parse transformation language programs.", "labels": [[19, 107, "Intention"]]}
+{"id": 228, "text": "Originator also known as requisitioner, has the original demand for each Item of goods and/or services.", "labels": [[40, 102, "Intention"]]}
+{"id": 229, "text": "The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.", "labels": [[17, 123, "Intention"]]}
+{"id": 230, "text": "The system shall provide a contractual agreement with an internet service provider who can provide 99.999% availability through their network facilities onto the internet.", "labels": [[17, 170, "Intention"]]}
+{"id": 231, "text": "Stores and tracks versions of a document/file/image.  Links /connections between versions are created and maintained.", "labels": [[0, 51, "Intention"], [54, 116, "Intention"]]}
+{"id": 232, "text": "The user can search for a publication, by typing in certain keywords using logical expressions(eg. AND, OR, NOT,. . . ) and certain symbols (eg.\u201d, \u2019 ,. . . ).", "labels": [[13, 37, "Intention"], [42, 157, "Intention"]]}
+{"id": 233, "text": "Users are allowed to instantly access other main application interfaces(specifically create archive interface and extraction interface-these features are described in following chapters), as well as changing view mode for objects(archives and files) displayed in file manager interface.", "labels": [[6, 186, "Intention"], [199, 285, "Intention"]]}
+{"id": 234, "text": "The system shall include digital programmable power switches which shall be used to monitor the current state of an appliance (e.g., a coffee maker is off or on).", "labels": [[17, 161, "Intention"]]}

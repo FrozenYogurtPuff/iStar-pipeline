@@ -34,14 +34,14 @@ from transformers import (
     AutoTokenizer,
 )
 
-from models.model_ner import (
+from src.models.model_ner import (
     MODEL_FOR_SOFTMAX_NER_MAPPING,
     MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
     AutoModelForSoftmaxNer,
 )
 
-from utils.utils_ner import convert_examples_to_features, get_labels
-from utils.utils_ner import InputExample
+from src.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file
+from src.utils.utils_ner import InputExample
 
 try:
     from torch.utils.tensorboard import SummaryWriter
@@ -56,12 +56,11 @@ MODEL_MAPS = tuple
 ALL_MODELS = sum((tuple(MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING[conf].keys()) for conf in MODEL_CONFIG_CLASSES), ())
 TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 
-DATA_DIR = 'pretrained_data/task_quality/tq_1/'
+DATA_DIR = 'pretrained_data/entity_ar_r_combined/'
 MODEL_TYPE = 'bert'
 MODEL_NAME_OR_PATH = 'bert-base-cased'
-OUTPUT_DIR = 'pretrained_model/old_task_quality/'
-LABEL = 'pretrained_data/task_quality/tq_1/labels.txt'
-print_log = False
+OUTPUT_DIR = 'pretrained_model/entity_ar_r/'
+LABEL = 'pretrained_data/entity_ar_r_combined/labels.txt'
 
 
 def set_seed(args):
@@ -87,10 +86,9 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
         model = torch.nn.DataParallel(model)
 
     # Eval!
-    if print_log:
-        logger.info("***** Running evaluation %s *****", prefix)
-        logger.info("  Num examples = %d", len(eval_dataset))
-        logger.info("  Batch size = %d", args.eval_batch_size)
+    logger.info("***** Running evaluation %s *****", prefix)
+    logger.info("  Num examples = %d", len(eval_dataset))
+    logger.info("  Batch size = %d", args.eval_batch_size)
     eval_loss = 0.0
     nb_eval_steps = 0
     preds = None
@@ -125,8 +123,8 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
         else:
             preds = np.append(preds, logits.detach().cpu().numpy(), axis=0)
             trues = np.append(trues, inputs["labels"].detach().cpu().numpy(), axis=0)
-            input_ids = np.append(trues, inputs["input_ids"].detach().cpu().numpy(), axis=0)
-            valid_mask = np.append(trues, inputs["valid_mask"].detach().cpu().numpy(), axis=0)
+            input_ids = np.append(input_ids, inputs["input_ids"].detach().cpu().numpy(), axis=0)
+            valid_mask = np.append(valid_mask, inputs["valid_mask"].detach().cpu().numpy(), axis=0)
 
     eval_loss = eval_loss / nb_eval_steps
     preds_argmax = np.argmax(preds, axis=2)
@@ -134,6 +132,7 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
     label_map = {i: label for i, label in enumerate(labels)}
 
     preds_list = [[] for _ in range(preds.shape[0])]
+    trues_list = [[] for _ in range(trues.shape[0])]
     matrix = [[] for _ in range(preds.shape[0])]
     tokens_bert = list()
 
@@ -146,22 +145,26 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
                 res = softmax(torch.from_numpy(preds[i, j, :]))
                 matrix[i].append(res.tolist())
                 preds_list[i].append(label_map[preds_argmax[i][j]])
+                trues_list[i].append(label_map[trues[i][j]])
         assert len(tokens) == len(matrix[i])
         tokens_bert.append(tokens)
 
 
-    return matrix, preds_list, tokens_bert
+    return matrix, preds_list, trues_list, tokens_bert
 
 
 # 制作数据集
 def load_and_cache_examples(args, tokenizer, labels, pad_token_label_id, data):
+    # Make sure only the first process in distributed training process the dataset, and the others will use the cache
     if args.local_rank not in [-1, 0] and not evaluate:
-        torch.distributed.barrier()  # Make sure only the first process in distributed training process the dataset, and the others will use the cache
+        torch.distributed.barrier()
 
-    if print_log:
-        logger.info("Creating features from dataset file at %s", args.data_dir)
+    logger.info("Creating features from dataset file at %s", args.data_dir)
     # examples = read_examples_from_file(args.data_dir, mode)
-    examples = read_examples_from_json(data)
+    if data:
+        examples = read_examples_from_json(data)
+    else:
+        examples = read_examples_from_file(args.data_dir, "dev")
     features = convert_examples_to_features(
         examples,
         labels,
@@ -173,7 +176,8 @@ def load_and_cache_examples(args, tokenizer, labels, pad_token_label_id, data):
         cls_token_segment_id=2 if args.model_type in ["xlnet"] else 0,
         sep_token=tokenizer.sep_token,
         sep_token_extra=bool(args.model_type in ["roberta"]),
-        # roberta uses an extra separator b/w pairs of sentences, cf. github.com/pytorch/fairseq/commit/1684e166e3da03f5b600dbb7855cb98ddfcd0805
+        # roberta uses an extra separator b/w pairs of sentences,
+        # cf. github.com/pytorch/fairseq/commit/1684e166e3da03f5b600dbb7855cb98ddfcd0805
         pad_on_left=bool(args.model_type in ["xlnet"]),
         # pad on the left for xlnet
         pad_token=tokenizer.pad_token_id,
@@ -181,8 +185,9 @@ def load_and_cache_examples(args, tokenizer, labels, pad_token_label_id, data):
         pad_token_label_id=pad_token_label_id,
     )
 
+    # Make sure only the first process in distributed training process the dataset, and the others will use the cache
     if args.local_rank == 0 and not evaluate:
-        torch.distributed.barrier()  # Make sure only the first process in distributed training process the dataset, and the others will use the cache
+        torch.distributed.barrier()
 
     # Convert to Tensors and build dataset
     all_input_ids = torch.tensor([f.input_ids for f in features], dtype=torch.long)
@@ -196,11 +201,17 @@ def load_and_cache_examples(args, tokenizer, labels, pad_token_label_id, data):
 
 
 def read_examples_from_json(data):
+    """
+    Send sents via json format
+
+    :param data: [{sent: str, labels: Optional[List[str]]}]
+    :return: List[InputExample]
+    """
     guid_index = 1
     examples = []
     for item in data:
         if 'words' not in item:
-            item['words'] = list(filter(str.split, re.split('([,|.|?|!|"|:|(|)|/| ])', item['sent'])))
+            item['words'] = list(filter(str.split, re.split('([,.?!":()/ ])', item['sent'])))
         if 'labels' not in item:
             item['labels'] = ['O' for _ in range(len(item['words']))]
         examples.append(InputExample(guid="{}".format(guid_index), words=item['words'], labels=item['labels']))
@@ -208,11 +219,10 @@ def read_examples_from_json(data):
     return examples
 
 
-def predict_task(data):
-    matrix, preds_list, tokens_bert = evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix='test')
+def predict_entity(data):
+    matrix, preds_list, trues_list, tokens_bert = evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix='test')
 
-    # TODO: 改为json输出
-    return preds_list, matrix, tokens_bert
+    return preds_list, trues_list, matrix, tokens_bert
 
 
 parser = argparse.ArgumentParser()
@@ -353,22 +363,14 @@ else:  # Initializes the distributed backend which will take care of sychronizin
     args.n_gpu = 1
 args.device = device
 
-# Setup logging
-logging.basicConfig(
-    format="%(asctime)s - %(levelname)s - %(name)s -   %(message)s",
-    datefmt="%m/%d/%Y %H:%M:%S",
-    level=logging.INFO if args.local_rank in [-1, 0] else logging.WARN,
+logger.info(
+    "Process rank: %s, device: %s, n_gpu: %s, distributed training: %s, 16-bits training: %s",
+    args.local_rank,
+    device,
+    args.n_gpu,
+    bool(args.local_rank != -1),
+    args.fp16,
 )
-
-if print_log:
-    logger.warning(
-        "Process rank: %s, device: %s, n_gpu: %s, distributed training: %s, 16-bits training: %s",
-        args.local_rank,
-        device,
-        args.n_gpu,
-        bool(args.local_rank != -1),
-        args.fp16,
-    )
 
 # Set seed
 set_seed(args)
@@ -396,14 +398,12 @@ setattr(config, 'loss_type', args.loss_type)
 #####
 tokenizer_args = {k: v for k, v in vars(args).items() if v is not None and k in TOKENIZER_ARGS}
 
-if print_log:
-    logger.info("Tokenizer arguments: %s", tokenizer_args)
+logger.info("Tokenizer arguments: %s", tokenizer_args)
 
 if args.local_rank == 0:
     torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
 
-if print_log:
-    logger.info("Training/evaluation parameters %s", args)
+logger.info("Training/evaluation parameters %s", args)
 
 tokenizer = AutoTokenizer.from_pretrained(args.output_dir, **tokenizer_args)
 checkpoint = os.path.join(args.output_dir, 'best_checkpoint')

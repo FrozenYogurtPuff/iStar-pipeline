@@ -1,0 +1,7 @@
+numpy~=1.19.2
+tqdm>=4.59.0
+transformers~=4.8.1
+tensorboardx>=2.4
+seqeval~=1.2.2
+spacy~=2.3.2
+pytorch>=1.7.1

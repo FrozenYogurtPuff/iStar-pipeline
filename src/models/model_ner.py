@@ -14,12 +14,12 @@ from transformers import (
     XLM_ROBERTA_PRETRAINED_CONFIG_ARCHIVE_MAP,
 )
 
-from models.albert_ner import AlbertCrfForNer, AlbertSoftmaxForNer, AlbertSpanForNer
-from models.bert_ner import BertCrfForNer, BertSoftmaxForNer, BertSpanForNer
-from models.electra_ner import ElectraCrfForNer, ElectraSoftmaxForNer, ElectraSpanForNer
-from models.roberta_ner import RobertaCrfForNer, RobertaSoftmaxForNer, RobertaSpanForNer
-from models.xlm_ner import XLMCrfForNer, XLMSoftmaxForNer, XLMSpanForNer
-from models.distilbert_ner import DistilBertCrfForNer, DistilBertSoftmaxForNer, DistilBertSpanForNer
+from src.models.albert_ner import AlbertCrfForNer, AlbertSoftmaxForNer, AlbertSpanForNer
+from src.models.bert_ner import BertCrfForNer, BertSoftmaxForNer, BertSpanForNer
+from src.models.electra_ner import ElectraCrfForNer, ElectraSoftmaxForNer, ElectraSpanForNer
+from src.models.roberta_ner import RobertaCrfForNer, RobertaSoftmaxForNer, RobertaSpanForNer
+from src.models.xlm_ner import XLMCrfForNer, XLMSoftmaxForNer, XLMSpanForNer
+from src.models.distilbert_ner import DistilBertCrfForNer, DistilBertSoftmaxForNer, DistilBertSpanForNer
 
 MODEL_FOR_SOFTMAX_NER_MAPPING = OrderedDict(
     [

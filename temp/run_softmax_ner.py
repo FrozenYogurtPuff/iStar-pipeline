@@ -22,7 +22,7 @@ import random
 
 import numpy as np
 import torch
-from utils.utils_metrics import get_entities_bio, f1_score, classification_report
+from src.utils.utils_metrics import get_entities_bio, f1_score, classification_report
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, TensorDataset
 from torch.utils.data.distributed import DistributedSampler
@@ -35,14 +35,14 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 
-from models.model_ner import (
+from src.models import (
     MODEL_FOR_SOFTMAX_NER_MAPPING,
     MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
     AutoModelForSoftmaxNer,
 )
 
-from utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file, collate_fn
-from utils.utils_adversarial import FGM, PGD
+from src.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file, collate_fn
+from src.utils.utils_adversarial import FGM, PGD
 
 
 try:
@@ -497,7 +497,7 @@ def main():
         help="The maximum total input sequence length after tokenization. Sequences longer "
              "than this will be truncated, sequences shorter will be padded.",
     )
-    parser.add_argument("--do_train", default=True, action="store_true", help="Whether to run training.")
+    parser.add_argument("--do_train", default=False, action="store_true", help="Whether to run training.")
     parser.add_argument("--do_eval", default=True, action="store_true", help="Whether to run eval on the dev set.")
     parser.add_argument("--do_predict", action="store_true", help="Whether to run predictions on the test set.")
     parser.add_argument(

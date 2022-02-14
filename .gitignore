@@ -1,4 +1,5 @@
 __pycache__
 .idea
 pretrained_model
-
+.ipynb_checkpoints
+**/cached_*
