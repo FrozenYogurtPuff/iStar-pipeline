@@ -56,6 +56,7 @@ MODEL_MAPS = tuple
 ALL_MODELS = sum((tuple(MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING[conf].keys()) for conf in MODEL_CONFIG_CLASSES), ())
 TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 
+# TODO: 修改为通过配置文件导入
 DATA_DIR = 'pretrained_data/entity_ar_r_combined/'
 MODEL_TYPE = 'bert'
 MODEL_NAME_OR_PATH = 'bert-base-cased'
@@ -142,7 +143,7 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix=""
             if valid_mask[i, j] != 0 and input_ids[i, j] not in [101, 102]:
                 tokens.append(tokenizer.convert_ids_to_tokens(int(input_ids[i, j])))
             if trues[i, j] != pad_token_label_id:
-                res = softmax(torch.from_numpy(preds[i, j, :]))
+                res = softmax(torch.from_numpy(preds[i, j, :]), dim=0)
                 matrix[i].append(res.tolist())
                 preds_list[i].append(label_map[preds_argmax[i][j]])
                 trues_list[i].append(label_map[trues[i][j]])
