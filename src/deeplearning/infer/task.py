@@ -218,7 +218,7 @@ def read_examples_from_json(data):
     return examples
 
 
-def predict_task(data):
+def predict(data):
     matrix, preds_list, trues_list, tokens_bert = evaluate(args, model, tokenizer, labels, pad_token_label_id, data,
                                                            prefix='test')
 

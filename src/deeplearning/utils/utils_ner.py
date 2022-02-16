@@ -1,7 +1,7 @@
 import logging
 import os
 import torch
-from src.network.utils.utils_metrics import get_entities
+from src.deeplearning.utils.utils_metrics import get_entities
 
 logger = logging.getLogger(__name__)
 print_flag = False

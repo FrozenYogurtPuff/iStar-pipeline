@@ -220,193 +220,193 @@ def read_examples_from_json(data):
     return examples
 
 
-def predict_entity(data):
+def predict(data):
     matrix, preds_list, trues_list, tokens_bert = evaluate(args, model, tokenizer, labels, pad_token_label_id, data, prefix='test')
 
     return preds_list, trues_list, matrix, tokens_bert
 
 
-parser = argparse.ArgumentParser()
+def initial_model():
+    parser = argparse.ArgumentParser()
+    # Required parameters
+    parser.add_argument(
+        "--data_dir",
+        default=DATA_DIR,
+        type=str,
+        help="The input data dir. Should contain the training files for the CoNLL-2003 NER task.",
+    )
+    parser.add_argument(
+        "--model_type",
+        default=MODEL_TYPE,
+        type=str,
+        help="Model type selected in the list: " + ", ".join(MODEL_TYPES),
+    )
+    parser.add_argument(
+        "--model_name_or_path",
+        default=MODEL_NAME_OR_PATH,
+        type=str,
+        help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS),
+    )
+    parser.add_argument(
+        "--output_dir",
+        default=OUTPUT_DIR,
+        type=str,
+        help="The output directory where the model predictions and checkpoints will be written.",
+    )
 
-# Required parameters
-parser.add_argument(
-    "--data_dir",
-    default=DATA_DIR,
-    type=str,
-    help="The input data dir. Should contain the training files for the CoNLL-2003 NER task.",
-)
-parser.add_argument(
-    "--model_type",
-    default=MODEL_TYPE,
-    type=str,
-    help="Model type selected in the list: " + ", ".join(MODEL_TYPES),
-)
-parser.add_argument(
-    "--model_name_or_path",
-    default=MODEL_NAME_OR_PATH,
-    type=str,
-    help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS),
-)
-parser.add_argument(
-    "--output_dir",
-    default=OUTPUT_DIR,
-    type=str,
-    help="The output directory where the model predictions and checkpoints will be written.",
-)
+    # Other parameters
+    parser.add_argument(
+        "--labels",
+        default=LABEL,
+        type=str,
+        help="Path to a file containing all labels. If not specified, CoNLL-2003 labels are used.",
+    )
+    parser.add_argument(
+        "--config_name", default="", type=str, help="Pretrained config name or path if not the same as model_name"
+    )
+    parser.add_argument(
+        "--tokenizer_name",
+        default="",
+        type=str,
+        help="Pretrained tokenizer name or path if not the same as model_name",
+    )
+    parser.add_argument(
+        "--cache_dir",
+        default="",
+        type=str,
+        help="Where do you want to store the pre-trained models downloaded from s3",
+    )
+    parser.add_argument(
+        "--max_seq_length",
+        default=128,
+        type=int,
+        help="The maximum total input sequence length after tokenization. Sequences longer "
+             "than this will be truncated, sequences shorter will be padded.",
+    )
+    parser.add_argument(
+        "--do_lower_case", action="store_true", help="Set this flag if you are using an uncased model."
+    )
+    parser.add_argument(
+        "--keep_accents", action="store_const", const=True, help="Set this flag if model is trained with accents."
+    )
+    parser.add_argument(
+        "--strip_accents", action="store_const", const=True, help="Set this flag if model is trained without accents."
+    )
+    parser.add_argument("--use_fast", action="store_const", const=True, help="Set this flag to use fast tokenization.")
+    parser.add_argument("--per_gpu_train_batch_size", default=16, type=int, help="Batch size per GPU/CPU for training.")
+    parser.add_argument(
+        "--per_gpu_eval_batch_size", default=16, type=int, help="Batch size per GPU/CPU for evaluation."
+    )
+    parser.add_argument(
+        "--gradient_accumulation_steps",
+        type=int,
+        default=1,
+        help="Number of updates steps to accumulate before performing a backward/update pass.",
+    )
+    parser.add_argument("--loss_type", default="lsr", type=str, help="The loss function to optimize.")
+    parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
+    parser.add_argument("--bert_lr", type=float, help="The initial learning rate for BERT.")
+    parser.add_argument("--classifier_lr", type=float, help="The initial learning rate of classifier.")
+    parser.add_argument("--adv_training", default='fgm', choices=['fgm', 'pgd'], help="fgm adversarial training")
 
-# Other parameters
-parser.add_argument(
-    "--labels",
-    default=LABEL,
-    type=str,
-    help="Path to a file containing all labels. If not specified, CoNLL-2003 labels are used.",
-)
-parser.add_argument(
-    "--config_name", default="", type=str, help="Pretrained config name or path if not the same as model_name"
-)
-parser.add_argument(
-    "--tokenizer_name",
-    default="",
-    type=str,
-    help="Pretrained tokenizer name or path if not the same as model_name",
-)
-parser.add_argument(
-    "--cache_dir",
-    default="",
-    type=str,
-    help="Where do you want to store the pre-trained models downloaded from s3",
-)
-parser.add_argument(
-    "--max_seq_length",
-    default=128,
-    type=int,
-    help="The maximum total input sequence length after tokenization. Sequences longer "
-         "than this will be truncated, sequences shorter will be padded.",
-)
-parser.add_argument(
-    "--do_lower_case", action="store_true", help="Set this flag if you are using an uncased model."
-)
-parser.add_argument(
-    "--keep_accents", action="store_const", const=True, help="Set this flag if model is trained with accents."
-)
-parser.add_argument(
-    "--strip_accents", action="store_const", const=True, help="Set this flag if model is trained without accents."
-)
-parser.add_argument("--use_fast", action="store_const", const=True, help="Set this flag to use fast tokenization.")
-parser.add_argument("--per_gpu_train_batch_size", default=16, type=int, help="Batch size per GPU/CPU for training.")
-parser.add_argument(
-    "--per_gpu_eval_batch_size", default=16, type=int, help="Batch size per GPU/CPU for evaluation."
-)
-parser.add_argument(
-    "--gradient_accumulation_steps",
-    type=int,
-    default=1,
-    help="Number of updates steps to accumulate before performing a backward/update pass.",
-)
-parser.add_argument("--loss_type", default="lsr", type=str, help="The loss function to optimize.")
-parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
-parser.add_argument("--bert_lr", type=float, help="The initial learning rate for BERT.")
-parser.add_argument("--classifier_lr", type=float, help="The initial learning rate of classifier.")
-parser.add_argument("--adv_training", default='fgm', choices=['fgm', 'pgd'], help="fgm adversarial training")
+    parser.add_argument("--weight_decay", default=0.0, type=float, help="Weight decay if we apply some.")
+    parser.add_argument("--adam_epsilon", default=1e-8, type=float, help="Epsilon for Adam optimizer.")
+    parser.add_argument("--max_grad_norm", default=1.0, type=float, help="Max gradient norm.")
+    parser.add_argument(
+        "--num_train_epochs", default=3.0, type=float, help="Total number of training epochs to perform."
+    )
+    parser.add_argument(
+        "--max_steps",
+        default=-1,
+        type=int,
+        help="If > 0: set total number of training steps to perform. Override num_train_epochs.",
+    )
+    parser.add_argument("--warmup_steps", default=0, type=int, help="Linear warmup over warmup_steps.")
 
-parser.add_argument("--weight_decay", default=0.0, type=float, help="Weight decay if we apply some.")
-parser.add_argument("--adam_epsilon", default=1e-8, type=float, help="Epsilon for Adam optimizer.")
-parser.add_argument("--max_grad_norm", default=1.0, type=float, help="Max gradient norm.")
-parser.add_argument(
-    "--num_train_epochs", default=3.0, type=float, help="Total number of training epochs to perform."
-)
-parser.add_argument(
-    "--max_steps",
-    default=-1,
-    type=int,
-    help="If > 0: set total number of training steps to perform. Override num_train_epochs.",
-)
-parser.add_argument("--warmup_steps", default=0, type=int, help="Linear warmup over warmup_steps.")
+    parser.add_argument("--logging_steps", type=str, default='0.2', help="Log every X updates steps.")
+    parser.add_argument(
+        "--eval_all_checkpoints",
+        action="store_true",
+        help="Evaluate all checkpoints starting with the same prefix as model_name ending and ending with step number",
+    )
+    parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
+    parser.add_argument(
+        "--overwrite_output_dir", action="store_true", help="Overwrite the content of the output directory"
+    )
+    parser.add_argument(
+        "--overwrite_cache", action="store_true", help="Overwrite the cached training and evaluation sets"
+    )
+    parser.add_argument("--seed", type=int, default=42, help="random seed for initialization")
 
-parser.add_argument("--logging_steps", type=str, default='0.2', help="Log every X updates steps.")
-parser.add_argument(
-    "--eval_all_checkpoints",
-    action="store_true",
-    help="Evaluate all checkpoints starting with the same prefix as model_name ending and ending with step number",
-)
-parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
-parser.add_argument(
-    "--overwrite_output_dir", action="store_true", help="Overwrite the content of the output directory"
-)
-parser.add_argument(
-    "--overwrite_cache", action="store_true", help="Overwrite the cached training and evaluation sets"
-)
-parser.add_argument("--seed", type=int, default=42, help="random seed for initialization")
+    parser.add_argument(
+        "--fp16",
+        action="store_true",
+        help="Whether to use 16-bit (mixed) precision (through NVIDIA apex) instead of 32-bit",
+    )
+    parser.add_argument(
+        "--fp16_opt_level",
+        type=str,
+        default="O1",
+        help="For fp16: Apex AMP optimization level selected in ['O0', 'O1', 'O2', and 'O3']."
+             "See details at https://nvidia.github.io/apex/amp.html",
+    )
+    parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
+    args, other_args = parser.parse_known_args()
 
-parser.add_argument(
-    "--fp16",
-    action="store_true",
-    help="Whether to use 16-bit (mixed) precision (through NVIDIA apex) instead of 32-bit",
-)
-parser.add_argument(
-    "--fp16_opt_level",
-    type=str,
-    default="O1",
-    help="For fp16: Apex AMP optimization level selected in ['O0', 'O1', 'O2', and 'O3']."
-         "See details at https://nvidia.github.io/apex/amp.html",
-)
-parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
-args, other_args = parser.parse_known_args()
+    # Setup CUDA, GPU & distributed training
+    if args.local_rank == -1 or args.no_cuda:
+        device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
+        args.n_gpu = 0 if args.no_cuda else torch.cuda.device_count()
+    else:  # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
+        torch.cuda.set_device(args.local_rank)
+        device = torch.device("cuda", args.local_rank)
+        torch.distributed.init_process_group(backend="nccl")
+        args.n_gpu = 1
+    args.device = device
 
-# Setup CUDA, GPU & distributed training
-if args.local_rank == -1 or args.no_cuda:
-    device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
-    args.n_gpu = 0 if args.no_cuda else torch.cuda.device_count()
-else:  # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
-    torch.cuda.set_device(args.local_rank)
-    device = torch.device("cuda", args.local_rank)
-    torch.distributed.init_process_group(backend="nccl")
-    args.n_gpu = 1
-args.device = device
+    logger.info(
+        "Process rank: %s, device: %s, n_gpu: %s, distributed training: %s, 16-bits training: %s",
+        args.local_rank,
+        device,
+        args.n_gpu,
+        bool(args.local_rank != -1),
+        args.fp16,
+    )
 
-logger.info(
-    "Process rank: %s, device: %s, n_gpu: %s, distributed training: %s, 16-bits training: %s",
-    args.local_rank,
-    device,
-    args.n_gpu,
-    bool(args.local_rank != -1),
-    args.fp16,
-)
+    # Set seed
+    set_seed(args)
 
-# Set seed
-set_seed(args)
+    # Prepare CONLL-2003 task
+    labels = get_labels(args.labels)
+    num_labels = len(labels)
+    # Use cross entropy ignore index as padding label id so that only real label ids contribute to the loss later
+    pad_token_label_id = CrossEntropyLoss().ignore_index
 
-# Prepare CONLL-2003 task
-labels = get_labels(args.labels)
-num_labels = len(labels)
-# Use cross entropy ignore index as padding label id so that only real label ids contribute to the loss later
-pad_token_label_id = CrossEntropyLoss().ignore_index
+    # Load pretrained model and tokenizer
+    if args.local_rank not in [-1, 0]:
+        torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
 
-# Load pretrained model and tokenizer
-if args.local_rank not in [-1, 0]:
-    torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
+    args.model_type = args.model_type.lower()
+    config = AutoConfig.from_pretrained(
+        args.config_name if args.config_name else args.model_name_or_path,
+        num_labels=num_labels,
+        id2label={str(i): label for i, label in enumerate(labels)},
+        label2id={label: i for i, label in enumerate(labels)},
+        cache_dir=args.cache_dir if args.cache_dir else None,
+    )
+    #####
+    setattr(config, 'loss_type', args.loss_type)
+    #####
+    tokenizer_args = {k: v for k, v in vars(args).items() if v is not None and k in TOKENIZER_ARGS}
 
-args.model_type = args.model_type.lower()
-config = AutoConfig.from_pretrained(
-    args.config_name if args.config_name else args.model_name_or_path,
-    num_labels=num_labels,
-    id2label={str(i): label for i, label in enumerate(labels)},
-    label2id={label: i for i, label in enumerate(labels)},
-    cache_dir=args.cache_dir if args.cache_dir else None,
-)
-#####
-setattr(config, 'loss_type', args.loss_type)
-#####
-tokenizer_args = {k: v for k, v in vars(args).items() if v is not None and k in TOKENIZER_ARGS}
+    logger.info("Tokenizer arguments: %s", tokenizer_args)
 
-logger.info("Tokenizer arguments: %s", tokenizer_args)
+    if args.local_rank == 0:
+        torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
 
-if args.local_rank == 0:
-    torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
+    logger.info("Training/evaluation parameters %s", args)
 
-logger.info("Training/evaluation parameters %s", args)
-
-tokenizer = AutoTokenizer.from_pretrained(args.output_dir, **tokenizer_args)
-checkpoint = os.path.join(args.output_dir, 'best_checkpoint')
-model = AutoModelForSoftmaxNer.from_pretrained(checkpoint)
-model.to(args.device)
+    tokenizer = AutoTokenizer.from_pretrained(args.output_dir, **tokenizer_args)
+    checkpoint = os.path.join(args.output_dir, 'best_checkpoint')
+    model = AutoModelForSoftmaxNer.from_pretrained(checkpoint)
+    model.to(args.device)
