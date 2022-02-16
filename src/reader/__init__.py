@@ -1,1 +1,1 @@
-from .main import get_result
+from src.reader.main import get_result

@@ -11,10 +11,10 @@ def dative(s: SpacySpan, b: BertEntityLabelList, s2b: AlignmentList) -> EntityFi
     actor: BertEntityLabelRaw = 'Actor'
 
     for token in s:
-        if token.pos_ == 'ADP' and token.tag_ == 'dative':
+        if token.pos_ == 'ADP' and token.dep_ == 'dative':
             key = list(token.children)
             for k in key:
-                if k.tag_ == 'pobj':
+                if k.dep_ == 'pobj':
                     unchecked.append((k, *k.conjuncts))
 
     for li in unchecked:

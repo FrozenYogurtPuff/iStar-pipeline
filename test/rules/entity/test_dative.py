@@ -15,12 +15,12 @@ def test_dative():
 
     s = nlp(sent)
     spacy_tokens = [i.text for i in s]
-    b, _, _, bert_tokens = wrap_entity_oneline(sent)
-    assert len(b) != 1
+    preds_list, trues_list, matrix, bert_tokens = wrap_entity_oneline(sent)
+    assert len(preds_list) != 1
     assert len(bert_tokens) != 1
 
     s2b, _ = tokenizations.get_alignments(spacy_tokens, bert_tokens)
-    result = dative(s[:], b, s2b)
+    result = dative(s[:], preds_list, s2b)
     logging.getLogger(__name__).debug(result)
 
 
