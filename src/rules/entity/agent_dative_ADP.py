@@ -1,6 +1,10 @@
+# 66/73
+# dative 7/8
+# agent 59/65
+
 import logging
 
-from src.typing import SpacySpan, BertEntityLabelRaw, EntityRuleReturn
+from src.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
 
 
 # Show things to [Anna].
@@ -9,7 +13,7 @@ from src.typing import SpacySpan, BertEntityLabelRaw, EntityRuleReturn
 # carried out by [immigrants].
 # by (ADP, agent) -> immigrants (pobj)
 def agent_dative_ADP(s: SpacySpan) -> EntityRuleReturn:
-    actor: BertEntityLabelRaw = 'Actor'
+    both: FixEntityLabel = 'Both'
     result = list()
 
     for token in s:
@@ -17,7 +21,9 @@ def agent_dative_ADP(s: SpacySpan) -> EntityRuleReturn:
             key = list(token.children)
             for k in key:
                 if k.dep_ == 'pobj':
-                    result.extend((k, *k.conjuncts))
+                    cur = (k, *k.conjuncts)
+                    for c in cur:
+                        result.append((c, both))
 
     logging.getLogger(__name__).debug(f'Length {len(result)}: {result}')
-    return result, actor
+    return result

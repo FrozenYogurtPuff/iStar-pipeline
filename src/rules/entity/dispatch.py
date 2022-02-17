@@ -8,36 +8,51 @@ from src.typing import (
     SpacySpan,
     EntityRulePlugins
 )
+from src.rules.utils.seq import is_entity_type_ok
+from src.rules.utils.spacy import get_token_idx
 
 from ..config import entity_plugins
 
 
 def dispatch(s: SpacySpan, b: List[BertEntityLabel],
-             s2b: List[Alignment], funcs: EntityRulePlugins = entity_plugins) -> List[EntityFix]:
+             s2b: List[Alignment], add_all: bool = False,
+             funcs: EntityRulePlugins = entity_plugins) -> List[EntityFix]:
     unchecked = list()
+    both = list()
     result = list()
 
     for func in funcs:
-        li, label = func(s)
-        for ul in li:
-            unchecked.append((ul, label))
+        packs = func(s)  # TODO: label can be resolved as tuple
 
-    remove_duplicate = set()
-    for item in unchecked:
-        token, label = item
-        remove_duplicate.add((token.i - token.sent.start, label))
+        for token, label in set(packs):
+            if label == 'Both':
+                both.append(token)
+            else:
+                unchecked.append((token, label))
 
-    for item in remove_duplicate:
-        fix = False
-        idx, label = item
-        map_idx = s2b[idx]
-        for num in map_idx:
-            if not b[num].endswith(label):
-                fix = True
+    # Add both sign 'Both'
+    for token in both:
+        for token_hat, _ in unchecked:
+            if token == token_hat:
+                break
+        unchecked.append((token, 'Both'))
 
-        if fix:
+    for token, label in unchecked:
+        idx = get_token_idx(token)
+        if add_all:
             logging.getLogger(__name__).debug(f"{s.text}\n"
-                                              f"token: {s[idx].text}, idx: {idx}, map_idx:{map_idx}, label: {label}")
-            result.append((idx, map_idx, label))
+                                              f"token: {token.text}, idx: {idx}, label: {label}")
+            result.append((token, idx, [], label))
+        else:
+            select = False
+            map_idx = s2b[idx]
+            for num in map_idx:
+                if not is_entity_type_ok(label, b[num]):
+                    select = True
+            if select:
+                logging.getLogger(__name__).debug(f"{s.text}\n"
+                                                  f"token: {token.text}, idx: {idx},"
+                                                  f"map_idx:{map_idx}, label: {label}")
+                result.append((token, idx, map_idx, label))
 
     return result
