@@ -1,5 +1,9 @@
+import logging
+
 from src.deeplearning.infer.entity import entity_model
 from src.deeplearning.infer.intention import intention_model
+
+logger = logging.getLogger(__name__)
 
 
 def wrap_oneline(sent, labels=None):
@@ -14,8 +18,11 @@ def unwrap_oneline(data):
 
 
 def wrap_entity_oneline(sent, labels=None):
+    logger.debug(f'Entity one-line input: {sent}')
     data = wrap_oneline(sent, labels)
     result = entity_model.predict([data])
+    logger.debug(f'Entity one-line output result: {result[0]}\n'
+                 f'Entity one-line tokens: {result[3]}')
     return unwrap_oneline(result)
 
 

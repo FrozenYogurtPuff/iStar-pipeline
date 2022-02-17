@@ -8,7 +8,7 @@ from src.deeplearning import wrap_entity_oneline
 
 def test_dispatch():
     nlp: spacy.language.Language = spacy.load('en_core_web_lg')
-    sents = ["Bought me these books.", "Show things to Anna."]
+    sents = ["Bought me these books.", "Show things to Anna.", "Carried out by immigrants"]
     for sent in sents:
         s = nlp(sent)
         spacy_tokens = [i.text for i in s]
