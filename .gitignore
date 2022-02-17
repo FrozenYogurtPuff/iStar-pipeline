@@ -3,3 +3,4 @@ __pycache__
 pretrained_model
 .ipynb_checkpoints
 **/cached_*
+.pytest_cache

@@ -1,4 +1,4 @@
-from typing import List, Literal, Tuple
+from typing import List, Literal, Tuple, Callable, Sequence
 import spacy.tokens
 
 # BERT
@@ -9,17 +9,16 @@ BertEntityLabelRaw = Literal['O', 'Actor', 'Resource']
 BertIntentionLabelRaw = Literal['O', 'Core', 'Cond', 'Aux', 'Quality']
 
 Token = str
-BertToken = List[Token]
-BertEntityLabelList = List[BertEntityLabel]
-BertIntentionLabelList = List[BertIntentionLabel]
 BertMatrix = List[List[int]]
 
 # Alignment
 Alignment = List[int]
-AlignmentList = List[Alignment]
-
-EntityFix = Tuple[Alignment, BertEntityLabelRaw]
-EntityFixList = List[EntityFix]
 
 # Spacy
 SpacySpan = spacy.tokens.Span
+SpacyToken = spacy.tokens.Token
+
+# Rule
+EntityRuleReturn = Tuple[List[SpacyToken], BertEntityLabelRaw]
+EntityRulePlugins = Sequence[Callable[[SpacySpan], EntityRuleReturn]]
+EntityFix = Tuple[int, Alignment, BertEntityLabelRaw]
