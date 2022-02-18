@@ -4,7 +4,7 @@
 
 import logging
 
-from src.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
+from src.utils.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
 
 
 # Bought [me] these books.

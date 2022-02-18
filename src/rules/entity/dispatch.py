@@ -1,7 +1,7 @@
 import logging
 from typing import List
 
-from src.typing import (
+from src.utils.typing import (
     Alignment,
     BertEntityLabel,
     EntityFix,
@@ -22,7 +22,7 @@ def dispatch(s: SpacySpan, b: List[BertEntityLabel],
     result = list()
 
     for func in funcs:
-        packs = func(s)  # TODO: label can be resolved as tuple
+        packs = func(s)
 
         for token, label in set(packs):
             if label == 'Both':

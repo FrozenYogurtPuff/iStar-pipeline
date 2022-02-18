@@ -9,7 +9,7 @@ from src.rules.config import entity_plugins
 from src.rules.entity.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
 from src.rules.utils.spacy import char_idx_to_word_idx
-from src.typing import DatasetLabel, EntityFix, SpacySpan
+from src.utils.typing import DatasetLabel, EntityFix, SpacySpan
 
 logger = logging.getLogger(__name__)
 
@@ -45,7 +45,7 @@ def test_entity_rules_precision():
     target = 0
     for i, sent, anno in res:
         s = nlp(sent)
-        result = dispatch(s[:], [], [], add_all=True, funcs=[entity_plugins[2]])
+        result = dispatch(s[:], [], [], add_all=True, funcs=[entity_plugins[-1]])
         cur_length = len(result)
         total += cur_length
 
@@ -56,8 +56,10 @@ def test_entity_rules_precision():
             logger.warning(f'Line {i}: {result}, token: {result[0][0]}')
             logger.warning(f'current Hit {precs} out of {cur_length}')
         else:
-            logger.debug(f'Line {i}: {result}')
-            logger.debug(f'current Hit {precs} out of {cur_length}')
+            if cur_length != 0:
+                logger.info(f'Sent: {s.text}')
+                logger.info(f'Line {i}: {result}')
+                logger.info(f'current Hit {precs} out of {cur_length}')
     precision = target / total
     logger.error(f'Total precision: {precision} about {target}/{total}')
 

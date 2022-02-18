@@ -1,12 +1,12 @@
 # 117/143
 # PRON/PROPN 94/108
-# 々 [Resource] 89/108
+# 〃 [Resource] 89/108
 # TODO: 对于 PRON/PROPN 的 Resource，其实捕捉到的是 their 等人称，需要之后追加 merge noun chunks
 # NOUN 28/35
 
 import logging
 
-from src.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
+from src.utils.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
 
 
 # [Anna]'s home.
