@@ -1,18 +1,28 @@
 import logging
 from pathlib import Path
 
-from src.utils.log_color import CustomFormatter
+try:
+    import colorlog
+except ImportError:
+    colorlog = None
 
-color_console = logging.StreamHandler()
-color_console.setLevel(logging.DEBUG)
-color_console.setFormatter(CustomFormatter())
+_format = '%(asctime)s [%(levelname)8s] (%(name)s:%(lineno)s) - %(message)s'
+_datefmt = '%Y/%m/%d %H:%M:%S'
 
-# TODO: dl.infer.base fallback 到其它 logger 了
-logging.basicConfig(
-    format="%(asctime)s [%(levelname)8s] (%(name)s:%(lineno)s) - %(message)s",
-    datefmt="%m/%d/%Y %H:%M:%S",
-    level=logging.DEBUG,
-    handlers=[color_console]
-)
+console = logging.StreamHandler()
+if colorlog:
+    formatter = colorlog.ColoredFormatter(
+        fmt='%(log_color)s' + _format,
+        datefmt=_datefmt,
+    )
+else:
+    formatter = logging.Formatter(
+        fmt=_format,
+        datefmt=_datefmt
+    )
+console.setFormatter(formatter)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(console)
 
 ROOT_DIR = str(Path(__file__).parents[1])

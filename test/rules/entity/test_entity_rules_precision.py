@@ -44,6 +44,7 @@ def test_entity_rules_precision():
     total = 0
     target = 0
     for i, sent, anno in res:
+        logger.debug(f'Before dispatch in test: {sent}')
         s = nlp(sent)
         result = dispatch(s[:], [], [], add_all=True, funcs=[entity_plugins[-1]])
         cur_length = len(result)
@@ -60,6 +61,10 @@ def test_entity_rules_precision():
                 logger.info(f'Sent: {s.text}')
                 logger.info(f'Line {i}: {result}')
                 logger.info(f'current Hit {precs} out of {cur_length}')
+            else:
+                logger.debug(f'Sent: {s.text}')
+                logger.debug(f'Line {i}: {result}')
+                logger.debug(f'current Hit 0 out of 0')
     precision = target / total
     logger.error(f'Total precision: {precision} about {target}/{total}')
 

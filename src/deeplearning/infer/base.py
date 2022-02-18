@@ -219,6 +219,7 @@ class InferBase:
         if self.args.n_gpu > 1 and not isinstance(self.model, torch.nn.DataParallel):
             self.model = torch.nn.DataParallel(self.model)
 
+        # TODO: tokenizers warning being forked, Disabling parallelism to avoid deadlocks
         # Eval!
         logger.info("***** Running evaluation %s *****", prefix)
         logger.info("  Num examples = %d", len(eval_dataset))

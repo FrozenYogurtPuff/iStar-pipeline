@@ -13,6 +13,8 @@ from src.rules.utils.spacy import get_token_idx
 
 from ..config import entity_plugins
 
+logger = logging.getLogger(__name__)
+
 
 def dispatch(s: SpacySpan, b: List[BertEntityLabel],
              s2b: List[Alignment], add_all: bool = False,
@@ -21,6 +23,7 @@ def dispatch(s: SpacySpan, b: List[BertEntityLabel],
     both = list()
     result = list()
 
+    logger.debug(f'Before dispatch in dispatch: {s}')
     for func in funcs:
         packs = func(s)
 
@@ -40,8 +43,7 @@ def dispatch(s: SpacySpan, b: List[BertEntityLabel],
     for token, label in unchecked:
         idx = get_token_idx(token)
         if add_all:
-            logging.getLogger(__name__).debug(f"{s.text}\n"
-                                              f"token: {token.text}, idx: {idx}, label: {label}")
+            logger.debug(f"{s.text}\ntoken: {token.text}, idx: {idx}, label: {label}")
             result.append((token, idx, [], label))
         else:
             select = False
@@ -50,9 +52,8 @@ def dispatch(s: SpacySpan, b: List[BertEntityLabel],
                 if not is_entity_type_ok(label, b[num]):
                     select = True
             if select:
-                logging.getLogger(__name__).debug(f"{s.text}\n"
-                                                  f"token: {token.text}, idx: {idx},"
-                                                  f"map_idx:{map_idx}, label: {label}")
+                logger.debug(f"{s.text}\ntoken: {token.text}, idx: {idx},"
+                             f"map_idx:{map_idx}, label: {label}")
                 result.append((token, idx, map_idx, label))
 
     return result
