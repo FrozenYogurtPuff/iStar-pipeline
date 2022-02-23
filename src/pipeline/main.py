@@ -1,8 +1,8 @@
 # spaCy
-import spacy
-
 # Logger
 import logging
+
+import spacy
 
 
 class Pipeline:

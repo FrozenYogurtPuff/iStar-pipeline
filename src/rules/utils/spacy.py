@@ -1,7 +1,6 @@
-import logging
-
 import collections.abc
-from typing import Tuple, Union, Sequence, Callable
+import logging
+from typing import Callable, Sequence, Tuple, Union
 
 from src.utils.typing import SpacySpan, SpacyToken
 

@@ -1,6 +1,8 @@
 from collections import defaultdict
+
 import numpy as np
 from seqeval.metrics import classification_report
+
 
 def get_entities(seq):
     """Gets entities from sequence.

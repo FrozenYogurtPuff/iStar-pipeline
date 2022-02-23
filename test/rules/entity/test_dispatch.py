@@ -1,9 +1,10 @@
-import spacy
 import logging
+
+import spacy
 import spacy_alignments as tokenizations
 
-from src.rules.entity.dispatch import dispatch
 from src.deeplearning import wrap_entity_oneline
+from src.rules.entity.dispatch import dispatch
 
 
 def test_dispatch():

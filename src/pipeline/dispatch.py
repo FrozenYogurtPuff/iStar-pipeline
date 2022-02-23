@@ -1,13 +1,10 @@
 # 导入
-from typing import List, Dict, Sequence, Union
-
 # 初始化 Logger
 import logging
+from typing import Dict, List, Sequence, Union
 
 #   BERT 深度学习
-from src.deeplearning import predict_entity
-from src.deeplearning import predict_task
-
+from src.deeplearning import predict_entity, predict_task
 # Mock 文档读入
 from src.reader import get_result
 

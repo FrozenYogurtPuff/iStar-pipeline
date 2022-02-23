@@ -19,8 +19,8 @@ import argparse
 import logging
 import os
 import random
-
 import re
+
 import numpy as np
 import torch
 from torch.nn import CrossEntropyLoss
@@ -28,20 +28,15 @@ from torch.nn.functional import softmax
 from torch.utils.data import DataLoader, SequentialSampler, TensorDataset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
-
-from transformers import (
-    AutoConfig,
-    AutoTokenizer,
-)
+from transformers import AutoConfig, AutoTokenizer
 
 from src.deeplearning.models.model_ner import (
-    MODEL_FOR_SOFTMAX_NER_MAPPING,
-    MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
-    AutoModelForSoftmaxNer,
-)
-
-from src.deeplearning.utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file
-from src.deeplearning.utils.utils_ner import InputExample
+    MODEL_FOR_SOFTMAX_NER_MAPPING, MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
+    AutoModelForSoftmaxNer)
+from src.deeplearning.utils.utils_ner import (InputExample,
+                                              convert_examples_to_features,
+                                              get_labels,
+                                              read_examples_from_file)
 
 try:
     from torch.utils.tensorboard import SummaryWriter
@@ -58,7 +53,7 @@ TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 logger = logging.getLogger(__name__)
 
 
-class InferBase:
+class InferBase(object):
     def __init__(self, data_dir, model_type, model_name_or_path, output_dir, label):
         parser = argparse.ArgumentParser()
         # Required parameters

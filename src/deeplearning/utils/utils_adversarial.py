@@ -1,4 +1,5 @@
 import torch
+
 try:
     from apex import amp
 except ImportError:

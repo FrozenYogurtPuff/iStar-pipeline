@@ -4,8 +4,7 @@
 
 import logging
 
-from src.utils.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
-
+from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 # Show things to [Anna].
 # to (ADP, dative) -> Anna (pobj)

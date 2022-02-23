@@ -1,6 +1,8 @@
 import logging
 import os
+
 import torch
+
 from src.deeplearning.utils.utils_metrics import get_entities
 
 logger = logging.getLogger(__name__)

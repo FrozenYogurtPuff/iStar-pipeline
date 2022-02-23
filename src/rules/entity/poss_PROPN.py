@@ -6,7 +6,7 @@
 
 import logging
 
-from src.utils.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
+from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 
 # [Anna]'s home.

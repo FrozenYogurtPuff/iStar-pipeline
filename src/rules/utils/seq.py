@@ -1,6 +1,7 @@
 from typing import Union
 
-from src.utils.typing import FixEntityLabel, BertEntityLabel, BertEntityLabelRaw
+from src.utils.typing import (BertEntityLabel, BertEntityLabelRaw,
+                              FixEntityLabel)
 
 
 def is_entity_type_ok(fix: FixEntityLabel, spacy: Union[BertEntityLabel, BertEntityLabelRaw]) -> bool:

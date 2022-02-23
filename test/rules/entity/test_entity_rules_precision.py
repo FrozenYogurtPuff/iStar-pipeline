@@ -1,8 +1,9 @@
 import json
-import spacy
 import logging
-from typing import List
 from pathlib import Path
+from typing import List
+
+import spacy
 
 from src import ROOT_DIR
 from src.rules.config import entity_plugins

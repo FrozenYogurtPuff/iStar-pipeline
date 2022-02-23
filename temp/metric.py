@@ -1,5 +1,7 @@
 from collections import defaultdict
+
 import numpy as np
+
 
 def f1_score(true_entities, pred_entities):
     """Compute the F1 score."""

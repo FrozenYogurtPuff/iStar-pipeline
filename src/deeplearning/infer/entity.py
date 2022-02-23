@@ -1,10 +1,6 @@
+from ..config import (ENTITY_DATA_DIR, ENTITY_LABEL, ENTITY_MODEL_NAME_OR_PATH,
+                      ENTITY_MODEL_TYPE, ENTITY_OUTPUT_DIR)
 from .base import InferBase
-from ..config import (
-    ENTITY_LABEL,
-    ENTITY_DATA_DIR,
-    ENTITY_MODEL_TYPE,
-    ENTITY_OUTPUT_DIR,
-    ENTITY_MODEL_NAME_OR_PATH)
 
 
 class InferEntity(InferBase):

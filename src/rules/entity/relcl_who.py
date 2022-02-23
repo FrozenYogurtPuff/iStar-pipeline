@@ -1,8 +1,8 @@
 # 14/17
 import logging
 
-from src.utils.typing import SpacySpan, FixEntityLabel, EntityRuleReturn
 from src.rules.utils.spacy import token_not_end
+from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 
 # [Auditors] who chase the dreams.

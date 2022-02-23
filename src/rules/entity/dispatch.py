@@ -1,15 +1,10 @@
 import logging
 from typing import List
 
-from src.utils.typing import (
-    Alignment,
-    BertEntityLabel,
-    EntityFix,
-    SpacySpan,
-    EntityRulePlugins
-)
 from src.rules.utils.seq import is_entity_type_ok
 from src.rules.utils.spacy import get_token_idx
+from src.utils.typing import (Alignment, BertEntityLabel, EntityFix,
+                              EntityRulePlugins, SpacySpan)
 
 from ..config import entity_plugins
 

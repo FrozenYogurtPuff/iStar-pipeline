@@ -1,7 +1,8 @@
 # 目的：让原生的evaluate方法支持读入conll，并返回ground truth、推理结果、推测矩阵、对应文本信息
 # * 对应文本信息
-from src.deeplearning.infer import predict_task as bert_task
 from metric import classification_report
+
+from src.deeplearning.infer import predict_task as bert_task
 from src.network.utils.utils_metrics import get_entities_bio
 
 

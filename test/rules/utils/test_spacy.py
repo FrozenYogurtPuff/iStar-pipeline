@@ -1,8 +1,8 @@
-import spacy
 import logging
 
+import spacy
+
 from src.rules.utils.spacy import idx_valid
-from src.utils.typing import SpacySpan, SpacyToken
 
 logger = logging.getLogger(__name__)
 

@@ -1,4 +1,5 @@
-from typing import List, Literal, Tuple, Callable, Sequence, Union
+from typing import Callable, List, Literal, Sequence, Tuple, Union
+
 import spacy.tokens
 
 # BERT

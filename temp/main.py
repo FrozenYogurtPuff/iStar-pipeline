@@ -1,16 +1,15 @@
-import re
 import json
+import re
 
 import en_core_web_lg
-
-from src.deeplearning.infer import predict_task as bert_task
-from src.deeplearning.infer import predict_entity as bert_entity
+import spacy_alignments as tokenizations
+from bert_util import calc_specific_prob, get_entities_bio_with_prob
 from dependency import pred_entity as dep_entity
 from dependency import pred_task as dep_task
 from dependency import simple_noun_chunks as simp_entity
-from bert_util import get_entities_bio_with_prob, calc_specific_prob
-import spacy_alignments as tokenizations
 
+from src.deeplearning.infer import predict_entity as bert_entity
+from src.deeplearning.infer import predict_task as bert_task
 
 entity_labels = ['O', 'B-Actor', 'I-Actor', 'B-Resource', 'I-Resource']
 task_labels = ['O', 'B-Intention', 'I-Intention']
