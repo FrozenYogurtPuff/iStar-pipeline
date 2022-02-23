@@ -21,6 +21,7 @@ pytest = "^7.0.1"
 logging_tree = "^1.9"
 colorlog = "^6.6.0"
 isort = "^5.10.1"
+mypy = "^0.931"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

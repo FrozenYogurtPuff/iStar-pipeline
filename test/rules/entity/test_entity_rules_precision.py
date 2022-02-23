@@ -10,7 +10,7 @@ from src.rules.config import entity_plugins
 from src.rules.entity.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
 from src.rules.utils.spacy import char_idx_to_word_idx
-from src.utils.typing import DatasetLabel, EntityFix, SpacySpan
+from src.utils.typing import DatasetEntityLabel, EntityFix, SpacySpan
 
 logger = logging.getLogger(__name__)
 
@@ -20,13 +20,16 @@ def load_dataset():
         for idx, line in enumerate(j):
             a = json.loads(line)
             sent = a['text']
-            anno = a['labels']
+            anno = list()
+            for label in a['labels']:
+                s, e, lab = label
+                anno.append((s, e, lab))
             yield idx, sent, anno
 
 
 # result = [(1, [], 'Actor')]
 # labels = [[0, 12, "Actor"], [31, 35, "Actor"], [59, 88, "Resource"]]
-def check_result_precision(sent: SpacySpan, result: List[EntityFix], labels: List[DatasetLabel]) -> int:
+def check_result_precision(sent: SpacySpan, result: List[EntityFix], labels: List[DatasetEntityLabel]) -> int:
     target = 0
     for item in result:
         _, idx, _, attr = item

@@ -27,7 +27,7 @@ SpacyToken = spacy.tokens.Token
 
 # JSONL Dataset
 # [0, 3, "Actor"]
-DatasetLabel = List[Union[int, int, BertLabelRaw]]
+DatasetEntityLabel = Tuple[int, int, BertEntityLabelRaw]
 
 # Rule
 # ( [Student, Parents], "Actor" )

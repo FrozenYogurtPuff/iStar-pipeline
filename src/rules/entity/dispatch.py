@@ -1,10 +1,10 @@
 import logging
-from typing import List
+from typing import List, Tuple
 
 from src.rules.utils.seq import is_entity_type_ok
 from src.rules.utils.spacy import get_token_idx
 from src.utils.typing import (Alignment, BertEntityLabel, EntityFix,
-                              EntityRulePlugins, SpacySpan)
+                              EntityRulePlugins, SpacySpan, SpacyToken, FixEntityLabel)
 
 from ..config import entity_plugins
 
@@ -14,9 +14,9 @@ logger = logging.getLogger(__name__)
 def dispatch(s: SpacySpan, b: List[BertEntityLabel],
              s2b: List[Alignment], add_all: bool = False,
              funcs: EntityRulePlugins = entity_plugins) -> List[EntityFix]:
-    unchecked = list()
+    unchecked: List[Tuple[SpacyToken, FixEntityLabel]] = list()
     both = list()
-    result = list()
+    result: List[Tuple[SpacyToken, int, Alignment, FixEntityLabel]] = list()
 
     logger.debug(f'Before dispatch in dispatch: {s}')
     for func in funcs:
