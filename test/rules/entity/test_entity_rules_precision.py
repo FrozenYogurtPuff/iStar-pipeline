@@ -65,7 +65,7 @@ def test_entity_rules_precision():
                 logger.debug(f'Sent: {s.text}')
                 logger.debug(f'Line {i}: {result}')
                 logger.debug(f'current Hit 0 out of 0')
-    precision = target / total
+    precision = target / total if total != 0 else 0
     logger.error(f'Total precision: {precision} about {target}/{total}')
 
 
