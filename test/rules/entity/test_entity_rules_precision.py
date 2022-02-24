@@ -36,9 +36,18 @@ def check_result_precision(sent: SpacySpan, result: List[EntityFix], labels: Lis
         for label in labels:
             begin, end, attr_hat = label
             begin, end = char_idx_to_word_idx(sent, begin, end)
-            if begin <= idx < end and is_entity_type_ok(attr, attr_hat):
+            # if len(idx) == 1 and begin <= idx[0] < end and is_entity_type_ok(attr, attr_hat):
+            #     target += 1
+            #     break
+            # elif len(idx) == 2 and begin <= idx[0] <= idx[1] < end and is_entity_type_ok(attr, attr_hat):
+            #     target += 1
+            #     break
+            # elif len(idx) not in [1, 2]:
+            #     logger.error(f'Too many or few items in {item}')
+            #     raise Exception('Unexpected unpacked occur when check_result_precision.')   # TODO: More specific error
+            if begin <= idx[0] <= idx[-1] < end and is_entity_type_ok(attr, attr_hat):    # TODO: temp fix
                 target += 1
-                break
+                # break
     return target
 
 
@@ -50,7 +59,7 @@ def test_entity_rules_precision():
     for i, sent, anno in res:
         logger.debug(f'Before dispatch in test: {sent}')
         s = nlp(sent)
-        result = dispatch(s[:], [], [], add_all=True, funcs=[entity_plugins[-1]])
+        result = dispatch(s[:], [], [], add_all=True, funcs=entity_plugins)
         cur_length = len(result)
         total += cur_length
 

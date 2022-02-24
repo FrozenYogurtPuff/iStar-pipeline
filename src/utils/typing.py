@@ -22,8 +22,10 @@ BertMatrix = List[List[int]]
 Alignment = List[int]
 
 # Spacy
+SpacyDoc = spacy.tokens.Doc
 SpacySpan = spacy.tokens.Span
 SpacyToken = spacy.tokens.Token
+HybridToken = Union[SpacyToken, SpacySpan]
 
 # JSONL Dataset
 # [0, 3, "Actor"]
@@ -32,7 +34,7 @@ DatasetEntityLabel = Tuple[int, int, BertEntityLabelRaw]
 # Rule
 # ( [Student, Parents], "Actor" )
 # ( [Student, tickets], ("Actor", "Resource") )
-EntityRuleReturn = Sequence[Tuple[SpacyToken, FixEntityLabel]]
+EntityRuleReturn = Sequence[Tuple[HybridToken, FixEntityLabel]]
 EntityRulePlugins = Sequence[Callable[[SpacySpan], EntityRuleReturn]]
-# (Student, 1, [1, 2], "Actor")
-EntityFix = Tuple[SpacyToken, int, Alignment, FixEntityLabel]
+# (Student, [1], [1, 2], "Actor")
+EntityFix = Tuple[HybridToken, Alignment, Alignment, FixEntityLabel]

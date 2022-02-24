@@ -1,8 +1,10 @@
 import collections.abc
 import logging
-from typing import Callable, Sequence, Tuple, Union
+from typing import Callable, Sequence, Tuple, Union, List
 
-from src.utils.typing import SpacySpan, SpacyToken
+import spacy.tokens
+
+from src.utils.typing import SpacySpan, SpacyToken, SpacyDoc, HybridToken
 
 logger = logging.getLogger(__name__)
 
@@ -41,21 +43,32 @@ def char_idx_to_word_idx(sent: SpacySpan, begin: int, end: int) -> Tuple[int, in
     return strs.start, strs.end
 
 
-def get_token_idx(token: SpacyToken) -> int:
-    return token.i - token.sent.start
+def get_token_idx(token: HybridToken) -> List[int]:
+    def calc(t: SpacyToken):
+        return t.i - t.sent.start
+
+    if isinstance(token, spacy.tokens.Span):
+        return [calc(token[0]), calc(token[-1])]
+    return [calc(token)]
 
 
-def token_not_start(token: SpacyToken) -> bool:
-    return token.i - token.sent.start != 0
+def token_not_start(token: HybridToken) -> bool:
+    t = token[0] if isinstance(token, spacy.tokens.Span) else token
+    return t.i - t.sent.start != 0
 
 
-def token_not_end(token: SpacyToken) -> bool:
-    return token.sent.end - token.i > 1
+def token_not_end(token: HybridToken) -> bool:
+    t = token[-1] if isinstance(token, spacy.tokens.Span) else token
+    return t.sent.end - t.i > 1
 
 
 def idx_valid(sent: SpacySpan, idx: Union[int, Sequence[int]], is_char=False) -> bool:
-    token_valid: Callable[[int], bool] = lambda x: sent.start <= x < sent.end
-    char_valid: Callable[[int], bool] = lambda x: sent.start_char <= x < sent.end_char
+    def token_valid(x: int) -> bool:
+        return sent.start <= x < sent.end
+
+    def char_valid(x: int) -> bool:
+        return sent.start_char <= x < sent.end_char
+
     valid = char_valid if is_char else token_valid
     if isinstance(idx, collections.abc.Sequence):
         for i in idx:
@@ -63,3 +76,12 @@ def idx_valid(sent: SpacySpan, idx: Union[int, Sequence[int]], is_char=False) ->
                 return False
         return True
     return valid(idx)
+
+
+def include_elem(elem: HybridToken, sents: Union[SpacySpan, SpacyDoc]):
+    def token_include_elem(el):
+        return el in sents
+
+    if isinstance(elem, spacy.tokens.Span):
+        return token_include_elem(elem[0]) and token_include_elem(elem[-1])
+    return token_include_elem(elem)

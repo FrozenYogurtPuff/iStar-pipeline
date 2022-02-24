@@ -2,13 +2,13 @@ import logging
 
 import spacy
 
-from src.rules.utils.spacy import idx_valid
+from src.rules.utils.spacy import idx_valid, include_elem
 
 logger = logging.getLogger(__name__)
 
 
 def test_idx_valid():
-    nlp: spacy.language.Language = spacy.load('en_core_web_lg')
+    nlp = spacy.load('en_core_web_lg')
     sent = nlp("Just Monika.")[:]
     assert not idx_valid(sent, -1)
     assert not idx_valid(sent, [0, -1])
@@ -22,3 +22,15 @@ def test_idx_valid():
     assert idx_valid(sent, 5, is_char=True)
     assert not idx_valid(sent, -1, is_char=True)
     assert not idx_valid(sent, 12, is_char=True)
+
+
+def test_include_elem():
+    nlp = spacy.load('en_core_web_lg')
+    sent = nlp("While the show is definitely cohesive, the seasons all manage to serve distinct purposes.")
+    chunks = list(sent.noun_chunks)   # [the show, the seasons, distinct purposes]
+    for c in chunks:
+        assert include_elem(c, sent)
+    assert include_elem(chunks[0], sent[1:3])
+    assert include_elem(chunks[0][0], sent[1:3])
+    assert not include_elem(chunks[0], sent[3:])
+    assert include_elem(sent[1], chunks[0])

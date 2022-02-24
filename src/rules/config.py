@@ -11,7 +11,8 @@ from src.rules.entity.relcl_who import relcl_who
 from src.rules.entity.word_list import word_list
 from src.utils.typing import EntityRulePlugins
 
-# TODO: 可以让word_list的结果override其他结果吗
+
 entity_plugins: EntityRulePlugins = (
     dative_PROPN, agent_dative_ADP, poss_PROPN, relcl_who, poss, dobj_pobj, word_list, ner
 )
+entity_autocrat: EntityRulePlugins = (relcl_who, word_list, ner)
