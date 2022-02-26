@@ -3,8 +3,10 @@ import logging
 import spacy
 import spacy_alignments as tokenizations
 
-from src.deeplearning import wrap_entity_oneline
+from src.deeplearning import infer_wrapper
 from src.rules.entity.dispatch import dispatch
+
+logger = logging.getLogger(__name__)
 
 
 def test_dispatch():
@@ -13,12 +15,26 @@ def test_dispatch():
     for sent in sents:
         s = nlp(sent)
         spacy_tokens = [i.text for i in s]
-        preds_list, trues_list, matrix, bert_tokens = wrap_entity_oneline(sent)
-        assert len(preds_list) != 1
-        assert len(bert_tokens) != 1
-        s2b, _ = tokenizations.get_alignments(spacy_tokens, bert_tokens)
-        result = dispatch(s[:], preds_list, s2b)
-        logging.getLogger(__name__).warning(result)
+        result = infer_wrapper('Entity', sent, None)
+        assert len(result) == 1
+        result = result[0]
+        assert len(result.preds) != 1
+        assert len(result.tokens) != 1
+        s2b, _ = tokenizations.get_alignments(spacy_tokens, result.tokens)
+        result = dispatch(s[:], result, s2b)
+        logger.warning(result)
+
+
+def test_dispatch_parallel():
+    nlp: spacy.language.Language = spacy.load('en_core_web_lg')
+    sents = ["Bought me these books.", "Show things to Anna.", "Carried out by immigrants"]
+    s = list(nlp.pipe(sents))
+    spacy_tokens = [[i.text for i in ss] for ss in s]
+    result = infer_wrapper('Entity', sents, None)
+    for ss, spacy_token, res in zip(s, spacy_tokens, result):
+        s2b, _ = tokenizations.get_alignments(spacy_token, res.tokens)
+        res = dispatch(ss[:], res, s2b)
+        logger.warning(res)
 
 
 if __name__ == '__main__':

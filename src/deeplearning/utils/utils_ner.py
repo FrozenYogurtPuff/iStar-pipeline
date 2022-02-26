@@ -1,12 +1,13 @@
 import logging
 import os
+from pathlib import Path
 
 import torch
 
+from src import ROOT_DIR
 from src.deeplearning.utils.utils_metrics import get_entities
 
 logger = logging.getLogger(__name__)
-print_flag = False
 
 
 class InputExample(object):
@@ -99,8 +100,7 @@ def convert_examples_to_features(
     features = []
     for (ex_index, example) in enumerate(examples):
         if ex_index % 10000 == 0:
-            if print_flag:
-                logger.info("Writing example %d of %d", ex_index, len(examples))
+            logger.info("Writing example %d of %d", ex_index, len(examples))
 
         tokens = []
         valid_mask = []
@@ -195,18 +195,17 @@ def convert_examples_to_features(
         assert len(end_ids) == max_seq_length
         assert len(valid_mask) == max_seq_length
 
-        if ex_index < 5:
-            if print_flag:
-                logger.info("*** Example ***")
-                logger.info("guid: %s", example.guid)
-                logger.info("tokens: %s", " ".join([str(x) for x in tokens]))
-                logger.info("valid_mask: %s", " ".join([str(x) for x in valid_mask]))
-                logger.info("input_ids: %s", " ".join([str(x) for x in input_ids]))
-                logger.info("input_mask: %s", " ".join([str(x) for x in input_mask]))
-                logger.info("segment_ids: %s", " ".join([str(x) for x in segment_ids]))
-                logger.info("label_ids: %s", " ".join([str(x) for x in label_ids]))
-                logger.info("start_ids: %s", " ".join([str(x) for x in start_ids]))
-                logger.info("end_ids: %s", " ".join([str(x) for x in end_ids]))
+        if ex_index < 2:
+            logger.debug("*** Example ***")
+            logger.debug("guid: %s", example.guid)
+            logger.debug("tokens: %s", " ".join([str(x) for x in tokens]))
+            logger.debug("valid_mask: %s", " ".join([str(x) for x in valid_mask]))
+            logger.debug("input_ids: %s", " ".join([str(x) for x in input_ids]))
+            logger.debug("input_mask: %s", " ".join([str(x) for x in input_mask]))
+            logger.debug("segment_ids: %s", " ".join([str(x) for x in segment_ids]))
+            logger.debug("label_ids: %s", " ".join([str(x) for x in label_ids]))
+            logger.debug("start_ids: %s", " ".join([str(x) for x in start_ids]))
+            logger.debug("end_ids: %s", " ".join([str(x) for x in end_ids]))
 
         features.append(
             InputFeatures(input_ids=input_ids,
@@ -239,7 +238,7 @@ def collate_fn(batch):
 
 def get_labels(path):
     if path:
-        with open(path, "r") as f:
+        with open(Path(ROOT_DIR).joinpath(path), "r") as f:
             labels = f.read().splitlines()
         if "O" not in labels:
             labels = ["O"] + labels

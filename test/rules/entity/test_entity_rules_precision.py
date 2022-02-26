@@ -2,14 +2,14 @@ import json
 import logging
 from pathlib import Path
 from typing import List
-
 import spacy
+import spacy_alignments as tokenizations
 
 from src import ROOT_DIR
 from src.rules.config import entity_plugins
 from src.rules.entity.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
-from src.rules.utils.spacy import char_idx_to_word_idx
+from src.utils.spacy import char_idx_to_word_idx
 from src.utils.typing import DatasetEntityLabel, EntityFix, SpacySpan
 
 logger = logging.getLogger(__name__)
@@ -59,7 +59,7 @@ def test_entity_rules_precision():
     for i, sent, anno in res:
         logger.debug(f'Before dispatch in test: {sent}')
         s = nlp(sent)
-        result = dispatch(s[:], [], [], add_all=True, funcs=entity_plugins)
+        result = dispatch(s[:], None, None, add_all=True, funcs=entity_plugins)
         cur_length = len(result)
         total += cur_length
 

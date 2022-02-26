@@ -1,7 +1,7 @@
 # 14/17
 import logging
 
-from src.rules.utils.spacy import token_not_end
+from src.utils.spacy import token_not_end
 from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 

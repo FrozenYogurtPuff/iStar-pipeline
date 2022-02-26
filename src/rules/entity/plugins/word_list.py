@@ -31,10 +31,10 @@ def word_list(s: SpacySpan) -> EntityRuleReturn:
     for token in s:
         select = False
         label = None
-        if token.lower_.startswith(('system', 'module', 'server', 'administrator')):
+        if token.lower_.startswith(('system', 'module', 'server', 'user', 'administrator')):
             select = True
             label = actor
-        elif token.lower_.startswith(('interface', 'user', 'client')):
+        elif token.lower_.startswith(('interface', 'client')):
             select = True
             label = both
 

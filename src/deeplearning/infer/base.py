@@ -279,7 +279,7 @@ class InferBase(object):
             assert len(tokens) == len(matrix[i])
             tokens_bert.append(tokens)
 
-        return preds_list, trues_list, matrix, tokens_bert
+        return preds_list, trues_list, matrix, tokens_bert, self.labels
 
     @classmethod
     def read_examples_from_json(cls, data):
@@ -294,7 +294,7 @@ class InferBase(object):
         for item in data:
             if 'words' not in item:
                 item['words'] = list(filter(str.split, re.split('([,.?!":()/ ])', item['sent'])))
-            if 'labels' not in item:
+            if 'labels' not in item or item['labels'] is None:
                 item['labels'] = ['O' for _ in range(len(item['words']))]
             examples.append(InputExample(guid="{}".format(guid_index), words=item['words'], labels=item['labels']))
             guid_index += 1

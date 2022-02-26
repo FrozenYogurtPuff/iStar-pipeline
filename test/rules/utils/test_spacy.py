@@ -2,7 +2,7 @@ import logging
 
 import spacy
 
-from src.rules.utils.spacy import idx_valid, include_elem
+from src.utils.spacy import idx_valid, include_elem
 
 logger = logging.getLogger(__name__)
 

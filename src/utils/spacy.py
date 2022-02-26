@@ -1,12 +1,22 @@
 import collections.abc
 import logging
-from typing import Callable, Sequence, Tuple, Union, List
-
+from typing import Sequence, Tuple, Union, List
+import spacy
 import spacy.tokens
 
 from src.utils.typing import SpacySpan, SpacyToken, SpacyDoc, HybridToken
 
 logger = logging.getLogger(__name__)
+
+global_nlp = None
+
+
+def get_spacy():
+    global global_nlp
+
+    if global_nlp is None:
+        global_nlp = spacy.load('en_core_web_lg')
+    return global_nlp
 
 
 # sent, 0, 14 -> 0, 2
@@ -78,8 +88,10 @@ def idx_valid(sent: SpacySpan, idx: Union[int, Sequence[int]], is_char=False) ->
     return valid(idx)
 
 
-def include_elem(elem: HybridToken, sents: Union[SpacySpan, SpacyDoc]):
+def include_elem(elem: HybridToken, sents: Union[SpacyToken, SpacySpan, SpacyDoc]):
     def token_include_elem(el):
+        if isinstance(sents, spacy.tokens.Token):
+            return el == sents
         return el in sents
 
     if isinstance(elem, spacy.tokens.Span):

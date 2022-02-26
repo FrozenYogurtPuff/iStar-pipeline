@@ -3,12 +3,14 @@ from typing import Callable, List, Literal, Sequence, Tuple, Union
 import spacy.tokens
 
 # BERT
-BertEntityLabel = Literal['O', 'B-Actor', 'I-Actor', 'B-Resource', 'I-Resource']
-BertIntentionLabel = Literal['O', 'B-Core', 'I-Core', 'B-Cond', 'I-Cond', 'B-Aux', 'I-Aux']
+BertEntityLabelBio = Literal['O', 'B-Actor', 'I-Actor', 'B-Resource', 'I-Resource']
+BertIntentionLabelBio = Literal['O', 'B-Core', 'I-Core', 'B-Cond', 'I-Cond', 'B-Aux', 'I-Aux']
+BertUnionLabelBio = Union[BertEntityLabelBio, BertIntentionLabelBio]
 
-BertEntityLabelRaw = Literal['O', 'Actor', 'Resource']
-BertIntentionLabelRaw = Literal['O', 'Core', 'Cond', 'Aux', 'Quality']
-BertLabelRaw = Union[BertEntityLabelRaw, BertIntentionLabelRaw]
+BertEntityLabel = Literal['O', 'Actor', 'Resource']
+BertIntentionLabel = Literal['O', 'Core', 'Cond', 'Aux', 'Quality']
+BertUnionLabel = Union[BertEntityLabel, BertIntentionLabel]
+
 FixEntityLabel = Literal['Actor', 'Resource', 'Both']
 
 Token = str
@@ -29,7 +31,9 @@ HybridToken = Union[SpacyToken, SpacySpan]
 
 # JSONL Dataset
 # [0, 3, "Actor"]
-DatasetEntityLabel = Tuple[int, int, BertEntityLabelRaw]
+DatasetEntityLabel = Tuple[int, int, BertEntityLabel]
+DatasetIntentionLabel = Tuple[int, int, BertIntentionLabel]
+DatasetUnionLabel = Union[DatasetEntityLabel, DatasetIntentionLabel]
 
 # Rule
 # ( [Student, Parents], "Actor" )
