@@ -1,6 +1,6 @@
 from typing import Union
 
-from src.utils.typing import (BertEntityLabelBio, BertEntityLabel,
+from src.utils.typing import (BertEntityLabel, BertEntityLabelBio,
                               FixEntityLabel)
 
 

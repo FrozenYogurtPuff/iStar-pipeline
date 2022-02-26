@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import logging
-from typing import List, Callable, Tuple, Union
+from typing import Callable, List, Tuple
 
 import src.deeplearning.infer.result as br
 from src.deeplearning.utils.utils_metrics import get_entities
-from src.utils.typing import BertEntityLabelBio, BertIntentionLabelBio, BertUnionLabelBio, BertUnionLabel
+from src.utils.typing import (BertEntityLabelBio, BertIntentionLabelBio,
+                              BertUnionLabel, BertUnionLabelBio)
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +36,7 @@ def label_mapping_bio(lab: BertUnionLabel) -> Tuple[BertUnionLabelBio, BertUnion
         return aux
     if lab == 'Quality':
         logger.error(f'Label Quality')
-        # TODO: at this time, i think never occur
+        # I think it should not be occurred
     logger.error(f'Illegal label {lab}')
     raise Exception('Unexpected label type')
 
@@ -57,4 +58,3 @@ def label_mapping_de_bio(lab: BertUnionLabelBio) -> Tuple[BertUnionLabel, bool]:
 
     flag = True if lab.startswith('B-') else False
     return label_check(), flag
-

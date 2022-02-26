@@ -2,10 +2,12 @@ from __future__ import annotations  # Remove that after Python 3.10
 
 import dataclasses
 import logging
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
-from src.deeplearning.infer.utils import label_mapping_bio, label_mapping_de_bio
-from src.utils.typing import BertEntityLabelBio, BertMatrix, Token, EntityFix, BertEntityLabel
+from src.deeplearning.infer.utils import (label_mapping_bio,
+                                          label_mapping_de_bio)
+from src.utils.typing import (BertEntityLabel, BertEntityLabelBio, BertMatrix,
+                              EntityFix, Token)
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +20,7 @@ class BertResult:
     tokens: List[Token]
     labels: List[BertEntityLabelBio]
 
-    def matrix_find_prob_max(self, start, end) -> BertEntityLabel:
+    def matrix_find_prob_max(self, start, end) -> Tuple[BertEntityLabel, float]:
         logger.debug(f'Matrix find: {start} - {end}')
         data = dict()  # { 'Actor': [1, 2], ... }
         for i, la in enumerate(self.labels):
@@ -41,14 +43,15 @@ class BertResult:
                 max_value, max_type = temp_value, temp_type
 
         logger.debug(f'Matrix type: {max_type}')
-        return max_type
+        avg_value = max_value / (end - start + 1)
+        return max_type, avg_value
 
     def apply_fix(self: BertResult, fixes: List[EntityFix]) -> BertResult:
         new_inst = dataclasses.replace(self)
         for hyb, ali, bali, lab in fixes:
             assert len(bali) in [1, 2]
             if lab == 'Both':
-                lab = self.matrix_find_prob_max(bali[0], bali[-1])
+                lab, avg = self.matrix_find_prob_max(bali[0], bali[-1])
 
             key = bali[0]
             mapping = label_mapping_bio(lab)
@@ -56,10 +59,10 @@ class BertResult:
 
             if len(bali) == 2:
                 for i in range(key, bali[-1] + 1):
-                    new_inst.preds[key] = mapping[1]
+                    new_inst.preds[i] = mapping[1]
 
         if fixes:
-            logger.debug(f'Apply fix - Before: {BertResult}')
+            logger.debug(f'Apply fix - Before: {self}')
             logger.debug(f'Apply fix - Fix: {fixes}')
-            logger.debug(f'Apply fix - After: {new_inst}')
+            logger.error(f'Apply fix - After: {new_inst}')
         return new_inst

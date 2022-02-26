@@ -2,8 +2,8 @@ import json
 import logging
 from pathlib import Path
 from typing import List
+
 import spacy
-import spacy_alignments as tokenizations
 
 from src import ROOT_DIR
 from src.rules.config import entity_plugins
@@ -36,18 +36,8 @@ def check_result_precision(sent: SpacySpan, result: List[EntityFix], labels: Lis
         for label in labels:
             begin, end, attr_hat = label
             begin, end = char_idx_to_word_idx(sent, begin, end)
-            # if len(idx) == 1 and begin <= idx[0] < end and is_entity_type_ok(attr, attr_hat):
-            #     target += 1
-            #     break
-            # elif len(idx) == 2 and begin <= idx[0] <= idx[1] < end and is_entity_type_ok(attr, attr_hat):
-            #     target += 1
-            #     break
-            # elif len(idx) not in [1, 2]:
-            #     logger.error(f'Too many or few items in {item}')
-            #     raise Exception('Unexpected unpacked occur when check_result_precision.')   # TODO: More specific error
-            if begin <= idx[0] <= idx[-1] < end and is_entity_type_ok(attr, attr_hat):    # TODO: temp fix
+            if begin <= idx[0] <= idx[-1] < end and is_entity_type_ok(attr, attr_hat):
                 target += 1
-                # break
     return target
 
 

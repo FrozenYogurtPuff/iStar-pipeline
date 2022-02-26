@@ -1,10 +1,11 @@
 import collections.abc
 import logging
-from typing import Sequence, Tuple, Union, List
+from typing import List, Sequence, Tuple, Union
+
 import spacy
 import spacy.tokens
 
-from src.utils.typing import SpacySpan, SpacyToken, SpacyDoc, HybridToken
+from src.utils.typing import HybridToken, SpacyDoc, SpacySpan, SpacyToken
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +49,7 @@ def char_idx_to_word_idx(sent: SpacySpan, begin: int, end: int) -> Tuple[int, in
     if strs is None:
         logger.error(f'Sent: {sent.text}\n')
         logger.error(f'Error char slices about sent from {begin} to {end}')
-        raise Exception('Illegal char slices')  # TODO: more specific Exception class
+        raise Exception('Illegal char slices')
 
     return strs.start, strs.end
 

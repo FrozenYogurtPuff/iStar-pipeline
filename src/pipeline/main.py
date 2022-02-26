@@ -1,6 +1,7 @@
 # spaCy
 # Logger
 import logging
+
 import spacy
 
 from src.utils.spacy import get_spacy

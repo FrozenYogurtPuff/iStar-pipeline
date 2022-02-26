@@ -1,18 +1,19 @@
 from __future__ import annotations
 
 import logging
-from typing import List, Tuple, Optional, Callable
 from collections import Counter
+from typing import Callable, List, Optional, Tuple
+
 import spacy_alignments as tokenizations
 
-from src.rules.utils.seq import is_entity_type_ok
-from src.utils.spacy import get_token_idx, include_elem, get_spacy
-from src.utils.typing import (Alignment, BertEntityLabelBio, EntityFix,
-                              EntityRulePlugins, SpacySpan, FixEntityLabel, HybridToken)
 import src.deeplearning.infer.result as br
+from src.rules.utils.seq import is_entity_type_ok
+from src.utils.spacy import get_spacy, get_token_idx, include_elem
+from src.utils.typing import (Alignment, BertEntityLabelBio, EntityFix,
+                              EntityRulePlugins, FixEntityLabel, HybridToken,
+                              SpacySpan)
 
-from ..config import entity_plugins, entity_autocrat
-
+from ..config import entity_autocrat, entity_plugins
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +51,20 @@ def simple_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]
     return list(filter(lambda item: simple_check_bert(item, b.preds), res))
 
 
+# prob soft, filter 'Both' and prob < 0.5
+def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
+    def prob_check_bert(sample: EntityFix, bert: List[BertEntityLabelBio]) -> bool:
+        token, idx, bert_idx, label = sample
+        label, prob = b.matrix_find_prob_max(bert_idx[0], bert_idx[-1])
+        if prob < 0.5:
+            return False
+        for num in bert_idx:
+            if not is_entity_type_ok(label, bert[num]):
+                return True
+        return False
+    return list(filter(lambda item: prob_check_bert(item, b.preds), res))
+
+
 # def bert_merge(res: List[EntityFix], b: BertResult) -> List[EntityFix]:
 #     # Chunk == BERT, good
 #     # Chunk less than BERT, use BERT
@@ -69,7 +84,7 @@ def dispatch(
         noun_chunk: bool = True,
         funcs: EntityRulePlugins = entity_plugins,
         autocrat: EntityRulePlugins = entity_autocrat,
-        bert_func: Callable = simple_bert_merge
+        bert_func: Callable = prob_bert_merge
 ) -> List[EntityFix]:
     collector: List[Collector] = list()
     result: List[EntityFix] = list()
@@ -96,10 +111,11 @@ def dispatch(
         label = Counter([lab for _, lab, _ in group]).most_common(2)
 
         # Force not 'Both'
-        if label[0][0] != 'Both' or len(label) == 1:
-            label = label[0][0]
-        else:
-            label = label[1][0]
+        # if label[0][0] != 'Both' or len(label) == 1:
+        #     label = label[0][0]
+        # else:
+        #     label = label[1][0]
+        label = label[0][0]
 
         # add_all does not search bert_idx
         idx = get_token_idx(token)

@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 import logging
-from typing import List, Tuple, Union, Any, Optional, Literal, Dict
+from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 import src.deeplearning.infer.result as br
 from src.deeplearning.infer.entity import get_entity_model
 from src.deeplearning.infer.intention import get_intention_model
 from src.deeplearning.infer.utils import label_mapping_bio
-from src.utils.spacy import get_spacy, char_idx_to_word_idx
+from src.utils.spacy import char_idx_to_word_idx, get_spacy
 from src.utils.typing import BertUnionLabelBio, DatasetUnionLabel
 
 logger = logging.getLogger(__name__)

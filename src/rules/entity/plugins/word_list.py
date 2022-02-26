@@ -46,3 +46,5 @@ def word_list(s: SpacySpan) -> EntityRuleReturn:
 
     logging.getLogger(__name__).debug(f'Length {len(result)}: {result}')
     return result
+
+# 19 31
