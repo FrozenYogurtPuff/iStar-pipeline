@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 def test_idx_valid():
-    nlp = spacy.load('en_core_web_lg')
+    nlp = spacy.load("en_core_web_lg")
     sent = nlp("Just Monika.")[:]
     assert not idx_valid(sent, -1)
     assert not idx_valid(sent, [0, -1])
@@ -25,9 +25,13 @@ def test_idx_valid():
 
 
 def test_include_elem():
-    nlp = spacy.load('en_core_web_lg')
-    sent = nlp("While the show is definitely cohesive, the seasons all manage to serve distinct purposes.")
-    chunks = list(sent.noun_chunks)   # [the show, the seasons, distinct purposes]
+    nlp = spacy.load("en_core_web_lg")
+    sent = nlp(
+        "While the show is definitely cohesive, the seasons all manage to serve distinct purposes."
+    )
+    chunks = list(
+        sent.noun_chunks
+    )  # [the show, the seasons, distinct purposes]
     for c in chunks:
         assert include_elem(c, sent)
     assert include_elem(chunks[0], sent[1:3])

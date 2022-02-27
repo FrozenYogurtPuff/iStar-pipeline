@@ -22,15 +22,15 @@ class ElectraSoftmaxForNer(ElectraPreTrainedModel):
         self.init_weights()
 
     def forward(
-            self,
-            input_ids,
-            attention_mask=None,
-            token_type_ids=None,
-            position_ids=None,
-            head_mask=None,
-            inputs_embeds=None,
-            valid_mask=None,
-            labels=None
+        self,
+        input_ids,
+        attention_mask=None,
+        token_type_ids=None,
+        position_ids=None,
+        head_mask=None,
+        inputs_embeds=None,
+        valid_mask=None,
+        labels=None,
     ):
         outputs = self.electra(
             input_ids=input_ids,
@@ -38,19 +38,23 @@ class ElectraSoftmaxForNer(ElectraPreTrainedModel):
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             head_mask=head_mask,
-            inputs_embeds=inputs_embeds
+            inputs_embeds=inputs_embeds,
         )
         sequence_output = outputs[0]
-        sequence_output, attention_mask = valid_sequence_output(sequence_output, valid_mask, attention_mask)
+        sequence_output, attention_mask = valid_sequence_output(
+            sequence_output, valid_mask, attention_mask
+        )
         sequence_output = self.dropout(sequence_output)
         logits = self.classifier(sequence_output)
-        outputs = (logits,) + outputs[2:]  # add hidden states and attention if they are here
+        outputs = (logits,) + outputs[
+            2:
+        ]  # add hidden states and attention if they are here
 
         if labels is not None:
-            assert self.loss_type in ['lsr', 'focal', 'ce']
-            if self.loss_type == 'lsr':
+            assert self.loss_type in ["lsr", "focal", "ce"]
+            if self.loss_type == "lsr":
                 loss_fct = LabelSmoothingCrossEntropy()
-            elif self.loss_type == 'focal':
+            elif self.loss_type == "focal":
                 loss_fct = FocalLoss()
             else:
                 loss_fct = CrossEntropyLoss()
@@ -61,7 +65,9 @@ class ElectraSoftmaxForNer(ElectraPreTrainedModel):
                 active_labels = labels.view(-1)[active_loss]
                 loss = loss_fct(active_logits, active_labels)
             else:
-                loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
+                loss = loss_fct(
+                    logits.view(-1, self.num_labels), labels.view(-1)
+                )
             outputs = (loss,) + outputs
         return outputs  # (loss), scores, (hidden_states), (attentions)
 
@@ -76,16 +82,16 @@ class ElectraCrfForNer(ElectraPreTrainedModel):
         self.init_weights()
 
     def forward(
-            self,
-            input_ids,
-            attention_mask=None,
-            token_type_ids=None,
-            position_ids=None,
-            head_mask=None,
-            inputs_embeds=None,
-            valid_mask=None,
-            labels=None,
-            decode=False,
+        self,
+        input_ids,
+        attention_mask=None,
+        token_type_ids=None,
+        position_ids=None,
+        head_mask=None,
+        inputs_embeds=None,
+        valid_mask=None,
+        labels=None,
+        decode=False,
     ):
         outputs = self.electra(
             input_ids=input_ids,
@@ -93,10 +99,12 @@ class ElectraCrfForNer(ElectraPreTrainedModel):
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             head_mask=head_mask,
-            inputs_embeds=inputs_embeds
+            inputs_embeds=inputs_embeds,
         )
         sequence_output = outputs[0]
-        sequence_output, attention_mask = valid_sequence_output(sequence_output, valid_mask, attention_mask)
+        sequence_output, attention_mask = valid_sequence_output(
+            sequence_output, valid_mask, attention_mask
+        )
         sequence_output = self.dropout(sequence_output)
         logits = self.classifier(sequence_output)
         if decode:
@@ -114,7 +122,10 @@ class ElectraCrfForNer(ElectraPreTrainedModel):
 
 
 class ElectraSpanForNer(ElectraPreTrainedModel):
-    def __init__(self, config, ):
+    def __init__(
+        self,
+        config,
+    ):
         super(ElectraSpanForNer, self).__init__(config)
         self.soft_label = config.soft_label
         self.num_labels = config.num_labels
@@ -123,22 +134,26 @@ class ElectraSpanForNer(ElectraPreTrainedModel):
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.start_fc = PoolerStartLogits(config.hidden_size, self.num_labels)
         if self.soft_label:
-            self.end_fc = PoolerEndLogits(config.hidden_size + self.num_labels, self.num_labels)
+            self.end_fc = PoolerEndLogits(
+                config.hidden_size + self.num_labels, self.num_labels
+            )
         else:
-            self.end_fc = PoolerEndLogits(config.hidden_size + 1, self.num_labels)
+            self.end_fc = PoolerEndLogits(
+                config.hidden_size + 1, self.num_labels
+            )
         self.init_weights()
 
     def forward(
-            self,
-            input_ids,
-            attention_mask=None,
-            token_type_ids=None,
-            position_ids=None,
-            head_mask=None,
-            inputs_embeds=None,
-            valid_mask=None,
-            start_positions=None,
-            end_positions=None
+        self,
+        input_ids,
+        attention_mask=None,
+        token_type_ids=None,
+        position_ids=None,
+        head_mask=None,
+        inputs_embeds=None,
+        valid_mask=None,
+        start_positions=None,
+        end_positions=None,
     ):
         outputs = self.electra(
             input_ids=input_ids,
@@ -146,11 +161,13 @@ class ElectraSpanForNer(ElectraPreTrainedModel):
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             head_mask=head_mask,
-            inputs_embeds=inputs_embeds
+            inputs_embeds=inputs_embeds,
         )
 
         sequence_output = outputs[0]
-        sequence_output, attention_mask = valid_sequence_output(sequence_output, valid_mask, attention_mask)
+        sequence_output, attention_mask = valid_sequence_output(
+            sequence_output, valid_mask, attention_mask
+        )
         sequence_output = self.dropout(sequence_output)
         start_logits = self.start_fc(sequence_output)
 
@@ -158,7 +175,9 @@ class ElectraSpanForNer(ElectraPreTrainedModel):
             if self.soft_label:
                 batch_size = input_ids.size(0)
                 seq_len = input_ids.size(1)
-                label_logits = torch.FloatTensor(batch_size, seq_len, self.num_labels)
+                label_logits = torch.FloatTensor(
+                    batch_size, seq_len, self.num_labels
+                )
                 label_logits.zero_()
                 label_logits = label_logits.to(input_ids.device)
                 label_logits.scatter_(2, start_positions.unsqueeze(2), 1)
@@ -167,15 +186,20 @@ class ElectraSpanForNer(ElectraPreTrainedModel):
         else:
             label_logits = F.softmax(start_logits, -1)
             if not self.soft_label:
-                label_logits = torch.argmax(label_logits, -1).unsqueeze(2).float()
+                label_logits = (
+                    torch.argmax(label_logits, -1).unsqueeze(2).float()
+                )
         end_logits = self.end_fc(sequence_output, label_logits)
-        outputs = (start_logits, end_logits,) + outputs[2:]
+        outputs = (
+            start_logits,
+            end_logits,
+        ) + outputs[2:]
 
         if start_positions is not None and end_positions is not None:
-            assert self.loss_type in ['lsr', 'focal', 'ce']
-            if self.loss_type == 'lsr':
+            assert self.loss_type in ["lsr", "focal", "ce"]
+            if self.loss_type == "lsr":
                 loss_fct = LabelSmoothingCrossEntropy()
-            elif self.loss_type == 'focal':
+            elif self.loss_type == "focal":
                 loss_fct = FocalLoss()
             else:
                 loss_fct = CrossEntropyLoss()

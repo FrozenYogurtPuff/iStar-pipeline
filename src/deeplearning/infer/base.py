@@ -31,12 +31,16 @@ from tqdm import tqdm
 from transformers import AutoConfig, AutoTokenizer
 
 from src.deeplearning.models.model_ner import (
-    MODEL_FOR_SOFTMAX_NER_MAPPING, MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
-    AutoModelForSoftmaxNer)
-from src.deeplearning.utils.utils_ner import (InputExample,
-                                              convert_examples_to_features,
-                                              get_labels,
-                                              read_examples_from_file)
+    MODEL_FOR_SOFTMAX_NER_MAPPING,
+    MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
+    AutoModelForSoftmaxNer,
+)
+from src.deeplearning.utils.utils_ner import (
+    InputExample,
+    convert_examples_to_features,
+    get_labels,
+    read_examples_from_file,
+)
 
 try:
     from torch.utils.tensorboard import SummaryWriter
@@ -46,15 +50,22 @@ except ImportError:
 MODEL_CONFIG_CLASSES = list(MODEL_FOR_SOFTMAX_NER_MAPPING.keys())
 MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
 MODEL_MAPS = tuple
-ALL_MODELS = sum((tuple(MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING[conf].keys()) for conf in MODEL_CONFIG_CLASSES),
-                 ())
+ALL_MODELS = sum(
+    (
+        tuple(MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING[conf].keys())
+        for conf in MODEL_CONFIG_CLASSES
+    ),
+    (),
+)
 TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 
 logger = logging.getLogger(__name__)
 
 
 class InferBase(object):
-    def __init__(self, data_dir, model_type, model_name_or_path, output_dir, label):
+    def __init__(
+        self, data_dir, model_type, model_name_or_path, output_dir, label
+    ):
         parser = argparse.ArgumentParser()
         # Required parameters
         parser.add_argument(
@@ -73,7 +84,8 @@ class InferBase(object):
             "--model_name_or_path",
             default=model_name_or_path,
             type=str,
-            help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS),
+            help="Path to pre-trained model or shortcut name selected in the list: "
+            + ", ".join(ALL_MODELS),
         )
         parser.add_argument(
             "--output_dir",
@@ -90,7 +102,10 @@ class InferBase(object):
             help="Path to a file containing all labels. If not specified, CoNLL-2003 labels are used.",
         )
         parser.add_argument(
-            "--config_name", default="", type=str, help="Pretrained config name or path if not the same as model_name"
+            "--config_name",
+            default="",
+            type=str,
+            help="Pretrained config name or path if not the same as model_name",
         )
         parser.add_argument(
             "--tokenizer_name",
@@ -109,34 +124,73 @@ class InferBase(object):
             default=128,
             type=int,
             help="The maximum total input sequence length after tokenization. Sequences longer "
-                 "than this will be truncated, sequences shorter will be padded.",
+            "than this will be truncated, sequences shorter will be padded.",
         )
         parser.add_argument(
-            "--do_lower_case", action="store_true", help="Set this flag if you are using an uncased model."
+            "--do_lower_case",
+            action="store_true",
+            help="Set this flag if you are using an uncased model.",
         )
         parser.add_argument(
-            "--keep_accents", action="store_const", const=True, help="Set this flag if model is trained with accents."
+            "--keep_accents",
+            action="store_const",
+            const=True,
+            help="Set this flag if model is trained with accents.",
         )
         parser.add_argument(
-            "--strip_accents", action="store_const", const=True,
-            help="Set this flag if model is trained without accents."
+            "--strip_accents",
+            action="store_const",
+            const=True,
+            help="Set this flag if model is trained without accents.",
         )
-        parser.add_argument("--use_fast", action="store_const", const=True,
-                            help="Set this flag to use fast tokenization.")
         parser.add_argument(
-            "--per_gpu_eval_batch_size", default=16, type=int, help="Batch size per GPU/CPU for evaluation."
+            "--use_fast",
+            action="store_const",
+            const=True,
+            help="Set this flag to use fast tokenization.",
         )
-        parser.add_argument("--loss_type", default="lsr", type=str, help="The loss function to optimize.")
-        parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
-        parser.add_argument("--seed", type=int, default=42, help="random seed for initialization")
+        parser.add_argument(
+            "--per_gpu_eval_batch_size",
+            default=16,
+            type=int,
+            help="Batch size per GPU/CPU for evaluation.",
+        )
+        parser.add_argument(
+            "--loss_type",
+            default="lsr",
+            type=str,
+            help="The loss function to optimize.",
+        )
+        parser.add_argument(
+            "--no_cuda",
+            action="store_true",
+            help="Avoid using CUDA when available",
+        )
+        parser.add_argument(
+            "--seed",
+            type=int,
+            default=42,
+            help="random seed for initialization",
+        )
 
-        parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
+        parser.add_argument(
+            "--local_rank",
+            type=int,
+            default=-1,
+            help="For distributed training: local_rank",
+        )
         self.args, _ = parser.parse_known_args()
 
         # Setup CUDA, GPU & distributed training
         if self.args.local_rank == -1 or self.args.no_cuda:
-            device = torch.device("cuda" if torch.cuda.is_available() and not self.args.no_cuda else "cpu")
-            self.args.n_gpu = 0 if self.args.no_cuda else torch.cuda.device_count()
+            device = torch.device(
+                "cuda"
+                if torch.cuda.is_available() and not self.args.no_cuda
+                else "cpu"
+            )
+            self.args.n_gpu = (
+                0 if self.args.no_cuda else torch.cuda.device_count()
+            )
         else:  # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
             torch.cuda.set_device(self.args.local_rank)
             device = torch.device("cuda", self.args.local_rank)
@@ -168,16 +222,22 @@ class InferBase(object):
 
         self.args.model_type = self.args.model_type.lower()
         self.config = AutoConfig.from_pretrained(
-            self.args.config_name if self.args.config_name else self.args.model_name_or_path,
+            self.args.config_name
+            if self.args.config_name
+            else self.args.model_name_or_path,
             num_labels=self.num_labels,
             id2label={str(i): label for i, label in enumerate(self.labels)},
             label2id={label: i for i, label in enumerate(self.labels)},
             cache_dir=self.args.cache_dir if self.args.cache_dir else None,
         )
         #####
-        setattr(self.config, 'loss_type', self.args.loss_type)
+        setattr(self.config, "loss_type", self.args.loss_type)
         #####
-        tokenizer_args = {k: v for k, v in vars(self.args).items() if v is not None and k in TOKENIZER_ARGS}
+        tokenizer_args = {
+            k: v
+            for k, v in vars(self.args).items()
+            if v is not None and k in TOKENIZER_ARGS
+        }
 
         logger.info("Tokenizer arguments: %s", tokenizer_args)
 
@@ -187,9 +247,13 @@ class InferBase(object):
 
         logger.info("Training/evaluation parameters %s", self.args)
 
-        self.tokenizer = AutoTokenizer.from_pretrained(self.args.output_dir, local_files_only=True, **tokenizer_args)
-        checkpoint = os.path.join(self.args.output_dir, 'best_checkpoint')
-        self.model = AutoModelForSoftmaxNer.from_pretrained(checkpoint, local_files_only=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            self.args.output_dir, local_files_only=True, **tokenizer_args
+        )
+        checkpoint = os.path.join(self.args.output_dir, "best_checkpoint")
+        self.model = AutoModelForSoftmaxNer.from_pretrained(
+            checkpoint, local_files_only=True
+        )
         self.model.to(self.args.device)
 
     def set_seed(self):
@@ -202,16 +266,25 @@ class InferBase(object):
     def evaluate(self, data, prefix=""):
         eval_dataset = self.load_and_cache_examples(data)
 
-        self.args.eval_batch_size = self.args.per_gpu_eval_batch_size * max(1, self.args.n_gpu)
+        self.args.eval_batch_size = self.args.per_gpu_eval_batch_size * max(
+            1, self.args.n_gpu
+        )
         # Note that DistributedSampler samples randomly
-        eval_sampler = SequentialSampler(eval_dataset)\
-            if self.args.local_rank == -1 else DistributedSampler(eval_dataset)
-        eval_dataloader = DataLoader(eval_dataset,
-                                     sampler=eval_sampler,
-                                     batch_size=self.args.eval_batch_size)
+        eval_sampler = (
+            SequentialSampler(eval_dataset)
+            if self.args.local_rank == -1
+            else DistributedSampler(eval_dataset)
+        )
+        eval_dataloader = DataLoader(
+            eval_dataset,
+            sampler=eval_sampler,
+            batch_size=self.args.eval_batch_size,
+        )
 
         # multi-gpu evaluate
-        if self.args.n_gpu > 1 and not isinstance(self.model, torch.nn.DataParallel):
+        if self.args.n_gpu > 1 and not isinstance(
+            self.model, torch.nn.DataParallel
+        ):
             self.model = torch.nn.DataParallel(self.model)
 
         # TODO: tokenizers warning being forked, Disabling parallelism to avoid deadlocks
@@ -231,18 +304,24 @@ class InferBase(object):
             batch = tuple(t.to(self.args.device) for t in batch)
 
             with torch.no_grad():
-                inputs = {"input_ids": batch[0],
-                          "attention_mask": batch[1],
-                          "valid_mask": batch[2],
-                          "labels": batch[4], }
+                inputs = {
+                    "input_ids": batch[0],
+                    "attention_mask": batch[1],
+                    "valid_mask": batch[2],
+                    "labels": batch[4],
+                }
                 if self.args.model_type != "distilbert":
                     inputs["token_type_ids"] = (
-                        batch[2] if self.args.model_type in ["bert", "xlnet"] else None
+                        batch[2]
+                        if self.args.model_type in ["bert", "xlnet"]
+                        else None
                     )  # XLM and RoBERTa don"t use segment_ids
                 outputs = self.model(**inputs)
                 tmp_eval_loss, logits = outputs[:2]
                 if self.args.n_gpu > 1:
-                    tmp_eval_loss = tmp_eval_loss.mean()  # mean() to average on multi-gpu parallel evaluating
+                    tmp_eval_loss = (
+                        tmp_eval_loss.mean()
+                    )  # mean() to average on multi-gpu parallel evaluating
                 eval_loss += tmp_eval_loss.item()
             nb_eval_steps += 1
             if preds is None:
@@ -252,9 +331,19 @@ class InferBase(object):
                 valid_mask = inputs["valid_mask"].detach().cpu().numpy()
             else:
                 preds = np.append(preds, logits.detach().cpu().numpy(), axis=0)
-                trues = np.append(trues, inputs["labels"].detach().cpu().numpy(), axis=0)
-                input_ids = np.append(input_ids, inputs["input_ids"].detach().cpu().numpy(), axis=0)
-                valid_mask = np.append(valid_mask, inputs["valid_mask"].detach().cpu().numpy(), axis=0)
+                trues = np.append(
+                    trues, inputs["labels"].detach().cpu().numpy(), axis=0
+                )
+                input_ids = np.append(
+                    input_ids,
+                    inputs["input_ids"].detach().cpu().numpy(),
+                    axis=0,
+                )
+                valid_mask = np.append(
+                    valid_mask,
+                    inputs["valid_mask"].detach().cpu().numpy(),
+                    axis=0,
+                )
 
         eval_loss = eval_loss / nb_eval_steps
         preds_argmax = np.argmax(preds, axis=2)
@@ -270,7 +359,11 @@ class InferBase(object):
             tokens = list()
             for j in range(trues.shape[1]):
                 if valid_mask[i, j] != 0 and input_ids[i, j] not in [101, 102]:
-                    tokens.append(self.tokenizer.convert_ids_to_tokens(int(input_ids[i, j])))
+                    tokens.append(
+                        self.tokenizer.convert_ids_to_tokens(
+                            int(input_ids[i, j])
+                        )
+                    )
                 if trues[i, j] != self.pad_token_label_id:
                     res = softmax(torch.from_numpy(preds[i, j, :]), dim=0)
                     matrix[i].append(res.tolist())
@@ -292,17 +385,27 @@ class InferBase(object):
         guid_index = 1
         examples = []
         for item in data:
-            if 'words' not in item:
-                item['words'] = list(filter(str.split, re.split('([,.?!":()/ ])', item['sent'])))
-            if 'labels' not in item or item['labels'] is None:
-                item['labels'] = ['O' for _ in range(len(item['words']))]
-            examples.append(InputExample(guid="{}".format(guid_index), words=item['words'], labels=item['labels']))
+            if "words" not in item:
+                item["words"] = list(
+                    filter(str.split, re.split('([,.?!":()/ ])', item["sent"]))
+                )
+            if "labels" not in item or item["labels"] is None:
+                item["labels"] = ["O" for _ in range(len(item["words"]))]
+            examples.append(
+                InputExample(
+                    guid="{}".format(guid_index),
+                    words=item["words"],
+                    labels=item["labels"],
+                )
+            )
             guid_index += 1
         return examples
 
     # 制作数据集
     def load_and_cache_examples(self, data):
-        logger.info("Creating features from dataset file at %s", self.args.data_dir)
+        logger.info(
+            "Creating features from dataset file at %s", self.args.data_dir
+        )
         # examples = read_examples_from_file(args.data_dir, mode)
         if data:
             examples = self.read_examples_from_json(data)
@@ -329,14 +432,30 @@ class InferBase(object):
         )
 
         # Convert to Tensors and build dataset
-        all_input_ids = torch.tensor([f.input_ids for f in features], dtype=torch.long)
-        all_input_mask = torch.tensor([f.input_mask for f in features], dtype=torch.long)
-        all_valid_mask = torch.tensor([f.valid_mask for f in features], dtype=torch.long)
-        all_segment_ids = torch.tensor([f.segment_ids for f in features], dtype=torch.long)
-        all_label_ids = torch.tensor([f.label_ids for f in features], dtype=torch.long)
+        all_input_ids = torch.tensor(
+            [f.input_ids for f in features], dtype=torch.long
+        )
+        all_input_mask = torch.tensor(
+            [f.input_mask for f in features], dtype=torch.long
+        )
+        all_valid_mask = torch.tensor(
+            [f.valid_mask for f in features], dtype=torch.long
+        )
+        all_segment_ids = torch.tensor(
+            [f.segment_ids for f in features], dtype=torch.long
+        )
+        all_label_ids = torch.tensor(
+            [f.label_ids for f in features], dtype=torch.long
+        )
 
-        dataset = TensorDataset(all_input_ids, all_input_mask, all_valid_mask, all_segment_ids, all_label_ids)
+        dataset = TensorDataset(
+            all_input_ids,
+            all_input_mask,
+            all_valid_mask,
+            all_segment_ids,
+            all_label_ids,
+        )
         return dataset
 
     def predict(self, data):
-        return self.evaluate(data, prefix='test')
+        return self.evaluate(data, prefix="test")

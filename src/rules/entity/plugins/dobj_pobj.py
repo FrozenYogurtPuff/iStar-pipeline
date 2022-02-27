@@ -12,16 +12,16 @@ from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 # dobj, pobj
 def dobj_pobj(s: SpacySpan) -> EntityRuleReturn:
-    both: FixEntityLabel = 'Both'
-    resource: FixEntityLabel = 'Resource'
+    both: FixEntityLabel = "Both"
+    resource: FixEntityLabel = "Resource"
     result = list()
 
     for token in s:
-        if token.dep_ in ['dobj', 'pobj']:
+        if token.dep_ in ["dobj", "pobj"]:
             cur = (token, *token.conjuncts)
-            label = resource if token.dep_ == 'dobj' else both
+            label = resource if token.dep_ == "dobj" else both
             for c in cur:
                 result.append((c, label))
 
-    logging.getLogger(__name__).debug(f'Length {len(result)}: {result}')
+    logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

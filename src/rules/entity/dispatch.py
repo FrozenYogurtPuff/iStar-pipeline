@@ -9,9 +9,17 @@ import spacy_alignments as tokenizations
 import src.deeplearning.infer.result as br
 from src.rules.utils.seq import is_entity_type_ok
 from src.utils.spacy import get_spacy, get_token_idx, include_elem
-from src.utils.typing import (Alignment, BertEntityLabelBio, EntityFix,
-                              EntityRulePlugins, FixEntityLabel, HybridToken,
-                              SpacySpan)
+from src.utils.typing import (
+    Alignment,
+    BertEntityLabelBio,
+    EntityFix,
+    EntityRulePlugins,
+    FixEntityLabel,
+    HybridToken,
+    SpacySpan,
+    is_bert_entity_label_bio_list,
+    is_fix_entity_label,
+)
 
 from ..config import entity_autocrat, entity_plugins
 
@@ -20,10 +28,13 @@ logger = logging.getLogger(__name__)
 Collector = Tuple[HybridToken, FixEntityLabel, bool]
 
 
-def collect_filter(data: List[Optional[Collector]], sample: Collector) -> Tuple[List[Collector], bool]:
+def collect_filter(
+    data: List[Optional[Collector]], sample: Collector
+) -> Tuple[List[Collector], bool]:
     t, l, autocratic = sample
     ret = [sample]
     for idx, item in enumerate(data[:]):
+        assert item is not None
         tok, lab, aut = item
         if include_elem(tok, t):
             if autocratic and aut:  # Both True, append
@@ -41,28 +52,54 @@ def collect_filter(data: List[Optional[Collector]], sample: Collector) -> Tuple[
     return ret, autocratic
 
 
-def simple_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
-    def simple_check_bert(sample: EntityFix, bert: List[BertEntityLabelBio]) -> bool:
+def simple_bert_merge(
+    res: List[EntityFix], b: br.BertResult
+) -> List[EntityFix]:
+    def simple_check_bert(
+        sample: EntityFix, bert: List[BertEntityLabelBio]
+    ) -> bool:
         token, idx, bert_idx, label = sample
         for num in bert_idx:
             if not is_entity_type_ok(label, bert[num]):
                 return True
         return False
-    return list(filter(lambda item: simple_check_bert(item, b.preds), res))
+
+    preds = b.preds
+    assert is_bert_entity_label_bio_list(preds)
+
+    new_list: List[EntityFix] = list()
+    for item in res:
+        if not simple_check_bert(item, preds):
+            continue
+        new_list.append(item)
+    return new_list
 
 
 # prob soft, filter 'Both' and prob < 0.5
 def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
-    def prob_check_bert(sample: EntityFix, bert: List[BertEntityLabelBio]) -> bool:
+    def prob_check_bert(
+        sample: EntityFix, bert: List[BertEntityLabelBio]
+    ) -> bool:
         token, idx, bert_idx, label = sample
-        label, prob = b.matrix_find_prob_max(bert_idx[0], bert_idx[-1])
+        label_m, prob = b.matrix_find_prob_max(bert_idx[0], bert_idx[-1])
+        assert is_fix_entity_label(label_m)
+        label = label_m
         if prob < 0.5:
             return False
         for num in bert_idx:
             if not is_entity_type_ok(label, bert[num]):
                 return True
         return False
-    return list(filter(lambda item: prob_check_bert(item, b.preds), res))
+
+    preds = b.preds
+    assert is_bert_entity_label_bio_list(preds)
+
+    new_list: List[EntityFix] = list()
+    for item in res:
+        if not prob_check_bert(item, preds):
+            continue
+        new_list.append(item)
+    return new_list
 
 
 # def bert_merge(res: List[EntityFix], b: BertResult) -> List[EntityFix]:
@@ -77,16 +114,16 @@ def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
 
 
 def dispatch(
-        s: SpacySpan,
-        b: Optional[br.BertResult],
-        s2b: Optional[List[Alignment]],
-        add_all: bool = False,
-        noun_chunk: bool = True,
-        funcs: EntityRulePlugins = entity_plugins,
-        autocrat: EntityRulePlugins = entity_autocrat,
-        bert_func: Callable = prob_bert_merge
+    s: SpacySpan,
+    b: Optional[br.BertResult],
+    s2b: Optional[List[Alignment]],
+    add_all: bool = False,
+    noun_chunk: bool = True,
+    funcs: EntityRulePlugins = entity_plugins,
+    autocrat: EntityRulePlugins = entity_autocrat,
+    bert_func: Callable = prob_bert_merge,
 ) -> List[EntityFix]:
-    collector: List[Collector] = list()
+    collector: List[Optional[Collector]] = list()
     result: List[EntityFix] = list()
 
     for func in funcs:
@@ -106,24 +143,30 @@ def dispatch(
 
     while collector:
         front = collector.pop()
+        assert front is not None
         token, _, _ = front
         group, _ = collect_filter(collector, front)
-        label = Counter([lab for _, lab, _ in group]).most_common(2)
+        labels = Counter([lab for _, lab, _ in group]).most_common(2)
 
         # Force not 'Both'
         # if label[0][0] != 'Both' or len(label) == 1:
         #     label = label[0][0]
         # else:
         #     label = label[1][0]
-        label = label[0][0]
+        label = labels[0][0]
 
         # add_all does not search bert_idx
         idx = get_token_idx(token)
         if add_all:
-            bert_idx = None
+            result.append((token, idx, [], label))
         else:
-            bert_idx = s2b[idx[0]] if len(idx) == 1 else [s2b[idx[0]][0], s2b[idx[-1]][-1]]
-        result.append((token, idx, bert_idx, label))
+            assert s2b is not None
+            bert_idx = (
+                s2b[idx[0]]
+                if len(idx) == 1
+                else [s2b[idx[0]][0], s2b[idx[-1]][-1]]
+            )
+            result.append((token, idx, bert_idx, label))
 
     # hybrid bert to filter consequences
     if not add_all:

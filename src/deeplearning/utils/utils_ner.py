@@ -30,7 +30,16 @@ class InputExample(object):
 class InputFeatures(object):
     """A single set of features of data."""
 
-    def __init__(self, input_ids, input_mask, valid_mask, segment_ids, label_ids, start_ids, end_ids):
+    def __init__(
+        self,
+        input_ids,
+        input_mask,
+        valid_mask,
+        segment_ids,
+        label_ids,
+        start_ids,
+        end_ids,
+    ):
         self.input_ids = input_ids
         self.input_mask = input_mask
         self.valid_mask = valid_mask
@@ -50,7 +59,13 @@ def read_examples_from_file(data_dir, mode):
         for line in f:
             if line.startswith("-DOCSTART-") or line == "" or line == "\n":
                 if words:
-                    examples.append(InputExample(guid="{}-{}".format(mode, guid_index), words=words, labels=labels))
+                    examples.append(
+                        InputExample(
+                            guid="{}-{}".format(mode, guid_index),
+                            words=words,
+                            labels=labels,
+                        )
+                    )
                     guid_index += 1
                     words = []
                     labels = []
@@ -63,37 +78,43 @@ def read_examples_from_file(data_dir, mode):
                     # Examples could have no label for mode = "test"
                     labels.append("O")
         if words:
-            examples.append(InputExample(guid="{}-{}".format(mode, guid_index), words=words, labels=labels))
+            examples.append(
+                InputExample(
+                    guid="{}-{}".format(mode, guid_index),
+                    words=words,
+                    labels=labels,
+                )
+            )
     return examples
 
 
 def convert_examples_to_features(
-        examples,
-        label_list,
-        max_seq_length,
-        tokenizer,
-        cls_token_at_end=False,
-        cls_token="[CLS]",
-        cls_token_segment_id=1,
-        sep_token="[SEP]",
-        sep_token_extra=False,
-        pad_on_left=False,
-        pad_token=0,
-        pad_token_segment_id=0,
-        pad_token_label_id=-100,
-        sequence_a_segment_id=0,
-        mask_padding_with_zero=True,
+    examples,
+    label_list,
+    max_seq_length,
+    tokenizer,
+    cls_token_at_end=False,
+    cls_token="[CLS]",
+    cls_token_segment_id=1,
+    sep_token="[SEP]",
+    sep_token_extra=False,
+    pad_on_left=False,
+    pad_token=0,
+    pad_token_segment_id=0,
+    pad_token_label_id=-100,
+    sequence_a_segment_id=0,
+    mask_padding_with_zero=True,
 ):
-    """ Loads a data file into a list of `InputBatch`s
-        `cls_token_at_end` define the location of the CLS token:
-            - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]
-            - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]
-        `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)
+    """Loads a data file into a list of `InputBatch`s
+    `cls_token_at_end` define the location of the CLS token:
+        - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]
+        - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]
+    `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)
     """
     label_map = {label: i for i, label in enumerate(label_list)}
     span_labels = []
     for label in label_list:
-        label = label.split('-')[-1]
+        label = label.split("-")[-1]
         if label not in span_labels:
             span_labels.append(label)
     span_map = {label: i for i, label in enumerate(span_labels)}
@@ -115,8 +136,8 @@ def convert_examples_to_features(
                 tokens.append(word_token)
         label_ids = [label_map[label] for label in example.labels]
         entities = get_entities(example.labels)
-        start_ids = [span_map['O']] * len(label_ids)
-        end_ids = [span_map['O']] * len(label_ids)
+        start_ids = [span_map["O"]] * len(label_ids)
+        end_ids = [span_map["O"]] * len(label_ids)
         for entity in entities:
             start_ids[entity[1]] = span_map[entity[0]]
             end_ids[entity[-1]] = span_map[entity[0]]
@@ -168,8 +189,12 @@ def convert_examples_to_features(
         padding_length = max_seq_length - len(input_ids)
         if pad_on_left:
             input_ids = ([pad_token] * padding_length) + input_ids
-            input_mask = ([0 if mask_padding_with_zero else 1] * padding_length) + input_mask
-            segment_ids = ([pad_token_segment_id] * padding_length) + segment_ids
+            input_mask = (
+                [0 if mask_padding_with_zero else 1] * padding_length
+            ) + input_mask
+            segment_ids = (
+                [pad_token_segment_id] * padding_length
+            ) + segment_ids
             label_ids = ([pad_token_label_id] * padding_length) + label_ids
             start_ids = ([pad_token_label_id] * padding_length) + start_ids
             end_ids = ([pad_token_label_id] * padding_length) + end_ids
@@ -182,7 +207,7 @@ def convert_examples_to_features(
             start_ids += [pad_token_label_id] * padding_length
             end_ids += [pad_token_label_id] * padding_length
             valid_mask += [0] * padding_length
-        while (len(label_ids) < max_seq_length):
+        while len(label_ids) < max_seq_length:
             label_ids.append(pad_token_label_id)
             start_ids.append(pad_token_label_id)
             end_ids.append(pad_token_label_id)
@@ -199,22 +224,36 @@ def convert_examples_to_features(
             logger.debug("*** Example ***")
             logger.debug("guid: %s", example.guid)
             logger.debug("tokens: %s", " ".join([str(x) for x in tokens]))
-            logger.debug("valid_mask: %s", " ".join([str(x) for x in valid_mask]))
-            logger.debug("input_ids: %s", " ".join([str(x) for x in input_ids]))
-            logger.debug("input_mask: %s", " ".join([str(x) for x in input_mask]))
-            logger.debug("segment_ids: %s", " ".join([str(x) for x in segment_ids]))
-            logger.debug("label_ids: %s", " ".join([str(x) for x in label_ids]))
-            logger.debug("start_ids: %s", " ".join([str(x) for x in start_ids]))
+            logger.debug(
+                "valid_mask: %s", " ".join([str(x) for x in valid_mask])
+            )
+            logger.debug(
+                "input_ids: %s", " ".join([str(x) for x in input_ids])
+            )
+            logger.debug(
+                "input_mask: %s", " ".join([str(x) for x in input_mask])
+            )
+            logger.debug(
+                "segment_ids: %s", " ".join([str(x) for x in segment_ids])
+            )
+            logger.debug(
+                "label_ids: %s", " ".join([str(x) for x in label_ids])
+            )
+            logger.debug(
+                "start_ids: %s", " ".join([str(x) for x in start_ids])
+            )
             logger.debug("end_ids: %s", " ".join([str(x) for x in end_ids]))
 
         features.append(
-            InputFeatures(input_ids=input_ids,
-                          input_mask=input_mask,
-                          valid_mask=valid_mask,
-                          segment_ids=segment_ids,
-                          label_ids=label_ids,
-                          start_ids=start_ids,
-                          end_ids=end_ids)
+            InputFeatures(
+                input_ids=input_ids,
+                input_mask=input_mask,
+                valid_mask=valid_mask,
+                segment_ids=segment_ids,
+                label_ids=label_ids,
+                start_ids=start_ids,
+                end_ids=end_ids,
+            )
         )
     return features
 
@@ -244,4 +283,14 @@ def get_labels(path):
             labels = ["O"] + labels
         return labels
     else:
-        return ["O", "B-MISC", "I-MISC", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC"]
+        return [
+            "O",
+            "B-MISC",
+            "I-MISC",
+            "B-PER",
+            "I-PER",
+            "B-ORG",
+            "I-ORG",
+            "B-LOC",
+            "I-LOC",
+        ]

@@ -1,9 +1,10 @@
 import torch
 
 try:
-    from apex import amp
+    from apex import amp  # type: ignore
 except ImportError:
-    pass
+    amp = None  # type: ignore
+
 
 def loss_backward(args, loss, optimizer):
     if args.n_gpu > 1:
@@ -14,7 +15,8 @@ def loss_backward(args, loss, optimizer):
     else:
         loss.backward()
 
-class FGM():
+
+class FGM:
     def __init__(self, model, param_name, alpha=1.0):
         self.model = model
         self.param_name = param_name
@@ -49,7 +51,7 @@ class FGM():
         self.restore_param_data()
 
 
-class PGD():
+class PGD:
     def __init__(self, model, param_name, alpha=0.3, epsilon=1.0, K=3):
         self.model = model
         self.param_name = param_name
@@ -78,7 +80,6 @@ class PGD():
         for name, param in self.model.named_parameters():
             if param.requires_grad and self.param_name in name:
                 param.grad = self.grad[name]
-
 
     def adversarial(self):
         for name, param in self.model.named_parameters():
@@ -110,7 +111,7 @@ class PGD():
         self.restore_param_data()
 
 
-class FreeAT():
+class FreeAT:
     def __init__(self, model, param_name, alpha=0.3, epsilon=1.0, K=3):
         self.model = model
         self.param_name = param_name

@@ -5,16 +5,29 @@ from typing import Callable, List, Tuple
 
 import src.deeplearning.infer.result as br
 from src.deeplearning.utils.utils_metrics import get_entities
-from src.utils.typing import (BertEntityLabelBio, BertIntentionLabelBio,
-                              BertUnionLabel, BertUnionLabelBio)
+from src.utils.typing import (
+    BertEntityLabelBio,
+    BertIntentionLabelBio,
+    BertUnionLabel,
+    BertUnionLabelBio,
+)
 
 logger = logging.getLogger(__name__)
 
-actor: Tuple[BertEntityLabelBio, BertEntityLabelBio] = 'B-Actor', 'I-Actor'
-resource: Tuple[BertEntityLabelBio, BertEntityLabelBio] = 'B-Resource', 'I-Resource'
-core: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = 'B-Core', 'I-Core'
-cond: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = 'B-Cond', 'I-Cond'
-aux: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = 'B-Aux', 'I-Aux'
+actor: Tuple[BertEntityLabelBio, BertEntityLabelBio] = ("B-Actor", "I-Actor")
+resource: Tuple[BertEntityLabelBio, BertEntityLabelBio] = (
+    "B-Resource",
+    "I-Resource",
+)
+core: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = (
+    "B-Core",
+    "I-Core",
+)
+cond: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = (
+    "B-Cond",
+    "I-Cond",
+)
+aux: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = ("B-Aux", "I-Aux")
 
 
 def get_series_bio(src: List[br.BertResult], func: Callable = get_entities):
@@ -23,38 +36,42 @@ def get_series_bio(src: List[br.BertResult], func: Callable = get_entities):
     return func(p), func(t)
 
 
-def label_mapping_bio(lab: BertUnionLabel) -> Tuple[BertUnionLabelBio, BertUnionLabelBio]:
-    if lab == 'Actor':
+def label_mapping_bio(
+    lab: BertUnionLabel,
+) -> Tuple[BertUnionLabelBio, BertUnionLabelBio]:
+    if lab == "Actor":
         return actor
-    if lab == 'Resource':
+    if lab == "Resource":
         return resource
-    if lab == 'Core':
+    if lab == "Core":
         return core
-    if lab == 'Cond':
+    if lab == "Cond":
         return cond
-    if lab == 'Aux':
+    if lab == "Aux":
         return aux
-    if lab == 'Quality':
-        logger.error(f'Label Quality')
+    if lab == "Quality":
+        logger.error("Label Quality")
         # I think it should not be occurred
-    logger.error(f'Illegal label {lab}')
-    raise Exception('Unexpected label type')
+    logger.error(f"Illegal label {lab}")
+    raise Exception("Unexpected label type")
 
 
-def label_mapping_de_bio(lab: BertUnionLabelBio) -> Tuple[BertUnionLabel, bool]:
+def label_mapping_de_bio(
+    lab: BertUnionLabelBio,
+) -> Tuple[BertUnionLabel, bool]:
     def label_check() -> BertUnionLabel:
         if lab in actor:
-            return 'Actor'
+            return "Actor"
         if lab in resource:
-            return 'Resource'
+            return "Resource"
         if lab in core:
-            return 'Core'
+            return "Core"
         if lab in cond:
-            return 'Cond'
+            return "Cond"
         if lab in aux:
-            return 'Aux'
-        logger.error(f'Illegal label-bio {lab}')
-        raise Exception('Unexpected label-bio type')
+            return "Aux"
+        logger.error(f"Illegal label-bio {lab}")
+        raise Exception("Unexpected label-bio type")
 
-    flag = True if lab.startswith('B-') else False
+    flag = True if lab.startswith("B-") else False
     return label_check(), flag

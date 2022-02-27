@@ -22,6 +22,70 @@ logging_tree = "^1.9"
 colorlog = "^6.6.0"
 isort = "^5.10.1"
 mypy = "^0.931"
+black = "^22.1.0"
+pre-commit = "^2.17.0"
+
+[tool.mypy]
+python_version = "3.9"
+warn_no_return = true
+warn_return_any = true
+warn_redundant_casts = true
+show_error_codes = true
+check_untyped_defs = true
+strict_optional = true
+ignore_missing_imports = true
+files = [
+    "./*.py",
+    "src/**/*.py",
+    "test/**/*.py"
+]
+
+[[tool.mypy.overrides]]
+module = "transformers.*"
+follow_imports = "skip"
+
+[[tool.mypy.overrides]]
+module = [
+    "src.deeplearning.infer.base",
+    "src.deeplearning.utils.*",
+    "src.deeplearning.models.*"
+]
+follow_imports = "skip"
+ignore_errors = true
+
+[tool.black]
+target-version = ['py39']
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.ipynb_checkpoints
+    | \.venv
+    | pretrained_data
+    | pretrained_model
+    | temp
+  )/
+)
+'''
+
+[tool.pytest]
+addopts = "-v -s"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+py_version = 39
+
+[tool.pytest.ini_options]
+log_cli = 1
+log_cli_level = "CRITICAL"
+log_cli_format = "%(asctime)s [%(levelname)8s] (%(name)s:%(lineno)s) - %(message)s"
+log_cli_date_format= "%Y-%m-%d %H:%M:%S"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

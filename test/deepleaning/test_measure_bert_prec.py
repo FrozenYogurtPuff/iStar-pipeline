@@ -12,12 +12,17 @@ logger = logging.getLogger(__name__)
 
 
 def load_dataset():
-    with open(Path(ROOT_DIR).joinpath('pretrained_data/entity_ar_r_combined/split_dev.jsonl'), 'r') as j:
+    with open(
+        Path(ROOT_DIR).joinpath(
+            "pretrained_data/entity_ar_r_combined/split_dev.jsonl"
+        ),
+        "r",
+    ) as j:
         for idx, line in enumerate(j):
             a = json.loads(line)
-            sent = a['text']
+            sent = a["text"]
             anno = list()
-            for label in a['labels']:
+            for label in a["labels"]:
                 s, e, lab = label
                 anno.append((s, e, lab))
             yield idx, sent, anno
@@ -27,11 +32,11 @@ def test_measure_bert_prec():
     data = list(load_dataset())
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
-    logger.info(f'First items: sent {sents[0]}')
-    logger.info(f'First items: label {labels[0]}')
+    logger.info(f"First items: sent {sents[0]}")
+    logger.info(f"First items: label {labels[0]}")
 
-    results = infer_wrapper('Entity', sents, labels)
-    logger.info(f'First result: {results[0]}')
+    results = infer_wrapper("Entity", sents, labels)
+    logger.info(f"First result: {results[0]}")
 
     pred_entities, true_entities = get_series_bio(results)
 
@@ -50,11 +55,11 @@ def test_measure_bert_simple_prec():
     data = list(load_dataset())
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
-    logger.info(f'First items: sent {sents[0]}')
-    logger.info(f'First items: label {labels[0]}')
+    logger.info(f"First items: sent {sents[0]}")
+    logger.info(f"First items: label {labels[0]}")
 
-    results = infer_wrapper('Entity', sents, labels)
-    logger.info(f'First result: {results[0]}')
+    results = infer_wrapper("Entity", sents, labels)
+    logger.info(f"First result: {results[0]}")
 
     pred_entities, true_entities = get_series_bio(results)
     print(classification_report(true_entities, pred_entities))

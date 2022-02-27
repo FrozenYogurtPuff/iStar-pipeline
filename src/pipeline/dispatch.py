@@ -1,14 +1,9 @@
 # 导入
 # 初始化 Logger
-import logging
-from typing import Dict, List, Sequence, Union
 
 #   BERT 深度学习
-from src.deeplearning import predict_entity, predict_task
-# Mock 文档读入
-from src.reader import get_result
 
-logger: logging.Logger = logging.getLogger(__name__)
+# Mock 文档读入
 
 # 文本预处理
 #   TODO: 从文档中提取文本
@@ -19,44 +14,12 @@ logger: logging.Logger = logging.getLogger(__name__)
 
 #   为段落使用spaCy分句
 #       注意：reqList中，每一item为一段文本，则spacyList中每一item的spacy.tokens.Doc可能包含多句话
-reqList = get_result()
-spacyList = [nlp(req) for req in reqList]
-
 
 # 分析文本
 #   主体分析
 #       主体抽取
 #           BERT 深度学习
 
-
-def spacy2bert(sl: list) -> List[Dict[str, Union[str, Sequence[str]]]]:
-    """
-    convert a list of spacy docs to a list contains object for BERT inferring
-
-    Caution: the sentences in docs will be flattened
-
-    :param: a list of spacy Docs
-    :return: [{'sent': sent}]
-    """
-
-    def generate_dict(single_sent: str) -> Dict[str, str]:
-        return {'sent': single_sent}
-
-    result = list()
-    for req in sl:
-        for req_sent in req.sents:
-            result.append(generate_dict(req_sent.text))
-    return result
-
-
-bertList = spacy2bert(spacyList)
-
-bert_entity_pred_list: List[List[str]]
-bert_entity_true_list: List[List[str]]  # should be replaced
-bert_entity_tokens: List[List[str]]
-bert_entity_matrix: List[List[int]]  # should be replaced
-
-bert_entity_pred_list, bert_entity_true_list, bert_entity_matrix, bert_entity_tokens = predict_entity(bertList)
 
 # for-loop 以List[]为核心的中间形式存储
 #           TODO: 依存成分
@@ -81,13 +44,6 @@ bert_entity_pred_list, bert_entity_true_list, bert_entity_matrix, bert_entity_to
 #           BERT 深度学习
 
 
-bert_task_pred_list: List[List[str]]
-bert_task_true_list: List[List[str]]  # should be replaced
-bert_task_tokens: List[List[str]]
-bert_task_matrix: List[List[int]]  # should be replaced
-
-bert_task_pred_list, bert_task_true_list, bert_task_matrix, bert_task_tokens = predict_task(bertList)
-
 #           TODO: 核心意图 - 对结果基于依存分析的启发式规则进行意图构建
 #           抽出一个可复用的函数
 
@@ -97,10 +53,6 @@ bert_task_pred_list, bert_task_true_list, bert_task_matrix, bert_task_tokens = p
 # sub_sent = doSplit()
 #               TODO: 对子句进行 BERT
 
-sub_pred_list: List[List[str]]
-sub_tokens: List[List[str]]
-
-sub_pred_list, _, _, sub_tokens = predict_task(bertList)
 # Call 核心意图函数复用
 
 #           预想对这些进行处理时，已经是嵌套式的成句，可以一次对主句和子句做后续分析

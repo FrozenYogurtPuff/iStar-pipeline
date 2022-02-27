@@ -11,10 +11,10 @@ class DiceLoss(nn.Module):
         super(DiceLoss, self).__init__()
 
     def forward(self, input, target):
-        '''
+        """
         input: [N, C]
         target: [N, ]
-        '''
+        """
         prob = torch.softmax(input, dim=1)
         prob = torch.gather(prob, dim=1, index=target.unsqueeze(1))
         dsc_i = 1 - ((1 - prob) * prob) / ((1 - prob) * prob + 1)

@@ -1,5 +1,10 @@
-from ..config import (ENTITY_DATA_DIR, ENTITY_LABEL, ENTITY_MODEL_NAME_OR_PATH,
-                      ENTITY_MODEL_TYPE, ENTITY_OUTPUT_DIR)
+from ..config import (
+    ENTITY_DATA_DIR,
+    ENTITY_LABEL,
+    ENTITY_MODEL_NAME_OR_PATH,
+    ENTITY_MODEL_TYPE,
+    ENTITY_OUTPUT_DIR,
+)
 from .base import InferBase
 
 global_entity_model = None
@@ -12,7 +17,7 @@ class InferEntity(InferBase):
             ENTITY_MODEL_TYPE,
             ENTITY_MODEL_NAME_OR_PATH,
             ENTITY_OUTPUT_DIR,
-            ENTITY_LABEL
+            ENTITY_LABEL,
         )
 
 

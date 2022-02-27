@@ -11,7 +11,11 @@ class FeedForwardNetwork(nn.Module):
         self.linear2 = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
-        x_proj = F.dropout(F.relu(self.linear1(x)), p=self.dropout_rate, training=self.training)
+        x_proj = F.dropout(
+            F.relu(self.linear1(x)),
+            p=self.dropout_rate,
+            training=self.training,
+        )
         x_proj = self.linear2(x_proj)
         return x_proj
 

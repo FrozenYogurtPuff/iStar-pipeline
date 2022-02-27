@@ -1,6 +1,10 @@
-from ..config import (INTENTION_DATA_DIR, INTENTION_LABEL,
-                      INTENTION_MODEL_NAME_OR_PATH, INTENTION_MODEL_TYPE,
-                      INTENTION_OUTPUT_DIR)
+from ..config import (
+    INTENTION_DATA_DIR,
+    INTENTION_LABEL,
+    INTENTION_MODEL_NAME_OR_PATH,
+    INTENTION_MODEL_TYPE,
+    INTENTION_OUTPUT_DIR,
+)
 from .base import InferBase
 
 global_intention_model = None
@@ -13,7 +17,7 @@ class InferIntention(InferBase):
             INTENTION_MODEL_TYPE,
             INTENTION_MODEL_NAME_OR_PATH,
             INTENTION_OUTPUT_DIR,
-            INTENTION_LABEL
+            INTENTION_LABEL,
         )
 
 

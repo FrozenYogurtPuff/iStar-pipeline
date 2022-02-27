@@ -24,17 +24,19 @@ from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
 
 # system, interface, etc.
 def word_list(s: SpacySpan) -> EntityRuleReturn:
-    actor: FixEntityLabel = 'Actor'
-    both: FixEntityLabel = 'Both'
+    actor: FixEntityLabel = "Actor"
+    both: FixEntityLabel = "Both"
     result = list()
 
     for token in s:
         select = False
         label = None
-        if token.lower_.startswith(('system', 'module', 'server', 'user', 'administrator')):
+        if token.lower_.startswith(
+            ("system", "module", "server", "user", "administrator")
+        ):
             select = True
             label = actor
-        elif token.lower_.startswith(('interface', 'client')):
+        elif token.lower_.startswith(("interface", "client")):
             select = True
             label = both
 
@@ -44,7 +46,5 @@ def word_list(s: SpacySpan) -> EntityRuleReturn:
             for c in cur:
                 result.append((c, label))
 
-    logging.getLogger(__name__).debug(f'Length {len(result)}: {result}')
+    logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result
-
-# 19 31
