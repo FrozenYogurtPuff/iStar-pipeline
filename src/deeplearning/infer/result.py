@@ -1,5 +1,6 @@
 from __future__ import annotations  # Remove that after Python 3.10
 
+import copy
 import dataclasses
 import logging
 from typing import Dict, List, Optional, Tuple
@@ -63,7 +64,7 @@ class BertResult:
         return max_type, avg_value
 
     def apply_fix(self: BertResult, fixes: List[EntityFix]) -> BertResult:
-        new_inst = dataclasses.replace(self)
+        new_inst = copy.deepcopy(self)
         for hyb, ali, bali, lab in fixes:
             assert len(bali) in [1, 2]
             if lab == "Both":
@@ -83,5 +84,6 @@ class BertResult:
         if fixes:
             logger.debug(f"Apply fix - Before: {self}")
             logger.debug(f"Apply fix - Fix: {fixes}")
-            logger.error(f"Apply fix - After: {new_inst}")
+            if self.preds != new_inst.preds:
+                logger.error(f"Apply fix - After: {new_inst}")
         return new_inst

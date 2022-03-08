@@ -1,8 +1,6 @@
-import json
 import logging
-from pathlib import Path
+from test.rules.utils.load_dataset import load_dataset
 
-from src import ROOT_DIR
 from src.deeplearning.infer.utils import get_series_bio
 from src.deeplearning.infer.wrapper import infer_wrapper
 from src.deeplearning.utils.utils_metrics import classification_report
@@ -11,25 +9,10 @@ from src.rules.entity.dispatch import get_rule_fixes
 logger = logging.getLogger(__name__)
 
 
-def load_dataset():
-    with open(
-        Path(ROOT_DIR).joinpath(
-            "pretrained_data/entity_ar_r_combined/split_dev.jsonl"
-        ),
-        "r",
-    ) as j:
-        for idx, line in enumerate(j):
-            a = json.loads(line)
-            sent = a["text"]
-            anno = list()
-            for label in a["labels"]:
-                s, e, lab = label
-                anno.append((s, e, lab))
-            yield idx, sent, anno
-
-
-def test_measure_bert_prec():
-    data = list(load_dataset())
+def test_measure_bert_entity_prec():
+    data = list(
+        load_dataset("pretrained_data/entity_ar_r_combined/split_dev.jsonl")
+    )
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
     logger.info(f"First items: sent {sents[0]}")
@@ -52,7 +35,9 @@ def test_measure_bert_prec():
 
 
 def test_measure_bert_simple_prec():
-    data = list(load_dataset())
+    data = list(
+        load_dataset("pretrained_data/entity_ar_r_combined/split_dev.jsonl")
+    )
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
     logger.info(f"First items: sent {sents[0]}")
@@ -69,7 +54,7 @@ def test_measure_bert_simple_prec():
         res = get_rule_fixes(sent, result)
         new_pred_entities.append(result.apply_fix(res))
 
-    pred_entities, true_entities = get_series_bio(results)
+    pred_entities, true_entities = get_series_bio(new_pred_entities)
     print(classification_report(true_entities, pred_entities))
 
 
@@ -100,10 +85,11 @@ def test_measure_bert_simple_prec():
 # macro avg    0.54687   0.64351   0.59044       763
 
 
-# hard[0][0]  precision    recall  f1-score   support
+# word_list `user` -> both
+# hard[0][0] precision    recall  f1-score   support
 #
-#     Actor    0.66223   0.79808   0.72384       312
-#  Resource    0.54066   0.54545   0.54305       451
+#     Actor    0.66578   0.79808   0.72595       312
+#  Resource    0.54167   0.54767   0.54465       451
 #
-# micro avg    0.59567   0.64875   0.62108       763
-# macro avg    0.59037   0.64875   0.61697       763
+# micro avg    0.59759   0.65007   0.62272       763
+# macro avg    0.59242   0.65007   0.61879       763

@@ -305,7 +305,7 @@ def classification_report(true_entities, pred_entities, digits=5):
         width=width,
         digits=digits,
     )
-    # TODO: Is this weighted avg?
+
     report += row_fmt.format(
         last_line_heading,
         np.average(ps, weights=s),

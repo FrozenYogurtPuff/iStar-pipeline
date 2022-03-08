@@ -1,11 +1,9 @@
-import json
 import logging
-from pathlib import Path
+from test.rules.utils.load_dataset import load_dataset
 from typing import List
 
 import spacy
 
-from src import ROOT_DIR
 from src.rules.config import entity_plugins
 from src.rules.entity.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
@@ -13,23 +11,6 @@ from src.utils.spacy import char_idx_to_word_idx
 from src.utils.typing import DatasetEntityLabel, EntityFix, SpacySpan
 
 logger = logging.getLogger(__name__)
-
-
-def load_dataset():
-    with open(
-        Path(ROOT_DIR).joinpath(
-            "pretrained_data/entity_ar_r_combined/all.jsonl"
-        ),
-        "r",
-    ) as j:
-        for idx, line in enumerate(j):
-            a = json.loads(line)
-            sent = a["text"]
-            anno = list()
-            for label in a["labels"]:
-                s, e, lab = label
-                anno.append((s, e, lab))
-            yield idx, sent, anno
 
 
 # result = [(1, [], 'Actor')]
@@ -52,7 +33,7 @@ def check_result_precision(
 
 def test_entity_rules_precision():
     nlp: spacy.language.Language = spacy.load("en_core_web_lg")
-    res = load_dataset()
+    res = load_dataset("pretrained_data/entity_ar_r_combined/all.jsonl")
     total = 0
     target = 0
     for i, sent, anno in res:
