@@ -102,7 +102,7 @@ def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
     return new_list
 
 
-# def bert_merge(res: List[EntityFix], b: BertResult) -> List[EntityFix]:
+# def bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
 #     # Chunk == BERT, good
 #     # Chunk less than BERT, use BERT
 #     # Chunk more than BERT, use Chunk

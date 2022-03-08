@@ -60,6 +60,7 @@ def char_idx_to_word_idx(
     return strs.start, strs.end
 
 
+# [a, b], not (a, b)!
 def get_token_idx(token: HybridToken) -> List[int]:
     def calc(t: SpacyToken):
         return t.i - t.sent.start

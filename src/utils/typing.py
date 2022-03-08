@@ -1,32 +1,30 @@
-from typing import Callable, List, Literal, Sequence, Tuple, Type, Union
+from typing import Callable, List, Literal, Sequence, Tuple, Union
 
 import spacy.tokens
 from typing_extensions import TypeAlias, TypeGuard  # Before Python 3.10
 
 # BERT
-BertEntityLabelBio = Literal[
+BertEntityLabelBio: TypeAlias = Literal[
     "O", "B-Actor", "I-Actor", "B-Resource", "I-Resource"
 ]
-BertIntentionLabelBio = Literal[
+BertIntentionLabelBio: TypeAlias = Literal[
     "O", "B-Core", "I-Core", "B-Cond", "I-Cond", "B-Aux", "I-Aux"
 ]
-BertUnionLabelBio = Union[BertEntityLabelBio, BertIntentionLabelBio]
+BertUnionLabelBio: TypeAlias = Union[BertEntityLabelBio, BertIntentionLabelBio]
 
-BertEntityLabel = Literal["O", "Actor", "Resource"]
-BertIntentionLabel = Literal["O", "Core", "Cond", "Aux", "Quality"]
-BertUnionLabel = Union[BertEntityLabel, BertIntentionLabel]
+BertEntityLabel: TypeAlias = Literal["O", "Actor", "Resource"]
+BertIntentionLabel: TypeAlias = Literal["O", "Core", "Cond", "Aux", "Quality"]
+BertUnionLabel: TypeAlias = Union[BertEntityLabel, BertIntentionLabel]
 
-FixEntityLabel = Literal["Actor", "Resource", "Both"]
-
-Token = str
+Token: TypeAlias = str
 # [[0.1, 0.8],
 #  [0.9, 0.2]]
-BertMatrix = List[List[int]]
+BertMatrix: TypeAlias = List[List[int]]
 
 # Alignment
 # [1]
 # [1, 3]
-Alignment = List[int]
+Alignment: TypeAlias = List[int]
 
 # Spacy
 SpacyDoc: TypeAlias = spacy.tokens.Doc
@@ -38,9 +36,11 @@ HybridToken: TypeAlias = Union[SpacyToken, SpacySpan]
 # [0, 3, "Actor"]
 DatasetEntityLabel: TypeAlias = Tuple[int, int, BertEntityLabel]
 DatasetIntentionLabel: TypeAlias = Tuple[int, int, BertIntentionLabel]
-DatasetUnionLabel: TypeAlias = Union[DatasetEntityLabel, DatasetIntentionLabel]
+DatasetUnionLabel: TypeAlias = Tuple[int, int, BertUnionLabel]
 
 # Rule
+# Entity
+FixEntityLabel: TypeAlias = Literal["Actor", "Resource", "Both"]
 # ( [Student, Parents], "Actor" )
 # ( [Student, tickets], ("Actor", "Resource") )
 EntityRuleReturn: TypeAlias = Sequence[Tuple[HybridToken, FixEntityLabel]]
@@ -49,6 +49,21 @@ EntityRulePlugins: TypeAlias = Sequence[
 ]
 # (Student, [1], [1, 2], "Actor")
 EntityFix: TypeAlias = Tuple[HybridToken, Alignment, Alignment, FixEntityLabel]
+
+
+# Intention
+# TODO: really?
+FixIntentionLabel: TypeAlias = Literal["Core", "Cond", "Aux", "Quality"]
+# Slices for Aux
+# [(1, 3), (2, 11)]  [], not [)
+IntentionSlice: TypeAlias = Tuple[int, int, FixIntentionLabel]
+IntentionRuleAuxReturn: TypeAlias = List[HybridToken]
+IntentionRuleAuxPlugins: TypeAlias = Sequence[
+    Callable[[SpacySpan], IntentionRuleAuxReturn]
+]
+IntentionFix: TypeAlias = Tuple[
+    HybridToken, Alignment, Alignment, FixIntentionLabel
+]
 
 
 # TypeGuard
@@ -132,3 +147,7 @@ def is_fix_entity_label_list(
     val: Sequence[str],
 ) -> TypeGuard[List[FixEntityLabel]]:
     return all(is_fix_entity_label(v) for v in val)
+
+
+# TODO: typing.NamedTuple 重构
+# TODO: 使用继承 Exception 重构 LBYL

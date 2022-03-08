@@ -9,7 +9,11 @@ from src.rules.entity.plugins import (
     word_list,
 )
 from src.rules.entity.plugins.agent_dative_ADP import agent_dative_adp
-from src.utils.typing import EntityRulePlugins
+from src.rules.intention.procedure.aux_slice.acl_without_to import (
+    acl_without_to,
+)
+from src.rules.intention.procedure.aux_slice.relcl import relcl
+from src.utils.typing import EntityRulePlugins, IntentionRuleAuxPlugins
 
 entity_plugins: EntityRulePlugins = (
     dative_propn,
@@ -22,3 +26,5 @@ entity_plugins: EntityRulePlugins = (
     ner,
 )
 entity_autocrat: EntityRulePlugins = (relcl_who, word_list, ner)
+
+intention_aux_slice_plugins: IntentionRuleAuxPlugins = (acl_without_to, relcl)
