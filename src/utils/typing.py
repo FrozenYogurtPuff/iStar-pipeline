@@ -47,12 +47,17 @@ EntityRuleReturn: TypeAlias = Sequence[Tuple[HybridToken, FixEntityLabel]]
 EntityRulePlugins: TypeAlias = Sequence[
     Callable[[SpacySpan], EntityRuleReturn]
 ]
+
+
 # (Student, [1], [1, 2], "Actor")
-EntityFix: TypeAlias = Tuple[HybridToken, Alignment, Alignment, FixEntityLabel]
+class EntityFix(NamedTuple):
+    token: HybridToken
+    idxes: Alignment
+    bert_idxes: Alignment
+    label: FixEntityLabel
 
 
 # Intention
-# TODO: really?
 FixIntentionLabel: TypeAlias = Literal["Core", "Cond", "Aux", "Quality"]
 
 
@@ -67,9 +72,6 @@ class SeqSlicesTuple(NamedTuple):
 IntentionRuleAuxReturn: TypeAlias = List[HybridToken]
 IntentionRuleAuxPlugins: TypeAlias = Sequence[
     Callable[[SpacySpan], IntentionRuleAuxReturn]
-]
-IntentionFix: TypeAlias = Tuple[
-    HybridToken, Alignment, Alignment, FixIntentionLabel
 ]
 
 
@@ -154,7 +156,3 @@ def is_fix_entity_label_list(
     val: Sequence[str],
 ) -> TypeGuard[List[FixEntityLabel]]:
     return all(is_fix_entity_label(v) for v in val)
-
-
-# TODO: typing.NamedTuple 重构
-# TODO: 使用继承 Exception 重构 LBYL

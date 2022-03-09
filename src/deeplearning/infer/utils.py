@@ -30,6 +30,10 @@ cond: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = (
 aux: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = ("B-Aux", "I-Aux")
 
 
+class LabelTypeException(Exception):
+    pass
+
+
 def get_series_bio(src: List[br.BertResult], func: Callable = get_entities):
     p = [s.preds for s in src]
     t = [s.trues for s in src]
@@ -53,7 +57,7 @@ def label_mapping_bio(
         logger.error("Label Quality")
         # I think it should not be occurred
     logger.error(f"Illegal label {lab}")
-    raise Exception("Unexpected label type")
+    raise LabelTypeException("Unexpected label type")
 
 
 def label_mapping_de_bio(
@@ -71,7 +75,7 @@ def label_mapping_de_bio(
         if lab in aux:
             return "Aux"
         logger.error(f"Illegal label-bio {lab}")
-        raise Exception("Unexpected label-bio type")
+        raise LabelTypeException("Unexpected label-bio type")
 
     flag = True if lab.startswith("B-") else False
     return label_check(), flag

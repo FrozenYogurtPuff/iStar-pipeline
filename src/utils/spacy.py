@@ -12,6 +12,10 @@ logger = logging.getLogger(__name__)
 global_nlp = None
 
 
+class IllegalCharSliceException(Exception):
+    pass
+
+
 def get_spacy():
     global global_nlp
 
@@ -55,7 +59,7 @@ def char_idx_to_word_idx(
     if strs is None:
         logger.error(f"Sent: {sent.text}\n")
         logger.error(f"Error char slices about sent from {begin} to {end}")
-        raise Exception("Illegal char slices")
+        raise IllegalCharSliceException("Illegal char slices")
 
     return strs.start, strs.end
 

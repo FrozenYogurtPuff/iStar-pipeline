@@ -13,6 +13,10 @@ from src.utils.typing import BertUnionLabelBio, DatasetUnionLabel
 logger = logging.getLogger(__name__)
 
 
+class IllegalModelException(Exception):
+    pass
+
+
 def set_label(
     ret: List[BertUnionLabelBio],
     start: int,
@@ -54,7 +58,7 @@ def infer_wrapper(
 
     if ident not in ["Entity", "Intention"]:
         logger.error(f"Unexcepted identifier {ident}")
-        raise Exception("Illegal identifier pattern")
+        raise IllegalModelException("Illegal identifier pattern")
     logger.info(f"Infer type: {ident}")
 
     data = list()

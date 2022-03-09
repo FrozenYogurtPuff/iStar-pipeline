@@ -7,11 +7,15 @@ from src.utils.typing import (
 )
 
 
+class FixEntityLabelException(Exception):
+    pass
+
+
 def is_entity_type_ok(
     fix: FixEntityLabel, spa: Union[BertEntityLabelBio, BertEntityLabel]
 ) -> bool:
     if fix not in ["Actor", "Both", "Resource"]:
-        raise Exception("Illegal FixEntityLabel " + fix)
+        raise FixEntityLabelException("Illegal FixEntityLabel " + fix)
 
     if fix == "Both":
         if spa == "O":

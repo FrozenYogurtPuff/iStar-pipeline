@@ -58,7 +58,8 @@ def simple_bert_merge(
     def simple_check_bert(
         sample: EntityFix, bert: List[BertEntityLabelBio]
     ) -> bool:
-        token, idx, bert_idx, label = sample
+        bert_idx = sample.bert_idxes
+        label = sample.label
         for num in bert_idx:
             if not is_entity_type_ok(label, bert[num]):
                 return True
@@ -80,7 +81,8 @@ def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
     def prob_check_bert(
         sample: EntityFix, bert: List[BertEntityLabelBio]
     ) -> bool:
-        token, idx, bert_idx, label = sample
+        bert_idx = sample.bert_idxes
+
         label_m, prob = b.matrix_find_prob_max(bert_idx[0], bert_idx[-1])
         assert is_fix_entity_label(label_m)
         label = label_m
@@ -158,7 +160,7 @@ def dispatch(
         # add_all does not search bert_idx
         idx = get_token_idx(token)
         if add_all:
-            result.append((token, idx, [], label))
+            result.append(EntityFix(token, idx, [], label))
         else:
             assert s2b is not None
             bert_idx = (
@@ -166,7 +168,7 @@ def dispatch(
                 if len(idx) == 1
                 else [s2b[idx[0]][0], s2b[idx[-1]][-1]]
             )
-            result.append((token, idx, bert_idx, label))
+            result.append(EntityFix(token, idx, bert_idx, label))
 
     # hybrid bert to filter consequences
     if not add_all:
