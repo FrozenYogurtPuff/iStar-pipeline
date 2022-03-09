@@ -1,6 +1,6 @@
 import collections.abc
 import logging
-from typing import List, Sequence, Tuple, Union
+from typing import List, Optional, Sequence, Tuple, Union
 
 import spacy
 import spacy.tokens
@@ -24,10 +24,7 @@ def get_spacy():
     return global_nlp
 
 
-# sent, 0, 14 -> 0, 2
-def char_idx_to_word_idx(
-    sent: SpacySpan, begin: int, end: int
-) -> Tuple[int, int]:
+def char_idx_to_word(sent: SpacySpan, begin: int, end: int) -> SpacySpan:
     biases = [(1, 0), (0, 1), (-1, 0), (0, -1)]
     base_factor = 0
     strs = sent.char_span(begin, end)
@@ -60,7 +57,14 @@ def char_idx_to_word_idx(
         logger.error(f"Sent: {sent.text}\n")
         logger.error(f"Error char slices about sent from {begin} to {end}")
         raise IllegalCharSliceException("Illegal char slices")
+    return strs
 
+
+# sent, 0, 14 -> 0, 2
+def char_idx_to_word_idx(
+    sent: SpacySpan, begin: int, end: int
+) -> Tuple[int, int]:
+    strs = char_idx_to_word(sent, begin, end)
     return strs.start, strs.end
 
 
@@ -117,3 +121,12 @@ def include_elem(
     if isinstance(elem, spacy.tokens.Span):
         return token_include_elem(elem[0]) and token_include_elem(elem[-1])
     return token_include_elem(elem)
+
+
+def match_noun_chunk(
+    token: HybridToken, sents: SpacySpan
+) -> Optional[SpacySpan]:
+    for noun_chunk in sents.noun_chunks:
+        if include_elem(token, noun_chunk):
+            return noun_chunk
+    return None

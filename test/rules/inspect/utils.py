@@ -1,0 +1,136 @@
+from typing import Dict
+
+from spacy import Language
+
+from src.utils.typing import SpacySpan
+
+nlp_dict: Dict[str, SpacySpan] = dict()
+
+dep_list = [
+    "acl",
+    "acomp",
+    "advcl",
+    "advmod",
+    "agent",
+    "amod",
+    "appos",
+    "attr",
+    "aux",
+    "auxpass",
+    "case",
+    "cc",
+    "ccomp",
+    "compound",
+    "conj",
+    "csubj",
+    "csubjpass",
+    "dative",
+    "dep",
+    "det",
+    "dobj",
+    "expl",
+    "intj",
+    "mark",
+    "meta",
+    "neg",
+    "nmod",
+    "npadvmod",
+    "nsubj",
+    "nsubjpass",
+    "nummod",
+    "oprd",
+    "parataxis",
+    "pcomp",
+    "pobj",
+    "poss",
+    "preconj",
+    "predet",
+    "prep",
+    "prt",
+    "punct",
+    "quantmod",
+    "relcl",
+    "xcomp",
+]
+
+tag_list = [
+    "ADD",
+    "AFX",
+    "CC",
+    "CD",
+    "DT",
+    "EX",
+    "FW",
+    "HYPH",
+    "IN",
+    "JJ",
+    "JJR",
+    "JJS",
+    "LS",
+    "MD",
+    "NFP",
+    "NN",
+    "NNP",
+    "NNPS",
+    "NNS",
+    "PDT",
+    "POS",
+    "PRP",
+    "PRP$",
+    "RB",
+    "RBR",
+    "RBS",
+    "RP",
+    "SYM",
+    "TO",
+    "UH",
+    "VB",
+    "VBD",
+    "VBG",
+    "VBN",
+    "VBP",
+    "VBZ",
+    "WDT",
+    "WP",
+    "WP$",
+    "WRB",
+    "XX",
+]
+
+ner_list = [
+    "CARDINAL",
+    "DATE",
+    "EVENT",
+    "FAC",
+    "GPE",
+    "LANGUAGE",
+    "LAW",
+    "LOC",
+    "MONEY",
+    "NORP",
+    "ORDINAL",
+    "ORG",
+    "PERCENT",
+    "PERSON",
+    "PRODUCT",
+    "QUANTITY",
+    "TIME",
+    "WORK_OF_ART",
+]
+
+
+def cache_nlp(nlp: Language, s: str) -> SpacySpan:
+    global nlp_dict
+    try:
+        res = nlp_dict[s]
+    except KeyError:
+        res = nlp(s)[:]
+        nlp_dict[s] = res
+    return res
+
+
+def if_inside(sentence: SpacySpan, dep: str = "xcomp") -> bool:
+    for token in sentence:
+        if token.dep_ == dep:
+            return True
+    return False

@@ -8,7 +8,12 @@ import spacy_alignments as tokenizations
 
 import src.deeplearning.infer.result as br
 from src.rules.utils.seq import is_entity_type_ok
-from src.utils.spacy import get_spacy, get_token_idx, include_elem
+from src.utils.spacy import (
+    get_spacy,
+    get_token_idx,
+    include_elem,
+    match_noun_chunk,
+)
 from src.utils.typing import (
     Alignment,
     BertEntityLabelBio,
@@ -132,15 +137,14 @@ def dispatch(
         packs = func(s)
         is_autocratic = True if func in autocrat else False
         for token, label in set(packs):
-            find = False
             # if `noun_chunk`, use noun chunks instead of tokens
             if noun_chunk:
-                for c in list(s.noun_chunks):
-                    if include_elem(token, c):
-                        collector.append((c, label, is_autocratic))
-                        find = True
-                        break
-            if not find:
+                c = match_noun_chunk(token, s)
+                if c:
+                    collector.append((c, label, is_autocratic))
+                else:
+                    collector.append((token, label, is_autocratic))
+            else:
                 collector.append((token, label, is_autocratic))
 
     while collector:
