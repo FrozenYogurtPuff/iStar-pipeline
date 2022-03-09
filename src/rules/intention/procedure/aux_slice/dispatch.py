@@ -7,41 +7,41 @@ from src.utils.typing import (
     FixIntentionLabel,
     HybridToken,
     IntentionRuleAuxPlugins,
-    IntentionSlice,
+    SeqSlicesTuple,
     SpacySpan,
 )
 
 logger = logging.getLogger(__name__)
 
 
-def need_slice(s: IntentionSlice, bidx: int, eidx: int) -> bool:
-    if bidx == s[0]:
+def need_slice(s: SeqSlicesTuple, bidx: int, eidx: int) -> bool:
+    if bidx == s.start:
         return False
-    if eidx == s[1]:
+    if eidx == s.end:
         return False
-    if bidx > s[1]:
+    if bidx > s.end:
         return False
-    if eidx < s[0]:
+    if eidx < s.start:
         return False
     return True
 
 
 def dispatch(
     s: SpacySpan,
-    seq_slices: Optional[List[IntentionSlice]] = None,
-    funcs: IntentionRuleAuxPlugins = intention_aux_slice_plugins,
-) -> List[IntentionSlice]:
+    seq_slices: Optional[List[SeqSlicesTuple]] = None,
+    slice_funcs: IntentionRuleAuxPlugins = intention_aux_slice_plugins,
+) -> List[SeqSlicesTuple]:
     core: FixIntentionLabel = "Core"
     aux: FixIntentionLabel = "Aux"
 
     if seq_slices is None:
         seq_idx = get_token_idx(s)
         seq_s, seq_e = seq_idx[0], seq_idx[-1]
-        seq_slices = [(seq_s, seq_e, core)]
+        seq_slices = [SeqSlicesTuple(seq_s, seq_e, core)]
     assert seq_slices is not None
 
     pool: List[HybridToken] = list()
-    for func in funcs:
+    for func in slice_funcs:
         pool.extend(func(s))
     pool = list(set(pool))
 
@@ -57,8 +57,7 @@ def dispatch(
         idxes = get_token_idx(p)
         bidx, eidx = idxes[0], idxes[-1]
         for i, sli in enumerate(seq_slices):
-            assert isinstance(i, int)
-            assert sli[2] in [core, aux]
+            assert sli.type_ in [core, aux]
             if need_slice(sli, bidx, eidx):
                 slice_type = core, aux
                 for tok in s:
@@ -66,21 +65,28 @@ def dispatch(
                         root_idx = get_token_idx(tok.head)[0]
                         if root_idx > eidx:
                             slice_type = aux, core
+                        # `new is`
                         if token_not_end(tok) and tok.nbor(1).lower_ in [
                             "is",
                             "was",
                             "are",
                             "were",
                         ]:
-                            slice_type = core, core
+                            slice_type = core, slice_type[-1]
                         break
-                if sli[2] == aux:
+                # `advcl`
+                for tok in s:
+                    if tok.dep_ == "advcl":
+                        if get_token_idx(tok)[-1] < eidx:
+                            # just change `[0]`
+                            slice_type = core, slice_type[-1]
+                        break
+                if sli.type_ == aux:
                     slice_type = aux, aux
 
-                seq_slices[i] = (sli[0], eidx, slice_type[0])
-                seq_slices.insert(i + 1, (bidx, sli[1], slice_type[1]))
+                seq_slices[i] = SeqSlicesTuple(sli[0], eidx, slice_type[0])
+                seq_slices.insert(
+                    i + 1, SeqSlicesTuple(bidx, sli[1], slice_type[1])
+                )
 
     return seq_slices
-
-
-# advcl 及其 head 不是 Aux

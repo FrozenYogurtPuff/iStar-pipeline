@@ -11,6 +11,7 @@ def relcl(s: SpacySpan) -> List[HybridToken]:
 
     pool: List[HybridToken] = list()
     for token in s:
+        # `double != to`
         if (
             token.dep_ == "relcl"
             and token_not_start(token)

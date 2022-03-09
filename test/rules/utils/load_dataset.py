@@ -8,7 +8,9 @@ from src.utils.typing import is_bert_union_label
 
 def load_dataset(
     path: str,
-) -> Generator[Tuple[int, str, List[Any]], None, None]:  # TODO: dirty fix
+) -> Generator[
+    Tuple[int, str, List[Any]], None, None
+]:  # TODO: dirty fix, need Generic
     with open(
         Path(ROOT_DIR).joinpath(path),
         "r",

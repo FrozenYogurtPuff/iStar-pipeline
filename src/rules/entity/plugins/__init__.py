@@ -1,3 +1,4 @@
+from .agent_dative_ADP import agent_dative_adp
 from .attr import attr
 from .dative_PROPN import dative_propn
 from .dobj_pobj import dobj_pobj
@@ -18,4 +19,5 @@ __all__ = [
     "word_list",
     "nsubj",
     "attr",
+    "agent_dative_adp",
 ]

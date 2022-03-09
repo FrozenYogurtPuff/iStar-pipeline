@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def if_inside(sentence: SpacySpan) -> bool:
     for token in sentence:
-        if token.dep_ == "advcl":
+        if token.dep_ == "agent":
             return True
     return False
 
@@ -53,7 +53,9 @@ if __name__ == "__main__":
     for i, sent, anno in tqdm(data):
         sent_processed = nlp(sent)
         if if_inside(sent_processed[:]):
-            display_dep(sent_processed, i)
-            display_ent(sent_processed, anno, i)
+            # display_dep(sent_processed, i)
+            # display_ent(sent_processed, anno, i)
+            print(i)
 
-# advcl 与 Cond
+# TODO: advcl 与 Cond
+# TODO: nsubj时查找verb的conj进行分句

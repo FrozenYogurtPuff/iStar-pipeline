@@ -61,6 +61,7 @@ def test_smoke():
 def test_how_slices_hit():
     core: FixIntentionLabel = "Core"
     aux: FixIntentionLabel = "Aux"
+    cond: FixIntentionLabel = "Cond"
     nlp = get_spacy()
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     sents = [d[1] for d in data]
@@ -81,6 +82,9 @@ def test_how_slices_hit():
                 l_start, l_end, l_anno = lab
                 l_start, l_end = char_idx_to_word_idx(s, l_start, l_end)
                 l_range = range(l_start, l_end)
+                # `cond as aux`
+                # if l_anno == cond:
+                #     l_anno = aux
                 if l_anno not in [core, aux]:
                     continue
 
@@ -119,7 +123,22 @@ def test_how_slices_hit():
     logger.error(f"{total_true}/{total_not_aux}/{total_should_aux}")
 
 
-# 194/63/122
-# is 198/72/118
-# relcl double != to 205/78/111
-# relcl double != to is 194/63/122
+# aux_without_to 194/63/122
+# awt is 198/72/118
+# awt relcl double != to 205/78/111
+# awt relcl double != to is 194/63/122
+# awt rd!=to is advcl 179/58/137
+# awt rd!=to is advcl[0] 194/62/122
+# awt rd!=to advcl[0] 205/73/111
+# awt rd!=to advcl[0] cond as aux 215/73/202   # cond rules demand
+# awt rd!=to auxpass advcl[0] 199/129/102
+# awt rd!=to auxpass advcl[0] caa 220/130/182
+# awt rd!=to nsubjpass advcl[0] 201/124/102
+# awt!=using rd!=to advcl[0] 204/62/112
+# awt!=using rd!=to is advcl[0] 193/51/123
+# awt!=using rd!=to is[-1] advcl[0] 193/53/123
+# awt!=using rd!=to is[0] advcl[0] 204/60/112
+# awt!=using rd!=to agent is[0] advcl[0] 212/72/112
+# awt!=using rd!=to agent is[-1] advcl[0] 203/67/121
+# awt!=using rd!=to agent advcl[0] 213/76/111
+# awt!=using rd!=to agent is[0] advcl[0] fix_pos 216/72/108

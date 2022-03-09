@@ -122,8 +122,5 @@ def test_how_slices_hit():
 
 
 # 100/43/216
-# slice时检测前后句内容长度进行比较？ x
-# 找nsubj，nsubj.head在的地方是core？
-# it, is
 # 一部分aux（前后皆为core）：Inventory administrators: users that can be delegated by any administrative level to work > and < on the `applications assigned permission` can varies from one user to another depending on its assigned tasks.
 # Root 的 conj

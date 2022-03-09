@@ -1,5 +1,6 @@
 # Entity Rules
 from src.rules.entity.plugins import (
+    agent_dative_adp,
     dative_propn,
     dobj_pobj,
     ner,
@@ -8,11 +9,11 @@ from src.rules.entity.plugins import (
     relcl_who,
     word_list,
 )
-from src.rules.entity.plugins.agent_dative_ADP import agent_dative_adp
-from src.rules.intention.procedure.aux_slice.acl_without_to import (
+from src.rules.intention.procedure.aux_slice import (
     acl_without_to,
+    agent,
+    relcl,
 )
-from src.rules.intention.procedure.aux_slice.relcl import relcl
 from src.utils.typing import EntityRulePlugins, IntentionRuleAuxPlugins
 
 entity_plugins: EntityRulePlugins = (
@@ -27,4 +28,8 @@ entity_plugins: EntityRulePlugins = (
 )
 entity_autocrat: EntityRulePlugins = (relcl_who, word_list, ner)
 
-intention_aux_slice_plugins: IntentionRuleAuxPlugins = (acl_without_to, relcl)
+intention_aux_slice_plugins: IntentionRuleAuxPlugins = (
+    acl_without_to,
+    relcl,
+    agent,
+)

@@ -13,6 +13,8 @@ def acl_without_to(s: SpacySpan) -> List[HybridToken]:
     for token in s:
         if (
             token.dep_ == "acl"
+            # `!=using`
+            and token.lower_ not in ["using", "requiring"]
             and token_not_start(token.head)
             and token.head.nbor(1).lower_ != "to"
         ):
@@ -22,9 +24,6 @@ def acl_without_to(s: SpacySpan) -> List[HybridToken]:
     return pool
 
 
-# TODO: 冒烟测试通过后，检查jsonl里，这些分割的准确率？
-# 最好加一个指示：哪半句是 Core，哪半句是 Aux
-# TODO: 继续完成 relcl，ccomp 等其它 dep 规则 to slice aux
 # TODO: 与 BERT 融合，能够提升 Aux 分割的准确率吗？
 
 # TODO: 推进 Entity 深入规则

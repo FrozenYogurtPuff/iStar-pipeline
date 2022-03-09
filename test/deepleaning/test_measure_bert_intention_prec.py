@@ -34,3 +34,6 @@ def test_measure_bert_intention_prec():
     #
     # micro avg    0.59003   0.67619   0.63018       315
     # macro avg    0.59739   0.67619   0.63366       315
+
+
+# TODO: 用规则救救Aux，想想办法，都有什么规则

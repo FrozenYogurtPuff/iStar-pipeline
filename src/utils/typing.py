@@ -1,4 +1,4 @@
-from typing import Callable, List, Literal, Sequence, Tuple, Union
+from typing import Callable, List, Literal, NamedTuple, Sequence, Tuple, Union
 
 import spacy.tokens
 from typing_extensions import TypeAlias, TypeGuard  # Before Python 3.10
@@ -54,9 +54,16 @@ EntityFix: TypeAlias = Tuple[HybridToken, Alignment, Alignment, FixEntityLabel]
 # Intention
 # TODO: really?
 FixIntentionLabel: TypeAlias = Literal["Core", "Cond", "Aux", "Quality"]
+
+
 # Slices for Aux
 # [(1, 3), (2, 11)]  [], not [)
-IntentionSlice: TypeAlias = Tuple[int, int, FixIntentionLabel]
+class SeqSlicesTuple(NamedTuple):
+    start: int
+    end: int
+    type_: FixIntentionLabel
+
+
 IntentionRuleAuxReturn: TypeAlias = List[HybridToken]
 IntentionRuleAuxPlugins: TypeAlias = Sequence[
     Callable[[SpacySpan], IntentionRuleAuxReturn]
