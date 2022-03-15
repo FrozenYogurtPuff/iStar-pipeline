@@ -1,0 +1,7 @@
+           precision    recall  f1-score   support
+
+     Role    0.82051   0.79012   0.80503       162
+    Agent    0.88000   0.91124   0.89535       169
+
+micro avg    0.85196   0.85196   0.85196       331
+macro avg    0.85089   0.85196   0.85115       331
