@@ -2,12 +2,11 @@
 from src.rules.entity.plugins import (
     agent_dative_adp,
     dative_propn,
-    dobj_pobj,
+    dep,
     ner,
-    poss,
     poss_propn,
     relcl_who,
-    word_list,
+    tag,
 )
 from src.rules.intention.procedure.aux_slice import (
     acl_without_to,
@@ -21,12 +20,11 @@ entity_plugins: EntityRulePlugins = (
     agent_dative_adp,
     poss_propn,
     relcl_who,
-    poss,
-    dobj_pobj,
-    word_list,
+    tag,
+    dep,
+    # word_list,
     ner,
 )
-entity_autocrat: EntityRulePlugins = (relcl_who, word_list, ner)
 
 intention_aux_slice_plugins: IntentionRuleAuxPlugins = (
     acl_without_to,

@@ -1,23 +1,8 @@
-from .agent_dative_ADP import agent_dative_adp
-from .attr import attr
-from .dative_PROPN import dative_propn
-from .dobj_pobj import dobj_pobj
+from .dep import dep_base as dep
+from .hybrid.agent_dative_ADP import agent_dative_adp
+from .hybrid.dative_PROPN import dative_propn
+from .hybrid.poss_PROPN import poss_propn
+from .hybrid.relcl_who import relcl_who
+from .hybrid.word_list import word_list
 from .ner import ner
-from .nsubj import nsubj
-from .poss import poss
-from .poss_PROPN import poss_propn
-from .relcl_who import relcl_who
-from .word_list import word_list
-
-__all__ = [
-    "dative_propn",
-    "dobj_pobj",
-    "ner",
-    "poss",
-    "poss_propn",
-    "relcl_who",
-    "word_list",
-    "nsubj",
-    "attr",
-    "agent_dative_adp",
-]
+from .tag import tag_base as tag

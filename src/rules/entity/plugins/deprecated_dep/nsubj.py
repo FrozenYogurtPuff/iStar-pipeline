@@ -12,10 +12,11 @@ def nsubj(s: SpacySpan) -> EntityRuleReturn:
 
     for token in s:
         if token.dep_ == "nsubj":
-            key = token.head
-            cur = (key, *key.conjuncts)
-            for c in cur:
-                result.append((c, both))
+            key = token
+            result.append((key, both))
+            key_conjuncts = token.conjuncts
+            for conj in key_conjuncts:
+                result.append((conj, both))
 
     logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

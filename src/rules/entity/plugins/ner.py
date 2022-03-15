@@ -23,15 +23,24 @@ logger = logging.getLogger(__name__)
 
 
 def ner(s: SpacySpan) -> EntityRuleReturn:
-    actor: FixEntityLabel = "Actor"
     both: FixEntityLabel = "Both"
     result = list()
 
     for ent in s.ents:
-        if ent.label_ in ["ORG", "NORP", "LOC", "WORK_OF_ART", "FAC", "EVENT"]:
-            result.append((ent[0], both))
-        elif ent.label_ in ["PERSON", "PRODUCT", "GPE"]:
-            result.append((ent[0], actor))
+        if ent.label_ in [
+            "ORG",
+            "NORP",
+            "LOC",
+            "FAC",
+            "EVENT",
+            "PERSON",
+            "PRODUCT",
+            "GPE",
+        ]:
+            result.append((ent, both))
+
+        # if ent.label_ in ["WORK_OF_ART"]:
+        #     result.append((ent[0], both))
 
     logger.debug(f"Length {len(result)}: {result}")
     return result

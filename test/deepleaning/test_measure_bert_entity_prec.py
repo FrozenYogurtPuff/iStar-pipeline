@@ -93,3 +93,58 @@ def test_measure_bert_simple_prec():
 #
 # micro avg    0.59759   0.65007   0.62272       763
 # macro avg    0.59242   0.65007   0.61879       763
+
+
+# new inspect rules > .85
+#            precision    recall  f1-score   support
+#
+#     Actor    0.71751   0.81410   0.76276       312
+#  Resource    0.53209   0.56984   0.55032       451
+#
+# micro avg    0.61051   0.66972   0.63875       763
+# macro avg    0.60791   0.66972   0.63719       763
+
+# new inspect rules > .9 (~↑)
+#            precision    recall  f1-score   support
+#
+#     Actor    0.71348   0.81410   0.76048       312
+#  Resource    0.56332   0.57206   0.56766       451
+#
+# micro avg    0.62899   0.67104   0.64933       763
+# macro avg    0.62472   0.67104   0.64650       763
+
+# new inspect rules > .9 disable tag (~)
+#            precision    recall  f1-score   support
+#
+#     Actor    0.71508   0.82051   0.76418       312
+#  Resource    0.56416   0.56541   0.56478       451
+#
+# micro avg    0.63086   0.66972   0.64971       763
+# macro avg    0.62587   0.66972   0.64632       763
+
+# new inspect rules > .9 disable dep (↓)
+#            precision    recall  f1-score   support
+#
+#     Actor    0.70670   0.81090   0.75522       312
+#  Resource    0.56018   0.56763   0.56388       451
+#
+# micro avg    0.62454   0.66710   0.64512       763
+# macro avg    0.62009   0.66710   0.64212       763
+
+# new inspect rules > .9 disable ner (↓)
+#            precision    recall  f1-score   support
+#
+#     Actor    0.71348   0.81410   0.76048       312
+#  Resource    0.56087   0.57206   0.56641       451
+#
+# micro avg    0.62745   0.67104   0.64851       763
+# macro avg    0.62328   0.67104   0.64577       763
+
+# new inspect rules > .9 with conjuncts add base fix (↑)
+#            precision    recall  f1-score   support
+#
+#     Actor    0.71549   0.81410   0.76162       312
+#  Resource    0.56304   0.57428   0.56861       451
+#
+# micro avg    0.62945   0.67235   0.65019       763
+# macro avg    0.62538   0.67235   0.64753       763
