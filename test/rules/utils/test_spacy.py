@@ -1,8 +1,13 @@
 import logging
+from collections.abc import Sequence
 
 import spacy
 
-from src.utils.spacy import idx_valid, include_elem
+from src.utils.spacy import (
+    get_bio_sent_from_char_spans,
+    idx_valid,
+    include_elem,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -38,3 +43,46 @@ def test_include_elem():
     assert include_elem(chunks[0][0], sent[1:3])
     assert not include_elem(chunks[0], sent[3:])
     assert include_elem(sent[1], chunks[0])
+
+
+def test_get_bio_sent_from_char_spans():
+    sent = "Hello Yuri! My name is Markov."
+    labels: list[Sequence[int | str]] = [
+        [0, 10, "Greeting"],
+        [15, 22, "Extra"],
+    ]
+    result_token, result_label = get_bio_sent_from_char_spans(sent, labels)
+    assert result_token == [
+        "Hello",
+        "Yuri",
+        "!",
+        "My",
+        "name",
+        "is",
+        "Markov",
+        ".",
+    ]
+    assert result_label == [
+        "B-Greeting",
+        "I-Greeting",
+        "O",
+        "O",
+        "B-Extra",
+        "I-Extra",
+        "O",
+        "O",
+    ]
+
+    sent = "Hello Yuri! My name is Markov."
+    result_token, result_label = get_bio_sent_from_char_spans(sent)
+    assert result_token == [
+        "Hello",
+        "Yuri",
+        "!",
+        "My",
+        "name",
+        "is",
+        "Markov",
+        ".",
+    ]
+    assert result_label == ["O", "O", "O", "O", "O", "O", "O", "O"]

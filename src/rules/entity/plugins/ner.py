@@ -17,13 +17,13 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 logger = logging.getLogger(__name__)
 
 
-def ner(s: SpacySpan) -> EntityRuleReturn:
-    both: FixEntityLabel = "Both"
+def ner(s: Span) -> EntityRuleReturn:
+    both: str = "Both"
     result = list()
 
     for ent in s.ents:

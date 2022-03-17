@@ -1,10 +1,8 @@
-from typing import Dict
-
 from spacy import Language
 
-from src.utils.typing import SpacySpan
+from src.utils.typing import Span
 
-nlp_dict: Dict[str, SpacySpan] = dict()
+nlp_dict: dict[str, Span] = dict()
 
 dep_list = [
     "acl",
@@ -119,7 +117,7 @@ ner_list = [
 ]
 
 
-def cache_nlp(nlp: Language, s: str) -> SpacySpan:
+def cache_nlp(nlp: Language, s: str) -> Span:
     global nlp_dict
     try:
         res = nlp_dict[s]
@@ -129,7 +127,7 @@ def cache_nlp(nlp: Language, s: str) -> SpacySpan:
     return res
 
 
-def if_inside(sentence: SpacySpan, dep: str = "xcomp") -> bool:
+def if_inside(sentence: Span, dep: str = "xcomp") -> bool:
     for token in sentence:
         if token.dep_ == dep:
             return True

@@ -2,12 +2,12 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # attr
-def attr(s: SpacySpan) -> EntityRuleReturn:
-    both: FixEntityLabel = "Both"
+def attr(s: Span) -> EntityRuleReturn:
+    both: str = "Both"
     result = list()
 
     for token in s:

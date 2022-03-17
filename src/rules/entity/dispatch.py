@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import logging
 from collections import Counter
-from typing import Callable, List, Optional, Tuple
+from typing import Callable
 
 import spacy_alignments as tokenizations
+from spacy.tokens import Span, Token
 
 import src.deeplearning.infer.result as br
 from src.rules.utils.seq import is_entity_type_ok
@@ -14,31 +15,19 @@ from src.utils.spacy import (
     include_elem,
     match_noun_chunk,
 )
-from src.utils.typing import (
-    Alignment,
-    BertEntityLabel,
-    BertEntityLabelBio,
-    EntityFix,
-    EntityRulePlugins,
-    FixEntityLabel,
-    HybridToken,
-    SpacySpan,
-    is_bert_entity_label,
-    is_bert_entity_label_bio_list,
-    is_fix_entity_label,
-)
+from src.utils.typing import Alignment, EntityFix, EntityRulePlugins
 
 from ...deeplearning.infer.utils import label_mapping_bio
 from ..config import entity_plugins
 
 logger = logging.getLogger(__name__)
 
-Collector = Tuple[HybridToken, FixEntityLabel]
+Collector = tuple[Token | Span, str]
 
 
 def collect_filter(
-    data: List[Optional[Collector]], sample: Collector
-) -> List[Collector]:
+    data: list[Collector | None], sample: Collector
+) -> list[Collector]:
     t, lab = sample
     ret = [sample]
     for idx, item in enumerate(data[:]):
@@ -53,11 +42,9 @@ def collect_filter(
 
 
 def simple_bert_merge(
-    res: List[EntityFix], b: br.BertResult
-) -> List[EntityFix]:
-    def simple_check_bert(
-        sample: EntityFix, bert: List[BertEntityLabelBio]
-    ) -> bool:
+    res: list[EntityFix], b: br.BertResult
+) -> list[EntityFix]:
+    def simple_check_bert(sample: EntityFix, bert: list[str]) -> bool:
         bert_idx = sample.bert_idxes
         label = sample.label
         for num in bert_idx:
@@ -66,9 +53,8 @@ def simple_bert_merge(
         return False
 
     preds = b.preds
-    assert is_bert_entity_label_bio_list(preds)
 
-    new_list: List[EntityFix] = list()
+    new_list: list[EntityFix] = list()
     for item in res:
         if not simple_check_bert(item, preds):
             continue
@@ -77,14 +63,13 @@ def simple_bert_merge(
 
 
 # prob soft, filter 'Both' and prob < 0.5
-def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
-    def prob_check_bert(sample: EntityFix) -> Optional[BertEntityLabel]:
+def prob_bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
+    def prob_check_bert(sample: EntityFix) -> str | None:
         bert_idx = sample.bert_idxes
         label = sample.label
 
         bert_start, bert_end = bert_idx[0], bert_idx[-1]
         label_m, prob = b.matrix_find_prob_max(bert_start, bert_end)
-        assert is_bert_entity_label(label_m)
         mapping_bio = label_mapping_bio(label_m)
 
         constituous_label = True
@@ -98,25 +83,23 @@ def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
             return label_m
 
         if prob < 0.3 and not is_entity_type_ok(label, label_m):
-            assert is_bert_entity_label(label)
             return label
 
         return None
 
-    new_list: List[EntityFix] = list()
+    new_list: list[EntityFix] = list()
     for item in res:
         item_token, item_idx, item_bidx, item_label = item
         # if return label, then need fix
         fix_label = prob_check_bert(item)
         if fix_label:
-            assert is_fix_entity_label(fix_label)
             new_list.append(
                 EntityFix(item_token, item_idx, item_bidx, fix_label)
             )
     return new_list
 
 
-# def bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
+# def bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
 #     # Chunk == BERT, good
 #     # Chunk less than BERT, use BERT
 #     # Chunk more than BERT, use Chunk
@@ -128,16 +111,16 @@ def prob_bert_merge(res: List[EntityFix], b: br.BertResult) -> List[EntityFix]:
 
 
 def dispatch(
-    s: SpacySpan,
-    b: Optional[br.BertResult],
-    s2b: Optional[List[Alignment]],
+    s: Span,
+    b: br.BertResult | None,
+    s2b: list[Alignment] | None,
     add_all: bool = False,
     noun_chunk: bool = True,
     funcs: EntityRulePlugins = entity_plugins,
     bert_func: Callable = prob_bert_merge,
-) -> List[EntityFix]:
-    collector: List[Optional[Collector]] = list()
-    result: List[EntityFix] = list()
+) -> list[EntityFix]:
+    collector: list[Collector | None] = list()
+    result: list[EntityFix] = list()
 
     for func in funcs:
         packs = func(s)
@@ -186,7 +169,7 @@ def dispatch(
     return result
 
 
-def get_rule_fixes(sent: str, b: br.BertResult) -> List[EntityFix]:
+def get_rule_fixes(sent: str, b: br.BertResult) -> list[EntityFix]:
     nlp = get_spacy()
     s = nlp(sent)[:]
     spacy_tokens = [i.text for i in s]

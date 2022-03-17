@@ -1,6 +1,5 @@
 import logging
 from test.rules.utils.load_dataset import load_dataset
-from typing import List
 
 import spacy
 
@@ -8,7 +7,7 @@ from src.rules.config import entity_plugins
 from src.rules.entity.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
 from src.utils.spacy import char_idx_to_word_idx
-from src.utils.typing import DatasetEntityLabel, EntityFix, SpacySpan
+from src.utils.typing import DatasetEntityLabel, EntityFix, Span
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +15,7 @@ logger = logging.getLogger(__name__)
 # result = [(1, [], 'Actor')]
 # labels = [[0, 12, "Actor"], [31, 35, "Actor"], [59, 88, "Resource"]]
 def check_result_precision(
-    sent: SpacySpan, result: List[EntityFix], labels: List[DatasetEntityLabel]
+    sent: Span, result: list[EntityFix], labels: list[DatasetEntityLabel]
 ) -> int:
     target = 0
     for item in result:

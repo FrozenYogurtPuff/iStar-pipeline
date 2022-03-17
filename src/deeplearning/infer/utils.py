@@ -1,58 +1,29 @@
 from __future__ import annotations
 
 import logging
-from typing import Callable, List, Tuple
+from collections.abc import Callable
+from typing import TYPE_CHECKING
 
-import src.deeplearning.infer.result as br
-from src.deeplearning.utils.utils_metrics import get_entities
-from src.utils.typing import (
-    BertEntityLabelBio,
-    BertIntentionLabelBio,
-    BertUnionLabel,
-    BertUnionLabelBio,
-)
+if TYPE_CHECKING:
+    from src.deeplearning.infer.result import BertResult
+from src.deeplearning.utils.utils_metrics import get_entities_bio
 
 logger = logging.getLogger(__name__)
-
-actor: Tuple[BertEntityLabelBio, BertEntityLabelBio] = ("B-Actor", "I-Actor")
-resource: Tuple[BertEntityLabelBio, BertEntityLabelBio] = (
-    "B-Resource",
-    "I-Resource",
-)
-core: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = (
-    "B-Core",
-    "I-Core",
-)
-cond: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = (
-    "B-Cond",
-    "I-Cond",
-)
-aux: Tuple[BertIntentionLabelBio, BertIntentionLabelBio] = ("B-Aux", "I-Aux")
 
 
 class LabelTypeException(Exception):
     pass
 
 
-def get_series_bio(src: List[br.BertResult], func: Callable = get_entities):
+def get_series_bio(src: list[BertResult], func: Callable = get_entities_bio):
     p = [s.preds for s in src]
     t = [s.trues for s in src]
     return func(p), func(t)
 
 
-def label_mapping_bio(
-    lab: BertUnionLabel,
-) -> Tuple[BertUnionLabelBio, BertUnionLabelBio]:
-    if lab == "Actor":
-        return actor
-    if lab == "Resource":
-        return resource
-    if lab == "Core":
-        return core
-    if lab == "Cond":
-        return cond
-    if lab == "Aux":
-        return aux
+def label_mapping_bio(lab: str) -> tuple[str, str]:
+    if lab in ["Role", "Agent", "Resource", "Core", "Cond", "Aux"]:
+        return f"B-{lab}", f"I-{lab}"
     if lab == "Quality":
         logger.error("Label Quality")
         # I think it should not be occurred
@@ -60,20 +31,14 @@ def label_mapping_bio(
     raise LabelTypeException("Unexpected label type")
 
 
-def label_mapping_de_bio(
-    lab: BertUnionLabelBio,
-) -> Tuple[BertUnionLabel, bool]:
-    def label_check() -> BertUnionLabel:
-        if lab in actor:
-            return "Actor"
-        if lab in resource:
-            return "Resource"
-        if lab in core:
-            return "Core"
-        if lab in cond:
-            return "Cond"
-        if lab in aux:
-            return "Aux"
+def label_mapping_de_bio(lab: str) -> tuple[str, bool]:
+    def label_check() -> str:
+        if not lab.startswith("B-") and not lab.startswith("I-"):
+            logger.error(f"Illegal label-bio {lab}")
+            raise LabelTypeException("Unexpected label-bio type")
+        if lab.endswith(("Role", "Agent", "Resource", "Core", "Cond", "Aux")):
+            return lab[2:]
+
         logger.error(f"Illegal label-bio {lab}")
         raise LabelTypeException("Unexpected label-bio type")
 

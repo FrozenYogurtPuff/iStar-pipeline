@@ -3,40 +3,27 @@ from __future__ import annotations  # Remove that after Python 3.10
 import copy
 import dataclasses
 import logging
-from typing import Dict, List, Optional, Tuple
 
 from src.deeplearning.infer.utils import (
     label_mapping_bio,
     label_mapping_de_bio,
 )
-from src.utils.typing import (
-    BertMatrix,
-    BertUnionLabel,
-    BertUnionLabelBio,
-    EntityFix,
-    Token,
-    is_bert_union_label,
-    is_fix_entity_label,
-)
+from src.utils.typing import BertMatrix, EntityFix
 
 logger = logging.getLogger(__name__)
 
 
 @dataclasses.dataclass
 class BertResult:
-    preds: List[BertUnionLabelBio]
-    trues: Optional[List[BertUnionLabelBio]]
+    preds: list[str]
+    trues: list[str] | None
     matrix: BertMatrix
-    tokens: List[Token]
-    labels: List[BertUnionLabelBio]
+    tokens: list[str]
+    labels: list[str]  # labels.txt -like label index
 
-    def matrix_find_prob_max(
-        self, start: int, end: int
-    ) -> Tuple[BertUnionLabel, float]:
+    def matrix_find_prob_max(self, start: int, end: int) -> tuple[str, float]:
         logger.debug(f"Matrix find: {start} - {end}")
-        data: Dict[
-            BertUnionLabel, List[int]
-        ] = dict()  # { 'Actor': [1, 2], ... }
+        data: dict[str, list[int]] = dict()  # { 'Actor': [1, 2], ... }
         for i, la in enumerate(self.labels):
             if la == "O":
                 continue
@@ -63,17 +50,15 @@ class BertResult:
         assert max_type is not None
         return max_type, avg_value
 
-    def apply_fix(self: BertResult, fixes: List[EntityFix]) -> BertResult:
+    def apply_fix(self: BertResult, fixes: list[EntityFix]) -> BertResult:
         new_inst = copy.deepcopy(self)
         for hyb, ali, bali, lab in fixes:
             assert len(bali) in [1, 2]
             if lab == "Both":
                 lab_m, avg = self.matrix_find_prob_max(bali[0], bali[-1])
-                assert is_fix_entity_label(lab_m)
                 lab = lab_m
 
             key = bali[0]
-            assert is_bert_union_label(lab)
             mapping = label_mapping_bio(lab)
             new_inst.preds[key] = mapping[0]
 

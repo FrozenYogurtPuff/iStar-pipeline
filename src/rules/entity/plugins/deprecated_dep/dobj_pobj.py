@@ -7,13 +7,13 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # dobj, pobj
-def dobj_pobj(s: SpacySpan) -> EntityRuleReturn:
-    both: FixEntityLabel = "Both"
-    resource: FixEntityLabel = "Resource"
+def dobj_pobj(s: Span) -> EntityRuleReturn:
+    both: str = "Both"
+    resource: str = "Resource"
     result = list()
 
     for token in s:

@@ -2,13 +2,13 @@
 import logging
 
 from src.utils.spacy import token_not_end
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # [Auditors] who chase the dreams.
 # Auditors -> chase (relcl)
-def relcl_who(s: SpacySpan) -> EntityRuleReturn:
-    actor: FixEntityLabel = "Actor"
+def relcl_who(s: Span) -> EntityRuleReturn:
+    actor: str = "Actor"
     result = list()
 
     for token in s:

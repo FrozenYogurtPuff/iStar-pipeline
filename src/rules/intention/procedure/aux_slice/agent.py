@@ -1,14 +1,13 @@
 import logging
-from typing import List
 
-from src.utils.typing import HybridToken, SpacySpan
+from src.utils.typing import Span, Token
 
 logger = logging.getLogger(__name__)
 
 
-def agent(s: SpacySpan) -> List[HybridToken]:
+def agent(s: Span) -> list[Span | Token]:
 
-    pool: List[HybridToken] = list()
+    pool: list[Span | Token] = list()
     for token in s:
         if (
             token.dep_

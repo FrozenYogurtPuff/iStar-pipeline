@@ -4,15 +4,17 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from spacy.tokens import Span
+
+from src.utils.typing import EntityRuleReturn
 
 # Show things to [Anna].
 # to (ADP, dative) -> Anna (pobj)
 
 # carried out by [immigrants].
 # by (ADP, agent) -> immigrants (pobj)
-def agent_dative_adp(s: SpacySpan) -> EntityRuleReturn:
-    both: FixEntityLabel = "Both"
+def agent_dative_adp(s: Span) -> EntityRuleReturn:
+    both: str = "Both"
     result = list()
 
     for token in s:

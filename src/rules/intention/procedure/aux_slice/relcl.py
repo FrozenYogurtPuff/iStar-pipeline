@@ -1,15 +1,15 @@
 import logging
-from typing import List
+
+from spacy.tokens import Span, Token
 
 from src.utils.spacy import token_not_end, token_not_start
-from src.utils.typing import HybridToken, SpacySpan
 
 logger = logging.getLogger(__name__)
 
 
-def relcl(s: SpacySpan) -> List[HybridToken]:
+def relcl(s: Span) -> list[Span | Token]:
 
-    pool: List[HybridToken] = list()
+    pool: list[Span | Token] = list()
     for token in s:
         # `double != to`
         if (

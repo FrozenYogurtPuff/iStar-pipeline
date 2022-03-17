@@ -3,7 +3,6 @@ from test.rules.inspect.utils import cache_nlp, dep_list, if_inside
 from test.rules.utils.load_dataset import load_dataset
 
 from src.utils.spacy import get_spacy
-from src.utils.typing import FixIntentionLabel
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +11,7 @@ if __name__ == "__main__":
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
 
     nlp = get_spacy()
-    aux: FixIntentionLabel = "Aux"
+    aux: str = "Aux"
 
     for check in dep_list:
         total, match = 0, 0

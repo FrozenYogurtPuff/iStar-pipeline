@@ -5,15 +5,15 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # [Anna]'s home.
 # -> Anna (poss, NOUN)
-def poss_propn(s: SpacySpan) -> EntityRuleReturn:
+def poss_propn(s: Span) -> EntityRuleReturn:
     # 'Both' is a special case for both
-    resource: FixEntityLabel = "Resource"
-    both: FixEntityLabel = "Both"
+    resource: str = "Resource"
+    both: str = "Both"
     result = list()
 
     for token in s:

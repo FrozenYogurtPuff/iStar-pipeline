@@ -7,10 +7,10 @@
 
 # 文本预处理
 #   TODO: 从文档中提取文本
-# paraList: List[str] = getTextFromFile(filename)
+# paraList: list[str] = getTextFromFile(filename)
 
 #   TODO: 从文本中抽取需求段落
-# reqList: List[str] = getTextFromFile(paraText)
+# reqList: list[str] = getTextFromFile(paraText)
 
 #   为段落使用spaCy分句
 #       注意：reqList中，每一item为一段文本，则spacyList中每一item的spacy.tokens.Doc可能包含多句话
@@ -21,7 +21,7 @@
 #           BERT 深度学习
 
 
-# for-loop 以List[]为核心的中间形式存储
+# for-loop 以list[]为核心的中间形式存储
 #           TODO: 依存成分
 
 #           TODO: 包含依存成分的模板匹配

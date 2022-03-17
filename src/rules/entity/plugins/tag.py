@@ -1,15 +1,16 @@
 import logging
-from typing import Optional
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from spacy.tokens import Span
+
+from src.utils.typing import EntityRuleReturn
 
 logger = logging.getLogger(__name__)
 
-both: FixEntityLabel = "Both"
-resource: FixEntityLabel = "Resource"
+both: str = "Both"
+resource: str = "Resource"
 
 
-def tag_label(tag: str) -> Optional[FixEntityLabel]:
+def tag_label(tag: str) -> str | None:
     if tag in ["NNS", "NNP", "NNPS"]:
         return both
 
@@ -24,7 +25,7 @@ def tag_label(tag: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def tag_conj_label(tag: str) -> Optional[FixEntityLabel]:
+def tag_conj_label(tag: str) -> str | None:
     if tag in ["NNPS"]:
         return both
 
@@ -41,7 +42,7 @@ def tag_conj_label(tag: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def tag_head_label(tag: str) -> Optional[FixEntityLabel]:
+def tag_head_label(tag: str) -> str | None:
     if tag in ["HYPH"]:
         return both
 
@@ -52,7 +53,7 @@ def tag_head_label(tag: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def tag_base(s: SpacySpan) -> EntityRuleReturn:
+def tag_base(s: Span) -> EntityRuleReturn:
     result = list()
 
     for token in s:

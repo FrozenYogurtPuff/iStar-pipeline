@@ -4,14 +4,14 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # Bought [me] these books.
 # -> me (dative, PRON / PROPN)
-def dative_propn(s: SpacySpan) -> EntityRuleReturn:
+def dative_propn(s: Span) -> EntityRuleReturn:
     # 'Both' is a special case for both
-    actor: FixEntityLabel = "Actor"
+    actor: str = "Actor"
     result = list()
 
     for token in s:

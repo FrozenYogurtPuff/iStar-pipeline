@@ -5,7 +5,6 @@ from src.rules.intention.procedure.aux_slice.acl_without_to import (
     acl_without_to,
 )
 from src.utils.spacy import char_idx_to_word_idx, get_spacy
-from src.utils.typing import FixIntentionLabel
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +45,6 @@ def test_smoke():
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     logger.info("Start acl_without_to smoke test")
     sents = [d[1] for d in data]
-    labels = [d[2] for d in data]
     for sent in sents:
         logger.debug(sent)
         s = nlp(sent)[:]
@@ -61,8 +59,8 @@ def test_smoke():
 # e.g. Predict: Core ..., Ground-truth: Aux ...
 # SLICE_MISTAKE: the label anno across the slices
 def test_how_slices_hit():
-    core: FixIntentionLabel = "Core"
-    aux: FixIntentionLabel = "Aux"
+    core: str = "Core"
+    aux: str = "Aux"
     nlp = get_spacy()
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     sents = [d[1] for d in data]
@@ -122,5 +120,5 @@ def test_how_slices_hit():
 
 
 # 100/43/216
-# 一部分aux（前后皆为core）：Inventory administrators: users that can be delegated by any administrative level to work > and < on the `applications assigned permission` can varies from one user to another depending on its assigned tasks.
+# 一部分aux（前后皆为core）：Inventory administrators: users that can be delegated by any administrative level to work > and < on the `applications assigned permission` can vary from one user to another depending on its assigned tasks.
 # Root 的 conj

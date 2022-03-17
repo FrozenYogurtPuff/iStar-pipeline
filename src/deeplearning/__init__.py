@@ -6,5 +6,3 @@
     - deeplearning.models.*;
     - deeplearning.utils.*;
 """
-
-from .infer.wrapper import infer_wrapper

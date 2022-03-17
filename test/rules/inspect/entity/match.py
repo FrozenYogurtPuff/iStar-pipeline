@@ -3,7 +3,6 @@ from test.rules.inspect.utils import cache_nlp, tag_list
 from test.rules.utils.load_dataset import load_dataset
 
 from src.utils.spacy import char_idx_to_word, get_spacy, include_elem
-from src.utils.typing import BertEntityLabel
 
 logger = logging.getLogger(__name__)
 
@@ -17,8 +16,8 @@ if __name__ == "__main__":
 
     nlp = get_spacy()
 
-    actor: BertEntityLabel = "Actor"
-    resource: BertEntityLabel = "Resource"
+    actor: str = "Actor"
+    resource: str = "Resource"
 
     # for check in dep_list:
     for check in tag_list:

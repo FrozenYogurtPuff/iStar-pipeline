@@ -2,23 +2,63 @@ import logging
 from test.rules.utils.load_dataset import load_dataset
 
 from src.deeplearning.infer.utils import get_series_bio
-from src.deeplearning.infer.wrapper import infer_wrapper
+from src.deeplearning.infer.wrapper import ActorWrapper
 from src.deeplearning.utils.utils_metrics import classification_report
-from src.rules.entity.dispatch import get_rule_fixes
 
 logger = logging.getLogger(__name__)
 
 
-def test_measure_bert_entity_prec():
+def test_token_correct():
+    def get_line():
+        with open("pretrained_data/2022/actor/divided/dev.txt", "r") as file:
+            for li in file:
+                yield li
+
     data = list(
-        load_dataset("pretrained_data/entity_ar_r_combined/split_dev.jsonl")
+        load_dataset("pretrained_data/2022/actor/divided/split_dev.jsonl")
+    )
+    sents = [d[1] for d in data]
+    labels = [d[2] for d in data]
+
+    wrapper = ActorWrapper()
+    results = wrapper.process(sents, labels)
+    yielder = get_line()
+
+    for idx, result in enumerate(results):
+        tokens = result.tokens
+        trues = result.trues
+
+        assert tokens is not None
+        assert trues is not None
+        assert len(tokens) == len(trues)
+
+        for token, true in zip(tokens, trues):
+            try:
+                sent = next(yielder)
+                if sent != f"{token} {true}\n":
+                    logger.error(result)
+                    logger.error(f"-{sent}")
+                    logger.error(f"+{token} {true}")
+            except StopIteration:
+                logger.error(f"Unexpected Ending at Line #{idx}.")
+
+        sent = next(yielder)
+        if sent != "\n":
+            logger.error(f"-{sent}")
+            logger.error(f"+\\n")
+
+
+def test_measure_bert_actor_prec():
+    data = list(
+        load_dataset("pretrained_data/2022/actor/divided/split_dev.jsonl")
     )
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
     logger.info(f"First items: sent {sents[0]}")
     logger.info(f"First items: label {labels[0]}")
 
-    results = infer_wrapper("Entity", sents, labels)
+    wrapper = ActorWrapper()
+    results = wrapper.process(sents, labels)
     logger.info(f"First result: {results[0]}")
 
     pred_entities, true_entities = get_series_bio(results)
@@ -43,19 +83,19 @@ def test_measure_bert_simple_prec():
     logger.info(f"First items: sent {sents[0]}")
     logger.info(f"First items: label {labels[0]}")
 
-    results = infer_wrapper("Entity", sents, labels)
-    logger.info(f"First result: {results[0]}")
-
-    pred_entities, true_entities = get_series_bio(results)
-    print(classification_report(true_entities, pred_entities))
-
-    new_pred_entities = list()
-    for sent, result in zip(sents, results):
-        res = get_rule_fixes(sent, result)
-        new_pred_entities.append(result.apply_fix(res))
-
-    pred_entities, true_entities = get_series_bio(new_pred_entities)
-    print(classification_report(true_entities, pred_entities))
+    # results = infer_wrapper("Entity", sents, labels)  # TODO
+    # logger.info(f"First result: {results[0]}")
+    #
+    # pred_entities, true_entities = get_series_bio(results)
+    # print(classification_report(true_entities, pred_entities))
+    #
+    # new_pred_entities = list()
+    # for sent, result in zip(sents, results):
+    #     res = get_rule_fixes(sent, result)
+    #     new_pred_entities.append(result.apply_fix(res))
+    #
+    # pred_entities, true_entities = get_series_bio(new_pred_entities)
+    # print(classification_report(true_entities, pred_entities))
 
 
 # simple[?][0] precision    recall  f1-score   support

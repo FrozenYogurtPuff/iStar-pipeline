@@ -1,19 +1,11 @@
 from typing import Union
 
-from src.utils.typing import (
-    BertEntityLabel,
-    BertEntityLabelBio,
-    FixEntityLabel,
-)
-
 
 class FixEntityLabelException(Exception):
     pass
 
 
-def is_entity_type_ok(
-    fix: FixEntityLabel, spa: Union[BertEntityLabelBio, BertEntityLabel]
-) -> bool:
+def is_entity_type_ok(fix: str, spa: Union[str, str]) -> bool:
     if fix not in ["Actor", "Both", "Resource"]:
         raise FixEntityLabelException("Illegal FixEntityLabel " + fix)
 

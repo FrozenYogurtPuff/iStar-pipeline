@@ -1,15 +1,15 @@
 import logging
-from typing import List
+
+from spacy.tokens import Span, Token
 
 from src.utils.spacy import token_not_start
-from src.utils.typing import HybridToken, SpacySpan
 
 logger = logging.getLogger(__name__)
 
 
-def acl_without_to(s: SpacySpan) -> List[HybridToken]:
+def acl_without_to(s: Span) -> list[Span | Token]:
 
-    pool: List[HybridToken] = list()
+    pool: list[Span | Token] = list()
     for token in s:
         if (
             token.dep_ == "acl"

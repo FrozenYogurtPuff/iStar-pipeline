@@ -19,13 +19,13 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # system, interface, etc.
-def word_list(s: SpacySpan) -> EntityRuleReturn:
-    actor: FixEntityLabel = "Actor"
-    both: FixEntityLabel = "Both"
+def word_list(s: Span) -> EntityRuleReturn:
+    actor: str = "Actor"
+    both: str = "Both"
     result = list()
 
     for token in s:

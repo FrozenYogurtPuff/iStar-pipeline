@@ -12,7 +12,7 @@ if __name__ == "__main__":
     nlp = spacy.load("en_core_web_lg")
     fp = open(SPLIT_OUTPUT, "w")
 
-    cache: dict[tuple[str], Any] = dict()
+    cache: dict[tuple[str, ...], Any] = dict()
 
     with open(ALL_JSONL, "r") as jsonl:
         for line in tqdm(jsonl):
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     with open(CONLL_FILE, "r") as conll:
         result: list[str] = list()
         for line in tqdm(conll):
-            if line != '\n':
+            if line != "\n":
                 result.append(line.split()[0])
             else:
                 key = tuple(tok for tok in result)
@@ -34,3 +34,8 @@ if __name__ == "__main__":
                 except KeyError:
                     print(f"Not found {' '.join(key)}")
                 result.clear()
+        key = tuple(tok for tok in result)
+        try:
+            print(json.dumps(cache[key]), file=fp)
+        except KeyError:
+            print(f"Not found {' '.join(key)}")

@@ -1,10 +1,6 @@
 import logging
 from test.rules.utils.load_dataset import load_dataset
 
-from src.deeplearning.infer.utils import get_series_bio
-from src.deeplearning.infer.wrapper import infer_wrapper
-from src.deeplearning.utils.utils_metrics import classification_report
-
 logger = logging.getLogger(__name__)
 
 
@@ -19,12 +15,12 @@ def test_measure_bert_intention_prec():
     logger.info(f"First items: sent {sents[0]}")
     logger.info(f"First items: label {labels[0]}")
 
-    results = infer_wrapper("Intention", sents, labels)
-    logger.info(f"First result: {results[0]}")
+    # results = infer_wrapper("Intention", sents, labels)  # TODO
+    # logger.info(f"First result: {results[0]}")
+    #
+    # pred_entities, true_entities = get_series_bio(results)
 
-    pred_entities, true_entities = get_series_bio(results)
-
-    print(classification_report(true_entities, pred_entities))
+    # print(classification_report(true_entities, pred_entities))
 
     #            precision    recall  f1-score   support
     #

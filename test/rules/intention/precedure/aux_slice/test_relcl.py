@@ -3,7 +3,6 @@ from test.rules.utils.load_dataset import load_dataset
 
 from src.rules.intention.procedure.aux_slice.relcl import relcl
 from src.utils.spacy import char_idx_to_word_idx, get_spacy
-from src.utils.typing import FixIntentionLabel
 
 logger = logging.getLogger(__name__)
 
@@ -46,8 +45,8 @@ def range_disjoint(range1: range, range2: range) -> bool:
 # e.g. Predict: Core ..., Ground-truth: Aux ...
 # SLICE_MISTAKE: the label anno across the slices
 def test_how_slices_hit():
-    core: FixIntentionLabel = "Core"
-    aux: FixIntentionLabel = "Aux"
+    core: str = "Core"
+    aux: str = "Aux"
     nlp = get_spacy()
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     sents = [d[1] for d in data]

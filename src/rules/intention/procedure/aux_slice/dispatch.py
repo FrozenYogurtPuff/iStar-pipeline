@@ -1,15 +1,10 @@
 import logging
-from typing import List, Optional
+
+from spacy.tokens import Span, Token
 
 from src.rules.config import intention_aux_slice_plugins
 from src.utils.spacy import get_token_idx, include_elem, token_not_end
-from src.utils.typing import (
-    FixIntentionLabel,
-    HybridToken,
-    IntentionRuleAuxPlugins,
-    SeqSlicesTuple,
-    SpacySpan,
-)
+from src.utils.typing import IntentionRuleAuxPlugins, SeqSlicesTuple
 
 logger = logging.getLogger(__name__)
 
@@ -27,12 +22,12 @@ def need_slice(s: SeqSlicesTuple, bidx: int, eidx: int) -> bool:
 
 
 def dispatch(
-    s: SpacySpan,
-    seq_slices: Optional[List[SeqSlicesTuple]] = None,
+    s: Span,
+    seq_slices: list[SeqSlicesTuple] | None = None,
     slice_funcs: IntentionRuleAuxPlugins = intention_aux_slice_plugins,
-) -> List[SeqSlicesTuple]:
-    core: FixIntentionLabel = "Core"
-    aux: FixIntentionLabel = "Aux"
+) -> list[SeqSlicesTuple]:
+    core: str = "Core"
+    aux: str = "Aux"
 
     if seq_slices is None:
         seq_idx = get_token_idx(s)
@@ -40,7 +35,7 @@ def dispatch(
         seq_slices = [SeqSlicesTuple(seq_s, seq_e, core)]
     assert seq_slices is not None
 
-    pool: List[HybridToken] = list()
+    pool: list[Span | Token] = list()
     for func in slice_funcs:
         pool.extend(func(s))
     pool = list(set(pool))

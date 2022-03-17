@@ -20,6 +20,7 @@ import logging
 import os
 import random
 import re
+from abc import ABC
 
 import numpy as np
 import torch
@@ -62,9 +63,14 @@ TOKENIZER_ARGS = ["do_lower_case", "strip_accents", "keep_accents", "use_fast"]
 logger = logging.getLogger(__name__)
 
 
-class InferBase(object):
+class InferBase(ABC):
     def __init__(
-        self, data_dir, model_type, model_name_or_path, output_dir, label
+        self,
+        data_dir,
+        model_type,
+        model_name_or_path,
+        output_dir,
+        label,
     ):
         parser = argparse.ArgumentParser()
         # Required parameters
@@ -372,6 +378,9 @@ class InferBase(object):
             assert len(tokens) == len(matrix[i])
             tokens_bert.append(tokens)
 
+        for i in range(trues.shape[0]):
+            print(trues_list[i])
+
         return preds_list, trues_list, matrix, tokens_bert, self.labels
 
     @classmethod
@@ -379,8 +388,8 @@ class InferBase(object):
         """
         Send sents via json format
 
-        :param data: [{sent: str, labels: Optional[List[str]]}]
-        :return: List[InputExample]
+        :param data: [{sent: str, labels: list[str]]} | None
+        :return: list[InputExample]
         """
         guid_index = 1
         examples = []
@@ -459,3 +468,7 @@ class InferBase(object):
 
     def predict(self, data):
         return self.evaluate(data, prefix="test")
+
+    @property
+    def model_wrapped(self):
+        return NotImplemented

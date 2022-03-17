@@ -1,15 +1,16 @@
 import logging
-from typing import Optional
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from spacy.tokens import Span
+
+from src.utils.typing import EntityRuleReturn
 
 logger = logging.getLogger(__name__)
 
-both: FixEntityLabel = "Both"
-resource: FixEntityLabel = "Resource"
+both: str = "Both"
+resource: str = "Resource"
 
 
-def dep_label(dep: str) -> Optional[FixEntityLabel]:
+def dep_label(dep: str) -> str | None:
     if dep in ["nmod", "compound"]:
         return both
 
@@ -24,7 +25,7 @@ def dep_label(dep: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def dep_conj_label(dep: str) -> Optional[FixEntityLabel]:
+def dep_conj_label(dep: str) -> str | None:
     if dep in ["nsubjpass", "nmod"]:
         return both
 
@@ -41,7 +42,7 @@ def dep_conj_label(dep: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def dep_head_label(dep: str) -> Optional[FixEntityLabel]:
+def dep_head_label(dep: str) -> str | None:
     if dep in ["nmod", "compound", "appos"]:
         return both
 
@@ -52,7 +53,7 @@ def dep_head_label(dep: str) -> Optional[FixEntityLabel]:
     return None
 
 
-def dep_base(s: SpacySpan) -> EntityRuleReturn:
+def dep_base(s: Span) -> EntityRuleReturn:
     result = list()
 
     for token in s:

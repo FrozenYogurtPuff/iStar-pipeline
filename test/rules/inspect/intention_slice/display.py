@@ -4,28 +4,28 @@ from test.rules.utils.load_dataset import load_dataset
 from typing import Any
 
 from spacy import displacy, tokens
+from spacy.tokens import Doc, Span
 from tqdm import tqdm
 
 from src.utils.spacy import char_idx_to_word_idx, get_spacy
-from src.utils.typing import SpacyDoc, SpacySpan
 
 logger = logging.getLogger(__name__)
 
 
-def if_inside(sentence: SpacySpan) -> bool:
+def if_inside(sentence: Span) -> bool:
     for token in sentence:
         if token.dep_ == "agent":
             return True
     return False
 
 
-def display_dep(doc: SpacyDoc, idx: int) -> None:
+def display_dep(doc: Doc, idx: int) -> None:
     svg = displacy.render(doc, style="dep")
     output_path = Path(f"visualize/{idx}_dep.svg")
     output_path.open("w", encoding="utf-8").write(svg)
 
 
-def display_ent(doc: SpacyDoc, annotates: Any, idx: int) -> None:
+def display_ent(doc: Doc, annotates: Any, idx: int) -> None:
     colors = {
         "Core": "#85C1E9",
         "Aux": "#ff6961",

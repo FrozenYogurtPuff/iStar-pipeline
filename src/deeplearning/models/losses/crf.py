@@ -1,5 +1,3 @@
-from typing import List, Optional
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -33,8 +31,8 @@ class CRF(nn.Module):
     def forward(
         self,
         emissions: torch.Tensor,
-        tags: Optional[torch.LongTensor] = None,
-        mask: Optional[torch.ByteTensor] = None,
+        tags: torch.LongTensor | None = None,
+        mask: torch.ByteTensor | None = None,
         reduction: str = "sum",
     ):
         """Compute the conditional log likelihood of a sequence of tags given emission scores.
@@ -61,7 +59,7 @@ class CRF(nn.Module):
         self,
         emissions: torch.Tensor,
         tags: torch.LongTensor,
-        mask: Optional[torch.ByteTensor] = None,
+        mask: torch.ByteTensor | None = None,
         reduction: str = "sum",
     ) -> torch.Tensor:
         self._validate(emissions, tags=tags, mask=mask)
@@ -92,8 +90,8 @@ class CRF(nn.Module):
         return llh.sum() / mask.float().sum()
 
     def decode(
-        self, emissions: torch.Tensor, mask: Optional[torch.ByteTensor] = None
-    ) -> List[List[int]]:
+        self, emissions: torch.Tensor, mask: torch.ByteTensor | None = None
+    ) -> list[list[int]]:
         """Find the most likely tag sequence using Viterbi algorithm.
         Args:
             emissions (`~torch.Tensor`): Emission score tensor of size
@@ -117,8 +115,8 @@ class CRF(nn.Module):
     def _validate(
         self,
         emissions: torch.Tensor,
-        tags: Optional[torch.LongTensor] = None,
-        mask: Optional[torch.ByteTensor] = None,
+        tags: torch.LongTensor | None = None,
+        mask: torch.ByteTensor | None = None,
     ) -> None:
         if emissions.dim() != 3:
             raise ValueError(
@@ -247,7 +245,7 @@ class CRF(nn.Module):
 
     def _viterbi_decode(
         self, emissions: torch.FloatTensor, mask: torch.ByteTensor
-    ) -> List[List[int]]:
+    ) -> list[list[int]]:
         # emissions: (seq_length, batch_size, num_tags)
         # mask: (seq_length, batch_size)
         assert emissions.dim() == 3 and mask.dim() == 2

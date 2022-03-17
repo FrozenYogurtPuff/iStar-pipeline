@@ -6,9 +6,9 @@ from spacy.tokens import Span
 
 from src.utils.spacy import char_idx_to_word_idx
 
-INPUT = "pretrained_data/2022/resource/all.jsonl"
-OUTPUT1 = "pretrained_data/2022/resource/train.txt"
-OUTPUT2 = "pretrained_data/2022/resource/dev.txt"
+INPUT = "../pretrained_data/2022/resource/all.jsonl"
+OUTPUT1 = "../pretrained_data/2022/resource/train.txt"
+OUTPUT2 = "../pretrained_data/2022/resource/dev.txt"
 PROPORTION = 80
 
 if __name__ == "__main__":

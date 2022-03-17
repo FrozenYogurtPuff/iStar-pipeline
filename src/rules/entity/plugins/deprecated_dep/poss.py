@@ -3,13 +3,13 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, FixEntityLabel, SpacySpan
+from src.utils.typing import EntityRuleReturn, Span
 
 
 # Anna's [home].
 # home -> Anna (poss)
-def poss(s: SpacySpan) -> EntityRuleReturn:
-    resource: FixEntityLabel = "Resource"
+def poss(s: Span) -> EntityRuleReturn:
+    resource: str = "Resource"
     result = list()
 
     for token in s:
