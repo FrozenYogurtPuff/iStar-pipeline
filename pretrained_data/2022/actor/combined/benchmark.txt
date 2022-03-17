@@ -1,0 +1,6 @@
+            precision    recall  f1-score   support
+
+    Actor    0.90120   0.90937   0.90526       331
+
+micro avg    0.90120   0.90937   0.90526       331
+macro avg    0.90120   0.90937   0.90526       331

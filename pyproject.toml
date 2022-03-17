@@ -6,14 +6,14 @@ authors = ["FrozenYogurtPuff <frozenyogurtpuff@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "3.9"
-numpy = "1.22.3"
+python = "3.10.2"
+numpy = "^1.22.3"
 tqdm = "^4.62.3"
 transformers = "^4.16.2"
 tensorboardX = "^2.4.1"
 seqeval = "^1.2.2"
 spacy = "^3.2"
-torch = "^1.10.2"
+torch = "^1.11.0"
 spacy-alignments = "^0.8.4"
 benepar = "^0.2.0"
 
@@ -22,13 +22,13 @@ pytest = "^7.0.1"
 logging_tree = "^1.9"
 colorlog = "^6.6.0"
 isort = "^5.10.1"
-mypy = "^0.931"
+mypy = "^0.941"
 black = "^22.1.0"
 pycln = "^1.2.4"
 pre-commit = "^2.17.0"
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 warn_no_return = true
 warn_return_any = true
 warn_redundant_casts = true
@@ -39,7 +39,8 @@ ignore_missing_imports = true
 files = [
     "./*.py",
     "src/**/*.py",
-    "test/**/*.py"
+    "test/**/*.py",
+    "data_process/**/*.py"
 ]
 
 [[tool.mypy.overrides]]
@@ -56,7 +57,7 @@ follow_imports = "skip"
 ignore_errors = true
 
 [tool.black]
-target-version = ['py39']
+target-version = ['py310']
 line-length = 79
 include = '\.pyi?$'
 exclude = '''
@@ -81,7 +82,7 @@ addopts = "-v -s"
 [tool.isort]
 profile = "black"
 line_length = 79
-py_version = 39
+py_version = 310
 
 [tool.pytest.ini_options]
 log_cli = 1

@@ -1,4 +1,4 @@
-files: '^(src|test|entry\.py|data_process\.py)'
+files: '^(src|test|entry\.py|data_process)'
 default_language_version:
   python: python3.9
 default_stages: [commit]
