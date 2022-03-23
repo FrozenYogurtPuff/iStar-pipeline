@@ -1,6 +1,6 @@
-            precision    recall  f1-score   support
+           precision    recall  f1-score   support
 
- Resource    0.66357   0.71679   0.68916       399
+ Resource    0.66434   0.71788   0.69007       397
 
-micro avg    0.66357   0.71679   0.68916       399
-macro avg    0.66357   0.71679   0.68916       399
+micro avg    0.66434   0.71788   0.69007       397
+macro avg    0.66434   0.71788   0.69007       397

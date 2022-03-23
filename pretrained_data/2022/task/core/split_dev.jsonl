@@ -1,0 +1,231 @@
+{"id": 6, "text": "A designated constable from each police station constantly interfaces with the courts.", "labels": [[48, 85, "Core"]]}
+{"id": 9, "text": "It also gives the user the ability to customize the results view by criminal/accused or by cases.", "labels": [[38, 96, "Core"]]}
+{"id": 14, "text": "It improves overall productivity by helping citizens and police to cut short the drudgery of large amounts of paperwork.", "labels": [[36, 43, "Core"], [67, 119, "Core"], [3, 32, "Core"]]}
+{"id": 24, "text": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.", "labels": [[71, 111, "Core"], [117, 122, "Core"]]}
+{"id": 26, "text": "The System must ensure that audit trail data is available for inspection on request, so that a specific event can be identified and all related data made accessible, and that this can be achieved by authorised external personnel who have little or no familiarity with the system.", "labels": [[45, 72, "Core"]]}
+{"id": 35, "text": "The System must allow only admin-users to set up user profiles and allocate users to groups.", "labels": [[42, 62, "Core"], [67, 91, "Core"]]}
+{"id": 37, "text": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.", "labels": [[22, 52, "Core"]]}
+{"id": 38, "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide following responses.", "labels": [[114, 141, "Core"]]}
+{"id": 40, "text": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.", "labels": [[82, 91, "Core"]]}
+{"id": 45, "text": "The interfaces must be made customizable or user-configurable to the extent possible. (e.g., the displayed columns in the table, move, resize, modify the appearance).", "labels": [[0, 61, "Core"]]}
+{"id": 47, "text": "The System must provide End User and Administrator functions which are easy to use and intuitive throughout.", "labels": [[16, 60, "Core"]]}
+{"id": 58, "text": "When creating a new account on Web Store it will default as a customer account.", "labels": [[49, 78, "Core"]]}
+{"id": 64, "text": "Furthermore, Customer profiles will also include payment information, such as the ability to store credit card information, and address information.", "labels": [[41, 68, "Core"]]}
+{"id": 79, "text": "The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.", "labels": [[19, 32, "Core"]]}
+{"id": 89, "text": "University administrator and IT Administrators have the control on the entire inventory", "labels": [[47, 63, "Core"]]}
+{"id": 94, "text": "Transfer outside university should be approved by the university group", "labels": [[0, 46, "Core"]]}
+{"id": 96, "text": "Any faculty member can add all related departments inventory", "labels": [[23, 60, "Core"]]}
+{"id": 100, "text": "After creation a request still pending waiting to be approved by an administrative level user according to that have this authority", "labels": [[50, 61, "Core"]]}
+{"id": 101, "text": "An inventory user should check returned asset and update inventory", "labels": [[25, 45, "Core"], [50, 66, "Core"]]}
+{"id": 104, "text": "Inventory is updated when user receive requested asset", "labels": [[0, 20, "Core"]]}
+{"id": 105, "text": "Any administrative level user can delegate another user to execute some or all his authorized actions. And this user acquires the role of inventory administrator", "labels": [[117, 161, "Core"], [34, 55, "Core"], [59, 101, "Core"]]}
+{"id": 106, "text": "It is mandatory that learning time is between 2 to 4 hours at maximum, because many task are delegated to working students.", "labels": [[79, 102, "Core"]]}
+{"id": 117, "text": "When a user selects the option to join an existing game, the MultiMahjongClient will retrieve a list of any games that still require players from the MultiMahjongServer.", "labels": [[85, 113, "Core"]]}
+{"id": 123, "text": "The MultiMahjongClient must only allow players to make moves according to the Chinese rules of Mahjong as described in the rulebook, \"How to Play Mah Jong\".", "labels": [[50, 102, "Core"]]}
+{"id": 126, "text": "If the configurations of: the current discard, the tiles in a user's hand, and the player whose turn it is, would allow the user to Chow/Pung/Kong/Mahjong under the Chinese rules of Mahjong, the MultiMahjongClient will inform the user that they can do so.", "labels": [[132, 189, "Core"], [219, 234, "Core"]]}
+{"id": 130, "text": "User's will be able to chat with each other in real time.", "labels": [[23, 56, "Core"]]}
+{"id": 132, "text": "The user will be able to end the game at any stage of the game.", "labels": [[25, 62, "Core"]]}
+{"id": 146, "text": "The TCS will provide an interface between the TCS and a video cassette recorder.", "labels": [[13, 33, "Core"]]}
+{"id": 148, "text": "When performing a given task during mission execution, the operator shall be given appropriate warning messages from other concurrently-executing subsystem tasks.", "labels": [[74, 111, "Core"]]}
+{"id": 159, "text": "ASPERA-3 and MEX OA IDFS data and any APAF-generated intermediate files of ASPERA-3 and MEX OA cleaned-up telemetry shall be provided to all ASPERA-3 Co-I\u2019s.", "labels": [[0, 133, "Core"]]}
+{"id": 160, "text": "SwRI shall provide IDFS data processing algorithms to IRF.", "labels": [[11, 50, "Core"]]}
+{"id": 161, "text": "IDFS data access software developed by SwRI shall be made available to the ASPERA-3 Co-I\u2019s.", "labels": [[50, 67, "Core"]]}
+{"id": 164, "text": "The HATS-GUI shall allow the user to specify the number of levels of nodes to expand during SDT viewing.", "labels": [[78, 84, "Core"], [37, 74, "Core"]]}
+{"id": 165, "text": "The Configure/Editors menu item shall provide an interface for the user to enter editor configuration information.", "labels": [[38, 58, "Core"], [75, 113, "Core"]]}
+{"id": 167, "text": "The user shall be able to initiate processes from an interface provided by the HATS-GUI.", "labels": [[26, 44, "Core"]]}
+{"id": 168, "text": "The HATS-GUI shall interact with the HOST OS to find files in directories.", "labels": [[19, 27, "Core"], [48, 73, "Core"]]}
+{"id": 170, "text": "The user shall be able to save an SDT generated during transformation program execution.", "labels": [[26, 37, "Core"]]}
+{"id": 172, "text": "The GUI shall allow the user to create, modify, copy, or delete applications or files regardless of the current status of HATS-SML.", "labels": [[32, 85, "Core"]]}
+{"id": 173, "text": "The HATS-GUI shall provide any other details related to the failure that are available from the Host OS.", "labels": [[19, 44, "Core"]]}
+{"id": 174, "text": "The HATS-GUI shall suggest a file name for the user whenever it prompts the user to enter a file name.", "labels": [[19, 38, "Core"], [64, 71, "Core"], [84, 101, "Core"]]}
+{"id": 175, "text": "When a user selects the File/Edit menu item, the HATS-GUI shall request that the operating system start a process and load that process with the editor specified by the application configuration.", "labels": [[64, 71, "Core"], [98, 113, "Core"], [118, 135, "Core"]]}
+{"id": 179, "text": "The user shall be able to resize windows dynamically.", "labels": [[26, 52, "Core"]]}
+{"id": 184, "text": "The scheduler will allocate jobs based on the job parameters, which are job specifications submitted by the user with the job.", "labels": [[19, 32, "Core"]]}
+{"id": 186, "text": "This feature will allow the user or administrator to view details about the job that have been submitted, and the progress of the execution of the job.", "labels": [[53, 65, "Core"]]}
+{"id": 192, "text": "The user will be given a problem and then must click the correct solution.", "labels": [[14, 32, "Core"], [47, 73, "Core"]]}
+{"id": 196, "text": "The BE shall verify the successful receipt of incoming data from the Correlator.", "labels": [[13, 59, "Core"]]}
+{"id": 197, "text": "The BE shall respond to incoming correlator mode changes, user optional processing sequence and/or parameter changes, and other external inputs that affect the data processing pipeline.", "labels": [[13, 143, "Core"]]}
+{"id": 198, "text": "The BE shall send output data to the e2e System.", "labels": [[13, 29, "Core"]]}
+{"id": 204, "text": "Enable agents to multicast a message to all the agents within the same multicast address.", "labels": [[17, 36, "Core"]]}
+{"id": 205, "text": "Enable agents to unicast a message to other agents within organization.", "labels": [[17, 34, "Core"]]}
+{"id": 222, "text": "The user can redo a movement that has been canceled.", "labels": [[13, 28, "Core"]]}
+{"id": 223, "text": "The system must allow a member of the network to send requests to a particular or all the other members about possible delivery of a driver\u2019s smart card to a similar person.", "labels": [[49, 62, "Core"]]}
+{"id": 227, "text": "The system must track the workflow between senders and related replies.", "labels": [[16, 34, "Core"]]}
+{"id": 228, "text": "The system must provide the management of user rights and permissions.", "labels": [[16, 69, "Core"]]}
+{"id": 230, "text": "The system must guide users through an interface based on end user concepts.", "labels": [[16, 27, "Core"]]}
+{"id": 231, "text": "The color translator allows old scheme to new scheme paint number translation, given a paint number, collection and a target collection.", "labels": [[21, 52, "Core"], [53, 77, "Core"]]}
+{"id": 232, "text": "The closest color tool allows the user to locate an arbitrary number of close colors to given a paint number, collection in a target collection.", "labels": [[42, 84, "Core"], [88, 143, "Core"]]}
+{"id": 237, "text": "Administrative users can give other users administrative access up to their own access level only.", "labels": [[25, 29, "Core"], [57, 63, "Core"]]}
+{"id": 245, "text": "Purchase Order is sent by the Order Point (Buyer) to inform the Sales Point (Seller) that the Buyer wishes to purchase goods or services.", "labels": [[0, 22, "Core"], [53, 59, "Core"]]}
+{"id": 256, "text": "The user shall be prompted at the beginning of the session for their credentials, once logged in they will not be prompted for additional or different credentials.", "labels": [[15, 26, "Core"], [59, 80, "Core"]]}
+{"id": 259, "text": "The system shall display a list of all the output tiles to the user.", "labels": [[17, 55, "Core"]]}
+{"id": 270, "text": "Defendant, Person arrested and/or charged with a criminal offense but not yet convicted.", "labels": [[70, 87, "Core"], [18, 65, "Core"]]}
+{"id": 277, "text": "Magistrate, Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "labels": [[35, 73, "Core"], [102, 134, "Core"]]}
+{"id": 284, "text": "An instant messenger is an application, which allows instant text communication between two or more people through a network such as the Internet.", "labels": [[46, 79, "Core"]]}
+{"id": 287, "text": "Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.", "labels": [[11, 43, "Core"]]}
+{"id": 291, "text": "The RLCS will provide access to system status data, to external systems through a firewall.", "labels": [[14, 71, "Core"]]}
+{"id": 300, "text": "Ability to reset user passwords when needed", "labels": [[11, 31, "Core"]]}
+{"id": 301, "text": "Ability to disable access for old project managers, analysts and guests.", "labels": [[11, 25, "Core"]]}
+{"id": 318, "text": "Ability to view kinds of information in the repository with restrictions set by the project manager.", "labels": [[11, 36, "Core"]]}
+{"id": 325, "text": "The system will allow analysts and guest to choose a policy and a goal and then the system will allow analysts and guests to view the total occurrences of that particular goal in the chosen policy.", "labels": [[44, 70, "Core"], [125, 196, "Core"]]}
+{"id": 328, "text": "The system shall allow analysts to add a scenario to the system.", "labels": [[35, 49, "Core"]]}
+{"id": 329, "text": "The system shall provide the ability to delete a scenario from a project without deleting it from the system", "labels": [[40, 57, "Core"]]}
+{"id": 335, "text": "The Clarus system shall be able to access in-situ environmental observations from data collectors.", "labels": [[35, 76, "Core"]]}
+{"id": 336, "text": "The Clarus system shall be able to access remotely sensed environmental observations from data collectors.", "labels": [[35, 84, "Core"]]}
+{"id": 340, "text": "The Clarus system shall accept environmental data derived from images.", "labels": [[24, 49, "Core"]]}
+{"id": 341, "text": "The Clarus system shall accept surface condition data derived from surface images.", "labels": [[24, 53, "Core"]]}
+{"id": 344, "text": "The Clarus system shall acquire and disseminate National Weather Service (NWS) watches, warnings, and advisories.", "labels": [[24, 112, "Core"]]}
+{"id": 354, "text": "The Clarus system shall accept environmental data from transit vehicles.", "labels": [[24, 49, "Core"]]}
+{"id": 361, "text": "The Clarus system shall not modify original observations.", "labels": [[24, 56, "Core"]]}
+{"id": 379, "text": "The Clarus system shall be able to restrict environmental data publication based on source.", "labels": [[35, 90, "Core"]]}
+{"id": 380, "text": "The Clarus system shall record statistics about its operation.", "labels": [[24, 61, "Core"]]}
+{"id": 385, "text": "The Clarus system shall acquire, process, and disseminate surface data.", "labels": [[24, 70, "Core"]]}
+{"id": 390, "text": "The Clarus system shall accept only observations that include location, timeframe, and source metadata.", "labels": [[24, 48, "Core"]]}
+{"id": 391, "text": "The Clarus system shall accept only observations of known measurement types and units.", "labels": [[24, 85, "Core"]]}
+{"id": 401, "text": "The Clarus system shall allow service providers to select specific desired data sets.", "labels": [[51, 84, "Core"]]}
+{"id": 402, "text": "The Clarus system shall respond to queries for environmental data from the available data.", "labels": [[24, 65, "Core"]]}
+{"id": 409, "text": "The Clarus system shall allow users to create a data subscription request.", "labels": [[39, 73, "Core"]]}
+{"id": 412, "text": "The Clarus system shall use software that implements industry accepted standard interfaces.", "labels": [[24, 36, "Core"]]}
+{"id": 417, "text": "The Clarus system shall be able to notify subscribers when data sets become available.", "labels": [[35, 53, "Core"]]}
+{"id": 418, "text": "The Clarus system shall disseminate data using standard Internet protocols.", "labels": [[24, 40, "Core"], [41, 74, "Core"]]}
+{"id": 421, "text": "The Clarus system shall support 470 million current observations.", "labels": [[24, 64, "Core"]]}
+{"id": 422, "text": "The Clarus system shall be able to collect data from sources within 5 minutes of them becoming available.", "labels": [[35, 77, "Core"]]}
+{"id": 423, "text": "The Clarus system shall be able to receive all reported environmental data during a fifteen minute time interval.", "labels": [[35, 74, "Core"]]}
+{"id": 430, "text": "The Clarus system shall accept data only from approved sources.", "labels": [[24, 62, "Core"]]}
+{"id": 431, "text": "The Clarus program shall establish data sharing agreements with all participating sources of environmental data.", "labels": [[25, 111, "Core"]]}
+{"id": 437, "text": "The Clarus program shall provide for customer service.", "labels": [[25, 53, "Core"]]}
+{"id": 449, "text": "The product should allow the grid to be oriented by the user. Rotation, zoom and move functions should be employed.", "labels": [[62, 114, "Core"], [19, 48, "Core"]]}
+{"id": 451, "text": "The application should be intuitive and not require any specialist training.", "labels": [[23, 35, "Core"], [40, 75, "Core"]]}
+{"id": 455, "text": "The client and/or the partner will choose the service provider and will get treatment.", "labels": [[35, 62, "Core"], [72, 85, "Core"]]}
+{"id": 460, "text": "The filed office will validate the claim form manually and through system,", "labels": [[22, 40, "Core"]]}
+{"id": 463, "text": "Based on the payment terms agreed by VSP, the field office will generate BiMonth or Monthly financial and medical report and send it to MSIU Admin team to arrange the payments for the VSP.", "labels": [[64, 120, "Core"], [125, 132, "Core"], [155, 175, "Core"]]}
+{"id": 465, "text": "The teachers and assistants shall only be allowed to enter or edit child comments and child arrival or departure times.", "labels": [[53, 118, "Core"]]}
+{"id": 468, "text": "Only the administrators shall be allowed to view or print invoices.", "labels": [[44, 66, "Core"]]}
+{"id": 471, "text": "When the user logs onto the system on the date of their reminder, they shall receive a popup window displaying their reminder message.", "labels": [[77, 99, "Core"]]}
+{"id": 477, "text": "Systems supporting OM should have the ability to produce individual reports for each emergency team member or investigator.", "labels": [[49, 75, "Core"]]}
+{"id": 485, "text": "Systems supporting OM should provide a manual or automatic means of updating the status of case records as the case definition changes.", "labels": [[29, 103, "Core"]]}
+{"id": 492, "text": "The user shall be able to find projects by project ID, project name, project status, structure ID, and program.", "labels": [[26, 39, "Core"]]}
+{"id": 499, "text": "The user shall be able to create new programs by manually entering program information.", "labels": [[26, 45, "Core"], [49, 86, "Core"]]}
+{"id": 502, "text": "The user shall be able to edit or delete existing projects.", "labels": [[26, 58, "Core"]]}
+{"id": 509, "text": "The administrator shall be able to add new users to the system.", "labels": [[35, 48, "Core"]]}
+{"id": 512, "text": "The administrator shall be able to assign bridge-level filters for each user.", "labels": [[35, 62, "Core"]]}
+{"id": 513, "text": "The administrator shall be able to remove users from the system or disable access as appropriate.", "labels": [[67, 96, "Core"], [35, 47, "Core"]]}
+{"id": 514, "text": "The system shall be capable of validating user name and password during log-in process.", "labels": [[31, 64, "Core"]]}
+{"id": 517, "text": "The system shall be capable of running concurrent sessions for a user.", "labels": [[31, 58, "Core"]]}
+{"id": 518, "text": "The System requires the user to select the nature of a player in the current game.", "labels": [[32, 61, "Core"]]}
+{"id": 520, "text": "The user locates a solution to a problem with the help function.", "labels": [[9, 63, "Core"]]}
+{"id": 529, "text": "The Operational radio user shall be protected against all electrical hazards arising from the mobile equipment", "labels": [[0, 76, "Core"]]}
+{"id": 530, "text": "System operator responsible for maintaining executable code, requiring full access to all aspects of the system.", "labels": [[32, 59, "Core"], [61, 82, "Core"]]}
+{"id": 534, "text": "View entire universe of watersheds from top-level screen for selection", "labels": [[0, 70, "Core"]]}
+{"id": 535, "text": "View watershed descriptive data", "labels": [[0, 31, "Core"]]}
+{"id": 538, "text": "Generate tabular reports of selected data", "labels": [[0, 41, "Core"]]}
+{"id": 539, "text": "Visualize, query, and download spatial data", "labels": [[0, 43, "Core"]]}
+{"id": 544, "text": "The system shall display all the products that can be configured.", "labels": [[17, 41, "Core"]]}
+{"id": 547, "text": "The system shall enable user to add one or more component to the configuration.", "labels": [[32, 78, "Core"]]}
+{"id": 556, "text": "The system shall display all the matching products based on the search", "labels": [[17, 50, "Core"]]}
+{"id": 561, "text": "The system shall authenticate user credentials to view the profile.", "labels": [[17, 46, "Core"], [50, 66, "Core"]]}
+{"id": 565, "text": "The system shall display the detailed information about the selected order.", "labels": [[17, 74, "Core"]]}
+{"id": 571, "text": "The system shall display the customer support contact numbers on the screen.", "labels": [[17, 75, "Core"]]}
+{"id": 586, "text": "The system shall display the current tracking information about the order.", "labels": [[17, 73, "Core"]]}
+{"id": 590, "text": "The system shall allow user to select the payment method for order.", "labels": [[31, 56, "Core"], [61, 66, "Core"]]}
+{"id": 595, "text": "The system shall notify the user about any changes made to the order.", "labels": [[17, 23, "Core"], [33, 50, "Core"]]}
+{"id": 597, "text": "The system shall enable the user to enter their reviews and ratings.", "labels": [[36, 67, "Core"]]}
+{"id": 601, "text": "The system shall allow user to view detailed sitemap.", "labels": [[31, 52, "Core"]]}
+{"id": 607, "text": "The system shall provide a digital image for each product in the product catalog.", "labels": [[17, 40, "Core"]]}
+{"id": 617, "text": "The product shall take initial load time depending on internet connection strength which also depends on the media from which the product is run.", "labels": [[18, 40, "Core"]]}
+{"id": 622, "text": "The system shall not leave any cookies on the customer\u2019s computer containing the user\u2019s password.", "labels": [[17, 38, "Core"]]}
+{"id": 633, "text": "The ETCS on-board shall be capable of receiving National values from the trackside to adapt to National requirements.", "labels": [[38, 63, "Core"], [86, 116, "Core"]]}
+{"id": 636, "text": "The DUAP System shall collect probe vehicle data.", "labels": [[22, 48, "Core"]]}
+{"id": 648, "text": "The DUAP Input Services shall be able to collect weather data from the MDOT RWIS using the MDOT RWIS interface.", "labels": [[41, 61, "Core"], [81, 110, "Core"]]}
+{"id": 651, "text": "The DUAP Input Services shall be able to collect Clarus weather data as enumerated in APPENDIX D -Weather Data Elements from Clarus.", "labels": [[41, 68, "Core"]]}
+{"id": 653, "text": "The DUAP System shall collect roadway traffic data.", "labels": [[22, 50, "Core"]]}
+{"id": 656, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the RCOC system using the RCOC system interface.", "labels": [[41, 69, "Core"], [91, 122, "Core"]]}
+{"id": 659, "text": "The DUAP Input Services shall be able to collect traffic data from the Detroit TMC system using the Detroit TMC interface.", "labels": [[41, 61, "Core"], [90, 121, "Core"]]}
+{"id": 660, "text": "The DUAP Input Services shall be able to collect traffic data from the Statewide TMC system using the Statewide TMC interface.", "labels": [[41, 61, "Core"], [92, 125, "Core"]]}
+{"id": 663, "text": "The DUAP Input Services shall be able to collect road condition data from Traffic Management Systems (TMS) using the TMS interface.", "labels": [[41, 68, "Core"], [107, 130, "Core"]]}
+{"id": 668, "text": "The DUAP System shall cache data only if the data record associates the data with its source, a georeferenced location, and a timestamp.", "labels": [[22, 32, "Core"]]}
+{"id": 680, "text": "The System shall provide the capability to operate in an Open Mode, within which authorized customers shall be allowed read-only access to requested Data Products. This is the nominal system mode.", "labels": [[43, 66, "Core"], [108, 135, "Core"]]}
+{"id": 689, "text": "The System shall provide the capability for an authorized user to adjust Product Generation priorities.", "labels": [[66, 102, "Core"]]}
+{"id": 690, "text": "The System shall be capable of rendering Platte Carre projections.", "labels": [[31, 65, "Core"]]}
+{"id": 696, "text": "Allows resources to be reviewed before a decision is made whether they should be retained.", "labels": [[20, 31, "Core"]]}
+{"id": 705, "text": "Allows notification of producers and donors about rejected content.", "labels": [[0, 43, "Core"]]}
+{"id": 709, "text": "System generates an error log.", "labels": [[7, 29, "Core"]]}
+{"id": 718, "text": "Validates automatically the successful transfer of the SIP to a staging area using Cyclic Redundancy Check (CRCs) or checksums associated with each data file.", "labels": [[0, 58, "Core"], [77, 126, "Core"]]}
+{"id": 736, "text": "Query requests are received from other functions (for example, Ingest, Access, and Administration).", "labels": [[15, 48, "Core"]]}
+{"id": 739, "text": "Allows query requests against all metadata used to manage the repository.", "labels": [[0, 21, "Core"], [51, 72, "Core"]]}
+{"id": 741, "text": "Receives updates from other NLM Digital Repository functions (for example, Ingest and Administration).", "labels": [[0, 60, "Core"]]}
+{"id": 745, "text": "There may be a need to coordinate updates with metadata held in other systems.", "labels": [[23, 41, "Core"]]}
+{"id": 746, "text": "Keeps an audit trail of all actions.", "labels": [[0, 35, "Core"]]}
+{"id": 747, "text": "Audits submissions to ensure that they meet archive/repository standards.", "labels": [[0, 18, "Core"], [22, 28, "Core"]]}
+{"id": 748, "text": "Maintains configuration management of the system hardware and software.", "labels": [[0, 34, "Core"]]}
+{"id": 752, "text": "Able to add and edit terms of agreement, based on access of level of user.", "labels": [[8, 39, "Core"]]}
+{"id": 760, "text": "Sends requests for system information to Data Management and receives reports.", "labels": [[0, 14, "Core"], [61, 77, "Core"]]}
+{"id": 767, "text": "Receives change requests, actions and tools from the Manage System Configuration function.", "labels": [[0, 43, "Core"]]}
+{"id": 771, "text": "Coordinates the removal of an AIP with the maintenance of metadata held in other systems.  Provides an alert that other systems need to be updated.", "labels": [[0, 33, "Core"], [91, 108, "Core"]]}
+{"id": 780, "text": "The actor should have the option to have the voice clip be archived after a preview has taken place.", "labels": [[36, 55, "Core"]]}
+{"id": 785, "text": "The system must be able to use search functionality as a way to navigate Moodle pages instead of using hierarchical links.", "labels": [[27, 51, "Core"], [64, 85, "Core"]]}
+{"id": 798, "text": "The system should maintain a history of grades for a particular assignment if the course administrator changes them.", "labels": [[18, 74, "Core"]]}
+{"id": 799, "text": "Course administrators can also track how they have changed a score over time using the timestamps associated with each change to the gradebook.", "labels": [[31, 36, "Core"]]}
+{"id": 802, "text": "the actor in the role of course administrator should be able to toggle whether notifications are turned on.", "labels": [[64, 106, "Core"]]}
+{"id": 807, "text": "The system must be backed up on a configurable schedule.", "labels": [[16, 55, "Core"]]}
+{"id": 810, "text": "System administrators must have access to comprehensive, searchable documentation.", "labels": [[27, 81, "Core"]]}
+{"id": 811, "text": "Users must have easy access to help while interacting with the system.", "labels": [[11, 27, "Core"], [31, 35, "Core"]]}
+{"id": 819, "text": "This system is in line with the objectives of the CWM Information Technology initiative presented to the Governing Board in June 2002.", "labels": [[15, 87, "Core"]]}
+{"id": 822, "text": "Track the movement of lapsed quantities in an area", "labels": [[0, 39, "Core"]]}
+{"id": 825, "text": "Ability to track requested and permitted quantities.", "labels": [[11, 51, "Core"]]}
+{"id": 834, "text": "The CAISO shall from time to time undertake performance tests, with or without prior notification.", "labels": [[34, 61, "Core"]]}
+{"id": 837, "text": "The Black Start database is reviewed and updated on at least an annual basis.", "labels": [[0, 48, "Core"]]}
+{"id": 839, "text": "Developers: in order to be sure they are developing the right project that fulfills requirements provided in this document.", "labels": [[24, 31, "Core"]]}
+{"id": 841, "text": "Users: in order to get familiar with the idea of the project and suggest other features that would make it even more functional.", "labels": [[19, 60, "Core"], [65, 87, "Core"]]}
+{"id": 843, "text": "Advanced end users, end users/desktop and system administrators: in order to know exactly what they have to expect from the system, right inputs and outputs and response in error situations.", "labels": [[77, 89, "Core"]]}
+{"id": 845, "text": "The user also can print all data in order to keep them with him even when a computer is not available.", "labels": [[18, 32, "Core"], [45, 54, "Core"]]}
+{"id": 846, "text": "Also the user can search the database using key words through a search engine provided with the software.", "labels": [[18, 37, "Core"]]}
+{"id": 847, "text": "The user can select a sequence of keypresses that KeePass will be able to perform and send them to any window or browser.", "labels": [[13, 44, "Core"]]}
+{"id": 850, "text": "End users/Desktop: users with no particular knowledge on computer programming. They just use the database for organizing their data and to keep them safe.", "labels": [[25, 77, "Core"], [89, 105, "Core"], [110, 131, "Core"], [139, 153, "Core"]]}
+{"id": 852, "text": "Using KeePass the administrator can save all data with no risk of leak to third persons.", "labels": [[36, 70, "Core"], [0, 13, "Core"]]}
+{"id": 865, "text": "Peering Agent acts as a policy-driven resource discovery module for establishing negotiations.", "labels": [[68, 93, "Core"], [14, 63, "Core"]]}
+{"id": 866, "text": "Peering Agent exchanges policy, resource information, and service requirements with external Peering Agent.", "labels": [[14, 78, "Core"]]}
+{"id": 867, "text": "Peering Agent is used as a conduit by the mediator to establish negotiations with Peering Agent of other peers and to acquire resources from them.", "labels": [[17, 34, "Core"], [54, 76, "Core"], [118, 135, "Core"]]}
+{"id": 876, "text": "If the user requests can not be accepted according the provider policies, service requirements are not passed to the local Peering Agent.", "labels": [[12, 40, "Core"], [74, 109, "Core"]]}
+{"id": 878, "text": "Mediator works in conjunction with the Peering Agent to establish negotiation.", "labels": [[9, 29, "Core"], [56, 77, "Core"]]}
+{"id": 882, "text": "Local Peering Agent in conjunction with the mediator interacts with external Peering Agent through inter-Peering Agent communication protocol.", "labels": [[53, 62, "Core"]]}
+{"id": 885, "text": "Interaction protocols between Peering Agent are identified.", "labels": [[44, 58, "Core"]]}
+{"id": 891, "text": "If any of the termination condition holds, the local Peering Agent disbands or re-arranges the peering arrangement.", "labels": [[67, 114, "Core"]]}
+{"id": 892, "text": "The user should write his/her username, password and select in which domain he/she is.", "labels": [[16, 48, "Core"], [53, 59, "Core"]]}
+{"id": 894, "text": "User can click on [ Logout ] link, so that he/she logged out from the system.", "labels": [[9, 33, "Core"], [50, 76, "Core"]]}
+{"id": 897, "text": "User can click on [ add new customer ] link, to add a new customer to the system.", "labels": [[9, 43, "Core"], [48, 66, "Core"]]}
+{"id": 901, "text": "Users will have access to common programs, such as media players for streaming.", "labels": [[16, 41, "Core"]]}
+{"id": 914, "text": "Professor will be able to distribute documents to students (example syllabus) with the ability to lock the editing tools, so unauthorized change to the document will be impossible.", "labels": [[26, 46, "Core"], [98, 120, "Core"], [125, 179, "Core"]]}
+{"id": 923, "text": "The user can search for a publication, by typing in certain keywords using logical expressions(eg. AND, OR, NOT,. . . ) and certain symbols (eg.\u201d, \u2019 ,. . . ).", "labels": [[13, 37, "Core"], [42, 68, "Core"]]}
+{"id": 926, "text": "This function allows the user to log o\ufb00 their account.", "labels": [[33, 53, "Core"]]}
+{"id": 930, "text": "A Moderator can decide to upgrade a Member (of his own department) to become a Publisher.", "labels": [[26, 42, "Core"], [67, 88, "Core"]]}
+{"id": 936, "text": "the actor gets a screen where he will be able to login or where he/she can start a search immediately", "labels": [[10, 23, "Core"]]}
+{"id": 938, "text": "GOG must provide a way to be run from a command line or a shell script.", "labels": [[9, 22, "Core"], [26, 70, "Core"]]}
+{"id": 940, "text": "Director: A member of the Construction Junction staff who can perform the same Inventory Management functions as a Manager, plus view, create, modify and delete Inventory Management users.", "labels": [[62, 122, "Core"], [129, 187, "Core"]]}
+{"id": 943, "text": "Customer Service Representative: A member of the Construction Junction staff who works in the customer service desk and performs specific tasks such as constituent and member database management, item returns processing, creating drop-off acquisitions, and others.", "labels": [[81, 115, "Core"], [120, 143, "Core"]]}
+{"id": 946, "text": "Sales Associate: A member of the Construction Junction staff who processes purchases by Construction Junction customers.", "labels": [[65, 84, "Core"]]}
+{"id": 948, "text": "Donor: An individual or organization who donates items to the Construction Junction inventory and receives a tax deduction for doing so.", "labels": [[41, 54, "Core"], [98, 122, "Core"]]}
+{"id": 952, "text": "Consigner: An individual who donates items to Construction Junction under consignment.", "labels": [[29, 42, "Core"]]}
+{"id": 954, "text": "The user may perform a search for items by keyword (basic search) and other parameters such as price, date received and/or discount (advanced search).", "labels": [[13, 39, "Core"]]}
+{"id": 959, "text": "The system should be able to print the donor\u201fs current credit amount on the donation receipt.", "labels": [[29, 68, "Core"]]}
+{"id": 972, "text": "Management Processes rely on the data structures and functionality of an enterprise-level Library Automation System, including Acquisitions and Cataloging modules.", "labels": [[21, 115, "Core"]]}
+{"id": 993, "text": "System supports administrator-programmable and user-programmable macros and/or keyboard shortcuts.", "labels": [[7, 97, "Core"]]}
+{"id": 1001, "text": "A second group of users consists of scientists at RAL (and also outside of RAL), who will be using the system for running model jobs for research purposes.", "labels": [[93, 109, "Core"], [114, 154, "Core"]]}
+{"id": 1002, "text": "User can choose to receive email notification upon start, end and termination of the job.", "labels": [[9, 45, "Core"]]}
+{"id": 1004, "text": "User is given the option to run additional pre-processors for the IC/BC data, such as, LDAS or supply own custom pre-processor or skip this option.", "labels": [[28, 57, "Core"]]}
+{"id": 1006, "text": "Users are allowed to manage the way of selection of the displayed in file manager interface objects(files and archives).", "labels": [[21, 35, "Core"], [39, 65, "Core"]]}
+{"id": 1008, "text": "Users can access a group of file management tools, that are not strictly archivingrelated.", "labels": [[10, 49, "Core"]]}
+{"id": 1013, "text": "A VCD will facilitate electronic Tendering by providing cross-border data and document solution that contains the necessary attestations and certificates typically required in eTendering.", "labels": [[11, 42, "Core"], [46, 95, "Core"]]}
+{"id": 1017, "text": "Torrent search will share the same search bar with the streaming search.", "labels": [[20, 45, "Core"]]}
+{"id": 1021, "text": "The tools shall be able to process a set of multiple WARC \ufb01les at the same time.", "labels": [[27, 62, "Core"]]}
+{"id": 1023, "text": "The tools shall offer best possible performance to correctly process large collections (I/O bound)", "labels": [[16, 47, "Core"], [51, 86, "Core"]]}
+{"id": 1026, "text": "The tools shall provide enhanced usability by providing easy to adapt shell script wrappers for the major commands", "labels": [[16, 42, "Core"], [46, 60, "Core"], [64, 91, "Core"]]}
+{"id": 1051, "text": "The ELSS must only permit deletion messages to be generated and sent for reports sent during a current trip up to the End of Fishing report for that voyage.", "labels": [[19, 43, "Core"], [47, 59, "Core"], [64, 80, "Core"]]}
+{"id": 1064, "text": "The thermostats may be controlled individually or collectively, so that temperature can be controlled at different levels in different home spaces.", "labels": [[0, 62, "Core"], [72, 121, "Core"]]}
+{"id": 1076, "text": "Mashbot will provide an interface for authenticating a user account to an external service account", "labels": [[13, 33, "Core"], [38, 67, "Core"]]}
+{"id": 1077, "text": "The system allows for the backup of the data system to local or remote non-volatile storage systems.", "labels": [[11, 51, "Core"]]}
+{"id": 1088, "text": "Users have the ability to save the working environment with all the status of every part of the application, so they don\u2019t have to set the options of each plugin every time they open the application.", "labels": [[26, 54, "Core"], [117, 161, "Core"]]}
+{"id": 1091, "text": "The user has to select Settings below the plugins tree and the Settings main panel appears with all the available choices that the user can do.", "labels": [[16, 31, "Core"], [83, 121, "Core"]]}
+{"id": 1092, "text": "PDFsam is an application that needs a few system resources to work.", "labels": [[30, 66, "Core"]]}
+{"id": 1093, "text": "The Technology Architecture describes the logical software and hardware capabilities that are required to support the deployment of business, data, and application services.", "labels": [[28, 84, "Core"]]}
+{"id": 1096, "text": "The Business Architecture defines the business strategy, governance, organization, and key business processes.", "labels": [[26, 109, "Core"]]}

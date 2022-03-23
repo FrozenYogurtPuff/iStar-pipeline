@@ -1,0 +1,6 @@
+            precision    recall  f1-score   support
+
+     Core    0.67284   0.69206   0.68232       315
+
+micro avg    0.67284   0.69206   0.68232       315
+macro avg    0.67284   0.69206   0.68232       315

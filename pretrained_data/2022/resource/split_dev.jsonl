@@ -1,0 +1,189 @@
+{"id": 2, "text": "Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.", "labels": [[69, 81, "Resource"], [83, 88, "Resource"], [93, 116, "Resource"], [22, 38, "Resource"], [136, 149, "Resource"]]}
+{"id": 16, "text": "It shows information such as cases assigned, alerts, pending tasks etc hence helping police personnel to plan better and execute with greater efficiency.", "labels": [[9, 20, "Resource"]]}
+{"id": 19, "text": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and agewise.", "labels": [[54, 65, "Resource"], [83, 114, "Resource"]]}
+{"id": 20, "text": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.", "labels": [[129, 148, "Resource"], [0, 20, "Resource"]]}
+{"id": 21, "text": "The System must keep an unalterable audit trail capable of automatically capturing and storing information.", "labels": [[21, 47, "Resource"]]}
+{"id": 38, "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide following responses.", "labels": [[3, 18, "Resource"], [47, 53, "Resource"], [132, 141, "Resource"]]}
+{"id": 39, "text": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.", "labels": [[19, 45, "Resource"], [80, 102, "Resource"]]}
+{"id": 41, "text": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.", "labels": [[14, 19, "Resource"], [35, 45, "Resource"], [70, 95, "Resource"], [129, 144, "Resource"]]}
+{"id": 46, "text": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines.", "labels": [[0, 25, "Resource"], [144, 176, "Resource"]]}
+{"id": 48, "text": "The System must allow persistent defaults for data entry where desirable.", "labels": [[22, 56, "Resource"]]}
+{"id": 57, "text": "The Web store will have a variety of clientele depending upon the inventory loaded on the Key.", "labels": [[62, 75, "Resource"], [86, 93, "Resource"]]}
+{"id": 64, "text": "Furthermore, Customer profiles will also include payment information, such as the ability to store credit card information, and address information.", "labels": [[13, 30, "Resource"], [49, 68, "Resource"], [99, 122, "Resource"], [128, 147, "Resource"]]}
+{"id": 74, "text": "The customer will then receive a confirmation email with the specific order details.", "labels": [[31, 83, "Resource"]]}
+{"id": 101, "text": "An inventory user should check returned asset and update inventory", "labels": [[31, 45, "Resource"], [57, 66, "Resource"]]}
+{"id": 105, "text": "Any administrative level user can delegate another user to execute some or all his authorized actions. And this user acquires the role of inventory administrator", "labels": [[67, 101, "Resource"]]}
+{"id": 113, "text": "The MultiMahjongServer will allow players on MultiMahjongClient programs to modify their own names and icons during gameplay (as opposed to only at the beginning).", "labels": [[83, 108, "Resource"]]}
+{"id": 115, "text": "When the user begins the MultiMahjongClient program, they will be able to choose to create a new multi player game, to create a new single player game, to join an existing multi player game, or to quit the program.", "labels": [[91, 114, "Resource"], [126, 150, "Resource"], [160, 189, "Resource"]]}
+{"id": 117, "text": "When a user selects the option to join an existing game, the MultiMahjongClient will retrieve a list of any games that still require players from the MultiMahjongServer.", "labels": [[94, 113, "Resource"]]}
+{"id": 121, "text": "The list of un-started games that the MultiMahjongClient fetches from the MultiMahjongServer will be displayed in such a way that users can see the following information about each game.", "labels": [[0, 28, "Resource"]]}
+{"id": 122, "text": "Users who create a new game will be able to choose to play different variations of Mahjong rules other than those described.", "labels": [[59, 96, "Resource"]]}
+{"id": 149, "text": "Client authentication ensures that an authorised client/operator is operating the equipment.", "labels": [[0, 21, "Resource"], [78, 91, "Resource"]]}
+{"id": 154, "text": "System security management allow control and supervision of the security of the system against unauthorised access or loss of activity.", "labels": [[0, 26, "Resource"], [33, 86, "Resource"], [94, 114, "Resource"], [118, 134, "Resource"]]}
+{"id": 155, "text": "The communication system shall include functionality to transfer stored data to central storage and processing after restoration of the communication.", "labels": [[39, 52, "Resource"], [65, 76, "Resource"], [80, 95, "Resource"]]}
+{"id": 165, "text": "The Configure/Editors menu item shall provide an interface for the user to enter editor configuration information.", "labels": [[0, 31, "Resource"], [46, 58, "Resource"], [81, 113, "Resource"]]}
+{"id": 170, "text": "The user shall be able to save an SDT generated during transformation program execution.", "labels": [[31, 37, "Resource"]]}
+{"id": 177, "text": "When a user selects the View/Text menu option, the HATS-GUI shall prompt a user to select a pretty-printed text file in the current application.", "labels": [[20, 45, "Resource"]]}
+{"id": 180, "text": "The user shall be able to control the display by choosing the color and shapes of displayed nodes based on node type.", "labels": [[62, 97, "Resource"], [107, 116, "Resource"]]}
+{"id": 181, "text": "The HATS-GUI shall provide for repeating a search.", "labels": [[41, 49, "Resource"]]}
+{"id": 182, "text": "The user shall be prompted to enter a text string describing a string pattern.", "labels": [[36, 77, "Resource"]]}
+{"id": 195, "text": "The BE shall receive incoming data packets from the Correlator to Backend network interface.", "labels": [[21, 42, "Resource"], [48, 91, "Resource"]]}
+{"id": 211, "text": "AgentMom shall support the ability to send unicast message.", "labels": [[43, 58, "Resource"]]}
+{"id": 213, "text": "If the user has the appropriate privilege (i.e., the user is the administrator user) the tool requests a confirmatory response from the user to start the diagnostic processing.", "labels": [[103, 126, "Resource"], [150, 175, "Resource"], [16, 41, "Resource"], [85, 93, "Resource"]]}
+{"id": 225, "text": "The system must allow a member to do statistics on messages issued and received from/to his system.", "labels": [[51, 59, "Resource"]]}
+{"id": 229, "text": "The system must be able to include new members in the network through simple administrative tasks.", "labels": [[70, 97, "Resource"]]}
+{"id": 231, "text": "The color translator allows old scheme to new scheme paint number translation, given a paint number, collection and a target collection.", "labels": [[85, 99, "Resource"], [101, 111, "Resource"], [116, 135, "Resource"], [0, 20, "Resource"], [28, 77, "Resource"]]}
+{"id": 238, "text": "Purchasing Manager is responsible for the arrangement and maintenance of trading agreements with suppliers, including Catalogue data.", "labels": [[0, 18, "Resource"], [73, 91, "Resource"], [118, 132, "Resource"]]}
+{"id": 241, "text": "Sales Point is responsible for all communication with the Buyer up to and including the acceptance of a Purchase Order.", "labels": [[104, 118, "Resource"], [0, 11, "Resource"]]}
+{"id": 251, "text": "Scenario where the user wants to pull download the output data for further analysis etc.", "labels": [[0, 8, "Resource"], [47, 62, "Resource"], [67, 83, "Resource"]]}
+{"id": 252, "text": "Scenario where the user wants to publish output data for the community, i.e. directly publish the data on dataportal.", "labels": [[0, 8, "Resource"], [41, 52, "Resource"], [94, 102, "Resource"], [106, 116, "Resource"]]}
+{"id": 261, "text": "The system shall allow the user to view the details of a specific object.", "labels": [[40, 72, "Resource"]]}
+{"id": 263, "text": "The system shall allow the user to ability to invalidate a locked project.", "labels": [[57, 73, "Resource"]]}
+{"id": 264, "text": "The system shall require the users enable cookies to use the system.", "labels": [[42, 49, "Resource"]]}
+{"id": 268, "text": "Court Coordinator, Person responsible for managing the schedule of a County or District Court.", "labels": [[51, 93, "Resource"]]}
+{"id": 276, "text": "Local Selection Committee, Committee appointed by the Presiding Judge of the Administrative Judicial Region to adopt standards for the qualification of attorneys to be appointed to represent indigent defendants in capital cases in which the death penalty is sought.", "labels": [[117, 161, "Resource"], [191, 227, "Resource"]]}
+{"id": 279, "text": "Presiding Administrative Judge, Person appointed by the Governor to preside over the administrative judicial region.", "labels": [[81, 115, "Resource"]]}
+{"id": 284, "text": "An instant messenger is an application, which allows instant text communication between two or more people through a network such as the Internet.", "labels": [[0, 20, "Resource"], [53, 79, "Resource"], [24, 38, "Resource"]]}
+{"id": 287, "text": "Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.", "labels": [[19, 43, "Resource"]]}
+{"id": 293, "text": "The system shall have a Graphical User Interface (GUI) that allows the operator to view system status, issue commands to change device status, configure the system, export log data, and generate reports.", "labels": [[22, 54, "Resource"], [88, 101, "Resource"], [109, 117, "Resource"], [128, 141, "Resource"], [172, 180, "Resource"], [195, 202, "Resource"]]}
+{"id": 297, "text": "The RLCS shall support remote system administration and maintenance of the system.", "labels": [[23, 51, "Resource"]]}
+{"id": 302, "text": "Ability to insert a new privacy policy to the repository", "labels": [[18, 38, "Resource"]]}
+{"id": 304, "text": "Ability to create/add a new domain of privacy policies (e.g, Healthcare, financial, e-commerce, federal agency, etc.)", "labels": [[22, 54, "Resource"]]}
+{"id": 314, "text": "Ability to update personal profile such as name, ID, contact information, usergroups and passwords", "labels": [[18, 34, "Resource"], [43, 47, "Resource"], [49, 51, "Resource"], [53, 72, "Resource"], [74, 84, "Resource"], [89, 98, "Resource"]]}
+{"id": 318, "text": "Ability to view kinds of information in the repository with restrictions set by the project manager.", "labels": [[60, 72, "Resource"], [16, 36, "Resource"]]}
+{"id": 320, "text": "Each user will have different projects to work on as well as different access levels that will allow them certain privileges within the project.", "labels": [[20, 38, "Resource"], [61, 84, "Resource"], [106, 124, "Resource"]]}
+{"id": 322, "text": "The system shall provide templates for goals, scenarios, P3P statments, EPAL rules and access control policies.", "labels": [[39, 44, "Resource"], [46, 55, "Resource"], [57, 70, "Resource"], [72, 82, "Resource"], [87, 110, "Resource"]]}
+{"id": 326, "text": "The system will allow analysts and guests to choose a policy and then the system will allow analysts and guests to view the the number of different goals that occur in that policy.", "labels": [[52, 60, "Resource"], [120, 153, "Resource"], [168, 179, "Resource"]]}
+{"id": 332, "text": "The system shall provide a way to capture the mined goalsinformation from the user\u2019s privacy preferences into a database corresponding to the user\u2019s privacy preferences.", "labels": [[42, 68, "Resource"], [74, 104, "Resource"], [110, 120, "Resource"], [138, 168, "Resource"]]}
+{"id": 334, "text": "The Clarus system shall collect, quality control, and disseminate environmental data.", "labels": [[66, 84, "Resource"]]}
+{"id": 335, "text": "The Clarus system shall be able to access in-situ environmental observations from data collectors.", "labels": [[42, 76, "Resource"]]}
+{"id": 340, "text": "The Clarus system shall accept environmental data derived from images.", "labels": [[31, 49, "Resource"], [63, 69, "Resource"]]}
+{"id": 344, "text": "The Clarus system shall acquire and disseminate National Weather Service (NWS) watches, warnings, and advisories.", "labels": [[48, 112, "Resource"]]}
+{"id": 349, "text": "The Clarus system shall accept environmental data from railway systems or in situ ESS along tracks.", "labels": [[31, 98, "Resource"]]}
+{"id": 350, "text": "The Clarus system shall accept environmental data from railroad vehicles.", "labels": [[31, 72, "Resource"]]}
+{"id": 353, "text": "The Clarus system shall accept environmental data from service patrol vehicles.", "labels": [[31, 78, "Resource"]]}
+{"id": 378, "text": "The Clarus system shall enable system administrators to manage security groups.", "labels": [[63, 78, "Resource"]]}
+{"id": 384, "text": "The Clarus system shall acquire, process, and disseminate atmospheric data.", "labels": [[58, 74, "Resource"]]}
+{"id": 387, "text": "The Clarus system shall acquire, process, and disseminate atmospheric metadata.", "labels": [[58, 78, "Resource"]]}
+{"id": 393, "text": "The Clarus system shall be able to acquire, process, and disseminate environmental data from across North America.", "labels": [[69, 113, "Resource"]]}
+{"id": 399, "text": "The Clarus system shall transfer data as efficiently as possible.", "labels": [[33, 37, "Resource"]]}
+{"id": 401, "text": "The Clarus system shall allow service providers to select specific desired data sets.", "labels": [[58, 84, "Resource"]]}
+{"id": 412, "text": "The Clarus system shall use software that implements industry accepted standard interfaces.", "labels": [[28, 90, "Resource"]]}
+{"id": 421, "text": "The Clarus system shall support 470 million current observations.", "labels": [[32, 64, "Resource"]]}
+{"id": 427, "text": "The Clarus system shall be able to handle three hundred simultaneous requests for environmental element data.", "labels": [[42, 77, "Resource"], [82, 108, "Resource"]]}
+{"id": 438, "text": "The Clarus program shall provide a trained support staff.", "labels": [[33, 56, "Resource"]]}
+{"id": 447, "text": "The user should have the ability to see (at a glance) the differences of various selected attributes of their data.", "labels": [[54, 114, "Resource"]]}
+{"id": 452, "text": "The VMU will create the vouchers and sell it to clients through distributors.", "labels": [[20, 32, "Resource"]]}
+{"id": 454, "text": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.", "labels": [[25, 71, "Resource"]]}
+{"id": 463, "text": "Based on the payment terms agreed by VSP, the field office will generate BiMonth or Monthly financial and medical report and send it to MSIU Admin team to arrange the payments for the VSP.", "labels": [[9, 40, "Resource"], [73, 120, "Resource"], [163, 175, "Resource"]]}
+{"id": 468, "text": "Only the administrators shall be allowed to view or print invoices.", "labels": [[58, 66, "Resource"]]}
+{"id": 469, "text": "All employees shall be allowed to use the Daily Reminders.", "labels": [[38, 57, "Resource"]]}
+{"id": 470, "text": "Users shall only be allowed to set daily reminders for themselves.", "labels": [[35, 50, "Resource"]]}
+{"id": 472, "text": "Systems supporting OM must have the capability to capture demographic data about persons involved in an OM investigation.", "labels": [[58, 120, "Resource"]]}
+{"id": 480, "text": "Systems supporting OM must have the ability to print questionnaires for multiple uses, including taking to the field, use during phone interviews, etc.", "labels": [[53, 85, "Resource"]]}
+{"id": 483, "text": "Systems supporting OM must provide the ability to publish investigationspecific questionnaires and implementation guides.", "labels": [[57, 94, "Resource"], [99, 120, "Resource"]]}
+{"id": 488, "text": "The user shall be able to switch between predefined structure lists.", "labels": [[41, 67, "Resource"]]}
+{"id": 494, "text": "The user shall be able to create a new inspection by copying a previous inspection.", "labels": [[33, 49, "Resource"], [61, 82, "Resource"]]}
+{"id": 508, "text": "The administrator shall be able to assign application permissions to each user roles.", "labels": [[42, 65, "Resource"], [69, 84, "Resource"]]}
+{"id": 520, "text": "The user locates a solution to a problem with the help function.", "labels": [[46, 63, "Resource"], [17, 40, "Resource"]]}
+{"id": 529, "text": "The Operational radio user shall be protected against all electrical hazards arising from the mobile equipment", "labels": [[54, 110, "Resource"]]}
+{"id": 534, "text": "View entire universe of watersheds from top-level screen for selection", "labels": [[5, 70, "Resource"]]}
+{"id": 541, "text": "The data system shall show no visible deterioration in response time as the number of persons increases.", "labels": [[30, 68, "Resource"], [72, 93, "Resource"]]}
+{"id": 544, "text": "The system shall display all the products that can be configured.", "labels": [[25, 64, "Resource"]]}
+{"id": 551, "text": "The system shall display detailed information of the selected products.", "labels": [[25, 70, "Resource"]]}
+{"id": 564, "text": "The system shall allow user to select the order from the order history.", "labels": [[38, 47, "Resource"], [53, 70, "Resource"]]}
+{"id": 567, "text": "The system shall allow user to register for newsletters and surveys in the profile.", "labels": [[44, 67, "Resource"], [71, 82, "Resource"]]}
+{"id": 569, "text": "The system shall allow user to select the support type he wants.", "labels": [[38, 63, "Resource"]]}
+{"id": 571, "text": "The system shall display the customer support contact numbers on the screen.", "labels": [[25, 61, "Resource"]]}
+{"id": 572, "text": "The system shall allow user to enter the contact number for support personnel to call.", "labels": [[37, 77, "Resource"]]}
+{"id": 580, "text": "The system shall allow user to add/remove products in the shopping cart.", "labels": [[42, 50, "Resource"], [54, 71, "Resource"]]}
+{"id": 581, "text": "The system shall display different shipping options provided by shipping department.", "labels": [[25, 51, "Resource"], [64, 83, "Resource"]]}
+{"id": 587, "text": "The system shall calculate tax for the order.", "labels": [[27, 30, "Resource"], [35, 44, "Resource"]]}
+{"id": 590, "text": "The system shall allow user to select the payment method for order.", "labels": [[38, 56, "Resource"], [61, 66, "Resource"]]}
+{"id": 593, "text": "The system shall allow user to cancel the order", "labels": [[38, 47, "Resource"]]}
+{"id": 596, "text": "The system shall display the reviews and ratings of each product, when it is selected.", "labels": [[25, 64, "Resource"]]}
+{"id": 602, "text": "The system shall display all the available promotions to the user.", "labels": [[25, 53, "Resource"]]}
+{"id": 603, "text": "The system shall allow user to select available promotion.", "labels": [[38, 57, "Resource"]]}
+{"id": 605, "text": "The system shall enable user to enter the payment information.", "labels": [[38, 61, "Resource"]]}
+{"id": 613, "text": "The system shall provide RAID V Disk Stripping on all database storage disks.", "labels": [[25, 46, "Resource"], [50, 76, "Resource"]]}
+{"id": 615, "text": "The system shall provide a contractual agreement with an internet service provider who can provide 99.999% availability through their network facilities onto the internet.", "labels": [[25, 48, "Resource"], [54, 119, "Resource"], [128, 152, "Resource"], [158, 170, "Resource"]]}
+{"id": 618, "text": "The performance shall depend upon hardware components of the client/customer.", "labels": [[34, 76, "Resource"]]}
+{"id": 633, "text": "The ETCS on-board shall be capable of receiving National values from the trackside to adapt to National requirements.", "labels": [[48, 63, "Resource"], [69, 82, "Resource"], [95, 116, "Resource"]]}
+{"id": 641, "text": "The DUAP Input Services shall be able to collect probe vehicle data from Ann Arbor Transit using the Ann Arbor Transit interface.", "labels": [[0, 23, "Resource"], [49, 67, "Resource"], [73, 90, "Resource"], [97, 128, "Resource"]]}
+{"id": 648, "text": "The DUAP Input Services shall be able to collect weather data from the MDOT RWIS using the MDOT RWIS interface.", "labels": [[0, 23, "Resource"], [49, 61, "Resource"], [67, 80, "Resource"], [87, 110, "Resource"]]}
+{"id": 655, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the Western Michigan Traffic Management System (WMTMS) using the WMTMS interface.", "labels": [[0, 23, "Resource"], [49, 69, "Resource"], [75, 129, "Resource"], [136, 155, "Resource"]]}
+{"id": 656, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the RCOC system using the RCOC system interface.", "labels": [[0, 23, "Resource"], [49, 69, "Resource"], [75, 90, "Resource"], [97, 122, "Resource"]]}
+{"id": 665, "text": "The DUAP System shall log Input Services data transactions.", "labels": [[26, 58, "Resource"]]}
+{"id": 666, "text": "The DUAP System shall be able to organize the sequence of execution of computational modules.", "labels": [[42, 92, "Resource"]]}
+{"id": 670, "text": "The DUAP System shall derive traffic data from probe vehicle data.", "labels": [[29, 41, "Resource"], [47, 65, "Resource"]]}
+{"id": 671, "text": "The DUAP Computational Services shall be able to derive speed from probe vehicle data.", "labels": [[56, 61, "Resource"], [67, 85, "Resource"], [0, 31, "Resource"]]}
+{"id": 672, "text": "The DUAP Computational Services shall be able to derive congestion level based on volume to capacity from probe vehicle data.", "labels": [[0, 31, "Resource"], [56, 88, "Resource"], [106, 124, "Resource"]]}
+{"id": 674, "text": "The DUAP Output Services shall be able to publish traffic data in the SimTraffic traffic analysis tool SimTraffic interface format.", "labels": [[0, 24, "Resource"], [50, 62, "Resource"], [66, 102, "Resource"], [103, 130, "Resource"]]}
+{"id": 678, "text": "The DUAP System shall be capable of adding new output formats of published data.", "labels": [[43, 79, "Resource"]]}
+{"id": 681, "text": "The System shall provide the capability to operate in a Degraded System Mode, within which the system generates a subset of products based upon priority and availability of system resources.", "labels": [[54, 76, "Resource"], [112, 189, "Resource"]]}
+{"id": 682, "text": "The System shall provide the capability to notify customers upon the NPOESS Ground System entering and leaving a Degraded Operations Mode.", "labels": [[111, 137, "Resource"]]}
+{"id": 689, "text": "The System shall provide the capability for an authorized user to adjust Product Generation priorities.", "labels": [[73, 102, "Resource"]]}
+{"id": 691, "text": "The System shall be capable of rendering Mercator projections.", "labels": [[41, 61, "Resource"]]}
+{"id": 701, "text": "Review content as a method of the selection process", "labels": [[7, 14, "Resource"], [18, 51, "Resource"]]}
+{"id": 705, "text": "Allows notification of producers and donors about rejected content.", "labels": [[7, 19, "Resource"], [59, 66, "Resource"]]}
+{"id": 709, "text": "System generates an error log.", "labels": [[17, 29, "Resource"]]}
+{"id": 710, "text": "Allows retention of metadata for files rejected but not replaced.", "labels": [[20, 38, "Resource"]]}
+{"id": 734, "text": "Creates and maintains schema or table definitions required to support Data Management functions.", "labels": [[22, 49, "Resource"], [70, 95, "Resource"]]}
+{"id": 741, "text": "Receives updates from other NLM Digital Repository functions (for example, Ingest and Administration).", "labels": [[22, 60, "Resource"], [75, 81, "Resource"], [9, 16, "Resource"], [86, 100, "Resource"]]}
+{"id": 749, "text": "Has capability to inventory, report on and migrate the contents of the repository.", "labels": [[18, 27, "Resource"], [51, 63, "Resource"], [67, 81, "Resource"]]}
+{"id": 753, "text": "Submission schedules may be set on a periodic or ad-hoc basis.", "labels": [[0, 20, "Resource"], [35, 61, "Resource"]]}
+{"id": 755, "text": "Able to store terms of agreements, and use them to monitor/review/process submissions.", "labels": [[14, 33, "Resource"], [74, 85, "Resource"]]}
+{"id": 758, "text": "Maintains integrity of system configuration.", "labels": [[10, 43, "Resource"]]}
+{"id": 763, "text": "Sends performance information to Establish Standards and Polices.", "labels": [[6, 29, "Resource"], [43, 64, "Resource"]]}
+{"id": 767, "text": "Receives change requests, actions and tools from the Manage System Configuration function.", "labels": [[9, 24, "Resource"], [26, 33, "Resource"], [38, 43, "Resource"], [49, 89, "Resource"]]}
+{"id": 770, "text": "Deletes AIPs from the repository. This may require the removal of the digital object\u2019s files, and the retention of associated metadata, or the removal of both the files and metadata.", "labels": [[8, 12, "Resource"], [18, 32, "Resource"], [66, 92, "Resource"], [115, 134, "Resource"], [154, 181, "Resource"]]}
+{"id": 773, "text": "Keeps an audit trail of all actions.", "labels": [[6, 20, "Resource"], [24, 35, "Resource"]]}
+{"id": 775, "text": "The system must be able to capture and manage files where appropriate.", "labels": [[46, 51, "Resource"]]}
+{"id": 778, "text": "Actors in the capacity of course administrator or professor should be able to enable multiple file uploads on a page of his or her choosing.", "labels": [[85, 117, "Resource"]]}
+{"id": 780, "text": "The actor should have the option to have the voice clip be archived after a preview has taken place.", "labels": [[41, 55, "Resource"], [22, 32, "Resource"], [74, 83, "Resource"]]}
+{"id": 781, "text": "Voice clips should be downloadable for archival purposes or for the purpose of presenting them to other actors.", "labels": [[0, 11, "Resource"], [39, 56, "Resource"], [64, 75, "Resource"]]}
+{"id": 782, "text": "This allows him or her to manage archived voice clips and to create a cohesive portfolio that actors in the role of professor can use to judge improvement over time.", "labels": [[42, 53, "Resource"], [68, 88, "Resource"], [143, 154, "Resource"]]}
+{"id": 786, "text": "Actors should be able to search for pages at the course level, since most actors will be searching for material in a given course.", "labels": [[36, 41, "Resource"], [45, 61, "Resource"], [103, 111, "Resource"], [115, 129, "Resource"]]}
+{"id": 789, "text": "Actors should be able to search from any page.", "labels": [[37, 45, "Resource"]]}
+{"id": 790, "text": "If the actor is hierarchically inside of a course, that course should be searched with an option to search all courses.", "labels": [[41, 49, "Resource"], [51, 62, "Resource"], [87, 96, "Resource"], [107, 118, "Resource"]]}
+{"id": 796, "text": "The system should display grade information such as the grade for each assignment, averages, and overall grade to the actor to whom the grades belong.", "labels": [[32, 43, "Resource"], [66, 81, "Resource"], [83, 91, "Resource"], [97, 110, "Resource"], [132, 142, "Resource"]]}
+{"id": 810, "text": "System administrators must have access to comprehensive, searchable documentation.", "labels": [[42, 81, "Resource"]]}
+{"id": 816, "text": "The system will also provide information on WUPs that can support the establishment and monitoring of Minimum Flows and Levels.", "labels": [[29, 48, "Resource"], [102, 126, "Resource"]]}
+{"id": 820, "text": "The system will require a combination of permitting, geographic, and water resource data derived from the following sources.", "labels": [[24, 123, "Resource"]]}
+{"id": 821, "text": "Create heat map indicating who was over-pumping, who was not over-pumping, or who was using their water credits.", "labels": [[7, 15, "Resource"], [92, 111, "Resource"]]}
+{"id": 827, "text": "Need to know how water use changes when land use changes.", "labels": [[17, 26, "Resource"], [40, 48, "Resource"]]}
+{"id": 829, "text": "The owner or operator of any Voluntary Black Start unit that desires a Black Start generating unit status with the CAISO Balancing Authority.", "labels": [[25, 55, "Resource"], [69, 105, "Resource"], [111, 140, "Resource"]]}
+{"id": 833, "text": "The Black Start Test should include key operating aids used in Black Starts such as telephone communications and SCADA, if applicable.", "labels": [[0, 20, "Resource"], [36, 75, "Resource"], [84, 108, "Resource"], [113, 118, "Resource"]]}
+{"id": 846, "text": "Also the user can search the database using key words through a search engine provided with the software.", "labels": [[25, 37, "Resource"], [44, 53, "Resource"], [62, 104, "Resource"]]}
+{"id": 850, "text": "End users/Desktop: users with no particular knowledge on computer programming. They just use the database for organizing their data and to keep them safe.", "labels": [[33, 53, "Resource"], [57, 77, "Resource"], [93, 105, "Resource"], [121, 131, "Resource"]]}
+{"id": 851, "text": "System administrators: administrators working on computers that support a lot of accounts and personal data for other users.", "labels": [[49, 58, "Resource"], [81, 89, "Resource"], [94, 107, "Resource"]]}
+{"id": 853, "text": "Science/Research Telecommunications: for organizing data that have to do with lots of people and applications", "labels": [[52, 56, "Resource"], [78, 109, "Resource"]]}
+{"id": 854, "text": "Industry: for one-time passwords that can be used for testing controls or for expired entries to gain access in particular systems and programs.", "labels": [[14, 32, "Resource"], [54, 70, "Resource"], [78, 93, "Resource"], [102, 108, "Resource"], [112, 143, "Resource"]]}
+{"id": 855, "text": "A Web server replicates content on-demand from the origin server and stores it for future use.", "labels": [[0, 12, "Resource"], [24, 31, "Resource"], [47, 64, "Resource"]]}
+{"id": 857, "text": "Mediator passes the service requirements to the PA.", "labels": [[16, 40, "Resource"]]}
+{"id": 860, "text": "Service Registry helps in discovering local resources through enabling the Web servers of CDN providers to register and publish their resource, service and policy details.", "labels": [[38, 53, "Resource"], [71, 103, "Resource"], [128, 170, "Resource"]]}
+{"id": 864, "text": "Policy Repository returns existing peering policies to the PA during the establishment of long-term peering arrangements.", "labels": [[26, 51, "Resource"], [90, 120, "Resource"]]}
+{"id": 866, "text": "Peering Agent exchanges policy, resource information, and service requirements with external Peering Agent.", "labels": [[24, 30, "Resource"], [32, 52, "Resource"], [58, 78, "Resource"], [84, 106, "Resource"]]}
+{"id": 868, "text": "Web server: Publishes its resource and service information to the Service Registry.", "labels": [[22, 34, "Resource"], [39, 58, "Resource"]]}
+{"id": 875, "text": "Hotspot is generated and provider is unable to handle excess load on its Web server.", "labels": [[0, 7, "Resource"], [25, 33, "Resource"], [54, 65, "Resource"], [69, 83, "Resource"]]}
+{"id": 884, "text": "If the user requests can not be accepted according the provider policies, service requirements are not passed to the local Peering Agent.", "labels": [[3, 20, "Resource"], [51, 72, "Resource"], [74, 94, "Resource"]]}
+{"id": 888, "text": "Request is redirected to an optimal peer\u2019s Web server.", "labels": [[0, 7, "Resource"], [25, 53, "Resource"]]}
+{"id": 893, "text": "User can select customer, supplier, requests or items management section.", "labels": [[16, 72, "Resource"]]}
+{"id": 895, "text": "User can click on [ view detail ] for more information about a customer.", "labels": [[18, 33, "Resource"], [38, 71, "Resource"]]}
+{"id": 896, "text": "User can click on [ view all customers ] link, he/she will directed to page will full customer list.", "labels": [[18, 45, "Resource"], [71, 99, "Resource"]]}
+{"id": 900, "text": "Users should have an adequate computer, network connection, and webcam with microphone.", "labels": [[18, 38, "Resource"], [40, 58, "Resource"], [64, 86, "Resource"]]}
+{"id": 907, "text": "Users will also be able to choose their font as well as font color for their profile page.", "labels": [[34, 44, "Resource"], [56, 66, "Resource"], [71, 89, "Resource"]]}
+{"id": 909, "text": "The professor\u2019s username should allow them access to the appropriate folder and have Read, Write, and Delete privileges.", "labels": [[0, 24, "Resource"], [53, 75, "Resource"], [85, 119, "Resource"]]}
+{"id": 911, "text": "Users will be able to upload their documents, and eventually transfer them between other users/computers.", "labels": [[29, 44, "Resource"], [83, 104, "Resource"]]}
+{"id": 929, "text": "The user will only be able to edit the publication that he/she uploaded.", "labels": [[35, 71, "Resource"]]}
+{"id": 936, "text": "the actor gets a screen where he will be able to login or where he/she can start a search immediately", "labels": [[15, 23, "Resource"]]}
+{"id": 947, "text": "Construction Junction Staff Member: Any of the Construction Junction user types: Administrator, Director, Manager, Receiving Associate, Pickup Associate, Decon Associate, Customer Service Representative or Sales Associate.", "labels": [[36, 79, "Resource"], [81, 221, "Resource"]]}
+{"id": 953, "text": "The system should integrate with Construction Junction's website and allow, in addition to capacity outlined in later sections, the ability for customers to view and search CJ's inventory online.", "labels": [[33, 64, "Resource"], [112, 126, "Resource"], [173, 187, "Resource"]]}
+{"id": 966, "text": "The software developer shall provide complete data specifications for authority records, bibliographic records, order records, item records, hold/request records, and other records maintained or accessed by Management Processes.", "labels": [[37, 227, "Resource"]]}
+{"id": 975, "text": "System provides a utility for transferring batches of items between branches, used for example to move books into a mobile library, an outreach program collection, or a \"just-in-time\" warehouse.", "labels": [[43, 59, "Resource"], [68, 76, "Resource"], [103, 108, "Resource"], [114, 130, "Resource"], [132, 162, "Resource"], [167, 193, "Resource"]]}
+{"id": 980, "text": "The System Administration Module relies on the data structures and functionality of an enterprise-level Library Automation System, including Acquisitions and Cataloging modules.", "labels": [[0, 32, "Resource"], [43, 129, "Resource"], [141, 176, "Resource"]]}
+{"id": 982, "text": "System supports creation of custom dashboards that display current and historical data about system performance, record creation and modification, circulation transactions, etc.", "labels": [[16, 45, "Resource"], [59, 176, "Resource"]]}
+{"id": 983, "text": "Administrators can create dashboards and give access to selected users and groups.", "labels": [[26, 36, "Resource"], [56, 81, "Resource"]]}
+{"id": 991, "text": "System supports scheduling of maintenance tasks, reports, and data exports.", "labels": [[30, 74, "Resource"]]}
+{"id": 997, "text": "System administrators can create report templates that are available to front-line staff, and can be run as is or modified to the staff person's particular needs.", "labels": [[33, 49, "Resource"], [126, 161, "Resource"]]}
+{"id": 1004, "text": "User is given the option to run additional pre-processors for the IC/BC data, such as, LDAS or supply own custom pre-processor or skip this option.", "labels": [[32, 57, "Resource"], [62, 76, "Resource"], [102, 126, "Resource"], [135, 146, "Resource"], [87, 91, "Resource"]]}
