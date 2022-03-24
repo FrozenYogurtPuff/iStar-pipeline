@@ -334,7 +334,7 @@ def classification_report(true_entities, pred_entities, digits=5):
     row_fmt = "{:>{width}s} " + " {:>9.{digits}f}" * 3 + " {:>9}\n"
 
     ps, rs, f1s, s = [], [], [], []
-    for type_name, type_true_entities in d1.items():
+    for type_name, type_true_entities in sorted(d1.items()):
         type_pred_entities = d2[type_name]
         nb_correct = len(type_true_entities & type_pred_entities)
         nb_pred = len(type_pred_entities)

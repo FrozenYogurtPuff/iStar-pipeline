@@ -4,6 +4,7 @@ from typing import Any
 
 from src.deeplearning.infer.actor import InferActor
 from src.deeplearning.infer.base import InferBase
+from src.deeplearning.infer.intention import InferIntention
 from src.deeplearning.infer.resource import InferResource
 from src.deeplearning.infer.result import BertResult
 from src.utils.spacy import get_bio_sent_from_char_spans
@@ -70,3 +71,9 @@ class ResourceWrapper(Wrapper):
     def __init__(self):
         super().__init__()
         self.inferrer = InferResource()
+
+
+class IntentionWrapper(Wrapper):
+    def __init__(self):
+        super().__init__()
+        self.inferrer = InferIntention()
