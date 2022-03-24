@@ -3,8 +3,10 @@ from __future__ import annotations  # Remove that after Python 3.10
 import copy
 import dataclasses
 import logging
+from test.rules.utils.metrics import calc_metrics, log_diff_ents
 
 from src.deeplearning.infer.utils import (
+    get_series_bio,
     label_mapping_bio,
     label_mapping_de_bio,
 )
@@ -62,13 +64,44 @@ class BertResult:
             mapping = label_mapping_bio(lab)
             new_inst.preds[key] = mapping[0]
 
-            if len(bali) == 2:
-                for i in range(key, bali[-1] + 1):
+            if len(bali) == 2 and bali[0] != bali[-1]:
+                for i in range(key + 1, bali[-1] + 1):
                     new_inst.preds[i] = mapping[1]
 
+        # TODO: problem searching via low-efficiency ways
         if fixes:
-            logger.debug(f"Apply fix - Before: {self}")
+            before_preds, before_trues = get_series_bio([self])
+            before_correct = calc_metrics(before_trues, before_preds)
+            if self.preds == self.trues:
+                logger.info(f"Apply fix - Before: {self}")
+            else:
+                logger.debug(f"Apply fix - Before: {self}")
             logger.debug(f"Apply fix - Fix: {fixes}")
-            if self.preds != new_inst.preds:
-                logger.error(f"Apply fix - After: {new_inst}")
+
+            after_pred, after_trues = get_series_bio([new_inst])
+            after_correct = calc_metrics(after_trues, after_pred)
+            if after_correct > before_correct:
+                logger.info(f"Apply fix - After: {new_inst}")
+            elif after_correct == before_correct:
+                logger.debug(f"Apply fix - After: {new_inst}")
+            else:
+                logger.warning(f"Apply fix - After: {new_inst}")
+        else:
+            if self.preds == self.trues:
+                logger.info(f"Result without fixes: {self}")
+            else:
+                logger.debug(f"Result without fixes: {self}")
+
+        if fixes:
+            pred_entities, true_entities = get_series_bio([new_inst])
+            log_diff_ents(true_entities, pred_entities, new_inst)
+        else:
+            pred_entities, true_entities = get_series_bio([self])
+            log_diff_ents(true_entities, pred_entities, self)
+
         return new_inst
+
+    def __str__(self):
+        return (
+            f"{' '.join(self.tokens)}\nTrue: {self.trues}\nPred: {self.preds}"
+        )

@@ -21,6 +21,20 @@ def get_series_bio(src: list[BertResult], func: Callable = get_entities_bio):
     return func(p), func(t)
 
 
+def get_list_bio(src: list[BertResult]):
+    p = list()
+    t = list()
+
+    for item in src:
+        if item.trues:
+            for token in item.trues:
+                t.append(token)
+        for token in item.preds:
+            p.append(token)
+
+    return p, t
+
+
 def label_mapping_bio(lab: str) -> tuple[str, str]:
     if lab in ["Role", "Agent", "Resource", "Core", "Cond", "Aux"]:
         return f"B-{lab}", f"I-{lab}"

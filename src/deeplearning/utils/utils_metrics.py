@@ -1,4 +1,5 @@
 from collections import defaultdict
+from collections.abc import Sequence
 
 import numpy as np
 
@@ -190,7 +191,7 @@ def get_entities_bio(seq):
         elif tag.startswith("I-") and chunk[1] != -1:
             _type = tag.split("-")[1]
             if _type == chunk[0]:
-                chunk[2] = indx
+                chunk[2] = indx  # ['B-x', 'I-y', 'I-x'] -> [['x', 0, 2]]
 
             if indx == len(seq) - 1:
                 chunks.append(chunk)
@@ -250,6 +251,65 @@ def recall_score(true_entities, pred_entities):
     score = nb_correct / nb_true if nb_true > 0 else 0
 
     return score
+
+
+def token_classification_report(
+    true_tokens: list[str], pred_tokens: list[str], digits=5
+):
+    def update_width(tokens: Sequence[str, str], width: int) -> int:
+        for token in tokens:
+            width = max(width, len(token))
+        return width
+
+    name_width = 0
+    tp = defaultdict(int)
+    fp = defaultdict(int)
+    fn = defaultdict(int)
+
+    for true, pred in zip(true_tokens, pred_tokens):
+        true = "O" if true == "O" else true.split("-")[-1]
+        pred = "O" if pred == "O" else pred.split("-")[-1]
+        name_width = update_width((true, pred), name_width)
+
+        if true == pred:
+            if true != "O":
+                tp[true] += 1
+        else:
+            if pred != "O":
+                fp[pred] += 1
+            if true != "O":
+                fn[true] += 1
+
+    width = max(name_width, digits)
+    headers = ["precision", "recall", "f1-score", "support"]
+    head_fmt = "{:>{width}s} " + " {:>9}" * len(headers)
+    report = head_fmt.format("", *headers, width=width)
+    report += "\n\n"
+
+    row_fmt = "{:>{width}s} " + " {:>9.{digits}f}" * 3 + " {:>9}\n"
+
+    for type_name in sorted(set(tp.keys()) | set(fp.keys()) | set(fn.keys())):
+        tp_value = tp[type_name]
+        fn_value = fn[type_name]
+        fp_value = fp[type_name]
+
+        p = (
+            tp_value / (tp_value + fp_value)
+            if (tp_value + fp_value) > 0
+            else 0
+        )
+        r = (
+            tp_value / (tp_value + fn_value)
+            if (tp_value + fn_value) > 0
+            else 0
+        )
+        f1 = 2 * p * r / (p + r) if p + r > 0 else 0
+
+        report += row_fmt.format(
+            *[type_name, p, r, f1, tp_value], width=width, digits=digits
+        )
+
+    return report
 
 
 def classification_report(true_entities, pred_entities, digits=5):

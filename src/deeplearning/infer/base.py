@@ -378,9 +378,6 @@ class InferBase(ABC):
             assert len(tokens) == len(matrix[i])
             tokens_bert.append(tokens)
 
-        for i in range(trues.shape[0]):
-            print(trues_list[i])
-
         return preds_list, trues_list, matrix, tokens_bert, self.labels
 
     @classmethod
