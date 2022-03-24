@@ -24,27 +24,25 @@ from src.utils.typing import EntityRuleReturn, Span
 
 # system, interface, etc.
 def word_list(s: Span) -> EntityRuleReturn:
-    actor: str = "Actor"
     both: str = "Both"
     result = list()
 
     for token in s:
         select = False
-        label = None
-        if token.lower_.startswith(
-            ("system", "module", "server", "administrator")
-        ):
-            select = True
-            label = actor
-        elif token.lower_.startswith(("interface", "client", "user")):
-            select = True
-            label = both
+        # if token.lower_.startswith(
+        #     (
+        #         "system",       # mainly fake classification
+        #         "module",       # no hit
+        #         "server",       # no hit
+        #         "administrator"  # no hit
+        #     )
+        # ):
+        #     select = True
 
         if select:
             cur = (token, *token.conjuncts)
-            assert label is not None
             for c in cur:
-                result.append((c, label))
+                result.append((c, both))
 
     logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

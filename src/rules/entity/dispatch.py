@@ -7,8 +7,10 @@ from typing import Callable
 import spacy_alignments as tokenizations
 from spacy.tokens import Span, Token
 
-import src.deeplearning.infer.result as br
-from src.rules.utils.seq import is_entity_type_ok
+from src.deeplearning.infer.result import BertResult
+from src.deeplearning.infer.utils import label_mapping_bio
+from src.rules.config import actor_plugins
+from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
 from src.utils.spacy import (
     get_spacy,
     get_token_idx,
@@ -16,9 +18,6 @@ from src.utils.spacy import (
     match_noun_chunk,
 )
 from src.utils.typing import Alignment, EntityFix, EntityRulePlugins
-
-from ...deeplearning.infer.utils import label_mapping_bio
-from ..config import entity_plugins
 
 logger = logging.getLogger(__name__)
 
@@ -41,9 +40,7 @@ def collect_filter(
     return ret
 
 
-def simple_bert_merge(
-    res: list[EntityFix], b: br.BertResult
-) -> list[EntityFix]:
+def simple_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
     def simple_check_bert(sample: EntityFix, bert: list[str]) -> bool:
         bert_idx = sample.bert_idxes
         label = sample.label
@@ -63,7 +60,7 @@ def simple_bert_merge(
 
 
 # prob soft, filter 'Both' and prob < 0.5
-def prob_bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
+def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
     def prob_check_bert(sample: EntityFix) -> str | None:
         bert_idx = sample.bert_idxes
         label = sample.label
@@ -73,16 +70,21 @@ def prob_bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
         mapping_bio = label_mapping_bio(label_m)
 
         constituous_label = True
-        if b.preds[bert_start] != mapping_bio[0]:
+        if b.preds[bert_start] not in mapping_bio:
             constituous_label = False
         for i in range(bert_start + 1, bert_end + 1):
             if b.preds[i] != mapping_bio[1]:
                 constituous_label = False
 
-        if not constituous_label and prob > 0.3:
+        logger.debug(f"label: {label}, label_m: {label_m}")
+        logger.debug(
+            f"constituous: {constituous_label}, prob: {prob}, type_ok: {is_entity_type_ok(label, label_m)}"
+        )
+
+        if not constituous_label and prob > 0.2:
             return label_m
 
-        if prob < 0.3 and not is_entity_type_ok(label, label_m):
+        if prob < 0.4 and not is_entity_type_ok(label, label_m):
             return label
 
         return None
@@ -99,24 +101,13 @@ def prob_bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
     return new_list
 
 
-# def bert_merge(res: list[EntityFix], b: br.BertResult) -> list[EntityFix]:
-#     # Chunk == BERT, good
-#     # Chunk less than BERT, use BERT
-#     # Chunk more than BERT, use Chunk
-#     # Chunk lap with BERT, combine them or treat differently TODO
-#     preds = b.preds
-#     # 怎么判断？
-#     # 对token指示的上下文进行迭代，匹配概率大小 TODO: need a threshold prob?
-#     for token, idx, bert_idx, label in res:
-
-
 def dispatch(
     s: Span,
-    b: br.BertResult | None,
+    b: BertResult | None,
     s2b: list[Alignment] | None,
     add_all: bool = False,
     noun_chunk: bool = True,
-    funcs: EntityRulePlugins = entity_plugins,
+    funcs: EntityRulePlugins = actor_plugins,
     bert_func: Callable = prob_bert_merge,
 ) -> list[EntityFix]:
     collector: list[Collector | None] = list()
@@ -129,11 +120,15 @@ def dispatch(
             if noun_chunk:
                 c = match_noun_chunk(token, s)
                 if c:
+                    logger.debug(f"Noun chunk hit: {c}")
                     collector.append((c, label))
                 else:
                     collector.append((token, label))
             else:
                 collector.append((token, label))
+
+    logger.info(collector)
+    logger.debug(s2b)
 
     while collector:
         front = collector.pop()
@@ -142,11 +137,6 @@ def dispatch(
         group = collect_filter(collector, front)
         labels = Counter([lab for _, lab in group]).most_common(2)
 
-        # Force not 'Both'
-        # if label[0][0] != 'Both' or len(label) == 1:
-        #     label = label[0][0]
-        # else:
-        #     label = label[1][0]
         label = labels[0][0]
 
         # add_all does not search bert_idx
@@ -155,24 +145,30 @@ def dispatch(
             result.append(EntityFix(token, idx, [], label))
         else:
             assert s2b is not None
-            bert_idx = (
-                s2b[idx[0]]
-                if len(idx) == 1
-                else [s2b[idx[0]][0], s2b[idx[-1]][-1]]
-            )
+
+            bert_idx = get_s2b_idx(s2b, idx)
+            logger.debug(idx)
+            logger.debug(bert_idx)
+            if not bert_idx:
+                continue
             result.append(EntityFix(token, idx, bert_idx, label))
 
     # hybrid bert to filter consequences
+    # `add_all` pass the raw result without considering bert
     if not add_all:
         result = bert_func(result, b)
 
     return result
 
 
-def get_rule_fixes(sent: str, b: br.BertResult) -> list[EntityFix]:
+def get_rule_fixes(
+    sent: str, b: BertResult, funcs: EntityRulePlugins | None = None
+) -> list[EntityFix]:
     nlp = get_spacy()
+    logger.info(sent)
     s = nlp(sent)[:]
     spacy_tokens = [i.text for i in s]
     s2b, _ = tokenizations.get_alignments(spacy_tokens, b.tokens)
-    result = dispatch(s, b, s2b)
+    result = dispatch(s, b, s2b, funcs=funcs) if funcs else dispatch(s, b, s2b)
+    logger.debug(result)
     return result

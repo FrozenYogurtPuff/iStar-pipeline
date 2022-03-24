@@ -14,7 +14,7 @@ from src.utils.typing import EntityRuleReturn
 # carried out by [immigrants].
 # by (ADP, agent) -> immigrants (pobj)
 def agent_dative_adp(s: Span) -> EntityRuleReturn:
-    both: str = "Both"
+    resource: str = "Resource"
     result = list()
 
     for token in s:
@@ -24,7 +24,7 @@ def agent_dative_adp(s: Span) -> EntityRuleReturn:
                 if k.dep_ == "pobj":
                     cur = (k, *k.conjuncts)
                     for c in cur:
-                        result.append((c, both))
+                        result.append((c, resource))
 
     logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

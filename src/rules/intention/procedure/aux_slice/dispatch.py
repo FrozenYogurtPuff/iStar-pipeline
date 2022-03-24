@@ -3,7 +3,7 @@ import logging
 from spacy.tokens import Span, Token
 
 from src.rules.config import intention_aux_slice_plugins
-from src.utils.spacy import get_token_idx, include_elem, token_not_end
+from src.utils.spacy import get_token_idx, include_elem, token_not_last
 from src.utils.typing import IntentionRuleAuxPlugins, SeqSlicesTuple
 
 logger = logging.getLogger(__name__)
@@ -61,7 +61,7 @@ def dispatch(
                         if root_idx > eidx:
                             slice_type = aux, core
                         # `new is`
-                        if token_not_end(tok) and tok.nbor(1).lower_ in [
+                        if token_not_last(tok) and tok.nbor(1).lower_ in [
                             "is",
                             "was",
                             "are",

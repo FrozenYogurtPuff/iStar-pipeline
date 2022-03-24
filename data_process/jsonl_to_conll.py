@@ -9,12 +9,14 @@ from src.utils.spacy import char_idx_to_word_idx
 INPUT = "../pretrained_data/2022/resource/all.jsonl"
 OUTPUT1 = "../pretrained_data/2022/resource/train.txt"
 OUTPUT2 = "../pretrained_data/2022/resource/dev.txt"
+SPLIT_OUTPUT = ""
 PROPORTION = 80
 
 if __name__ == "__main__":
     nlp = spacy.load("en_core_web_lg")
     fp1 = open(OUTPUT1, "w")
     fp2 = open(OUTPUT2, "w")
+    split = open(SPLIT_OUTPUT, "w")
 
     with open(INPUT, "r") as file:
         for idx, line in enumerate(file):
@@ -40,3 +42,10 @@ if __name__ == "__main__":
                     rep = f"{tok.text} {tok.ent_iob_}-{tok.ent_type_}"
                 print(rep, file=fp)
             print(file=fp)
+
+            if fp == fp2:
+                print(json.dumps(a), file=split)
+
+    fp1.close()
+    fp2.close()
+    split.close()

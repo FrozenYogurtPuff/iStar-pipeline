@@ -39,3 +39,5 @@ if __name__ == "__main__":
             print(json.dumps(cache[key]), file=fp)
         except KeyError:
             print(f"Not found {' '.join(key)}")
+
+    fp.close()

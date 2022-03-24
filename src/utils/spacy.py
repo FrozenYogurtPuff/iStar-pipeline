@@ -70,22 +70,22 @@ def char_idx_to_word_idx(
 # [a, b], not (a, b)!
 def get_token_idx(token: Token | Span) -> list[int]:
     def calc(t: Token):
-        return t.i - t.sent.start
+        return t.i
 
     if isinstance(token, spacy.tokens.Span):
         return [calc(token[0]), calc(token[-1])]
     return [calc(token)]
 
 
-def token_not_start(token: Token | Span) -> bool:
+def token_not_first(token: Token | Span) -> bool:
     t = token[0] if isinstance(token, spacy.tokens.Span) else token
-    ret: bool = t.i - t.sent.start != 0
+    ret: bool = t.i != 0
     return ret
 
 
-def token_not_end(token: Token | Span) -> bool:
+def token_not_last(token: Token | Span) -> bool:
     t = token[-1] if isinstance(token, spacy.tokens.Span) else token
-    ret: bool = t.sent.end - t.i > 1
+    ret: bool = len(t.doc) - t.i > 1
     return ret
 
 

@@ -13,7 +13,6 @@ from src.utils.typing import EntityRuleReturn, Span
 def poss_propn(s: Span) -> EntityRuleReturn:
     # 'Both' is a special case for both
     resource: str = "Resource"
-    both: str = "Both"
     result = list()
 
     for token in s:
@@ -22,10 +21,6 @@ def poss_propn(s: Span) -> EntityRuleReturn:
                 cur = (token, *token.conjuncts)
                 for c in cur:
                     result.append((c, resource))
-            elif token.pos_ in ["NOUN"]:
-                cur = (token, *token.conjuncts)
-                for c in cur:
-                    result.append((c, both))
 
     logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

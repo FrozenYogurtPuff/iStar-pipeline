@@ -5,7 +5,7 @@
 # import spacy_alignments as tokenizations
 #
 # from src.deeplearning import wrap_entity_oneline
-# from src.rules.entity.dative_ADP import dative_ADP
+# from src.rules.actor.dative_ADP import dative_ADP
 
 # def test_dative():
 #     nlp: spacy.language.Language = spacy.load('en_core_web_lg')

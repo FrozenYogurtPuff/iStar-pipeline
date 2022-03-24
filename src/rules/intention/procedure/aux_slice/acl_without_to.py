@@ -2,7 +2,7 @@ import logging
 
 from spacy.tokens import Span, Token
 
-from src.utils.spacy import token_not_start
+from src.utils.spacy import token_not_first
 
 logger = logging.getLogger(__name__)
 
@@ -15,19 +15,10 @@ def acl_without_to(s: Span) -> list[Span | Token]:
             token.dep_ == "acl"
             # `!=using`
             and token.lower_ not in ["using", "requiring"]
-            and token_not_start(token.head)
+            and token_not_first(token.head)
             and token.head.nbor(1).lower_ != "to"
         ):
-            if token_not_start(token):
+            if token_not_first(token):
                 pool.append(token.nbor(-1))
 
     return pool
-
-
-# TODO: 与 BERT 融合，能够提升 Aux 分割的准确率吗？
-
-# TODO: 推进 Entity 深入规则
-# 添加一个 inspector，逐 item in sent 检查，在开启该规则后，正确错误（不同颜色显示）
-# 打印同个规则错误的文本，调用 displacy 进行可视化，观察有无异同
-
-# TODO: 使用 TypeVar 和包装过一次的 Generic[FixEntityLabel, ...] 重构目前的类型系统

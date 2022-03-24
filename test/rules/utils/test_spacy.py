@@ -7,6 +7,8 @@ from src.utils.spacy import (
     get_bio_sent_from_char_spans,
     idx_valid,
     include_elem,
+    token_not_first,
+    token_not_last,
 )
 
 logger = logging.getLogger(__name__)
@@ -86,3 +88,30 @@ def test_get_bio_sent_from_char_spans():
         ".",
     ]
     assert result_label == ["O", "O", "O", "O", "O", "O", "O", "O"]
+
+
+def test_token_not_first():
+    nlp = spacy.load("en_core_web_lg")
+    sent = nlp(
+        "What are some of the most underrated shows out there? We attempt to find the gems that might actually be worth your time."
+    )
+    first = True
+    for tok in sent:
+        if first:
+            assert not token_not_first(tok)
+            first = False
+        else:
+            assert token_not_first(tok)
+
+
+def test_token_not_last():
+    nlp = spacy.load("en_core_web_lg")
+    sent = nlp(
+        "And you don't seem to understand: a shame you seemed an honest man. And all the fears you hold so dear, will turn to whisper in your ear."
+    )
+    prev = None
+    for tok in sent:
+        if prev:
+            assert token_not_last(prev)
+        prev = tok
+    assert not token_not_last(prev)

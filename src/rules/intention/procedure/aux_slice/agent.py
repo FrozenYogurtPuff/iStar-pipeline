@@ -12,9 +12,9 @@ def agent(s: Span) -> list[Span | Token]:
         if (
             token.dep_
             == "agent"
-            # and token_not_start(token)
+            # and token_not_first(token)
             # and token.nbor(-1).lower_ != "to"
-            # and token_not_end(token.head)
+            # and token_not_last(token.head)
             # and token.head.nbor(1).lower_ != "to"
         ):
             pool.append(token.head)

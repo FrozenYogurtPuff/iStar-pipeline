@@ -1,13 +1,6 @@
 # Entity Rules
-from src.rules.entity.plugins import (
-    agent_dative_adp,
-    dative_propn,
-    dep,
-    ner,
-    poss_propn,
-    relcl_who,
-    tag,
-)
+from src.rules.entity.resource_plugins import agent_dative_adp, poss_propn
+from src.rules.entity.resource_plugins import word_list as resource_word_list
 from src.rules.intention.procedure.aux_slice import (
     acl_without_to,
     agent,
@@ -15,15 +8,25 @@ from src.rules.intention.procedure.aux_slice import (
 )
 from src.utils.typing import EntityRulePlugins, IntentionRuleAuxPlugins
 
-entity_plugins: EntityRulePlugins = (
-    dative_propn,
+actor_plugins: EntityRulePlugins = (
+    # dative_propn,
+    # relcl_who,
+    # actor_tag,
+    # actor_dep,
+    # actor_word_list,
+    # actor_ner,
+    # xcomp_ask,
+    # be_nsubj,
+    # by_sb,
+)  # TODO
+
+resource_plugins: EntityRulePlugins = (
+    # resource_dep,
+    # resource_ner,
+    # resource_tag,
     agent_dative_adp,
     poss_propn,
-    relcl_who,
-    tag,
-    dep,
-    # word_list,
-    ner,
+    resource_word_list,
 )
 
 intention_aux_slice_plugins: IntentionRuleAuxPlugins = (
