@@ -2,9 +2,12 @@ import logging
 import pickle
 from test.rules.utils.load_dataset import load_dataset
 
-from src.deeplearning.infer.utils import get_series_bio
+from src.deeplearning.infer.utils import get_list_bio, get_series_bio
 from src.deeplearning.infer.wrapper import ActorWrapper, ResourceWrapper
-from src.deeplearning.utils.utils_metrics import classification_report
+from src.deeplearning.utils.utils_metrics import (
+    classification_report,
+    token_classification_report,
+)
 from src.rules.config import resource_plugins
 from src.rules.entity.dispatch import get_rule_fixes
 
@@ -118,13 +121,19 @@ def test_measure_bert_actor_rules_prec():
     pred_entities, true_entities = get_series_bio(results)
     print(classification_report(true_entities, pred_entities))
 
+    preds, trues = get_list_bio(results)
+    print(token_classification_report(trues, preds))
+
     new_pred_entities = list()
     for sent, result in zip(sents, results):
         res = get_rule_fixes(sent, result)
-        new_pred_entities.append(result.apply_fix(res))
+        new_pred_entities.append(res)
 
     pred_entities, true_entities = get_series_bio(new_pred_entities)
     print(classification_report(true_entities, pred_entities))
+
+    preds, trues = get_list_bio(new_pred_entities)
+    print(token_classification_report(trues, preds))
 
 
 #            precision    recall  f1-score   support
@@ -153,7 +162,7 @@ def test_measure_bert_resource_rules_prec():
     new_pred_entities = list()
     for sent, result in zip(sents, results):
         res = get_rule_fixes(sent, result, resource_plugins)
-        new_pred_entities.append(result.apply_fix(res))
+        new_pred_entities.append(res)
 
     pred_entities, true_entities = get_series_bio(new_pred_entities)
     print(classification_report(true_entities, pred_entities))

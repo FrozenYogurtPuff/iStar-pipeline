@@ -2,11 +2,14 @@ import logging
 import pickle
 from test.rules.utils.load_dataset import load_dataset
 
+from src.deeplearning.infer.result import BertResult
 from src.deeplearning.infer.utils import get_list_bio, get_series_bio
 from src.deeplearning.utils.utils_metrics import (
     classification_report,
     token_classification_report,
 )
+from src.rules.config import intention_plugins
+from src.rules.intention.dispatch import get_rule_fixes
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +26,8 @@ def test_measure_bert_intention_prec():
     with open("intention_split_dev.bin", "rb") as file:
         results = pickle.load(file)
     logger.info(f"First result: {results[0]}")
+
+    logger.info("------Before------")
 
     pred_entities, true_entities = get_series_bio(results)
 
@@ -45,3 +50,16 @@ def test_measure_bert_intention_prec():
     #   Aux    0.61081   0.48085   0.53810       113
     #  Cond    0.73810   0.77500   0.75610        62
     #  Core    0.84214   0.89464   0.86759      1435
+
+    new_pred_entities: list[BertResult] = list()
+    for sent, result in zip(sents, results):
+        res = get_rule_fixes(sent, result, intention_plugins, is_slice=True)
+        new_pred_entities.append(res)
+
+    logger.info("------After------")
+
+    pred_entities, true_entities = get_series_bio(new_pred_entities)
+    print(classification_report(true_entities, pred_entities))
+
+    preds, trues = get_list_bio(new_pred_entities)
+    print(token_classification_report(trues, preds))

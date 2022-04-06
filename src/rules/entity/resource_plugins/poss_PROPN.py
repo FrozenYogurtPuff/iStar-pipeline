@@ -5,12 +5,12 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, Span
+from src.utils.typing import RuleReturn, Span
 
 
 # [Anna]'s home.
 # -> Anna (poss, NOUN)
-def poss_propn(s: Span) -> EntityRuleReturn:
+def poss_propn(s: Span) -> RuleReturn:
     # 'Both' is a special case for both
     resource: str = "Resource"
     result = list()

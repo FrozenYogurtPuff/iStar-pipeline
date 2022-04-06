@@ -6,12 +6,12 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, Span
+from src.utils.typing import RuleReturn, Span
 
 logger = logging.getLogger(__name__)
 
 
-def ner(s: Span) -> EntityRuleReturn:
+def ner(s: Span) -> RuleReturn:
     both: str = "Both"
     agent: str = "Agent"
     result = list()

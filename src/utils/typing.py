@@ -22,8 +22,8 @@ DatasetUnionLabel: TypeAlias = tuple[int, int, str]
 # Entity
 # ( [Student, Parents], "Actor" )
 # ( [Student, tickets], ("Actor", "Resource") )
-EntityRuleReturn: TypeAlias = Sequence[tuple[Token | Span, str]]
-EntityRulePlugins: TypeAlias = Sequence[Callable[[Span], EntityRuleReturn]]
+RuleReturn: TypeAlias = Sequence[tuple[Token | Span, str]]
+RulePlugins: TypeAlias = Sequence[Callable[[Span], RuleReturn]]
 
 
 # (Student, [1], [1, 2], "Actor")
@@ -42,7 +42,5 @@ class SeqSlicesTuple(NamedTuple):
     type_: str
 
 
-IntentionRuleAuxReturn: TypeAlias = list[Token | Span]
-IntentionRuleAuxPlugins: TypeAlias = Sequence[
-    Callable[[Span], IntentionRuleAuxReturn]
-]
+IntentionAuxReturn: TypeAlias = list[Token | Span]
+IntentionAuxPlugins: TypeAlias = Sequence[Callable[[Span], IntentionAuxReturn]]

@@ -106,7 +106,7 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import EntityRuleReturn
+from src.utils.typing import RuleReturn
 
 logger = logging.getLogger(__name__)
 
@@ -185,7 +185,7 @@ def tag_head_label(tag: str, head_dep: str) -> str | None:
     return None
 
 
-def tag_base(s: Span) -> EntityRuleReturn:
+def tag_base(s: Span) -> RuleReturn:
     result = list()
 
     for token in s:

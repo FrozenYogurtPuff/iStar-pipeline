@@ -19,11 +19,11 @@
 
 import logging
 
-from src.utils.typing import EntityRuleReturn, Span
+from src.utils.typing import RuleReturn, Span
 
 
 # system, interface, etc.
-def word_list(s: Span) -> EntityRuleReturn:
+def word_list(s: Span) -> RuleReturn:
     resource: str = "Resource"
     result = list()
 

@@ -4,12 +4,12 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import EntityRuleReturn
+from src.utils.typing import RuleReturn
 
 
 # Bought [me] these books.
 # -> me (dative, PRON / PROPN)
-def dative_propn(s: Span) -> EntityRuleReturn:
+def dative_propn(s: Span) -> RuleReturn:
     both: str = "Both"
     result = list()
 

@@ -1,8 +1,6 @@
 from collections import defaultdict
 from collections.abc import Sequence
 
-import numpy as np
-
 # from seqeval.metrics import classification_report
 
 
@@ -356,25 +354,25 @@ def classification_report(true_entities, pred_entities, digits=5):
     report += "\n"
 
     # compute averages
-    report += row_fmt.format(
-        "micro avg",
-        precision_score(true_entities, pred_entities),
-        recall_score(true_entities, pred_entities),
-        f1_score(true_entities, pred_entities),
-        np.sum(s),
-        width=width,
-        digits=digits,
-    )
-
-    report += row_fmt.format(
-        last_line_heading,
-        np.average(ps, weights=s),
-        np.average(rs, weights=s),
-        np.average(f1s, weights=s),
-        np.sum(s),
-        width=width,
-        digits=digits,
-    )
+    # report += row_fmt.format(
+    #     "micro avg",
+    #     precision_score(true_entities, pred_entities),
+    #     recall_score(true_entities, pred_entities),
+    #     f1_score(true_entities, pred_entities),
+    #     np.sum(s),
+    #     width=width,
+    #     digits=digits,
+    # )
+    #
+    # report += row_fmt.format(
+    #     last_line_heading,
+    #     np.average(ps, weights=s),
+    #     np.average(rs, weights=s),
+    #     np.average(f1s, weights=s),
+    #     np.sum(s),
+    #     width=width,
+    #     digits=digits,
+    # )
 
     return report
 

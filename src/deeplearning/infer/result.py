@@ -10,7 +10,7 @@ from src.deeplearning.infer.utils import (
     label_mapping_bio,
     label_mapping_de_bio,
 )
-from src.utils.typing import BertMatrix, EntityFix
+from src.utils.typing import BertMatrix, EntityFix, SeqSlicesTuple
 
 logger = logging.getLogger(__name__)
 
@@ -100,6 +100,21 @@ class BertResult:
             log_diff_ents(true_entities, pred_entities, self)
 
         return new_inst
+
+    def apply_slices(
+        self: BertResult, slices: list[SeqSlicesTuple]
+    ) -> BertResult:
+        preds = self.preds[:]
+        for slice_ in slices:
+            start, end, type_ = slice_
+            for i, pred in enumerate(preds[start : end + 1], start=start):
+                if pred.endswith("Core") and type_ == "Aux":  # TODO
+                    preds[i] = pred.replace("Core", "Aux")
+                # if pred.endswith("Aux") and type_ == "Core":
+                #     preds[i] = pred.replace("Aux", "Core")
+        return BertResult(
+            preds, self.trues, self.matrix, self.tokens, self.labels
+        )
 
     def __str__(self):
         return (

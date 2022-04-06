@@ -4,7 +4,7 @@ from spacy.tokens import Span, Token
 
 from src.rules.config import intention_aux_slice_plugins
 from src.utils.spacy import get_token_idx, include_elem, token_not_last
-from src.utils.typing import IntentionRuleAuxPlugins, SeqSlicesTuple
+from src.utils.typing import IntentionAuxPlugins, SeqSlicesTuple
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ def need_slice(s: SeqSlicesTuple, bidx: int, eidx: int) -> bool:
 def dispatch(
     s: Span,
     seq_slices: list[SeqSlicesTuple] | None = None,
-    slice_funcs: IntentionRuleAuxPlugins = intention_aux_slice_plugins,
+    slice_funcs: IntentionAuxPlugins = intention_aux_slice_plugins,
 ) -> list[SeqSlicesTuple]:
     core: str = "Core"
     aux: str = "Aux"

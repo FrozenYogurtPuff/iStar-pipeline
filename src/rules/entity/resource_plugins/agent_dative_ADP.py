@@ -6,14 +6,14 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import EntityRuleReturn
+from src.utils.typing import RuleReturn
 
 # Show things to [Anna].
 # to (ADP, dative) -> Anna (pobj)
 
 # carried out by [immigrants].
 # by (ADP, agent) -> immigrants (pobj)
-def agent_dative_adp(s: Span) -> EntityRuleReturn:
+def agent_dative_adp(s: Span) -> RuleReturn:
     resource: str = "Resource"
     result = list()
 

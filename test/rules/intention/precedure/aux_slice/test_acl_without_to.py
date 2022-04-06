@@ -1,9 +1,7 @@
 import logging
 from test.rules.utils.load_dataset import load_dataset
 
-from src.rules.intention.procedure.aux_slice.acl_without_to import (
-    acl_without_to,
-)
+from src.rules.intention.aux_slice.acl_without_to import acl_without_to
 from src.utils.spacy import char_idx_to_word_idx, get_spacy
 
 logger = logging.getLogger(__name__)

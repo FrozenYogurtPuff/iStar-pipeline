@@ -4,13 +4,13 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import EntityRuleReturn
+from src.utils.typing import RuleReturn
 
 logger = logging.getLogger(__name__)
 
 
 # be able to
-def by_sb(s: Span) -> EntityRuleReturn:
+def by_sb(s: Span) -> RuleReturn:
     both: str = "Both"
     result = list()
 

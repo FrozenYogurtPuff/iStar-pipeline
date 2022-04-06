@@ -1,5 +1,4 @@
-# slightly work
-
+# no hit
 import logging
 
 from spacy.tokens import Span
@@ -7,16 +6,16 @@ from spacy.tokens import Span
 from src.utils.typing import RuleReturn
 
 
-def xcomp_ask(s: Span) -> RuleReturn:
-    both: str = "Both"
+# ask sb. to do sth.
+def xcomp_to(s: Span) -> RuleReturn:
+    core: str = "Core"
     result = list()
 
     for token in s:
         if token.dep_ == "xcomp":
-            head = token.head
-            for child in head.children:
-                if child.dep_ == "dobj":
-                    result.append((child, both))
+            for child in token.children:
+                if child.dep_ == "aux" and child.lower_ == "to":
+                    result.append((token, core))
 
     logging.getLogger(__name__).debug(f"Length {len(result)}: {result}")
     return result

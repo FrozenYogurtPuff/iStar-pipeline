@@ -1,7 +1,7 @@
 import logging
 from test.rules.utils.load_dataset import load_dataset
 
-from src.rules.intention.procedure.aux_slice.dispatch import dispatch
+from src.rules.intention.aux_slice.dispatch import dispatch
 from src.utils.spacy import char_idx_to_word_idx, get_spacy
 
 logger = logging.getLogger(__name__)
