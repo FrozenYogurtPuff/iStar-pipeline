@@ -1,0 +1,1411 @@
+{"id": 2508, "data": "Tarrant County Integrated Justice Information System", "label": ["NO"]}
+{"id": 2509, "data": "The Integrated Justice Information System (IJIS) is an initiative being undertaken by Tarrant County, Texas.", "label": ["YES"]}
+{"id": 2510, "data": "The vision for IJIS is to define and develop enhanced business processes and supporting technology solutions that result in a more effective and efficient administration of justice in Tarrant County.", "label": ["YES"]}
+{"id": 2511, "data": "When complete, IJIS will facilitate rapid sharing of information across the Criminal Justice Community while providing each stakeholder with advanced justice management capabilities.", "label": ["YES"]}
+{"id": 2512, "data": " The goal of the current phase of the initiative is to define IJIS business requirements shared by the Criminal Justice Community.", "label": ["YES"]}
+{"id": 2513, "data": "To reach agreement on the business requirements, a three-stage approach will be been used:", "label": ["NO"]}
+{"id": 2514, "data": "A baseline of use cases has been prepared to provide a starting point for discussions with the Criminal Justice Community.", "label": ["NO"]}
+{"id": 2515, "data": "The baseline represents a compilation of requirements identified during review of background materials obtained from various sources.", "label": ["NO"]}
+{"id": 2516, "data": "Workshops will be held to collect requirements from the Criminal Justice Community.", "label": ["YES"]}
+{"id": 2517, "data": "The baseline requirements, documented here, will be reviewed, and requirements added, removed and refined.", "label": ["YES"]}
+{"id": 2518, "data": "The material provided during the workshops will be consolidated into a single model, and reviewed at a final workshop with representatives from the Criminal Justice Community.", "label": ["YES"]}
+{"id": 2519, "data": "The objective of the Manage Indigent Defense Software Requirements Specification is to provide an overview of the business use case model for providing indigent defense services by:", "label": ["YES"]}
+{"id": 2520, "data": "Outlining the business processes required to manage indigent defense services", "label": ["NO"]}
+{"id": 2521, "data": "Presenting the Business Use Cases for managing indigent defense services", "label": ["NO"]}
+{"id": 2522, "data": "Outlining the Business Supplementary Requirements (nonfunctional requirements and other factors)", "label": ["NO"]}
+{"id": 2523, "data": "Table 1.1– Definitions, Acronyms, and Abbreviations", "label": ["NO"]}
+{"id": 2524, "data": "The following diagram depicts the business use case model for Manage Indigent Defense Services:", "label": ["NO"]}
+{"id": 2525, "data": "Use Case Specifications – Submit Request for Appointed Counsel", "label": ["NO"]}
+{"id": 2526, "data": "Use Case Specifications – Process Request for Appointed Counsel", "label": ["NO"]}
+{"id": 2527, "data": "Use Case Specifications – Manage Defendant Contact", "label": ["NO"]}
+{"id": 2528, "data": "Use Case Specifications – Manage Notice of Case Filing Decision", "label": ["NO"]}
+{"id": 2529, "data": "Use Case Specifications – Manage Defense Attorney Setting Notification", "label": ["NO"]}
+{"id": 2530, "data": "Use Case Specifications – Manage Defense Attorney Compensation", "label": ["NO"]}
+{"id": 2531, "data": "Use Case Specifications – Manage Attorney List", "label": ["NO"]}
+{"id": 2532, "data": "Use Case Specifications – Manage Reporting", "label": ["NO"]}
+{"id": 2533, "data": "The Supplementary Business Specifications captures any descriptions of process or constraints that cannot be assigned to one business use case.", "label": ["NO"]}
+{"id": 2534, "data": "The contents of this section are therefore applicable across all business use cases.", "label": ["NO"]}
+{"id": 2535, "data": "Where such processes or constraints apply to only one business use case, they should be presented as special requirements of that business use case.", "label": ["YES"]}
+{"id": 2536, "data": "This section will capture any supplementary requirements discussed during the workshops.", "label": ["NO"]}
+{"id": 2537, "data": " – Right to representation by Counsel", "label": ["YES"]}
+{"id": 2538, "data": " – Duties of arresting officer and magistrate", "label": ["YES"]}
+{"id": 2539, "data": " – Procedures for Appointing Counsel", "label": ["YES"]}
+{"id": 2540, "data": " – Compensation of Counsel Appointed to Defend", "label": ["YES"]}
+{"id": 2541, "data": " – Appointment of counsel in death penalty case; reimbursement of investigative expenses.", "label": ["YES"]}
+{"id": 2542, "data": " – Management and Preservation of Records", "label": ["YES"]}
+{"id": 2543, "data": "District Attorney Electronic Case Filing System", "label": ["NO"]}
+{"id": 2544, "data": "Commercial off the shelf software package used by the Auditor to manage County Financial Information.", "label": ["YES"]}
+{"id": 2545, "data": "Person appointed to manage County business by a majority vote of District Judges that have jurisdiction in the County.", "label": ["YES"]}
+{"id": 2546, "data": "The governing body of the County.", "label": ["NO"]}
+{"id": 2547, "data": " Consists of County Judge and four (4) Commissioners", "label": ["NO"]}
+{"id": 2548, "data": "External system used by the Criminal Justice community to manage case information from initial arrest through final disposition.", "label": ["YES"]}
+{"id": 2549, "data": "Person responsible for managing the schedule of a County or District Court.", "label": ["NO"]}
+{"id": 2550, "data": "Person elected and/or appointed to preside over a trial court with misdemeanor criminal jurisdiction.", "label": ["YES"]}
+{"id": 2551, "data": "Person arrested and/or charged with a criminal offense but not yet convicted.", "label": ["YES"]}
+{"id": 2552, "data": "Person qualified and appointed to represent a Defendant in an adversarial judicial proceeding", "label": ["YES"]}
+{"id": 2553, "data": "Person responsible for processing a Defendant into custody.", "label": ["YES"]}
+{"id": 2554, "data": "Person responsible for representing the State of Texas in an adversarial judicial proceeding", "label": ["YES"]}
+{"id": 2555, "data": "Person elected and/or appointed to preside over a trial court with felony criminal jurisdiction.", "label": ["YES"]}
+{"id": 2556, "data": "Law Enforcement Agency investigating and presenting charges to District Attorney against Defendant.", "label": ["YES"]}
+{"id": 2557, "data": "Committee appointed by the Presiding Judge of the Administrative Judicial Region to adopt standards for the qualification of attorneys to be appointed to represent indigent defendants in capital cases in which the death penalty is sought.", "label": ["YES"]}
+{"id": 2558, "data": "Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "label": ["YES"]}
+{"id": 2559, "data": "Person responsible for managing the Indigent Defense appointment process.", "label": ["YES"]}
+{"id": 2560, "data": "Person appointed by the Governor to preside over the administrative judicial region.", "label": ["YES"]}
+{"id": 2561, "data": "Standing committee of the Texas Judicial Council responsible for establishing standards for Indigent Defense Services.", "label": ["YES"]}
+{"id": 2562, "data": "The purpose of this use case is to describe the activities involved in submitting a Request for Appointed Counsel to the Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2563, "data": " Enable law enforcement agencies to capture defendant and incident information along with supporting paper documents within 48 hours of arrest.", "label": ["YES"]}
+{"id": 2564, "data": "   Enable magistrates to electronically review request(s) for counsel and submit request(s) for counsel within 24 hours of the indigency hearing.", "label": ["YES"]}
+{"id": 2565, "data": "Defendant Detention Facility Officer Magistrate  Office of Attorney Appointments City Clerk Notary", "label": ["NO"]}
+{"id": 2566, "data": "This use case starts after the Defendant has been arrested and transported to a Detention Facility.", "label": ["YES"]}
+{"id": 2567, "data": "Detention Facility Officer captures Defendant, Incident, and Financial Information.", "label": ["YES"]}
+{"id": 2568, "data": "Defendant swears to and signs Financial Affidavit.", "label": ["YES"]}
+{"id": 2569, "data": "Detention Facility Officer witnesses and signs Financial Affidavit.", "label": ["YES"]}
+{"id": 2570, "data": " Detention Facility Officer schedules Indigency Hearing.", "label": ["YES"]}
+{"id": 2571, "data": " Magistrate informs Defendant of right to request appointment of counsel and asks whether Defendant wants a Court Appointed Attorney.", "label": ["YES"]}
+{"id": 2572, "data": "Defendant requests appointment of a Court Appointed Attorney.", "label": ["YES"]}
+{"id": 2573, "data": "Magistrate interviews/questions Defendant.", "label": ["YES"]}
+{"id": 2574, "data": "Magistrate makes determination that Defendant is indigent.", "label": ["YES"]}
+{"id": 2575, "data": "Defendant and Magistrate sign Request for Appointed Counsel.", "label": ["YES"]}
+{"id": 2576, "data": " Magistrate submits Request for Appointed Counsel to the Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2577, "data": "Defendant waives right to Court Appointed Attorney This alternative path replaces the basic path beginning at step 6.", "label": ["YES"]}
+{"id": 2578, "data": "Defendant waives right to Court Appointed Attorney.", "label": ["YES"]}
+{"id": 2579, "data": "Defendant signs Waiver of Appointed Counsel.", "label": ["YES"]}
+{"id": 2580, "data": "Magistrate submits Waiver of Appointed Counsel to the Office of Attorney Appointment", "label": ["YES"]}
+{"id": 2581, "data": "Magistrate determines Defendant is not indigent This alternative path replaces the basic path beginning at step 9.", "label": ["YES"]}
+{"id": 2582, "data": "Magistrate makes determination that Defendant is not indigent.", "label": ["YES"]}
+{"id": 2583, "data": "Magistrate submits notice of indigency determination to the Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2584, "data": "Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate     (UETA)  Technical:     .", "label": ["YES"]}
+{"id": 2585, "data": "The purpose of this use case is to describe the activities involved in processing a Request for Appointed Counsel submitted to the Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2586, "data": "Enable the Office of Attorney Appointments to review request(s) for counsel and process request(s) for counsel as soon as possible, but not later than the end of the first working day after the date on which the Office of Attorney Appointments receives the request for appointment of counsel.", "label": ["YES"]}
+{"id": 2587, "data": " Enable law enforcement agencies to be notified that the request for counsel has been denied within 24 hours of the denial.", "label": ["YES"]}
+{"id": 2588, "data": "   Enable the appointed attorney and Defendant to be notified that an appointment has been made within 24 hours of the appointment.", "label": ["YES"]}
+{"id": 2589, "data": "Court Case Management System Defendant Defense Attorney Detention Facility Officer District Court Judge Local Selection Committee  Magistrate Office of Attorney Appointments", "label": ["NO"]}
+{"id": 2590, "data": "This use case starts after a Magistrate has submitted a Request for Appointed Counsel to the Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2591, "data": "Office of Attorney Appointments receives/reviews the Request for Appointed Counsel.", "label": ["YES"]}
+{"id": 2592, "data": "Office of Attorney Appointments researches Defendant/Incident information in Court Case Management System.", "label": ["YES"]}
+{"id": 2593, "data": " Office of Attorney Appointments confirms Defendant has not been released from custody.", "label": ["YES"]}
+{"id": 2594, "data": "Office of Attorney Appointments confirms Defendant does not have a Defense Attorney appointed on a pending case.", "label": ["YES"]}
+{"id": 2595, "data": "Office of Attorney Appointments determines the appropriate appointment rotation list based upon the highest level and degree of offense Defendant is accused of committing.", "label": ["YES"]}
+{"id": 2596, "data": " Office of Attorney Appointments selects next Defense Attorney in the appointment rotation list.", "label": ["YES"]}
+{"id": 2597, "data": "Office of Attorney Appointments notifies Defendant, Defense Attorney and Detention Facility Officer of appointment by facsimile and/or electronic mail.", "label": ["YES"]}
+{"id": 2598, "data": "Defendant has been released from custody This alternative path replaces the basic path beginning at step 3.", "label": ["YES"]}
+{"id": 2599, "data": "Office of Attorney Appointments records that the Request for Appointed Counsel has been denied because the Defendant is no longer in custody.", "label": ["YES"]}
+{"id": 2600, "data": "Defense Attorney has been appointed on a pending case.", "label": ["YES"]}
+{"id": 2601, "data": "This alternative path replaces the basic path beginning at step 5.", "label": ["NO"]}
+{"id": 2602, "data": "Office of Attorney Appointments determines that the previously appointed Defense Attorney is on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.", "label": ["YES"]}
+{"id": 2603, "data": "  Office of Attorney Appointments selects previously appointed Defense Attorney for appointment.", "label": ["YES"]}
+{"id": 2604, "data": "Rejoins basic path at step 7.", "label": ["NO"]}
+{"id": 2605, "data": "Defense Attorney has been appointed on a pending case This alternative path replaces the basic path beginning at step 5.", "label": ["YES"]}
+{"id": 2606, "data": "Office of Attorney Appointments determines that the previously appointed Defense Attorney is not on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.", "label": ["YES"]}
+{"id": 2607, "data": "  Original Defense Attorney is notified of new charge(s) and is removed from the appointment due to a lack of qualifications.", "label": ["YES"]}
+{"id": 2608, "data": "Rejoins basic path at step 5.", "label": ["NO"]}
+{"id": 2609, "data": "New Defense Attorney is appointed to original charge(s).", "label": ["YES"]}
+{"id": 2610, "data": "Charge is capital felony case with death penalty sought This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2611, "data": "Office of Attorney Appointments forwards the Request for Counsel to the presiding District Judge of Court in which the capital felony case is filed.", "label": ["YES"]}
+{"id": 2612, "data": "District Court Judge selects two attorneys both must be qualified by the Administrative Judicial Region Local Selection Committee.", "label": ["YES"]}
+{"id": 2613, "data": "Office of Attorney Appointments appoints selected Defense Attorney(s).", "label": ["YES"]}
+{"id": 2614, "data": " Rejoins basic path at step 6.", "label": ["NO"]}
+{"id": 2615, "data": "These attorneys DO NOT come off the wheel.", "label": ["YES"]}
+{"id": 2616, "data": "Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate  – Procedures for Appointing Counsel  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:  Integration with Court Case Management System", "label": ["YES"]}
+{"id": 2617, "data": "The purpose of this use case is to describe the activities involved in Managing Defense Attorney contacts with Defendant.", "label": ["NO"]}
+{"id": 2618, "data": "Enable an appointed attorney to review appointments and capture the date and type of first contact with the defendant no later than the end of the first working day after the date of the appointment.", "label": ["YES"]}
+{"id": 2619, "data": " Enable an appointed attorney to capture the date and time of the first in person visit with the defendant, as appropriate.", "label": ["YES"]}
+{"id": 2620, "data": "    Enable the Office of Attorney Appointments to be notified when first contact by an appointed attorney is not made by the of the first working day after the date of the appointment.", "label": ["YES"]}
+{"id": 2621, "data": "Defendant Defense Attorney Office of Attorney Appointments", "label": ["NO"]}
+{"id": 2622, "data": "This use case starts after Defense Attorney has been appointed to represent Defendant.", "label": ["YES"]}
+{"id": 2623, "data": "Defense Attorney contacts Defendant within one working day of appointment.", "label": ["YES"]}
+{"id": 2624, "data": "Defense Attorney notifies Office of Attorney Appointments of date and time of initial contact.", "label": ["YES"]}
+{"id": 2625, "data": "Defense Attorney interviews Defendant in person.", "label": ["YES"]}
+{"id": 2626, "data": "Defense Attorney notifies Office of Attorney Appointments of date and time of in person visit(s).", "label": ["YES"]}
+{"id": 2627, "data": " Steps 3-4 may be repeated until the charges have been dismissed, defendant is acquitted, appeals are exhausted, or the Court has relieved the Defense Attorney of duties.", "label": ["YES"]}
+{"id": 2628, "data": "Defense Attorney fails to contact Defendant This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2629, "data": "Defense Attorney fails to interview Defendant This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2630, "data": "Legal:      – Right to representation by Counsel", "label": ["YES"]}
+{"id": 2631, "data": "Manage Notice of Case Filing Decision", "label": ["YES"]}
+{"id": 2632, "data": "The purpose of this use case is to describe the activities involved in Managing District Attorney notice of case filing decisions.", "label": ["NO"]}
+{"id": 2633, "data": "Enable the appointed attorney and Office of Attorney Appointments to be notified that the District Attorney has accepted/rejected the incident and whether charges where added, removed or modified.", "label": ["YES"]}
+{"id": 2634, "data": "Court Case Management System Defendant Defense Attorney District Attorney Office of Attorney Appointments", "label": ["NO"]}
+{"id": 2635, "data": "This use case starts after the District Attorney has made the decision to proceed with prosecution of Defendant.", "label": ["NO"]}
+{"id": 2636, "data": "District Attorney notifies Office of Attorney Appointments of the charge(s) that were accepted for prosecution.", "label": ["YES"]}
+{"id": 2637, "data": "Office of Attorney Appointments enters Defense Attorney appointment into the Court Case Management System.", "label": ["YES"]}
+{"id": 2638, "data": "Office of Attorney Appointments notifies Defense Attorney that charge(s) have been filed.", "label": ["YES"]}
+{"id": 2639, "data": "District Attorney creates additional charge This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2640, "data": "See Alternative Path 2.b from Process Request for Appointed Counsel.", "label": ["NO"]}
+{"id": 2641, "data": "District Attorney modifies original charge This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2642, "data": "See Alternative Path 2.b from Process Request for Appointed Counsel.", "label": ["NO"]}
+{"id": 2643, "data": "District Attorney rejects original charge This alternative path replaces the basic path beginning at step 2.", "label": ["YES"]}
+{"id": 2644, "data": "Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2645, "data": "Technical:   Integration with Court Case Management System.", "label": ["NO"]}
+{"id": 2646, "data": "Integration with District Attorney Electronic Case Filing System.", "label": ["NO"]}
+{"id": 2647, "data": "The purpose of this use case is to describe the activities involved in the creation of a setting and the updating of that setting (results/hearing conducted).", "label": ["NO"]}
+{"id": 2648, "data": "It includes initial settings, cases to be calendared, and the recording of the outcome of the hearing.", "label": ["NO"]}
+{"id": 2649, "data": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": ["YES"]}
+{"id": 2650, "data": "Court Case Management System Court Coordinator Defendant Defense Attorney District Attorney Judge (County or District Court Judge) Office of Attorney Appointments", "label": ["NO"]}
+{"id": 2651, "data": "This use case starts after District Attorney has accepted and filed charges against Defendant.", "label": ["YES"]}
+{"id": 2652, "data": "Court Coordinator determines that a setting is required.", "label": ["YES"]}
+{"id": 2653, "data": "Court Coordinator enters setting information into Court Case Management System.", "label": ["YES"]}
+{"id": 2654, "data": "Office of Attorney Appointments notifies Defendant, Defense Attorney, and District Attorney of setting.", "label": ["YES"]}
+{"id": 2655, "data": " Defendant, Defense Attorney, and District Attorney appear before Judge.", "label": ["YES"]}
+{"id": 2656, "data": "Court Coordinator enters setting result into Court Case Management System.", "label": ["YES"]}
+{"id": 2657, "data": "Steps 1-5 are repeated until the charges have been disposed, Defendant is acquitted, appeals are exhausted, or the Defense Attorney has been relieved of duties by the Court", "label": ["YES"]}
+{"id": 2658, "data": "Defendant is in custody This alternative path replaces the basic path beginning at step 3.", "label": ["YES"]}
+{"id": 2659, "data": "Defendant fails to appear This alternative path replaces the basic path beginning at step 5.", "label": ["YES"]}
+{"id": 2660, "data": "Defense Attorney fails to appear This alternative path replaces the basic path beginning at step 5.", "label": ["YES"]}
+{"id": 2661, "data": "Legal:      – Right to representation by Counsel", "label": ["YES"]}
+{"id": 2662, "data": "The purpose of this use case is to describe the activities involved in managing compensation made to Defense Attorney.", "label": ["NO"]}
+{"id": 2663, "data": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": ["YES"]}
+{"id": 2664, "data": "Auditor Commissioners Court Defense Attorney Filing Agency Judge (County or District Court Judge) Office of Attorney Appointments Presiding Administrative Judge", "label": ["YES"]}
+{"id": 2665, "data": "This use case starts when a Defense Attorney submits a request for payment.", "label": ["YES"]}
+{"id": 2666, "data": "Defense Attorney submits request for payment itemizing the list of services performed to Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2667, "data": "Office of Attorney Appointments forwards request for payment to Judge.", "label": ["YES"]}
+{"id": 2668, "data": "Judge reviews/approves request for payment and forwards to Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2669, "data": "Office of Attorney Appointments forwards order to remit payment to Auditor.", "label": ["YES"]}
+{"id": 2670, "data": "Auditor presents claim to Commissioners Court.", "label": ["YES"]}
+{"id": 2671, "data": " Commissioners Court approves payment of claim.", "label": ["YES"]}
+{"id": 2672, "data": "Auditor remits payment to Defense Attorney.", "label": ["YES"]}
+{"id": 2673, "data": "Auditor notifies Judge that payment has been remitted.", "label": ["YES"]}
+{"id": 2674, "data": "Judge disapproves amount of payment without Appeal This alternative path replaces the basic path beginning at step 3.", "label": ["YES"]}
+{"id": 2675, "data": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": ["YES"]}
+{"id": 2676, "data": "Rejoins basic path at step 3.", "label": ["NO"]}
+{"id": 2677, "data": "Judge disapproves amount of payment with Appeal This alternative path replaces the basic path beginning at step 3.", "label": ["YES"]}
+{"id": 2678, "data": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": ["YES"]}
+{"id": 2679, "data": "Defense Attorney files motion with Presiding Administrative Judge.", "label": ["YES"]}
+{"id": 2680, "data": "Presiding Administrative Judge reviews disapproval of payment.", "label": ["YES"]}
+{"id": 2681, "data": "Presiding Administrative Judge determines the appropriate amount of payment.", "label": ["YES"]}
+{"id": 2682, "data": "Presiding Administrative Judge orders Auditor to remit payment to Defense Attorney.", "label": ["YES"]}
+{"id": 2683, "data": " Rejoins basic path at step 5.", "label": ["NO"]}
+{"id": 2684, "data": "Judge denies Defense Attorney request for advance payment of expenses (ex parte)", "label": ["YES"]}
+{"id": 2685, "data": "This alternative path replaces the basic path beginning at step 1.", "label": ["NO"]}
+{"id": 2686, "data": "Defense Attorney files request for advance payment of expenses.", "label": ["YES"]}
+{"id": 2687, "data": "Judge denies request (in whole or part) for advance payment of expenses.", "label": ["YES"]}
+{"id": 2688, "data": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": ["YES"]}
+{"id": 2689, "data": "Judge submits request for advance payment and denial as sealed exhibit to the record.", "label": ["YES"]}
+{"id": 2690, "data": "Filing Agency drops charges against Defendant This alternative path replaces the basic path beginning at step 1.", "label": ["YES"]}
+{"id": 2691, "data": "  Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2692, "data": "Charges against Defendant are rejected by District Attorney This alternative path replaces the basic path beginning at step 1.", "label": ["YES"]}
+{"id": 2693, "data": "  Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2694, "data": "Legal:   – Compensation of Counsel Appointed to Defend  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:   Integration with external Accounting System(s).", "label": ["YES"]}
+{"id": 2695, "data": "The purpose of this use case is to describe the activities involved in Managing Defense Attorney contacts with Defendant.", "label": ["NO"]}
+{"id": 2696, "data": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": ["YES"]}
+{"id": 2697, "data": "Defense Attorney Judges (County or District Court Judges) Office of Attorney Appointments", "label": ["NO"]}
+{"id": 2698, "data": "This use case starts when a Defense Attorney requests to be placed on appointment rotation list.", "label": ["NO"]}
+{"id": 2699, "data": "Defense Attorney submits application for public appointments.", "label": ["YES"]}
+{"id": 2700, "data": "Office of Attorney Appointments reviews application.", "label": ["YES"]}
+{"id": 2701, "data": "Office of Attorney Appointments forwards application to Judges.", "label": ["YES"]}
+{"id": 2702, "data": "Judges review/approve application.", "label": ["YES"]}
+{"id": 2703, "data": "Judges forward application to Office of Attorney Appointments.", "label": ["YES"]}
+{"id": 2704, "data": "Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).", "label": ["YES"]}
+{"id": 2705, "data": "Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2706, "data": "Defense Attorney fails to meet minimum qualifications This alternative path replaces the basic path beginning at step 3.", "label": ["YES"]}
+{"id": 2707, "data": "Office of Attorney Appointments records qualification issues.", "label": ["YES"]}
+{"id": 2708, "data": "Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2709, "data": "Judges do not approve application This alternative path replaces the basic path beginning at step 4.", "label": ["YES"]}
+{"id": 2710, "data": "Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2711, "data": "Permanent removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": ["YES"]}
+{"id": 2712, "data": "Judges order removal of Defense Attorney.", "label": ["YES"]}
+{"id": 2713, "data": "Office of Attorney Appointments removes Defense Attorney from appropriate appointment rotation list(s).", "label": ["YES"]}
+{"id": 2714, "data": " Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2715, "data": "Reinstatement to appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": ["YES"]}
+{"id": 2716, "data": "Judges order reinstatement of Defense Attorney.", "label": ["YES"]}
+{"id": 2717, "data": "Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).", "label": ["YES"]}
+{"id": 2718, "data": " Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2719, "data": "Temporary removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": ["YES"]}
+{"id": 2720, "data": "Defense Attorney requests to be removed from appointment rotation list(s).", "label": ["YES"]}
+{"id": 2721, "data": "Office of Attorney Appointments suspends appointments to Defense Attorney from appropriate appointment rotation list(s) for 30 days.", "label": ["YES"]}
+{"id": 2722, "data": " Office of Attorney Appointments notifies Defense Attorney.", "label": ["YES"]}
+{"id": 2723, "data": "Legal:      – Right to representation by Counsel  – Procedures for Appointing Counsel", "label": ["YES"]}
+{"id": 2724, "data": "The purpose of this use case is to describe the activities involved in managing reporting to the Task Force on Indigent Defense.", "label": ["NO"]}
+{"id": 2725, "data": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": ["YES"]}
+{"id": 2726, "data": "Office of Attorney Appointments Task Force on Indigent Defense", "label": ["NO"]}
+{"id": 2727, "data": "This use case starts when a report is required by the Task Force on Indigent Defense.", "label": ["YES"]}
+{"id": 2728, "data": "Office of Attorney Appointments selects the report type.", "label": ["YES"]}
+{"id": 2729, "data": "Office of Attorney Appointments enters/selects report parameters.", "label": ["YES"]}
+{"id": 2730, "data": "Office of Attorney Appointments distributes report to Task Force on Indigent Defense.", "label": ["YES"]}
+{"id": 2731, "data": "Report Types:  Number of appointments made by date range (day, week, month, quarter, annual, and ad hoc) and type of appointment (felony, misdemeanor, etc…).", "label": ["NO"]}
+{"id": 2732, "data": "  Number of denials of counsel by date range (day, week, month, quarter, annual, and ad hoc) and type of denial.", "label": ["NO"]}
+{"id": 2733, "data": "Minimum, maximum, and average number of hours between date/time of arrest and magistration by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2734, "data": "Minimum, maximum, and average number of hours between date/time of magistration and request for counsel by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2735, "data": " Minimum, maximum, and average number of hours between date/time of request for appointment of counsel and appointment/denial by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2736, "data": " Minimum, maximum, and average number of hours between date/time of appointment of counsel and Defense Attorney first contact by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2737, "data": " Minimum, maximum, and average number of days between date/time of appointment and case filing by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2738, "data": "Minimum, maximum, and average number of days between date/time of case filing and disposition by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2739, "data": "Minimum, maximum, and average number of days between date/time of appointment and disposition by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2740, "data": "Minimum, maximum, and average number of total hours billed by Defense Attorney and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2741, "data": "Minimum, maximum, and average number of court appearances by Defense Attorney and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2742, "data": "Minimum, maximum, and average of total payments made to Defense Attorney by Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2743, "data": "Minimum, maximum, and average cost of reimbursement types (Court Appearances, Investigation, etc...) by Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2744, "data": "Minimum, maximum, and average number of appointments for Defendants with special needs by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2745, "data": "Minimum, maximum, and average number of duplicate appointments and amount of payments made on those cases/charges (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2746, "data": "Minimum, maximum, and average number of non-disposed cases/charges and amount of payments made on those cases/charges (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2747, "data": "Minimum, maximum, and average number of pleas by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2748, "data": "Minimum, maximum, and average number of trials by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2749, "data": "Minimum, maximum, and average number of dispositions by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).", "label": ["NO"]}
+{"id": 2750, "data": "This remark is hidden text and will not be printed:", "label": ["NO"]}
+{"id": 2751, "data": "The items above and items in the headers and footers of this document contain bookmarks for automatic updating.", "label": ["YES"]}
+{"id": 2752, "data": "Do not delete these bookmarks or update them manually.", "label": ["NO"]}
+{"id": 2753, "data": "Use the UPDATE TOOL instead.", "label": ["NO"]}
+{"id": 2754, "data": "1.3\tOpen points\t3", "label": ["NO"]}
+{"id": 2755, "data": "1.4\tRequirements identification\t3", "label": ["NO"]}
+{"id": 2756, "data": "1.5\tDocument maintenance\t3", "label": ["NO"]}
+{"id": 2757, "data": "1.6\tDefinitions, acronyms & abbreviations\t3", "label": ["NO"]}
+{"id": 2758, "data": "2\tGeneral description\t4", "label": ["NO"]}
+{"id": 2759, "data": "2.1\tProduct perspective\t4", "label": ["NO"]}
+{"id": 2760, "data": "2.2\tProduct(s)\t4", "label": ["NO"]}
+{"id": 2761, "data": "2.2.1\tMSN messenger xlet\t4", "label": ["NO"]}
+{"id": 2762, "data": "2.3\tUser characteristics\t4", "label": ["NO"]}
+{"id": 2763, "data": "2.4\tAssumptions & constraints\t5", "label": ["NO"]}
+{"id": 2764, "data": "3\tFunctional requirements\t5", "label": ["NO"]}
+{"id": 2765, "data": "3.1\tEnd user functions\t5", "label": ["NO"]}
+{"id": 2766, "data": "4\tExternal interface requirements\t6", "label": ["NO"]}
+{"id": 2767, "data": "4.1\tPhysical devices\t6", "label": ["NO"]}
+{"id": 2768, "data": "4.2\tCommunication interfaces\t6", "label": ["NO"]}
+{"id": 2769, "data": "4.3\tData requirements\t7", "label": ["NO"]}
+{"id": 2770, "data": "Date\tPerson\tVersion\tReason", "label": ["NO"]}
+{"id": 2771, "data": "2004-02-24\tRené Nieuwenhuis\t0.1\tInitial version", "label": ["NO"]}
+{"id": 2772, "data": "2004-03-19\tRené Nieuwenhuis\t1.0\tApproved", "label": ["NO"]}
+{"id": 2773, "data": "The blue coloured text style “explanation text” contains instructions when using the template.", "label": ["NO"]}
+{"id": 2774, "data": "The user is free to either adapt the font of the style to become “hidden” or to remove all explanatory text when the document is completed.", "label": ["YES"]}
+{"id": 2775, "data": "For more information see the “template” pages on the Intranet.", "label": ["NO"]}
+{"id": 2776, "data": "An FRS (Functional Requirements Specification) is a document containing a complete description of a product’s external behaviour (that is, with the entire interface between the product and its environment, including other hardware, software, communication ports, and human users) as a statement of what the system will do without defining how it works internally.", "label": ["YES"]}
+{"id": 2777, "data": "The FRS contains two types of requirements: functional and non-functional.", "label": ["YES"]}
+{"id": 2778, "data": "The functional requirements define what the system does with a complete description of all the inputs and outputs to and from the system as well as information concerning how the inputs and outputs interrelate (chapter 0, 3, 4 and Error!", "label": ["NO"]}
+{"id": 2779, "data": "Reference source not found.).", "label": ["NO"]}
+{"id": 2780, "data": "The non-functional requirements describe the quality and performance of the system (chapter Error!", "label": ["NO"]}
+{"id": 2781, "data": "Reference source not found.).", "label": ["NO"]}
+{"id": 2782, "data": "The minimum outline that all FRS documents must use is:", "label": ["NO"]}
+{"id": 2783, "data": "Given the purpose of the FRS, it is clear that Design Descriptions do not belong in an FRS.", "label": ["YES"]}
+{"id": 2784, "data": "If the product to be defined is a software library, it probably is wiser to use the content of the Software Component Specification (SCS) template instead of the content of the FRS template.", "label": ["NO"]}
+{"id": 2785, "data": "For more information, see Work Instruction Architecture & Design.", "label": ["NO"]}
+{"id": 2786, "data": "Attributes of a well-written FRS.", "label": ["NO"]}
+{"id": 2787, "data": "A well-written requirement applies the following criteria:", "label": ["NO"]}
+{"id": 2788, "data": "Clear & concise\tIt is written in clear, simple and concise language.", "label": ["NO"]}
+{"id": 2789, "data": "The primary readers of the document are able to understand the description.", "label": ["YES"]}
+{"id": 2790, "data": "Testable & measurable\tA finite cost procedure exists to test the requirement.", "label": ["NO"]}
+{"id": 2791, "data": "Unambiguous\tIt has only one interpretation.", "label": ["NO"]}
+{"id": 2792, "data": "Necessary\tIt does not describe superfluous information or explanation.", "label": ["NO"]}
+{"id": 2793, "data": "Identifiable\tIt has a unique label or a number.", "label": ["NO"]}
+{"id": 2794, "data": "Feasible\tIt is believed to be realisable.", "label": ["NO"]}
+{"id": 2795, "data": "Design independent\tIt does not describe software or hardware design decisions.", "label": ["NO"]}
+{"id": 2796, "data": "A well-written FRS contains a set of well-written requirements and applies the following criteria:", "label": ["NO"]}
+{"id": 2797, "data": "Complete\tEverything the system is supposed to do is in the document.", "label": ["NO"]}
+{"id": 2798, "data": "The requirements do not contradict.", "label": ["YES"]}
+{"id": 2799, "data": "The chapters of this template are mandatory.", "label": ["NO"]}
+{"id": 2800, "data": "The sections within the chapters can be chosen differently depending on the project and the specific product.", "label": ["YES"]}
+{"id": 2801, "data": "For more information, read the Work Instruction Requirements Management.", "label": ["NO"]}
+{"id": 2802, "data": "The purpose of the FRS is to get a common understanding between the customer and PDSL on the product requirements of the Platform-i MSN application.", "label": ["YES"]}
+{"id": 2803, "data": "The document serves as a basis for the Architectural Design of the Platform-i MSN application.", "label": ["YES"]}
+{"id": 2804, "data": "The intended audience for this document are the customer and the development team.", "label": ["YES"]}
+{"id": 2805, "data": "Give a list of issues that have not been solved in this document yet.", "label": ["YES"]}
+{"id": 2806, "data": "This section should be empty when the document is accepted.", "label": ["YES"]}
+{"id": 2807, "data": "Describe how the individual requirements will be labelled and/or numbered in this document.", "label": ["YES"]}
+{"id": 2808, "data": "Preferably use a hierarchical format, e.g. <label>.<label>.<number>.", "label": ["NO"]}
+{"id": 2809, "data": "The requirements will be in the format: <label><number>", "label": ["NO"]}
+{"id": 2810, "data": "Describe how this document is maintained and how the requirements identification will be handled over time.", "label": ["NO"]}
+{"id": 2811, "data": "Typically describe how removal or addition of requirements is handled (e.g. numbers are never renumbered after removal; requirements can only be added at the end of a section with the next higher number).", "label": ["YES"]}
+{"id": 2812, "data": "General rules for document maintenance are described in [WI_REQ].", "label": ["NO"]}
+{"id": 2813, "data": "Do not repeat these here.", "label": ["NO"]}
+{"id": 2814, "data": "Additional requirements can only be added at the end of a section with the next higher number.", "label": ["YES"]}
+{"id": 2815, "data": "If a requirement is removed, the number remains empty.", "label": ["YES"]}
+{"id": 2816, "data": "A list of all definitions, abbreviations and terms used in this document, together with a short explanation.", "label": ["YES"]}
+{"id": 2817, "data": "Instant Messenger\tAn instant messenger is an application, which allows instant text communication between two or more people through a network such as the Internet.", "label": ["YES"]}
+{"id": 2818, "data": "Status\tPredefined presence identifier.", "label": ["NO"]}
+{"id": 2819, "data": "With setting the status the user can let others know if he is actively using your PC (or TV in our case).", "label": ["YES"]}
+{"id": 2820, "data": "In MSN Messenger you have the following statuses: Offline, Online, Busy, Idle, Be Right Back, Away, On the Phone and Out to Lunch.", "label": ["YES"]}
+{"id": 2821, "data": "Blocking\tWhen you block someone, you prevent that person from seeing your status (you always appear offline) and sending you messages.", "label": ["YES"]}
+{"id": 2822, "data": "Buddy\tFriend, family member, co-worker or other person who is manually added to your buddy list.", "label": ["YES"]}
+{"id": 2823, "data": "Buddy list\tList of buddies with whom the user can communicate in real time.", "label": ["YES"]}
+{"id": 2824, "data": "Contact list\tSee buddy list.", "label": ["NO"]}
+{"id": 2825, "data": "Passport is an online service that makes it possible for you to use your e-mail address and a single password to sign in to any .NET Passport-participating Web site or service.", "label": ["YES"]}
+{"id": 2826, "data": "One of these services is the MSN Messenger.", "label": ["YES"]}
+{"id": 2827, "data": "It is not necessary to include details like author, version and date for all references.", "label": ["YES"]}
+{"id": 2828, "data": "E.g. text below can be used:", "label": ["NO"]}
+{"id": 2829, "data": "[REF1]\tCommercial Requirements Specification of “<project name>“ project", "label": ["NO"]}
+{"id": 2830, "data": "<Author of the document>", "label": ["NO"]}
+{"id": 2831, "data": "Reference number <DSE-ygxxxxINI CxSx>", "label": ["NO"]}
+{"id": 2832, "data": "Version <x>, date <200x-xx-xx>", "label": ["NO"]}
+{"id": 2833, "data": "If the product is independent and totally self-contained, it should be stated here.", "label": ["YES"]}
+{"id": 2834, "data": "Otherwise, if the FRS defines a product that is a component of a larger system or project, then describe the relation and identify the interfaces between the component and the larger system or project.", "label": ["YES"]}
+{"id": 2835, "data": "Describe here all external connections to the product in terms of connectors, hardware and software.", "label": ["NO"]}
+{"id": 2836, "data": "The use of a context diagram is allowed if the technique is clear to the customer.", "label": ["YES"]}
+{"id": 2837, "data": "Also identify the protocol interfaces (for more information, refer to section 4.2) and the data interfaces (refer to section 4.3).", "label": ["NO"]}
+{"id": 2838, "data": "If the FRS is part of a product line, refer to the product roadmap and identify the relation between the product and the product roadmap.", "label": ["NO"]}
+{"id": 2839, "data": "The MSN messenger xlet is a MHP version of the popular PC application.", "label": ["YES"]}
+{"id": 2840, "data": "It is an application to demonstrate the possibilities of MHP and Platform-i.", "label": ["YES"]}
+{"id": 2841, "data": "The Platform-i MSN messenger application is independent of other projects.", "label": ["YES"]}
+{"id": 2842, "data": "Identify the product(s) to be produced by name.", "label": ["YES"]}
+{"id": 2843, "data": "In case of more than one product, define how in the rest of the document the diversity between the products is described.", "label": ["YES"]}
+{"id": 2844, "data": "For each product, add the following section:", "label": ["NO"]}
+{"id": 2845, "data": "The produced product will be an MHP MSN messenger xlet.", "label": ["YES"]}
+{"id": 2846, "data": "Explain shortly what this product will do.", "label": ["NO"]}
+{"id": 2847, "data": "Give a summary of the functions that this product will perform.", "label": ["NO"]}
+{"id": 2848, "data": "Also describe explicitly what the product will not do (but do not add an exhaustive list; restrict the list to the non-trivial aspects).", "label": ["NO"]}
+{"id": 2849, "data": "With the xlet the user shall be able to see online friends, chat with them and see which TV program they are watching.", "label": ["YES"]}
+{"id": 2850, "data": "Unlike the PC variant, the xlet cannot transfer files and doesn’t have webcam support.", "label": ["YES"]}
+{"id": 2851, "data": "Describe those general characteristics of the users of the product that account for the functional requirements.", "label": ["NO"]}
+{"id": 2852, "data": "Describe per type of user the context of use in terms of the privileges and the tasks.", "label": ["NO"]}
+{"id": 2853, "data": "Typical examples of users are: end users, operators, factory users, service users, and dealers.", "label": ["YES"]}
+{"id": 2854, "data": "Also, non-human users that interface with the product can be included here.", "label": ["YES"]}
+{"id": 2855, "data": "Typically, however, non-human usage is a communication interface, see 4.2 for more information.", "label": ["YES"]}
+{"id": 2856, "data": "There are only end-users.", "label": ["NO"]}
+{"id": 2857, "data": "Provide a short description of external factors that affect the requirements in the FRS (assumptions) or that will limit the options for designing the system (constraints).", "label": ["NO"]}
+{"id": 2858, "data": "An example of an assumption is that a specific chip will be available.", "label": ["NO"]}
+{"id": 2859, "data": "If, in fact, this chip is not available, then this FRS would have to change accordingly.", "label": ["YES"]}
+{"id": 2860, "data": "Examples of constraints are: the operating system to use, interfaces to other applications, safety considerations, regularity policies, higher-order language requirements.", "label": ["YES"]}
+{"id": 2861, "data": "Keep in mind that only the non-trivial constraints should be mentioned here.", "label": ["YES"]}
+{"id": 2862, "data": "If we cannot use the MSN messenger service protocol this FRS has to be adjusted to reflect the new situation.", "label": ["YES"]}
+{"id": 2863, "data": "For each function (or feature) category, or if appropriate for each individual function, define the functional (behaviour) requirements by means of a short introduction of the function, followed by a definition of inputs and associated outputs (results, effects) on that function.", "label": ["YES"]}
+{"id": 2864, "data": "The User-interface specific aspects of the FRS are not included in this chapter (see chapter Error!", "label": ["YES"]}
+{"id": 2865, "data": "Reference source not found.).", "label": ["NO"]}
+{"id": 2866, "data": "E.g. for a TV set, define here the characteristics of volume control.", "label": ["NO"]}
+{"id": 2867, "data": "The fact that the volume control button is present both on the TV-set and on the remote control is defined in chapter Error!", "label": ["YES"]}
+{"id": 2868, "data": "Reference source not found.).", "label": ["NO"]}
+{"id": 2869, "data": "This chapter will have a section layout that is specific for the product.", "label": ["NO"]}
+{"id": 2870, "data": "It is advised however to at least use the following section layout to make a clear distinction between the types of user (e.g. end user, factory, service user).", "label": ["YES"]}
+{"id": 2871, "data": "Define in function categories the typical functions that are available to the end user.", "label": ["YES"]}
+{"id": 2872, "data": "An example layout could be:", "label": ["NO"]}
+{"id": 2873, "data": "3.1.1 <Function category 1>", "label": ["NO"]}
+{"id": 2874, "data": "3.1.2 <Function category 2>", "label": ["NO"]}
+{"id": 2875, "data": "P1.0 Use of Passport to login to the messenger", "label": ["YES"]}
+{"id": 2876, "data": "P1.1 With the use of an existing Passport account the user can login to the messenger.", "label": ["YES"]}
+{"id": 2877, "data": "P1.2 It is not possible to create a new Passport account.", "label": ["YES"]}
+{"id": 2878, "data": "P2.0 Maintenance of users own status", "label": ["YES"]}
+{"id": 2879, "data": "P2.1 Ability to change and maintain the status which is visible to the buddies.", "label": ["YES"]}
+{"id": 2880, "data": "The application provides a list where the end-user can choose the new status.", "label": ["YES"]}
+{"id": 2881, "data": "P3.0 See the presence status of your buddies", "label": ["YES"]}
+{"id": 2882, "data": "The application will display the status of the end-users buddies.", "label": ["YES"]}
+{"id": 2883, "data": "When a buddy changes his status, the application shall update it.", "label": ["YES"]}
+{"id": 2884, "data": "The end-user is able to change the nickname with which the user is visible to the buddies.", "label": ["YES"]}
+{"id": 2885, "data": "P5.1 Show the nicknames of the end-users buddies on the buddy list.", "label": ["YES"]}
+{"id": 2886, "data": "The application updates the displayed nick in the contact list when a buddy changes the nickname.", "label": ["YES"]}
+{"id": 2887, "data": "P6.0 Appoint an user-defined nickname", "label": ["YES"]}
+{"id": 2888, "data": "P6.1 The application provides the possibility to assign a nickname to a specified buddy; this nickname has preference above the nickname set by the buddy itself.", "label": ["YES"]}
+{"id": 2889, "data": "P7.0 Add buddies to your contact list", "label": ["YES"]}
+{"id": 2890, "data": "P7.1 The application provides an option to add a buddy to the buddy list.", "label": ["YES"]}
+{"id": 2891, "data": "P8.0 Delete buddies from your contact list", "label": ["YES"]}
+{"id": 2892, "data": "The application has an option to delete a buddy from the buddy list.", "label": ["YES"]}
+{"id": 2893, "data": "The application has an option to block certain buddies.", "label": ["YES"]}
+{"id": 2894, "data": "M1.1 The application has a visible notification when an incoming message is received.", "label": ["YES"]}
+{"id": 2895, "data": "M2.1 Show incoming messages on the screen.", "label": ["YES"]}
+{"id": 2896, "data": "M3.1 Possibility to create a message and send it to a buddy.", "label": ["YES"]}
+{"id": 2897, "data": "M4.1 Show emoticons in incoming and outgoing messages.", "label": ["YES"]}
+{"id": 2898, "data": "M4.2 Display a list of emoticons to choose from when the user wants to include an emoticon in the message he is writing.", "label": ["YES"]}
+{"id": 2899, "data": "M5.0 Show (session) history", "label": ["YES"]}
+{"id": 2900, "data": "M5.1 Show the history of messages sent and received in the current chat session.", "label": ["YES"]}
+{"id": 2901, "data": "M6.1 Chat with multiple buddies together.", "label": ["YES"]}
+{"id": 2902, "data": "D1.1 Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.", "label": ["YES"]}
+{"id": 2903, "data": "D2.1 Show a notification when there is new e-mail at the users hotmail inbox.", "label": ["YES"]}
+{"id": 2904, "data": "D3.1 Display the inbox of the users Hotmail account", "label": ["YES"]}
+{"id": 2905, "data": "D3.2 Show e-mails from the users Hotmail account on the screen.", "label": ["YES"]}
+{"id": 2906, "data": "D4.1 Play games with online buddies.", "label": ["YES"]}
+{"id": 2907, "data": "Define the actual input and output devices of the product, typically represented by a picture of the layout of the device.", "label": ["NO"]}
+{"id": 2908, "data": "Examples of input devices are: remote control, mouse, and local keypad.", "label": ["YES"]}
+{"id": 2909, "data": "Examples of output devices are: LCD, TV screen, LED.", "label": ["YES"]}
+{"id": 2910, "data": "Input device: Remote control and maybe a wireless keyboard.", "label": ["YES"]}
+{"id": 2911, "data": "Output device: TV screen.", "label": ["YES"]}
+{"id": 2912, "data": "Describe the external protocols that are used in connecting the product to its environment (see also 2.1).", "label": ["NO"]}
+{"id": 2913, "data": "For standard protocols, use a reference and describe what is supported of the standard.", "label": ["YES"]}
+{"id": 2914, "data": "For proprietary protocols, define the protocol itself.", "label": ["YES"]}
+{"id": 2915, "data": "(Often, the protocol definition is described in a separate document; in that case include a reference here.)", "label": ["NO"]}
+{"id": 2916, "data": "The used protocol for communication is the .NET messenger service protocol.", "label": ["YES"]}
+{"id": 2917, "data": "The used version of this protocol will be MSNPv8 which is the standard protocol at this moment.", "label": ["YES"]}
+{"id": 2918, "data": "Describe the external data that is interfacing to the system.", "label": ["NO"]}
+{"id": 2919, "data": "This can be a database or a data stream format.", "label": ["YES"]}
+{"id": 2920, "data": "(Often, the data description is defined in a separate document; in that case include a reference here.)", "label": ["NO"]}
+{"id": 2921, "data": "Non-functional requirements are typically requirements in the area of e.g. performance, reliability and maintainability.", "label": ["YES"]}
+{"id": 2922, "data": "They often have a system wide character and cannot be attached to a specific functional requirement.", "label": ["YES"]}
+{"id": 2923, "data": "(This also holds for section 2.4.)", "label": ["NO"]}
+{"id": 2924, "data": "Make sure that the requirements are measurable; e.g. “maintainability is important” is not a requirement.", "label": ["YES"]}
+{"id": 2925, "data": "The following list defines possibly relevant product quality attributes:", "label": ["YES"]}
+{"id": 2926, "data": "This list is to be used as a checklist to derive the non-functional requirements.", "label": ["YES"]}
+{"id": 2927, "data": "Preferably, do not use the complete list of attributes as a table of contents.", "label": ["YES"]}
+{"id": 2928, "data": "Do not extensively discuss or incorporate those attributes that are regarded less relevant for the application.", "label": ["YES"]}
+{"id": 2929, "data": "Note that some product quality attributes might result in functional requirements (e.g. security can be realised with a password mechanism, usability is often implicitly included in section Error!", "label": ["YES"]}
+{"id": 2930, "data": "Reference source not found., time-behaviour requirements can be addressed specifically per functional requirement).", "label": ["YES"]}
+{"id": 2931, "data": "These are typically described in the other chapters of this document.", "label": ["YES"]}
+{"id": 2932, "data": "In that case, a reference from this chapter to the other chapters can be useful, to understand how the quality attribute is achieved with functional requirements.", "label": ["YES"]}
+{"id": 2933, "data": "1.3\tDefinitions, Acronyms, and Abbreviations\t6", "label": ["NO"]}
+{"id": 2934, "data": "3.1.1\tSell Configured to Ordered Products.", "label": ["YES"]}
+{"id": 2935, "data": "3.1.2\tProvide comprehensive product details.", "label": ["YES"]}
+{"id": 2936, "data": "3.1.3\tDetailed product Categorizations\t7", "label": ["YES"]}
+{"id": 2937, "data": "3.1.4\tProvide Search facility.", "label": ["YES"]}
+{"id": 2938, "data": "3.1.5\tMaintain customer profile.", "label": ["YES"]}
+{"id": 2939, "data": "3.1.6\tProvide personalized profile\t8", "label": ["YES"]}
+{"id": 2940, "data": "3.1.7\tProvide Customer Support.", "label": ["YES"]}
+{"id": 2941, "data": "3.1.9\tDetailed invoice for customer.", "label": ["YES"]}
+{"id": 2942, "data": "3.1.10\tProvide shopping cart facility.", "label": ["YES"]}
+{"id": 2943, "data": "3.1.11\tProvide multiple shipping methods.", "label": ["YES"]}
+{"id": 2944, "data": "3.1.12\tOnline tracking of shipments\t9", "label": ["YES"]}
+{"id": 2945, "data": "3.1.13\tProvide online Tax Calculations\t10", "label": ["YES"]}
+{"id": 2946, "data": "3.1.14\tAllow multiple payment methods.", "label": ["YES"]}
+{"id": 2947, "data": "3.1.15\tAllow online change or cancellation of order.", "label": ["YES"]}
+{"id": 2948, "data": "3.1.16\tAllow Online Product reviews and ratings\t10", "label": ["YES"]}
+{"id": 2949, "data": "3.1.17\tOffer financing options.", "label": ["YES"]}
+{"id": 2950, "data": "3.1.18\tProvide detailed sitemap.", "label": ["YES"]}
+{"id": 2951, "data": "3.1.19\tOffer online promotions and rewards.", "label": ["YES"]}
+{"id": 2952, "data": "3.1.20\tOnline Purchase of products.", "label": ["YES"]}
+{"id": 2953, "data": "3.2.1\tGraphical User Interface\t11", "label": ["NO"]}
+{"id": 2954, "data": "3.3\tReliability & Availability\t11", "label": ["NO"]}
+{"id": 2955, "data": "3.3.1\tBack-end Internal Computers\t11", "label": ["NO"]}
+{"id": 2956, "data": "3.3.2\tInternet Service Provider\t11", "label": ["NO"]}
+{"id": 2957, "data": "3.5.1\tData Transfer\t12", "label": ["NO"]}
+{"id": 2958, "data": "3.5.2\tData Storage\t12", "label": ["NO"]}
+{"id": 2959, "data": "3.6.1\tConfiguration Management Tool\t13", "label": ["NO"]}
+{"id": 2960, "data": "3.7\tDesign Constraints\t13", "label": ["NO"]}
+{"id": 2961, "data": "3.7.1\tStandard Development Tools\t13", "label": ["NO"]}
+{"id": 2962, "data": "3.7.2\tWeb Based Product\t13", "label": ["NO"]}
+{"id": 2963, "data": "3.8\tOn-line User Documentation and Help System Requirements\t13", "label": ["NO"]}
+{"id": 2964, "data": "3.9\tPurchased Components\t13", "label": ["NO"]}
+{"id": 2965, "data": "3.10.1\tUser Interfaces\t14", "label": ["NO"]}
+{"id": 2966, "data": "3.10.2\tHardware Interfaces\t14", "label": ["NO"]}
+{"id": 2967, "data": "3.10.3\tSoftware Interfaces\t14", "label": ["NO"]}
+{"id": 2968, "data": "3.10.4\tCommunications Interfaces\t15", "label": ["NO"]}
+{"id": 2969, "data": "3.11\tLicensing Requirements\t15", "label": ["NO"]}
+{"id": 2970, "data": "3.12\tLegal, Copyright, and Other Notices\t15", "label": ["NO"]}
+{"id": 2971, "data": "3.13\tApplicable Standards\t15", "label": ["NO"]}
+{"id": 2972, "data": "The introduction of the Software Requirements Specification (SRS) provides an overview of the entire SRS with purpose, scope, definitions, acronyms, abbreviations, references and overview of the SRS.", "label": ["YES"]}
+{"id": 2973, "data": "The aim of this document is to gather and analyze and give an in-depth insight of the complete Marvel Electronics and Home Entertainment software system by defining the problem statement in detail.", "label": ["YES"]}
+{"id": 2974, "data": "Nevertheless, it also concentrates on the capabilities required by stakeholders and their needs while defining high-level product features.", "label": ["YES"]}
+{"id": 2975, "data": "The detailed requirements of the Marvel Electronics and Home Entertainment are provided in this document.", "label": ["YES"]}
+{"id": 2976, "data": "The purpose of the document is to collect and analyze all assorted ideas that have come up to define the system, its requirements with respect to consumers.", "label": ["YES"]}
+{"id": 2977, "data": "Also, we shall predict and sort out how we hope this product will be used in order to gain a better understanding of the project, outline concepts that may be developed later, and document ideas that are being considered, but may be discarded as the product develops.", "label": ["YES"]}
+{"id": 2978, "data": "In short, the purpose of this SRS document is to provide a detailed overview of our software product, its parameters and goals.", "label": ["YES"]}
+{"id": 2979, "data": "This document describes the project's target audience and its user interface, hardware and software requirements.", "label": ["NO"]}
+{"id": 2980, "data": "It defines how our client, team and audience see the product and its functionality.", "label": ["NO"]}
+{"id": 2981, "data": "Nonetheless, it helps any designer and developer to assist in software delivery lifecycle (SDLC) processes.", "label": ["YES"]}
+{"id": 2982, "data": "Primarily, the scope pertains to the E-Store product features for making Marvel Electronics and Home Entertainment project live.", "label": ["YES"]}
+{"id": 2983, "data": " It focuses on the company, the stakeholders and applications, which allow for online sales, distribution and marketing of electronics.", "label": ["YES"]}
+{"id": 2984, "data": "This SRS is also aimed at specifying requirements of software to be developed but it can also be applied to assist in the selection of in-house and commercial software products.", "label": ["YES"]}
+{"id": 2985, "data": "The standard can be used to create software requirements specifications directly or can be used as a model for defining a organization or project specific standard.", "label": ["YES"]}
+{"id": 2986, "data": "It does not identify any specific method, nomenclature or tool for preparing an SRS.", "label": ["YES"]}
+{"id": 2987, "data": "Definitions, Acronyms, and Abbreviations", "label": ["NO"]}
+{"id": 2988, "data": "The remaining sections of this document provide a general description, including characteristics of the users of this project, the product's hardware, and the functional and data requirements of the product.", "label": ["YES"]}
+{"id": 2989, "data": "  General description of the project is discussed in section 2 of this document.", "label": ["NO"]}
+{"id": 2990, "data": "  Section 3 gives the functional requirements, data requirements and constraints and assumptions made while designing the E-Store.", "label": ["NO"]}
+{"id": 2991, "data": "  It also gives the user viewpoint of product.", "label": ["NO"]}
+{"id": 2992, "data": "  Section 3 also gives the specific requirements of the product.", "label": ["NO"]}
+{"id": 2993, "data": "  Section 3 also discusses the external interface requirements and gives detailed description of functional requirements.", "label": ["NO"]}
+{"id": 2994, "data": "Section 4 is for supporting information.", "label": ["NO"]}
+{"id": 2995, "data": "This document contains the problem statement that the current system is facing which is hampering the growth opportunities of the company.", "label": ["YES"]}
+{"id": 2996, "data": "It further contains a list of the stakeholders and users of the proposed solution.", "label": ["YES"]}
+{"id": 2997, "data": "It also illustrates the needs and wants of the stakeholders that were identified in the brainstorming exercise as part of the requirements workshop.", "label": ["NO"]}
+{"id": 2998, "data": "It further lists and briefly describes the major features and a brief description of each of the proposed system.", "label": ["NO"]}
+{"id": 2999, "data": "The following SRS contains the detail product perspective from different stakeholders.", "label": ["YES"]}
+{"id": 3000, "data": "It provides the detail product functions of E-Store with user characteristics permitted constraints, assumptions and dependencies and requirements subsets.", "label": ["YES"]}
+{"id": 3001, "data": "This subsection contains the requirements for the e-store.", "label": ["YES"]}
+{"id": 3002, "data": "These requirements are organized by the features discussed in the vision document.", "label": ["YES"]}
+{"id": 3003, "data": "Features from vision documents are then refined into use case diagrams and to sequence diagram to best capture the functional requirements of the system.", "label": ["YES"]}
+{"id": 3004, "data": "All these functional requirements can be traced using tractability matrix.", "label": ["YES"]}
+{"id": 3005, "data": "Sell Configured to Ordered Products.", "label": ["YES"]}
+{"id": 3006, "data": "The system shall display all the products that can be configured.", "label": ["YES"]}
+{"id": 3007, "data": "The system shall allow user to select the product to configure.", "label": ["YES"]}
+{"id": 3008, "data": "The system shall display all the available components of the product to configure", "label": ["YES"]}
+{"id": 3009, "data": "The system shall enable user to add one or more component to the configuration.", "label": ["YES"]}
+{"id": 3010, "data": "The system shall notify the user about any conflict in the current configuration.", "label": ["YES"]}
+{"id": 3011, "data": "The system shall allow user to update the configuration to resolve conflict in the current configuration.", "label": ["YES"]}
+{"id": 3012, "data": "The system shall allow user to confirm the completion of current configuration", "label": ["YES"]}
+{"id": 3013, "data": "The system shall display detailed information of the selected products.", "label": ["YES"]}
+{"id": 3014, "data": "The system shall provide browsing options to see product details.", "label": ["YES"]}
+{"id": 3015, "data": "The system shall display detailed product categorization to the user.", "label": ["YES"]}
+{"id": 3016, "data": "The system shall enable user to enter the search text on the screen.", "label": ["YES"]}
+{"id": 3017, "data": "The system shall enable user to select multiple options on the screen to search.", "label": ["YES"]}
+{"id": 3018, "data": "The system shall display all the matching products based on the search", "label": ["YES"]}
+{"id": 3019, "data": "The system shall display only 10 matching result on the current screen.", "label": ["YES"]}
+{"id": 3020, "data": "The system shall enable user to navigate between the search results.", "label": ["YES"]}
+{"id": 3021, "data": "The system shall notify the user when no matching product is found on the search.", "label": ["YES"]}
+{"id": 3022, "data": "The system shall allow user to create profile and set his credential.", "label": ["YES"]}
+{"id": 3023, "data": "The system shall authenticate user credentials to view the profile.", "label": ["YES"]}
+{"id": 3024, "data": "The system shall allow user to update the profile information.", "label": ["YES"]}
+{"id": 3025, "data": "The system shall display both the active and completed order history in the customer profile.", "label": ["YES"]}
+{"id": 3026, "data": "The system shall allow user to select the order from the order history.", "label": ["YES"]}
+{"id": 3027, "data": "The system shall display the detailed information about the selected order.", "label": ["YES"]}
+{"id": 3028, "data": "The system shall display the most frequently searched items by the user in the profile.", "label": ["YES"]}
+{"id": 3029, "data": "The system shall allow user to register for newsletters and surveys in the profile.", "label": ["YES"]}
+{"id": 3030, "data": "The system shall provide online help, FAQ’s customer support, and sitemap options for customer support.", "label": ["YES"]}
+{"id": 3031, "data": "The system shall allow user to select the support type he wants.", "label": ["YES"]}
+{"id": 3032, "data": "The system shall allow user to enter the customer and product information for the support.", "label": ["YES"]}
+{"id": 3033, "data": "The system shall display the customer support contact numbers on the screen.", "label": ["YES"]}
+{"id": 3034, "data": "The system shall allow user to enter the contact number for support personnel to call.", "label": ["YES"]}
+{"id": 3035, "data": "The system shall display the online help upon request.", "label": ["YES"]}
+{"id": 3036, "data": "The system shall display the FAQ’s upon request.", "label": ["YES"]}
+{"id": 3037, "data": "The system shall maintain customer email information as a required part of customer profile.", "label": ["YES"]}
+{"id": 3038, "data": "The system shall send an order confirmation to the user through email.", "label": ["YES"]}
+{"id": 3039, "data": "The system shall display detailed invoice for current order once it is confirmed.", "label": ["YES"]}
+{"id": 3040, "data": "The system shall optionally allow user to print the invoice.", "label": ["YES"]}
+{"id": 3041, "data": "The system shall provide shopping cart during online purchase.", "label": ["YES"]}
+{"id": 3042, "data": "The system shall allow user to add/remove products in the shopping cart.", "label": ["YES"]}
+{"id": 3043, "data": "The system shall display different shipping options provided by shipping department.", "label": ["YES"]}
+{"id": 3044, "data": "The system shall enable user to select the shipping method during payment process.", "label": ["YES"]}
+{"id": 3045, "data": "The system shall display the shipping charges.", "label": ["YES"]}
+{"id": 3046, "data": "The system shall display tentative duration for shipping.", "label": ["YES"]}
+{"id": 3047, "data": "The system shall allow user to enter the order information for tracking.", "label": ["YES"]}
+{"id": 3048, "data": "The system shall display the current tracking information about the order.", "label": ["YES"]}
+{"id": 3049, "data": "The system shall calculate tax for the order.", "label": ["YES"]}
+{"id": 3050, "data": "The system shall display tax information for the order.", "label": ["YES"]}
+{"id": 3051, "data": "The system shall display available payment methods for payment.", "label": ["YES"]}
+{"id": 3052, "data": "The system shall allow user to select the payment method for order.", "label": ["YES"]}
+{"id": 3053, "data": "Allow online change or cancellation of order.", "label": ["YES"]}
+{"id": 3054, "data": "The system shall display the orders that are eligible to change.", "label": ["YES"]}
+{"id": 3055, "data": "The system shall allow user to select the order to be changed.", "label": ["YES"]}
+{"id": 3056, "data": "The system shall allow user to cancel the order", "label": ["YES"]}
+{"id": 3057, "data": "The system shall allow user to change shipping, payment method.", "label": ["YES"]}
+{"id": 3058, "data": "The system shall notify the user about any changes made to the order.", "label": ["YES"]}
+{"id": 3059, "data": "Allow Online Product reviews and ratings", "label": ["YES"]}
+{"id": 3060, "data": "The system shall display the reviews and ratings of each product, when it is selected.", "label": ["YES"]}
+{"id": 3061, "data": "The system shall enable the user to enter their reviews and ratings.", "label": ["YES"]}
+{"id": 3062, "data": "The system shall display all the available financing options.", "label": ["YES"]}
+{"id": 3063, "data": "The system shall allow user to select the financing option.", "label": ["YES"]}
+{"id": 3064, "data": "The system shall notify the use about the financing request.", "label": ["YES"]}
+{"id": 3065, "data": "The system shall allow user to view detailed sitemap.", "label": ["YES"]}
+{"id": 3066, "data": "Offer online promotions and rewards.", "label": ["YES"]}
+{"id": 3067, "data": "The system shall display all the available promotions to the user.", "label": ["YES"]}
+{"id": 3068, "data": "The system shall allow user to select available promotion.", "label": ["YES"]}
+{"id": 3069, "data": "The system shall allow user to confirm the purchase.", "label": ["YES"]}
+{"id": 3070, "data": "The system shall enable user to enter the payment information.", "label": ["YES"]}
+{"id": 3071, "data": "The system shall provide a uniform look and feel between all the web pages.", "label": ["YES"]}
+{"id": 3072, "data": "The system shall provide a digital image for each product in the product catalog.", "label": ["YES"]}
+{"id": 3073, "data": "The system shall provide use of icons and toolbars.", "label": ["YES"]}
+{"id": 3074, "data": "The system shall provide handicap access.", "label": ["YES"]}
+{"id": 3075, "data": "The system shall provide multi language support.", "label": ["YES"]}
+{"id": 3076, "data": "The system shall provide storage of all databases on redundant computers with automatic switchover.", "label": ["YES"]}
+{"id": 3077, "data": "The system shall provide for replication of databases to off-site storage locations.", "label": ["YES"]}
+{"id": 3078, "data": "The system shall provide RAID V Disk Stripping on all database storage disks.", "label": ["YES"]}
+{"id": 3079, "data": "The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.", "label": ["YES"]}
+{"id": 3080, "data": "The system shall provide a contractual agreement with an internet service provider who can provide 99.999% availability through their network facilities onto the internet.", "label": ["YES"]}
+{"id": 3081, "data": "The product shall be based on web and has to be run from a web server.", "label": ["YES"]}
+{"id": 3082, "data": "The product shall take initial load time depending on internet connection strength which also depends on the media from which the product is run.", "label": ["YES"]}
+{"id": 3083, "data": "The performance shall depend upon hardware components of the client/customer.", "label": ["YES"]}
+{"id": 3084, "data": "The system shall use secure sockets in all transactions that include any confidential customer information.", "label": ["YES"]}
+{"id": 3085, "data": "The system shall automatically log out all customers after a period of inactivity.", "label": ["YES"]}
+{"id": 3086, "data": "The system shall confirm all transactions with the customer’s web browser.", "label": ["YES"]}
+{"id": 3087, "data": "The system shall not leave any cookies on the customer’s computer containing the user’s password.", "label": ["YES"]}
+{"id": 3088, "data": "The system shall not leave any cookies on the customer’s computer containing any of the user’s confidential information.", "label": ["YES"]}
+{"id": 3089, "data": "The customer’s web browser shall never display a customer’s password.", "label": ["YES"]}
+{"id": 3090, "data": " It shall always be echoed with special characters representing typed characters.", "label": ["YES"]}
+{"id": 3091, "data": "The customer’s web browser shall never display a customer’s credit card number after retrieving from the database.", "label": ["YES"]}
+{"id": 3092, "data": " It shall always be shown with just the last 4 digits of the credit card number.", "label": ["YES"]}
+{"id": 3093, "data": "The system’s back-end servers shall never display a customer’s password.", "label": ["YES"]}
+{"id": 3094, "data": " The customer’s password may be reset but never shown.", "label": ["YES"]}
+{"id": 3095, "data": "The system’s back-end servers shall only be accessible to authenticated administrators.", "label": ["YES"]}
+{"id": 3096, "data": "The system’s back-end databases shall be encrypted.", "label": ["YES"]}
+{"id": 3097, "data": "The source code developed for this system shall be maintained in configuration management tool.", "label": ["YES"]}
+{"id": 3098, "data": "The system shall be built using a standard web page development tool that conforms to either IBM’s CUA standards or Microsoft’s GUI standards.", "label": ["YES"]}
+{"id": 3099, "data": "The computers must be equipped with web browsers such as Internet explorer.", "label": ["YES"]}
+{"id": 3100, "data": "The product must be stored in such a way that allows the client easy access to it.", "label": ["YES"]}
+{"id": 3101, "data": "         Response time for loading the product should take no longer than five minutes.", "label": ["YES"]}
+{"id": 3102, "data": "         A general knowledge of basic computer skills is required to use the product", "label": ["YES"]}
+{"id": 3103, "data": "On-line User Documentation and Help System Requirements", "label": ["NO"]}
+{"id": 3104, "data": "As the product is E-store, On-line help system becomes a critical component of the system which shall provide –", "label": ["YES"]}
+{"id": 3105, "data": "It shall provide specific guidelines to a user for using the E-Store system and within the system.", "label": ["YES"]}
+{"id": 3106, "data": "To implement online user help, link and search fields shall be provided.", "label": ["YES"]}
+{"id": 3107, "data": "There are many types of interfaces as such supported by the E-Store software system namely; User Interface, Software Interface and Hardware Interface.", "label": ["YES"]}
+{"id": 3108, "data": "The protocol used shall be HTTP.", "label": ["YES"]}
+{"id": 3109, "data": "The Port number used will be 80.", "label": ["YES"]}
+{"id": 3110, "data": "There shall be logical address of the system in IPv4 format.", "label": ["YES"]}
+{"id": 3111, "data": "The user interface for the software shall be compatible to any browser such as Internet Explorer, Mozilla or Netscape Navigator by which user can access to the system.", "label": ["YES"]}
+{"id": 3112, "data": "The user interface shall be implemented using any tool or software package like Java Applet, MS Front Page, EJB etc.", "label": ["YES"]}
+{"id": 3113, "data": "Since the application must run over the internet, all the hardware shall require to connect internet will be hardware interface for the system.", "label": ["YES"]}
+{"id": 3114, "data": "As for e.g. Modem, WAN – LAN, Ethernet Cross-Cable.", "label": ["YES"]}
+{"id": 3115, "data": "The e-store system shall communicate with the Configurator to identify all the available components to configure the product.", "label": ["YES"]}
+{"id": 3116, "data": "The e-store shall communicate with the content manager to get the product specifications, offerings and promotions.", "label": ["YES"]}
+{"id": 3117, "data": "The e-store system shall communicate with billPay system to identify available payment methods , validate the payments and process payment.", "label": ["YES"]}
+{"id": 3118, "data": "The e-store system shall communicate to credit management system for handling financing options.", "label": ["YES"]}
+{"id": 3119, "data": "The e-store system shall communicate with CRM system to provide support.", "label": ["YES"]}
+{"id": 3120, "data": "The e-store system shall communicate with Sales system for order management.", "label": ["YES"]}
+{"id": 3121, "data": "The e-store system shall communicate with shipping system for tracking orders and updating of shipping methods.", "label": ["YES"]}
+{"id": 3122, "data": "The e-store system shall communicate with external Tax system to calculate tax.", "label": ["YES"]}
+{"id": 3123, "data": "The e-store system shall communicate with export regulation system to validate export regulations.", "label": ["YES"]}
+{"id": 3124, "data": "The system shall be verisign like software which shall allow the users to complete secured transaction.", "label": ["YES"]}
+{"id": 3125, "data": "This usually shall be the third party software system which is widely used for internet transaction.", "label": ["YES"]}
+{"id": 3126, "data": "The e-store system shall use the HTTP protocol for communication over the internet and for the intranet communication will be through TCP/IP protocol suite.", "label": ["YES"]}
+{"id": 3127, "data": "Legal, Copyright, and Other Notices", "label": ["NO"]}
+{"id": 3128, "data": "E-store should display the disclaimers, copyright, word mark, trademark and product warranties of the Marvel electronics and home entertainment.", "label": ["YES"]}
+{"id": 3129, "data": "          It shall be as per the industry standard.", "label": ["YES"]}
+{"id": 3130, "data": "Please refer the following document:", "label": ["NO"]}
+{"id": 3131, "data": "Vision document for E-store.", "label": ["NO"]}
+{"id": 3132, "data": "It means a product which is available / Selected from a catalogue can be customized.", "label": ["NO"]}
+{"id": 3133, "data": "Redundant Array of Inexpensive Disk/Drives", "label": ["NO"]}
+{"id": 3134, "data": "An Economy-Driven Cluster Scheduler", "label": ["NO"]}
+{"id": 3135, "data": "1.3\tDefinitions, Acronyms and Abbreviations\t4", "label": ["NO"]}
+{"id": 3136, "data": "2.1\tProduct Perspective\t7", "label": ["NO"]}
+{"id": 3137, "data": "2.2\tProduct Functions\t7", "label": ["NO"]}
+{"id": 3138, "data": "2.3\tUser Characteristics\t8", "label": ["NO"]}
+{"id": 3139, "data": "2.5\tAssumptions and dependencies\t9", "label": ["NO"]}
+{"id": 3140, "data": "2.6\tApportionment of requirements\t9", "label": ["NO"]}
+{"id": 3141, "data": "3.3\tPerformance Requirements\t15", "label": ["NO"]}
+{"id": 3142, "data": "3.5\tDesign Constraints\t16", "label": ["NO"]}
+{"id": 3143, "data": "3.6\tOnline User Documentation and Help System Requirements\t16", "label": ["NO"]}
+{"id": 3144, "data": "3.7\tPurchased Components\t16", "label": ["NO"]}
+{"id": 3145, "data": "3.9\tLicensing Requirements\t18", "label": ["NO"]}
+{"id": 3146, "data": "3.10\tLegal, Copyright and Other Notices\t18", "label": ["NO"]}
+{"id": 3147, "data": "This SRS describes the requirements and specifications of Libra, an Economy-Driven Cluster Scheduler.", "label": ["YES"]}
+{"id": 3148, "data": "It explains the functional features of the scheduler, along with interface details, design constraints and related considerations such as performance characteristics.", "label": ["YES"]}
+{"id": 3149, "data": "The SRS is intended for users and owners of high-performance clusters, cluster management software, job schedulers and grid resources.", "label": ["YES"]}
+{"id": 3150, "data": "The Libra Scheduler is intended to work as an add-on to the queuing, scheduling and resource managing module of the open source Sun Grid Engine cluster management system, previously known as Codine.", "label": ["YES"]}
+{"id": 3151, "data": "The scheduler will offer market-based economy driven service for managing batch jobs on clusters by scheduling CPU time according to user utility rather than system performance considerations.", "label": ["YES"]}
+{"id": 3152, "data": "Hence, the main objective of Libra is to provide Quality of Service (QoS) computational economy in cluster computing.", "label": ["YES"]}
+{"id": 3153, "data": "As part of the project, the Libra Scheduler will only manage sequential and embarrassingly parallel batch jobs to be run on a homogenous Linux cluster, although its functionality can be adapted to schedule resources other than CPU time, even on a heterogeneous cluster.", "label": ["YES"]}
+{"id": 3154, "data": "To provide QoS to users, there will be no mechanism for users to interact with each other, and bargain on the use of resources according to their considerations, as is provided in a grid-computing environment by projects like Nimrod/G", "label": ["YES"]}
+{"id": 3155, "data": "Clustering involves connecting two or more computers together to take advantage of combined computational power and resources.", "label": ["YES"]}
+{"id": 3156, "data": "Hence, a cluster works as an integrated collection of resources that can provide a single system image spanning all its nodes.", "label": ["YES"]}
+{"id": 3157, "data": "Clustering is a popular strategy for processing applications because it transparently spreads the processing of different jobs throughout the cluster, and are used for high-performance applications such as AI expert systems, nuclear simulations, and scientific calculations.", "label": ["YES"]}
+{"id": 3158, "data": "Quality of Service – meeting what users actually want, thus maximizing their utility.", "label": ["YES"]}
+{"id": 3159, "data": "Computational economy refers to the inclusion of user-specified QoS parameters with jobs so that resource management is based on a user-centric approach rather than on a system-centric approach.", "label": ["YES"]}
+{"id": 3160, "data": "This essentially means that user constraints such as deadline and budget are more important in determining the priority of a job by the scheduler, than system policies like ordering jobs according to the basis of submission time.", "label": ["YES"]}
+{"id": 3161, "data": "Currently, there is no holistic scheduling mechanism in cluster computing to enable differing QoS levels for different clients.", "label": ["YES"]}
+{"id": 3162, "data": "Linux is an open source operating system, with extensive documentation and user support.", "label": ["NO"]}
+{"id": 3163, "data": "A grid is an infrastructure that couples resources such as computers (PCs, workstations, clusters and so on), software (for special purpose applications) and devices (printers, scanners) across the Internet and presents them as a unified integrated single resource that can be widely used.", "label": ["YES"]}
+{"id": 3164, "data": "Grid computing refers to using a grid for processing jobs and processes.", "label": ["YES"]}
+{"id": 3165, "data": "Bid-based Proportional Resource-Sharing Model [4]", "label": ["NO"]}
+{"id": 3166, "data": "This is an economic model that specifies one way of allocating (cluster) resources between competing users based on what their criteria is, such as deadline and budget.", "label": ["YES"]}
+{"id": 3167, "data": "In this model, the amount of resource allocated to users is proportional to the values of their bids.", "label": ["YES"]}
+{"id": 3168, "data": "Essentially, in a bid-based system, the users are allocated tokens or credits, which they can use for having access to resources.", "label": ["YES"]}
+{"id": 3169, "data": "The value of each credit depends on the resource demand and cost at the time of usage.", "label": ["YES"]}
+{"id": 3170, "data": "We can modify this approach for our cluster, by evaluating this credit/priority according to the deadline and price constraints of users, and considering the system load and resources use as well.", "label": ["YES"]}
+{"id": 3171, "data": "This priority is then used by a scheduling policy to allocate resource proportionally to the competing jobs.", "label": ["YES"]}
+{"id": 3172, "data": "This is a scheduling algorithm to enforce resource allocations proportional to a user’s priority or share.", "label": ["YES"]}
+{"id": 3173, "data": "A pool of tickets represents resource rights to a shared resource.", "label": ["YES"]}
+{"id": 3174, "data": "A stride is inversely proportional to the number of tickets allocated to a job, hence representing the interval (in terms of CPU time) between two successive scheduling of a job.", "label": ["YES"]}
+{"id": 3175, "data": "Jobs with more tickets have shorter strides and hence are scheduled more frequently and obtain a greater fraction of the resource.", "label": ["YES"]}
+{"id": 3176, "data": "The algorithm is deterministic and quite accurately schedules jobs in exact proportions based on their ticket allocations.", "label": ["YES"]}
+{"id": 3177, "data": "It is the process of moving a job from one computer system to another without restarting the job from the beginning.", "label": ["YES"]}
+{"id": 3178, "data": "These are jobs that must be run on a single node, and cannot be split into separate jobs.", "label": ["YES"]}
+{"id": 3179, "data": "These are parallel jobs that are comprised of independent parts that can be split up and performed on separate nodes as if they are sequential jobs, with minimal inter-job communication necessary.", "label": ["YES"]}
+{"id": 3180, "data": "This is opposed to real parallel jobs that comprise dependent threads that need to interact with each other during the course of execution.", "label": ["YES"]}
+{"id": 3181, "data": "It is a method of quantifying the system resources used by a job.", "label": ["YES"]}
+{"id": 3182, "data": "Central processing unit of a computer", "label": ["NO"]}
+{"id": 3183, "data": "Sun Grid Engine cluster management system", "label": ["NO"]}
+{"id": 3184, "data": "Software for which the code is freely available for use and research", "label": ["NO"]}
+{"id": 3185, "data": "A cluster in which the nodes or workstations have uniform characteristics such as the same memory size and hard disk space.", "label": ["YES"]}
+{"id": 3186, "data": "They run the same operating system.", "label": ["YES"]}
+{"id": 3187, "data": "[1] R. Buyya, D. Abramson, and J. Giddy, Nimrod/G: An Architecture for a Resource Management and Scheduling System in a Global Computational Grid, HPC ASIA’2000, China, IEEE CS Press, USA, 2000.", "label": ["NO"]}
+{"id": 3188, "data": "[2] R. Buyya, D. Abramson, J. Giddy, An Economy Driven Resource Management Architecture for Global Computational Power Grids, The 2000 International Conference on Parallel and Distributed Processing Techniques and Applications (PDPTA 2000), Las Vegas, USA, June 26-29, 2000.", "label": ["NO"]}
+{"id": 3189, "data": "[3] R. Buyya, D. Abramson, and J. Giddy, An Economy Grid Architecture for Service-Oriented Grid Computing, 10th IEEE International Heterogeneous Computing Workshop (HCW 2001), with IPDPS 2001, SF, California, USA, April 2001.", "label": ["NO"]}
+{"id": 3190, "data": "[4] Rajkumar Buyya, Heinz Stockinger‡, Jonathan Giddy, and David Abramson, Economic Models for Management of Resources in Peer-to-Peer and Grid Computing, Monash University.", "label": ["NO"]}
+{"id": 3191, "data": "[5] B.N. Chun and D.E. Culler, Market-based proportional resource sharing for clusters.", "label": ["NO"]}
+{"id": 3192, "data": "Submitted for publication, September 1999.", "label": ["NO"]}
+{"id": 3193, "data": "The rest of the SRS examines the specifications of the Libra Scheduler in detail.", "label": ["NO"]}
+{"id": 3194, "data": "Section 2 of the SRS presents the general factors that affect the Libra scheduler and its requirements, such as user characteristics and project constraints.", "label": ["NO"]}
+{"id": 3195, "data": "Section 3 outlines the detailed, specific functional, performance, system and other related requirements of the Libra scheduler.", "label": ["NO"]}
+{"id": 3196, "data": "Supporting information about appendices is provided in Section 3.", "label": ["NO"]}
+{"id": 3197, "data": "As mentioned earlier, Libra forms part of a larger system comprising the Sun Grid Engine cluster management system that runs on a Linux-based cluster.", "label": ["YES"]}
+{"id": 3198, "data": "SGE is responsible for receiving the jobs submitted by the user and delegating them to Libra for scheduling and placing on appropriate workstations or execution hosts.", "label": ["YES"]}
+{"id": 3199, "data": "Libra communicates its decision regarding workstation allocation to the resource manager, which then dispatches the job to the chosen workstation.", "label": ["YES"]}
+{"id": 3200, "data": "Once assignment to a workstation has occurred, Libra is responsible for implementing the scheduling policy on the jobs executing at the workstations.", "label": ["YES"]}
+{"id": 3201, "data": "No modifications to the Linux kernel are required.", "label": ["YES"]}
+{"id": 3202, "data": "The details of various interfaces have been provided in Section 3.9.", "label": ["NO"]}
+{"id": 3203, "data": "The main purpose of the Libra scheduler is to maximize user utility.", "label": ["YES"]}
+{"id": 3204, "data": "Thus the job details submitted by the user will include job prioritization criteria: the allocated budget and the deadline required by the user, enabling the scheduler to maximize CPU utilization while remaining within the constraints imposed by the need to optimize QoS.", "label": ["YES"]}
+{"id": 3205, "data": "The scheduler will allocate jobs based on the job parameters, which are job specifications submitted by the user with the job, including:", "label": ["YES"]}
+{"id": 3206, "data": "Location of the executable and input data sets", "label": ["YES"]}
+{"id": 3207, "data": "Where standard output is to be placed", "label": ["NO"]}
+{"id": 3208, "data": "Maximum length of run (execution time)", "label": ["NO"]}
+{"id": 3209, "data": "Whether the job is sequential or embarrassingly parallel", "label": ["NO"]}
+{"id": 3210, "data": "However, the Libra scheduler will be QoS driven: it will aim to optimize resource utilization within user-imposed constraints: thus, user satisfaction is the primary concern, as opposed to maximizing CPU utilization.", "label": ["YES"]}
+{"id": 3211, "data": "Thus, the two job parameters most relevant to the scheduling decisions will be:", "label": ["NO"]}
+{"id": 3212, "data": "Budget allocated by the user to the process", "label": ["NO"]}
+{"id": 3213, "data": "With support from the Sun Grid Engine, the Libra scheduler should embody the following features and functions:", "label": ["YES"]}
+{"id": 3214, "data": "Should be able to enforce resource allocations according to user-centric priorities", "label": ["YES"]}
+{"id": 3215, "data": "Should be dynamic, and not static, which is a necessary implication of the user-centric approach, so that users who need their jobs completed in emergency and are willing to pay a high price for it, are able to get their job done through dynamic reallocation of resources even if the job is submitted later than other jobs or the system is heavily loaded.", "label": ["YES"]}
+{"id": 3216, "data": "Hence, the scheduler should be able to change resource limits, priorities, privileges and execution order of the submitted jobs.", "label": ["YES"]}
+{"id": 3217, "data": "Should be scalable, which means that its performance should not degrade with the addition of nodes and jobs to the cluster", "label": ["YES"]}
+{"id": 3218, "data": "Should be configurable, and allow for various scheduling policies that can be modified to incorporate QoS parameters", "label": ["YES"]}
+{"id": 3219, "data": "Should be separable from the cluster management system", "label": ["YES"]}
+{"id": 3220, "data": "Should provide at least a basic level of job accounting, to aid in scheduling policies", "label": ["YES"]}
+{"id": 3221, "data": "Should ideally provide a GUI for all components, such as for users to submit jobs and for administrators to oversee scheduling", "label": ["YES"]}
+{"id": 3222, "data": "A market-based economic model for computational economy needs to be developed for the Libra scheduler, which would be responsible for the pricing and allocation of resources according to user constraints.", "label": ["YES"]}
+{"id": 3223, "data": "The model is the bid-based proportional resource-sharing model, which will allocate computational time to jobs according to their share determined by the priority of their jobs according to deadline and budget considerations.", "label": ["YES"]}
+{"id": 3224, "data": "To ensure that the actual resource allocation reflects the overall job share, the proportional stride-scheduling algorithm will be used.", "label": ["YES"]}
+{"id": 3225, "data": "There are essentially two classes of users for the Libra Scheduler used with the Sun Grid Engine cluster management system: the user who wishes to submit jobs for the cluster and the administrator who oversees scheduling and cluster usage.", "label": ["YES"]}
+{"id": 3226, "data": "The user needs to know the exact nature of the submitted job, such as the execution time as well as resources required, and must possess the technical know-how to use the interface for submitting jobs.", "label": ["YES"]}
+{"id": 3227, "data": "The administrator must be an advanced cluster operator, fully qualified in using Linux, SGE, and the Libra Scheduler.", "label": ["YES"]}
+{"id": 3228, "data": "The current constraints on the project are related to the provision of hardware resources to implement and test a high-performance cluster.", "label": ["YES"]}
+{"id": 3229, "data": "At present, a network of four Pentium- III workstations, with a 128 Mb RAM, serves as the cluster, with SGE running on top of the Linux operating system.", "label": ["YES"]}
+{"id": 3230, "data": "For better performance analysis, a larger number of dedicated workstations would be beneficial.", "label": ["YES"]}
+{"id": 3231, "data": "For testing purposes, a simulating tool needs to be used which may have to be specially designed if a generic one is not readily and freely available.", "label": ["YES"]}
+{"id": 3232, "data": "A number of factors that may affect the requirements specified in the SRS include:", "label": ["YES"]}
+{"id": 3233, "data": "The workability of the Sun Grid Engine cluster management system modules such as those dealing with process migration with the scheduling policies provided by the Libra Scheduler is assumed.", "label": ["YES"]}
+{"id": 3234, "data": "A basic module of job accounting and payment considerations will be provided, as they are not the focus of the scheduler.", "label": ["YES"]}
+{"id": 3235, "data": "Users are assumed to have a fair estimate of job execution times, so that the decision to accept or reject a job is facilitated.", "label": ["YES"]}
+{"id": 3236, "data": "Detailed requirements with respect to the economic front-end, that is, the exact costing and pricing policy that will be used to charge users for using the cluster will be specified in a later version.", "label": ["YES"]}
+{"id": 3237, "data": "The pricing mechanism will not affect the scheduling policies, as they assume a given cost and budget, and schedule resources accordingly.", "label": ["YES"]}
+{"id": 3238, "data": "Furthermore, at present, only a command line Linux interface or the interface of the Sun Grid Engine cluster management system will be used as the user and administrator interface.", "label": ["YES"]}
+{"id": 3239, "data": "A GUI might be added once the basic functionality is implemented.", "label": ["YES"]}
+{"id": 3240, "data": "It also remains to be decided whether a software tool for simulation and testing purposes will be designed or a generic one that is freely available will be used.", "label": ["YES"]}
+{"id": 3241, "data": "This section is organized by the processes and features encapsulated in the Libra scheduler.", "label": ["NO"]}
+{"id": 3242, "data": "First, three features of the overall cluster management system and its interaction with the user or administrator are described: Submit Job, View Job Status, Delete/Change Job.", "label": ["YES"]}
+{"id": 3243, "data": "These are linked to the inputs and working processes of the scheduler.", "label": ["YES"]}
+{"id": 3244, "data": "They are followed by a detailed specification of the functionality of the Libra scheduler, which are diagrammatically explained by the Data Flow Diagrams provided in Appendix B. Appendix C provides the Data dictionary which should be used to interpret and understand the Data Flow Diagrams.", "label": ["NO"]}
+{"id": 3245, "data": "This functional feature deals with the end-user (can also be used by the administrator) and is facilitated by the interface of the Sun Grid Engine cluster management system.", "label": ["YES"]}
+{"id": 3246, "data": "Hence, it is linked to the scheduler, but does not interface directly with the scheduler.", "label": ["YES"]}
+{"id": 3247, "data": "However, the SGE interface will need to be adapted to include additional submission parameters that a user needs to be submit, which are not already supported by SGE.", "label": ["YES"]}
+{"id": 3248, "data": "This may alternately be done through a command-line interface.", "label": ["YES"]}
+{"id": 3249, "data": "User Information – relevant user data such as name and authentication id that needs to be used to submit a job to the cluster.", "label": ["YES"]}
+{"id": 3250, "data": "Job Information – about the job that the user wants to submit, as well as already pending jobs, to determine whether the cluster can accept more jobs and can cater to the particular user job.", "label": ["YES"]}
+{"id": 3251, "data": "The job details are provided in the functional feature Initialize Job.", "label": ["YES"]}
+{"id": 3252, "data": "Cluster Information – Cluster Type and Scheduling mechanism details, Current Load Status, Submission Directions and Criteria.", "label": ["YES"]}
+{"id": 3253, "data": "The cluster decides whether it is even open for job submissions, and whether the user that is trying to submit job is a valid user or not.", "label": ["YES"]}
+{"id": 3254, "data": "This decision is different from the Accept/Reject Job feature described later on, which deals with the situation when the cluster is open for job submissions, but will decide on whether to accept or reject a job based on job parameters such as budget provided and deadline specified.", "label": ["YES"]}
+{"id": 3255, "data": "Boolean – Whether the cluster is accepting submission or not.", "label": ["YES"]}
+{"id": 3256, "data": "Boolean – User verified or not.", "label": ["YES"]}
+{"id": 3257, "data": "This feature will allow the user or administrator to view details about the job that have been submitted, and the progress of the execution of the job.", "label": ["YES"]}
+{"id": 3258, "data": "User Id and Password – to ensure that only the appropriate user is able to see the job status", "label": ["YES"]}
+{"id": 3259, "data": "Show the user the available options about the submitted job, and information about the progress of job execution.", "label": ["YES"]}
+{"id": 3260, "data": "Process selected options if choices are provided to the user to view different aspects of job information.", "label": ["YES"]}
+{"id": 3261, "data": "User view of available options about jobs submitted by the user.", "label": ["YES"]}
+{"id": 3262, "data": "This feature may be available to both the user and the administrator, to cancel a job or under specific circumstances, change a job parameter.", "label": ["YES"]}
+{"id": 3263, "data": "Parameters such as deadline and cost are crucial to the job scheduling and would not normally be changeable.", "label": ["YES"]}
+{"id": 3264, "data": "However, if the user wishes to specify a different output directory or a delayed deadline, this may be permitted.", "label": ["YES"]}
+{"id": 3265, "data": "User Id and Password – to ensure that only the appropriate user is able to delete/change the job.", "label": ["YES"]}
+{"id": 3266, "data": "Remove job from the queue and update cluster status.", "label": ["YES"]}
+{"id": 3267, "data": "Revise scheduling decisions about resource allocation to pending jobs and submission of new jobs.", "label": ["YES"]}
+{"id": 3268, "data": "Updated cluster information and scheduling decision – CPU load, node status, queue length, quanta allocated to pending jobs, revised expected finishing deadline of pending jobs.", "label": ["YES"]}
+{"id": 3269, "data": "These outputs are facilitated by the functionality of the Sun Grid Engine cluster management system, and are not independently produced by the Libra scheduler.", "label": ["YES"]}
+{"id": 3270, "data": "This is a main functional requirement that prepares the scheduler for eventually scheduling and executing a job.", "label": ["YES"]}
+{"id": 3271, "data": "The Libra scheduler performs it once a job has been accepted by SGE, with information from the scheduler.", "label": ["YES"]}
+{"id": 3272, "data": "The information submitted by the user about the job, as well as the job id assigned by SGE.", "label": ["YES"]}
+{"id": 3273, "data": "Two processes are performed as part of this function: the details of the job are retrieved and then these details are set in variables that represent the state of the cluster and its queues.", "label": ["YES"]}
+{"id": 3274, "data": "The parsed parameters are passed on to the scheduling module where the job may be accepted or rejected.", "label": ["YES"]}
+{"id": 3275, "data": "The output comprises the set variables that represent job information submitted with a job.", "label": ["YES"]}
+{"id": 3276, "data": "Hence, the exact job details are output: Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": ["YES"]}
+{"id": 3277, "data": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline.", "label": ["YES"]}
+{"id": 3278, "data": "Hence, the most important inputs are budget, deadline, and execution time, to determine whether the job can be accepted or not.", "label": ["YES"]}
+{"id": 3279, "data": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": ["YES"]}
+{"id": 3280, "data": "Cluster information – CPU load, node status, remaining time of pending jobs", "label": ["YES"]}
+{"id": 3281, "data": "Based on the job parameters, the scheduler figures out a priority of the job that reflects the share of CPU time that it deserves and needs according to the specified criteria.", "label": ["YES"]}
+{"id": 3282, "data": "The scheduler determines whether the job can be finished by the requisite deadline, given the execution time of the job and the execution status of other pending jobs on various nodes.", "label": ["YES"]}
+{"id": 3283, "data": "The output includes a boolean value specifying whether the job has been accepted or rejected.", "label": ["YES"]}
+{"id": 3284, "data": "A suggested deadline or cost is given to the user, as a precondition for the job to be accepted.", "label": ["YES"]}
+{"id": 3285, "data": "This is the feature of Libra that decides how the job will be scheduled based on its budget and deadline.", "label": ["YES"]}
+{"id": 3286, "data": "It uses the Stride Scheduling Algorithm to enforce resource allocations (CPU cycles) proportional to a user’s budget and deadline.", "label": ["YES"]}
+{"id": 3287, "data": "It is performed by Libra once it has decided that a job can be accommodated.", "label": ["YES"]}
+{"id": 3288, "data": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": ["YES"]}
+{"id": 3289, "data": "Allocate tickets to a job based on its budget and deadline and the budget and deadlines of all other jobs on the execution host under debate.", "label": ["YES"]}
+{"id": 3290, "data": "Calculate the stride and the pass of the job, where the stride is simply the global stride constant divided by the tickets and the pass is initially just the stride.", "label": ["YES"]}
+{"id": 3291, "data": "Scheduling information – the job’s tickets, stride and pass.", "label": ["YES"]}
+{"id": 3292, "data": "This feature decides on which node and on which queue the job will be placed for execution.", "label": ["YES"]}
+{"id": 3293, "data": "It is done on the basis of the job’s budget, execution time and deadline.", "label": ["YES"]}
+{"id": 3294, "data": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": ["YES"]}
+{"id": 3295, "data": "Cluster Information - CPU Load, Node Status, Remaining Time of Pending Jobs, Available Memory", "label": ["YES"]}
+{"id": 3296, "data": "Libra first looks at the load on each of the hosts and sorts them in ascending order, choosing the host that is least loaded.", "label": ["YES"]}
+{"id": 3297, "data": "This ensures that load balancing is taken care of.", "label": ["YES"]}
+{"id": 3298, "data": "It then selects the appropriate queue based on whether the job is sequential or embarrassingly parallel, budget, etc…", "label": ["YES"]}
+{"id": 3299, "data": "The chosen execution host and queue.", "label": ["YES"]}
+{"id": 3300, "data": "This feature takes the job and inserts it into the queue on the execution host that the scheduler had previously decided it is to be placed in.", "label": ["YES"]}
+{"id": 3301, "data": "This is a separate feature since the job may be able to wait for a while before it is given CPU time, allowing other jobs to complete or be scheduled earlier if their deadlines are more urgent.", "label": ["YES"]}
+{"id": 3302, "data": "Thus, the dispatcher decides when to actually send the job for execution.", "label": ["YES"]}
+{"id": 3303, "data": "The chosen execution host and queue on which to place the job for execution.", "label": ["YES"]}
+{"id": 3304, "data": "The scheduler sends the job to the appropriate queue and it joins the competition for resources.", "label": ["YES"]}
+{"id": 3305, "data": "The scheduled job in its appropriate host and queue.", "label": ["YES"]}
+{"id": 3306, "data": "Every time a job is scheduled for execution on a host, this feature of Libra updates the cluster status.", "label": ["YES"]}
+{"id": 3307, "data": "This action is also performed when a job ends and is removed from the cluster.", "label": ["YES"]}
+{"id": 3308, "data": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": ["YES"]}
+{"id": 3309, "data": "Chosen execution host and queue.", "label": ["YES"]}
+{"id": 3310, "data": "Libra first reserves the amount of resources that will be required by the job on the node.", "label": ["YES"]}
+{"id": 3311, "data": "It then updates the execution host queue status and sends that information about the additional load on the queue and node under consideration to the central information store on the master host.", "label": ["YES"]}
+{"id": 3312, "data": "There is no output associated with this feature as it simply performs an update and does not send any results back.", "label": ["YES"]}
+{"id": 3313, "data": "It is a trigger that is activated every time a job is scheduled or is deleted from an execution host.", "label": ["YES"]}
+{"id": 3314, "data": "As long as there are jobs in the queues, this feature is being run.", "label": ["YES"]}
+{"id": 3315, "data": "It essentially decides how to time-slice between all the jobs currently being executed.", "label": ["YES"]}
+{"id": 3316, "data": "These scheduling decisions are made based on the stride-scheduling algorithm.", "label": ["YES"]}
+{"id": 3317, "data": "Scheduled Job – job details and the queue and node on which that job is scheduled to run.", "label": ["YES"]}
+{"id": 3318, "data": "Scheduling Information – the job’s tickets, stride and pass.", "label": ["YES"]}
+{"id": 3319, "data": "It looks at all the jobs on the cluster and selects the one with the minimum pass value, and allots it a quantum.", "label": ["YES"]}
+{"id": 3320, "data": "The pass of that job is then advanced by its stride.", "label": ["YES"]}
+{"id": 3321, "data": "In case of a tie, the arbitrary FIFO job ordering is used.", "label": ["YES"]}
+{"id": 3322, "data": "This loop is repeated until there are no jobs left to run on a queue.", "label": ["YES"]}
+{"id": 3323, "data": "Updated Cluster Information - CPU Load, Node Status, Remaining Time of Pending Jobs, Available Memory", "label": ["YES"]}
+{"id": 3324, "data": "The scheduler will not support job migration for the purpose of decreasing resource fragmentation.", "label": ["YES"]}
+{"id": 3325, "data": "There will be a maximum of 1 bug/KLOC.", "label": ["YES"]}
+{"id": 3326, "data": "In case of system outage, the cluster will be down while the Linux operating system boots up.", "label": ["YES"]}
+{"id": 3327, "data": "This will take less than five minutes.", "label": ["YES"]}
+{"id": 3328, "data": "The Libra scheduler will ensure the privacy of user job status and ensure full control over job execution, so that alteration of scheduling criteria or actual resource allocation is not possible without administrator authority.", "label": ["YES"]}
+{"id": 3329, "data": "The maximum response time for the submission of a job will be 1 minute.", "label": ["YES"]}
+{"id": 3330, "data": "The maximum number of jobs schedulable is limited only by the capacity of the nodes to fulfill the jobs’ deadlines; there is no upper limit inherent in the Libra scheduler as such.", "label": ["YES"]}
+{"id": 3331, "data": "Assuming submitted statistics for jobs are accurate, the Libra scheduler will ensure that all jobs are completed with a 10% error allowance.", "label": ["YES"]}
+{"id": 3332, "data": "Under all circumstances, the maximum cost payable as submitted by the user will be the maximum cost charged to the user.", "label": ["YES"]}
+{"id": 3333, "data": "All code will be written as specified by the Hungarian Naming Convention.", "label": ["YES"]}
+{"id": 3334, "data": "All code will be written as required by the GNU General Purpose License.", "label": ["YES"]}
+{"id": 3335, "data": "Parent Component: Sun Grid Engine", "label": ["NO"]}
+{"id": 3336, "data": "The Libra scheduler will be a sub-component of SGE.", "label": ["YES"]}
+{"id": 3337, "data": "All coding will be done in standard C.", "label": ["YES"]}
+{"id": 3338, "data": "Exhaustive searches of the entire set of combinations of jobs will not be done.", "label": ["YES"]}
+{"id": 3339, "data": "Heuristics will be developed for this scheduling problem.", "label": ["YES"]}
+{"id": 3340, "data": "Online User Documentation and Help System Requirements", "label": ["YES"]}
+{"id": 3341, "data": "All documentation will be made in accordance with requirements pertaining to open source software under the GNU General Purpose License.", "label": ["YES"]}
+{"id": 3342, "data": "Additionally, on-line user documentation will be in the form of man pages accessible through Linux.", "label": ["YES"]}
+{"id": 3343, "data": "The entire Libra project is open source, and hence no component of it will be purchased.", "label": ["YES"]}
+{"id": 3344, "data": "There will be two user types – the cluster user and the cluster administrator – each of which will have its own corresponding interface.", "label": ["YES"]}
+{"id": 3345, "data": "The minimal requirements are that the cluster user would be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.", "label": ["YES"]}
+{"id": 3346, "data": "There will be a different command for each of the following actions:", "label": ["NO"]}
+{"id": 3347, "data": "submit jobs with the associated deadline, cost, and execution time", "label": ["YES"]}
+{"id": 3348, "data": "query the cluster to establish the current cost per unit time for submitting new jobs", "label": ["YES"]}
+{"id": 3349, "data": "monitor the status of submitted jobs", "label": ["YES"]}
+{"id": 3350, "data": "The minimal requirements are that the cluster administrator will be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.", "label": ["YES"]}
+{"id": 3351, "data": "In addition to the commands available to the user, additional commands will allow the administrator to:", "label": ["NO"]}
+{"id": 3352, "data": "check the status of each node of the cluster", "label": ["YES"]}
+{"id": 3353, "data": "check the usage pattern history of the cluster", "label": ["YES"]}
+{"id": 3354, "data": "check the status of all submitted jobs", "label": ["YES"]}
+{"id": 3355, "data": "check the load on each node of the cluster", "label": ["YES"]}
+{"id": 3356, "data": "alter the cost structure of the cluster", "label": ["YES"]}
+{"id": 3357, "data": "alter the scheduling policy of the cluster", "label": ["YES"]}
+{"id": 3358, "data": "cancel, suspend, and resume any job", "label": ["YES"]}
+{"id": 3359, "data": "All hardware interfaces of Libra will be those of the Sun Grid Engine on top of which it will be running.", "label": ["YES"]}
+{"id": 3360, "data": "Hence, it will incorporate SGE’s interfaces for:", "label": ["NO"]}
+{"id": 3361, "data": "Libra will directly interface with the modified Sun Grid Engine cluster management system, version 5.3.", "label": ["YES"]}
+{"id": 3362, "data": "SGE in turn will be interfacing with the operating system and any other software components it requires.", "label": ["YES"]}
+{"id": 3363, "data": "For the execution of embarrassingly parallel jobs, the PVM (Parallel Virtual Machine) and MPI (Message Passing Interface) libraries will be used by the cluster.", "label": ["YES"]}
+{"id": 3364, "data": "Libra will utilize the communications architecture of Sun Grid Engine itself, and will not have any unique communications interfaces above of SGE.", "label": ["YES"]}
+{"id": 3365, "data": "Libra will be released under a GPL license and will be open-source.", "label": ["YES"]}
+{"id": 3366, "data": "Legal, Copyright and Other Notices", "label": ["NO"]}
+{"id": 3367, "data": "Sun Grid Engine (SGE) is a copyright trademark of Sun Microsystems, Inc.", "label": ["NO"]}
+{"id": 3368, "data": "Libra Scheduler is a copyright trademark of Mr. Rajkumar Buyya, Monash University.", "label": ["NO"]}
+{"id": 3369, "data": "MPI is a copyright of the University of Chicago and Mississippi State University.", "label": ["NO"]}
+{"id": 3370, "data": "PVM is a copyright of the University of Tennessee, Oak Ridge National Laboratory, and Emory University.", "label": ["NO"]}
+{"id": 3371, "data": "Appendix A – Background Research (dated 10th Nov, 2001) on:", "label": ["NO"]}
+{"id": 3372, "data": "Appendix B – Data Flow Diagrams", "label": ["NO"]}
+{"id": 3373, "data": "Project Owner and Client: Rajkumar Buyya Faculty Advisor: Dr. Arif Zaman Project Group: Jahanzeb Sherwani, Nosheen Ali, Nausheen Lotia, Zahra Hayat", "label": ["NO"]}
+{"id": 3374, "data": "Vickii Bacchetta, Udesh DeSilva, Celestino Francisco,", "label": ["NO"]}
+{"id": 3375, "data": "Danielle L. Green, Jose Saafigueroa, Slavica Pepovska", "label": ["NO"]}
+{"id": 3376, "data": "This highly detailed Software Requirements Specification document explains and describes all of the agreed upon requirements that will be implemented for the VIRTUAL-EDU system, designed for NJIT.", "label": ["NO"]}
+{"id": 3377, "data": "The document will provide the underlining structure of VIRTUAL-EDU, in a manner that both the Developers and the Customer will have a clear understanding of its functions, interface, design and constraints.", "label": ["YES"]}
+{"id": 3378, "data": "Once the documents are approved by NJIT, it will also serve as a contract between the developers and NJIT.", "label": ["YES"]}
+{"id": 3379, "data": "This document is intended to be read and utilized by the development team of VIRTUAL-EDU, including testers, programmers and project managers, the administrators of NJIT and any stockholder interested in seeing what NJIT is bringing forth to the university.", "label": ["YES"]}
+{"id": 3380, "data": "The outline of this document will follow the table of contents found on the second page of this document.", "label": ["NO"]}
+{"id": 3381, "data": "The outline is split into 6 sections.", "label": ["NO"]}
+{"id": 3382, "data": "Section 1 - Description of the purpose of the document and what it will contain.", "label": ["NO"]}
+{"id": 3383, "data": "Section 2 - Overall description of the project", "label": ["NO"]}
+{"id": 3384, "data": "Section 3 - Highly detailed description of the system functional requirements", "label": ["NO"]}
+{"id": 3385, "data": "Section 4 - External interface requirements that affect the system", "label": ["NO"]}
+{"id": 3386, "data": "Section 5 - Insight on other non-functional requirements", "label": ["NO"]}
+{"id": 3387, "data": "Section 6 - Glossary and DFD model diagrams of entire system", "label": ["NO"]}
+{"id": 3388, "data": "Each section is written with the intent that different users will read different sections.", "label": ["NO"]}
+{"id": 3389, "data": " The first two sections use universal language; while the next four sections use technical language.", "label": ["NO"]}
+{"id": 3390, "data": "The requirements will be explained by their level of importance.", "label": ["NO"]}
+{"id": 3391, "data": " Meaningful requirements will be describe first and less meaningful requirements will be describe last.", "label": ["NO"]}
+{"id": 3392, "data": " Every requirement will be mentioned and explained with the same high level of detail.", "label": ["NO"]}
+{"id": 3393, "data": "The majority of the models showcased in this document will consist of data-flow diagram (DFD’s)", "label": ["NO"]}
+{"id": 3394, "data": "The project being developed for NJIT goes by the name of VIRTUAL-EDU.", "label": ["NO"]}
+{"id": 3395, "data": "The requirements specified on this S.R.S. document coincide with the university’s  need for a new distance learning system which will enable professors to communicate more effectively with students via a Secure Application Platform that provides at the very least the following features (email, group chat, bulletin board, and audio/visual tools).", "label": ["YES"]}
+{"id": 3396, "data": " The proposed system will incorporate robust features such as audio and video capabilities, in which students within the same group or university can communicate via a portal that provides both visual & audio functionality, file hosting and file management, user profiles with pictures, better group collaboration tools, and online testing capabilities.", "label": ["YES"]}
+{"id": 3397, "data": "The document will satisfy our project scope by delivering well documented specifications, along with highly detailed models.", "label": ["NO"]}
+{"id": 3398, "data": "Furthermore, it will contain comprehensive explanations of the functionality and constraints of each of the following requirements.", "label": ["YES"]}
+{"id": 3399, "data": "Audio and video streaming capability/ podcasting (live and on-demand)", "label": ["NO"]}
+{"id": 3400, "data": "File hosting and file management tools", "label": ["NO"]}
+{"id": 3401, "data": "User profiles with pictures including integration with other campus resources", "label": ["NO"]}
+{"id": 3402, "data": "Chat and group collaboration tools (Instant messaging)", "label": ["NO"]}
+{"id": 3403, "data": "Online testing tools with instant grading", "label": ["NO"]}
+{"id": 3404, "data": "IEEE Std. 830-1984 (1993, 1998)", "label": ["NO"]}
+{"id": 3405, "data": "IEEE Guide to Requirements Specification (an annotated IEEE Std 830-1984)", "label": ["NO"]}
+{"id": 3406, "data": "IEEE Std.830-1984 - Example \"SRS: The AUTOTELLER Automatic Teller System\"", "label": ["NO"]}
+{"id": 3407, "data": "Virtual-EDU consists of an online website that allows users to create a classroom like environment with the features that it contains.", "label": ["YES"]}
+{"id": 3408, "data": "Once registered to the system, a user can create a profile sharing his or her information with the rest of the enrolled users.", "label": ["YES"]}
+{"id": 3409, "data": "Users will be able to find commonalities with each other through the user profile.", "label": ["YES"]}
+{"id": 3410, "data": "Virtual-EDU also gives users the ability to store data and/or important materials in a secure network location for future retrieval or present usage.", "label": ["YES"]}
+{"id": 3411, "data": "This particular data as well as other files may be shared or worked on using Virtual-EDU extensive tools for file sharing and document collaboration.", "label": ["YES"]}
+{"id": 3412, "data": "Users can work together on a single document in real time or send their work to other users via secure file sharing methods and protocols.", "label": ["YES"]}
+{"id": 3413, "data": "If further communication is need between users, Virtual-EDU has features such as instant messaging, where users can hold single or group conversations via a secure real-time communication based on typed text.", "label": ["YES"]}
+{"id": 3414, "data": "However, if more efficient means of communication are need, users have the ability to hold single or group video/audio conferences, whereby the users will be able to see other users streamed live in real-time.", "label": ["YES"]}
+{"id": 3415, "data": "The top level diagram below shows all of the user features that will be implemented for the system.", "label": ["YES"]}
+{"id": 3416, "data": "Streaming audio and video (both live and on-demand) will allow users to interact with faculty and fellow classmates over a streaming video and audio, one-to-one or one-to-many connection.", "label": ["YES"]}
+{"id": 3417, "data": "Also, learning materials can be delivered through audio and video formats.", "label": ["YES"]}
+{"id": 3418, "data": "The instant messaging feature will allow users to interact with faculty and fellow classmates via text-based format, one-to-one or one-to-many connection.", "label": ["YES"]}
+{"id": 3419, "data": "File sharing and document collaboration tools allow users to efficiently share and develop documents and reports within a group.", "label": ["YES"]}
+{"id": 3420, "data": "User profiles containing contact information, pictures, and other related information on a student personal page.", "label": ["YES"]}
+{"id": 3421, "data": " This page will only be accessible to students and faculty enrolled in the same class.", "label": ["YES"]}
+{"id": 3422, "data": "Only the owner of the profile may make changes to it.", "label": ["YES"]}
+{"id": 3423, "data": "Users will have the ability to manage a private temporary hosting space.", "label": ["YES"]}
+{"id": 3424, "data": "Tools such as file uploading, directory creator, move, delete and rename will be accessible.", "label": ["YES"]}
+{"id": 3425, "data": "System Administrators: User class with domain system privileges which allows them to maintain the entire system, manage enrollment and create virtual classes.", "label": ["YES"]}
+{"id": 3426, "data": "Users in this class have complete control and knowledge of the entire system.", "label": ["YES"]}
+{"id": 3427, "data": "User class with domain class privileges, which allows them to maintain and support the class they are enrolled in, along with the other enrolled users.", "label": ["YES"]}
+{"id": 3428, "data": "Users in this class have zero knowledge of the back end of the system; however, they know the front end of the application.", "label": ["YES"]}
+{"id": 3429, "data": "User class with limited class privileges, which allows them to operate the front end of the system with limited read only permissions.", "label": ["YES"]}
+{"id": 3430, "data": "Users in this class will only be able to make modifications to their profile section.", "label": ["YES"]}
+{"id": 3431, "data": "Platform: at least Microsoft Server 2003", "label": ["NO"]}
+{"id": 3432, "data": "CPU: at least Dual Core 3.6 MHz", "label": ["NO"]}
+{"id": 3433, "data": "Space:  Minimum of 2 gigabytes", "label": ["NO"]}
+{"id": 3434, "data": "Ram: Minimum of 4 gigabytes", "label": ["NO"]}
+{"id": 3435, "data": "Other services: IIS 6.0 or later, .Net", "label": ["NO"]}
+{"id": 3436, "data": "Framework 2.0 or later, video and audio streaming.", "label": ["NO"]}
+{"id": 3437, "data": "CPU: at least 500 MHz", "label": ["NO"]}
+{"id": 3438, "data": "Ram: at least 512 MB", "label": ["NO"]}
+{"id": 3439, "data": "Recommended Peripherals:  microphones, web camera, video and audio cards.", "label": ["NO"]}
+{"id": 3440, "data": "Browser:  Microsoft’s Internet Explorer or Apple’s Safari, or Mozilla’s Firefox.", "label": ["NO"]}
+{"id": 3441, "data": "Services: SSH client, FTP client, VPN client", "label": ["NO"]}
+{"id": 3442, "data": "The university will be in session during the development of the application.", "label": ["YES"]}
+{"id": 3443, "data": "Since current system downtime needs to be maintained at low levels; system rollouts and system validation need to be scheduled during low usage periods.", "label": ["YES"]}
+{"id": 3444, "data": "The current NJIT user database system required to run this application may be outdated or in need of maintenance.", "label": ["YES"]}
+{"id": 3445, "data": "Therefore the current system may only house 250 concurrent users.", "label": ["YES"]}
+{"id": 3446, "data": "Not allow languages will be represented for online system documentation.", "label": ["YES"]}
+{"id": 3447, "data": "Only browsers from Microsoft, Apple and Mozilla will have functional access to the application.", "label": ["YES"]}
+{"id": 3448, "data": "Both the enrolled students and faculty will be provided with printable manuals through email and will have access to on-line tutorials.", "label": ["YES"]}
+{"id": 3449, "data": " The system will also provide an on-line help feature, providing the users with easy to read “how-to” instructions.", "label": ["YES"]}
+{"id": 3450, "data": "NJIT’s administration will be given an in-depth manual of the entire system, so that they may support the system after development is complete.", "label": ["YES"]}
+{"id": 3451, "data": "Current systems and databases will still be available for use and archive.", "label": ["YES"]}
+{"id": 3452, "data": "Database will be modified to meet VIRTUAL-EDU‘s requirements.", "label": ["YES"]}
+{"id": 3453, "data": "New entities and relationships for the user will need to be added.", "label": ["YES"]}
+{"id": 3454, "data": "Staff is willing to accept, learn, and utilize the new system.", "label": ["YES"]}
+{"id": 3455, "data": "Users should have an adequate computer, network connection, and webcam with microphone.", "label": ["YES"]}
+{"id": 3456, "data": "Users will have access to common programs, such as media players for streaming.", "label": ["YES"]}
+{"id": 3457, "data": "Instant Messaging is the feature allowing students and professors to interact with each other and talk in real time.", "label": ["YES"]}
+{"id": 3458, "data": "Instead of leaving each other messages on boards and going to chat rooms where screens are not refreshed in less than 60 sec, students will be able to see who is online and talk to them immediately.", "label": ["YES"]}
+{"id": 3459, "data": "If a professor is marked online, students will be able to ask questions and receive answers from the professor almost instantaneously.", "label": ["YES"]}
+{"id": 3460, "data": "This feature is of High Priority and students will be able to benefit from this feature because it will give them the feeling of a real classroom, something that most students are complaining lacks when taking an online class.", "label": ["YES"]}
+{"id": 3461, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3462, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3463, "data": "User action: Click on the messaging software tool – Instant-Edu", "label": ["YES"]}
+{"id": 3464, "data": "Response: New pop up window shows up with list of contacts.", "label": ["YES"]}
+{"id": 3465, "data": "Online users are marked green and offline users are marked red.", "label": ["YES"]}
+{"id": 3466, "data": "User action: Double click on the name of an online user", "label": ["YES"]}
+{"id": 3467, "data": "Response: New window pops up, where real time conversion can be initiated between parties", "label": ["YES"]}
+{"id": 3468, "data": "User action: Click on the smiley button in the window", "label": ["YES"]}
+{"id": 3469, "data": "Response: A list is shown containing all available emotions to be used in conversation", "label": ["YES"]}
+{"id": 3470, "data": "User action: Click on the plus button in the window", "label": ["YES"]}
+{"id": 3471, "data": "Response: A list shows up that contains all other available online users that can be invited to join the conversation", "label": ["YES"]}
+{"id": 3472, "data": "User action: Double click on a name in that window", "label": ["YES"]}
+{"id": 3473, "data": "Response: The new user joined the conversation and it’s now a conference between multiple people", "label": ["YES"]}
+{"id": 3474, "data": "User action: Click on the file button in the window", "label": ["YES"]}
+{"id": 3475, "data": "Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to the other party", "label": ["YES"]}
+{"id": 3476, "data": "User action: Select the file", "label": ["YES"]}
+{"id": 3477, "data": "Response: The selected file is marked blue", "label": ["YES"]}
+{"id": 3478, "data": "User action: Click on the send file button", "label": ["YES"]}
+{"id": 3479, "data": "Response: The file begins transmitting to the other party", "label": ["YES"]}
+{"id": 3480, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3481, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3482, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3483, "data": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": ["YES"]}
+{"id": 3484, "data": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": ["YES"]}
+{"id": 3485, "data": "Streaming Audio and Video allows students and professor to make audio and/or video calls between each other.", "label": ["YES"]}
+{"id": 3486, "data": "The professor will have the ability to hold a video lecture for the whole class or have one on one meeting with the students.", "label": ["YES"]}
+{"id": 3487, "data": "This is another feature that will give the students the feeling of a real classroom.", "label": ["YES"]}
+{"id": 3488, "data": "Students will have the ability of attending an online class and be able to see the professor and colleagues and interact with each other.", "label": ["YES"]}
+{"id": 3489, "data": "Professor will be able to ask questions to students and expect an answer immediately.", "label": ["YES"]}
+{"id": 3490, "data": "Professor will be able to post the video lecture online and make it available for a later download.", "label": ["YES"]}
+{"id": 3491, "data": "This feature is of Medium Priority.", "label": ["NO"]}
+{"id": 3492, "data": "Despite the lack of audio and video students will still be able to interact in real time with the first feature – instant messaging.", "label": ["YES"]}
+{"id": 3493, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3494, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3495, "data": "User action: Click on the messaging software tool – Instant-Edu", "label": ["YES"]}
+{"id": 3496, "data": "Response: New pop up window shows up with list of contacts.", "label": ["YES"]}
+{"id": 3497, "data": "Online users are marked green and offline users are marked red.", "label": ["YES"]}
+{"id": 3498, "data": "User action: Double click on the name of an online user", "label": ["YES"]}
+{"id": 3499, "data": "Response: New window pops up, where real time conversion can be initiated between parties", "label": ["YES"]}
+{"id": 3500, "data": "User action: Double click on the Audio Button", "label": ["YES"]}
+{"id": 3501, "data": "Response: The software calls the other user’s computer and awaits for response", "label": ["YES"]}
+{"id": 3502, "data": "User action: The user on the other side clicks on accept button", "label": ["YES"]}
+{"id": 3503, "data": "Response: The connection is established and the conversation between two parties begins.", "label": ["YES"]}
+{"id": 3504, "data": "User action: The user on the other side clicks on deny button", "label": ["YES"]}
+{"id": 3505, "data": "Response: The connection is not established and the user that initiated the conversation will receive a message the other user is busy.", "label": ["YES"]}
+{"id": 3506, "data": "User action: Double click on Video Button", "label": ["YES"]}
+{"id": 3507, "data": "Response: The software calls the other user’s computer and awaits for response.", "label": ["YES"]}
+{"id": 3508, "data": "User action: The user on the other side clicks on accept button", "label": ["YES"]}
+{"id": 3509, "data": "Response: The connection is established and the video transmission along with audio transmission begins between two parties", "label": ["YES"]}
+{"id": 3510, "data": "User action: Click on the hang up button", "label": ["YES"]}
+{"id": 3511, "data": "Response: The conversation between two users ends.", "label": ["YES"]}
+{"id": 3512, "data": "User action: Click on the host a conference button", "label": ["YES"]}
+{"id": 3513, "data": "Response: New window pops up.", "label": ["YES"]}
+{"id": 3514, "data": "User will be able to select online users and invite them to join the conference.", "label": ["YES"]}
+{"id": 3515, "data": "User action: Click on the accept button", "label": ["YES"]}
+{"id": 3516, "data": "Response: User has become part of the video conference and be able to follow an online audio/video lecture from the professor.", "label": ["YES"]}
+{"id": 3517, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3518, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3519, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3520, "data": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": ["YES"]}
+{"id": 3521, "data": "REQ-5 - Users must be connected on a high speed internet (DSL, Cable)", "label": ["YES"]}
+{"id": 3522, "data": "REQ-6 - Users must have their computers equipped with microphone and web camera.", "label": ["YES"]}
+{"id": 3523, "data": "Customizable User Profile will be feature that will allow users to customize their profile to their taste.", "label": ["YES"]}
+{"id": 3524, "data": "The user will be able to select/change their password, update information about themselves (phone number, address).", "label": ["YES"]}
+{"id": 3525, "data": "Users will be able to change the background colors and menu layout on their profile page.", "label": ["YES"]}
+{"id": 3526, "data": "Users will have couple of different options to use if they wanted to, for example leave a video and introduce themselves.", "label": ["YES"]}
+{"id": 3527, "data": "Or put a link to a favorite book; give some more info about them.", "label": ["NO"]}
+{"id": 3528, "data": "Users will also be able to choose their font as well as font color for their profile page.", "label": ["YES"]}
+{"id": 3529, "data": "This feature will be of Medium priority.", "label": ["YES"]}
+{"id": 3530, "data": "It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.", "label": ["YES"]}
+{"id": 3531, "data": "In other words, everyone’s profile page can look different for each student.", "label": ["YES"]}
+{"id": 3532, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3533, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3534, "data": "User action: Click on the setting up preferences button", "label": ["YES"]}
+{"id": 3535, "data": "Response: New menu shows up with all the available features.", "label": ["YES"]}
+{"id": 3536, "data": "User action: Click on the Contact button", "label": ["YES"]}
+{"id": 3537, "data": "Response: New text area will show up where users can put their contact information, phone numbers, address etc.", "label": ["YES"]}
+{"id": 3538, "data": "User action: Click on the button background color", "label": ["YES"]}
+{"id": 3539, "data": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": ["YES"]}
+{"id": 3540, "data": "User action: Click on the video button", "label": ["YES"]}
+{"id": 3541, "data": "Response: New pop up window shows up that will give them opportunity to start video recording and introduce themselves.", "label": ["YES"]}
+{"id": 3542, "data": "The video will become part of their profile page.", "label": ["YES"]}
+{"id": 3543, "data": "It will be easier for students to associate with each other when they actually meet the person on video.", "label": ["YES"]}
+{"id": 3544, "data": "It will bring better team performance.", "label": ["YES"]}
+{"id": 3545, "data": "User action: Click on the info button", "label": ["YES"]}
+{"id": 3546, "data": "Response: Text area shows up where users can put some more info about them, their strengths, and weaknesses, put favorite links etc.", "label": ["YES"]}
+{"id": 3547, "data": "User action: Click on the font button", "label": ["YES"]}
+{"id": 3548, "data": "Response: New menu shows up that will give the choices for different fonts that can be used to display the info on their profile page", "label": ["YES"]}
+{"id": 3549, "data": "User action: Click on font size button", "label": ["YES"]}
+{"id": 3550, "data": "Response: A new menu shows up that will have all different font sizes that the user can choose.", "label": ["YES"]}
+{"id": 3551, "data": "User action: Click on layout menu", "label": ["YES"]}
+{"id": 3552, "data": "Response: A menu with different layout choices will show up.", "label": ["YES"]}
+{"id": 3553, "data": "User action: Click on password", "label": ["YES"]}
+{"id": 3554, "data": "Response: A new window pops up that will give the user the ability to reset/change the password.", "label": ["YES"]}
+{"id": 3555, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3556, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3557, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3558, "data": "Users must have web cam and microphone if they want to be able to create an introducing video of themselves on their profile page", "label": ["YES"]}
+{"id": 3559, "data": "Virtual-Space consists of folder space set aside for each student to upload files to.", "label": ["YES"]}
+{"id": 3560, "data": " An uploading feature would be the only component available in the first release, which would aid in handing in assignments.", "label": ["YES"]}
+{"id": 3561, "data": " This feature is of medium priority as email can still be used as a means for this type of document sharing.", "label": ["YES"]}
+{"id": 3562, "data": " The cost of implementing this feature would include insuring each class section a space on an FTP server.", "label": ["YES"]}
+{"id": 3563, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3564, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3565, "data": "User action: Click on the File Hosting software tool – Virtual-Space", "label": ["YES"]}
+{"id": 3566, "data": "Response: Window displays file tree diagram of user’s uploaded files.", "label": ["YES"]}
+{"id": 3567, "data": "User action: A user clicks the Browse button", "label": ["YES"]}
+{"id": 3568, "data": "Response:  Produce a window for the user to browse their machine to select a file.", "label": ["YES"]}
+{"id": 3569, "data": " Once file is selected, browse window would close and the path to the selected file would show in the text box.", "label": ["YES"]}
+{"id": 3570, "data": "User action: A user clicks the Upload button", "label": ["YES"]}
+{"id": 3571, "data": "Response:  Should upload the selected file and produce a window letting the user know if the upload was successful.", "label": ["YES"]}
+{"id": 3572, "data": " If no file is selected, a window should let the user know they need to use the Browse button to select a file.", "label": ["YES"]}
+{"id": 3573, "data": " If the upload will cause the account to go over disk space quota, the file should be still be allowed and an email sent to the administrator and professor letting them know of the overage.", "label": ["YES"]}
+{"id": 3574, "data": " The file tree diagram should update with the new file name added to the list.", "label": ["YES"]}
+{"id": 3575, "data": "Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": ["YES"]}
+{"id": 3576, "data": "For the first release, each class needs a quota space of at least 1GB per student in that class.", "label": ["YES"]}
+{"id": 3577, "data": " If the upload will cause the account to go over disk space quota, the file should be still be allowed to upload and an email sent to the administrator and professor.", "label": ["YES"]}
+{"id": 3578, "data": "Files causing the quota to be exceeded should not be allowed to upload.", "label": ["YES"]}
+{"id": 3579, "data": "The students overall login should allow them access to the appropriate folder, and their account should only have Write privileges.", "label": ["YES"]}
+{"id": 3580, "data": "The professor’s username should allow them access to the appropriate folder and have Read, Write, and Delete privileges.", "label": ["YES"]}
+{"id": 3581, "data": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": ["YES"]}
+{"id": 3582, "data": "Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OS", "label": ["YES"]}
+{"id": 3583, "data": "Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": ["YES"]}
+{"id": 3584, "data": "Virtual-Space Req 4:  Users must enable pop-up windows.", "label": ["YES"]}
+{"id": 3585, "data": "In the second release of Virtual-ED’s Virtual-Space features would be added to include full file management for any uploaded files.", "label": ["YES"]}
+{"id": 3586, "data": " In this release, FTP space would be designated by student rather than by class section.", "label": ["YES"]}
+{"id": 3587, "data": " Disk space quotas would need to be implemented to preserve resources.", "label": ["YES"]}
+{"id": 3588, "data": " Each student would be able to upload files to share with team members or to turn in assignments.", "label": ["YES"]}
+{"id": 3589, "data": " Arranging by folders and deleting files would also be newly added capabilities.", "label": ["YES"]}
+{"id": 3590, "data": "This would incur a higher cost to accommodate more disk space, and would also require an administrator to spend more time managing the FTP accounts.", "label": ["YES"]}
+{"id": 3591, "data": " The first release version of this feature was of medium priority, so adding more capabilities to it would be of low priority as email is still a highly usable alternative.", "label": ["YES"]}
+{"id": 3592, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3593, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3594, "data": "User action: Click on the File Hosting software tool – Virtual-Space", "label": ["YES"]}
+{"id": 3595, "data": "Response: Window displays file tree diagram of user’s files and the shared files of the classes’ other users.", "label": ["YES"]}
+{"id": 3596, "data": " Displays buttons to upload new files and share or download existing files.", "label": ["YES"]}
+{"id": 3597, "data": "User action: A user clicks the Browse button", "label": ["YES"]}
+{"id": 3598, "data": "Response:  Produce a window for the user to browse their machine to select a file.", "label": ["YES"]}
+{"id": 3599, "data": " Once file is selected, browse window would close and the path to the selected file would show in the text box.", "label": ["YES"]}
+{"id": 3600, "data": "User action: A user clicks the Upload button", "label": ["YES"]}
+{"id": 3601, "data": "Response:  The program should provide a window for the user to select a folder in their file tree for the file to be stored.", "label": ["YES"]}
+{"id": 3602, "data": " Once selected, the program should upload the selected file and produce a window letting the user know if the upload was successful and the file name should be added in the appropriate folder of the file tree diagram.", "label": ["YES"]}
+{"id": 3603, "data": " If no file is selected, a window should let the user know they need to use the Browse button to select a file.", "label": ["YES"]}
+{"id": 3604, "data": "If the addition of the new file would put the user about their disk space quota, a window should let the user know they cannot upload it without first deleting other files.", "label": ["YES"]}
+{"id": 3605, "data": "User action: On file tree, a user selects a file name and clicks Delete button or presses Delete button on their keyboard.", "label": ["YES"]}
+{"id": 3606, "data": "Response:  Window should ask user to verify the file deletion, if yes, then the file should be deleted from the server and the name removed from file tree diagram.", "label": ["YES"]}
+{"id": 3607, "data": "User action: On file tree, a user selects a file name and drags it to another folder", "label": ["YES"]}
+{"id": 3608, "data": "Response:  The file should be moved to the new destination folder and removed from the previous folder.", "label": ["YES"]}
+{"id": 3609, "data": "The file tree diagram should be updated to reflect the new structure.", "label": ["YES"]}
+{"id": 3610, "data": "User action: On file tree, a user selects a parent folder and then clicks New Folder", "label": ["YES"]}
+{"id": 3611, "data": "Response:  A window should ask the user to enter a name for the new folder.", "label": ["YES"]}
+{"id": 3612, "data": " Once entered and the user clicks OK, the new file should be created on the server and the file tree diagram should be updated to include the new folder.", "label": ["YES"]}
+{"id": 3613, "data": "User action: On file tree, a user selects a file name and clicks Download button", "label": ["YES"]}
+{"id": 3614, "data": "Response:  A window opens asking the user to select a folder on the computer in which to download the file.", "label": ["YES"]}
+{"id": 3615, "data": " Once selected, a copy of the file is placed in that folder on the user’s computer.", "label": ["YES"]}
+{"id": 3616, "data": "User action: On file tree, a user selects a file name and clicks Open button", "label": ["YES"]}
+{"id": 3617, "data": "Response:  The typical operating system prompt asks the user to Save or Open.", "label": ["YES"]}
+{"id": 3618, "data": "If Save is selected, a window opens asking the user to select a folder on the computer in which to download the file.", "label": ["YES"]}
+{"id": 3619, "data": " If Open is selected, the document will open using the appropriate program or it will prompt the user to select a program to open the file with.", "label": ["YES"]}
+{"id": 3620, "data": "Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": ["YES"]}
+{"id": 3621, "data": "For the first release, each student needs a quota space of 2GB.", "label": ["YES"]}
+{"id": 3622, "data": " Files causing the quota to be exceeded should not be allowed to upload.", "label": ["YES"]}
+{"id": 3623, "data": "The students overall login should allow them access to the appropriate folder, and their account should only have Read, Write, and Delete privileges", "label": ["YES"]}
+{"id": 3624, "data": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": ["YES"]}
+{"id": 3625, "data": "Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": ["YES"]}
+{"id": 3626, "data": "Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": ["YES"]}
+{"id": 3627, "data": "Virtual-Space Req 4:  Users must enable pop-up windows.", "label": ["YES"]}
+{"id": 3628, "data": "Test Admin – Virtual-Exam", "label": ["NO"]}
+{"id": 3629, "data": "Students who learn online still need to take quizzes and exams.", "label": ["YES"]}
+{"id": 3630, "data": " Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.", "label": ["YES"]}
+{"id": 3631, "data": " Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.", "label": ["YES"]}
+{"id": 3632, "data": " Using Virtual-Exam, students can download an Excel spreadsheet or editable PDF file and fill in their answers.", "label": ["YES"]}
+{"id": 3633, "data": " Mac users will use the Microsoft Office version for their operating system.", "label": ["YES"]}
+{"id": 3634, "data": " Then using the file management feature, they can upload the completed test within the allotted time period.", "label": ["YES"]}
+{"id": 3635, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3636, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3637, "data": "User action: Click on the Testing software tool – Virtual-Exam", "label": ["YES"]}
+{"id": 3638, "data": "Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.", "label": ["YES"]}
+{"id": 3639, "data": " For tests that have already been taken, the name and class are listed along with a score/grade.", "label": ["YES"]}
+{"id": 3640, "data": "User action: Click on an untaken test", "label": ["YES"]}
+{"id": 3641, "data": "Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.", "label": ["YES"]}
+{"id": 3642, "data": " If student selects Yes, a window will display prompting the user to download the test file.", "label": ["YES"]}
+{"id": 3643, "data": " Once download is complete, a timer will start for the amount of time allotted by the professor.", "label": ["YES"]}
+{"id": 3644, "data": " If the student selects No, they will be taken back to the home screen for Virtual-Exam.", "label": ["YES"]}
+{"id": 3645, "data": "User action: Click on an Upload Test", "label": ["YES"]}
+{"id": 3646, "data": "Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.", "label": ["YES"]}
+{"id": 3647, "data": " Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.", "label": ["YES"]}
+{"id": 3648, "data": "Virtual-Exam Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": ["YES"]}
+{"id": 3649, "data": "For the first release, each class needs a private folder with Write permissions only for student logins.", "label": ["YES"]}
+{"id": 3650, "data": "The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.", "label": ["YES"]}
+{"id": 3651, "data": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": ["YES"]}
+{"id": 3652, "data": "Students need Excel installed and/or a PDF reader.", "label": ["YES"]}
+{"id": 3653, "data": " Professors need Excel and a PDF creator.", "label": ["YES"]}
+{"id": 3654, "data": "Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": ["YES"]}
+{"id": 3655, "data": "Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": ["YES"]}
+{"id": 3656, "data": "Virtual-Exam Req 4:  Users must enable pop-up windows.", "label": ["YES"]}
+{"id": 3657, "data": "Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.", "label": ["YES"]}
+{"id": 3658, "data": "Test Admin - Virtual-Exam V2", "label": ["NO"]}
+{"id": 3659, "data": "Students who learn online still need to take quizzes and exams.", "label": ["YES"]}
+{"id": 3660, "data": " Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.", "label": ["YES"]}
+{"id": 3661, "data": " Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.", "label": ["YES"]}
+{"id": 3662, "data": " Using this version of Virtual-Exam, students can download a file from any of the programs within Microsoft Office.", "label": ["YES"]}
+{"id": 3663, "data": " Mac users will use the Microsoft Office version for their operating system.", "label": ["YES"]}
+{"id": 3664, "data": " Then using the file management feature, they can upload the completed test within the allotted time period.", "label": ["YES"]}
+{"id": 3665, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3666, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3667, "data": "User action: Click on the Testing software tool – Virtual-Exam", "label": ["YES"]}
+{"id": 3668, "data": "Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.", "label": ["YES"]}
+{"id": 3669, "data": " For tests that have already been taken, the name and class are listed along with a score/grade.", "label": ["YES"]}
+{"id": 3670, "data": "User action: Click on an untaken test", "label": ["YES"]}
+{"id": 3671, "data": "Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.", "label": ["YES"]}
+{"id": 3672, "data": " If student selects Yes, a window will display prompting the user to download the test file.", "label": ["YES"]}
+{"id": 3673, "data": " Once download is complete, a timer will start for the amount of time allotted by the professor.", "label": ["YES"]}
+{"id": 3674, "data": " If the student selects No, they will be taken back to the home screen for Virtual-Exam.", "label": ["YES"]}
+{"id": 3675, "data": "User action: Click on an Upload Test", "label": ["YES"]}
+{"id": 3676, "data": "Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.", "label": ["YES"]}
+{"id": 3677, "data": " Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.", "label": ["YES"]}
+{"id": 3678, "data": "Virtual-Exam Req 1: FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": ["YES"]}
+{"id": 3679, "data": "For the first release, each class needs a private folder with Write permissions only for student logins.", "label": ["YES"]}
+{"id": 3680, "data": "The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.", "label": ["YES"]}
+{"id": 3681, "data": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": ["YES"]}
+{"id": 3682, "data": "Students need Excel installed and/or a PDF reader.", "label": ["YES"]}
+{"id": 3683, "data": " Professors need Excel and a PDF creator.", "label": ["YES"]}
+{"id": 3684, "data": "Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": ["YES"]}
+{"id": 3685, "data": "Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": ["YES"]}
+{"id": 3686, "data": "Virtual-Exam Req 4:  Users must enable pop-up windows.", "label": ["YES"]}
+{"id": 3687, "data": "Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.", "label": ["YES"]}
+{"id": 3688, "data": "This feature that will allow users to customize the online learning classroom to their taste.", "label": ["YES"]}
+{"id": 3689, "data": "The user will be able to select background colors and toolbars that are viewed.", "label": ["YES"]}
+{"id": 3690, "data": "Users will also be able to choose their font as well as font color.", "label": ["YES"]}
+{"id": 3691, "data": "This feature will be of Medium priority.", "label": ["YES"]}
+{"id": 3692, "data": "Giving the users the opportunity to change font’s size will give them a great benefit.", "label": ["YES"]}
+{"id": 3693, "data": "Some like bigger font that is easier to read, some like to use the smaller font giving them the opportunity to show more features on the screen without having to scroll up and down.", "label": ["YES"]}
+{"id": 3694, "data": "It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.", "label": ["YES"]}
+{"id": 3695, "data": "In other words, everyone’s classroom can look different for each student but still have the same features and functionalities.", "label": ["YES"]}
+{"id": 3696, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3697, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3698, "data": "User action: Click on the Preferences button", "label": ["YES"]}
+{"id": 3699, "data": "Response: New menu shows up with all the available features.", "label": ["YES"]}
+{"id": 3700, "data": "User action: Click on the Background Color menu within Preferences menu", "label": ["YES"]}
+{"id": 3701, "data": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": ["YES"]}
+{"id": 3702, "data": "User action: Click on the Font menu within Preferences menu", "label": ["YES"]}
+{"id": 3703, "data": "Response: New menu shows up that will give the choice for the font", "label": ["YES"]}
+{"id": 3704, "data": "User action: Click on Font Size menu within Preferences menu", "label": ["YES"]}
+{"id": 3705, "data": "Response: A new menu shows up that have all different font sizes that the user can choose.", "label": ["YES"]}
+{"id": 3706, "data": "User action: Click on Toolbar menu within Preferences menu", "label": ["YES"]}
+{"id": 3707, "data": "Response: A menu with available toolbars will show.", "label": ["YES"]}
+{"id": 3708, "data": " Selecting a toolbar toggles if it shows or not.", "label": ["YES"]}
+{"id": 3709, "data": " Check marks should show next to toolbars that are currently selected for view.", "label": ["YES"]}
+{"id": 3710, "data": "Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.", "label": ["YES"]}
+{"id": 3711, "data": "Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.", "label": ["YES"]}
+{"id": 3712, "data": "Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.", "label": ["YES"]}
+{"id": 3713, "data": "The updated version of this feature will allow the user to customize the sections of the page into different views.", "label": ["YES"]}
+{"id": 3714, "data": " For example, some users like to see a file tree on the left side and a file preview on the bottom of the page.", "label": ["YES"]}
+{"id": 3715, "data": " Other users might want to see both a file tree and messages without a preview pane.", "label": ["YES"]}
+{"id": 3716, "data": "User action: Log in to Virtual-ED", "label": ["YES"]}
+{"id": 3717, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3718, "data": "User action: Click on the Preferences button", "label": ["YES"]}
+{"id": 3719, "data": "Response: New menu shows up with all the available features.", "label": ["YES"]}
+{"id": 3720, "data": "User action: Click on the Background Color menu within Preferences menu", "label": ["YES"]}
+{"id": 3721, "data": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": ["YES"]}
+{"id": 3722, "data": "User action: Click on the Font menu within Preferences menu", "label": ["YES"]}
+{"id": 3723, "data": "Response: New menu shows up that will give the choice for the font", "label": ["YES"]}
+{"id": 3724, "data": "User action: Click on Font Size menu within Preferences menu", "label": ["YES"]}
+{"id": 3725, "data": "Response: A new menu shows up that have all different font sizes that the user can choose.", "label": ["YES"]}
+{"id": 3726, "data": "User action: Click on Toolbar menu within Preferences menu", "label": ["YES"]}
+{"id": 3727, "data": "Response: A menu listing available toolbars show up.", "label": ["YES"]}
+{"id": 3728, "data": " Selecting a toolbar toggles if it shows or not.", "label": ["YES"]}
+{"id": 3729, "data": " Check marks should show next to toolbars that are currently selected for view.", "label": ["YES"]}
+{"id": 3730, "data": "User action: Click on Layout menu within Preferences menu", "label": ["YES"]}
+{"id": 3731, "data": "Response: A menu with different layout choices will show up.", "label": ["YES"]}
+{"id": 3732, "data": " Options to select panes that show in users site, including file tree diagram for Virtual-Space, messages/post threads, class lecture pane, Instant-ED pane, file/message preview pane, and Virtual-Exam pane.", "label": ["YES"]}
+{"id": 3733, "data": " Suggested organization layouts are also selectable from this menu.", "label": ["YES"]}
+{"id": 3734, "data": " Panes will be added or removed as (de)selected from menu and organized according to selected layout.", "label": ["YES"]}
+{"id": 3735, "data": "Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.", "label": ["YES"]}
+{"id": 3736, "data": "Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.", "label": ["YES"]}
+{"id": 3737, "data": "Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.", "label": ["YES"]}
+{"id": 3738, "data": "Enhanced file sharing/transfer and document collaboration", "label": ["YES"]}
+{"id": 3739, "data": "Enhanced file sharing/ transfer and document collaboration will be a feature that will allow students to have a Virtual hard drive space in the Virtual-Edu classroom that they will be able to use for sharing files.", "label": ["YES"]}
+{"id": 3740, "data": "Users will be able to upload their documents, and eventually transfer them between other users/computers.", "label": ["YES"]}
+{"id": 3741, "data": "The files saved in the virtual hard drive space will be accessible to the user even if user is accessing Virtual-Edu from a different computer.", "label": ["YES"]}
+{"id": 3742, "data": "Benefit from this feature will be that users that are constantly mobile and on the go can access the documents and projects from any place; they can update their documents and upload a revised version again.", "label": ["YES"]}
+{"id": 3743, "data": "The latest version of the document will be always available with just a click of a button.", "label": ["YES"]}
+{"id": 3744, "data": "Priority for this feature will be medium for the Second Release date.", "label": ["YES"]}
+{"id": 3745, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3746, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3747, "data": "User action: Click on the Virtual-Hard Drive", "label": ["YES"]}
+{"id": 3748, "data": "Response: New pop up window shows up with list of documents already uploaded in the Virtual Hard Drive.", "label": ["YES"]}
+{"id": 3749, "data": "The bottom of the window will show how much space is available for use.", "label": ["YES"]}
+{"id": 3750, "data": "User action: Click on upload button", "label": ["YES"]}
+{"id": 3751, "data": "Response: New window pops up, user can search for file that he wants to upload from his computer to the Virtual Hard Drive", "label": ["YES"]}
+{"id": 3752, "data": "User action: Click on the selected file", "label": ["YES"]}
+{"id": 3753, "data": "Response: System will begin file transfer with first checking if file with the same name already   exists in the system, if not transfer will continue, if yes, user receives message:  “File already exist, do you want to replace”", "label": ["YES"]}
+{"id": 3754, "data": "User action: Click on the “yes” button", "label": ["YES"]}
+{"id": 3755, "data": "Response: File continues to upload", "label": ["YES"]}
+{"id": 3756, "data": "User action: Click on “no” button", "label": ["YES"]}
+{"id": 3757, "data": "Response: The file is not uploaded and the user has the option to rename the file and uploaded it under the new name.", "label": ["YES"]}
+{"id": 3758, "data": "This way the user will have the option of keeping both old and new file.", "label": ["YES"]}
+{"id": 3759, "data": "User action: Click on the “send file” button", "label": ["YES"]}
+{"id": 3760, "data": "Response: The other user will receive a message saying that someone is trying to send them a file.", "label": ["YES"]}
+{"id": 3761, "data": "And a window pops up saying: “Do you accept?”", "label": ["YES"]}
+{"id": 3762, "data": "Response: The file begins transmitting to the other party", "label": ["YES"]}
+{"id": 3763, "data": "Response: The file transmission will fail", "label": ["YES"]}
+{"id": 3764, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3765, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3766, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3767, "data": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": ["YES"]}
+{"id": 3768, "data": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": ["YES"]}
+{"id": 3769, "data": "Class lecture video/audio available as podcasts", "label": ["YES"]}
+{"id": 3770, "data": "This feature will enable professors to host their lectures as video and/or audio podcasts.", "label": ["YES"]}
+{"id": 3771, "data": "Students will be able to download or view as live streaming videos/audios.", "label": ["YES"]}
+{"id": 3772, "data": "This will be great feature that will give students the ability of rewind and play again in cases where the student didn’t really understand the lectures and feels that they need to listen/watch it again.", "label": ["YES"]}
+{"id": 3773, "data": "This feature is not available in a real classroom as once the lecture is done, the professor leaves the classroom and students have to rely on the note that they were able to make during the lecture.", "label": ["YES"]}
+{"id": 3774, "data": "Conclusion, this feature will not only meets the expectations of a real classroom but exceed them.", "label": ["YES"]}
+{"id": 3775, "data": "Priority for this feature will be high for a second release cycle.", "label": ["YES"]}
+{"id": 3776, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3777, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3778, "data": "User action: Click on the Podcast button", "label": ["YES"]}
+{"id": 3779, "data": "Response: New window shows up with list of available lectures.", "label": ["YES"]}
+{"id": 3780, "data": "Audio files will be in mp3 format and video lectures will be flash video format", "label": ["YES"]}
+{"id": 3781, "data": "User action: Double click on the audio or video file", "label": ["YES"]}
+{"id": 3782, "data": "Response: Real player pops up and starts playing the lecture in live streaming", "label": ["YES"]}
+{"id": 3783, "data": "User action: Right click on the audio or video file", "label": ["YES"]}
+{"id": 3784, "data": "Response: Option for save as will pop up that will give the user ability of downloading the lecture and being able to view/listen to it even when pc doesn’t have an internet connection", "label": ["YES"]}
+{"id": 3785, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3786, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3787, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3788, "data": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": ["YES"]}
+{"id": 3789, "data": "REQ-5 - Users must have Real Player installed on their systems", "label": ["YES"]}
+{"id": 3790, "data": "This feature will enable the users to share programs enter meetings, share and edit documents at the same time.", "label": ["YES"]}
+{"id": 3791, "data": "The professor will be able to host a network projector and hold a lecture almost the same as in a real classroom, projecting power point slide and all students currently logged in will be able to follow what’s going on in the class.", "label": ["YES"]}
+{"id": 3792, "data": "Professor will be able to distribute documents to students (example syllabus) with the ability to lock the editing tools, so unauthorized change to the document will be impossible.", "label": ["YES"]}
+{"id": 3793, "data": "If professor makes a change or ads to the syllabus or any other document the change will be instantly distributed to all students that have those documents in their space.", "label": ["YES"]}
+{"id": 3794, "data": "The professor will have the ability to write on the whiteboard and students will be able to follow the classes and professors writing with no problem.", "label": ["YES"]}
+{"id": 3795, "data": "Priority for this feature will be high for the second release cycle.", "label": ["YES"]}
+{"id": 3796, "data": "Using network projectors will give a more realistic feel to our Virtual Classroom and students will benefit from this feature.", "label": ["YES"]}
+{"id": 3797, "data": "Any user will be able to share a program on their computer with the rest of the users currently logged in.", "label": ["YES"]}
+{"id": 3798, "data": "Students will be able to use this same feature when working on projects as teams, giving them the ability to all work on one document at the same time.", "label": ["YES"]}
+{"id": 3799, "data": "User action: Log in to Virtual-Edu", "label": ["YES"]}
+{"id": 3800, "data": "Response: The user is logged in and all available features in the system are shown in the menu", "label": ["YES"]}
+{"id": 3801, "data": "User action: Click on the Whiteboard-Edu button", "label": ["YES"]}
+{"id": 3802, "data": "Response: New pop up window shows up.", "label": ["YES"]}
+{"id": 3803, "data": "Users will be able to join a conference or host a new one.", "label": ["YES"]}
+{"id": 3804, "data": "The user initiating the conference will setup username and password and distribute the password to all users that would like to join his/her conference.", "label": ["YES"]}
+{"id": 3805, "data": "Once user has joined the conference he/she will be able to see and interact will all the participants.", "label": ["YES"]}
+{"id": 3806, "data": "User action: Click on share a program button", "label": ["YES"]}
+{"id": 3807, "data": "Response: New window pops up, that will show all the programs available for sharing.", "label": ["YES"]}
+{"id": 3808, "data": "User action: Click on a certain program from available choice", "label": ["YES"]}
+{"id": 3809, "data": "Response: This program will automatically be distributed to all the participants, and all users will see the same screen.", "label": ["YES"]}
+{"id": 3810, "data": "User action: Click on the file button in the window", "label": ["YES"]}
+{"id": 3811, "data": "Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to all participants.", "label": ["YES"]}
+{"id": 3812, "data": "Every participant will be able to make changes to the document and change will be implemented on each participants screen.", "label": ["YES"]}
+{"id": 3813, "data": "User action: Click on share button", "label": ["YES"]}
+{"id": 3814, "data": "Response: The entire desktop will be shared and everyone will be able to see the whole shared desktop.", "label": ["YES"]}
+{"id": 3815, "data": "User action: Click on the sign out button", "label": ["YES"]}
+{"id": 3816, "data": "Response: The user will leave the meeting conference.", "label": ["YES"]}
+{"id": 3817, "data": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": ["YES"]}
+{"id": 3818, "data": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": ["YES"]}
+{"id": 3819, "data": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": ["YES"]}
+{"id": 3820, "data": "Users must enable java scripts on their systems to be able to install Whiteboard-Edu software", "label": ["YES"]}
+{"id": 3821, "data": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": ["YES"]}
+{"id": 3822, "data": "REQ-6 - Users must accept the privacy statement prior to using the application sharing", "label": ["YES"]}
+{"id": 3823, "data": "The user interface of the Virtual-ED system is designed with increased emphasis on the user Human-Machine interface.", "label": ["YES"]}
+{"id": 3824, "data": "The interface is compartmentalized by competency to ensure that the user can easily navigate within the portal.", "label": ["YES"]}
+{"id": 3825, "data": "Each compartment has a distinctive focus with a minimalist approach.", "label": ["YES"]}
+{"id": 3826, "data": "The user has the capability to alter the interface as suited.", "label": ["YES"]}
+{"id": 3827, "data": "The initial entry (Welcome Screen 1) has three separate quadrants; each quadrant has a specific function.", "label": ["YES"]}
+{"id": 3828, "data": "Help Feature: Feature is linked with the help desk staff of the particular institution; anyone who has difficulty in logging on can choose this feature to contact the system administrator.", "label": ["YES"]}
+{"id": 3829, "data": "Contact Us Feature: Will enable the user to look up a list of pertinent e-mail addresses/phone numbers within the institution.", "label": ["YES"]}
+{"id": 3830, "data": "News Feature:  The administrator has the capability to post current news on this section as needed.", "label": ["YES"]}
+{"id": 3831, "data": "Enables the user to select the pertinent class, each class is highlighted for ease of use.", "label": ["YES"]}
+{"id": 3832, "data": "Enables the user to choose a specific application to be used.", "label": ["YES"]}
+{"id": 3833, "data": "To launch an application click on the application icon, the application will open up on a separate screen", "label": ["YES"]}
+{"id": 3834, "data": "Web Conferencing 4  (Sample image from oovoo.com)", "label": ["NO"]}
+{"id": 3835, "data": "Web conferencing feature enables the user to interact with multiple users within a given class.", "label": ["YES"]}
+{"id": 3836, "data": "Each user can chat with one another while the session is open.", "label": ["YES"]}
+{"id": 3837, "data": "Video Conferencing with multiple users 4.1  (Sample image from oovoo.com)", "label": ["NO"]}
+{"id": 3838, "data": "Instant messaging feature will allow users to interact with faculty and follow classmates over a text based one-to-one or one-to-many connection.", "label": ["YES"]}
+{"id": 3839, "data": "(Sample image from oovoo.com)", "label": ["NO"]}
+{"id": 3840, "data": "(Sample image from oovoo.com)", "label": ["NO"]}
+{"id": 3841, "data": "This screen is an extension of the web conferencing feature; this screen enables the users to view all available chat sessions available at any given time.", "label": ["YES"]}
+{"id": 3842, "data": "File transfer feature enables the user to have the ability to manage a private temporary hosting space.", "label": ["YES"]}
+{"id": 3843, "data": "Tools such as file uploading, directory creator, move, delete and rename will be accessible", "label": ["YES"]}
+{"id": 3844, "data": "Display Monitor: It is recommended that a high resolution LCD or CRT monitor be used for best results.", "label": ["YES"]}
+{"id": 3845, "data": "Input devices:   All hardware interfaces will be provided by the operating system, the system will require a keyboard and a mouse.", "label": ["YES"]}
+{"id": 3846, "data": "In addition a properly configured sound card and a voice input device will be needed to utilize the conferencing feature.", "label": ["YES"]}
+{"id": 3847, "data": "Visual Input:  The conferencing feature requires a high resolution video input device.", "label": ["YES"]}
+{"id": 3848, "data": " The device needs to be configured in accordance to manufacturer recommended settings and should be in operation before enabling the conferencing feature.", "label": ["YES"]}
+{"id": 3849, "data": "The Virtual-ED software has a seamless integration with the local operating/hardware system.", "label": ["YES"]}
+{"id": 3850, "data": "Once the user logs on to the Virtual-ED system (screen.1), the interface will seamlessly manage the local input/output/operating system, devices as needed", "label": ["YES"]}
+{"id": 3851, "data": "When using “Test administering” feature (applicable to Administrators only), XL and PDF must be installed in the native machine to view the downloadable reports.", "label": ["YES"]}
+{"id": 3852, "data": "By default the reports will be saved to the “C: Program files/Virtual-ED/Bin/My reports folder”, (Requires XL-2002 or higher and Adobe Acrobat Reader 8 or higher)", "label": ["YES"]}
+{"id": 3853, "data": "Web Browser: The system requires the use of IE or Fire fox, Safari as the native web browser.", "label": ["YES"]}
+{"id": 3854, "data": "It is recommended that current system performs optimally with the suggested browsers.", "label": ["YES"]}
+{"id": 3855, "data": "The users must have pop-up windows enabled on their systems and must enable java scripts on their systems to be able to install Instant-Edu messaging software.", "label": ["YES"]}
+{"id": 3856, "data": "Communication Standards:  SSH client, FTP client, VPN client are used for connection between two computing endpoints.", "label": ["YES"]}
+{"id": 3857, "data": "Data Transfer Rates:  Recommended 1.5 MBPS Download speed (for any download activities) and upload speed of minimum 128 Kbps.", "label": ["YES"]}
+{"id": 3858, "data": "Security: Users must have antivirus software installed so they can scan the incoming files from other users of the system, any commercially available Antivirus is can be used scanning files.", "label": ["YES"]}
+{"id": 3859, "data": "The web conferencing feature of the system requires the workstation utilized have at least the following minimum requirements:", "label": ["YES"]}
+{"id": 3860, "data": "Mac-compatible Webcam and headset (preferred) or separate webcam, microphone, and speakers", "label": ["YES"]}
+{"id": 3861, "data": "Broadband internet access (cable, DSL, etc.)", "label": ["NO"]}
+{"id": 3862, "data": "The system requires the use of Internet Explorer, Safari, or Firefox as the native web browser.", "label": ["YES"]}
+{"id": 3863, "data": "It is recommended the current system performs optimally with the suggested two browsers.", "label": ["YES"]}
+{"id": 3864, "data": "The use of other than the recommended browsers may cause performance issues that have not been addressed by the software vendor.", "label": ["YES"]}
+{"id": 3865, "data": "The reporting functionality utilizes the Microsoft Excel (.XLS) and Adobe Portable Document Format (.PDF) for report outputs.", "label": ["YES"]}
+{"id": 3866, "data": "The following recommended software must be installed in the local machine to fully utilize the reporting functionality.", "label": ["YES"]}
+{"id": 3867, "data": "Microsoft Excel Viewer or Microsoft Excel", "label": ["NO"]}
+{"id": 3868, "data": "A PDF Reader such as Adobe Reader", "label": ["NO"]}
+{"id": 3869, "data": "System must be accessible on and off campus via broadband internet connection and using required ID/Password combination.", "label": ["YES"]}
+{"id": 3870, "data": "System may require users to download program updates to become compatible and compliant with system.", "label": ["YES"]}
+{"id": 3871, "data": "All users are responsible for securing a backup of any uploaded data/content to the system in the event of an outage.", "label": ["YES"]}
+{"id": 3872, "data": "The user is responsible for content uploaded.", "label": ["YES"]}
+{"id": 3873, "data": "NJIT policy prohibits the use NJIT facilities/assets for personal use.", "label": ["YES"]}
+{"id": 3874, "data": "Users may not use the system to upload or post data which is discriminatory in regards to race, color, creed, religion, sex, age, handicap, marital status, or national origin.", "label": ["YES"]}
+{"id": 3875, "data": " Users may not upload or post data which is inflammatory or derogatory.", "label": ["YES"]}
+{"id": 3876, "data": "In the event, inflammatory/derogatory content has been identified, the content will be immediately removed and the appropriate authorities with be notified resulting in possible disciplinary action.", "label": ["YES"]}
+{"id": 3877, "data": "User must comply with all local, state, and federal laws when using available resources.", "label": ["YES"]}
+{"id": 3878, "data": " Any infringements or violations including but not limited to:  unauthorized use, harassment, exploitation of any gaps in the portal, inflammatory/derogatory content, or defacing the system will result in the appropriate authorities being notified.", "label": ["YES"]}
+{"id": 3879, "data": "The user is responsible for maintaining the user account.", "label": ["YES"]}
+{"id": 3880, "data": "Action must be taken by the user to prevent the user account from being compromised.", "label": ["YES"]}
+{"id": 3881, "data": "The user ID and the password should not be shared with anyone (students/staff/or anyone else).", "label": ["YES"]}
+{"id": 3882, "data": "User passwords should be between 8 and 12 characters including letters and numbers but excluding spaces.", "label": ["YES"]}
+{"id": 3883, "data": "The user should periodically change the password; currently the user policy requires a mandatory password change every three months.", "label": ["YES"]}
+{"id": 3884, "data": "The information within the system is regarded private, however in the event of an investigation by a legal authority, including by not limited to a subpoena or audit, the information will be released to the proper authorities for the purpose intended.", "label": ["YES"]}
+{"id": 3885, "data": "All archived chats, e-mail, file share, and IM Messages are governed by the NJIT E-mail use policy.", "label": ["YES"]}
+{"id": 3886, "data": " The user is encouraged to view the content at the NJIT homepage for detailed use of the policy and restrictions and limitations of the policy.", "label": ["YES"]}
+{"id": 3887, "data": "In the event your account has been compromised, notify the NJIT help desk immediately.", "label": ["YES"]}
+{"id": 3888, "data": "Refrain from using the infected account to communicate with anyone else.", "label": ["YES"]}
+{"id": 3889, "data": "The systems should adhere to the privacy policy set forth by NJIT and its administration and also state and federal guidelines.", "label": ["YES"]}
+{"id": 3890, "data": "The system has an estimated 99% up time, though in an event of an outage data loss can occur.", "label": ["YES"]}
+{"id": 3891, "data": "The Web-Conferencing features’ performance depends on the availability of the bandwidth.", "label": ["YES"]}
+{"id": 3892, "data": "The minimum of a broadband connection is recommended to fully utilize Web-Conferencing feature.", "label": ["YES"]}
+{"id": 3893, "data": "The content is the responsibility of the users of the system; NJIT is neither responsible nor liable for the accuracy or the correctness of the content.", "label": ["YES"]}
+{"id": 3894, "data": "The portal will be periodically unavailable due to necessary maintenance upgrades.", "label": ["YES"]}
+{"id": 3895, "data": "In the event of scheduled maintenance, the students/staff will be notified at least 24 hours in-advance.", "label": ["YES"]}
+{"id": 3896, "data": "The system must be completed within the timeframe allotted for development.", "label": ["YES"]}
+{"id": 3897, "data": "Appropriate funding must be acquired to make required upgrades to existing systems, buy additional hardware and software, and acquire skilled personnel to develop project.", "label": ["YES"]}
+{"id": 3898, "data": "Udesh DeSilva Celestino Francisco Danielle L. Green Jose Saafigueroa Slavica Pepovska", "label": ["NO"]}
+{"id": 3899, "data": "Name of project to design for the customer.", "label": ["NO"]}
+{"id": 3900, "data": "Enrolled student and university’s faculty.", "label": ["NO"]}
+{"id": 3901, "data": " A convention or standard that controls or enables the connection, between two computing endpoints.", "label": ["YES"]}
+{"id": 3902, "data": "File Transfer Protocol is a network protocol used to transfer data from one computer to another.", "label": ["YES"]}
+{"id": 3903, "data": "Megahertz is used to measure the clock speed in hertz of a CPU", "label": ["YES"]}
+{"id": 3904, "data": "Gigahertz is used to measure the clock speed in hertz of a CPU", "label": ["YES"]}
+{"id": 3905, "data": "A technique for transferring data such that it can be processed as a steady and continuous stream.", "label": ["YES"]}
+{"id": 3906, "data": "Software  to browser online content", "label": ["NO"]}
+{"id": 3907, "data": "A service or feature which addresses the user's need for instant gratification and immediacy of use", "label": ["YES"]}
+{"id": 3908, "data": "an operating system by Microsoft released in 2001", "label": ["NO"]}
+{"id": 3909, "data": "the version of the Microsoft Windows client operating system released in 2006.", "label": ["NO"]}
+{"id": 3910, "data": "Application sharing for whiteboards available within Virtual-ED.", "label": ["YES"]}
+{"id": 3911, "data": "Application for file sharing/ distributing amongst users.", "label": ["NO"]}
+{"id": 3912, "data": "Series of audio or video digital media which will be available for distributing over the classroom.", "label": ["YES"]}
+{"id": 3913, "data": "messaging software tool available in Virtual–ED.", "label": ["YES"]}
+{"id": 3914, "data": "Form of Broadband Internet Access.", "label": ["NO"]}
+{"id": 3915, "data": "Digital subscriber line that uses high frequency, while regular phones uses low frequency on the same telephone line.", "label": ["YES"]}
+{"id": 3916, "data": "This high frequency gives users the ability to transfer data with higher speeds.", "label": ["YES"]}
+{"id": 3917, "data": "Form of broadband internet access that uses cable television infrastructure.", "label": ["YES"]}
+{"id": 3918, "data": "It gives users speeds up to 50 megabits per second for downloading and up to 384Kbit/s to more than 20Mbit/s for uploading.", "label": ["YES"]}

@@ -1,0 +1,1411 @@
+Tarrant County Integrated Justice Information System
+The Integrated Justice Information System (IJIS) is an initiative being undertaken by Tarrant County, Texas.
+The vision for IJIS is to define and develop enhanced business processes and supporting technology solutions that result in a more effective and efficient administration of justice in Tarrant County.
+When complete, IJIS will facilitate rapid sharing of information across the Criminal Justice Community while providing each stakeholder with advanced justice management capabilities.
+ The goal of the current phase of the initiative is to define IJIS business requirements shared by the Criminal Justice Community.
+To reach agreement on the business requirements, a three-stage approach will be been used:
+A baseline of use cases has been prepared to provide a starting point for discussions with the Criminal Justice Community.
+The baseline represents a compilation of requirements identified during review of background materials obtained from various sources.
+Workshops will be held to collect requirements from the Criminal Justice Community.
+The baseline requirements, documented here, will be reviewed, and requirements added, removed and refined.
+The material provided during the workshops will be consolidated into a single model, and reviewed at a final workshop with representatives from the Criminal Justice Community.
+The objective of the Manage Indigent Defense Software Requirements Specification is to provide an overview of the business use case model for providing indigent defense services by:
+Outlining the business processes required to manage indigent defense services
+Presenting the Business Use Cases for managing indigent defense services
+Outlining the Business Supplementary Requirements (nonfunctional requirements and other factors)
+Table 1.1– Definitions, Acronyms, and Abbreviations
+The following diagram depicts the business use case model for Manage Indigent Defense Services:
+Use Case Specifications – Submit Request for Appointed Counsel
+Use Case Specifications – Process Request for Appointed Counsel
+Use Case Specifications – Manage Defendant Contact
+Use Case Specifications – Manage Notice of Case Filing Decision
+Use Case Specifications – Manage Defense Attorney Setting Notification
+Use Case Specifications – Manage Defense Attorney Compensation
+Use Case Specifications – Manage Attorney List
+Use Case Specifications – Manage Reporting
+The Supplementary Business Specifications captures any descriptions of process or constraints that cannot be assigned to one business use case.
+The contents of this section are therefore applicable across all business use cases.
+Where such processes or constraints apply to only one business use case, they should be presented as special requirements of that business use case.
+This section will capture any supplementary requirements discussed during the workshops.
+ – Right to representation by Counsel
+ – Duties of arresting officer and magistrate
+ – Procedures for Appointing Counsel
+ – Compensation of Counsel Appointed to Defend
+ – Appointment of counsel in death penalty case; reimbursement of investigative expenses.
+ – Management and Preservation of Records
+District Attorney Electronic Case Filing System
+Commercial off the shelf software package used by the Auditor to manage County Financial Information.
+Person appointed to manage County business by a majority vote of District Judges that have jurisdiction in the County.
+The governing body of the County.
+ Consists of County Judge and four (4) Commissioners
+External system used by the Criminal Justice community to manage case information from initial arrest through final disposition.
+Person responsible for managing the schedule of a County or District Court.
+Person elected and/or appointed to preside over a trial court with misdemeanor criminal jurisdiction.
+Person arrested and/or charged with a criminal offense but not yet convicted.
+Person qualified and appointed to represent a Defendant in an adversarial judicial proceeding
+Person responsible for processing a Defendant into custody.
+Person responsible for representing the State of Texas in an adversarial judicial proceeding
+Person elected and/or appointed to preside over a trial court with felony criminal jurisdiction.
+Law Enforcement Agency investigating and presenting charges to District Attorney against Defendant.
+Committee appointed by the Presiding Judge of the Administrative Judicial Region to adopt standards for the qualification of attorneys to be appointed to represent indigent defendants in capital cases in which the death penalty is sought.
+Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.
+Person responsible for managing the Indigent Defense appointment process.
+Person appointed by the Governor to preside over the administrative judicial region.
+Standing committee of the Texas Judicial Council responsible for establishing standards for Indigent Defense Services.
+The purpose of this use case is to describe the activities involved in submitting a Request for Appointed Counsel to the Office of Attorney Appointments.
+ Enable law enforcement agencies to capture defendant and incident information along with supporting paper documents within 48 hours of arrest.
+   Enable magistrates to electronically review request(s) for counsel and submit request(s) for counsel within 24 hours of the indigency hearing.
+Defendant Detention Facility Officer Magistrate  Office of Attorney Appointments City Clerk Notary
+This use case starts after the Defendant has been arrested and transported to a Detention Facility.
+Detention Facility Officer captures Defendant, Incident, and Financial Information.
+Defendant swears to and signs Financial Affidavit.
+Detention Facility Officer witnesses and signs Financial Affidavit.
+ Detention Facility Officer schedules Indigency Hearing.
+ Magistrate informs Defendant of right to request appointment of counsel and asks whether Defendant wants a Court Appointed Attorney.
+Defendant requests appointment of a Court Appointed Attorney.
+Magistrate interviews/questions Defendant.
+Magistrate makes determination that Defendant is indigent.
+Defendant and Magistrate sign Request for Appointed Counsel.
+ Magistrate submits Request for Appointed Counsel to the Office of Attorney Appointments.
+Defendant waives right to Court Appointed Attorney This alternative path replaces the basic path beginning at step 6.
+Defendant waives right to Court Appointed Attorney.
+Defendant signs Waiver of Appointed Counsel.
+Magistrate submits Waiver of Appointed Counsel to the Office of Attorney Appointment
+Magistrate determines Defendant is not indigent This alternative path replaces the basic path beginning at step 9.
+Magistrate makes determination that Defendant is not indigent.
+Magistrate submits notice of indigency determination to the Office of Attorney Appointments.
+Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate     (UETA)  Technical:     .
+The purpose of this use case is to describe the activities involved in processing a Request for Appointed Counsel submitted to the Office of Attorney Appointments.
+Enable the Office of Attorney Appointments to review request(s) for counsel and process request(s) for counsel as soon as possible, but not later than the end of the first working day after the date on which the Office of Attorney Appointments receives the request for appointment of counsel.
+ Enable law enforcement agencies to be notified that the request for counsel has been denied within 24 hours of the denial.
+   Enable the appointed attorney and Defendant to be notified that an appointment has been made within 24 hours of the appointment.
+Court Case Management System Defendant Defense Attorney Detention Facility Officer District Court Judge Local Selection Committee  Magistrate Office of Attorney Appointments
+This use case starts after a Magistrate has submitted a Request for Appointed Counsel to the Office of Attorney Appointments.
+Office of Attorney Appointments receives/reviews the Request for Appointed Counsel.
+Office of Attorney Appointments researches Defendant/Incident information in Court Case Management System.
+ Office of Attorney Appointments confirms Defendant has not been released from custody.
+Office of Attorney Appointments confirms Defendant does not have a Defense Attorney appointed on a pending case.
+Office of Attorney Appointments determines the appropriate appointment rotation list based upon the highest level and degree of offense Defendant is accused of committing.
+ Office of Attorney Appointments selects next Defense Attorney in the appointment rotation list.
+Office of Attorney Appointments notifies Defendant, Defense Attorney and Detention Facility Officer of appointment by facsimile and/or electronic mail.
+Defendant has been released from custody This alternative path replaces the basic path beginning at step 3.
+Office of Attorney Appointments records that the Request for Appointed Counsel has been denied because the Defendant is no longer in custody.
+Defense Attorney has been appointed on a pending case.
+This alternative path replaces the basic path beginning at step 5.
+Office of Attorney Appointments determines that the previously appointed Defense Attorney is on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.
+  Office of Attorney Appointments selects previously appointed Defense Attorney for appointment.
+Rejoins basic path at step 7.
+Defense Attorney has been appointed on a pending case This alternative path replaces the basic path beginning at step 5.
+Office of Attorney Appointments determines that the previously appointed Defense Attorney is not on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.
+  Original Defense Attorney is notified of new charge(s) and is removed from the appointment due to a lack of qualifications.
+Rejoins basic path at step 5.
+New Defense Attorney is appointed to original charge(s).
+Charge is capital felony case with death penalty sought This alternative path replaces the basic path beginning at step 2.
+Office of Attorney Appointments forwards the Request for Counsel to the presiding District Judge of Court in which the capital felony case is filed.
+District Court Judge selects two attorneys both must be qualified by the Administrative Judicial Region Local Selection Committee.
+Office of Attorney Appointments appoints selected Defense Attorney(s).
+ Rejoins basic path at step 6.
+These attorneys DO NOT come off the wheel.
+Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate  – Procedures for Appointing Counsel  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:  Integration with Court Case Management System
+The purpose of this use case is to describe the activities involved in Managing Defense Attorney contacts with Defendant.
+Enable an appointed attorney to review appointments and capture the date and type of first contact with the defendant no later than the end of the first working day after the date of the appointment.
+ Enable an appointed attorney to capture the date and time of the first in person visit with the defendant, as appropriate.
+    Enable the Office of Attorney Appointments to be notified when first contact by an appointed attorney is not made by the of the first working day after the date of the appointment.
+Defendant Defense Attorney Office of Attorney Appointments
+This use case starts after Defense Attorney has been appointed to represent Defendant.
+Defense Attorney contacts Defendant within one working day of appointment.
+Defense Attorney notifies Office of Attorney Appointments of date and time of initial contact.
+Defense Attorney interviews Defendant in person.
+Defense Attorney notifies Office of Attorney Appointments of date and time of in person visit(s).
+ Steps 3-4 may be repeated until the charges have been dismissed, defendant is acquitted, appeals are exhausted, or the Court has relieved the Defense Attorney of duties.
+Defense Attorney fails to contact Defendant This alternative path replaces the basic path beginning at step 2.
+Defense Attorney fails to interview Defendant This alternative path replaces the basic path beginning at step 2.
+Legal:      – Right to representation by Counsel
+Manage Notice of Case Filing Decision
+The purpose of this use case is to describe the activities involved in Managing District Attorney notice of case filing decisions.
+Enable the appointed attorney and Office of Attorney Appointments to be notified that the District Attorney has accepted/rejected the incident and whether charges where added, removed or modified.
+Court Case Management System Defendant Defense Attorney District Attorney Office of Attorney Appointments
+This use case starts after the District Attorney has made the decision to proceed with prosecution of Defendant.
+District Attorney notifies Office of Attorney Appointments of the charge(s) that were accepted for prosecution.
+Office of Attorney Appointments enters Defense Attorney appointment into the Court Case Management System.
+Office of Attorney Appointments notifies Defense Attorney that charge(s) have been filed.
+District Attorney creates additional charge This alternative path replaces the basic path beginning at step 2.
+See Alternative Path 2.b from Process Request for Appointed Counsel.
+District Attorney modifies original charge This alternative path replaces the basic path beginning at step 2.
+See Alternative Path 2.b from Process Request for Appointed Counsel.
+District Attorney rejects original charge This alternative path replaces the basic path beginning at step 2.
+Office of Attorney Appointments notifies Defense Attorney.
+Technical:   Integration with Court Case Management System.
+Integration with District Attorney Electronic Case Filing System.
+The purpose of this use case is to describe the activities involved in the creation of a setting and the updating of that setting (results/hearing conducted).
+It includes initial settings, cases to be calendared, and the recording of the outcome of the hearing.
+Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.
+Court Case Management System Court Coordinator Defendant Defense Attorney District Attorney Judge (County or District Court Judge) Office of Attorney Appointments
+This use case starts after District Attorney has accepted and filed charges against Defendant.
+Court Coordinator determines that a setting is required.
+Court Coordinator enters setting information into Court Case Management System.
+Office of Attorney Appointments notifies Defendant, Defense Attorney, and District Attorney of setting.
+ Defendant, Defense Attorney, and District Attorney appear before Judge.
+Court Coordinator enters setting result into Court Case Management System.
+Steps 1-5 are repeated until the charges have been disposed, Defendant is acquitted, appeals are exhausted, or the Defense Attorney has been relieved of duties by the Court
+Defendant is in custody This alternative path replaces the basic path beginning at step 3.
+Defendant fails to appear This alternative path replaces the basic path beginning at step 5.
+Defense Attorney fails to appear This alternative path replaces the basic path beginning at step 5.
+Legal:      – Right to representation by Counsel
+The purpose of this use case is to describe the activities involved in managing compensation made to Defense Attorney.
+Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.
+Auditor Commissioners Court Defense Attorney Filing Agency Judge (County or District Court Judge) Office of Attorney Appointments Presiding Administrative Judge
+This use case starts when a Defense Attorney submits a request for payment.
+Defense Attorney submits request for payment itemizing the list of services performed to Office of Attorney Appointments.
+Office of Attorney Appointments forwards request for payment to Judge.
+Judge reviews/approves request for payment and forwards to Office of Attorney Appointments.
+Office of Attorney Appointments forwards order to remit payment to Auditor.
+Auditor presents claim to Commissioners Court.
+ Commissioners Court approves payment of claim.
+Auditor remits payment to Defense Attorney.
+Auditor notifies Judge that payment has been remitted.
+Judge disapproves amount of payment without Appeal This alternative path replaces the basic path beginning at step 3.
+Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.
+Rejoins basic path at step 3.
+Judge disapproves amount of payment with Appeal This alternative path replaces the basic path beginning at step 3.
+Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.
+Defense Attorney files motion with Presiding Administrative Judge.
+Presiding Administrative Judge reviews disapproval of payment.
+Presiding Administrative Judge determines the appropriate amount of payment.
+Presiding Administrative Judge orders Auditor to remit payment to Defense Attorney.
+ Rejoins basic path at step 5.
+Judge denies Defense Attorney request for advance payment of expenses (ex parte)
+This alternative path replaces the basic path beginning at step 1.
+Defense Attorney files request for advance payment of expenses.
+Judge denies request (in whole or part) for advance payment of expenses.
+Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.
+Judge submits request for advance payment and denial as sealed exhibit to the record.
+Filing Agency drops charges against Defendant This alternative path replaces the basic path beginning at step 1.
+  Office of Attorney Appointments notifies Defense Attorney.
+Charges against Defendant are rejected by District Attorney This alternative path replaces the basic path beginning at step 1.
+  Office of Attorney Appointments notifies Defense Attorney.
+Legal:   – Compensation of Counsel Appointed to Defend  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:   Integration with external Accounting System(s).
+The purpose of this use case is to describe the activities involved in Managing Defense Attorney contacts with Defendant.
+Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.
+Defense Attorney Judges (County or District Court Judges) Office of Attorney Appointments
+This use case starts when a Defense Attorney requests to be placed on appointment rotation list.
+Defense Attorney submits application for public appointments.
+Office of Attorney Appointments reviews application.
+Office of Attorney Appointments forwards application to Judges.
+Judges review/approve application.
+Judges forward application to Office of Attorney Appointments.
+Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).
+Office of Attorney Appointments notifies Defense Attorney.
+Defense Attorney fails to meet minimum qualifications This alternative path replaces the basic path beginning at step 3.
+Office of Attorney Appointments records qualification issues.
+Office of Attorney Appointments notifies Defense Attorney.
+Judges do not approve application This alternative path replaces the basic path beginning at step 4.
+Office of Attorney Appointments notifies Defense Attorney.
+Permanent removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.
+Judges order removal of Defense Attorney.
+Office of Attorney Appointments removes Defense Attorney from appropriate appointment rotation list(s).
+ Office of Attorney Appointments notifies Defense Attorney.
+Reinstatement to appointment rotation list This alternative path replaces the basic path beginning at step 1.
+Judges order reinstatement of Defense Attorney.
+Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).
+ Office of Attorney Appointments notifies Defense Attorney.
+Temporary removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.
+Defense Attorney requests to be removed from appointment rotation list(s).
+Office of Attorney Appointments suspends appointments to Defense Attorney from appropriate appointment rotation list(s) for 30 days.
+ Office of Attorney Appointments notifies Defense Attorney.
+Legal:      – Right to representation by Counsel  – Procedures for Appointing Counsel
+The purpose of this use case is to describe the activities involved in managing reporting to the Task Force on Indigent Defense.
+Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.
+Office of Attorney Appointments Task Force on Indigent Defense
+This use case starts when a report is required by the Task Force on Indigent Defense.
+Office of Attorney Appointments selects the report type.
+Office of Attorney Appointments enters/selects report parameters.
+Office of Attorney Appointments distributes report to Task Force on Indigent Defense.
+Report Types:  Number of appointments made by date range (day, week, month, quarter, annual, and ad hoc) and type of appointment (felony, misdemeanor, etc…).
+  Number of denials of counsel by date range (day, week, month, quarter, annual, and ad hoc) and type of denial.
+Minimum, maximum, and average number of hours between date/time of arrest and magistration by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of hours between date/time of magistration and request for counsel by date range (day, week, month, quarter, annual, and ad hoc).
+ Minimum, maximum, and average number of hours between date/time of request for appointment of counsel and appointment/denial by date range (day, week, month, quarter, annual, and ad hoc).
+ Minimum, maximum, and average number of hours between date/time of appointment of counsel and Defense Attorney first contact by date range (day, week, month, quarter, annual, and ad hoc).
+ Minimum, maximum, and average number of days between date/time of appointment and case filing by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of days between date/time of case filing and disposition by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of days between date/time of appointment and disposition by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of total hours billed by Defense Attorney and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of court appearances by Defense Attorney and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average of total payments made to Defense Attorney by Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average cost of reimbursement types (Court Appearances, Investigation, etc...) by Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of appointments for Defendants with special needs by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of duplicate appointments and amount of payments made on those cases/charges (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of non-disposed cases/charges and amount of payments made on those cases/charges (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of pleas by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of trials by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+Minimum, maximum, and average number of dispositions by Defense Attorney, Disposition Type, and Offense Type by date range (day, week, month, quarter, annual, and ad hoc).
+This remark is hidden text and will not be printed:
+The items above and items in the headers and footers of this document contain bookmarks for automatic updating.
+Do not delete these bookmarks or update them manually.
+Use the UPDATE TOOL instead.
+1.3	Open points	3
+1.4	Requirements identification	3
+1.5	Document maintenance	3
+1.6	Definitions, acronyms & abbreviations	3
+2	General description	4
+2.1	Product perspective	4
+2.2	Product(s)	4
+2.2.1	MSN messenger xlet	4
+2.3	User characteristics	4
+2.4	Assumptions & constraints	5
+3	Functional requirements	5
+3.1	End user functions	5
+4	External interface requirements	6
+4.1	Physical devices	6
+4.2	Communication interfaces	6
+4.3	Data requirements	7
+Date	Person	Version	Reason
+2004-02-24	René Nieuwenhuis	0.1	Initial version
+2004-03-19	René Nieuwenhuis	1.0	Approved
+The blue coloured text style “explanation text” contains instructions when using the template.
+The user is free to either adapt the font of the style to become “hidden” or to remove all explanatory text when the document is completed.
+For more information see the “template” pages on the Intranet.
+An FRS (Functional Requirements Specification) is a document containing a complete description of a product’s external behaviour (that is, with the entire interface between the product and its environment, including other hardware, software, communication ports, and human users) as a statement of what the system will do without defining how it works internally.
+The FRS contains two types of requirements: functional and non-functional.
+The functional requirements define what the system does with a complete description of all the inputs and outputs to and from the system as well as information concerning how the inputs and outputs interrelate (chapter 0, 3, 4 and Error!
+Reference source not found.).
+The non-functional requirements describe the quality and performance of the system (chapter Error!
+Reference source not found.).
+The minimum outline that all FRS documents must use is:
+Given the purpose of the FRS, it is clear that Design Descriptions do not belong in an FRS.
+If the product to be defined is a software library, it probably is wiser to use the content of the Software Component Specification (SCS) template instead of the content of the FRS template.
+For more information, see Work Instruction Architecture & Design.
+Attributes of a well-written FRS.
+A well-written requirement applies the following criteria:
+Clear & concise	It is written in clear, simple and concise language.
+The primary readers of the document are able to understand the description.
+Testable & measurable	A finite cost procedure exists to test the requirement.
+Unambiguous	It has only one interpretation.
+Necessary	It does not describe superfluous information or explanation.
+Identifiable	It has a unique label or a number.
+Feasible	It is believed to be realisable.
+Design independent	It does not describe software or hardware design decisions.
+A well-written FRS contains a set of well-written requirements and applies the following criteria:
+Complete	Everything the system is supposed to do is in the document.
+The requirements do not contradict.
+The chapters of this template are mandatory.
+The sections within the chapters can be chosen differently depending on the project and the specific product.
+For more information, read the Work Instruction Requirements Management.
+The purpose of the FRS is to get a common understanding between the customer and PDSL on the product requirements of the Platform-i MSN application.
+The document serves as a basis for the Architectural Design of the Platform-i MSN application.
+The intended audience for this document are the customer and the development team.
+Give a list of issues that have not been solved in this document yet.
+This section should be empty when the document is accepted.
+Describe how the individual requirements will be labelled and/or numbered in this document.
+Preferably use a hierarchical format, e.g. <label>.<label>.<number>.
+The requirements will be in the format: <label><number>
+Describe how this document is maintained and how the requirements identification will be handled over time.
+Typically describe how removal or addition of requirements is handled (e.g. numbers are never renumbered after removal; requirements can only be added at the end of a section with the next higher number).
+General rules for document maintenance are described in [WI_REQ].
+Do not repeat these here.
+Additional requirements can only be added at the end of a section with the next higher number.
+If a requirement is removed, the number remains empty.
+A list of all definitions, abbreviations and terms used in this document, together with a short explanation.
+Instant Messenger	An instant messenger is an application, which allows instant text communication between two or more people through a network such as the Internet.
+Status	Predefined presence identifier.
+With setting the status the user can let others know if he is actively using your PC (or TV in our case).
+In MSN Messenger you have the following statuses: Offline, Online, Busy, Idle, Be Right Back, Away, On the Phone and Out to Lunch.
+Blocking	When you block someone, you prevent that person from seeing your status (you always appear offline) and sending you messages.
+Buddy	Friend, family member, co-worker or other person who is manually added to your buddy list.
+Buddy list	List of buddies with whom the user can communicate in real time.
+Contact list	See buddy list.
+Passport is an online service that makes it possible for you to use your e-mail address and a single password to sign in to any .NET Passport-participating Web site or service.
+One of these services is the MSN Messenger.
+It is not necessary to include details like author, version and date for all references.
+E.g. text below can be used:
+[REF1]	Commercial Requirements Specification of “<project name>“ project
+<Author of the document>
+Reference number <DSE-ygxxxxINI CxSx>
+Version <x>, date <200x-xx-xx>
+If the product is independent and totally self-contained, it should be stated here.
+Otherwise, if the FRS defines a product that is a component of a larger system or project, then describe the relation and identify the interfaces between the component and the larger system or project.
+Describe here all external connections to the product in terms of connectors, hardware and software.
+The use of a context diagram is allowed if the technique is clear to the customer.
+Also identify the protocol interfaces (for more information, refer to section 4.2) and the data interfaces (refer to section 4.3).
+If the FRS is part of a product line, refer to the product roadmap and identify the relation between the product and the product roadmap.
+The MSN messenger xlet is a MHP version of the popular PC application.
+It is an application to demonstrate the possibilities of MHP and Platform-i.
+The Platform-i MSN messenger application is independent of other projects.
+Identify the product(s) to be produced by name.
+In case of more than one product, define how in the rest of the document the diversity between the products is described.
+For each product, add the following section:
+The produced product will be an MHP MSN messenger xlet.
+Explain shortly what this product will do.
+Give a summary of the functions that this product will perform.
+Also describe explicitly what the product will not do (but do not add an exhaustive list; restrict the list to the non-trivial aspects).
+With the xlet the user shall be able to see online friends, chat with them and see which TV program they are watching.
+Unlike the PC variant, the xlet cannot transfer files and doesn’t have webcam support.
+Describe those general characteristics of the users of the product that account for the functional requirements.
+Describe per type of user the context of use in terms of the privileges and the tasks.
+Typical examples of users are: end users, operators, factory users, service users, and dealers.
+Also, non-human users that interface with the product can be included here.
+Typically, however, non-human usage is a communication interface, see 4.2 for more information.
+There are only end-users.
+Provide a short description of external factors that affect the requirements in the FRS (assumptions) or that will limit the options for designing the system (constraints).
+An example of an assumption is that a specific chip will be available.
+If, in fact, this chip is not available, then this FRS would have to change accordingly.
+Examples of constraints are: the operating system to use, interfaces to other applications, safety considerations, regularity policies, higher-order language requirements.
+Keep in mind that only the non-trivial constraints should be mentioned here.
+If we cannot use the MSN messenger service protocol this FRS has to be adjusted to reflect the new situation.
+For each function (or feature) category, or if appropriate for each individual function, define the functional (behaviour) requirements by means of a short introduction of the function, followed by a definition of inputs and associated outputs (results, effects) on that function.
+The User-interface specific aspects of the FRS are not included in this chapter (see chapter Error!
+Reference source not found.).
+E.g. for a TV set, define here the characteristics of volume control.
+The fact that the volume control button is present both on the TV-set and on the remote control is defined in chapter Error!
+Reference source not found.).
+This chapter will have a section layout that is specific for the product.
+It is advised however to at least use the following section layout to make a clear distinction between the types of user (e.g. end user, factory, service user).
+Define in function categories the typical functions that are available to the end user.
+An example layout could be:
+3.1.1 <Function category 1>
+3.1.2 <Function category 2>
+P1.0 Use of Passport to login to the messenger
+P1.1 With the use of an existing Passport account the user can login to the messenger.
+P1.2 It is not possible to create a new Passport account.
+P2.0 Maintenance of users own status
+P2.1 Ability to change and maintain the status which is visible to the buddies.
+The application provides a list where the end-user can choose the new status.
+P3.0 See the presence status of your buddies
+The application will display the status of the end-users buddies.
+When a buddy changes his status, the application shall update it.
+The end-user is able to change the nickname with which the user is visible to the buddies.
+P5.1 Show the nicknames of the end-users buddies on the buddy list.
+The application updates the displayed nick in the contact list when a buddy changes the nickname.
+P6.0 Appoint an user-defined nickname
+P6.1 The application provides the possibility to assign a nickname to a specified buddy; this nickname has preference above the nickname set by the buddy itself.
+P7.0 Add buddies to your contact list
+P7.1 The application provides an option to add a buddy to the buddy list.
+P8.0 Delete buddies from your contact list
+The application has an option to delete a buddy from the buddy list.
+The application has an option to block certain buddies.
+M1.1 The application has a visible notification when an incoming message is received.
+M2.1 Show incoming messages on the screen.
+M3.1 Possibility to create a message and send it to a buddy.
+M4.1 Show emoticons in incoming and outgoing messages.
+M4.2 Display a list of emoticons to choose from when the user wants to include an emoticon in the message he is writing.
+M5.0 Show (session) history
+M5.1 Show the history of messages sent and received in the current chat session.
+M6.1 Chat with multiple buddies together.
+D1.1 Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.
+D2.1 Show a notification when there is new e-mail at the users hotmail inbox.
+D3.1 Display the inbox of the users Hotmail account
+D3.2 Show e-mails from the users Hotmail account on the screen.
+D4.1 Play games with online buddies.
+Define the actual input and output devices of the product, typically represented by a picture of the layout of the device.
+Examples of input devices are: remote control, mouse, and local keypad.
+Examples of output devices are: LCD, TV screen, LED.
+Input device: Remote control and maybe a wireless keyboard.
+Output device: TV screen.
+Describe the external protocols that are used in connecting the product to its environment (see also 2.1).
+For standard protocols, use a reference and describe what is supported of the standard.
+For proprietary protocols, define the protocol itself.
+(Often, the protocol definition is described in a separate document; in that case include a reference here.)
+The used protocol for communication is the .NET messenger service protocol.
+The used version of this protocol will be MSNPv8 which is the standard protocol at this moment.
+Describe the external data that is interfacing to the system.
+This can be a database or a data stream format.
+(Often, the data description is defined in a separate document; in that case include a reference here.)
+Non-functional requirements are typically requirements in the area of e.g. performance, reliability and maintainability.
+They often have a system wide character and cannot be attached to a specific functional requirement.
+(This also holds for section 2.4.)
+Make sure that the requirements are measurable; e.g. “maintainability is important” is not a requirement.
+The following list defines possibly relevant product quality attributes:
+This list is to be used as a checklist to derive the non-functional requirements.
+Preferably, do not use the complete list of attributes as a table of contents.
+Do not extensively discuss or incorporate those attributes that are regarded less relevant for the application.
+Note that some product quality attributes might result in functional requirements (e.g. security can be realised with a password mechanism, usability is often implicitly included in section Error!
+Reference source not found., time-behaviour requirements can be addressed specifically per functional requirement).
+These are typically described in the other chapters of this document.
+In that case, a reference from this chapter to the other chapters can be useful, to understand how the quality attribute is achieved with functional requirements.
+1.3	Definitions, Acronyms, and Abbreviations	6
+3.1.1	Sell Configured to Ordered Products.
+3.1.2	Provide comprehensive product details.
+3.1.3	Detailed product Categorizations	7
+3.1.4	Provide Search facility.
+3.1.5	Maintain customer profile.
+3.1.6	Provide personalized profile	8
+3.1.7	Provide Customer Support.
+3.1.9	Detailed invoice for customer.
+3.1.10	Provide shopping cart facility.
+3.1.11	Provide multiple shipping methods.
+3.1.12	Online tracking of shipments	9
+3.1.13	Provide online Tax Calculations	10
+3.1.14	Allow multiple payment methods.
+3.1.15	Allow online change or cancellation of order.
+3.1.16	Allow Online Product reviews and ratings	10
+3.1.17	Offer financing options.
+3.1.18	Provide detailed sitemap.
+3.1.19	Offer online promotions and rewards.
+3.1.20	Online Purchase of products.
+3.2.1	Graphical User Interface	11
+3.3	Reliability & Availability	11
+3.3.1	Back-end Internal Computers	11
+3.3.2	Internet Service Provider	11
+3.5.1	Data Transfer	12
+3.5.2	Data Storage	12
+3.6.1	Configuration Management Tool	13
+3.7	Design Constraints	13
+3.7.1	Standard Development Tools	13
+3.7.2	Web Based Product	13
+3.8	On-line User Documentation and Help System Requirements	13
+3.9	Purchased Components	13
+3.10.1	User Interfaces	14
+3.10.2	Hardware Interfaces	14
+3.10.3	Software Interfaces	14
+3.10.4	Communications Interfaces	15
+3.11	Licensing Requirements	15
+3.12	Legal, Copyright, and Other Notices	15
+3.13	Applicable Standards	15
+The introduction of the Software Requirements Specification (SRS) provides an overview of the entire SRS with purpose, scope, definitions, acronyms, abbreviations, references and overview of the SRS.
+The aim of this document is to gather and analyze and give an in-depth insight of the complete Marvel Electronics and Home Entertainment software system by defining the problem statement in detail.
+Nevertheless, it also concentrates on the capabilities required by stakeholders and their needs while defining high-level product features.
+The detailed requirements of the Marvel Electronics and Home Entertainment are provided in this document.
+The purpose of the document is to collect and analyze all assorted ideas that have come up to define the system, its requirements with respect to consumers.
+Also, we shall predict and sort out how we hope this product will be used in order to gain a better understanding of the project, outline concepts that may be developed later, and document ideas that are being considered, but may be discarded as the product develops.
+In short, the purpose of this SRS document is to provide a detailed overview of our software product, its parameters and goals.
+This document describes the project's target audience and its user interface, hardware and software requirements.
+It defines how our client, team and audience see the product and its functionality.
+Nonetheless, it helps any designer and developer to assist in software delivery lifecycle (SDLC) processes.
+Primarily, the scope pertains to the E-Store product features for making Marvel Electronics and Home Entertainment project live.
+ It focuses on the company, the stakeholders and applications, which allow for online sales, distribution and marketing of electronics.
+This SRS is also aimed at specifying requirements of software to be developed but it can also be applied to assist in the selection of in-house and commercial software products.
+The standard can be used to create software requirements specifications directly or can be used as a model for defining a organization or project specific standard.
+It does not identify any specific method, nomenclature or tool for preparing an SRS.
+Definitions, Acronyms, and Abbreviations
+The remaining sections of this document provide a general description, including characteristics of the users of this project, the product's hardware, and the functional and data requirements of the product.
+  General description of the project is discussed in section 2 of this document.
+  Section 3 gives the functional requirements, data requirements and constraints and assumptions made while designing the E-Store.
+  It also gives the user viewpoint of product.
+  Section 3 also gives the specific requirements of the product.
+  Section 3 also discusses the external interface requirements and gives detailed description of functional requirements.
+Section 4 is for supporting information.
+This document contains the problem statement that the current system is facing which is hampering the growth opportunities of the company.
+It further contains a list of the stakeholders and users of the proposed solution.
+It also illustrates the needs and wants of the stakeholders that were identified in the brainstorming exercise as part of the requirements workshop.
+It further lists and briefly describes the major features and a brief description of each of the proposed system.
+The following SRS contains the detail product perspective from different stakeholders.
+It provides the detail product functions of E-Store with user characteristics permitted constraints, assumptions and dependencies and requirements subsets.
+This subsection contains the requirements for the e-store.
+These requirements are organized by the features discussed in the vision document.
+Features from vision documents are then refined into use case diagrams and to sequence diagram to best capture the functional requirements of the system.
+All these functional requirements can be traced using tractability matrix.
+Sell Configured to Ordered Products.
+The system shall display all the products that can be configured.
+The system shall allow user to select the product to configure.
+The system shall display all the available components of the product to configure
+The system shall enable user to add one or more component to the configuration.
+The system shall notify the user about any conflict in the current configuration.
+The system shall allow user to update the configuration to resolve conflict in the current configuration.
+The system shall allow user to confirm the completion of current configuration
+The system shall display detailed information of the selected products.
+The system shall provide browsing options to see product details.
+The system shall display detailed product categorization to the user.
+The system shall enable user to enter the search text on the screen.
+The system shall enable user to select multiple options on the screen to search.
+The system shall display all the matching products based on the search
+The system shall display only 10 matching result on the current screen.
+The system shall enable user to navigate between the search results.
+The system shall notify the user when no matching product is found on the search.
+The system shall allow user to create profile and set his credential.
+The system shall authenticate user credentials to view the profile.
+The system shall allow user to update the profile information.
+The system shall display both the active and completed order history in the customer profile.
+The system shall allow user to select the order from the order history.
+The system shall display the detailed information about the selected order.
+The system shall display the most frequently searched items by the user in the profile.
+The system shall allow user to register for newsletters and surveys in the profile.
+The system shall provide online help, FAQ’s customer support, and sitemap options for customer support.
+The system shall allow user to select the support type he wants.
+The system shall allow user to enter the customer and product information for the support.
+The system shall display the customer support contact numbers on the screen.
+The system shall allow user to enter the contact number for support personnel to call.
+The system shall display the online help upon request.
+The system shall display the FAQ’s upon request.
+The system shall maintain customer email information as a required part of customer profile.
+The system shall send an order confirmation to the user through email.
+The system shall display detailed invoice for current order once it is confirmed.
+The system shall optionally allow user to print the invoice.
+The system shall provide shopping cart during online purchase.
+The system shall allow user to add/remove products in the shopping cart.
+The system shall display different shipping options provided by shipping department.
+The system shall enable user to select the shipping method during payment process.
+The system shall display the shipping charges.
+The system shall display tentative duration for shipping.
+The system shall allow user to enter the order information for tracking.
+The system shall display the current tracking information about the order.
+The system shall calculate tax for the order.
+The system shall display tax information for the order.
+The system shall display available payment methods for payment.
+The system shall allow user to select the payment method for order.
+Allow online change or cancellation of order.
+The system shall display the orders that are eligible to change.
+The system shall allow user to select the order to be changed.
+The system shall allow user to cancel the order
+The system shall allow user to change shipping, payment method.
+The system shall notify the user about any changes made to the order.
+Allow Online Product reviews and ratings
+The system shall display the reviews and ratings of each product, when it is selected.
+The system shall enable the user to enter their reviews and ratings.
+The system shall display all the available financing options.
+The system shall allow user to select the financing option.
+The system shall notify the use about the financing request.
+The system shall allow user to view detailed sitemap.
+Offer online promotions and rewards.
+The system shall display all the available promotions to the user.
+The system shall allow user to select available promotion.
+The system shall allow user to confirm the purchase.
+The system shall enable user to enter the payment information.
+The system shall provide a uniform look and feel between all the web pages.
+The system shall provide a digital image for each product in the product catalog.
+The system shall provide use of icons and toolbars.
+The system shall provide handicap access.
+The system shall provide multi language support.
+The system shall provide storage of all databases on redundant computers with automatic switchover.
+The system shall provide for replication of databases to off-site storage locations.
+The system shall provide RAID V Disk Stripping on all database storage disks.
+The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.
+The system shall provide a contractual agreement with an internet service provider who can provide 99.999% availability through their network facilities onto the internet.
+The product shall be based on web and has to be run from a web server.
+The product shall take initial load time depending on internet connection strength which also depends on the media from which the product is run.
+The performance shall depend upon hardware components of the client/customer.
+The system shall use secure sockets in all transactions that include any confidential customer information.
+The system shall automatically log out all customers after a period of inactivity.
+The system shall confirm all transactions with the customer’s web browser.
+The system shall not leave any cookies on the customer’s computer containing the user’s password.
+The system shall not leave any cookies on the customer’s computer containing any of the user’s confidential information.
+The customer’s web browser shall never display a customer’s password.
+ It shall always be echoed with special characters representing typed characters.
+The customer’s web browser shall never display a customer’s credit card number after retrieving from the database.
+ It shall always be shown with just the last 4 digits of the credit card number.
+The system’s back-end servers shall never display a customer’s password.
+ The customer’s password may be reset but never shown.
+The system’s back-end servers shall only be accessible to authenticated administrators.
+The system’s back-end databases shall be encrypted.
+The source code developed for this system shall be maintained in configuration management tool.
+The system shall be built using a standard web page development tool that conforms to either IBM’s CUA standards or Microsoft’s GUI standards.
+The computers must be equipped with web browsers such as Internet explorer.
+The product must be stored in such a way that allows the client easy access to it.
+         Response time for loading the product should take no longer than five minutes.
+         A general knowledge of basic computer skills is required to use the product
+On-line User Documentation and Help System Requirements
+As the product is E-store, On-line help system becomes a critical component of the system which shall provide –
+It shall provide specific guidelines to a user for using the E-Store system and within the system.
+To implement online user help, link and search fields shall be provided.
+There are many types of interfaces as such supported by the E-Store software system namely; User Interface, Software Interface and Hardware Interface.
+The protocol used shall be HTTP.
+The Port number used will be 80.
+There shall be logical address of the system in IPv4 format.
+The user interface for the software shall be compatible to any browser such as Internet Explorer, Mozilla or Netscape Navigator by which user can access to the system.
+The user interface shall be implemented using any tool or software package like Java Applet, MS Front Page, EJB etc.
+Since the application must run over the internet, all the hardware shall require to connect internet will be hardware interface for the system.
+As for e.g. Modem, WAN – LAN, Ethernet Cross-Cable.
+The e-store system shall communicate with the Configurator to identify all the available components to configure the product.
+The e-store shall communicate with the content manager to get the product specifications, offerings and promotions.
+The e-store system shall communicate with billPay system to identify available payment methods , validate the payments and process payment.
+The e-store system shall communicate to credit management system for handling financing options.
+The e-store system shall communicate with CRM system to provide support.
+The e-store system shall communicate with Sales system for order management.
+The e-store system shall communicate with shipping system for tracking orders and updating of shipping methods.
+The e-store system shall communicate with external Tax system to calculate tax.
+The e-store system shall communicate with export regulation system to validate export regulations.
+The system shall be verisign like software which shall allow the users to complete secured transaction.
+This usually shall be the third party software system which is widely used for internet transaction.
+The e-store system shall use the HTTP protocol for communication over the internet and for the intranet communication will be through TCP/IP protocol suite.
+Legal, Copyright, and Other Notices
+E-store should display the disclaimers, copyright, word mark, trademark and product warranties of the Marvel electronics and home entertainment.
+          It shall be as per the industry standard.
+Please refer the following document:
+Vision document for E-store.
+It means a product which is available / Selected from a catalogue can be customized.
+Redundant Array of Inexpensive Disk/Drives
+An Economy-Driven Cluster Scheduler
+1.3	Definitions, Acronyms and Abbreviations	4
+2.1	Product Perspective	7
+2.2	Product Functions	7
+2.3	User Characteristics	8
+2.5	Assumptions and dependencies	9
+2.6	Apportionment of requirements	9
+3.3	Performance Requirements	15
+3.5	Design Constraints	16
+3.6	Online User Documentation and Help System Requirements	16
+3.7	Purchased Components	16
+3.9	Licensing Requirements	18
+3.10	Legal, Copyright and Other Notices	18
+This SRS describes the requirements and specifications of Libra, an Economy-Driven Cluster Scheduler.
+It explains the functional features of the scheduler, along with interface details, design constraints and related considerations such as performance characteristics.
+The SRS is intended for users and owners of high-performance clusters, cluster management software, job schedulers and grid resources.
+The Libra Scheduler is intended to work as an add-on to the queuing, scheduling and resource managing module of the open source Sun Grid Engine cluster management system, previously known as Codine.
+The scheduler will offer market-based economy driven service for managing batch jobs on clusters by scheduling CPU time according to user utility rather than system performance considerations.
+Hence, the main objective of Libra is to provide Quality of Service (QoS) computational economy in cluster computing.
+As part of the project, the Libra Scheduler will only manage sequential and embarrassingly parallel batch jobs to be run on a homogenous Linux cluster, although its functionality can be adapted to schedule resources other than CPU time, even on a heterogeneous cluster.
+To provide QoS to users, there will be no mechanism for users to interact with each other, and bargain on the use of resources according to their considerations, as is provided in a grid-computing environment by projects like Nimrod/G
+Clustering involves connecting two or more computers together to take advantage of combined computational power and resources.
+Hence, a cluster works as an integrated collection of resources that can provide a single system image spanning all its nodes.
+Clustering is a popular strategy for processing applications because it transparently spreads the processing of different jobs throughout the cluster, and are used for high-performance applications such as AI expert systems, nuclear simulations, and scientific calculations.
+Quality of Service – meeting what users actually want, thus maximizing their utility.
+Computational economy refers to the inclusion of user-specified QoS parameters with jobs so that resource management is based on a user-centric approach rather than on a system-centric approach.
+This essentially means that user constraints such as deadline and budget are more important in determining the priority of a job by the scheduler, than system policies like ordering jobs according to the basis of submission time.
+Currently, there is no holistic scheduling mechanism in cluster computing to enable differing QoS levels for different clients.
+Linux is an open source operating system, with extensive documentation and user support.
+A grid is an infrastructure that couples resources such as computers (PCs, workstations, clusters and so on), software (for special purpose applications) and devices (printers, scanners) across the Internet and presents them as a unified integrated single resource that can be widely used.
+Grid computing refers to using a grid for processing jobs and processes.
+Bid-based Proportional Resource-Sharing Model [4]
+This is an economic model that specifies one way of allocating (cluster) resources between competing users based on what their criteria is, such as deadline and budget.
+In this model, the amount of resource allocated to users is proportional to the values of their bids.
+Essentially, in a bid-based system, the users are allocated tokens or credits, which they can use for having access to resources.
+The value of each credit depends on the resource demand and cost at the time of usage.
+We can modify this approach for our cluster, by evaluating this credit/priority according to the deadline and price constraints of users, and considering the system load and resources use as well.
+This priority is then used by a scheduling policy to allocate resource proportionally to the competing jobs.
+This is a scheduling algorithm to enforce resource allocations proportional to a user’s priority or share.
+A pool of tickets represents resource rights to a shared resource.
+A stride is inversely proportional to the number of tickets allocated to a job, hence representing the interval (in terms of CPU time) between two successive scheduling of a job.
+Jobs with more tickets have shorter strides and hence are scheduled more frequently and obtain a greater fraction of the resource.
+The algorithm is deterministic and quite accurately schedules jobs in exact proportions based on their ticket allocations.
+It is the process of moving a job from one computer system to another without restarting the job from the beginning.
+These are jobs that must be run on a single node, and cannot be split into separate jobs.
+These are parallel jobs that are comprised of independent parts that can be split up and performed on separate nodes as if they are sequential jobs, with minimal inter-job communication necessary.
+This is opposed to real parallel jobs that comprise dependent threads that need to interact with each other during the course of execution.
+It is a method of quantifying the system resources used by a job.
+Central processing unit of a computer
+Sun Grid Engine cluster management system
+Software for which the code is freely available for use and research
+A cluster in which the nodes or workstations have uniform characteristics such as the same memory size and hard disk space.
+They run the same operating system.
+[1] R. Buyya, D. Abramson, and J. Giddy, Nimrod/G: An Architecture for a Resource Management and Scheduling System in a Global Computational Grid, HPC ASIA’2000, China, IEEE CS Press, USA, 2000.
+[2] R. Buyya, D. Abramson, J. Giddy, An Economy Driven Resource Management Architecture for Global Computational Power Grids, The 2000 International Conference on Parallel and Distributed Processing Techniques and Applications (PDPTA 2000), Las Vegas, USA, June 26-29, 2000.
+[3] R. Buyya, D. Abramson, and J. Giddy, An Economy Grid Architecture for Service-Oriented Grid Computing, 10th IEEE International Heterogeneous Computing Workshop (HCW 2001), with IPDPS 2001, SF, California, USA, April 2001.
+[4] Rajkumar Buyya, Heinz Stockinger‡, Jonathan Giddy, and David Abramson, Economic Models for Management of Resources in Peer-to-Peer and Grid Computing, Monash University.
+[5] B.N. Chun and D.E. Culler, Market-based proportional resource sharing for clusters.
+Submitted for publication, September 1999.
+The rest of the SRS examines the specifications of the Libra Scheduler in detail.
+Section 2 of the SRS presents the general factors that affect the Libra scheduler and its requirements, such as user characteristics and project constraints.
+Section 3 outlines the detailed, specific functional, performance, system and other related requirements of the Libra scheduler.
+Supporting information about appendices is provided in Section 3.
+As mentioned earlier, Libra forms part of a larger system comprising the Sun Grid Engine cluster management system that runs on a Linux-based cluster.
+SGE is responsible for receiving the jobs submitted by the user and delegating them to Libra for scheduling and placing on appropriate workstations or execution hosts.
+Libra communicates its decision regarding workstation allocation to the resource manager, which then dispatches the job to the chosen workstation.
+Once assignment to a workstation has occurred, Libra is responsible for implementing the scheduling policy on the jobs executing at the workstations.
+No modifications to the Linux kernel are required.
+The details of various interfaces have been provided in Section 3.9.
+The main purpose of the Libra scheduler is to maximize user utility.
+Thus the job details submitted by the user will include job prioritization criteria: the allocated budget and the deadline required by the user, enabling the scheduler to maximize CPU utilization while remaining within the constraints imposed by the need to optimize QoS.
+The scheduler will allocate jobs based on the job parameters, which are job specifications submitted by the user with the job, including:
+Location of the executable and input data sets
+Where standard output is to be placed
+Maximum length of run (execution time)
+Whether the job is sequential or embarrassingly parallel
+However, the Libra scheduler will be QoS driven: it will aim to optimize resource utilization within user-imposed constraints: thus, user satisfaction is the primary concern, as opposed to maximizing CPU utilization.
+Thus, the two job parameters most relevant to the scheduling decisions will be:
+Budget allocated by the user to the process
+With support from the Sun Grid Engine, the Libra scheduler should embody the following features and functions:
+Should be able to enforce resource allocations according to user-centric priorities
+Should be dynamic, and not static, which is a necessary implication of the user-centric approach, so that users who need their jobs completed in emergency and are willing to pay a high price for it, are able to get their job done through dynamic reallocation of resources even if the job is submitted later than other jobs or the system is heavily loaded.
+Hence, the scheduler should be able to change resource limits, priorities, privileges and execution order of the submitted jobs.
+Should be scalable, which means that its performance should not degrade with the addition of nodes and jobs to the cluster
+Should be configurable, and allow for various scheduling policies that can be modified to incorporate QoS parameters
+Should be separable from the cluster management system
+Should provide at least a basic level of job accounting, to aid in scheduling policies
+Should ideally provide a GUI for all components, such as for users to submit jobs and for administrators to oversee scheduling
+A market-based economic model for computational economy needs to be developed for the Libra scheduler, which would be responsible for the pricing and allocation of resources according to user constraints.
+The model is the bid-based proportional resource-sharing model, which will allocate computational time to jobs according to their share determined by the priority of their jobs according to deadline and budget considerations.
+To ensure that the actual resource allocation reflects the overall job share, the proportional stride-scheduling algorithm will be used.
+There are essentially two classes of users for the Libra Scheduler used with the Sun Grid Engine cluster management system: the user who wishes to submit jobs for the cluster and the administrator who oversees scheduling and cluster usage.
+The user needs to know the exact nature of the submitted job, such as the execution time as well as resources required, and must possess the technical know-how to use the interface for submitting jobs.
+The administrator must be an advanced cluster operator, fully qualified in using Linux, SGE, and the Libra Scheduler.
+The current constraints on the project are related to the provision of hardware resources to implement and test a high-performance cluster.
+At present, a network of four Pentium- III workstations, with a 128 Mb RAM, serves as the cluster, with SGE running on top of the Linux operating system.
+For better performance analysis, a larger number of dedicated workstations would be beneficial.
+For testing purposes, a simulating tool needs to be used which may have to be specially designed if a generic one is not readily and freely available.
+A number of factors that may affect the requirements specified in the SRS include:
+The workability of the Sun Grid Engine cluster management system modules such as those dealing with process migration with the scheduling policies provided by the Libra Scheduler is assumed.
+A basic module of job accounting and payment considerations will be provided, as they are not the focus of the scheduler.
+Users are assumed to have a fair estimate of job execution times, so that the decision to accept or reject a job is facilitated.
+Detailed requirements with respect to the economic front-end, that is, the exact costing and pricing policy that will be used to charge users for using the cluster will be specified in a later version.
+The pricing mechanism will not affect the scheduling policies, as they assume a given cost and budget, and schedule resources accordingly.
+Furthermore, at present, only a command line Linux interface or the interface of the Sun Grid Engine cluster management system will be used as the user and administrator interface.
+A GUI might be added once the basic functionality is implemented.
+It also remains to be decided whether a software tool for simulation and testing purposes will be designed or a generic one that is freely available will be used.
+This section is organized by the processes and features encapsulated in the Libra scheduler.
+First, three features of the overall cluster management system and its interaction with the user or administrator are described: Submit Job, View Job Status, Delete/Change Job.
+These are linked to the inputs and working processes of the scheduler.
+They are followed by a detailed specification of the functionality of the Libra scheduler, which are diagrammatically explained by the Data Flow Diagrams provided in Appendix B. Appendix C provides the Data dictionary which should be used to interpret and understand the Data Flow Diagrams.
+This functional feature deals with the end-user (can also be used by the administrator) and is facilitated by the interface of the Sun Grid Engine cluster management system.
+Hence, it is linked to the scheduler, but does not interface directly with the scheduler.
+However, the SGE interface will need to be adapted to include additional submission parameters that a user needs to be submit, which are not already supported by SGE.
+This may alternately be done through a command-line interface.
+User Information – relevant user data such as name and authentication id that needs to be used to submit a job to the cluster.
+Job Information – about the job that the user wants to submit, as well as already pending jobs, to determine whether the cluster can accept more jobs and can cater to the particular user job.
+The job details are provided in the functional feature Initialize Job.
+Cluster Information – Cluster Type and Scheduling mechanism details, Current Load Status, Submission Directions and Criteria.
+The cluster decides whether it is even open for job submissions, and whether the user that is trying to submit job is a valid user or not.
+This decision is different from the Accept/Reject Job feature described later on, which deals with the situation when the cluster is open for job submissions, but will decide on whether to accept or reject a job based on job parameters such as budget provided and deadline specified.
+Boolean – Whether the cluster is accepting submission or not.
+Boolean – User verified or not.
+This feature will allow the user or administrator to view details about the job that have been submitted, and the progress of the execution of the job.
+User Id and Password – to ensure that only the appropriate user is able to see the job status
+Show the user the available options about the submitted job, and information about the progress of job execution.
+Process selected options if choices are provided to the user to view different aspects of job information.
+User view of available options about jobs submitted by the user.
+This feature may be available to both the user and the administrator, to cancel a job or under specific circumstances, change a job parameter.
+Parameters such as deadline and cost are crucial to the job scheduling and would not normally be changeable.
+However, if the user wishes to specify a different output directory or a delayed deadline, this may be permitted.
+User Id and Password – to ensure that only the appropriate user is able to delete/change the job.
+Remove job from the queue and update cluster status.
+Revise scheduling decisions about resource allocation to pending jobs and submission of new jobs.
+Updated cluster information and scheduling decision – CPU load, node status, queue length, quanta allocated to pending jobs, revised expected finishing deadline of pending jobs.
+These outputs are facilitated by the functionality of the Sun Grid Engine cluster management system, and are not independently produced by the Libra scheduler.
+This is a main functional requirement that prepares the scheduler for eventually scheduling and executing a job.
+The Libra scheduler performs it once a job has been accepted by SGE, with information from the scheduler.
+The information submitted by the user about the job, as well as the job id assigned by SGE.
+Two processes are performed as part of this function: the details of the job are retrieved and then these details are set in variables that represent the state of the cluster and its queues.
+The parsed parameters are passed on to the scheduling module where the job may be accepted or rejected.
+The output comprises the set variables that represent job information submitted with a job.
+Hence, the exact job details are output: Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.
+This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline.
+Hence, the most important inputs are budget, deadline, and execution time, to determine whether the job can be accepted or not.
+Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.
+Cluster information – CPU load, node status, remaining time of pending jobs
+Based on the job parameters, the scheduler figures out a priority of the job that reflects the share of CPU time that it deserves and needs according to the specified criteria.
+The scheduler determines whether the job can be finished by the requisite deadline, given the execution time of the job and the execution status of other pending jobs on various nodes.
+The output includes a boolean value specifying whether the job has been accepted or rejected.
+A suggested deadline or cost is given to the user, as a precondition for the job to be accepted.
+This is the feature of Libra that decides how the job will be scheduled based on its budget and deadline.
+It uses the Stride Scheduling Algorithm to enforce resource allocations (CPU cycles) proportional to a user’s budget and deadline.
+It is performed by Libra once it has decided that a job can be accommodated.
+Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.
+Allocate tickets to a job based on its budget and deadline and the budget and deadlines of all other jobs on the execution host under debate.
+Calculate the stride and the pass of the job, where the stride is simply the global stride constant divided by the tickets and the pass is initially just the stride.
+Scheduling information – the job’s tickets, stride and pass.
+This feature decides on which node and on which queue the job will be placed for execution.
+It is done on the basis of the job’s budget, execution time and deadline.
+Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.
+Cluster Information - CPU Load, Node Status, Remaining Time of Pending Jobs, Available Memory
+Libra first looks at the load on each of the hosts and sorts them in ascending order, choosing the host that is least loaded.
+This ensures that load balancing is taken care of.
+It then selects the appropriate queue based on whether the job is sequential or embarrassingly parallel, budget, etc…
+The chosen execution host and queue.
+This feature takes the job and inserts it into the queue on the execution host that the scheduler had previously decided it is to be placed in.
+This is a separate feature since the job may be able to wait for a while before it is given CPU time, allowing other jobs to complete or be scheduled earlier if their deadlines are more urgent.
+Thus, the dispatcher decides when to actually send the job for execution.
+The chosen execution host and queue on which to place the job for execution.
+The scheduler sends the job to the appropriate queue and it joins the competition for resources.
+The scheduled job in its appropriate host and queue.
+Every time a job is scheduled for execution on a host, this feature of Libra updates the cluster status.
+This action is also performed when a job ends and is removed from the cluster.
+Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.
+Chosen execution host and queue.
+Libra first reserves the amount of resources that will be required by the job on the node.
+It then updates the execution host queue status and sends that information about the additional load on the queue and node under consideration to the central information store on the master host.
+There is no output associated with this feature as it simply performs an update and does not send any results back.
+It is a trigger that is activated every time a job is scheduled or is deleted from an execution host.
+As long as there are jobs in the queues, this feature is being run.
+It essentially decides how to time-slice between all the jobs currently being executed.
+These scheduling decisions are made based on the stride-scheduling algorithm.
+Scheduled Job – job details and the queue and node on which that job is scheduled to run.
+Scheduling Information – the job’s tickets, stride and pass.
+It looks at all the jobs on the cluster and selects the one with the minimum pass value, and allots it a quantum.
+The pass of that job is then advanced by its stride.
+In case of a tie, the arbitrary FIFO job ordering is used.
+This loop is repeated until there are no jobs left to run on a queue.
+Updated Cluster Information - CPU Load, Node Status, Remaining Time of Pending Jobs, Available Memory
+The scheduler will not support job migration for the purpose of decreasing resource fragmentation.
+There will be a maximum of 1 bug/KLOC.
+In case of system outage, the cluster will be down while the Linux operating system boots up.
+This will take less than five minutes.
+The Libra scheduler will ensure the privacy of user job status and ensure full control over job execution, so that alteration of scheduling criteria or actual resource allocation is not possible without administrator authority.
+The maximum response time for the submission of a job will be 1 minute.
+The maximum number of jobs schedulable is limited only by the capacity of the nodes to fulfill the jobs’ deadlines; there is no upper limit inherent in the Libra scheduler as such.
+Assuming submitted statistics for jobs are accurate, the Libra scheduler will ensure that all jobs are completed with a 10% error allowance.
+Under all circumstances, the maximum cost payable as submitted by the user will be the maximum cost charged to the user.
+All code will be written as specified by the Hungarian Naming Convention.
+All code will be written as required by the GNU General Purpose License.
+Parent Component: Sun Grid Engine
+The Libra scheduler will be a sub-component of SGE.
+All coding will be done in standard C.
+Exhaustive searches of the entire set of combinations of jobs will not be done.
+Heuristics will be developed for this scheduling problem.
+Online User Documentation and Help System Requirements
+All documentation will be made in accordance with requirements pertaining to open source software under the GNU General Purpose License.
+Additionally, on-line user documentation will be in the form of man pages accessible through Linux.
+The entire Libra project is open source, and hence no component of it will be purchased.
+There will be two user types – the cluster user and the cluster administrator – each of which will have its own corresponding interface.
+The minimal requirements are that the cluster user would be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.
+There will be a different command for each of the following actions:
+submit jobs with the associated deadline, cost, and execution time
+query the cluster to establish the current cost per unit time for submitting new jobs
+monitor the status of submitted jobs
+The minimal requirements are that the cluster administrator will be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.
+In addition to the commands available to the user, additional commands will allow the administrator to:
+check the status of each node of the cluster
+check the usage pattern history of the cluster
+check the status of all submitted jobs
+check the load on each node of the cluster
+alter the cost structure of the cluster
+alter the scheduling policy of the cluster
+cancel, suspend, and resume any job
+All hardware interfaces of Libra will be those of the Sun Grid Engine on top of which it will be running.
+Hence, it will incorporate SGE’s interfaces for:
+Libra will directly interface with the modified Sun Grid Engine cluster management system, version 5.3.
+SGE in turn will be interfacing with the operating system and any other software components it requires.
+For the execution of embarrassingly parallel jobs, the PVM (Parallel Virtual Machine) and MPI (Message Passing Interface) libraries will be used by the cluster.
+Libra will utilize the communications architecture of Sun Grid Engine itself, and will not have any unique communications interfaces above of SGE.
+Libra will be released under a GPL license and will be open-source.
+Legal, Copyright and Other Notices
+Sun Grid Engine (SGE) is a copyright trademark of Sun Microsystems, Inc.
+Libra Scheduler is a copyright trademark of Mr. Rajkumar Buyya, Monash University.
+MPI is a copyright of the University of Chicago and Mississippi State University.
+PVM is a copyright of the University of Tennessee, Oak Ridge National Laboratory, and Emory University.
+Appendix A – Background Research (dated 10th Nov, 2001) on:
+Appendix B – Data Flow Diagrams
+Project Owner and Client: Rajkumar Buyya Faculty Advisor: Dr. Arif Zaman Project Group: Jahanzeb Sherwani, Nosheen Ali, Nausheen Lotia, Zahra Hayat
+Vickii Bacchetta, Udesh DeSilva, Celestino Francisco,
+Danielle L. Green, Jose Saafigueroa, Slavica Pepovska
+This highly detailed Software Requirements Specification document explains and describes all of the agreed upon requirements that will be implemented for the VIRTUAL-EDU system, designed for NJIT.
+The document will provide the underlining structure of VIRTUAL-EDU, in a manner that both the Developers and the Customer will have a clear understanding of its functions, interface, design and constraints.
+Once the documents are approved by NJIT, it will also serve as a contract between the developers and NJIT.
+This document is intended to be read and utilized by the development team of VIRTUAL-EDU, including testers, programmers and project managers, the administrators of NJIT and any stockholder interested in seeing what NJIT is bringing forth to the university.
+The outline of this document will follow the table of contents found on the second page of this document.
+The outline is split into 6 sections.
+Section 1 - Description of the purpose of the document and what it will contain.
+Section 2 - Overall description of the project
+Section 3 - Highly detailed description of the system functional requirements
+Section 4 - External interface requirements that affect the system
+Section 5 - Insight on other non-functional requirements
+Section 6 - Glossary and DFD model diagrams of entire system
+Each section is written with the intent that different users will read different sections.
+ The first two sections use universal language; while the next four sections use technical language.
+The requirements will be explained by their level of importance.
+ Meaningful requirements will be describe first and less meaningful requirements will be describe last.
+ Every requirement will be mentioned and explained with the same high level of detail.
+The majority of the models showcased in this document will consist of data-flow diagram (DFD’s)
+The project being developed for NJIT goes by the name of VIRTUAL-EDU.
+The requirements specified on this S.R.S. document coincide with the university’s  need for a new distance learning system which will enable professors to communicate more effectively with students via a Secure Application Platform that provides at the very least the following features (email, group chat, bulletin board, and audio/visual tools).
+ The proposed system will incorporate robust features such as audio and video capabilities, in which students within the same group or university can communicate via a portal that provides both visual & audio functionality, file hosting and file management, user profiles with pictures, better group collaboration tools, and online testing capabilities.
+The document will satisfy our project scope by delivering well documented specifications, along with highly detailed models.
+Furthermore, it will contain comprehensive explanations of the functionality and constraints of each of the following requirements.
+Audio and video streaming capability/ podcasting (live and on-demand)
+File hosting and file management tools
+User profiles with pictures including integration with other campus resources
+Chat and group collaboration tools (Instant messaging)
+Online testing tools with instant grading
+IEEE Std. 830-1984 (1993, 1998)
+IEEE Guide to Requirements Specification (an annotated IEEE Std 830-1984)
+IEEE Std.830-1984 - Example "SRS: The AUTOTELLER Automatic Teller System"
+Virtual-EDU consists of an online website that allows users to create a classroom like environment with the features that it contains.
+Once registered to the system, a user can create a profile sharing his or her information with the rest of the enrolled users.
+Users will be able to find commonalities with each other through the user profile.
+Virtual-EDU also gives users the ability to store data and/or important materials in a secure network location for future retrieval or present usage.
+This particular data as well as other files may be shared or worked on using Virtual-EDU extensive tools for file sharing and document collaboration.
+Users can work together on a single document in real time or send their work to other users via secure file sharing methods and protocols.
+If further communication is need between users, Virtual-EDU has features such as instant messaging, where users can hold single or group conversations via a secure real-time communication based on typed text.
+However, if more efficient means of communication are need, users have the ability to hold single or group video/audio conferences, whereby the users will be able to see other users streamed live in real-time.
+The top level diagram below shows all of the user features that will be implemented for the system.
+Streaming audio and video (both live and on-demand) will allow users to interact with faculty and fellow classmates over a streaming video and audio, one-to-one or one-to-many connection.
+Also, learning materials can be delivered through audio and video formats.
+The instant messaging feature will allow users to interact with faculty and fellow classmates via text-based format, one-to-one or one-to-many connection.
+File sharing and document collaboration tools allow users to efficiently share and develop documents and reports within a group.
+User profiles containing contact information, pictures, and other related information on a student personal page.
+ This page will only be accessible to students and faculty enrolled in the same class.
+Only the owner of the profile may make changes to it.
+Users will have the ability to manage a private temporary hosting space.
+Tools such as file uploading, directory creator, move, delete and rename will be accessible.
+System Administrators: User class with domain system privileges which allows them to maintain the entire system, manage enrollment and create virtual classes.
+Users in this class have complete control and knowledge of the entire system.
+User class with domain class privileges, which allows them to maintain and support the class they are enrolled in, along with the other enrolled users.
+Users in this class have zero knowledge of the back end of the system; however, they know the front end of the application.
+User class with limited class privileges, which allows them to operate the front end of the system with limited read only permissions.
+Users in this class will only be able to make modifications to their profile section.
+Platform: at least Microsoft Server 2003
+CPU: at least Dual Core 3.6 MHz
+Space:  Minimum of 2 gigabytes
+Ram: Minimum of 4 gigabytes
+Other services: IIS 6.0 or later, .Net
+Framework 2.0 or later, video and audio streaming.
+CPU: at least 500 MHz
+Ram: at least 512 MB
+Recommended Peripherals:  microphones, web camera, video and audio cards.
+Browser:  Microsoft’s Internet Explorer or Apple’s Safari, or Mozilla’s Firefox.
+Services: SSH client, FTP client, VPN client
+The university will be in session during the development of the application.
+Since current system downtime needs to be maintained at low levels; system rollouts and system validation need to be scheduled during low usage periods.
+The current NJIT user database system required to run this application may be outdated or in need of maintenance.
+Therefore the current system may only house 250 concurrent users.
+Not allow languages will be represented for online system documentation.
+Only browsers from Microsoft, Apple and Mozilla will have functional access to the application.
+Both the enrolled students and faculty will be provided with printable manuals through email and will have access to on-line tutorials.
+ The system will also provide an on-line help feature, providing the users with easy to read “how-to” instructions.
+NJIT’s administration will be given an in-depth manual of the entire system, so that they may support the system after development is complete.
+Current systems and databases will still be available for use and archive.
+Database will be modified to meet VIRTUAL-EDU‘s requirements.
+New entities and relationships for the user will need to be added.
+Staff is willing to accept, learn, and utilize the new system.
+Users should have an adequate computer, network connection, and webcam with microphone.
+Users will have access to common programs, such as media players for streaming.
+Instant Messaging is the feature allowing students and professors to interact with each other and talk in real time.
+Instead of leaving each other messages on boards and going to chat rooms where screens are not refreshed in less than 60 sec, students will be able to see who is online and talk to them immediately.
+If a professor is marked online, students will be able to ask questions and receive answers from the professor almost instantaneously.
+This feature is of High Priority and students will be able to benefit from this feature because it will give them the feeling of a real classroom, something that most students are complaining lacks when taking an online class.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the messaging software tool – Instant-Edu
+Response: New pop up window shows up with list of contacts.
+Online users are marked green and offline users are marked red.
+User action: Double click on the name of an online user
+Response: New window pops up, where real time conversion can be initiated between parties
+User action: Click on the smiley button in the window
+Response: A list is shown containing all available emotions to be used in conversation
+User action: Click on the plus button in the window
+Response: A list shows up that contains all other available online users that can be invited to join the conversation
+User action: Double click on a name in that window
+Response: The new user joined the conversation and it’s now a conference between multiple people
+User action: Click on the file button in the window
+Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to the other party
+User action: Select the file
+Response: The selected file is marked blue
+User action: Click on the send file button
+Response: The file begins transmitting to the other party
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must enable java scripts on their systems to be able to install Instant-Edu messaging software
+REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system
+Streaming Audio and Video allows students and professor to make audio and/or video calls between each other.
+The professor will have the ability to hold a video lecture for the whole class or have one on one meeting with the students.
+This is another feature that will give the students the feeling of a real classroom.
+Students will have the ability of attending an online class and be able to see the professor and colleagues and interact with each other.
+Professor will be able to ask questions to students and expect an answer immediately.
+Professor will be able to post the video lecture online and make it available for a later download.
+This feature is of Medium Priority.
+Despite the lack of audio and video students will still be able to interact in real time with the first feature – instant messaging.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the messaging software tool – Instant-Edu
+Response: New pop up window shows up with list of contacts.
+Online users are marked green and offline users are marked red.
+User action: Double click on the name of an online user
+Response: New window pops up, where real time conversion can be initiated between parties
+User action: Double click on the Audio Button
+Response: The software calls the other user’s computer and awaits for response
+User action: The user on the other side clicks on accept button
+Response: The connection is established and the conversation between two parties begins.
+User action: The user on the other side clicks on deny button
+Response: The connection is not established and the user that initiated the conversation will receive a message the other user is busy.
+User action: Double click on Video Button
+Response: The software calls the other user’s computer and awaits for response.
+User action: The user on the other side clicks on accept button
+Response: The connection is established and the video transmission along with audio transmission begins between two parties
+User action: Click on the hang up button
+Response: The conversation between two users ends.
+User action: Click on the host a conference button
+Response: New window pops up.
+User will be able to select online users and invite them to join the conference.
+User action: Click on the accept button
+Response: User has become part of the video conference and be able to follow an online audio/video lecture from the professor.
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must enable java scripts on their systems to be able to install Instant-Edu messaging software
+REQ-5 - Users must be connected on a high speed internet (DSL, Cable)
+REQ-6 - Users must have their computers equipped with microphone and web camera.
+Customizable User Profile will be feature that will allow users to customize their profile to their taste.
+The user will be able to select/change their password, update information about themselves (phone number, address).
+Users will be able to change the background colors and menu layout on their profile page.
+Users will have couple of different options to use if they wanted to, for example leave a video and introduce themselves.
+Or put a link to a favorite book; give some more info about them.
+Users will also be able to choose their font as well as font color for their profile page.
+This feature will be of Medium priority.
+It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.
+In other words, everyone’s profile page can look different for each student.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the setting up preferences button
+Response: New menu shows up with all the available features.
+User action: Click on the Contact button
+Response: New text area will show up where users can put their contact information, phone numbers, address etc.
+User action: Click on the button background color
+Response: A new menu shows up that shows all the available colors that the user can choose for background
+User action: Click on the video button
+Response: New pop up window shows up that will give them opportunity to start video recording and introduce themselves.
+The video will become part of their profile page.
+It will be easier for students to associate with each other when they actually meet the person on video.
+It will bring better team performance.
+User action: Click on the info button
+Response: Text area shows up where users can put some more info about them, their strengths, and weaknesses, put favorite links etc.
+User action: Click on the font button
+Response: New menu shows up that will give the choices for different fonts that can be used to display the info on their profile page
+User action: Click on font size button
+Response: A new menu shows up that will have all different font sizes that the user can choose.
+User action: Click on layout menu
+Response: A menu with different layout choices will show up.
+User action: Click on password
+Response: A new window pops up that will give the user the ability to reset/change the password.
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must have web cam and microphone if they want to be able to create an introducing video of themselves on their profile page
+Virtual-Space consists of folder space set aside for each student to upload files to.
+ An uploading feature would be the only component available in the first release, which would aid in handing in assignments.
+ This feature is of medium priority as email can still be used as a means for this type of document sharing.
+ The cost of implementing this feature would include insuring each class section a space on an FTP server.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the File Hosting software tool – Virtual-Space
+Response: Window displays file tree diagram of user’s uploaded files.
+User action: A user clicks the Browse button
+Response:  Produce a window for the user to browse their machine to select a file.
+ Once file is selected, browse window would close and the path to the selected file would show in the text box.
+User action: A user clicks the Upload button
+Response:  Should upload the selected file and produce a window letting the user know if the upload was successful.
+ If no file is selected, a window should let the user know they need to use the Browse button to select a file.
+ If the upload will cause the account to go over disk space quota, the file should be still be allowed and an email sent to the administrator and professor letting them know of the overage.
+ The file tree diagram should update with the new file name added to the list.
+Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.
+For the first release, each class needs a quota space of at least 1GB per student in that class.
+ If the upload will cause the account to go over disk space quota, the file should be still be allowed to upload and an email sent to the administrator and professor.
+Files causing the quota to be exceeded should not be allowed to upload.
+The students overall login should allow them access to the appropriate folder, and their account should only have Write privileges.
+The professor’s username should allow them access to the appropriate folder and have Read, Write, and Delete privileges.
+Firewall ports may need to be unblocked on both sides to accommodate file transfers.
+Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OS
+Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.
+Virtual-Space Req 4:  Users must enable pop-up windows.
+In the second release of Virtual-ED’s Virtual-Space features would be added to include full file management for any uploaded files.
+ In this release, FTP space would be designated by student rather than by class section.
+ Disk space quotas would need to be implemented to preserve resources.
+ Each student would be able to upload files to share with team members or to turn in assignments.
+ Arranging by folders and deleting files would also be newly added capabilities.
+This would incur a higher cost to accommodate more disk space, and would also require an administrator to spend more time managing the FTP accounts.
+ The first release version of this feature was of medium priority, so adding more capabilities to it would be of low priority as email is still a highly usable alternative.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the File Hosting software tool – Virtual-Space
+Response: Window displays file tree diagram of user’s files and the shared files of the classes’ other users.
+ Displays buttons to upload new files and share or download existing files.
+User action: A user clicks the Browse button
+Response:  Produce a window for the user to browse their machine to select a file.
+ Once file is selected, browse window would close and the path to the selected file would show in the text box.
+User action: A user clicks the Upload button
+Response:  The program should provide a window for the user to select a folder in their file tree for the file to be stored.
+ Once selected, the program should upload the selected file and produce a window letting the user know if the upload was successful and the file name should be added in the appropriate folder of the file tree diagram.
+ If no file is selected, a window should let the user know they need to use the Browse button to select a file.
+If the addition of the new file would put the user about their disk space quota, a window should let the user know they cannot upload it without first deleting other files.
+User action: On file tree, a user selects a file name and clicks Delete button or presses Delete button on their keyboard.
+Response:  Window should ask user to verify the file deletion, if yes, then the file should be deleted from the server and the name removed from file tree diagram.
+User action: On file tree, a user selects a file name and drags it to another folder
+Response:  The file should be moved to the new destination folder and removed from the previous folder.
+The file tree diagram should be updated to reflect the new structure.
+User action: On file tree, a user selects a parent folder and then clicks New Folder
+Response:  A window should ask the user to enter a name for the new folder.
+ Once entered and the user clicks OK, the new file should be created on the server and the file tree diagram should be updated to include the new folder.
+User action: On file tree, a user selects a file name and clicks Download button
+Response:  A window opens asking the user to select a folder on the computer in which to download the file.
+ Once selected, a copy of the file is placed in that folder on the user’s computer.
+User action: On file tree, a user selects a file name and clicks Open button
+Response:  The typical operating system prompt asks the user to Save or Open.
+If Save is selected, a window opens asking the user to select a folder on the computer in which to download the file.
+ If Open is selected, the document will open using the appropriate program or it will prompt the user to select a program to open the file with.
+Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.
+For the first release, each student needs a quota space of 2GB.
+ Files causing the quota to be exceeded should not be allowed to upload.
+The students overall login should allow them access to the appropriate folder, and their account should only have Read, Write, and Delete privileges
+Firewall ports may need to be unblocked on both sides to accommodate file transfers.
+Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OSX
+Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.
+Virtual-Space Req 4:  Users must enable pop-up windows.
+Test Admin – Virtual-Exam
+Students who learn online still need to take quizzes and exams.
+ Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.
+ Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.
+ Using Virtual-Exam, students can download an Excel spreadsheet or editable PDF file and fill in their answers.
+ Mac users will use the Microsoft Office version for their operating system.
+ Then using the file management feature, they can upload the completed test within the allotted time period.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Testing software tool – Virtual-Exam
+Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.
+ For tests that have already been taken, the name and class are listed along with a score/grade.
+User action: Click on an untaken test
+Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.
+ If student selects Yes, a window will display prompting the user to download the test file.
+ Once download is complete, a timer will start for the amount of time allotted by the professor.
+ If the student selects No, they will be taken back to the home screen for Virtual-Exam.
+User action: Click on an Upload Test
+Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.
+ Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.
+Virtual-Exam Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.
+For the first release, each class needs a private folder with Write permissions only for student logins.
+The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.
+Firewall ports may need to be unblocked on both sides to accommodate file transfers.
+Students need Excel installed and/or a PDF reader.
+ Professors need Excel and a PDF creator.
+Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX
+Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.
+Virtual-Exam Req 4:  Users must enable pop-up windows.
+Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.
+Test Admin - Virtual-Exam V2
+Students who learn online still need to take quizzes and exams.
+ Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.
+ Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.
+ Using this version of Virtual-Exam, students can download a file from any of the programs within Microsoft Office.
+ Mac users will use the Microsoft Office version for their operating system.
+ Then using the file management feature, they can upload the completed test within the allotted time period.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Testing software tool – Virtual-Exam
+Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.
+ For tests that have already been taken, the name and class are listed along with a score/grade.
+User action: Click on an untaken test
+Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.
+ If student selects Yes, a window will display prompting the user to download the test file.
+ Once download is complete, a timer will start for the amount of time allotted by the professor.
+ If the student selects No, they will be taken back to the home screen for Virtual-Exam.
+User action: Click on an Upload Test
+Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.
+ Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.
+Virtual-Exam Req 1: FTP management software on the server setup with quota space, user authentication, and appropriate user rights.
+For the first release, each class needs a private folder with Write permissions only for student logins.
+The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.
+Firewall ports may need to be unblocked on both sides to accommodate file transfers.
+Students need Excel installed and/or a PDF reader.
+ Professors need Excel and a PDF creator.
+Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX
+Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.
+Virtual-Exam Req 4:  Users must enable pop-up windows.
+Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.
+This feature that will allow users to customize the online learning classroom to their taste.
+The user will be able to select background colors and toolbars that are viewed.
+Users will also be able to choose their font as well as font color.
+This feature will be of Medium priority.
+Giving the users the opportunity to change font’s size will give them a great benefit.
+Some like bigger font that is easier to read, some like to use the smaller font giving them the opportunity to show more features on the screen without having to scroll up and down.
+It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.
+In other words, everyone’s classroom can look different for each student but still have the same features and functionalities.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Preferences button
+Response: New menu shows up with all the available features.
+User action: Click on the Background Color menu within Preferences menu
+Response: A new menu shows up that shows all the available colors that the user can choose for background
+User action: Click on the Font menu within Preferences menu
+Response: New menu shows up that will give the choice for the font
+User action: Click on Font Size menu within Preferences menu
+Response: A new menu shows up that have all different font sizes that the user can choose.
+User action: Click on Toolbar menu within Preferences menu
+Response: A menu with available toolbars will show.
+ Selecting a toolbar toggles if it shows or not.
+ Check marks should show next to toolbars that are currently selected for view.
+Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.
+Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.
+Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.
+The updated version of this feature will allow the user to customize the sections of the page into different views.
+ For example, some users like to see a file tree on the left side and a file preview on the bottom of the page.
+ Other users might want to see both a file tree and messages without a preview pane.
+User action: Log in to Virtual-ED
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Preferences button
+Response: New menu shows up with all the available features.
+User action: Click on the Background Color menu within Preferences menu
+Response: A new menu shows up that shows all the available colors that the user can choose for background
+User action: Click on the Font menu within Preferences menu
+Response: New menu shows up that will give the choice for the font
+User action: Click on Font Size menu within Preferences menu
+Response: A new menu shows up that have all different font sizes that the user can choose.
+User action: Click on Toolbar menu within Preferences menu
+Response: A menu listing available toolbars show up.
+ Selecting a toolbar toggles if it shows or not.
+ Check marks should show next to toolbars that are currently selected for view.
+User action: Click on Layout menu within Preferences menu
+Response: A menu with different layout choices will show up.
+ Options to select panes that show in users site, including file tree diagram for Virtual-Space, messages/post threads, class lecture pane, Instant-ED pane, file/message preview pane, and Virtual-Exam pane.
+ Suggested organization layouts are also selectable from this menu.
+ Panes will be added or removed as (de)selected from menu and organized according to selected layout.
+Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.
+Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.
+Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.
+Enhanced file sharing/transfer and document collaboration
+Enhanced file sharing/ transfer and document collaboration will be a feature that will allow students to have a Virtual hard drive space in the Virtual-Edu classroom that they will be able to use for sharing files.
+Users will be able to upload their documents, and eventually transfer them between other users/computers.
+The files saved in the virtual hard drive space will be accessible to the user even if user is accessing Virtual-Edu from a different computer.
+Benefit from this feature will be that users that are constantly mobile and on the go can access the documents and projects from any place; they can update their documents and upload a revised version again.
+The latest version of the document will be always available with just a click of a button.
+Priority for this feature will be medium for the Second Release date.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Virtual-Hard Drive
+Response: New pop up window shows up with list of documents already uploaded in the Virtual Hard Drive.
+The bottom of the window will show how much space is available for use.
+User action: Click on upload button
+Response: New window pops up, user can search for file that he wants to upload from his computer to the Virtual Hard Drive
+User action: Click on the selected file
+Response: System will begin file transfer with first checking if file with the same name already   exists in the system, if not transfer will continue, if yes, user receives message:  “File already exist, do you want to replace”
+User action: Click on the “yes” button
+Response: File continues to upload
+User action: Click on “no” button
+Response: The file is not uploaded and the user has the option to rename the file and uploaded it under the new name.
+This way the user will have the option of keeping both old and new file.
+User action: Click on the “send file” button
+Response: The other user will receive a message saying that someone is trying to send them a file.
+And a window pops up saying: “Do you accept?”
+Response: The file begins transmitting to the other party
+Response: The file transmission will fail
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must enable java scripts on their systems to be able to install Instant-Edu messaging software
+REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system
+Class lecture video/audio available as podcasts
+This feature will enable professors to host their lectures as video and/or audio podcasts.
+Students will be able to download or view as live streaming videos/audios.
+This will be great feature that will give students the ability of rewind and play again in cases where the student didn’t really understand the lectures and feels that they need to listen/watch it again.
+This feature is not available in a real classroom as once the lecture is done, the professor leaves the classroom and students have to rely on the note that they were able to make during the lecture.
+Conclusion, this feature will not only meets the expectations of a real classroom but exceed them.
+Priority for this feature will be high for a second release cycle.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Podcast button
+Response: New window shows up with list of available lectures.
+Audio files will be in mp3 format and video lectures will be flash video format
+User action: Double click on the audio or video file
+Response: Real player pops up and starts playing the lecture in live streaming
+User action: Right click on the audio or video file
+Response: Option for save as will pop up that will give the user ability of downloading the lecture and being able to view/listen to it even when pc doesn’t have an internet connection
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must enable java scripts on their systems to be able to install Instant-Edu messaging software
+REQ-5 - Users must have Real Player installed on their systems
+This feature will enable the users to share programs enter meetings, share and edit documents at the same time.
+The professor will be able to host a network projector and hold a lecture almost the same as in a real classroom, projecting power point slide and all students currently logged in will be able to follow what’s going on in the class.
+Professor will be able to distribute documents to students (example syllabus) with the ability to lock the editing tools, so unauthorized change to the document will be impossible.
+If professor makes a change or ads to the syllabus or any other document the change will be instantly distributed to all students that have those documents in their space.
+The professor will have the ability to write on the whiteboard and students will be able to follow the classes and professors writing with no problem.
+Priority for this feature will be high for the second release cycle.
+Using network projectors will give a more realistic feel to our Virtual Classroom and students will benefit from this feature.
+Any user will be able to share a program on their computer with the rest of the users currently logged in.
+Students will be able to use this same feature when working on projects as teams, giving them the ability to all work on one document at the same time.
+User action: Log in to Virtual-Edu
+Response: The user is logged in and all available features in the system are shown in the menu
+User action: Click on the Whiteboard-Edu button
+Response: New pop up window shows up.
+Users will be able to join a conference or host a new one.
+The user initiating the conference will setup username and password and distribute the password to all users that would like to join his/her conference.
+Once user has joined the conference he/she will be able to see and interact will all the participants.
+User action: Click on share a program button
+Response: New window pops up, that will show all the programs available for sharing.
+User action: Click on a certain program from available choice
+Response: This program will automatically be distributed to all the participants, and all users will see the same screen.
+User action: Click on the file button in the window
+Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to all participants.
+Every participant will be able to make changes to the document and change will be implemented on each participants screen.
+User action: Click on share button
+Response: The entire desktop will be shared and everyone will be able to see the whole shared desktop.
+User action: Click on the sign out button
+Response: The user will leave the meeting conference.
+REQ-1 - Users are limited to Windows XP, Vista or Mac- OS
+REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers
+REQ-3 - Users must have pop-up windows enabled on their systems
+Users must enable java scripts on their systems to be able to install Whiteboard-Edu software
+REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system
+REQ-6 - Users must accept the privacy statement prior to using the application sharing
+The user interface of the Virtual-ED system is designed with increased emphasis on the user Human-Machine interface.
+The interface is compartmentalized by competency to ensure that the user can easily navigate within the portal.
+Each compartment has a distinctive focus with a minimalist approach.
+The user has the capability to alter the interface as suited.
+The initial entry (Welcome Screen 1) has three separate quadrants; each quadrant has a specific function.
+Help Feature: Feature is linked with the help desk staff of the particular institution; anyone who has difficulty in logging on can choose this feature to contact the system administrator.
+Contact Us Feature: Will enable the user to look up a list of pertinent e-mail addresses/phone numbers within the institution.
+News Feature:  The administrator has the capability to post current news on this section as needed.
+Enables the user to select the pertinent class, each class is highlighted for ease of use.
+Enables the user to choose a specific application to be used.
+To launch an application click on the application icon, the application will open up on a separate screen
+Web Conferencing 4  (Sample image from oovoo.com)
+Web conferencing feature enables the user to interact with multiple users within a given class.
+Each user can chat with one another while the session is open.
+Video Conferencing with multiple users 4.1  (Sample image from oovoo.com)
+Instant messaging feature will allow users to interact with faculty and follow classmates over a text based one-to-one or one-to-many connection.
+(Sample image from oovoo.com)
+(Sample image from oovoo.com)
+This screen is an extension of the web conferencing feature; this screen enables the users to view all available chat sessions available at any given time.
+File transfer feature enables the user to have the ability to manage a private temporary hosting space.
+Tools such as file uploading, directory creator, move, delete and rename will be accessible
+Display Monitor: It is recommended that a high resolution LCD or CRT monitor be used for best results.
+Input devices:   All hardware interfaces will be provided by the operating system, the system will require a keyboard and a mouse.
+In addition a properly configured sound card and a voice input device will be needed to utilize the conferencing feature.
+Visual Input:  The conferencing feature requires a high resolution video input device.
+ The device needs to be configured in accordance to manufacturer recommended settings and should be in operation before enabling the conferencing feature.
+The Virtual-ED software has a seamless integration with the local operating/hardware system.
+Once the user logs on to the Virtual-ED system (screen.1), the interface will seamlessly manage the local input/output/operating system, devices as needed
+When using “Test administering” feature (applicable to Administrators only), XL and PDF must be installed in the native machine to view the downloadable reports.
+By default the reports will be saved to the “C: Program files/Virtual-ED/Bin/My reports folder”, (Requires XL-2002 or higher and Adobe Acrobat Reader 8 or higher)
+Web Browser: The system requires the use of IE or Fire fox, Safari as the native web browser.
+It is recommended that current system performs optimally with the suggested browsers.
+The users must have pop-up windows enabled on their systems and must enable java scripts on their systems to be able to install Instant-Edu messaging software.
+Communication Standards:  SSH client, FTP client, VPN client are used for connection between two computing endpoints.
+Data Transfer Rates:  Recommended 1.5 MBPS Download speed (for any download activities) and upload speed of minimum 128 Kbps.
+Security: Users must have antivirus software installed so they can scan the incoming files from other users of the system, any commercially available Antivirus is can be used scanning files.
+The web conferencing feature of the system requires the workstation utilized have at least the following minimum requirements:
+Mac-compatible Webcam and headset (preferred) or separate webcam, microphone, and speakers
+Broadband internet access (cable, DSL, etc.)
+The system requires the use of Internet Explorer, Safari, or Firefox as the native web browser.
+It is recommended the current system performs optimally with the suggested two browsers.
+The use of other than the recommended browsers may cause performance issues that have not been addressed by the software vendor.
+The reporting functionality utilizes the Microsoft Excel (.XLS) and Adobe Portable Document Format (.PDF) for report outputs.
+The following recommended software must be installed in the local machine to fully utilize the reporting functionality.
+Microsoft Excel Viewer or Microsoft Excel
+A PDF Reader such as Adobe Reader
+System must be accessible on and off campus via broadband internet connection and using required ID/Password combination.
+System may require users to download program updates to become compatible and compliant with system.
+All users are responsible for securing a backup of any uploaded data/content to the system in the event of an outage.
+The user is responsible for content uploaded.
+NJIT policy prohibits the use NJIT facilities/assets for personal use.
+Users may not use the system to upload or post data which is discriminatory in regards to race, color, creed, religion, sex, age, handicap, marital status, or national origin.
+ Users may not upload or post data which is inflammatory or derogatory.
+In the event, inflammatory/derogatory content has been identified, the content will be immediately removed and the appropriate authorities with be notified resulting in possible disciplinary action.
+User must comply with all local, state, and federal laws when using available resources.
+ Any infringements or violations including but not limited to:  unauthorized use, harassment, exploitation of any gaps in the portal, inflammatory/derogatory content, or defacing the system will result in the appropriate authorities being notified.
+The user is responsible for maintaining the user account.
+Action must be taken by the user to prevent the user account from being compromised.
+The user ID and the password should not be shared with anyone (students/staff/or anyone else).
+User passwords should be between 8 and 12 characters including letters and numbers but excluding spaces.
+The user should periodically change the password; currently the user policy requires a mandatory password change every three months.
+The information within the system is regarded private, however in the event of an investigation by a legal authority, including by not limited to a subpoena or audit, the information will be released to the proper authorities for the purpose intended.
+All archived chats, e-mail, file share, and IM Messages are governed by the NJIT E-mail use policy.
+ The user is encouraged to view the content at the NJIT homepage for detailed use of the policy and restrictions and limitations of the policy.
+In the event your account has been compromised, notify the NJIT help desk immediately.
+Refrain from using the infected account to communicate with anyone else.
+The systems should adhere to the privacy policy set forth by NJIT and its administration and also state and federal guidelines.
+The system has an estimated 99% up time, though in an event of an outage data loss can occur.
+The Web-Conferencing features’ performance depends on the availability of the bandwidth.
+The minimum of a broadband connection is recommended to fully utilize Web-Conferencing feature.
+The content is the responsibility of the users of the system; NJIT is neither responsible nor liable for the accuracy or the correctness of the content.
+The portal will be periodically unavailable due to necessary maintenance upgrades.
+In the event of scheduled maintenance, the students/staff will be notified at least 24 hours in-advance.
+The system must be completed within the timeframe allotted for development.
+Appropriate funding must be acquired to make required upgrades to existing systems, buy additional hardware and software, and acquire skilled personnel to develop project.
+Udesh DeSilva Celestino Francisco Danielle L. Green Jose Saafigueroa Slavica Pepovska
+Name of project to design for the customer.
+Enrolled student and university’s faculty.
+ A convention or standard that controls or enables the connection, between two computing endpoints.
+File Transfer Protocol is a network protocol used to transfer data from one computer to another.
+Megahertz is used to measure the clock speed in hertz of a CPU
+Gigahertz is used to measure the clock speed in hertz of a CPU
+A technique for transferring data such that it can be processed as a steady and continuous stream.
+Software  to browser online content
+A service or feature which addresses the user's need for instant gratification and immediacy of use
+an operating system by Microsoft released in 2001
+the version of the Microsoft Windows client operating system released in 2006.
+Application sharing for whiteboards available within Virtual-ED.
+Application for file sharing/ distributing amongst users.
+Series of audio or video digital media which will be available for distributing over the classroom.
+messaging software tool available in Virtual–ED.
+Form of Broadband Internet Access.
+Digital subscriber line that uses high frequency, while regular phones uses low frequency on the same telephone line.
+This high frequency gives users the ability to transfer data with higher speeds.
+Form of broadband internet access that uses cable television infrastructure.
+It gives users speeds up to 50 megabits per second for downloading and up to 384Kbit/s to more than 20Mbit/s for uploading.
