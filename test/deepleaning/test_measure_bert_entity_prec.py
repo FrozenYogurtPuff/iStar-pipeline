@@ -3,7 +3,11 @@ import pickle
 from test.rules.utils.load_dataset import load_dataset
 
 from src.deeplearning.infer.utils import get_list_bio, get_series_bio
-from src.deeplearning.infer.wrapper import ActorWrapper, ResourceWrapper
+from src.deeplearning.infer.wrapper import (
+    ActorWrapper,
+    IntentionWrapper,
+    ResourceWrapper,
+)
 from src.deeplearning.utils.utils_metrics import (
     classification_report,
     token_classification_report,
@@ -174,3 +178,28 @@ def test_measure_bert_resource_rules_prec():
 #
 # micro avg    0.64066   0.68262   0.66098       397
 # macro avg    0.64066   0.68262   0.66098       397
+
+
+def test_measure_bert_intention_verb_prec():
+    data = list(load_dataset("pretrained_data/2022/task/verb/split_dev.jsonl"))
+    sents = [d[1] for d in data]
+    labels = [d[2] for d in data]
+    logger.info(f"First items: sent {sents[0]}")
+    logger.info(f"First items: label {labels[0]}")
+
+    wrapper = IntentionWrapper()
+    results = wrapper.process(sents, labels)
+    logger.info(f"First result: {results[0]}")
+
+    pred_entities, true_entities = get_series_bio(results)
+
+    print(classification_report(true_entities, pred_entities))
+
+    #            precision    recall  f1-score   support
+    #
+    #       Aux    0.73494   0.85915   0.79221        71
+    #      Cond    0.90909   0.80000   0.85106        25
+    #      Core    0.92464   0.94100   0.93275       339
+
+
+# TODO: remap the base path of deep learner

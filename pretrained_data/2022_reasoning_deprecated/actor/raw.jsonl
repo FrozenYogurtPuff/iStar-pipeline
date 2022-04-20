@@ -1,0 +1,1022 @@
+{"id": 2509, "text": "The Integrated Justice Information System (IJIS) is an initiative being undertaken by Tarrant County, Texas.", "label": []}
+{"id": 2510, "text": "The vision for IJIS is to define and develop enhanced business processes and supporting technology solutions that result in a more effective and efficient administration of justice in Tarrant County.", "label": []}
+{"id": 2511, "text": "When complete, IJIS will facilitate rapid sharing of information across the Criminal Justice Community while providing each stakeholder with advanced justice management capabilities.", "label": []}
+{"id": 2512, "text": " The goal of the current phase of the initiative is to define IJIS business requirements shared by the Criminal Justice Community.", "label": []}
+{"id": 2516, "text": "Workshops will be held to collect requirements from the Criminal Justice Community.", "label": []}
+{"id": 2518, "text": "The material provided during the workshops will be consolidated into a single model, and reviewed at a final workshop with representatives from the Criminal Justice Community.", "label": []}
+{"id": 2519, "text": "The objective of the Manage Indigent Defense Software Requirements Specification is to provide an overview of the business use case model for providing indigent defense services by:", "label": []}
+{"id": 2535, "text": "Where such processes or constraints apply to only one business use case, they should be presented as special requirements of that business use case.", "label": []}
+{"id": 2537, "text": " – Right to representation by Counsel", "label": []}
+{"id": 2538, "text": " – Duties of arresting officer and magistrate", "label": []}
+{"id": 2539, "text": " – Procedures for Appointing Counsel", "label": []}
+{"id": 2540, "text": " – Compensation of Counsel Appointed to Defend", "label": []}
+{"id": 2541, "text": " – Appointment of counsel in death penalty case; reimbursement of investigative expenses.", "label": []}
+{"id": 2542, "text": " – Management and Preservation of Records", "label": []}
+{"id": 2545, "text": "Person appointed to manage County business by a majority vote of District Judges that have jurisdiction in the County.", "label": []}
+{"id": 2548, "text": "External system used by the Criminal Justice community to manage case information from initial arrest through final disposition.", "label": []}
+{"id": 2550, "text": "Person elected and/or appointed to preside over a trial court with misdemeanor criminal jurisdiction.", "label": []}
+{"id": 2551, "text": "Person arrested and/or charged with a criminal offense but not yet convicted.", "label": []}
+{"id": 2552, "text": "Person qualified and appointed to represent a Defendant in an adversarial judicial proceeding", "label": []}
+{"id": 2553, "text": "Person responsible for processing a Defendant into custody.", "label": []}
+{"id": 2554, "text": "Person responsible for representing the State of Texas in an adversarial judicial proceeding", "label": []}
+{"id": 2555, "text": "Person elected and/or appointed to preside over a trial court with felony criminal jurisdiction.", "label": []}
+{"id": 2556, "text": "Law Enforcement Agency investigating and presenting charges to District Attorney against Defendant.", "label": []}
+{"id": 2557, "text": "Committee appointed by the Presiding Judge of the Administrative Judicial Region to adopt standards for the qualification of attorneys to be appointed to represent indigent defendants in capital cases in which the death penalty is sought.", "label": []}
+{"id": 2558, "text": "Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "label": []}
+{"id": 2559, "text": "Person responsible for managing the Indigent Defense appointment process.", "label": []}
+{"id": 2560, "text": "Person appointed by the Governor to preside over the administrative judicial region.", "label": []}
+{"id": 2561, "text": "Standing committee of the Texas Judicial Council responsible for establishing standards for Indigent Defense Services.", "label": []}
+{"id": 2562, "text": "The purpose of this use case is to describe the activities involved in submitting a Request for Appointed Counsel to the Office of Attorney Appointments.", "label": []}
+{"id": 2563, "text": " Enable law enforcement agencies to capture defendant and incident information along with supporting paper documents within 48 hours of arrest.", "label": []}
+{"id": 2564, "text": "   Enable magistrates to electronically review request(s) for counsel and submit request(s) for counsel within 24 hours of the indigency hearing.", "label": []}
+{"id": 2566, "text": "This use case starts after the Defendant has been arrested and transported to a Detention Facility.", "label": []}
+{"id": 2567, "text": "Detention Facility Officer captures Defendant, Incident, and Financial Information.", "label": []}
+{"id": 2568, "text": "Defendant swears to and signs Financial Affidavit.", "label": []}
+{"id": 2569, "text": "Detention Facility Officer witnesses and signs Financial Affidavit.", "label": []}
+{"id": 2570, "text": " Detention Facility Officer schedules Indigency Hearing.", "label": []}
+{"id": 2571, "text": " Magistrate informs Defendant of right to request appointment of counsel and asks whether Defendant wants a Court Appointed Attorney.", "label": []}
+{"id": 2572, "text": "Defendant requests appointment of a Court Appointed Attorney.", "label": []}
+{"id": 2573, "text": "Magistrate interviews/questions Defendant.", "label": []}
+{"id": 2574, "text": "Magistrate makes determination that Defendant is indigent.", "label": []}
+{"id": 2575, "text": "Defendant and Magistrate sign Request for Appointed Counsel.", "label": []}
+{"id": 2576, "text": " Magistrate submits Request for Appointed Counsel to the Office of Attorney Appointments.", "label": []}
+{"id": 2577, "text": "Defendant waives right to Court Appointed Attorney This alternative path replaces the basic path beginning at step 6.", "label": []}
+{"id": 2578, "text": "Defendant waives right to Court Appointed Attorney.", "label": []}
+{"id": 2579, "text": "Defendant signs Waiver of Appointed Counsel.", "label": []}
+{"id": 2580, "text": "Magistrate submits Waiver of Appointed Counsel to the Office of Attorney Appointment", "label": []}
+{"id": 2581, "text": "Magistrate determines Defendant is not indigent This alternative path replaces the basic path beginning at step 9.", "label": []}
+{"id": 2582, "text": "Magistrate makes determination that Defendant is not indigent.", "label": []}
+{"id": 2583, "text": "Magistrate submits notice of indigency determination to the Office of Attorney Appointments.", "label": []}
+{"id": 2584, "text": "Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate     (UETA)  Technical:     .", "label": []}
+{"id": 2585, "text": "The purpose of this use case is to describe the activities involved in processing a Request for Appointed Counsel submitted to the Office of Attorney Appointments.", "label": []}
+{"id": 2586, "text": "Enable the Office of Attorney Appointments to review request(s) for counsel and process request(s) for counsel as soon as possible, but not later than the end of the first working day after the date on which the Office of Attorney Appointments receives the request for appointment of counsel.", "label": []}
+{"id": 2587, "text": " Enable law enforcement agencies to be notified that the request for counsel has been denied within 24 hours of the denial.", "label": []}
+{"id": 2588, "text": "   Enable the appointed attorney and Defendant to be notified that an appointment has been made within 24 hours of the appointment.", "label": []}
+{"id": 2590, "text": "This use case starts after a Magistrate has submitted a Request for Appointed Counsel to the Office of Attorney Appointments.", "label": []}
+{"id": 2591, "text": "Office of Attorney Appointments receives/reviews the Request for Appointed Counsel.", "label": []}
+{"id": 2592, "text": "Office of Attorney Appointments researches Defendant/Incident information in Court Case Management System.", "label": []}
+{"id": 2593, "text": " Office of Attorney Appointments confirms Defendant has not been released from custody.", "label": []}
+{"id": 2594, "text": "Office of Attorney Appointments confirms Defendant does not have a Defense Attorney appointed on a pending case.", "label": []}
+{"id": 2595, "text": "Office of Attorney Appointments determines the appropriate appointment rotation list based upon the highest level and degree of offense Defendant is accused of committing.", "label": []}
+{"id": 2596, "text": " Office of Attorney Appointments selects next Defense Attorney in the appointment rotation list.", "label": []}
+{"id": 2597, "text": "Office of Attorney Appointments notifies Defendant, Defense Attorney and Detention Facility Officer of appointment by facsimile and/or electronic mail.", "label": []}
+{"id": 2598, "text": "Defendant has been released from custody This alternative path replaces the basic path beginning at step 3.", "label": []}
+{"id": 2599, "text": "Office of Attorney Appointments records that the Request for Appointed Counsel has been denied because the Defendant is no longer in custody.", "label": []}
+{"id": 2600, "text": "Defense Attorney has been appointed on a pending case.", "label": []}
+{"id": 2602, "text": "Office of Attorney Appointments determines that the previously appointed Defense Attorney is on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.", "label": []}
+{"id": 2603, "text": "  Office of Attorney Appointments selects previously appointed Defense Attorney for appointment.", "label": []}
+{"id": 2605, "text": "Defense Attorney has been appointed on a pending case This alternative path replaces the basic path beginning at step 5.", "label": []}
+{"id": 2606, "text": "Office of Attorney Appointments determines that the previously appointed Defense Attorney is not on the appropriate appointment rotation list required by the Request for Appointed Counsel being reviewed.", "label": []}
+{"id": 2607, "text": "  Original Defense Attorney is notified of new charge(s) and is removed from the appointment due to a lack of qualifications.", "label": []}
+{"id": 2609, "text": "New Defense Attorney is appointed to original charge(s).", "label": []}
+{"id": 2610, "text": "Charge is capital felony case with death penalty sought This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2611, "text": "Office of Attorney Appointments forwards the Request for Counsel to the presiding District Judge of Court in which the capital felony case is filed.", "label": []}
+{"id": 2612, "text": "District Court Judge selects two attorneys both must be qualified by the Administrative Judicial Region Local Selection Committee.", "label": []}
+{"id": 2613, "text": "Office of Attorney Appointments appoints selected Defense Attorney(s).", "label": []}
+{"id": 2615, "text": "These attorneys DO NOT come off the wheel.", "label": []}
+{"id": 2616, "text": "Legal:      – Right to representation by Counsel  – Duties of arresting officer and magistrate  – Procedures for Appointing Counsel  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:  Integration with Court Case Management System", "label": []}
+{"id": 2618, "text": "Enable an appointed attorney to review appointments and capture the date and type of first contact with the defendant no later than the end of the first working day after the date of the appointment.", "label": []}
+{"id": 2619, "text": " Enable an appointed attorney to capture the date and time of the first in person visit with the defendant, as appropriate.", "label": []}
+{"id": 2620, "text": "    Enable the Office of Attorney Appointments to be notified when first contact by an appointed attorney is not made by the of the first working day after the date of the appointment.", "label": []}
+{"id": 2622, "text": "This use case starts after Defense Attorney has been appointed to represent Defendant.", "label": []}
+{"id": 2623, "text": "Defense Attorney contacts Defendant within one working day of appointment.", "label": []}
+{"id": 2624, "text": "Defense Attorney notifies Office of Attorney Appointments of date and time of initial contact.", "label": []}
+{"id": 2625, "text": "Defense Attorney interviews Defendant in person.", "label": []}
+{"id": 2626, "text": "Defense Attorney notifies Office of Attorney Appointments of date and time of in person visit(s).", "label": []}
+{"id": 2627, "text": " Steps 3-4 may be repeated until the charges have been dismissed, defendant is acquitted, appeals are exhausted, or the Court has relieved the Defense Attorney of duties.", "label": []}
+{"id": 2628, "text": "Defense Attorney fails to contact Defendant This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2629, "text": "Defense Attorney fails to interview Defendant This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2630, "text": "Legal:      – Right to representation by Counsel", "label": []}
+{"id": 2633, "text": "Enable the appointed attorney and Office of Attorney Appointments to be notified that the District Attorney has accepted/rejected the incident and whether charges where added, removed or modified.", "label": []}
+{"id": 2636, "text": "District Attorney notifies Office of Attorney Appointments of the charge(s) that were accepted for prosecution.", "label": []}
+{"id": 2637, "text": "Office of Attorney Appointments enters Defense Attorney appointment into the Court Case Management System.", "label": []}
+{"id": 2638, "text": "Office of Attorney Appointments notifies Defense Attorney that charge(s) have been filed.", "label": []}
+{"id": 2639, "text": "District Attorney creates additional charge This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2641, "text": "District Attorney modifies original charge This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2643, "text": "District Attorney rejects original charge This alternative path replaces the basic path beginning at step 2.", "label": []}
+{"id": 2644, "text": "Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2649, "text": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": []}
+{"id": 2651, "text": "This use case starts after District Attorney has accepted and filed charges against Defendant.", "label": []}
+{"id": 2652, "text": "Court Coordinator determines that a setting is required.", "label": []}
+{"id": 2653, "text": "Court Coordinator enters setting information into Court Case Management System.", "label": []}
+{"id": 2654, "text": "Office of Attorney Appointments notifies Defendant, Defense Attorney, and District Attorney of setting.", "label": []}
+{"id": 2655, "text": " Defendant, Defense Attorney, and District Attorney appear before Judge.", "label": []}
+{"id": 2656, "text": "Court Coordinator enters setting result into Court Case Management System.", "label": []}
+{"id": 2657, "text": "Steps 1-5 are repeated until the charges have been disposed, Defendant is acquitted, appeals are exhausted, or the Defense Attorney has been relieved of duties by the Court", "label": []}
+{"id": 2658, "text": "Defendant is in custody This alternative path replaces the basic path beginning at step 3.", "label": []}
+{"id": 2659, "text": "Defendant fails to appear This alternative path replaces the basic path beginning at step 5.", "label": []}
+{"id": 2660, "text": "Defense Attorney fails to appear This alternative path replaces the basic path beginning at step 5.", "label": []}
+{"id": 2661, "text": "Legal:      – Right to representation by Counsel", "label": []}
+{"id": 2663, "text": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": []}
+{"id": 2665, "text": "This use case starts when a Defense Attorney submits a request for payment.", "label": []}
+{"id": 2666, "text": "Defense Attorney submits request for payment itemizing the list of services performed to Office of Attorney Appointments.", "label": []}
+{"id": 2667, "text": "Office of Attorney Appointments forwards request for payment to Judge.", "label": []}
+{"id": 2668, "text": "Judge reviews/approves request for payment and forwards to Office of Attorney Appointments.", "label": []}
+{"id": 2669, "text": "Office of Attorney Appointments forwards order to remit payment to Auditor.", "label": []}
+{"id": 2670, "text": "Auditor presents claim to Commissioners Court.", "label": []}
+{"id": 2671, "text": " Commissioners Court approves payment of claim.", "label": []}
+{"id": 2672, "text": "Auditor remits payment to Defense Attorney.", "label": []}
+{"id": 2673, "text": "Auditor notifies Judge that payment has been remitted.", "label": []}
+{"id": 2674, "text": "Judge disapproves amount of payment without Appeal This alternative path replaces the basic path beginning at step 3.", "label": []}
+{"id": 2675, "text": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": []}
+{"id": 2677, "text": "Judge disapproves amount of payment with Appeal This alternative path replaces the basic path beginning at step 3.", "label": []}
+{"id": 2678, "text": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": []}
+{"id": 2679, "text": "Defense Attorney files motion with Presiding Administrative Judge.", "label": []}
+{"id": 2680, "text": "Presiding Administrative Judge reviews disapproval of payment.", "label": []}
+{"id": 2681, "text": "Presiding Administrative Judge determines the appropriate amount of payment.", "label": []}
+{"id": 2682, "text": "Presiding Administrative Judge orders Auditor to remit payment to Defense Attorney.", "label": []}
+{"id": 2684, "text": "Judge denies Defense Attorney request for advance payment of expenses (ex parte)", "label": []}
+{"id": 2686, "text": "Defense Attorney files request for advance payment of expenses.", "label": []}
+{"id": 2687, "text": "Judge denies request (in whole or part) for advance payment of expenses.", "label": []}
+{"id": 2688, "text": "Judge makes written finding of approved payment amount and reason(s) for approving an amount different from the requested amount.", "label": []}
+{"id": 2689, "text": "Judge submits request for advance payment and denial as sealed exhibit to the record.", "label": []}
+{"id": 2690, "text": "Filing Agency drops charges against Defendant This alternative path replaces the basic path beginning at step 1.", "label": []}
+{"id": 2691, "text": "  Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2692, "text": "Charges against Defendant are rejected by District Attorney This alternative path replaces the basic path beginning at step 1.", "label": []}
+{"id": 2693, "text": "  Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2694, "text": "Legal:   – Compensation of Counsel Appointed to Defend  – Appointment of counsel in death penalty case; reimbursement of investigative expenses  Technical:   Integration with external Accounting System(s).", "label": []}
+{"id": 2695, "text": "The purpose of this use case is to describe the activities involved in Managing Defense Attorney contacts with Defendant.", "label": []}
+{"id": 2696, "text": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": []}
+{"id": 2699, "text": "Defense Attorney submits application for public appointments.", "label": []}
+{"id": 2700, "text": "Office of Attorney Appointments reviews application.", "label": []}
+{"id": 2701, "text": "Office of Attorney Appointments forwards application to Judges.", "label": []}
+{"id": 2702, "text": "Judges review/approve application.", "label": []}
+{"id": 2703, "text": "Judges forward application to Office of Attorney Appointments.", "label": []}
+{"id": 2704, "text": "Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).", "label": []}
+{"id": 2705, "text": "Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2706, "text": "Defense Attorney fails to meet minimum qualifications This alternative path replaces the basic path beginning at step 3.", "label": []}
+{"id": 2707, "text": "Office of Attorney Appointments records qualification issues.", "label": []}
+{"id": 2708, "text": "Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2709, "text": "Judges do not approve application This alternative path replaces the basic path beginning at step 4.", "label": []}
+{"id": 2710, "text": "Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2711, "text": "Permanent removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": []}
+{"id": 2712, "text": "Judges order removal of Defense Attorney.", "label": []}
+{"id": 2713, "text": "Office of Attorney Appointments removes Defense Attorney from appropriate appointment rotation list(s).", "label": []}
+{"id": 2714, "text": " Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2715, "text": "Reinstatement to appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": []}
+{"id": 2716, "text": "Judges order reinstatement of Defense Attorney.", "label": []}
+{"id": 2717, "text": "Office of Attorney Appointments adds Defense Attorney to appropriate appointment rotation list(s).", "label": []}
+{"id": 2718, "text": " Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2719, "text": "Temporary removal from appointment rotation list This alternative path replaces the basic path beginning at step 1.", "label": []}
+{"id": 2720, "text": "Defense Attorney requests to be removed from appointment rotation list(s).", "label": []}
+{"id": 2721, "text": "Office of Attorney Appointments suspends appointments to Defense Attorney from appropriate appointment rotation list(s) for 30 days.", "label": []}
+{"id": 2722, "text": " Office of Attorney Appointments notifies Defense Attorney.", "label": []}
+{"id": 2723, "text": "Legal:      – Right to representation by Counsel  – Procedures for Appointing Counsel", "label": []}
+{"id": 2725, "text": "Enable the Office of Attorney Appointments to produce comprehensive reporting measurements that reflect compliance with the Texas Fair Defense Act.", "label": []}
+{"id": 2727, "text": "This use case starts when a report is required by the Task Force on Indigent Defense.", "label": []}
+{"id": 2728, "text": "Office of Attorney Appointments selects the report type.", "label": []}
+{"id": 2729, "text": "Office of Attorney Appointments enters/selects report parameters.", "label": []}
+{"id": 2730, "text": "Office of Attorney Appointments distributes report to Task Force on Indigent Defense.", "label": []}
+{"id": 2751, "text": "The items above and items in the headers and footers of this document contain bookmarks for automatic updating.", "label": []}
+{"id": 2774, "text": "The user is free to either adapt the font of the style to become “hidden” or to remove all explanatory text when the document is completed.", "label": []}
+{"id": 2803, "text": "The document serves as a basis for the Architectural Design of the Platform-i MSN application.", "label": []}
+{"id": 2804, "text": "The intended audience for this document are the customer and the development team.", "label": []}
+{"id": 2814, "text": "Additional requirements can only be added at the end of a section with the next higher number.", "label": []}
+{"id": 2815, "text": "If a requirement is removed, the number remains empty.", "label": []}
+{"id": 2817, "text": "Instant Messenger\tAn instant messenger is an application, which allows instant text communication between two or more people through a network such as the Internet.", "label": []}
+{"id": 2819, "text": "With setting the status the user can let others know if he is actively using your PC (or TV in our case).", "label": []}
+{"id": 2820, "text": "In MSN Messenger you have the following statuses: Offline, Online, Busy, Idle, Be Right Back, Away, On the Phone and Out to Lunch.", "label": []}
+{"id": 2821, "text": "Blocking\tWhen you block someone, you prevent that person from seeing your status (you always appear offline) and sending you messages.", "label": []}
+{"id": 2822, "text": "Buddy\tFriend, family member, co-worker or other person who is manually added to your buddy list.", "label": []}
+{"id": 2823, "text": "Buddy list\tList of buddies with whom the user can communicate in real time.", "label": []}
+{"id": 2825, "text": "Passport is an online service that makes it possible for you to use your e-mail address and a single password to sign in to any .NET Passport-participating Web site or service.", "label": []}
+{"id": 2827, "text": "It is not necessary to include details like author, version and date for all references.", "label": []}
+{"id": 2833, "text": "If the product is independent and totally self-contained, it should be stated here.", "label": []}
+{"id": 2839, "text": "The MSN messenger xlet is a MHP version of the popular PC application.", "label": []}
+{"id": 2840, "text": "It is an application to demonstrate the possibilities of MHP and Platform-i.", "label": []}
+{"id": 2841, "text": "The Platform-i MSN messenger application is independent of other projects.", "label": []}
+{"id": 2842, "text": "Identify the product(s) to be produced by name.", "label": []}
+{"id": 2843, "text": "In case of more than one product, define how in the rest of the document the diversity between the products is described.", "label": []}
+{"id": 2845, "text": "The produced product will be an MHP MSN messenger xlet.", "label": []}
+{"id": 2849, "text": "With the xlet the user shall be able to see online friends, chat with them and see which TV program they are watching.", "label": []}
+{"id": 2850, "text": "Unlike the PC variant, the xlet cannot transfer files and doesn’t have webcam support.", "label": []}
+{"id": 2853, "text": "Typical examples of users are: end users, operators, factory users, service users, and dealers.", "label": []}
+{"id": 2854, "text": "Also, non-human users that interface with the product can be included here.", "label": []}
+{"id": 2855, "text": "Typically, however, non-human usage is a communication interface, see 4.2 for more information.", "label": []}
+{"id": 2867, "text": "The fact that the volume control button is present both on the TV-set and on the remote control is defined in chapter Error!", "label": []}
+{"id": 2871, "text": "Define in function categories the typical functions that are available to the end user.", "label": []}
+{"id": 2875, "text": "P1.0 Use of Passport to login to the messenger", "label": []}
+{"id": 2876, "text": "P1.1 With the use of an existing Passport account the user can login to the messenger.", "label": []}
+{"id": 2877, "text": "P1.2 It is not possible to create a new Passport account.", "label": []}
+{"id": 2878, "text": "P2.0 Maintenance of users own status", "label": []}
+{"id": 2879, "text": "P2.1 Ability to change and maintain the status which is visible to the buddies.", "label": []}
+{"id": 2880, "text": "The application provides a list where the end-user can choose the new status.", "label": []}
+{"id": 2881, "text": "P3.0 See the presence status of your buddies", "label": []}
+{"id": 2882, "text": "The application will display the status of the end-users buddies.", "label": []}
+{"id": 2883, "text": "When a buddy changes his status, the application shall update it.", "label": []}
+{"id": 2884, "text": "The end-user is able to change the nickname with which the user is visible to the buddies.", "label": []}
+{"id": 2885, "text": "P5.1 Show the nicknames of the end-users buddies on the buddy list.", "label": []}
+{"id": 2886, "text": "The application updates the displayed nick in the contact list when a buddy changes the nickname.", "label": []}
+{"id": 2887, "text": "P6.0 Appoint an user-defined nickname", "label": []}
+{"id": 2888, "text": "P6.1 The application provides the possibility to assign a nickname to a specified buddy; this nickname has preference above the nickname set by the buddy itself.", "label": []}
+{"id": 2889, "text": "P7.0 Add buddies to your contact list", "label": []}
+{"id": 2890, "text": "P7.1 The application provides an option to add a buddy to the buddy list.", "label": []}
+{"id": 2891, "text": "P8.0 Delete buddies from your contact list", "label": []}
+{"id": 2892, "text": "The application has an option to delete a buddy from the buddy list.", "label": []}
+{"id": 2893, "text": "The application has an option to block certain buddies.", "label": []}
+{"id": 2894, "text": "M1.1 The application has a visible notification when an incoming message is received.", "label": []}
+{"id": 2895, "text": "M2.1 Show incoming messages on the screen.", "label": []}
+{"id": 2896, "text": "M3.1 Possibility to create a message and send it to a buddy.", "label": []}
+{"id": 2897, "text": "M4.1 Show emoticons in incoming and outgoing messages.", "label": []}
+{"id": 2898, "text": "M4.2 Display a list of emoticons to choose from when the user wants to include an emoticon in the message he is writing.", "label": []}
+{"id": 2899, "text": "M5.0 Show (session) history", "label": []}
+{"id": 2900, "text": "M5.1 Show the history of messages sent and received in the current chat session.", "label": []}
+{"id": 2901, "text": "M6.1 Chat with multiple buddies together.", "label": []}
+{"id": 2902, "text": "D1.1 Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.", "label": []}
+{"id": 2903, "text": "D2.1 Show a notification when there is new e-mail at the users hotmail inbox.", "label": []}
+{"id": 2904, "text": "D3.1 Display the inbox of the users Hotmail account", "label": []}
+{"id": 2905, "text": "D3.2 Show e-mails from the users Hotmail account on the screen.", "label": []}
+{"id": 2906, "text": "D4.1 Play games with online buddies.", "label": []}
+{"id": 2913, "text": "For standard protocols, use a reference and describe what is supported of the standard.", "label": []}
+{"id": 2914, "text": "For proprietary protocols, define the protocol itself.", "label": []}
+{"id": 2916, "text": "The used protocol for communication is the .NET messenger service protocol.", "label": []}
+{"id": 2917, "text": "The used version of this protocol will be MSNPv8 which is the standard protocol at this moment.", "label": []}
+{"id": 2926, "text": "This list is to be used as a checklist to derive the non-functional requirements.", "label": []}
+{"id": 2974, "text": "Nevertheless, it also concentrates on the capabilities required by stakeholders and their needs while defining high-level product features.", "label": []}
+{"id": 3005, "text": "Sell Configured to Ordered Products.", "label": []}
+{"id": 3006, "text": "The system shall display all the products that can be configured.", "label": []}
+{"id": 3007, "text": "The system shall allow user to select the product to configure.", "label": []}
+{"id": 3008, "text": "The system shall display all the available components of the product to configure", "label": []}
+{"id": 3009, "text": "The system shall enable user to add one or more component to the configuration.", "label": []}
+{"id": 3010, "text": "The system shall notify the user about any conflict in the current configuration.", "label": []}
+{"id": 3011, "text": "The system shall allow user to update the configuration to resolve conflict in the current configuration.", "label": []}
+{"id": 3012, "text": "The system shall allow user to confirm the completion of current configuration", "label": []}
+{"id": 3013, "text": "The system shall display detailed information of the selected products.", "label": []}
+{"id": 3014, "text": "The system shall provide browsing options to see product details.", "label": []}
+{"id": 3015, "text": "The system shall display detailed product categorization to the user.", "label": []}
+{"id": 3016, "text": "The system shall enable user to enter the search text on the screen.", "label": []}
+{"id": 3017, "text": "The system shall enable user to select multiple options on the screen to search.", "label": []}
+{"id": 3018, "text": "The system shall display all the matching products based on the search", "label": []}
+{"id": 3019, "text": "The system shall display only 10 matching result on the current screen.", "label": []}
+{"id": 3020, "text": "The system shall enable user to navigate between the search results.", "label": []}
+{"id": 3021, "text": "The system shall notify the user when no matching product is found on the search.", "label": []}
+{"id": 3022, "text": "The system shall allow user to create profile and set his credential.", "label": []}
+{"id": 3023, "text": "The system shall authenticate user credentials to view the profile.", "label": []}
+{"id": 3024, "text": "The system shall allow user to update the profile information.", "label": []}
+{"id": 3025, "text": "The system shall display both the active and completed order history in the customer profile.", "label": []}
+{"id": 3026, "text": "The system shall allow user to select the order from the order history.", "label": []}
+{"id": 3027, "text": "The system shall display the detailed information about the selected order.", "label": []}
+{"id": 3028, "text": "The system shall display the most frequently searched items by the user in the profile.", "label": []}
+{"id": 3029, "text": "The system shall allow user to register for newsletters and surveys in the profile.", "label": []}
+{"id": 3030, "text": "The system shall provide online help, FAQ’s customer support, and sitemap options for customer support.", "label": []}
+{"id": 3031, "text": "The system shall allow user to select the support type he wants.", "label": []}
+{"id": 3032, "text": "The system shall allow user to enter the customer and product information for the support.", "label": []}
+{"id": 3033, "text": "The system shall display the customer support contact numbers on the screen.", "label": []}
+{"id": 3034, "text": "The system shall allow user to enter the contact number for support personnel to call.", "label": []}
+{"id": 3035, "text": "The system shall display the online help upon request.", "label": []}
+{"id": 3036, "text": "The system shall display the FAQ’s upon request.", "label": []}
+{"id": 3037, "text": "The system shall maintain customer email information as a required part of customer profile.", "label": []}
+{"id": 3038, "text": "The system shall send an order confirmation to the user through email.", "label": []}
+{"id": 3039, "text": "The system shall display detailed invoice for current order once it is confirmed.", "label": []}
+{"id": 3040, "text": "The system shall optionally allow user to print the invoice.", "label": []}
+{"id": 3041, "text": "The system shall provide shopping cart during online purchase.", "label": []}
+{"id": 3042, "text": "The system shall allow user to add/remove products in the shopping cart.", "label": []}
+{"id": 3043, "text": "The system shall display different shipping options provided by shipping department.", "label": []}
+{"id": 3044, "text": "The system shall enable user to select the shipping method during payment process.", "label": []}
+{"id": 3045, "text": "The system shall display the shipping charges.", "label": []}
+{"id": 3046, "text": "The system shall display tentative duration for shipping.", "label": []}
+{"id": 3047, "text": "The system shall allow user to enter the order information for tracking.", "label": []}
+{"id": 3048, "text": "The system shall display the current tracking information about the order.", "label": []}
+{"id": 3049, "text": "The system shall calculate tax for the order.", "label": []}
+{"id": 3050, "text": "The system shall display tax information for the order.", "label": []}
+{"id": 3051, "text": "The system shall display available payment methods for payment.", "label": []}
+{"id": 3052, "text": "The system shall allow user to select the payment method for order.", "label": []}
+{"id": 3053, "text": "Allow online change or cancellation of order.", "label": []}
+{"id": 3054, "text": "The system shall display the orders that are eligible to change.", "label": []}
+{"id": 3055, "text": "The system shall allow user to select the order to be changed.", "label": []}
+{"id": 3056, "text": "The system shall allow user to cancel the order", "label": []}
+{"id": 3057, "text": "The system shall allow user to change shipping, payment method.", "label": []}
+{"id": 3058, "text": "The system shall notify the user about any changes made to the order.", "label": []}
+{"id": 3059, "text": "Allow Online Product reviews and ratings", "label": []}
+{"id": 3060, "text": "The system shall display the reviews and ratings of each product, when it is selected.", "label": []}
+{"id": 3061, "text": "The system shall enable the user to enter their reviews and ratings.", "label": []}
+{"id": 3062, "text": "The system shall display all the available financing options.", "label": []}
+{"id": 3063, "text": "The system shall allow user to select the financing option.", "label": []}
+{"id": 3064, "text": "The system shall notify the use about the financing request.", "label": []}
+{"id": 3065, "text": "The system shall allow user to view detailed sitemap.", "label": []}
+{"id": 3066, "text": "Offer online promotions and rewards.", "label": []}
+{"id": 3067, "text": "The system shall display all the available promotions to the user.", "label": []}
+{"id": 3068, "text": "The system shall allow user to select available promotion.", "label": []}
+{"id": 3069, "text": "The system shall allow user to confirm the purchase.", "label": []}
+{"id": 3070, "text": "The system shall enable user to enter the payment information.", "label": []}
+{"id": 3071, "text": "The system shall provide a uniform look and feel between all the web pages.", "label": []}
+{"id": 3072, "text": "The system shall provide a digital image for each product in the product catalog.", "label": []}
+{"id": 3073, "text": "The system shall provide use of icons and toolbars.", "label": []}
+{"id": 3074, "text": "The system shall provide handicap access.", "label": []}
+{"id": 3075, "text": "The system shall provide multi language support.", "label": []}
+{"id": 3076, "text": "The system shall provide storage of all databases on redundant computers with automatic switchover.", "label": []}
+{"id": 3077, "text": "The system shall provide for replication of databases to off-site storage locations.", "label": []}
+{"id": 3078, "text": "The system shall provide RAID V Disk Stripping on all database storage disks.", "label": []}
+{"id": 3079, "text": "The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.", "label": []}
+{"id": 3080, "text": "The system shall provide a contractual agreement with an internet service provider who can provide 99.999% availability through their network facilities onto the internet.", "label": []}
+{"id": 3081, "text": "The product shall be based on web and has to be run from a web server.", "label": []}
+{"id": 3082, "text": "The product shall take initial load time depending on internet connection strength which also depends on the media from which the product is run.", "label": []}
+{"id": 3083, "text": "The performance shall depend upon hardware components of the client/customer.", "label": []}
+{"id": 3084, "text": "The system shall use secure sockets in all transactions that include any confidential customer information.", "label": []}
+{"id": 3085, "text": "The system shall automatically log out all customers after a period of inactivity.", "label": []}
+{"id": 3086, "text": "The system shall confirm all transactions with the customer’s web browser.", "label": []}
+{"id": 3087, "text": "The system shall not leave any cookies on the customer’s computer containing the user’s password.", "label": []}
+{"id": 3088, "text": "The system shall not leave any cookies on the customer’s computer containing any of the user’s confidential information.", "label": []}
+{"id": 3089, "text": "The customer’s web browser shall never display a customer’s password.", "label": []}
+{"id": 3090, "text": " It shall always be echoed with special characters representing typed characters.", "label": []}
+{"id": 3091, "text": "The customer’s web browser shall never display a customer’s credit card number after retrieving from the database.", "label": []}
+{"id": 3092, "text": " It shall always be shown with just the last 4 digits of the credit card number.", "label": []}
+{"id": 3093, "text": "The system’s back-end servers shall never display a customer’s password.", "label": []}
+{"id": 3094, "text": " The customer’s password may be reset but never shown.", "label": []}
+{"id": 3095, "text": "The system’s back-end servers shall only be accessible to authenticated administrators.", "label": []}
+{"id": 3096, "text": "The system’s back-end databases shall be encrypted.", "label": []}
+{"id": 3097, "text": "The source code developed for this system shall be maintained in configuration management tool.", "label": []}
+{"id": 3098, "text": "The system shall be built using a standard web page development tool that conforms to either IBM’s CUA standards or Microsoft’s GUI standards.", "label": []}
+{"id": 3099, "text": "The computers must be equipped with web browsers such as Internet explorer.", "label": []}
+{"id": 3100, "text": "The product must be stored in such a way that allows the client easy access to it.", "label": []}
+{"id": 3101, "text": "         Response time for loading the product should take no longer than five minutes.", "label": []}
+{"id": 3102, "text": "         A general knowledge of basic computer skills is required to use the product", "label": []}
+{"id": 3104, "text": "As the product is E-store, On-line help system becomes a critical component of the system which shall provide –", "label": []}
+{"id": 3105, "text": "It shall provide specific guidelines to a user for using the E-Store system and within the system.", "label": []}
+{"id": 3106, "text": "To implement online user help, link and search fields shall be provided.", "label": []}
+{"id": 3107, "text": "There are many types of interfaces as such supported by the E-Store software system namely; User Interface, Software Interface and Hardware Interface.", "label": []}
+{"id": 3108, "text": "The protocol used shall be HTTP.", "label": []}
+{"id": 3109, "text": "The Port number used will be 80.", "label": []}
+{"id": 3110, "text": "There shall be logical address of the system in IPv4 format.", "label": []}
+{"id": 3111, "text": "The user interface for the software shall be compatible to any browser such as Internet Explorer, Mozilla or Netscape Navigator by which user can access to the system.", "label": []}
+{"id": 3112, "text": "The user interface shall be implemented using any tool or software package like Java Applet, MS Front Page, EJB etc.", "label": []}
+{"id": 3113, "text": "Since the application must run over the internet, all the hardware shall require to connect internet will be hardware interface for the system.", "label": []}
+{"id": 3114, "text": "As for e.g. Modem, WAN – LAN, Ethernet Cross-Cable.", "label": []}
+{"id": 3115, "text": "The e-store system shall communicate with the Configurator to identify all the available components to configure the product.", "label": []}
+{"id": 3116, "text": "The e-store shall communicate with the content manager to get the product specifications, offerings and promotions.", "label": []}
+{"id": 3117, "text": "The e-store system shall communicate with billPay system to identify available payment methods , validate the payments and process payment.", "label": []}
+{"id": 3118, "text": "The e-store system shall communicate to credit management system for handling financing options.", "label": []}
+{"id": 3119, "text": "The e-store system shall communicate with CRM system to provide support.", "label": []}
+{"id": 3120, "text": "The e-store system shall communicate with Sales system for order management.", "label": []}
+{"id": 3121, "text": "The e-store system shall communicate with shipping system for tracking orders and updating of shipping methods.", "label": []}
+{"id": 3122, "text": "The e-store system shall communicate with external Tax system to calculate tax.", "label": []}
+{"id": 3123, "text": "The e-store system shall communicate with export regulation system to validate export regulations.", "label": []}
+{"id": 3124, "text": "The system shall be verisign like software which shall allow the users to complete secured transaction.", "label": []}
+{"id": 3125, "text": "This usually shall be the third party software system which is widely used for internet transaction.", "label": []}
+{"id": 3126, "text": "The e-store system shall use the HTTP protocol for communication over the internet and for the intranet communication will be through TCP/IP protocol suite.", "label": []}
+{"id": 3128, "text": "E-store should display the disclaimers, copyright, word mark, trademark and product warranties of the Marvel electronics and home entertainment.", "label": []}
+{"id": 3129, "text": "          It shall be as per the industry standard.", "label": []}
+{"id": 3150, "text": "The Libra Scheduler is intended to work as an add-on to the queuing, scheduling and resource managing module of the open source Sun Grid Engine cluster management system, previously known as Codine.", "label": []}
+{"id": 3151, "text": "The scheduler will offer market-based economy driven service for managing batch jobs on clusters by scheduling CPU time according to user utility rather than system performance considerations.", "label": []}
+{"id": 3152, "text": "Hence, the main objective of Libra is to provide Quality of Service (QoS) computational economy in cluster computing.", "label": []}
+{"id": 3153, "text": "As part of the project, the Libra Scheduler will only manage sequential and embarrassingly parallel batch jobs to be run on a homogenous Linux cluster, although its functionality can be adapted to schedule resources other than CPU time, even on a heterogeneous cluster.", "label": []}
+{"id": 3154, "text": "To provide QoS to users, there will be no mechanism for users to interact with each other, and bargain on the use of resources according to their considerations, as is provided in a grid-computing environment by projects like Nimrod/G", "label": []}
+{"id": 3155, "text": "Clustering involves connecting two or more computers together to take advantage of combined computational power and resources.", "label": []}
+{"id": 3156, "text": "Hence, a cluster works as an integrated collection of resources that can provide a single system image spanning all its nodes.", "label": []}
+{"id": 3157, "text": "Clustering is a popular strategy for processing applications because it transparently spreads the processing of different jobs throughout the cluster, and are used for high-performance applications such as AI expert systems, nuclear simulations, and scientific calculations.", "label": []}
+{"id": 3158, "text": "Quality of Service – meeting what users actually want, thus maximizing their utility.", "label": []}
+{"id": 3159, "text": "Computational economy refers to the inclusion of user-specified QoS parameters with jobs so that resource management is based on a user-centric approach rather than on a system-centric approach.", "label": []}
+{"id": 3160, "text": "This essentially means that user constraints such as deadline and budget are more important in determining the priority of a job by the scheduler, than system policies like ordering jobs according to the basis of submission time.", "label": []}
+{"id": 3161, "text": "Currently, there is no holistic scheduling mechanism in cluster computing to enable differing QoS levels for different clients.", "label": []}
+{"id": 3163, "text": "A grid is an infrastructure that couples resources such as computers (PCs, workstations, clusters and so on), software (for special purpose applications) and devices (printers, scanners) across the Internet and presents them as a unified integrated single resource that can be widely used.", "label": []}
+{"id": 3164, "text": "Grid computing refers to using a grid for processing jobs and processes.", "label": []}
+{"id": 3166, "text": "This is an economic model that specifies one way of allocating (cluster) resources between competing users based on what their criteria is, such as deadline and budget.", "label": []}
+{"id": 3167, "text": "In this model, the amount of resource allocated to users is proportional to the values of their bids.", "label": []}
+{"id": 3168, "text": "Essentially, in a bid-based system, the users are allocated tokens or credits, which they can use for having access to resources.", "label": []}
+{"id": 3169, "text": "The value of each credit depends on the resource demand and cost at the time of usage.", "label": []}
+{"id": 3170, "text": "We can modify this approach for our cluster, by evaluating this credit/priority according to the deadline and price constraints of users, and considering the system load and resources use as well.", "label": []}
+{"id": 3171, "text": "This priority is then used by a scheduling policy to allocate resource proportionally to the competing jobs.", "label": []}
+{"id": 3172, "text": "This is a scheduling algorithm to enforce resource allocations proportional to a user’s priority or share.", "label": []}
+{"id": 3173, "text": "A pool of tickets represents resource rights to a shared resource.", "label": []}
+{"id": 3174, "text": "A stride is inversely proportional to the number of tickets allocated to a job, hence representing the interval (in terms of CPU time) between two successive scheduling of a job.", "label": []}
+{"id": 3175, "text": "Jobs with more tickets have shorter strides and hence are scheduled more frequently and obtain a greater fraction of the resource.", "label": []}
+{"id": 3176, "text": "The algorithm is deterministic and quite accurately schedules jobs in exact proportions based on their ticket allocations.", "label": []}
+{"id": 3177, "text": "It is the process of moving a job from one computer system to another without restarting the job from the beginning.", "label": []}
+{"id": 3178, "text": "These are jobs that must be run on a single node, and cannot be split into separate jobs.", "label": []}
+{"id": 3179, "text": "These are parallel jobs that are comprised of independent parts that can be split up and performed on separate nodes as if they are sequential jobs, with minimal inter-job communication necessary.", "label": []}
+{"id": 3180, "text": "This is opposed to real parallel jobs that comprise dependent threads that need to interact with each other during the course of execution.", "label": []}
+{"id": 3181, "text": "It is a method of quantifying the system resources used by a job.", "label": []}
+{"id": 3185, "text": "A cluster in which the nodes or workstations have uniform characteristics such as the same memory size and hard disk space.", "label": []}
+{"id": 3186, "text": "They run the same operating system.", "label": []}
+{"id": 3197, "text": "As mentioned earlier, Libra forms part of a larger system comprising the Sun Grid Engine cluster management system that runs on a Linux-based cluster.", "label": []}
+{"id": 3198, "text": "SGE is responsible for receiving the jobs submitted by the user and delegating them to Libra for scheduling and placing on appropriate workstations or execution hosts.", "label": []}
+{"id": 3199, "text": "Libra communicates its decision regarding workstation allocation to the resource manager, which then dispatches the job to the chosen workstation.", "label": []}
+{"id": 3200, "text": "Once assignment to a workstation has occurred, Libra is responsible for implementing the scheduling policy on the jobs executing at the workstations.", "label": []}
+{"id": 3201, "text": "No modifications to the Linux kernel are required.", "label": []}
+{"id": 3203, "text": "The main purpose of the Libra scheduler is to maximize user utility.", "label": []}
+{"id": 3204, "text": "Thus the job details submitted by the user will include job prioritization criteria: the allocated budget and the deadline required by the user, enabling the scheduler to maximize CPU utilization while remaining within the constraints imposed by the need to optimize QoS.", "label": []}
+{"id": 3205, "text": "The scheduler will allocate jobs based on the job parameters, which are job specifications submitted by the user with the job, including:", "label": []}
+{"id": 3206, "text": "Location of the executable and input data sets", "label": []}
+{"id": 3210, "text": "However, the Libra scheduler will be QoS driven: it will aim to optimize resource utilization within user-imposed constraints: thus, user satisfaction is the primary concern, as opposed to maximizing CPU utilization.", "label": []}
+{"id": 3213, "text": "With support from the Sun Grid Engine, the Libra scheduler should embody the following features and functions:", "label": []}
+{"id": 3214, "text": "Should be able to enforce resource allocations according to user-centric priorities", "label": []}
+{"id": 3215, "text": "Should be dynamic, and not static, which is a necessary implication of the user-centric approach, so that users who need their jobs completed in emergency and are willing to pay a high price for it, are able to get their job done through dynamic reallocation of resources even if the job is submitted later than other jobs or the system is heavily loaded.", "label": []}
+{"id": 3216, "text": "Hence, the scheduler should be able to change resource limits, priorities, privileges and execution order of the submitted jobs.", "label": []}
+{"id": 3217, "text": "Should be scalable, which means that its performance should not degrade with the addition of nodes and jobs to the cluster", "label": []}
+{"id": 3218, "text": "Should be configurable, and allow for various scheduling policies that can be modified to incorporate QoS parameters", "label": []}
+{"id": 3219, "text": "Should be separable from the cluster management system", "label": []}
+{"id": 3220, "text": "Should provide at least a basic level of job accounting, to aid in scheduling policies", "label": []}
+{"id": 3221, "text": "Should ideally provide a GUI for all components, such as for users to submit jobs and for administrators to oversee scheduling", "label": []}
+{"id": 3222, "text": "A market-based economic model for computational economy needs to be developed for the Libra scheduler, which would be responsible for the pricing and allocation of resources according to user constraints.", "label": []}
+{"id": 3223, "text": "The model is the bid-based proportional resource-sharing model, which will allocate computational time to jobs according to their share determined by the priority of their jobs according to deadline and budget considerations.", "label": []}
+{"id": 3224, "text": "To ensure that the actual resource allocation reflects the overall job share, the proportional stride-scheduling algorithm will be used.", "label": []}
+{"id": 3225, "text": "There are essentially two classes of users for the Libra Scheduler used with the Sun Grid Engine cluster management system: the user who wishes to submit jobs for the cluster and the administrator who oversees scheduling and cluster usage.", "label": []}
+{"id": 3226, "text": "The user needs to know the exact nature of the submitted job, such as the execution time as well as resources required, and must possess the technical know-how to use the interface for submitting jobs.", "label": []}
+{"id": 3227, "text": "The administrator must be an advanced cluster operator, fully qualified in using Linux, SGE, and the Libra Scheduler.", "label": []}
+{"id": 3228, "text": "The current constraints on the project are related to the provision of hardware resources to implement and test a high-performance cluster.", "label": []}
+{"id": 3229, "text": "At present, a network of four Pentium- III workstations, with a 128 Mb RAM, serves as the cluster, with SGE running on top of the Linux operating system.", "label": []}
+{"id": 3230, "text": "For better performance analysis, a larger number of dedicated workstations would be beneficial.", "label": []}
+{"id": 3231, "text": "For testing purposes, a simulating tool needs to be used which may have to be specially designed if a generic one is not readily and freely available.", "label": []}
+{"id": 3232, "text": "A number of factors that may affect the requirements specified in the SRS include:", "label": []}
+{"id": 3233, "text": "The workability of the Sun Grid Engine cluster management system modules such as those dealing with process migration with the scheduling policies provided by the Libra Scheduler is assumed.", "label": []}
+{"id": 3234, "text": "A basic module of job accounting and payment considerations will be provided, as they are not the focus of the scheduler.", "label": []}
+{"id": 3235, "text": "Users are assumed to have a fair estimate of job execution times, so that the decision to accept or reject a job is facilitated.", "label": []}
+{"id": 3236, "text": "Detailed requirements with respect to the economic front-end, that is, the exact costing and pricing policy that will be used to charge users for using the cluster will be specified in a later version.", "label": []}
+{"id": 3237, "text": "The pricing mechanism will not affect the scheduling policies, as they assume a given cost and budget, and schedule resources accordingly.", "label": []}
+{"id": 3238, "text": "Furthermore, at present, only a command line Linux interface or the interface of the Sun Grid Engine cluster management system will be used as the user and administrator interface.", "label": []}
+{"id": 3239, "text": "A GUI might be added once the basic functionality is implemented.", "label": []}
+{"id": 3240, "text": "It also remains to be decided whether a software tool for simulation and testing purposes will be designed or a generic one that is freely available will be used.", "label": []}
+{"id": 3242, "text": "First, three features of the overall cluster management system and its interaction with the user or administrator are described: Submit Job, View Job Status, Delete/Change Job.", "label": []}
+{"id": 3243, "text": "These are linked to the inputs and working processes of the scheduler.", "label": []}
+{"id": 3245, "text": "This functional feature deals with the end-user (can also be used by the administrator) and is facilitated by the interface of the Sun Grid Engine cluster management system.", "label": []}
+{"id": 3246, "text": "Hence, it is linked to the scheduler, but does not interface directly with the scheduler.", "label": []}
+{"id": 3247, "text": "However, the SGE interface will need to be adapted to include additional submission parameters that a user needs to be submit, which are not already supported by SGE.", "label": []}
+{"id": 3248, "text": "This may alternately be done through a command-line interface.", "label": []}
+{"id": 3249, "text": "User Information – relevant user data such as name and authentication id that needs to be used to submit a job to the cluster.", "label": []}
+{"id": 3250, "text": "Job Information – about the job that the user wants to submit, as well as already pending jobs, to determine whether the cluster can accept more jobs and can cater to the particular user job.", "label": []}
+{"id": 3251, "text": "The job details are provided in the functional feature Initialize Job.", "label": []}
+{"id": 3252, "text": "Cluster Information – Cluster Type and Scheduling mechanism details, Current Load Status, Submission Directions and Criteria.", "label": []}
+{"id": 3253, "text": "The cluster decides whether it is even open for job submissions, and whether the user that is trying to submit job is a valid user or not.", "label": []}
+{"id": 3254, "text": "This decision is different from the Accept/Reject Job feature described later on, which deals with the situation when the cluster is open for job submissions, but will decide on whether to accept or reject a job based on job parameters such as budget provided and deadline specified.", "label": []}
+{"id": 3255, "text": "Boolean – Whether the cluster is accepting submission or not.", "label": []}
+{"id": 3256, "text": "Boolean – User verified or not.", "label": []}
+{"id": 3257, "text": "This feature will allow the user or administrator to view details about the job that have been submitted, and the progress of the execution of the job.", "label": []}
+{"id": 3258, "text": "User Id and Password – to ensure that only the appropriate user is able to see the job status", "label": []}
+{"id": 3259, "text": "Show the user the available options about the submitted job, and information about the progress of job execution.", "label": []}
+{"id": 3260, "text": "Process selected options if choices are provided to the user to view different aspects of job information.", "label": []}
+{"id": 3261, "text": "User view of available options about jobs submitted by the user.", "label": []}
+{"id": 3262, "text": "This feature may be available to both the user and the administrator, to cancel a job or under specific circumstances, change a job parameter.", "label": []}
+{"id": 3263, "text": "Parameters such as deadline and cost are crucial to the job scheduling and would not normally be changeable.", "label": []}
+{"id": 3264, "text": "However, if the user wishes to specify a different output directory or a delayed deadline, this may be permitted.", "label": []}
+{"id": 3265, "text": "User Id and Password – to ensure that only the appropriate user is able to delete/change the job.", "label": []}
+{"id": 3266, "text": "Remove job from the queue and update cluster status.", "label": []}
+{"id": 3267, "text": "Revise scheduling decisions about resource allocation to pending jobs and submission of new jobs.", "label": []}
+{"id": 3268, "text": "Updated cluster information and scheduling decision – CPU load, node status, queue length, quanta allocated to pending jobs, revised expected finishing deadline of pending jobs.", "label": []}
+{"id": 3269, "text": "These outputs are facilitated by the functionality of the Sun Grid Engine cluster management system, and are not independently produced by the Libra scheduler.", "label": []}
+{"id": 3270, "text": "This is a main functional requirement that prepares the scheduler for eventually scheduling and executing a job.", "label": []}
+{"id": 3271, "text": "The Libra scheduler performs it once a job has been accepted by SGE, with information from the scheduler.", "label": []}
+{"id": 3272, "text": "The information submitted by the user about the job, as well as the job id assigned by SGE.", "label": []}
+{"id": 3273, "text": "Two processes are performed as part of this function: the details of the job are retrieved and then these details are set in variables that represent the state of the cluster and its queues.", "label": []}
+{"id": 3274, "text": "The parsed parameters are passed on to the scheduling module where the job may be accepted or rejected.", "label": []}
+{"id": 3275, "text": "The output comprises the set variables that represent job information submitted with a job.", "label": []}
+{"id": 3276, "text": "Hence, the exact job details are output: Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": []}
+{"id": 3277, "text": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline.", "label": []}
+{"id": 3278, "text": "Hence, the most important inputs are budget, deadline, and execution time, to determine whether the job can be accepted or not.", "label": []}
+{"id": 3279, "text": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": []}
+{"id": 3280, "text": "Cluster information – CPU load, node status, remaining time of pending jobs", "label": []}
+{"id": 3281, "text": "Based on the job parameters, the scheduler figures out a priority of the job that reflects the share of CPU time that it deserves and needs according to the specified criteria.", "label": []}
+{"id": 3282, "text": "The scheduler determines whether the job can be finished by the requisite deadline, given the execution time of the job and the execution status of other pending jobs on various nodes.", "label": []}
+{"id": 3283, "text": "The output includes a boolean value specifying whether the job has been accepted or rejected.", "label": []}
+{"id": 3284, "text": "A suggested deadline or cost is given to the user, as a precondition for the job to be accepted.", "label": []}
+{"id": 3285, "text": "This is the feature of Libra that decides how the job will be scheduled based on its budget and deadline.", "label": []}
+{"id": 3286, "text": "It uses the Stride Scheduling Algorithm to enforce resource allocations (CPU cycles) proportional to a user’s budget and deadline.", "label": []}
+{"id": 3287, "text": "It is performed by Libra once it has decided that a job can be accommodated.", "label": []}
+{"id": 3288, "text": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": []}
+{"id": 3289, "text": "Allocate tickets to a job based on its budget and deadline and the budget and deadlines of all other jobs on the execution host under debate.", "label": []}
+{"id": 3290, "text": "Calculate the stride and the pass of the job, where the stride is simply the global stride constant divided by the tickets and the pass is initially just the stride.", "label": []}
+{"id": 3291, "text": "Scheduling information – the job’s tickets, stride and pass.", "label": []}
+{"id": 3292, "text": "This feature decides on which node and on which queue the job will be placed for execution.", "label": []}
+{"id": 3293, "text": "It is done on the basis of the job’s budget, execution time and deadline.", "label": []}
+{"id": 3294, "text": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.", "label": []}
+{"id": 3295, "text": "Cluster Information - CPU Load, Node Status, Remaining Time of Pending Jobs, Available Memory", "label": []}
+{"id": 3296, "text": "Libra first looks at the load on each of the hosts and sorts them in ascending order, choosing the host that is least loaded.", "label": []}
+{"id": 3297, "text": "This ensures that load balancing is taken care of.", "label": []}
+{"id": 3298, "text": "It then selects the appropriate queue based on whether the job is sequential or embarrassingly parallel, budget, etc…", "label": []}
+{"id": 3300, "text": "This feature takes the job and inserts it into the queue on the execution host that the scheduler had previously decided it is to be placed in.", "label": []}
+{"id": 3301, "text": "This is a separate feature since the job may be able to wait for a while before it is given CPU time, allowing other jobs to complete or be scheduled earlier if their deadlines are more urgent.", "label": []}
+{"id": 3302, "text": "Thus, the dispatcher decides when to actually send the job for execution.", "label": []}
+{"id": 3303, "text": "The chosen execution host and queue on which to place the job for execution.", "label": []}
+{"id": 3304, "text": "The scheduler sends the job to the appropriate queue and it joins the competition for resources.", "label": []}
+{"id": 3305, "text": "The scheduled job in its appropriate host and queue.", "label": []}
+{"id": 3306, "text": "Every time a job is scheduled for execution on a host, this feature of Libra updates the cluster status.", "label": []}
+{"id": 3307, "text": "This action is also performed when a job ends and is removed from the cluster.", "label": []}
+{"id": 3310, "text": "Libra first reserves the amount of resources that will be required by the job on the node.", "label": []}
+{"id": 3311, "text": "It then updates the execution host queue status and sends that information about the additional load on the queue and node under consideration to the central information store on the master host.", "label": []}
+{"id": 3312, "text": "There is no output associated with this feature as it simply performs an update and does not send any results back.", "label": []}
+{"id": 3313, "text": "It is a trigger that is activated every time a job is scheduled or is deleted from an execution host.", "label": []}
+{"id": 3314, "text": "As long as there are jobs in the queues, this feature is being run.", "label": []}
+{"id": 3315, "text": "It essentially decides how to time-slice between all the jobs currently being executed.", "label": []}
+{"id": 3316, "text": "These scheduling decisions are made based on the stride-scheduling algorithm.", "label": []}
+{"id": 3319, "text": "It looks at all the jobs on the cluster and selects the one with the minimum pass value, and allots it a quantum.", "label": []}
+{"id": 3320, "text": "The pass of that job is then advanced by its stride.", "label": []}
+{"id": 3321, "text": "In case of a tie, the arbitrary FIFO job ordering is used.", "label": []}
+{"id": 3322, "text": "This loop is repeated until there are no jobs left to run on a queue.", "label": []}
+{"id": 3324, "text": "The scheduler will not support job migration for the purpose of decreasing resource fragmentation.", "label": []}
+{"id": 3325, "text": "There will be a maximum of 1 bug/KLOC.", "label": []}
+{"id": 3326, "text": "In case of system outage, the cluster will be down while the Linux operating system boots up.", "label": []}
+{"id": 3327, "text": "This will take less than five minutes.", "label": []}
+{"id": 3328, "text": "The Libra scheduler will ensure the privacy of user job status and ensure full control over job execution, so that alteration of scheduling criteria or actual resource allocation is not possible without administrator authority.", "label": []}
+{"id": 3329, "text": "The maximum response time for the submission of a job will be 1 minute.", "label": []}
+{"id": 3330, "text": "The maximum number of jobs schedulable is limited only by the capacity of the nodes to fulfill the jobs’ deadlines; there is no upper limit inherent in the Libra scheduler as such.", "label": []}
+{"id": 3331, "text": "Assuming submitted statistics for jobs are accurate, the Libra scheduler will ensure that all jobs are completed with a 10% error allowance.", "label": []}
+{"id": 3332, "text": "Under all circumstances, the maximum cost payable as submitted by the user will be the maximum cost charged to the user.", "label": []}
+{"id": 3333, "text": "All code will be written as specified by the Hungarian Naming Convention.", "label": []}
+{"id": 3334, "text": "All code will be written as required by the GNU General Purpose License.", "label": []}
+{"id": 3336, "text": "The Libra scheduler will be a sub-component of SGE.", "label": []}
+{"id": 3337, "text": "All coding will be done in standard C.", "label": []}
+{"id": 3338, "text": "Exhaustive searches of the entire set of combinations of jobs will not be done.", "label": []}
+{"id": 3339, "text": "Heuristics will be developed for this scheduling problem.", "label": []}
+{"id": 3341, "text": "All documentation will be made in accordance with requirements pertaining to open source software under the GNU General Purpose License.", "label": []}
+{"id": 3342, "text": "Additionally, on-line user documentation will be in the form of man pages accessible through Linux.", "label": []}
+{"id": 3343, "text": "The entire Libra project is open source, and hence no component of it will be purchased.", "label": []}
+{"id": 3344, "text": "There will be two user types – the cluster user and the cluster administrator – each of which will have its own corresponding interface.", "label": []}
+{"id": 3345, "text": "The minimal requirements are that the cluster user would be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.", "label": []}
+{"id": 3347, "text": "submit jobs with the associated deadline, cost, and execution time", "label": []}
+{"id": 3348, "text": "query the cluster to establish the current cost per unit time for submitting new jobs", "label": []}
+{"id": 3349, "text": "monitor the status of submitted jobs", "label": []}
+{"id": 3350, "text": "The minimal requirements are that the cluster administrator will be able to interact with the system through the Linux command prompt, or through the interface provided by the Sun Grid Engine cluster management system.", "label": []}
+{"id": 3352, "text": "check the status of each node of the cluster", "label": []}
+{"id": 3353, "text": "check the usage pattern history of the cluster", "label": []}
+{"id": 3354, "text": "check the status of all submitted jobs", "label": []}
+{"id": 3355, "text": "check the load on each node of the cluster", "label": []}
+{"id": 3356, "text": "alter the cost structure of the cluster", "label": []}
+{"id": 3357, "text": "alter the scheduling policy of the cluster", "label": []}
+{"id": 3358, "text": "cancel, suspend, and resume any job", "label": []}
+{"id": 3359, "text": "All hardware interfaces of Libra will be those of the Sun Grid Engine on top of which it will be running.", "label": []}
+{"id": 3361, "text": "Libra will directly interface with the modified Sun Grid Engine cluster management system, version 5.3.", "label": []}
+{"id": 3362, "text": "SGE in turn will be interfacing with the operating system and any other software components it requires.", "label": []}
+{"id": 3363, "text": "For the execution of embarrassingly parallel jobs, the PVM (Parallel Virtual Machine) and MPI (Message Passing Interface) libraries will be used by the cluster.", "label": []}
+{"id": 3364, "text": "Libra will utilize the communications architecture of Sun Grid Engine itself, and will not have any unique communications interfaces above of SGE.", "label": []}
+{"id": 3365, "text": "Libra will be released under a GPL license and will be open-source.", "label": []}
+{"id": 3396, "text": " The proposed system will incorporate robust features such as audio and video capabilities, in which students within the same group or university can communicate via a portal that provides both visual & audio functionality, file hosting and file management, user profiles with pictures, better group collaboration tools, and online testing capabilities.", "label": []}
+{"id": 3398, "text": "Furthermore, it will contain comprehensive explanations of the functionality and constraints of each of the following requirements.", "label": []}
+{"id": 3407, "text": "Virtual-EDU consists of an online website that allows users to create a classroom like environment with the features that it contains.", "label": []}
+{"id": 3408, "text": "Once registered to the system, a user can create a profile sharing his or her information with the rest of the enrolled users.", "label": []}
+{"id": 3409, "text": "Users will be able to find commonalities with each other through the user profile.", "label": []}
+{"id": 3410, "text": "Virtual-EDU also gives users the ability to store data and/or important materials in a secure network location for future retrieval or present usage.", "label": []}
+{"id": 3411, "text": "This particular data as well as other files may be shared or worked on using Virtual-EDU extensive tools for file sharing and document collaboration.", "label": []}
+{"id": 3412, "text": "Users can work together on a single document in real time or send their work to other users via secure file sharing methods and protocols.", "label": []}
+{"id": 3413, "text": "If further communication is need between users, Virtual-EDU has features such as instant messaging, where users can hold single or group conversations via a secure real-time communication based on typed text.", "label": []}
+{"id": 3414, "text": "However, if more efficient means of communication are need, users have the ability to hold single or group video/audio conferences, whereby the users will be able to see other users streamed live in real-time.", "label": []}
+{"id": 3415, "text": "The top level diagram below shows all of the user features that will be implemented for the system.", "label": []}
+{"id": 3416, "text": "Streaming audio and video (both live and on-demand) will allow users to interact with faculty and fellow classmates over a streaming video and audio, one-to-one or one-to-many connection.", "label": []}
+{"id": 3417, "text": "Also, learning materials can be delivered through audio and video formats.", "label": []}
+{"id": 3418, "text": "The instant messaging feature will allow users to interact with faculty and fellow classmates via text-based format, one-to-one or one-to-many connection.", "label": []}
+{"id": 3419, "text": "File sharing and document collaboration tools allow users to efficiently share and develop documents and reports within a group.", "label": []}
+{"id": 3420, "text": "User profiles containing contact information, pictures, and other related information on a student personal page.", "label": []}
+{"id": 3421, "text": " This page will only be accessible to students and faculty enrolled in the same class.", "label": []}
+{"id": 3422, "text": "Only the owner of the profile may make changes to it.", "label": []}
+{"id": 3423, "text": "Users will have the ability to manage a private temporary hosting space.", "label": []}
+{"id": 3424, "text": "Tools such as file uploading, directory creator, move, delete and rename will be accessible.", "label": []}
+{"id": 3425, "text": "System Administrators: User class with domain system privileges which allows them to maintain the entire system, manage enrollment and create virtual classes.", "label": []}
+{"id": 3426, "text": "Users in this class have complete control and knowledge of the entire system.", "label": []}
+{"id": 3427, "text": "User class with domain class privileges, which allows them to maintain and support the class they are enrolled in, along with the other enrolled users.", "label": []}
+{"id": 3428, "text": "Users in this class have zero knowledge of the back end of the system; however, they know the front end of the application.", "label": []}
+{"id": 3429, "text": "User class with limited class privileges, which allows them to operate the front end of the system with limited read only permissions.", "label": []}
+{"id": 3430, "text": "Users in this class will only be able to make modifications to their profile section.", "label": []}
+{"id": 3442, "text": "The university will be in session during the development of the application.", "label": []}
+{"id": 3443, "text": "Since current system downtime needs to be maintained at low levels; system rollouts and system validation need to be scheduled during low usage periods.", "label": []}
+{"id": 3444, "text": "The current NJIT user database system required to run this application may be outdated or in need of maintenance.", "label": []}
+{"id": 3445, "text": "Therefore the current system may only house 250 concurrent users.", "label": []}
+{"id": 3446, "text": "Not allow languages will be represented for online system documentation.", "label": []}
+{"id": 3447, "text": "Only browsers from Microsoft, Apple and Mozilla will have functional access to the application.", "label": []}
+{"id": 3448, "text": "Both the enrolled students and faculty will be provided with printable manuals through email and will have access to on-line tutorials.", "label": []}
+{"id": 3449, "text": " The system will also provide an on-line help feature, providing the users with easy to read “how-to” instructions.", "label": []}
+{"id": 3450, "text": "NJIT’s administration will be given an in-depth manual of the entire system, so that they may support the system after development is complete.", "label": []}
+{"id": 3451, "text": "Current systems and databases will still be available for use and archive.", "label": []}
+{"id": 3452, "text": "Database will be modified to meet VIRTUAL-EDU‘s requirements.", "label": []}
+{"id": 3453, "text": "New entities and relationships for the user will need to be added.", "label": []}
+{"id": 3454, "text": "Staff is willing to accept, learn, and utilize the new system.", "label": []}
+{"id": 3455, "text": "Users should have an adequate computer, network connection, and webcam with microphone.", "label": []}
+{"id": 3456, "text": "Users will have access to common programs, such as media players for streaming.", "label": []}
+{"id": 3457, "text": "Instant Messaging is the feature allowing students and professors to interact with each other and talk in real time.", "label": []}
+{"id": 3458, "text": "Instead of leaving each other messages on boards and going to chat rooms where screens are not refreshed in less than 60 sec, students will be able to see who is online and talk to them immediately.", "label": []}
+{"id": 3459, "text": "If a professor is marked online, students will be able to ask questions and receive answers from the professor almost instantaneously.", "label": []}
+{"id": 3460, "text": "This feature is of High Priority and students will be able to benefit from this feature because it will give them the feeling of a real classroom, something that most students are complaining lacks when taking an online class.", "label": []}
+{"id": 3461, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3462, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3463, "text": "User action: Click on the messaging software tool – Instant-Edu", "label": []}
+{"id": 3464, "text": "Response: New pop up window shows up with list of contacts.", "label": []}
+{"id": 3465, "text": "Online users are marked green and offline users are marked red.", "label": []}
+{"id": 3466, "text": "User action: Double click on the name of an online user", "label": []}
+{"id": 3467, "text": "Response: New window pops up, where real time conversion can be initiated between parties", "label": []}
+{"id": 3468, "text": "User action: Click on the smiley button in the window", "label": []}
+{"id": 3469, "text": "Response: A list is shown containing all available emotions to be used in conversation", "label": []}
+{"id": 3470, "text": "User action: Click on the plus button in the window", "label": []}
+{"id": 3471, "text": "Response: A list shows up that contains all other available online users that can be invited to join the conversation", "label": []}
+{"id": 3472, "text": "User action: Double click on a name in that window", "label": []}
+{"id": 3473, "text": "Response: The new user joined the conversation and it’s now a conference between multiple people", "label": []}
+{"id": 3474, "text": "User action: Click on the file button in the window", "label": []}
+{"id": 3475, "text": "Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to the other party", "label": []}
+{"id": 3476, "text": "User action: Select the file", "label": []}
+{"id": 3477, "text": "Response: The selected file is marked blue", "label": []}
+{"id": 3478, "text": "User action: Click on the send file button", "label": []}
+{"id": 3479, "text": "Response: The file begins transmitting to the other party", "label": []}
+{"id": 3480, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3481, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3482, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3483, "text": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": []}
+{"id": 3484, "text": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": []}
+{"id": 3485, "text": "Streaming Audio and Video allows students and professor to make audio and/or video calls between each other.", "label": []}
+{"id": 3486, "text": "The professor will have the ability to hold a video lecture for the whole class or have one on one meeting with the students.", "label": []}
+{"id": 3487, "text": "This is another feature that will give the students the feeling of a real classroom.", "label": []}
+{"id": 3488, "text": "Students will have the ability of attending an online class and be able to see the professor and colleagues and interact with each other.", "label": []}
+{"id": 3489, "text": "Professor will be able to ask questions to students and expect an answer immediately.", "label": []}
+{"id": 3490, "text": "Professor will be able to post the video lecture online and make it available for a later download.", "label": []}
+{"id": 3492, "text": "Despite the lack of audio and video students will still be able to interact in real time with the first feature – instant messaging.", "label": []}
+{"id": 3493, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3494, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3495, "text": "User action: Click on the messaging software tool – Instant-Edu", "label": []}
+{"id": 3496, "text": "Response: New pop up window shows up with list of contacts.", "label": []}
+{"id": 3497, "text": "Online users are marked green and offline users are marked red.", "label": []}
+{"id": 3498, "text": "User action: Double click on the name of an online user", "label": []}
+{"id": 3499, "text": "Response: New window pops up, where real time conversion can be initiated between parties", "label": []}
+{"id": 3500, "text": "User action: Double click on the Audio Button", "label": []}
+{"id": 3501, "text": "Response: The software calls the other user’s computer and awaits for response", "label": []}
+{"id": 3502, "text": "User action: The user on the other side clicks on accept button", "label": []}
+{"id": 3503, "text": "Response: The connection is established and the conversation between two parties begins.", "label": []}
+{"id": 3504, "text": "User action: The user on the other side clicks on deny button", "label": []}
+{"id": 3505, "text": "Response: The connection is not established and the user that initiated the conversation will receive a message the other user is busy.", "label": []}
+{"id": 3506, "text": "User action: Double click on Video Button", "label": []}
+{"id": 3507, "text": "Response: The software calls the other user’s computer and awaits for response.", "label": []}
+{"id": 3508, "text": "User action: The user on the other side clicks on accept button", "label": []}
+{"id": 3509, "text": "Response: The connection is established and the video transmission along with audio transmission begins between two parties", "label": []}
+{"id": 3510, "text": "User action: Click on the hang up button", "label": []}
+{"id": 3511, "text": "Response: The conversation between two users ends.", "label": []}
+{"id": 3512, "text": "User action: Click on the host a conference button", "label": []}
+{"id": 3513, "text": "Response: New window pops up.", "label": []}
+{"id": 3514, "text": "User will be able to select online users and invite them to join the conference.", "label": []}
+{"id": 3515, "text": "User action: Click on the accept button", "label": []}
+{"id": 3516, "text": "Response: User has become part of the video conference and be able to follow an online audio/video lecture from the professor.", "label": []}
+{"id": 3517, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3518, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3519, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3520, "text": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": []}
+{"id": 3521, "text": "REQ-5 - Users must be connected on a high speed internet (DSL, Cable)", "label": []}
+{"id": 3522, "text": "REQ-6 - Users must have their computers equipped with microphone and web camera.", "label": []}
+{"id": 3523, "text": "Customizable User Profile will be feature that will allow users to customize their profile to their taste.", "label": []}
+{"id": 3524, "text": "The user will be able to select/change their password, update information about themselves (phone number, address).", "label": []}
+{"id": 3525, "text": "Users will be able to change the background colors and menu layout on their profile page.", "label": []}
+{"id": 3526, "text": "Users will have couple of different options to use if they wanted to, for example leave a video and introduce themselves.", "label": []}
+{"id": 3528, "text": "Users will also be able to choose their font as well as font color for their profile page.", "label": []}
+{"id": 3529, "text": "This feature will be of Medium priority.", "label": []}
+{"id": 3530, "text": "It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.", "label": []}
+{"id": 3531, "text": "In other words, everyone’s profile page can look different for each student.", "label": []}
+{"id": 3532, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3533, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3534, "text": "User action: Click on the setting up preferences button", "label": []}
+{"id": 3535, "text": "Response: New menu shows up with all the available features.", "label": []}
+{"id": 3536, "text": "User action: Click on the Contact button", "label": []}
+{"id": 3537, "text": "Response: New text area will show up where users can put their contact information, phone numbers, address etc.", "label": []}
+{"id": 3538, "text": "User action: Click on the button background color", "label": []}
+{"id": 3539, "text": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": []}
+{"id": 3540, "text": "User action: Click on the video button", "label": []}
+{"id": 3541, "text": "Response: New pop up window shows up that will give them opportunity to start video recording and introduce themselves.", "label": []}
+{"id": 3542, "text": "The video will become part of their profile page.", "label": []}
+{"id": 3543, "text": "It will be easier for students to associate with each other when they actually meet the person on video.", "label": []}
+{"id": 3544, "text": "It will bring better team performance.", "label": []}
+{"id": 3545, "text": "User action: Click on the info button", "label": []}
+{"id": 3546, "text": "Response: Text area shows up where users can put some more info about them, their strengths, and weaknesses, put favorite links etc.", "label": []}
+{"id": 3547, "text": "User action: Click on the font button", "label": []}
+{"id": 3548, "text": "Response: New menu shows up that will give the choices for different fonts that can be used to display the info on their profile page", "label": []}
+{"id": 3549, "text": "User action: Click on font size button", "label": []}
+{"id": 3550, "text": "Response: A new menu shows up that will have all different font sizes that the user can choose.", "label": []}
+{"id": 3551, "text": "User action: Click on layout menu", "label": []}
+{"id": 3552, "text": "Response: A menu with different layout choices will show up.", "label": []}
+{"id": 3553, "text": "User action: Click on password", "label": []}
+{"id": 3554, "text": "Response: A new window pops up that will give the user the ability to reset/change the password.", "label": []}
+{"id": 3555, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3556, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3557, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3558, "text": "Users must have web cam and microphone if they want to be able to create an introducing video of themselves on their profile page", "label": []}
+{"id": 3559, "text": "Virtual-Space consists of folder space set aside for each student to upload files to.", "label": []}
+{"id": 3560, "text": " An uploading feature would be the only component available in the first release, which would aid in handing in assignments.", "label": []}
+{"id": 3561, "text": " This feature is of medium priority as email can still be used as a means for this type of document sharing.", "label": []}
+{"id": 3562, "text": " The cost of implementing this feature would include insuring each class section a space on an FTP server.", "label": []}
+{"id": 3563, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3564, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3565, "text": "User action: Click on the File Hosting software tool – Virtual-Space", "label": []}
+{"id": 3566, "text": "Response: Window displays file tree diagram of user’s uploaded files.", "label": []}
+{"id": 3567, "text": "User action: A user clicks the Browse button", "label": []}
+{"id": 3568, "text": "Response:  Produce a window for the user to browse their machine to select a file.", "label": []}
+{"id": 3569, "text": " Once file is selected, browse window would close and the path to the selected file would show in the text box.", "label": []}
+{"id": 3570, "text": "User action: A user clicks the Upload button", "label": []}
+{"id": 3571, "text": "Response:  Should upload the selected file and produce a window letting the user know if the upload was successful.", "label": []}
+{"id": 3572, "text": " If no file is selected, a window should let the user know they need to use the Browse button to select a file.", "label": []}
+{"id": 3573, "text": " If the upload will cause the account to go over disk space quota, the file should be still be allowed and an email sent to the administrator and professor letting them know of the overage.", "label": []}
+{"id": 3574, "text": " The file tree diagram should update with the new file name added to the list.", "label": []}
+{"id": 3575, "text": "Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": []}
+{"id": 3576, "text": "For the first release, each class needs a quota space of at least 1GB per student in that class.", "label": []}
+{"id": 3577, "text": " If the upload will cause the account to go over disk space quota, the file should be still be allowed to upload and an email sent to the administrator and professor.", "label": []}
+{"id": 3578, "text": "Files causing the quota to be exceeded should not be allowed to upload.", "label": []}
+{"id": 3579, "text": "The students overall login should allow them access to the appropriate folder, and their account should only have Write privileges.", "label": []}
+{"id": 3580, "text": "The professor’s username should allow them access to the appropriate folder and have Read, Write, and Delete privileges.", "label": []}
+{"id": 3581, "text": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": []}
+{"id": 3582, "text": "Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OS", "label": []}
+{"id": 3583, "text": "Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": []}
+{"id": 3584, "text": "Virtual-Space Req 4:  Users must enable pop-up windows.", "label": []}
+{"id": 3585, "text": "In the second release of Virtual-ED’s Virtual-Space features would be added to include full file management for any uploaded files.", "label": []}
+{"id": 3586, "text": " In this release, FTP space would be designated by student rather than by class section.", "label": []}
+{"id": 3587, "text": " Disk space quotas would need to be implemented to preserve resources.", "label": []}
+{"id": 3588, "text": " Each student would be able to upload files to share with team members or to turn in assignments.", "label": []}
+{"id": 3589, "text": " Arranging by folders and deleting files would also be newly added capabilities.", "label": []}
+{"id": 3590, "text": "This would incur a higher cost to accommodate more disk space, and would also require an administrator to spend more time managing the FTP accounts.", "label": []}
+{"id": 3591, "text": " The first release version of this feature was of medium priority, so adding more capabilities to it would be of low priority as email is still a highly usable alternative.", "label": []}
+{"id": 3592, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3593, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3594, "text": "User action: Click on the File Hosting software tool – Virtual-Space", "label": []}
+{"id": 3595, "text": "Response: Window displays file tree diagram of user’s files and the shared files of the classes’ other users.", "label": []}
+{"id": 3596, "text": " Displays buttons to upload new files and share or download existing files.", "label": []}
+{"id": 3597, "text": "User action: A user clicks the Browse button", "label": []}
+{"id": 3598, "text": "Response:  Produce a window for the user to browse their machine to select a file.", "label": []}
+{"id": 3599, "text": " Once file is selected, browse window would close and the path to the selected file would show in the text box.", "label": []}
+{"id": 3600, "text": "User action: A user clicks the Upload button", "label": []}
+{"id": 3601, "text": "Response:  The program should provide a window for the user to select a folder in their file tree for the file to be stored.", "label": []}
+{"id": 3602, "text": " Once selected, the program should upload the selected file and produce a window letting the user know if the upload was successful and the file name should be added in the appropriate folder of the file tree diagram.", "label": []}
+{"id": 3603, "text": " If no file is selected, a window should let the user know they need to use the Browse button to select a file.", "label": []}
+{"id": 3604, "text": "If the addition of the new file would put the user about their disk space quota, a window should let the user know they cannot upload it without first deleting other files.", "label": []}
+{"id": 3605, "text": "User action: On file tree, a user selects a file name and clicks Delete button or presses Delete button on their keyboard.", "label": []}
+{"id": 3606, "text": "Response:  Window should ask user to verify the file deletion, if yes, then the file should be deleted from the server and the name removed from file tree diagram.", "label": []}
+{"id": 3607, "text": "User action: On file tree, a user selects a file name and drags it to another folder", "label": []}
+{"id": 3608, "text": "Response:  The file should be moved to the new destination folder and removed from the previous folder.", "label": []}
+{"id": 3609, "text": "The file tree diagram should be updated to reflect the new structure.", "label": []}
+{"id": 3610, "text": "User action: On file tree, a user selects a parent folder and then clicks New Folder", "label": []}
+{"id": 3611, "text": "Response:  A window should ask the user to enter a name for the new folder.", "label": []}
+{"id": 3612, "text": " Once entered and the user clicks OK, the new file should be created on the server and the file tree diagram should be updated to include the new folder.", "label": []}
+{"id": 3613, "text": "User action: On file tree, a user selects a file name and clicks Download button", "label": []}
+{"id": 3614, "text": "Response:  A window opens asking the user to select a folder on the computer in which to download the file.", "label": []}
+{"id": 3615, "text": " Once selected, a copy of the file is placed in that folder on the user’s computer.", "label": []}
+{"id": 3616, "text": "User action: On file tree, a user selects a file name and clicks Open button", "label": []}
+{"id": 3617, "text": "Response:  The typical operating system prompt asks the user to Save or Open.", "label": []}
+{"id": 3618, "text": "If Save is selected, a window opens asking the user to select a folder on the computer in which to download the file.", "label": []}
+{"id": 3619, "text": " If Open is selected, the document will open using the appropriate program or it will prompt the user to select a program to open the file with.", "label": []}
+{"id": 3620, "text": "Virtual-Space Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": []}
+{"id": 3621, "text": "For the first release, each student needs a quota space of 2GB.", "label": []}
+{"id": 3622, "text": " Files causing the quota to be exceeded should not be allowed to upload.", "label": []}
+{"id": 3623, "text": "The students overall login should allow them access to the appropriate folder, and their account should only have Read, Write, and Delete privileges", "label": []}
+{"id": 3624, "text": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": []}
+{"id": 3625, "text": "Virtual-Space Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": []}
+{"id": 3626, "text": "Virtual-Space Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": []}
+{"id": 3627, "text": "Virtual-Space Req 4:  Users must enable pop-up windows.", "label": []}
+{"id": 3629, "text": "Students who learn online still need to take quizzes and exams.", "label": []}
+{"id": 3630, "text": " Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.", "label": []}
+{"id": 3631, "text": " Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.", "label": []}
+{"id": 3632, "text": " Using Virtual-Exam, students can download an Excel spreadsheet or editable PDF file and fill in their answers.", "label": []}
+{"id": 3633, "text": " Mac users will use the Microsoft Office version for their operating system.", "label": []}
+{"id": 3634, "text": " Then using the file management feature, they can upload the completed test within the allotted time period.", "label": []}
+{"id": 3635, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3636, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3637, "text": "User action: Click on the Testing software tool – Virtual-Exam", "label": []}
+{"id": 3638, "text": "Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.", "label": []}
+{"id": 3639, "text": " For tests that have already been taken, the name and class are listed along with a score/grade.", "label": []}
+{"id": 3640, "text": "User action: Click on an untaken test", "label": []}
+{"id": 3641, "text": "Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.", "label": []}
+{"id": 3642, "text": " If student selects Yes, a window will display prompting the user to download the test file.", "label": []}
+{"id": 3643, "text": " Once download is complete, a timer will start for the amount of time allotted by the professor.", "label": []}
+{"id": 3644, "text": " If the student selects No, they will be taken back to the home screen for Virtual-Exam.", "label": []}
+{"id": 3645, "text": "User action: Click on an Upload Test", "label": []}
+{"id": 3646, "text": "Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.", "label": []}
+{"id": 3647, "text": " Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.", "label": []}
+{"id": 3648, "text": "Virtual-Exam Req 1:  FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": []}
+{"id": 3649, "text": "For the first release, each class needs a private folder with Write permissions only for student logins.", "label": []}
+{"id": 3650, "text": "The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.", "label": []}
+{"id": 3651, "text": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": []}
+{"id": 3652, "text": "Students need Excel installed and/or a PDF reader.", "label": []}
+{"id": 3653, "text": " Professors need Excel and a PDF creator.", "label": []}
+{"id": 3654, "text": "Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": []}
+{"id": 3655, "text": "Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": []}
+{"id": 3656, "text": "Virtual-Exam Req 4:  Users must enable pop-up windows.", "label": []}
+{"id": 3657, "text": "Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.", "label": []}
+{"id": 3659, "text": "Students who learn online still need to take quizzes and exams.", "label": []}
+{"id": 3660, "text": " Providing them a real-time way to complete an exam is an excellent way to give it a more classroom-like feel.", "label": []}
+{"id": 3661, "text": " Online exams can combine multiple choice, true/false, short answer, and essay questions, just like in a paper exam.", "label": []}
+{"id": 3662, "text": " Using this version of Virtual-Exam, students can download a file from any of the programs within Microsoft Office.", "label": []}
+{"id": 3663, "text": " Mac users will use the Microsoft Office version for their operating system.", "label": []}
+{"id": 3664, "text": " Then using the file management feature, they can upload the completed test within the allotted time period.", "label": []}
+{"id": 3665, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3666, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3667, "text": "User action: Click on the Testing software tool – Virtual-Exam", "label": []}
+{"id": 3668, "text": "Response: Window displays any untaken tests posted by their professors as links the user can click on to open the test in a new window.", "label": []}
+{"id": 3669, "text": " For tests that have already been taken, the name and class are listed along with a score/grade.", "label": []}
+{"id": 3670, "text": "User action: Click on an untaken test", "label": []}
+{"id": 3671, "text": "Response: Clicking on an untaken test will prompt the student to be sure they want to take the test.", "label": []}
+{"id": 3672, "text": " If student selects Yes, a window will display prompting the user to download the test file.", "label": []}
+{"id": 3673, "text": " Once download is complete, a timer will start for the amount of time allotted by the professor.", "label": []}
+{"id": 3674, "text": " If the student selects No, they will be taken back to the home screen for Virtual-Exam.", "label": []}
+{"id": 3675, "text": "User action: Click on an Upload Test", "label": []}
+{"id": 3676, "text": "Response: This button will show for the duration of the test, ensuring that the student can only use the time allotted by the professor.", "label": []}
+{"id": 3677, "text": " Clicking this button will produce a browse window where the student can select the test file and then upload it to the professor’s FTP folder.", "label": []}
+{"id": 3678, "text": "Virtual-Exam Req 1: FTP management software on the server setup with quota space, user authentication, and appropriate user rights.", "label": []}
+{"id": 3679, "text": "For the first release, each class needs a private folder with Write permissions only for student logins.", "label": []}
+{"id": 3680, "text": "The professor’s username should allow them access to the class exam folder and have Read, Write, and Delete privileges.", "label": []}
+{"id": 3681, "text": "Firewall ports may need to be unblocked on both sides to accommodate file transfers.", "label": []}
+{"id": 3682, "text": "Students need Excel installed and/or a PDF reader.", "label": []}
+{"id": 3683, "text": " Professors need Excel and a PDF creator.", "label": []}
+{"id": 3684, "text": "Virtual-Exam Req 2:  Users need Windows XP, Vista, or Mac OSX", "label": []}
+{"id": 3685, "text": "Virtual-Exam Req 3:  Users need Internet Explorer, Mozilla Firefox, or Safari browser.", "label": []}
+{"id": 3686, "text": "Virtual-Exam Req 4:  Users must enable pop-up windows.", "label": []}
+{"id": 3687, "text": "Virtual-Exam Req 5:  Users need Microsoft Office or the related Mac program set.", "label": []}
+{"id": 3688, "text": "This feature that will allow users to customize the online learning classroom to their taste.", "label": []}
+{"id": 3689, "text": "The user will be able to select background colors and toolbars that are viewed.", "label": []}
+{"id": 3690, "text": "Users will also be able to choose their font as well as font color.", "label": []}
+{"id": 3691, "text": "This feature will be of Medium priority.", "label": []}
+{"id": 3692, "text": "Giving the users the opportunity to change font’s size will give them a great benefit.", "label": []}
+{"id": 3693, "text": "Some like bigger font that is easier to read, some like to use the smaller font giving them the opportunity to show more features on the screen without having to scroll up and down.", "label": []}
+{"id": 3694, "text": "It will be up to the user to choose, and this will in no way impact the way the other user is setting up preferences.", "label": []}
+{"id": 3695, "text": "In other words, everyone’s classroom can look different for each student but still have the same features and functionalities.", "label": []}
+{"id": 3696, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3697, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3698, "text": "User action: Click on the Preferences button", "label": []}
+{"id": 3699, "text": "Response: New menu shows up with all the available features.", "label": []}
+{"id": 3700, "text": "User action: Click on the Background Color menu within Preferences menu", "label": []}
+{"id": 3701, "text": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": []}
+{"id": 3702, "text": "User action: Click on the Font menu within Preferences menu", "label": []}
+{"id": 3703, "text": "Response: New menu shows up that will give the choice for the font", "label": []}
+{"id": 3704, "text": "User action: Click on Font Size menu within Preferences menu", "label": []}
+{"id": 3705, "text": "Response: A new menu shows up that have all different font sizes that the user can choose.", "label": []}
+{"id": 3706, "text": "User action: Click on Toolbar menu within Preferences menu", "label": []}
+{"id": 3707, "text": "Response: A menu with available toolbars will show.", "label": []}
+{"id": 3708, "text": " Selecting a toolbar toggles if it shows or not.", "label": []}
+{"id": 3709, "text": " Check marks should show next to toolbars that are currently selected for view.", "label": []}
+{"id": 3710, "text": "Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.", "label": []}
+{"id": 3711, "text": "Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.", "label": []}
+{"id": 3712, "text": "Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.", "label": []}
+{"id": 3713, "text": "The updated version of this feature will allow the user to customize the sections of the page into different views.", "label": []}
+{"id": 3714, "text": " For example, some users like to see a file tree on the left side and a file preview on the bottom of the page.", "label": []}
+{"id": 3715, "text": " Other users might want to see both a file tree and messages without a preview pane.", "label": []}
+{"id": 3716, "text": "User action: Log in to Virtual-ED", "label": []}
+{"id": 3717, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3718, "text": "User action: Click on the Preferences button", "label": []}
+{"id": 3719, "text": "Response: New menu shows up with all the available features.", "label": []}
+{"id": 3720, "text": "User action: Click on the Background Color menu within Preferences menu", "label": []}
+{"id": 3721, "text": "Response: A new menu shows up that shows all the available colors that the user can choose for background", "label": []}
+{"id": 3722, "text": "User action: Click on the Font menu within Preferences menu", "label": []}
+{"id": 3723, "text": "Response: New menu shows up that will give the choice for the font", "label": []}
+{"id": 3724, "text": "User action: Click on Font Size menu within Preferences menu", "label": []}
+{"id": 3725, "text": "Response: A new menu shows up that have all different font sizes that the user can choose.", "label": []}
+{"id": 3726, "text": "User action: Click on Toolbar menu within Preferences menu", "label": []}
+{"id": 3727, "text": "Response: A menu listing available toolbars show up.", "label": []}
+{"id": 3728, "text": " Selecting a toolbar toggles if it shows or not.", "label": []}
+{"id": 3729, "text": " Check marks should show next to toolbars that are currently selected for view.", "label": []}
+{"id": 3730, "text": "User action: Click on Layout menu within Preferences menu", "label": []}
+{"id": 3731, "text": "Response: A menu with different layout choices will show up.", "label": []}
+{"id": 3732, "text": " Options to select panes that show in users site, including file tree diagram for Virtual-Space, messages/post threads, class lecture pane, Instant-ED pane, file/message preview pane, and Virtual-Exam pane.", "label": []}
+{"id": 3733, "text": " Suggested organization layouts are also selectable from this menu.", "label": []}
+{"id": 3734, "text": " Panes will be added or removed as (de)selected from menu and organized according to selected layout.", "label": []}
+{"id": 3735, "text": "Clean GUI Req 1:  Users are limited to Windows XP, Vista or Mac- OS.", "label": []}
+{"id": 3736, "text": "Clean GUI Req 2:  Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers.", "label": []}
+{"id": 3737, "text": "Clean GUI Req 3:  Users must have pop-up windows enabled on their systems.", "label": []}
+{"id": 3738, "text": "Enhanced file sharing/transfer and document collaboration", "label": []}
+{"id": 3739, "text": "Enhanced file sharing/ transfer and document collaboration will be a feature that will allow students to have a Virtual hard drive space in the Virtual-Edu classroom that they will be able to use for sharing files.", "label": []}
+{"id": 3740, "text": "Users will be able to upload their documents, and eventually transfer them between other users/computers.", "label": []}
+{"id": 3741, "text": "The files saved in the virtual hard drive space will be accessible to the user even if user is accessing Virtual-Edu from a different computer.", "label": []}
+{"id": 3742, "text": "Benefit from this feature will be that users that are constantly mobile and on the go can access the documents and projects from any place; they can update their documents and upload a revised version again.", "label": []}
+{"id": 3743, "text": "The latest version of the document will be always available with just a click of a button.", "label": []}
+{"id": 3744, "text": "Priority for this feature will be medium for the Second Release date.", "label": []}
+{"id": 3745, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3746, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3747, "text": "User action: Click on the Virtual-Hard Drive", "label": []}
+{"id": 3748, "text": "Response: New pop up window shows up with list of documents already uploaded in the Virtual Hard Drive.", "label": []}
+{"id": 3749, "text": "The bottom of the window will show how much space is available for use.", "label": []}
+{"id": 3750, "text": "User action: Click on upload button", "label": []}
+{"id": 3751, "text": "Response: New window pops up, user can search for file that he wants to upload from his computer to the Virtual Hard Drive", "label": []}
+{"id": 3752, "text": "User action: Click on the selected file", "label": []}
+{"id": 3753, "text": "Response: System will begin file transfer with first checking if file with the same name already   exists in the system, if not transfer will continue, if yes, user receives message:  “File already exist, do you want to replace”", "label": []}
+{"id": 3754, "text": "User action: Click on the “yes” button", "label": []}
+{"id": 3755, "text": "Response: File continues to upload", "label": []}
+{"id": 3756, "text": "User action: Click on “no” button", "label": []}
+{"id": 3757, "text": "Response: The file is not uploaded and the user has the option to rename the file and uploaded it under the new name.", "label": []}
+{"id": 3758, "text": "This way the user will have the option of keeping both old and new file.", "label": []}
+{"id": 3759, "text": "User action: Click on the “send file” button", "label": []}
+{"id": 3760, "text": "Response: The other user will receive a message saying that someone is trying to send them a file.", "label": []}
+{"id": 3761, "text": "And a window pops up saying: “Do you accept?”", "label": []}
+{"id": 3762, "text": "Response: The file begins transmitting to the other party", "label": []}
+{"id": 3763, "text": "Response: The file transmission will fail", "label": []}
+{"id": 3764, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3765, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3766, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3767, "text": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": []}
+{"id": 3768, "text": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": []}
+{"id": 3770, "text": "This feature will enable professors to host their lectures as video and/or audio podcasts.", "label": []}
+{"id": 3771, "text": "Students will be able to download or view as live streaming videos/audios.", "label": []}
+{"id": 3772, "text": "This will be great feature that will give students the ability of rewind and play again in cases where the student didn’t really understand the lectures and feels that they need to listen/watch it again.", "label": []}
+{"id": 3773, "text": "This feature is not available in a real classroom as once the lecture is done, the professor leaves the classroom and students have to rely on the note that they were able to make during the lecture.", "label": []}
+{"id": 3774, "text": "Conclusion, this feature will not only meets the expectations of a real classroom but exceed them.", "label": []}
+{"id": 3775, "text": "Priority for this feature will be high for a second release cycle.", "label": []}
+{"id": 3776, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3777, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3778, "text": "User action: Click on the Podcast button", "label": []}
+{"id": 3779, "text": "Response: New window shows up with list of available lectures.", "label": []}
+{"id": 3780, "text": "Audio files will be in mp3 format and video lectures will be flash video format", "label": []}
+{"id": 3781, "text": "User action: Double click on the audio or video file", "label": []}
+{"id": 3782, "text": "Response: Real player pops up and starts playing the lecture in live streaming", "label": []}
+{"id": 3783, "text": "User action: Right click on the audio or video file", "label": []}
+{"id": 3784, "text": "Response: Option for save as will pop up that will give the user ability of downloading the lecture and being able to view/listen to it even when pc doesn’t have an internet connection", "label": []}
+{"id": 3785, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3786, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3787, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3788, "text": "Users must enable java scripts on their systems to be able to install Instant-Edu messaging software", "label": []}
+{"id": 3789, "text": "REQ-5 - Users must have Real Player installed on their systems", "label": []}
+{"id": 3790, "text": "This feature will enable the users to share programs enter meetings, share and edit documents at the same time.", "label": []}
+{"id": 3791, "text": "The professor will be able to host a network projector and hold a lecture almost the same as in a real classroom, projecting power point slide and all students currently logged in will be able to follow what’s going on in the class.", "label": []}
+{"id": 3792, "text": "Professor will be able to distribute documents to students (example syllabus) with the ability to lock the editing tools, so unauthorized change to the document will be impossible.", "label": []}
+{"id": 3793, "text": "If professor makes a change or ads to the syllabus or any other document the change will be instantly distributed to all students that have those documents in their space.", "label": []}
+{"id": 3794, "text": "The professor will have the ability to write on the whiteboard and students will be able to follow the classes and professors writing with no problem.", "label": []}
+{"id": 3795, "text": "Priority for this feature will be high for the second release cycle.", "label": []}
+{"id": 3796, "text": "Using network projectors will give a more realistic feel to our Virtual Classroom and students will benefit from this feature.", "label": []}
+{"id": 3797, "text": "Any user will be able to share a program on their computer with the rest of the users currently logged in.", "label": []}
+{"id": 3798, "text": "Students will be able to use this same feature when working on projects as teams, giving them the ability to all work on one document at the same time.", "label": []}
+{"id": 3799, "text": "User action: Log in to Virtual-Edu", "label": []}
+{"id": 3800, "text": "Response: The user is logged in and all available features in the system are shown in the menu", "label": []}
+{"id": 3801, "text": "User action: Click on the Whiteboard-Edu button", "label": []}
+{"id": 3802, "text": "Response: New pop up window shows up.", "label": []}
+{"id": 3803, "text": "Users will be able to join a conference or host a new one.", "label": []}
+{"id": 3804, "text": "The user initiating the conference will setup username and password and distribute the password to all users that would like to join his/her conference.", "label": []}
+{"id": 3805, "text": "Once user has joined the conference he/she will be able to see and interact will all the participants.", "label": []}
+{"id": 3806, "text": "User action: Click on share a program button", "label": []}
+{"id": 3807, "text": "Response: New window pops up, that will show all the programs available for sharing.", "label": []}
+{"id": 3808, "text": "User action: Click on a certain program from available choice", "label": []}
+{"id": 3809, "text": "Response: This program will automatically be distributed to all the participants, and all users will see the same screen.", "label": []}
+{"id": 3810, "text": "User action: Click on the file button in the window", "label": []}
+{"id": 3811, "text": "Response: A new window pops up where the user will be able to browse and look for a file in his system that he wants to send to all participants.", "label": []}
+{"id": 3812, "text": "Every participant will be able to make changes to the document and change will be implemented on each participants screen.", "label": []}
+{"id": 3813, "text": "User action: Click on share button", "label": []}
+{"id": 3814, "text": "Response: The entire desktop will be shared and everyone will be able to see the whole shared desktop.", "label": []}
+{"id": 3815, "text": "User action: Click on the sign out button", "label": []}
+{"id": 3816, "text": "Response: The user will leave the meeting conference.", "label": []}
+{"id": 3817, "text": "REQ-1 - Users are limited to Windows XP, Vista or Mac- OS", "label": []}
+{"id": 3818, "text": "REQ-2 - Users are limited to Internet Explorer, Mozilla Firefox and Safari internet browsers", "label": []}
+{"id": 3819, "text": "REQ-3 - Users must have pop-up windows enabled on their systems", "label": []}
+{"id": 3820, "text": "Users must enable java scripts on their systems to be able to install Whiteboard-Edu software", "label": []}
+{"id": 3821, "text": "REQ-5 - Users must have antivirus software installed so they can scan the incoming files from other users of the system", "label": []}
+{"id": 3822, "text": "REQ-6 - Users must accept the privacy statement prior to using the application sharing", "label": []}
+{"id": 3823, "text": "The user interface of the Virtual-ED system is designed with increased emphasis on the user Human-Machine interface.", "label": []}
+{"id": 3824, "text": "The interface is compartmentalized by competency to ensure that the user can easily navigate within the portal.", "label": []}
+{"id": 3825, "text": "Each compartment has a distinctive focus with a minimalist approach.", "label": []}
+{"id": 3826, "text": "The user has the capability to alter the interface as suited.", "label": []}
+{"id": 3827, "text": "The initial entry (Welcome Screen 1) has three separate quadrants; each quadrant has a specific function.", "label": []}
+{"id": 3828, "text": "Help Feature: Feature is linked with the help desk staff of the particular institution; anyone who has difficulty in logging on can choose this feature to contact the system administrator.", "label": []}
+{"id": 3829, "text": "Contact Us Feature: Will enable the user to look up a list of pertinent e-mail addresses/phone numbers within the institution.", "label": []}
+{"id": 3830, "text": "News Feature:  The administrator has the capability to post current news on this section as needed.", "label": []}
+{"id": 3831, "text": "Enables the user to select the pertinent class, each class is highlighted for ease of use.", "label": []}
+{"id": 3832, "text": "Enables the user to choose a specific application to be used.", "label": []}
+{"id": 3833, "text": "To launch an application click on the application icon, the application will open up on a separate screen", "label": []}
+{"id": 3835, "text": "Web conferencing feature enables the user to interact with multiple users within a given class.", "label": []}
+{"id": 3836, "text": "Each user can chat with one another while the session is open.", "label": []}
+{"id": 3838, "text": "Instant messaging feature will allow users to interact with faculty and follow classmates over a text based one-to-one or one-to-many connection.", "label": []}
+{"id": 3841, "text": "This screen is an extension of the web conferencing feature; this screen enables the users to view all available chat sessions available at any given time.", "label": []}
+{"id": 3842, "text": "File transfer feature enables the user to have the ability to manage a private temporary hosting space.", "label": []}
+{"id": 3843, "text": "Tools such as file uploading, directory creator, move, delete and rename will be accessible", "label": []}
+{"id": 3844, "text": "Display Monitor: It is recommended that a high resolution LCD or CRT monitor be used for best results.", "label": []}
+{"id": 3845, "text": "Input devices:   All hardware interfaces will be provided by the operating system, the system will require a keyboard and a mouse.", "label": []}
+{"id": 3846, "text": "In addition a properly configured sound card and a voice input device will be needed to utilize the conferencing feature.", "label": []}
+{"id": 3847, "text": "Visual Input:  The conferencing feature requires a high resolution video input device.", "label": []}
+{"id": 3848, "text": " The device needs to be configured in accordance to manufacturer recommended settings and should be in operation before enabling the conferencing feature.", "label": []}
+{"id": 3849, "text": "The Virtual-ED software has a seamless integration with the local operating/hardware system.", "label": []}
+{"id": 3850, "text": "Once the user logs on to the Virtual-ED system (screen.1), the interface will seamlessly manage the local input/output/operating system, devices as needed", "label": []}
+{"id": 3851, "text": "When using “Test administering” feature (applicable to Administrators only), XL and PDF must be installed in the native machine to view the downloadable reports.", "label": []}
+{"id": 3852, "text": "By default the reports will be saved to the “C: Program files/Virtual-ED/Bin/My reports folder”, (Requires XL-2002 or higher and Adobe Acrobat Reader 8 or higher)", "label": []}
+{"id": 3853, "text": "Web Browser: The system requires the use of IE or Fire fox, Safari as the native web browser.", "label": []}
+{"id": 3854, "text": "It is recommended that current system performs optimally with the suggested browsers.", "label": []}
+{"id": 3855, "text": "The users must have pop-up windows enabled on their systems and must enable java scripts on their systems to be able to install Instant-Edu messaging software.", "label": []}
+{"id": 3856, "text": "Communication Standards:  SSH client, FTP client, VPN client are used for connection between two computing endpoints.", "label": []}
+{"id": 3857, "text": "Data Transfer Rates:  Recommended 1.5 MBPS Download speed (for any download activities) and upload speed of minimum 128 Kbps.", "label": []}
+{"id": 3858, "text": "Security: Users must have antivirus software installed so they can scan the incoming files from other users of the system, any commercially available Antivirus is can be used scanning files.", "label": []}
+{"id": 3859, "text": "The web conferencing feature of the system requires the workstation utilized have at least the following minimum requirements:", "label": []}
+{"id": 3860, "text": "Mac-compatible Webcam and headset (preferred) or separate webcam, microphone, and speakers", "label": []}
+{"id": 3862, "text": "The system requires the use of Internet Explorer, Safari, or Firefox as the native web browser.", "label": []}
+{"id": 3863, "text": "It is recommended the current system performs optimally with the suggested two browsers.", "label": []}
+{"id": 3864, "text": "The use of other than the recommended browsers may cause performance issues that have not been addressed by the software vendor.", "label": []}
+{"id": 3865, "text": "The reporting functionality utilizes the Microsoft Excel (.XLS) and Adobe Portable Document Format (.PDF) for report outputs.", "label": []}
+{"id": 3866, "text": "The following recommended software must be installed in the local machine to fully utilize the reporting functionality.", "label": []}
+{"id": 3869, "text": "System must be accessible on and off campus via broadband internet connection and using required ID/Password combination.", "label": []}
+{"id": 3870, "text": "System may require users to download program updates to become compatible and compliant with system.", "label": []}
+{"id": 3871, "text": "All users are responsible for securing a backup of any uploaded data/content to the system in the event of an outage.", "label": []}
+{"id": 3872, "text": "The user is responsible for content uploaded.", "label": []}
+{"id": 3873, "text": "NJIT policy prohibits the use NJIT facilities/assets for personal use.", "label": []}
+{"id": 3874, "text": "Users may not use the system to upload or post data which is discriminatory in regards to race, color, creed, religion, sex, age, handicap, marital status, or national origin.", "label": []}
+{"id": 3875, "text": " Users may not upload or post data which is inflammatory or derogatory.", "label": []}
+{"id": 3876, "text": "In the event, inflammatory/derogatory content has been identified, the content will be immediately removed and the appropriate authorities with be notified resulting in possible disciplinary action.", "label": []}
+{"id": 3877, "text": "User must comply with all local, state, and federal laws when using available resources.", "label": []}
+{"id": 3878, "text": " Any infringements or violations including but not limited to:  unauthorized use, harassment, exploitation of any gaps in the portal, inflammatory/derogatory content, or defacing the system will result in the appropriate authorities being notified.", "label": []}
+{"id": 3879, "text": "The user is responsible for maintaining the user account.", "label": []}
+{"id": 3880, "text": "Action must be taken by the user to prevent the user account from being compromised.", "label": []}
+{"id": 3881, "text": "The user ID and the password should not be shared with anyone (students/staff/or anyone else).", "label": []}
+{"id": 3882, "text": "User passwords should be between 8 and 12 characters including letters and numbers but excluding spaces.", "label": []}
+{"id": 3883, "text": "The user should periodically change the password; currently the user policy requires a mandatory password change every three months.", "label": []}
+{"id": 3884, "text": "The information within the system is regarded private, however in the event of an investigation by a legal authority, including by not limited to a subpoena or audit, the information will be released to the proper authorities for the purpose intended.", "label": []}
+{"id": 3885, "text": "All archived chats, e-mail, file share, and IM Messages are governed by the NJIT E-mail use policy.", "label": []}
+{"id": 3886, "text": " The user is encouraged to view the content at the NJIT homepage for detailed use of the policy and restrictions and limitations of the policy.", "label": []}
+{"id": 3887, "text": "In the event your account has been compromised, notify the NJIT help desk immediately.", "label": []}
+{"id": 3888, "text": "Refrain from using the infected account to communicate with anyone else.", "label": []}
+{"id": 3889, "text": "The systems should adhere to the privacy policy set forth by NJIT and its administration and also state and federal guidelines.", "label": []}
+{"id": 3890, "text": "The system has an estimated 99% up time, though in an event of an outage data loss can occur.", "label": []}
+{"id": 3891, "text": "The Web-Conferencing features’ performance depends on the availability of the bandwidth.", "label": []}
+{"id": 3892, "text": "The minimum of a broadband connection is recommended to fully utilize Web-Conferencing feature.", "label": []}
+{"id": 3893, "text": "The content is the responsibility of the users of the system; NJIT is neither responsible nor liable for the accuracy or the correctness of the content.", "label": []}
+{"id": 3894, "text": "The portal will be periodically unavailable due to necessary maintenance upgrades.", "label": []}
+{"id": 3895, "text": "In the event of scheduled maintenance, the students/staff will be notified at least 24 hours in-advance.", "label": []}
+{"id": 3896, "text": "The system must be completed within the timeframe allotted for development.", "label": []}
+{"id": 3897, "text": "Appropriate funding must be acquired to make required upgrades to existing systems, buy additional hardware and software, and acquire skilled personnel to develop project.", "label": []}
+{"id": 3901, "text": " A convention or standard that controls or enables the connection, between two computing endpoints.", "label": []}
+{"id": 3902, "text": "File Transfer Protocol is a network protocol used to transfer data from one computer to another.", "label": []}
+{"id": 3903, "text": "Megahertz is used to measure the clock speed in hertz of a CPU", "label": []}
+{"id": 3904, "text": "Gigahertz is used to measure the clock speed in hertz of a CPU", "label": []}
+{"id": 3905, "text": "A technique for transferring data such that it can be processed as a steady and continuous stream.", "label": []}
+{"id": 3907, "text": "A service or feature which addresses the user's need for instant gratification and immediacy of use", "label": []}
+{"id": 3910, "text": "Application sharing for whiteboards available within Virtual-ED.", "label": []}
+{"id": 3912, "text": "Series of audio or video digital media which will be available for distributing over the classroom.", "label": []}
+{"id": 3915, "text": "Digital subscriber line that uses high frequency, while regular phones uses low frequency on the same telephone line.", "label": []}
+{"id": 3916, "text": "This high frequency gives users the ability to transfer data with higher speeds.", "label": []}
+{"id": 3917, "text": "Form of broadband internet access that uses cable television infrastructure.", "label": []}
+{"id": 3918, "text": "It gives users speeds up to 50 megabits per second for downloading and up to 384Kbit/s to more than 20Mbit/s for uploading.", "label": []}
