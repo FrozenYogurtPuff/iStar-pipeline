@@ -4,7 +4,7 @@
 # import spacy
 # import spacy_alignments as tokenizations
 #
-# from src.deeplearning import wrap_entity_oneline
+# from src.deeplearning.entity import wrap_entity_oneline
 # from src.rules.actor.dative_ADP import dative_ADP
 
 # def test_dative():

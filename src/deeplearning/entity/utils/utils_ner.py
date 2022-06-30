@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 
 from src import ROOT_DIR
-from src.deeplearning.utils.utils_metrics import get_entities
+from src.deeplearning.entity.utils.utils_metrics import get_entities
 
 logger = logging.getLogger(__name__)
 

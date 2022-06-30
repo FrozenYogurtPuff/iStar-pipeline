@@ -2,11 +2,11 @@ import logging
 from abc import ABC
 from typing import Any
 
-from src.deeplearning.infer.actor import InferActor
-from src.deeplearning.infer.base import InferBase
-from src.deeplearning.infer.intention import InferIntention
-from src.deeplearning.infer.resource import InferResource
-from src.deeplearning.infer.result import BertResult
+from src.deeplearning.entity.infer.actor import InferActor
+from src.deeplearning.entity.infer.base import InferBase
+from src.deeplearning.entity.infer.intention import InferIntention
+from src.deeplearning.entity.infer.resource import InferResource
+from src.deeplearning.entity.infer.result import BertResult
 from src.utils.spacy import get_bio_sent_from_char_spans
 
 logger = logging.getLogger(__name__)

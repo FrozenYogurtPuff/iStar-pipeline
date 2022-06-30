@@ -1,8 +1,10 @@
 import logging
 
-from src.deeplearning.infer.result import BertResult
-from src.deeplearning.infer.utils import get_list_bio
-from src.deeplearning.utils.utils_metrics import token_classification_report
+from src.deeplearning.entity.infer.result import BertResult
+from src.deeplearning.entity.infer.utils import get_list_bio
+from src.deeplearning.entity.utils.utils_metrics import (
+    token_classification_report,
+)
 
 logger = logging.getLogger(__name__)
 

@@ -21,32 +21,32 @@ from transformers import (
     XLMRobertaConfig,
 )
 
-from src.deeplearning.models.albert_ner import (
+from src.deeplearning.entity.models.albert_ner import (
     AlbertCrfForNer,
     AlbertSoftmaxForNer,
     AlbertSpanForNer,
 )
-from src.deeplearning.models.bert_ner import (
+from src.deeplearning.entity.models.bert_ner import (
     BertCrfForNer,
     BertSoftmaxForNer,
     BertSpanForNer,
 )
-from src.deeplearning.models.distilbert_ner import (
+from src.deeplearning.entity.models.distilbert_ner import (
     DistilBertCrfForNer,
     DistilBertSoftmaxForNer,
     DistilBertSpanForNer,
 )
-from src.deeplearning.models.electra_ner import (
+from src.deeplearning.entity.models.electra_ner import (
     ElectraCrfForNer,
     ElectraSoftmaxForNer,
     ElectraSpanForNer,
 )
-from src.deeplearning.models.roberta_ner import (
+from src.deeplearning.entity.models.roberta_ner import (
     RobertaCrfForNer,
     RobertaSoftmaxForNer,
     RobertaSpanForNer,
 )
-from src.deeplearning.models.xlm_ner import (
+from src.deeplearning.entity.models.xlm_ner import (
     XLMCrfForNer,
     XLMSoftmaxForNer,
     XLMSpanForNer,

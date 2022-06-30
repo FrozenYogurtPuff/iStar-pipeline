@@ -2,17 +2,17 @@ import logging
 import pickle
 from test.rules.utils.load_dataset import load_dataset
 
-from src.deeplearning.infer.utils import get_list_bio, get_series_bio
-from src.deeplearning.infer.wrapper import (
+from src.deeplearning.entity.infer.utils import get_list_bio, get_series_bio
+from src.deeplearning.entity.infer.wrapper import (
     ActorWrapper,
     IntentionWrapper,
     ResourceWrapper,
 )
-from src.deeplearning.utils.utils_metrics import (
+from src.deeplearning.entity.utils.utils_metrics import (
     classification_report,
     token_classification_report,
 )
-from src.rules.config import resource_plugins
+from src.rules.config import intention_plugins, resource_plugins
 from src.rules.entity.dispatch import get_rule_fixes
 
 logger = logging.getLogger(__name__)
@@ -122,6 +122,51 @@ def test_measure_bert_actor_rules_prec():
         results = pickle.load(file)
     logger.info(f"First result: {results[0]}")
 
+    # pred_entities, true_entities = get_series_bio(results)
+    # print(classification_report(true_entities, pred_entities))
+    #
+    # preds, trues = get_list_bio(results)
+    # print(token_classification_report(trues, preds))
+
+    new_pred_entities = list()
+    for sent, result in zip(sents, results):
+        res = get_rule_fixes(sent, result)
+        new_pred_entities.append(res)
+
+    pred_entities, true_entities = get_series_bio(new_pred_entities)
+    print(classification_report(true_entities, pred_entities))
+
+    preds, trues = get_list_bio(new_pred_entities)
+    print(token_classification_report(trues, preds))
+
+
+#            precision    recall  f1-score   support
+#
+#     Agent    0.93168   0.90361   0.91743       166
+#      Role    0.80745   0.83871   0.82278       155
+#
+#
+#        precision    recall  f1-score   support
+#
+# Agent    0.91706   0.91059   0.91381       387
+#  Role    0.81864   0.85752   0.83763       325
+
+
+def test_measure_bert_actor_combined_rules_prec():
+    data = list(
+        load_dataset("pretrained_data/2022/actor/combined/split_dev.jsonl")
+    )
+    sents = [d[1] for d in data]
+    labels = [d[2] for d in data]
+    logger.info(f"First items: sent {sents[0]}")
+    logger.info(f"First items: label {labels[0]}")
+
+    # wrapper = ActorWrapper()
+    # results = wrapper.process(sents, labels)
+    with open("actor_combined_split_dev.bin", "rb") as file:
+        results = pickle.load(file)
+    logger.info(f"First result: {results[0]}")
+
     pred_entities, true_entities = get_series_bio(results)
     print(classification_report(true_entities, pred_entities))
 
@@ -140,13 +185,23 @@ def test_measure_bert_actor_rules_prec():
     print(token_classification_report(trues, preds))
 
 
+#        precision    recall  f1-score   support
+#
+#     Actor    0.91018   0.89676   0.90342       339
+#
+#
+#        precision    recall  f1-score   support
+#
+# Actor    0.89218   0.96415   0.92677       753
+#
 #            precision    recall  f1-score   support
 #
-#      Role    0.82237   0.80645   0.81433       155
-#     Agent    0.92903   0.86747   0.89720       166
+#     Actor    0.91018   0.89676   0.90342       339
 #
-# micro avg    0.87622   0.83801   0.85669       321
-# macro avg    0.87753   0.83801   0.85718       321
+#
+#        precision    recall  f1-score   support
+#
+# Actor    0.89218   0.96415   0.92677       753
 
 
 def test_measure_bert_resource_rules_prec():
@@ -202,4 +257,32 @@ def test_measure_bert_intention_verb_prec():
     #      Core    0.92464   0.94100   0.93275       339
 
 
-# TODO: remap the base path of deep learner
+def test_measure_bert_intention_rules_prec():
+    data = list(load_dataset("pretrained_data/2022/task/verb/split_dev.jsonl"))
+    sents = [d[1] for d in data]
+    labels = [d[2] for d in data]
+    logger.info(f"First items: sent {sents[0]}")
+    logger.info(f"First items: label {labels[0]}")
+
+    # wrapper = IntentionWrapper()
+    # results = wrapper.process(sents, labels)
+    with open("intention_split_dev.bin", "rb") as file:
+        results = pickle.load(file)
+    logger.info(f"First result: {results[0]}")
+
+    pred_entities, true_entities = get_series_bio(results)
+    print(classification_report(true_entities, pred_entities))
+
+    # preds, trues = get_list_bio(results)
+    # print(token_classification_report(trues, preds))
+
+    new_pred_entities = list()
+    for sent, result in zip(sents, results):
+        res = get_rule_fixes(sent, result, intention_plugins)
+        new_pred_entities.append(res)
+
+    pred_entities, true_entities = get_series_bio(new_pred_entities)
+    print(classification_report(true_entities, pred_entities))
+
+    # preds, trues = get_list_bio(new_pred_entities)
+    # print(token_classification_report(trues, preds))

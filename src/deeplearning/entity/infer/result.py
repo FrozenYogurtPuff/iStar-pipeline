@@ -5,7 +5,7 @@ import dataclasses
 import logging
 from test.rules.utils.metrics import calc_metrics, log_diff_ents
 
-from src.deeplearning.infer.utils import (
+from src.deeplearning.entity.infer.utils import (
     get_series_bio,
     label_mapping_bio,
     label_mapping_de_bio,

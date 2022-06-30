@@ -6,10 +6,10 @@ from spacy.tokens import Span
 
 from src.utils.spacy import char_idx_to_word_idx
 
-INPUT = "../pretrained_data/2022/resource/all.jsonl"
-OUTPUT1 = "../pretrained_data/2022/resource/train.txt"
-OUTPUT2 = "../pretrained_data/2022/resource/dev.txt"
-SPLIT_OUTPUT = ""
+INPUT = "../pretrained_data/2022/actor/combined/all.jsonl"
+OUTPUT1 = "../pretrained_data/2022/actor/combined/train.txt"
+OUTPUT2 = "../pretrained_data/2022/actor/combined/dev.txt"
+SPLIT_OUTPUT = "../pretrained_data/2022/actor/combined/split_dev.jsonl"
 PROPORTION = 80
 
 if __name__ == "__main__":

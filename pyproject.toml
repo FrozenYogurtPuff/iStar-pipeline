@@ -16,6 +16,7 @@ spacy = "^3.2"
 torch = "^1.11.0"
 spacy-alignments = "^0.8.4"
 benepar = "^0.2.0"
+Flask = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
@@ -50,9 +51,10 @@ follow_imports = "skip"
 
 [[tool.mypy.overrides]]
 module = [
-    "src.deeplearning.infer.base",
-    "src.deeplearning.utils.*",
-    "src.deeplearning.models.*"
+    "src.deeplearning.entity.infer.base",
+    "src.deeplearning.entity.utils.*",
+    "src.deeplearning.entity.models.*",
+    "src.deeplearning.relation.*"
 ]
 follow_imports = "skip"
 ignore_errors = true

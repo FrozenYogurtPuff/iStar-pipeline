@@ -1,16 +1,29 @@
-# spaCy
 # Logger
 import logging
 
-import spacy
+from src.deeplearning.entity.infer.wrapper import (
+    ActorWrapper,
+    IntentionWrapper,
+)
 
-from src.utils.spacy import get_spacy
+logger = logging.getLogger(__name__)
 
 
 class Pipeline:
     def __init__(self):
-        self.nlp: spacy.language.Language = get_spacy()
-        self._logger: logging.Logger = logging.getLogger(__name__)
+        self.sents: list[str] = list()
+        self.results: list[dict] = list()
+        self.actor = ActorWrapper()
+        self.intention = IntentionWrapper()
 
-    def run(self):
-        pass
+    @staticmethod
+    def make_dict() -> dict:
+        raise NotImplemented  # TODO
+
+    def process(self):
+        actors = self.actor.process(self.sents)
+        intentions = self.intention.process(self.sents)
+        entities = list(zip(actors, intentions))
+        for sent, entity in zip(self.sents, entities):
+            actor, intention = entity
+            # Do some magic interacts here

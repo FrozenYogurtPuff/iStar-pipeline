@@ -6,8 +6,8 @@ from typing import Callable
 
 from spacy.tokens import Span, Token
 
-from src.deeplearning.infer.result import BertResult
-from src.deeplearning.infer.utils import label_mapping_bio
+from src.deeplearning.entity.infer.result import BertResult
+from src.deeplearning.entity.infer.utils import label_mapping_bio
 from src.rules.config import actor_plugins
 from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
 from src.utils.spacy import get_token_idx, include_elem, match_noun_chunk
@@ -74,7 +74,7 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
             f"constituous: {constituous_label}, prob: {prob}, type_ok: {is_entity_type_ok(label, label_m)}"
         )
 
-        if not constituous_label and prob > 0.3:
+        if not constituous_label and prob > 0.8:
             return label_m
 
         if prob < 0.4 and not is_entity_type_ok(label, label_m):

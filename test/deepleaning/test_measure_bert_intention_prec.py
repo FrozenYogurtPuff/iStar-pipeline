@@ -2,9 +2,9 @@ import logging
 import pickle
 from test.rules.utils.load_dataset import load_dataset
 
-from src.deeplearning.infer.result import BertResult
-from src.deeplearning.infer.utils import get_list_bio, get_series_bio
-from src.deeplearning.utils.utils_metrics import (
+from src.deeplearning.entity.infer.result import BertResult
+from src.deeplearning.entity.infer.utils import get_list_bio, get_series_bio
+from src.deeplearning.entity.utils.utils_metrics import (
     classification_report,
     token_classification_report,
 )

@@ -1,0 +1,221 @@
+{"id": 13, "text": "The police in turn can use it to respond to citizens with very little turnaround time.", "labels": [[0, 10, "Actor"], [44, 52, "Actor"]]}
+{"id": 18, "text": "The solution should enable the user to track the submitted defect or enhancement request.", "labels": [[0, 12, "Actor"], [27, 35, "Actor"]]}
+{"id": 24, "text": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.", "labels": [[55, 65, "Actor"]]}
+{"id": 32, "text": "The System must allow the user to limit access to cases to specified users or user groups.", "labels": [[0, 10, "Actor"], [22, 30, "Actor"], [59, 74, "Actor"], [78, 89, "Actor"]]}
+{"id": 37, "text": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.", "labels": [[0, 10, "Actor"], [180, 190, "Actor"]]}
+{"id": 43, "text": "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.", "labels": [[0, 10, "Actor"]]}
+{"id": 46, "text": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines.", "labels": [[0, 25, "Actor"], [47, 52, "Actor"]]}
+{"id": 50, "text": "Where the System employs a graphical user interface, it must allow users to customise it.", "labels": [[6, 16, "Actor"], [67, 72, "Actor"]]}
+{"id": 53, "text": "The administrator will be in charge of assigning privileges of accounts.", "labels": [[0, 17, "Actor"]]}
+{"id": 56, "text": "Customer: A customer is an individual wishing to purchase inventory from GAMMA-J\u2019s Web Store.", "labels": [[0, 8, "Actor"], [12, 20, "Actor"], [73, 92, "Actor"]]}
+{"id": 62, "text": "Customers will be able to create accounts to store their customer profiles, configure contact information, view their purchase history, and confirm orders.", "labels": [[0, 9, "Actor"]]}
+{"id": 65, "text": "Customers will be able to create accounts to store their profiles, contact information, purchase history, and confirm orders.", "labels": [[0, 9, "Actor"]]}
+{"id": 77, "text": "Customers will be presented with an unambiguous interface to assist in browsing the categories and products.", "labels": [[0, 9, "Actor"]]}
+{"id": 79, "text": "The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.", "labels": [[0, 13, "Actor"]]}
+{"id": 87, "text": "Department administrator have control on his department inventory", "labels": [[0, 24, "Actor"]]}
+{"id": 96, "text": "Any faculty member can add all related departments inventory", "labels": [[4, 18, "Actor"]]}
+{"id": 104, "text": "Inventory is updated when user receive requested asset", "labels": [[0, 9, "Actor"], [26, 30, "Actor"]]}
+{"id": 105, "text": "Any administrative level user can delegate another user to execute some or all his authorized actions. And this user acquires the role of inventory administrator", "labels": [[43, 55, "Actor"], [112, 116, "Actor"], [4, 29, "Actor"]]}
+{"id": 111, "text": "The MultiMahjongServer will automate the game initialisation functions (as opposed to the MultiMahjongClient doing them)", "labels": [[0, 22, "Actor"]]}
+{"id": 115, "text": "When the user begins the MultiMahjongClient program, they will be able to choose to create a new multi player game, to create a new single player game, to join an existing multi player game, or to quit the program.", "labels": [[5, 13, "Actor"]]}
+{"id": 130, "text": "User's will be able to chat with each other in real time.", "labels": [[0, 6, "Actor"], [33, 43, "Actor"]]}
+{"id": 140, "text": "The TCS shall have the functionality to allow the operator to generate a UAV mission plan.", "labels": [[0, 7, "Actor"], [46, 58, "Actor"]]}
+{"id": 143, "text": "The TCS shall restrict operator access to this capability via password protection.", "labels": [[0, 7, "Actor"], [23, 31, "Actor"]]}
+{"id": 150, "text": "Basically the communication system must assist the operators, users and other interested parties in performing their tasks by provision of services.", "labels": [[10, 34, "Actor"], [47, 96, "Actor"]]}
+{"id": 156, "text": "The APAF system shall process the engineering and ancillary information necessary for calibration and science validation into IDFS data sets.", "labels": [[0, 15, "Actor"]]}
+{"id": 159, "text": "ASPERA-3 and MEX OA IDFS data and any APAF-generated intermediate files of ASPERA-3 and MEX OA cleaned-up telemetry shall be provided to all ASPERA-3 Co-I\u2019s.", "labels": [[137, 156, "Actor"]]}
+{"id": 162, "text": "The File/Delete menu item shall provide an interface for deleting a selected file.", "labels": [[0, 25, "Actor"]]}
+{"id": 168, "text": "The HATS-GUI shall interact with the HOST OS to find files in directories.", "labels": [[0, 12, "Actor"], [33, 44, "Actor"]]}
+{"id": 170, "text": "The user shall be able to save an SDT generated during transformation program execution.", "labels": [[0, 8, "Actor"]]}
+{"id": 179, "text": "The user shall be able to resize windows dynamically.", "labels": [[0, 8, "Actor"]]}
+{"id": 184, "text": "The scheduler will allocate jobs based on the job parameters, which are job specifications submitted by the user with the job.", "labels": [[0, 13, "Actor"], [104, 112, "Actor"]]}
+{"id": 190, "text": "The information and interface will be effective so that Bobby will easily recognize what to do to start the game immediately and Alice will have no problems navigating through the help section to understand the rules and gameplay.", "labels": [[56, 61, "Actor"], [129, 134, "Actor"]]}
+{"id": 196, "text": "The BE shall verify the successful receipt of incoming data from the Correlator.", "labels": [[0, 6, "Actor"], [65, 79, "Actor"]]}
+{"id": 199, "text": "All users of the system shall login using some form of unique identification.", "labels": [[0, 23, "Actor"]]}
+{"id": 203, "text": "Enable agents to broadcast a message to all the agents within the same local network.", "labels": [[7, 13, "Actor"], [40, 54, "Actor"]]}
+{"id": 207, "text": "Allow agents to join and leave multicast group.", "labels": [[6, 12, "Actor"], [31, 46, "Actor"]]}
+{"id": 210, "text": "This agent should maintain a list of agents who are allowed to get the keys.", "labels": [[0, 10, "Actor"]]}
+{"id": 225, "text": "The system must allow a member to do statistics on messages issued and received from/to his system.", "labels": [[0, 10, "Actor"], [22, 30, "Actor"], [88, 98, "Actor"]]}
+{"id": 233, "text": "The color search engine tool will allow locating an arbitrary number of colors in any or all collections based on initial input of a paint name, number, or color value in a industry standard common format.", "labels": [[0, 28, "Actor"]]}
+{"id": 238, "text": "Purchasing Manager is responsible for the arrangement and maintenance of trading agreements with suppliers, including Catalogue data.", "labels": [[0, 18, "Actor"], [97, 106, "Actor"]]}
+{"id": 244, "text": "Quotation is sent by the Sales Point (Seller) to Originator (Buyer) to inform the Buyer of the terms and conditions under which the Seller is willing or able to supply goods or services.", "labels": [[21, 36, "Actor"], [49, 59, "Actor"], [78, 87, "Actor"], [128, 138, "Actor"]]}
+{"id": 257, "text": "Users can select to share specific objects with other users.", "labels": [[0, 5, "Actor"], [48, 59, "Actor"]]}
+{"id": 262, "text": "The system shall allow the user to change the project details for unlocked projects.", "labels": [[0, 10, "Actor"], [23, 31, "Actor"]]}
+{"id": 264, "text": "The system shall require the users enable cookies to use the system.", "labels": [[0, 10, "Actor"], [25, 34, "Actor"], [57, 67, "Actor"]]}
+{"id": 270, "text": "Defendant, Person arrested and/or charged with a criminal offense but not yet convicted.", "labels": [[0, 9, "Actor"], [11, 17, "Actor"]]}
+{"id": 273, "text": "District Attorney, Person responsible for representing the State of Texas in an adversarial judicial proceeding", "labels": [[0, 17, "Actor"], [19, 25, "Actor"]]}
+{"id": 276, "text": "Local Selection Committee, Committee appointed by the Presiding Judge of the Administrative Judicial Region to adopt standards for the qualification of attorneys to be appointed to represent indigent defendants in capital cases in which the death penalty is sought.", "labels": [[0, 25, "Actor"], [27, 36, "Actor"], [50, 69, "Actor"]]}
+{"id": 277, "text": "Magistrate, Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "labels": [[0, 10, "Actor"], [45, 58, "Actor"], [12, 18, "Actor"]]}
+{"id": 286, "text": "The application provides a list where the end-user can choose the new status.", "labels": [[0, 15, "Actor"], [38, 50, "Actor"]]}
+{"id": 295, "text": "The system shall control all system field elements to device sensor level for those device sensors that may be controlled.", "labels": [[0, 10, "Actor"]]}
+{"id": 296, "text": "The system operator shall be able to override any device and continue with a system operational command sequence.", "labels": [[0, 19, "Actor"]]}
+{"id": 331, "text": "The system shall allow analysts to graphically view the allowable flows for specific types within an organization and across multiple organizations given a set of access control policies.", "labels": [[0, 10, "Actor"], [23, 31, "Actor"], [98, 113, "Actor"], [125, 147, "Actor"]]}
+{"id": 332, "text": "The system shall provide a way to capture the mined goalsinformation from the user\u2019s privacy preferences into a database corresponding to the user\u2019s privacy preferences.", "labels": [[0, 10, "Actor"]]}
+{"id": 338, "text": "The Clarus system shall be able to receive roadway weather measurements derived from VII data.", "labels": [[0, 17, "Actor"]]}
+{"id": 346, "text": "The Clarus system shall minimize the time for data acquisition.", "labels": [[0, 17, "Actor"]]}
+{"id": 347, "text": "The Clarus system shall process data as they are received.", "labels": [[0, 17, "Actor"]]}
+{"id": 348, "text": "The Clarus system shall collect pavement-related observations.", "labels": [[0, 17, "Actor"]]}
+{"id": 355, "text": "The Clarus system shall accept environmental data from emergency vehicles.", "labels": [[0, 17, "Actor"], [55, 73, "Actor"]]}
+{"id": 359, "text": "The Clarus system shall provide notification of data quality conditions to data collectors.", "labels": [[0, 17, "Actor"], [75, 90, "Actor"]]}
+{"id": 374, "text": "The Clarus system shall be able to disseminate data based on spatial queries.", "labels": [[0, 17, "Actor"]]}
+{"id": 383, "text": "The Clarus system data definitions shall be consistent with the ITE TM 1.03 standard, Functional Level Traffic Management Data Dictionary (TMDD).", "labels": [[0, 34, "Actor"]]}
+{"id": 387, "text": "The Clarus system shall acquire, process, and disseminate atmospheric metadata.", "labels": [[0, 17, "Actor"]]}
+{"id": 388, "text": "The Clarus system shall acquire, process, and disseminate surface metadata.", "labels": [[0, 17, "Actor"]]}
+{"id": 391, "text": "The Clarus system shall accept only observations of known measurement types and units.", "labels": [[0, 17, "Actor"]]}
+{"id": 394, "text": "The Clarus system shall accept data through a Clarus standard interface.", "labels": [[0, 17, "Actor"], [44, 71, "Actor"]]}
+{"id": 404, "text": "The Clarus system shall enable environmental data queries by location reference.", "labels": [[0, 17, "Actor"]]}
+{"id": 409, "text": "The Clarus system shall allow users to create a data subscription request.", "labels": [[0, 17, "Actor"], [30, 35, "Actor"]]}
+{"id": 415, "text": "The Clarus system shall disseminate data in response to polling.", "labels": [[0, 17, "Actor"]]}
+{"id": 417, "text": "The Clarus system shall be able to notify subscribers when data sets become available.", "labels": [[0, 17, "Actor"], [42, 53, "Actor"]]}
+{"id": 418, "text": "The Clarus system shall disseminate data using standard Internet protocols.", "labels": [[0, 17, "Actor"]]}
+{"id": 422, "text": "The Clarus system shall be able to collect data from sources within 5 minutes of them becoming available.", "labels": [[0, 17, "Actor"]]}
+{"id": 425, "text": "The Clarus system shall be able to publish new data within twenty minutes of data receipt.", "labels": [[0, 17, "Actor"]]}
+{"id": 429, "text": "The Clarus system shall be able to support six thousand registered users.", "labels": [[0, 17, "Actor"]]}
+{"id": 433, "text": "The Clarus program shall provide an environment that has uninterruptible power for the Clarus system.", "labels": [[0, 18, "Actor"], [83, 100, "Actor"]]}
+{"id": 435, "text": "The Clarus program shall provide network management tools.", "labels": [[0, 18, "Actor"]]}
+{"id": 443, "text": "The Clarus program standards shall accommodate contributions of new sensor technologies to the Clarus system.", "labels": [[0, 28, "Actor"], [91, 108, "Actor"]]}
+{"id": 457, "text": "If the patient is not cured then the doctor will refer the patient to some other Hospitals the hospital may be another VSP or any other.", "labels": [[3, 14, "Actor"], [33, 43, "Actor"], [55, 66, "Actor"], [70, 90, "Actor"], [91, 103, "Actor"], [119, 122, "Actor"]]}
+{"id": 461, "text": "If any of mandatory information is missed or any false information is existing then the field office will reject the claim back to VSP and the system will keep those claim in a quarantine area.", "labels": [[84, 100, "Actor"], [131, 134, "Actor"], [139, 149, "Actor"]]}
+{"id": 473, "text": "Systems supporting OM should be able to provide the aggregate data necessary for health event monitoring to systems that support response tracking", "labels": [[19, 21, "Actor"], [108, 115, "Actor"]]}
+{"id": 480, "text": "Systems supporting OM must have the ability to print questionnaires for multiple uses, including taking to the field, use during phone interviews, etc.", "labels": [[19, 21, "Actor"]]}
+{"id": 495, "text": "The system shall be capable of creating cost and deterioration elicitation records for Pontis users.", "labels": [[0, 10, "Actor"], [87, 99, "Actor"]]}
+{"id": 497, "text": "The system shall be capable of updating preservation action costs based on expert elicitations.", "labels": [[0, 10, "Actor"]]}
+{"id": 501, "text": "The user shall be able to create new projects by manually entering the project information.", "labels": [[0, 8, "Actor"]]}
+{"id": 509, "text": "The administrator shall be able to add new users to the system.", "labels": [[0, 17, "Actor"], [52, 62, "Actor"]]}
+{"id": 521, "text": "The system has an embedded help file that contains basic solutions and hints for problematic situations", "labels": [[0, 10, "Actor"]]}
+{"id": 527, "text": "User SHOULD be able to specify when he is to start a research project; i.e. when the web sites he visits subsequently are to be permanently stored.", "labels": [[0, 4, "Actor"]]}
+{"id": 529, "text": "The Operational radio user shall be protected against all electrical hazards arising from the mobile equipment", "labels": [[0, 26, "Actor"]]}
+{"id": 533, "text": "Public users: Eventual release of the database system to the general public will add university and agency researchers who would appear similar in training to the primary users, but also would add clients with the entire range of training and interests.", "labels": [[0, 12, "Actor"], [85, 118, "Actor"], [159, 176, "Actor"]]}
+{"id": 546, "text": "The system shall display all the available components of the product to configure", "labels": [[0, 10, "Actor"]]}
+{"id": 550, "text": "The system shall allow user to confirm the completion of current configuration", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 554, "text": "The system shall enable user to enter the search text on the screen.", "labels": [[0, 10, "Actor"], [24, 28, "Actor"]]}
+{"id": 555, "text": "The system shall enable user to select multiple options on the screen to search.", "labels": [[0, 10, "Actor"], [24, 28, "Actor"]]}
+{"id": 560, "text": "The system shall allow user to create profile and set his credential.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 562, "text": "The system shall allow user to update the profile information.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 564, "text": "The system shall allow user to select the order from the order history.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 567, "text": "The system shall allow user to register for newsletters and surveys in the profile.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 569, "text": "The system shall allow user to select the support type he wants.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 578, "text": "The system shall optionally allow user to print the invoice.", "labels": [[0, 10, "Actor"], [34, 38, "Actor"]]}
+{"id": 579, "text": "The system shall provide shopping cart during online purchase.", "labels": [[0, 10, "Actor"]]}
+{"id": 580, "text": "The system shall allow user to add/remove products in the shopping cart.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 592, "text": "The system shall allow user to select the order to be changed.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 593, "text": "The system shall allow user to cancel the order", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 594, "text": "The system shall allow user to change shipping, payment method.", "labels": [[0, 10, "Actor"], [23, 27, "Actor"]]}
+{"id": 598, "text": "The system shall display all the available financing options.", "labels": [[0, 10, "Actor"]]}
+{"id": 608, "text": "The system shall provide use of icons and toolbars.", "labels": [[0, 10, "Actor"]]}
+{"id": 609, "text": "The system shall provide handicap access.", "labels": [[0, 10, "Actor"]]}
+{"id": 616, "text": "The product shall be based on web and has to be run from a web server.", "labels": [[0, 11, "Actor"], [57, 69, "Actor"]]}
+{"id": 622, "text": "The system shall not leave any cookies on the customer\u2019s computer containing the user\u2019s password.", "labels": [[0, 10, "Actor"]]}
+{"id": 629, "text": "ETCS shall be able to supervise train and shunting movements.", "labels": [[0, 4, "Actor"]]}
+{"id": 630, "text": "ETCS is required to be functional to a maximum train speed of 500 km/h.", "labels": [[0, 4, "Actor"]]}
+{"id": 633, "text": "The ETCS on-board shall be capable of receiving National values from the trackside to adapt to National requirements.", "labels": [[0, 17, "Actor"]]}
+{"id": 636, "text": "The DUAP System shall collect probe vehicle data.", "labels": [[0, 15, "Actor"]]}
+{"id": 654, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the MITS Center using the MITS traffic data interface.", "labels": [[0, 23, "Actor"], [75, 90, "Actor"], [97, 128, "Actor"]]}
+{"id": 655, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the Western Michigan Traffic Management System (WMTMS) using the WMTMS interface.", "labels": [[0, 23, "Actor"], [75, 129, "Actor"], [136, 155, "Actor"]]}
+{"id": 663, "text": "The DUAP Input Services shall be able to collect road condition data from Traffic Management Systems (TMS) using the TMS interface.", "labels": [[0, 23, "Actor"], [74, 106, "Actor"], [113, 130, "Actor"]]}
+{"id": 664, "text": "The DUAP System shall be able to collect work zone (lane closure) data.", "labels": [[0, 15, "Actor"]]}
+{"id": 668, "text": "The DUAP System shall cache data only if the data record associates the data with its source, a georeferenced location, and a timestamp.", "labels": [[0, 15, "Actor"]]}
+{"id": 673, "text": "The DUAP Output Services shall be able to publish roadway traffic information in Traffic Management Data Dictionary (TMDD) format.", "labels": [[0, 24, "Actor"]]}
+{"id": 674, "text": "The DUAP Output Services shall be able to publish traffic data in the SimTraffic traffic analysis tool SimTraffic interface format.", "labels": [[0, 24, "Actor"]]}
+{"id": 678, "text": "The DUAP System shall be capable of adding new output formats of published data.", "labels": [[0, 15, "Actor"]]}
+{"id": 679, "text": "The DUAP System shall be capable of adding new presentations of published data.", "labels": [[0, 15, "Actor"]]}
+{"id": 684, "text": "The System shall provide the capability to send an electronic notification to authorized users when they receive restricted access data.", "labels": [[0, 10, "Actor"], [78, 94, "Actor"]]}
+{"id": 687, "text": "The System shall provide the capability to control the execution of Scientific Algorithms.", "labels": [[0, 10, "Actor"]]}
+{"id": 691, "text": "The System shall be capable of rendering Mercator projections.", "labels": [[0, 10, "Actor"]]}
+{"id": 694, "text": "The System shall be capable of producing time-averaged Data Products.", "labels": [[0, 10, "Actor"]]}
+{"id": 695, "text": "The System shall be capable of generating NOAA-Unique and Tailored Data Products with Government-specified grid spacing.", "labels": [[0, 10, "Actor"]]}
+{"id": 698, "text": "Receive and track content from producers", "labels": [[31, 40, "Actor"]]}
+{"id": 709, "text": "System generates an error log.", "labels": [[0, 6, "Actor"]]}
+{"id": 711, "text": "Transmission problems allow rejection of entire packages.", "labels": [[0, 21, "Actor"]]}
+{"id": 712, "text": "Other problems will allow rejection of entire package or part of a package, depending on content.", "labels": [[0, 14, "Actor"]]}
+{"id": 724, "text": "Stores the identification information in the Data Management database to support search and retrieval of AIPs in Archive Storage.", "labels": [[41, 69, "Actor"], [113, 128, "Actor"]]}
+{"id": 732, "text": "Maintains the integrity of the Data Management database which contains both metadata and system information.", "labels": [[27, 55, "Actor"]]}
+{"id": 736, "text": "Query requests are received from other functions (for example, Ingest, Access, and Administration).", "labels": [[33, 48, "Actor"]]}
+{"id": 761, "text": "Receives operational statistics from Archival Storage.", "labels": [[37, 53, "Actor"]]}
+{"id": 776, "text": "One of the fundamental tasks of the system is to allow actors to upload and manage files on certain pages of the system.", "labels": [[32, 42, "Actor"], [55, 61, "Actor"]]}
+{"id": 781, "text": "Voice clips should be downloadable for archival purposes or for the purpose of presenting them to other actors.", "labels": [[98, 110, "Actor"]]}
+{"id": 784, "text": "Actors in the course administrator role may not feel the need to provide web feeds for every page in their course.", "labels": [[0, 6, "Actor"], [14, 34, "Actor"]]}
+{"id": 792, "text": "Actors in the role of professor may want to optionally grade assignments online since they are being submitted electronically by actors in the role of student.", "labels": [[0, 6, "Actor"], [22, 31, "Actor"], [129, 135, "Actor"], [151, 158, "Actor"]]}
+{"id": 800, "text": "The system must provide a wiki where actors can collaboratively create networks of documents.", "labels": [[0, 10, "Actor"], [37, 43, "Actor"]]}
+{"id": 814, "text": "The system will provide tools to assist in the quality control/quality assurance of WUP data.", "labels": [[0, 10, "Actor"]]}
+{"id": 815, "text": "The system will provide information that can be used to assist in the calibration of ground water models.", "labels": [[0, 10, "Actor"]]}
+{"id": 832, "text": "The Black Start unit must be capable of starting and energizing the applicable transmission path without assistance from the electrical system.", "labels": [[0, 20, "Actor"], [121, 142, "Actor"]]}
+{"id": 834, "text": "The CAISO shall from time to time undertake performance tests, with or without prior notification.", "labels": [[0, 9, "Actor"]]}
+{"id": 835, "text": "The CAISO shall have the sole right to determine when the operation of Black Start Generating Unit is required to respond to conditions on the CAISO Controlled Grid.", "labels": [[0, 9, "Actor"], [139, 164, "Actor"]]}
+{"id": 839, "text": "Developers: in order to be sure they are developing the right project that fulfills requirements provided in this document.", "labels": [[0, 10, "Actor"]]}
+{"id": 840, "text": "Testers: in order to have an exact list of the features and functions that have to respond according to requirements and provided diagrams.", "labels": [[0, 7, "Actor"]]}
+{"id": 841, "text": "Users: in order to get familiar with the idea of the project and suggest other features that would make it even more functional.", "labels": [[0, 5, "Actor"]]}
+{"id": 847, "text": "The user can select a sequence of keypresses that KeePass will be able to perform and send them to any window or browser.", "labels": [[0, 8, "Actor"], [50, 57, "Actor"]]}
+{"id": 853, "text": "Science/Research Telecommunications: for organizing data that have to do with lots of people and applications", "labels": [[0, 35, "Actor"]]}
+{"id": 855, "text": "A Web server replicates content on-demand from the origin server and stores it for future use.", "labels": [[0, 12, "Actor"], [47, 64, "Actor"]]}
+{"id": 856, "text": "Mediator generates service requirements as the basis for negotiated relationships.", "labels": [[0, 8, "Actor"]]}
+{"id": 869, "text": "Service Registry: Registers available local resources at the CDN provider and updates them.", "labels": [[0, 16, "Actor"], [57, 73, "Actor"]]}
+{"id": 872, "text": "The interaction protocol between Web Server - Service Registry, Service Registry - mediator is defined.", "labels": [[33, 43, "Actor"], [46, 62, "Actor"], [64, 80, "Actor"], [83, 91, "Actor"]]}
+{"id": 877, "text": "The mediator instance obtains resource and access information from the Service Registry and policy information from Policy Repository to establish negotiation.", "labels": [[0, 21, "Actor"], [67, 87, "Actor"], [116, 133, "Actor"]]}
+{"id": 880, "text": "Service requirements are received from the mediator.", "labels": [[39, 51, "Actor"]]}
+{"id": 887, "text": "Peering Agent exchange content availability and load information to identify an optimal peer to handle user requests.", "labels": [[0, 13, "Actor"]]}
+{"id": 888, "text": "Request is redirected to an optimal peer\u2019s Web server.", "labels": [[25, 53, "Actor"]]}
+{"id": 892, "text": "The user should write his/her username, password and select in which domain he/she is.", "labels": [[0, 8, "Actor"]]}
+{"id": 893, "text": "User can select customer, supplier, requests or items management section.", "labels": [[0, 4, "Actor"]]}
+{"id": 895, "text": "User can click on [ view detail ] for more information about a customer.", "labels": [[0, 4, "Actor"]]}
+{"id": 901, "text": "Users will have access to common programs, such as media players for streaming.", "labels": [[0, 5, "Actor"]]}
+{"id": 902, "text": "Streaming Audio and Video allows students and professor to make audio and/or video calls between each other.", "labels": [[0, 25, "Actor"], [33, 41, "Actor"], [46, 55, "Actor"], [97, 107, "Actor"]]}
+{"id": 904, "text": "Students will have the ability of attending an online class and be able to see the professor and colleagues and interact with each other.", "labels": [[0, 8, "Actor"], [126, 136, "Actor"], [79, 92, "Actor"], [97, 107, "Actor"]]}
+{"id": 905, "text": "Professor will be able to ask questions to students and expect an answer immediately.", "labels": [[0, 9, "Actor"], [43, 51, "Actor"]]}
+{"id": 921, "text": "A Guest can register an account on the PMS by \ufb01lling in a form.", "labels": [[0, 7, "Actor"], [35, 42, "Actor"]]}
+{"id": 930, "text": "A Moderator can decide to upgrade a Member (of his own department) to become a Publisher.", "labels": [[0, 11, "Actor"], [34, 42, "Actor"], [77, 88, "Actor"]]}
+{"id": 931, "text": "A moderator can change the Group Permissions of any group that falls under his jurisdiction.", "labels": [[0, 11, "Actor"]]}
+{"id": 935, "text": "The users of the PMS are expected to be academic personnel and students with various technical backgrounds.", "labels": [[0, 20, "Actor"], [40, 58, "Actor"], [63, 71, "Actor"]]}
+{"id": 938, "text": "GOG must provide a way to be run from a command line or a shell script.", "labels": [[0, 3, "Actor"]]}
+{"id": 939, "text": "Administrator: A member of the Construction Junction staff who can perform any of the Inventory Management functions.", "labels": [[0, 13, "Actor"], [15, 58, "Actor"]]}
+{"id": 940, "text": "Director: A member of the Construction Junction staff who can perform the same Inventory Management functions as a Manager, plus view, create, modify and delete Inventory Management users.", "labels": [[0, 8, "Actor"], [10, 53, "Actor"], [113, 122, "Actor"]]}
+{"id": 943, "text": "Customer Service Representative: A member of the Construction Junction staff who works in the customer service desk and performs specific tasks such as constituent and member database management, item returns processing, creating drop-off acquisitions, and others.", "labels": [[0, 31, "Actor"], [33, 76, "Actor"]]}
+{"id": 945, "text": "Decon Associate: A member of the Construction Junction staff who executes a deconstruction and/or strip out job and brings the items for processing at the receiving dock.", "labels": [[0, 15, "Actor"], [17, 60, "Actor"]]}
+{"id": 965, "text": "Management Processes shall provide a development and training environment with the ability to migrate configurations to a production environment.", "labels": [[0, 20, "Actor"]]}
+{"id": 973, "text": "The system supports (but does not require) streamlined staff login methods, for example staff member swipes a card to log into a terminal or the staff member logs into a terminal by using his/her individual login and password.", "labels": [[0, 10, "Actor"]]}
+{"id": 975, "text": "System provides a utility for transferring batches of items between branches, used for example to move books into a mobile library, an outreach program collection, or a \"just-in-time\" warehouse.", "labels": [[0, 6, "Actor"]]}
+{"id": 976, "text": "The system provides a utility and reports for identifying item records to purge, based on customizable criteria such as: an item has been in status \"missing\" for more than X months.", "labels": [[0, 10, "Actor"]]}
+{"id": 982, "text": "System supports creation of custom dashboards that display current and historical data about system performance, record creation and modification, circulation transactions, etc.", "labels": [[0, 6, "Actor"]]}
+{"id": 985, "text": "System provides an administrative dashboard displaying", "labels": [[0, 6, "Actor"]]}
+{"id": 997, "text": "System administrators can create report templates that are available to front-line staff, and can be run as is or modified to the staff person's particular needs.", "labels": [[0, 21, "Actor"], [72, 88, "Actor"]]}
+{"id": 1007, "text": "Users are allowed to instantly access other main application interfaces(specifically create archive interface and extraction interface-these features are described in following chapters), as well as changing view mode for objects(archives and files) displayed in file manager interface.", "labels": [[0, 5, "Actor"], [263, 285, "Actor"]]}
+{"id": 1009, "text": "Users are allowed to compress one or more objects (files or archives) in one or more compressed archive volumes (sizing less or equally to the original ones)in one of the offered for compression by PeaZip formats.", "labels": [[0, 5, "Actor"]]}
+{"id": 1010, "text": "Users can drag and drop objects (files or archives) between any computer system space and the application.", "labels": [[0, 5, "Actor"], [64, 85, "Actor"], [90, 105, "Actor"]]}
+{"id": 1020, "text": "The system we produce will stay within all the legal requirements on our behalf, as our software is only listing links for video streams and video download, and this is not illegal.", "labels": [[0, 10, "Actor"], [84, 96, "Actor"]]}
+{"id": 1022, "text": "The tools shall be able to scale to process large collections using distributed processing and data transport.", "labels": [[0, 9, "Actor"]]}
+{"id": 1034, "text": "The Project Team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments.", "labels": [[0, 16, "Actor"], [98, 118, "Actor"]]}
+{"id": 1039, "text": "The ELSS must capture all data necessary for recording the fishing activities undertaken by a UK fishing vessel.", "labels": [[0, 8, "Actor"], [92, 111, "Actor"]]}
+{"id": 1040, "text": "The ELSS must output the data as an XML file for transmission to the UK fisheries administrations\u2019 ERS system.", "labels": [[0, 8, "Actor"], [65, 109, "Actor"]]}
+{"id": 1041, "text": "The ELSS data must be validated against the UK XML/XSD before transmission from the fishing vessel.", "labels": [[0, 13, "Actor"], [80, 98, "Actor"]]}
+{"id": 1045, "text": "The ELSS must provide the ability to print out the ELSS logbook data (including landing declarations) using an onboard printer.", "labels": [[0, 8, "Actor"], [108, 126, "Actor"]]}
+{"id": 1046, "text": "The ELSS must permit the Master of the vessel to generate formatted data for transmission to the UK fisheries administrations\u2019 ERS system.", "labels": [[0, 8, "Actor"], [93, 137, "Actor"], [21, 45, "Actor"]]}
+{"id": 1047, "text": "The ELSS must provide facilities to capture and deliver for transmission corrections to previously successfully transmitted data.", "labels": [[0, 8, "Actor"]]}
+{"id": 1051, "text": "The ELSS must only permit deletion messages to be generated and sent for reports sent during a current trip up to the End of Fishing report for that voyage.", "labels": [[0, 8, "Actor"]]}
+{"id": 1063, "text": "A DH user shall be able to read the temperature at a thermostat position.", "labels": [[0, 9, "Actor"]]}
+{"id": 1066, "text": "A DigitalHome system shall use wireless signals to communicate, through the master control unit, with the humidistats.", "labels": [[0, 20, "Actor"], [72, 95, "Actor"], [102, 117, "Actor"]]}
+{"id": 1072, "text": "Mashbot may be initially released without satisfying these requirements.", "labels": [[0, 7, "Actor"]]}
+{"id": 1073, "text": "These requirements are outside the current scope of the project, but are included to exhibit how our software will improve in the future.", "labels": [[97, 109, "Actor"]]}
+{"id": 1075, "text": "Mashbot will allow for the association of Mashbot accounts with external service accounts.", "labels": [[0, 7, "Actor"]]}
+{"id": 1079, "text": "The system is con\ufb01gurable to e-mail warnings about multiple failed login attempts from the same user.", "labels": [[0, 10, "Actor"], [87, 100, "Actor"]]}
+{"id": 1092, "text": "PDFsam is an application that needs a few system resources to work.", "labels": [[0, 6, "Actor"], [10, 24, "Actor"]]}
+{"id": 1093, "text": "The Technology Architecture describes the logical software and hardware capabilities that are required to support the deployment of business, data, and application services.", "labels": [[0, 27, "Actor"]]}
+{"id": 8293, "text": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g. mouse clicks).", "labels": [[0, 39, "Actor"]]}
+{"id": 9289, "text": "Normalize content the conversion into a common format for final ingestion into the repository", "labels": [[79, 93, "Actor"]]}
+{"id": 9300, "text": "Verifies the validity of the submission based on submitter, expected format, file quality, duplication (e.g., existence of object in repository), and completeness.", "labels": [[49, 58, "Actor"]]}
+{"id": 9335, "text": "Testing records shall include the dates of the tests, the duration of the tests, and an indication of whether the tests met the requirements of this Black Start Testing section.", "labels": [[0, 15, "Actor"]]}
+{"id": 9340, "text": "System reports for each record type: current record number, current number of records, number deleted, and number purged.", "labels": [[0, 6, "Actor"]]}
+{"id": 3205, "text": "Ability to create user groups such as NCSU TPP.org, GT TPP.org", "labels": []}
+{"id": 3214, "text": "Ability to add, delete and update goals", "labels": []}
+{"id": 3216, "text": "Ability to view the details of any goal or a scenario in the repository such as ID, description, source, keyword, taxonomy, actor, occurrence, relevant policy etc.", "labels": []}
+{"id": 3217, "text": "Ability to update personal profile such as name, ID, contact information, usergroups and passwords", "labels": []}
+{"id": 3218, "text": "Ability to add, delete and update requirements", "labels": []}
+{"id": 3236, "text": "Accept or reject content or file format.", "labels": []}
+{"id": 3238, "text": "Allows retention of metadata for files rejected but not replaced.", "labels": []}
+{"id": 3239, "text": "Maintains log of messages sent concerning resubmissions.", "labels": []}
+{"id": 3250, "text": "Provides internal validation such as referential integrity of the contents of the database.", "labels": []}
+{"id": 3254, "text": "Keeps an audit trail of all actions.", "labels": []}
+{"id": 3261, "text": "Tracks negotiation status, written submission agreements and maintains schedules.", "labels": []}
+{"id": 3262, "text": "Able to add and edit terms of agreement, based on access of level of user.", "labels": []}
+{"id": 3266, "text": "Keeps an audit trail of all actions.", "labels": []}
+{"id": 3272, "text": "Schedules and performs file migrations.", "labels": []}
+{"id": 3283, "text": "Ability to fully customize layout and appearance of reports.", "labels": []}

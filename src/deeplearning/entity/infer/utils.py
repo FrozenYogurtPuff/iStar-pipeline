@@ -5,8 +5,8 @@ from collections.abc import Callable
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.deeplearning.infer.result import BertResult
-from src.deeplearning.utils.utils_metrics import get_entities_bio
+    from src.deeplearning.entity.infer.result import BertResult
+from src.deeplearning.entity.utils.utils_metrics import get_entities_bio
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +36,7 @@ def get_list_bio(src: list[BertResult]):
 
 
 def label_mapping_bio(lab: str) -> tuple[str, str]:
-    if lab in ["Role", "Agent", "Resource", "Core", "Cond", "Aux"]:
+    if lab in ["Role", "Agent", "Resource", "Actor", "Core", "Cond", "Aux"]:
         return f"B-{lab}", f"I-{lab}"
     if lab == "Quality":
         logger.error("Label Quality")
@@ -50,7 +50,9 @@ def label_mapping_de_bio(lab: str) -> tuple[str, bool]:
         if not lab.startswith("B-") and not lab.startswith("I-"):
             logger.error(f"Illegal label-bio {lab}")
             raise LabelTypeException("Unexpected label-bio type")
-        if lab.endswith(("Role", "Agent", "Resource", "Core", "Cond", "Aux")):
+        if lab.endswith(
+            ("Role", "Agent", "Actor", "Resource", "Core", "Cond", "Aux")
+        ):
             return lab[2:]
 
         logger.error(f"Illegal label-bio {lab}")

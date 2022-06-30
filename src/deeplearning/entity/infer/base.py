@@ -31,12 +31,12 @@ from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 from transformers import AutoConfig, AutoTokenizer
 
-from src.deeplearning.models.model_ner import (
+from src.deeplearning.entity.models.model_ner import (
     MODEL_FOR_SOFTMAX_NER_MAPPING,
     MODEL_PRETRAINED_CONFIG_ARCHIVE_MAPPING,
     AutoModelForSoftmaxNer,
 )
-from src.deeplearning.utils.utils_ner import (
+from src.deeplearning.entity.utils.utils_ner import (
     InputExample,
     convert_examples_to_features,
     get_labels,

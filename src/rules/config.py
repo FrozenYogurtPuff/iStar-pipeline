@@ -1,11 +1,11 @@
 # Entity Rules
-from src.rules.entity.actor_plugins import (
-    be_nsubj,
-    by_sb,
-    dative_propn,
-    relcl_who,
-    xcomp_ask,
-)
+from src.rules.entity.actor_plugins import be_nsubj, by_sb, dative_propn
+from src.rules.entity.actor_plugins import dep as actor_dep
+from src.rules.entity.actor_plugins import ner as actor_ner
+from src.rules.entity.actor_plugins import relcl_who
+from src.rules.entity.actor_plugins import tag as actor_tag
+from src.rules.entity.actor_plugins import word_list as actor_word_list
+from src.rules.entity.actor_plugins import xcomp_ask
 from src.rules.entity.resource_plugins import agent_dative_adp, poss_propn
 from src.rules.entity.resource_plugins import word_list as resource_word_list
 from src.rules.intention.aux_slice import acl_without_to as awt_slice
@@ -17,10 +17,10 @@ from src.utils.typing import IntentionAuxPlugins, RulePlugins
 actor_plugins: RulePlugins = (
     dative_propn,
     relcl_who,
-    # actor_tag,
-    # actor_dep,
-    # actor_word_list,
-    # actor_ner,
+    actor_tag,
+    actor_dep,
+    actor_word_list,
+    actor_ner,
     xcomp_ask,
     be_nsubj,
     by_sb,
@@ -49,4 +49,3 @@ intention_plugins: RulePlugins = (
     # pcomp_ing,
     # advcl,
 )
-# TODO: 将单词映射为动词短语

@@ -3,7 +3,7 @@ from collections import defaultdict
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.deeplearning.infer.result import BertResult
+    from src.deeplearning.entity.infer.result import BertResult
 
 logger = logging.getLogger(__name__)
 
