@@ -56,7 +56,9 @@ class infer_from_trained(object):
         from .train_funcs import load_state
 
         if self.args.model_no == 0:
-            from ..model.BERT.modeling_bert import BertModel as Model
+            from src.deeplearning.relation.model.BERT.modeling_bert import (
+                BertModel as Model,
+            )
 
             model = args.model_size  #'bert-base-uncased'
             lower_case = True

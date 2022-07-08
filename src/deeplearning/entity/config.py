@@ -3,14 +3,12 @@ from pathlib import Path
 
 from src import ROOT_DIR
 
-ACTOR_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022/actor/combined/")
+ACTOR_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022/actor/divided/")
 ACTOR_MODEL_TYPE = "bert"
 ACTOR_MODEL_NAME_OR_PATH = "bert-base-cased"
-ACTOR_OUTPUT_DIR = str(
-    Path(ROOT_DIR) / "pretrained_model/2022/actor/combined/"
-)
+ACTOR_OUTPUT_DIR = str(Path(ROOT_DIR) / "pretrained_model/2022/actor/divided/")
 ACTOR_LABEL = str(
-    Path(ROOT_DIR) / "pretrained_data/2022/actor/combined/labels.txt"
+    Path(ROOT_DIR) / "pretrained_data/2022/actor/divided/labels.txt"
 )
 
 # Infer - Resource

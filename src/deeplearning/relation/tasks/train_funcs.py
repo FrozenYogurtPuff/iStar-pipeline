@@ -12,7 +12,7 @@ import torch
 from sklearn.metrics import f1_score, precision_score, recall_score
 from tqdm import tqdm
 
-from ..misc import load_pickle
+from src.deeplearning.relation.misc import load_pickle
 
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s]: %(message)s",
