@@ -6,10 +6,10 @@ from spacy.tokens import Span
 
 from src.utils.spacy import char_idx_to_word_idx
 
-INPUT = "../pretrained_data/2022/actor/combined/all.jsonl"
-OUTPUT1 = "../pretrained_data/2022/actor/combined/train.txt"
-OUTPUT2 = "../pretrained_data/2022/actor/combined/dev.txt"
-SPLIT_OUTPUT = "../pretrained_data/2022/actor/combined/split_dev.jsonl"
+INPUT = "../pretrained_data/2022/actor/divided_fix/all.jsonl"
+OUTPUT1 = "../pretrained_data/2022/actor/divided_fix/train.txt"
+OUTPUT2 = "../pretrained_data/2022/actor/divided_fix/dev.txt"
+SPLIT_OUTPUT = "../pretrained_data/2022/actor/divided_fix/split_dev.jsonl"
 PROPORTION = 80
 
 if __name__ == "__main__":
@@ -30,8 +30,12 @@ if __name__ == "__main__":
             text = a["text"]
             sent = nlp(text)
             anno = list()
-            for label in a["labels"]:
-                s, e, lab = label
+            # for label in a["labels"]:
+            for item in a["entities"]:
+                s = item["start_offset"]
+                e = item["end_offset"]
+                lab = item["label"]
+                # s, e, lab = label
                 start, end = char_idx_to_word_idx(sent[:], s, e)
                 anno.append(Span(sent, start, end, lab))
             sent.set_ents(anno)

@@ -11,6 +11,18 @@ ACTOR_LABEL = str(
     Path(ROOT_DIR) / "pretrained_data/2022/actor/divided/labels.txt"
 )
 
+ACTOR_COMBINED_DATA_DIR = str(
+    Path(ROOT_DIR) / "pretrained_data/2022/actor/combined/"
+)
+ACTOR_COMBINED_MODEL_TYPE = "bert"
+ACTOR_COMBINED_MODEL_NAME_OR_PATH = "bert-base-cased"
+ACTOR_COMBINED_OUTPUT_DIR = str(
+    Path(ROOT_DIR) / "pretrained_model/2022/actor/combined/"
+)
+ACTOR_COMBINED_LABEL = str(
+    Path(ROOT_DIR) / "pretrained_data/2022/actor/combined/labels.txt"
+)
+
 # Infer - Resource
 RESOURCE_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022/resource/")
 RESOURCE_MODEL_TYPE = "bert"

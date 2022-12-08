@@ -7,7 +7,10 @@ from typing import Callable
 from spacy.tokens import Span, Token
 
 from src.deeplearning.entity.infer.result import BertResult
-from src.deeplearning.entity.infer.utils import label_mapping_bio
+from src.deeplearning.entity.infer.utils import (
+    get_series_bio,
+    label_mapping_bio,
+)
 from src.rules.config import actor_plugins
 from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
 from src.utils.spacy import get_token_idx, include_elem, match_noun_chunk
@@ -94,12 +97,49 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
     return new_list
 
 
+# Filter: Result -> Partial Result
+def exclude_actor(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ not in ["NOUN", "PROPN"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def exclude_intention_verb(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        # if sp[e].tag_.startswith("JJ"):
+        #     if e - 1 > 0 and sp[e - 1].lower_ not in ["am", "is", "are", "be", "was", "were"]:
+        #         bert_idx = get_s2b_idx(s2b, [s, e])
+        #         exclude_list.append(EntityFix(sp[s:e + 1], [s, e], bert_idx, "O"))
+        if not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith("NN"):
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
 def dispatch(
     s: Span,
     b: BertResult | None,
     s2b: list[Alignment] | None,
     add_all: bool = False,
-    noun_chunk: bool = True,
+    noun_chunk: bool = False,
     funcs: RulePlugins = actor_plugins,
     bert_func: Callable = prob_bert_merge,
 ) -> list[EntityFix]:
@@ -150,5 +190,7 @@ def dispatch(
     # `add_all` pass the raw result without considering bert
     if not add_all:
         result = bert_func(result, b)
+
+    result.extend(exclude_intention_verb(s, b, s2b))
 
     return result

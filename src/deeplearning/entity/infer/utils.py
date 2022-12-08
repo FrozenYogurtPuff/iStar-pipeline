@@ -38,6 +38,8 @@ def get_list_bio(src: list[BertResult]):
 def label_mapping_bio(lab: str) -> tuple[str, str]:
     if lab in ["Role", "Agent", "Resource", "Actor", "Core", "Cond", "Aux"]:
         return f"B-{lab}", f"I-{lab}"
+    if lab in ["O"]:
+        return "O", "O"
     if lab == "Quality":
         logger.error("Label Quality")
         # I think it should not be occurred

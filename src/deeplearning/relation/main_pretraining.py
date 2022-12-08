@@ -8,7 +8,7 @@ Created on Wed Nov 27 11:16:26 2019
 import logging
 from argparse import ArgumentParser
 
-from .trainer import train_and_fit
+from src.deeplearning.relation.code.trainer import train_and_fit
 
 """
 This trains the BERT model on matching the blanks
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--pretrain_data",
         type=str,
-        default="./data/cnn.txt",
+        default="./pretrained_data/2022/relation/cnn.txt",
         help="pre-training data .txt file path",
     )
     parser.add_argument(
@@ -86,8 +86,8 @@ if __name__ == "__main__":
 
     """
     # For testing additional models
-    from src.model.BERT.modeling_bert import BertModel, BertConfig
-    from src.model.BERT.tokenization_bert import BertTokenizer as Tokenizer
+    from src.deeplearning.relation.code.model.BERT.modeling_bert import BertModel, BertConfig
+    from src.deeplearning.relation.code.model.BERT.tokenization_bert import BertTokenizer as Tokenizer
     config = BertConfig.from_pretrained('./additional_models/biobert_v1.1_pubmed/bert_config.json')
     model = BertModel.from_pretrained(pretrained_model_name_or_path='./additional_models/biobert_v1.1_pubmed.bin',
                                       config=config,

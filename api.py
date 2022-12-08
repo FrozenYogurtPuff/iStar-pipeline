@@ -7,6 +7,7 @@ from src.deeplearning.entity.infer.utils import get_series_bio
 from src.deeplearning.entity.infer.wrapper import ActorWrapper, \
     IntentionWrapper
 from src.rules.intention.find_object import find_object
+from src.deeplearning.relation.main_task import proceed_sentence
 
 app = Flask(__name__)
 CORS(app)
@@ -66,6 +67,17 @@ def intention_entity():
                 obj_span = sent[obj_i:obj_i+1]
                 cur.append(("Obj", obj_span.start_char, obj_span.end_char))
             result.append(cur)
+        print(result)
+        return jsonify(result)
+
+
+@app.route('/ar', methods=['POST'])
+def actor_relation():
+    if request.method == "POST":
+        json = request.get_json()
+        text = json.get("text")
+        entities = json.get("entity")
+        result = proceed_sentence(text, entities)
         print(result)
         return jsonify(result)
 

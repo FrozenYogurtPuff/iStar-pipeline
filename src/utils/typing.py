@@ -23,7 +23,8 @@ DatasetUnionLabel: TypeAlias = tuple[int, int, str]
 # ( [Student, Parents], "Actor" )
 # ( [Student, tickets], ("Actor", "Resource") )
 RuleReturn: TypeAlias = Sequence[tuple[Token | Span, str]]
-RulePlugins: TypeAlias = Sequence[Callable[[Span], RuleReturn]]
+RulePlugin: TypeAlias = Callable[[Span], RuleReturn]
+RulePlugins: TypeAlias = Sequence[RulePlugin]
 
 
 # (Student, [1], [1, 2], "Actor")

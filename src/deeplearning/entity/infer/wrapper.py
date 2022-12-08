@@ -2,7 +2,7 @@ import logging
 from abc import ABC
 from typing import Any
 
-from src.deeplearning.entity.infer.actor import InferActor
+from src.deeplearning.entity.infer.actor import InferActor, InferCombinedActor
 from src.deeplearning.entity.infer.base import InferBase
 from src.deeplearning.entity.infer.intention import InferIntention
 from src.deeplearning.entity.infer.resource import InferResource
@@ -65,6 +65,12 @@ class ActorWrapper(Wrapper):
     def __init__(self):
         super().__init__()
         self.inferrer = InferActor()
+
+
+class ActorCombinedWrapper(Wrapper):
+    def __init__(self):
+        super().__init__()
+        self.inferrer = InferCombinedActor()
 
 
 class ResourceWrapper(Wrapper):

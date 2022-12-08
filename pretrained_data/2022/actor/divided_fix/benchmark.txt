@@ -1,0 +1,3 @@
+* Benchmark 不理想，不如原来的 divided 数据集
+* 综合 f1 在 0.82 左右
+* 在考虑是否引入 k-fold 测试
