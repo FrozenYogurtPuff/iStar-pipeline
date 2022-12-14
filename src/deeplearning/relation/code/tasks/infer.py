@@ -75,8 +75,9 @@ class infer_from_trained(object):
             lower_case = True
             model_name = "BERT"
             self.net = Model.from_pretrained(
-                pretrained_model_name_or_path="pretrained_model/2022_Kfold/relation/"
-                + model,
+                # pretrained_model_name_or_path="pretrained_model/2022_Kfold/relation/"
+                # + model,
+                model=args.model_size,
                 force_download=False,
                 model_size=args.model_size,
                 task="classification",
