@@ -16,6 +16,8 @@ import spacy
 import torch
 from tqdm import tqdm
 
+from src.deeplearning.relation import kfold
+
 from ..misc import save_as_pickle
 from .preprocessing_funcs import load_dataloaders
 
