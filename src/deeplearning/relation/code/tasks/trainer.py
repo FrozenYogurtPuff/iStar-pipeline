@@ -15,6 +15,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.nn.utils import clip_grad_norm_
 
+from src.deeplearning.relation import kfold
+
 from ..misc import load_pickle, save_as_pickle
 from .preprocessing_funcs import load_dataloaders
 from .train_funcs import evaluate_, evaluate_results, load_results, load_state
@@ -143,7 +145,7 @@ def train_and_fit(args):
             % args.model_no
         )
         checkpoint_path = (
-            "./pretrained_data/2022_Kfold/relation/test_checkpoint_%d.pth.tar"
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/test_checkpoint_%d.pth.tar"
             % args.model_no
         )
         checkpoint = torch.load(checkpoint_path)
@@ -290,7 +292,7 @@ def train_and_fit(args):
                     "amp": amp.state_dict() if amp is not None else amp,
                 },
                 os.path.join(
-                    "./pretrained_data/2022_Kfold/relation/",
+                    f"./pretrained_data/2022_Kfold/relation/{kfold.select}/",
                     "task_test_model_best_%d.pth.tar" % args.model_no,
                 ),
             )
@@ -318,7 +320,7 @@ def train_and_fit(args):
                     "amp": amp.state_dict() if amp is not None else amp,
                 },
                 os.path.join(
-                    "./pretrained_data/2022_Kfold/relation/",
+                    f"./pretrained_data/2022_Kfold/relation/{kfold.select}/",
                     "task_test_checkpoint_%d.pth.tar" % args.model_no,
                 ),
             )
@@ -333,7 +335,7 @@ def train_and_fit(args):
     ax.set_title("Training Loss vs Epoch", fontsize=32)
     plt.savefig(
         os.path.join(
-            "./pretrained_data/2022_Kfold/relation/",
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/",
             "task_loss_vs_epoch_%d.png" % args.model_no,
         )
     )
@@ -349,7 +351,7 @@ def train_and_fit(args):
     ax2.set_title("Training Accuracy vs Epoch", fontsize=32)
     plt.savefig(
         os.path.join(
-            "./pretrained_data/2022_Kfold/relation/",
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/",
             "task_train_accuracy_vs_epoch_%d.png" % args.model_no,
         )
     )
@@ -363,7 +365,7 @@ def train_and_fit(args):
     ax3.set_title("Test F1 vs Epoch", fontsize=32)
     plt.savefig(
         os.path.join(
-            "./pretrained_data/2022_Kfold/relation/",
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/",
             "task_test_f1_vs_epoch_%d.png" % args.model_no,
         )
     )

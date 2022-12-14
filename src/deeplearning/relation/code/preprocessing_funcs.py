@@ -611,7 +611,7 @@ class Pad_Sequence:
 
 def load_dataloaders(args, max_length=50000):
 
-    if not os.path.isfile("./pretrained_data/2022_Kfold/relation/D.pkl"):
+    if not os.path.isfile(f"./pretrained_data/2022_Kfold/relation/D.pkl"):
         logger.info("Loading pre-training data...")
         with open(args.pretrain_data, "r", encoding="utf8") as f:
             text = f.readlines()
@@ -646,7 +646,7 @@ def load_dataloaders(args, max_length=50000):
         save_as_pickle("D.pkl", D)
         logger.info(
             "Saved pre-training corpus to %s"
-            % "./pretrained_data/2022_Kfold/relation/D.pkl"
+            % f"./pretrained_data/2022_Kfold/relation/D.pkl"
         )
     else:
         logger.info("Loaded pre-training data from saved file")

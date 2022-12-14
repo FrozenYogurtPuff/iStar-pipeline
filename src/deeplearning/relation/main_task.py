@@ -7,12 +7,11 @@ Created on Mon Dec  2 17:40:16 2019
 """
 import itertools
 import logging
+import pickle
 from argparse import ArgumentParser
 
-from src.deeplearning.relation.code.tasks.infer import (
-    FewRel,
-    infer_from_trained,
-)
+from src.deeplearning.relation import kfold
+from src.deeplearning.relation.code.tasks.infer import infer_from_trained
 from src.deeplearning.relation.code.tasks.trainer import train_and_fit
 
 """
@@ -34,7 +33,7 @@ parser.add_argument(
 parser.add_argument(
     "--train_data",
     type=str,
-    default="./pretrained_data/2022_Kfold/relation/admin.jsonl",
+    default=f"./pretrained_data/2022_Kfold/relation/admin.jsonl",
     help="training data .txt file path",
 )
 parser.add_argument(
@@ -131,27 +130,72 @@ def proceed_sentence(text: str, entities: list):
 
 
 if __name__ == "__main__":
+    K = 10
 
-    if (args.train == 1) and (args.task != "fewrel"):
+    # if (args.train == 1) and (args.task != "fewrel"):
+    #     net = train_and_fit(args)
+    #
+    # if (args.infer == 1) and (args.task != "fewrel"):
+    #     # 从 pickle 加载所需模型配置
+    #     inferer = infer_from_trained(args, detect_entities=True)
+    #
+    #     test = "The surprise [E1]visit[/E1] caused a [E2]frenzy[/E2] on the already chaotic trading floor."
+    #     inferer.infer_sentence(test, detect_entities=False)
+    #     test2 = "After eating the chicken, he developed a sore throat the next morning."
+    #     inferer.infer_sentence(test2, detect_entities=True)
+    #
+    #     while True:
+    #         sent = input(
+    #             "Type input sentence ('quit' or 'exit' to terminate):\n"
+    #         )
+    #         if sent.lower() in ["quit", "exit"]:
+    #             break
+    #         inferer.infer_sentence(sent, detect_entities=False)
+    #
+    # if args.task == "fewrel":
+    #     fewrel = FewRel(args)
+    #     meta_input, e1_e2_start, meta_labels, outputs = fewrel.evaluate()
+
+    # 评估
+    p_all, r_all, f1_all = list(), list(), list()
+    for i in range(K):
+        kfold.select = i
         net = train_and_fit(args)
+        inferer = infer_from_trained(args, detect_entities=False)
+        tp, fp, tn, fn = 0, 0, 0, 0
+        with open(
+            f"pretrained_data/2022/relation/{i}/df_test.pkl", "rb"
+        ) as pkl_file:
+            test = pickle.load(pkl_file)
+            for index, row in test.iterrows():
+                sents = row["sents"]
+                relations = row["relations"]
+                trues = row["relations_id"]  # no: 1; dependency: 0; isa: 2
+                preds = inferer.infer_sentence(sents, detect_entities=False)
+                if trues == 1:
+                    if trues == preds:
+                        tn += 1
+                    else:
+                        fp += 1
+                elif preds == 1:
+                    # trues != 1
+                    fn += 1
+                else:
+                    if trues == preds:
+                        tp += 1
+                    else:
+                        fp += 1
 
-    if (args.infer == 1) and (args.task != "fewrel"):
-        # 从 pickle 加载所需模型配置
-        inferer = infer_from_trained(args, detect_entities=True)
+            p = tp / (tp + fp)
+            r = tp / (tp + fn)
+            f1 = 2 * p * r / (p + r)
 
-        test = "The surprise [E1]visit[/E1] caused a [E2]frenzy[/E2] on the already chaotic trading floor."
-        inferer.infer_sentence(test, detect_entities=False)
-        test2 = "After eating the chicken, he developed a sore throat the next morning."
-        inferer.infer_sentence(test2, detect_entities=True)
+        p_all.append(p)
+        r_all.append(r)
+        f1_all.append(f1)
 
-        while True:
-            sent = input(
-                "Type input sentence ('quit' or 'exit' to terminate):\n"
-            )
-            if sent.lower() in ["quit", "exit"]:
-                break
-            inferer.infer_sentence(sent, detect_entities=False)
-
-    if args.task == "fewrel":
-        fewrel = FewRel(args)
-        meta_input, e1_e2_start, meta_labels, outputs = fewrel.evaluate()
+    assert len(p_all) == len(r_all) == len(f1_all) == K
+    p_avg = sum(p_all) / len(p_all)
+    r_avg = sum(r_all) / len(r_all)
+    f1_avg = sum(f1_all) / len(f1_all)
+    print(str(p_avg), str(r_avg), str(f1_avg))

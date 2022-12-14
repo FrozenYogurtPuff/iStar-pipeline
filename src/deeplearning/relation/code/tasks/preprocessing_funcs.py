@@ -18,6 +18,8 @@ from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 
+from src.deeplearning.relation import kfold
+
 from ..misc import load_pickle, save_as_pickle
 
 tqdm.pandas(desc="prog_bar")
@@ -561,15 +563,11 @@ def load_dataloaders(args):
 
     # SemEval 采用监督学习
     if args.task == "semeval" or args.task == "istar":
-        select = 0
-
         # 加载数据集
         relations_path = f"./pretrained_data/2022_Kfold/relation/relations.pkl"
-        train_path = (
-            f"./pretrained_data/2022_Kfold/relation/{select}/df_train.pkl"
-        )
+        train_path = f"./pretrained_data/2022_Kfold/relation/{kfold.select}/df_train.pkl"
         test_path = (
-            f"./pretrained_data/2022_Kfold/relation/{select}/df_test.pkl"
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/df_test.pkl"
         )
         if (
             os.path.isfile(relations_path)
@@ -577,8 +575,8 @@ def load_dataloaders(args):
             and os.path.isfile(test_path)
         ):
             rm = load_pickle("relations.pkl")
-            df_train = load_pickle(f"{select}/df_train.pkl")
-            df_test = load_pickle(f"{select}/df_test.pkl")
+            df_train = load_pickle(f"{kfold.select}/df_train.pkl")
+            df_test = load_pickle(f"{kfold.select}/df_test.pkl")
             logger.info("Loaded preproccessed data.")
         elif args.task == "semeval":
             df_train, df_test, rm = preprocess_semeval2010_8(args)
@@ -588,8 +586,8 @@ def load_dataloaders(args):
             raise Exception("Illegal task condition")
 
         rm = load_pickle(f"relations.pkl")
-        df_train = load_pickle(f"{select}/df_train.pkl")
-        df_test = load_pickle(f"{select}/df_test.pkl")
+        df_train = load_pickle(f"{kfold.select}/df_train.pkl")
+        df_test = load_pickle(f"{kfold.select}/df_test.pkl")
 
         train_set = semeval_dataset(
             df_train, tokenizer=tokenizer, e1_id=e1_id, e2_id=e2_id

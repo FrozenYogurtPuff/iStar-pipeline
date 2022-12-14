@@ -30,7 +30,7 @@ logger = logging.getLogger("__file__")
 
 def load_pickle(filename):
     completeName = os.path.join(
-        "./pretrained_data/2022_Kfold/relation/", filename
+        f"./pretrained_data/2022_Kfold/relation/{kfold.select}/", filename
     )
     with open(completeName, "rb") as pkl_file:
         data = pickle.load(pkl_file)
@@ -343,7 +343,7 @@ class FewRel(object):
             )
 
         if os.path.isfile(
-            "./pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
+            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/%s_tokenizer.pkl"
             % model_name
         ):
             self.tokenizer = load_pickle("%s_tokenizer.pkl" % model_name)
@@ -382,7 +382,7 @@ class FewRel(object):
                 % args.model_no
             )
             checkpoint_path = (
-                "./pretrained_data/2022_Kfold/relation/test_checkpoint_%d.pth.tar"
+                f"./pretrained_data/2022_Kfold/relation/{kfold.select}/test_checkpoint_%d.pth.tar"
                 % self.args.model_no
             )
             checkpoint = torch.load(checkpoint_path)

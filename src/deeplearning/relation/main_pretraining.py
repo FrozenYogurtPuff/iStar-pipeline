@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--pretrain_data",
         type=str,
-        default="./pretrained_data/2022_Kfold/relation/cnn.txt",
+        default=f"./pretrained_data/2022_Kfold/relation/{kfold.select}/cnn.txt",
         help="pre-training data .txt file path",
     )
     parser.add_argument(
