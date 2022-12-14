@@ -6,7 +6,7 @@ import spacy
 from src.rules.config import actor_plugins
 from src.rules.dispatch import dispatch
 from src.rules.utils.seq import is_entity_type_ok
-from src.utils.spacy import char_idx_to_word_idx
+from src.utils.spacy_utils import char_idx_to_word_idx
 from src.utils.typing import DatasetEntityLabel, EntityFix, Span
 
 logger = logging.getLogger(__name__)

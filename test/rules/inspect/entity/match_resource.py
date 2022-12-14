@@ -4,7 +4,7 @@ from test.rules.inspect.utils import cache_nlp, dep_list
 from test.rules.utils.load_dataset import load_dataset
 from typing import Literal
 
-from src.utils.spacy import char_idx_to_word, get_spacy, include_elem
+from src.utils.spacy_utils import char_idx_to_word, get_spacy, include_elem
 
 logger = logging.getLogger(__name__)
 

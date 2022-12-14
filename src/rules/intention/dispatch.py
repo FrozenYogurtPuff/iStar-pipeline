@@ -7,7 +7,7 @@ import spacy_alignments as tokenizations
 from src.deeplearning.entity.infer.result import BertResult
 from src.rules.dispatch import dispatch
 from src.rules.intention.aux_slice.dispatch import dispatch as dispatch_slice
-from src.utils.spacy import get_spacy
+from src.utils.spacy_utils import get_spacy
 from src.utils.typing import RulePlugins
 
 logger = logging.getLogger(__name__)

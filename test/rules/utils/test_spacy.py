@@ -3,7 +3,7 @@ from collections.abc import Sequence
 
 import spacy
 
-from src.utils.spacy import (
+from src.utils.spacy_utils import (
     get_bio_sent_from_char_spans,
     idx_valid,
     include_elem,

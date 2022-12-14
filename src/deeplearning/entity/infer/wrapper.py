@@ -7,7 +7,7 @@ from src.deeplearning.entity.infer.base import InferBase
 from src.deeplearning.entity.infer.intention import InferIntention
 from src.deeplearning.entity.infer.resource import InferResource
 from src.deeplearning.entity.infer.result import BertResult
-from src.utils.spacy import get_bio_sent_from_char_spans
+from src.utils.spacy_utils import get_bio_sent_from_char_spans
 
 logger = logging.getLogger(__name__)
 
@@ -62,9 +62,9 @@ class Wrapper(ABC):
 
 
 class ActorWrapper(Wrapper):
-    def __init__(self):
+    def __init__(self, data=None, model=None, label=None):
         super().__init__()
-        self.inferrer = InferActor()
+        self.inferrer = InferActor(data, model, label)
 
 
 class ActorCombinedWrapper(Wrapper):

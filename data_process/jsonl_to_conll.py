@@ -4,7 +4,7 @@ import random
 import spacy
 from spacy.tokens import Span
 
-from src.utils.spacy import char_idx_to_word_idx
+from src.utils.spacy_utils import char_idx_to_word_idx
 
 INPUT = "../pretrained_data/2022/actor/divided_fix/all.jsonl"
 OUTPUT1 = "../pretrained_data/2022/actor/divided_fix/train.txt"

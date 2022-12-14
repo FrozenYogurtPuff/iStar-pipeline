@@ -1,0 +1,219 @@
+{"id": 5, "text": "After a complaint is initiated, police initiates the investigation process.", "labels": [[32, 38, "Role"]]}
+{"id": 10, "text": "It makes reporting easy for police by enabling them to execute different types of queries such as monthly reporting, RTI related etc.", "labels": [[28, 34, "Role"]]}
+{"id": 15, "text": "The Navigation module of the CCTNS provides role based landing pages which help in navigating through the CCTNS application.", "labels": [[0, 34, "Agent"], [102, 123, "Agent"]]}
+{"id": 20, "text": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.", "labels": [[0, 20, "Role"], [49, 54, "Role"], [72, 87, "Agent"], [129, 148, "Role"]]}
+{"id": 25, "text": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.", "labels": [[0, 10, "Agent"]]}
+{"id": 30, "text": "The System must at a minimum be able to provide reports for actions on cases organised.", "labels": [[0, 10, "Agent"]]}
+{"id": 35, "text": "The System must allow only admin-users to set up user profiles and allocate users to groups.", "labels": [[0, 10, "Agent"], [27, 38, "Role"], [85, 91, "Role"], [76, 81, "Role"]]}
+{"id": 40, "text": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.", "labels": [[3, 13, "Agent"], [21, 26, "Role"]]}
+{"id": 46, "text": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines.", "labels": [[0, 25, "Agent"], [47, 71, "Role"]]}
+{"id": 51, "text": "The user interfaces should be designed to make them user-intuitive.", "labels": [[0, 19, "Agent"]]}
+{"id": 56, "text": "Customer: A customer is an individual wishing to purchase inventory from GAMMA-J\u2019s Web Store.", "labels": [[0, 8, "Role"], [12, 20, "Role"], [73, 92, "Agent"]]}
+{"id": 61, "text": "Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.", "labels": [[101, 118, "Role"]]}
+{"id": 66, "text": "Products will be stored in multi-tiered categories; a category can contain sub categories or products. The inventory management will allow for administrators to update the categories, the products placed in categories, and the specific product details.", "labels": [[0, 8, "Role"], [103, 127, "Agent"], [143, 157, "Role"]]}
+{"id": 71, "text": "Order confirmation will allow the customer to review their order after checkout prior to confirmation.", "labels": [[0, 18, "Agent"], [30, 42, "Role"]]}
+{"id": 76, "text": "The interface must remain consistent among various web browsers and be intuitive to the customer.", "labels": [[0, 13, "Agent"], [84, 96, "Role"]]}
+{"id": 81, "text": "The system will implement an Application Interface to allow for various plug-ins to interact with the system.", "labels": [[0, 10, "Agent"], [64, 80, "Role"], [98, 108, "Agent"]]}
+{"id": 86, "text": "Inventory administrators can be affected to any administrative or organizational level according to their assigned tasks", "labels": [[0, 24, "Role"]]}
+{"id": 91, "text": "Any administrative level user or inventory user can edit an asset that belongs to its department", "labels": [[4, 29, "Role"], [33, 47, "Role"]]}
+{"id": 96, "text": "Any faculty member can add all related departments inventory", "labels": [[4, 18, "Role"]]}
+{"id": 102, "text": "IT group members can create a new space and modify floor structure when they receive an exception request from any administrative level", "labels": [[0, 16, "Role"], [111, 135, "Role"]]}
+{"id": 107, "text": "The THEMAS system shall control the heating and cooling units that are defined as part of the THEMAS system.", "labels": [[0, 17, "Agent"]]}
+{"id": 112, "text": "The MultiMahjongServer will allow players on MultiMahjongClient programs to chat with each other in real time.", "labels": [[0, 22, "Agent"], [34, 72, "Role"]]}
+{"id": 117, "text": "When a user selects the option to join an existing game, the MultiMahjongClient will retrieve a list of any games that still require players from the MultiMahjongServer.", "labels": [[5, 11, "Role"], [57, 79, "Agent"], [146, 168, "Agent"]]}
+{"id": 122, "text": "Users who create a new game will be able to choose to play different variations of Mahjong rules other than those described.", "labels": [[0, 5, "Role"]]}
+{"id": 127, "text": "User's will be able to pick up a tile from the wall if it is their turn.", "labels": [[0, 6, "Role"]]}
+{"id": 132, "text": "The user will be able to end the game at any stage of the game.", "labels": [[0, 8, "Role"]]}
+{"id": 137, "text": "The user who created the game will decide at what level the CO will play at.", "labels": [[0, 29, "Role"]]}
+{"id": 142, "text": "The TCS shall allow authorized operators to install software upgrades via CD-ROM as well as other media storage devices.", "labels": [[0, 7, "Agent"], [20, 40, "Role"]]}
+{"id": 147, "text": "The TCS shall allow the Operator to fully control the VCR via the TCS Display input device.", "labels": [[0, 7, "Agent"], [20, 32, "Role"], [62, 90, "Agent"]]}
+{"id": 152, "text": "Control function allows an operator or an automatic function to operate equipment like switchgear or transformer, a protection, etc.", "labels": [[0, 16, "Agent"], [24, 60, "Role"]]}
+{"id": 157, "text": "The APAF system web server shall be password protected where appropriate to allow only pertinent ASPERA-3 team members access.", "labels": [[0, 26, "Agent"], [82, 118, "Role"]]}
+{"id": 162, "text": "The File/Delete menu item shall provide an interface for deleting a selected file.", "labels": [[0, 25, "Agent"]]}
+{"id": 167, "text": "The user shall be able to initiate processes from an interface provided by the HATS-GUI.", "labels": [[0, 8, "Role"], [75, 87, "Agent"]]}
+{"id": 172, "text": "The GUI shall allow the user to create, modify, copy, or delete applications or files regardless of the current status of HATS-SML.", "labels": [[0, 7, "Agent"], [20, 28, "Role"]]}
+{"id": 177, "text": "When a user selects the View/Text menu option, the HATS-GUI shall prompt a user to select a pretty-printed text file in the current application.", "labels": [[5, 11, "Role"], [47, 59, "Agent"], [73, 79, "Role"]]}
+{"id": 182, "text": "The user shall be prompted to enter a text string describing a string pattern.", "labels": [[0, 8, "Role"]]}
+{"id": 187, "text": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline.", "labels": [[8, 20, "Agent"], [87, 95, "Role"]]}
+{"id": 192, "text": "The user will be given a problem and then must click the correct solution.", "labels": [[0, 8, "Role"]]}
+{"id": 197, "text": "The BE shall respond to incoming correlator mode changes, user optional processing sequence and/or parameter changes, and other external inputs that affect the data processing pipeline.", "labels": [[0, 6, "Agent"]]}
+{"id": 202, "text": "The administrator shall have the ability to block all access to the system for all users or selectively by user.", "labels": [[0, 17, "Role"], [79, 111, "Role"]]}
+{"id": 207, "text": "Allow agents to join and leave multicast group.", "labels": [[6, 12, "Role"], [31, 46, "Role"]]}
+{"id": 212, "text": "AgentMom shall support the ability to receive multicast message from multiple groups.", "labels": [[0, 8, "Agent"], [69, 84, "Role"]]}
+{"id": 217, "text": "The user must undo and redo its last thousand actions.", "labels": [[0, 8, "Role"]]}
+{"id": 222, "text": "The user can redo a movement that has been canceled.", "labels": [[0, 8, "Role"]]}
+{"id": 227, "text": "The system must track the workflow between senders and related replies.", "labels": [[0, 10, "Agent"], [43, 50, "Role"], [55, 70, "Role"]]}
+{"id": 232, "text": "The closest color tool allows the user to locate an arbitrary number of close colors to given a paint number, collection in a target collection.", "labels": [[0, 22, "Agent"], [30, 38, "Role"]]}
+{"id": 237, "text": "Administrative users can give other users administrative access up to their own access level only.", "labels": [[0, 20, "Role"], [30, 41, "Role"]]}
+{"id": 242, "text": "Fulfilment Notification is sent by the Despatch Point (Seller) to inform the Delivery Point (Buyer) that goods have been despatched or delivered or that a service has been performed.", "labels": [[35, 53, "Role"], [73, 91, "Role"]]}
+{"id": 247, "text": "Scientific users will use the system to manage input data, run simulations, visualize results, and manage output data.", "labels": [[0, 16, "Role"], [26, 36, "Agent"]]}
+{"id": 252, "text": "Scenario where the user wants to publish output data for the community, i.e. directly publish the data on dataportal.", "labels": [[15, 23, "Role"]]}
+{"id": 257, "text": "Users can select to share specific objects with other users.", "labels": [[0, 5, "Role"], [48, 59, "Role"]]}
+{"id": 262, "text": "The system shall allow the user to change the project details for unlocked projects.", "labels": [[0, 10, "Agent"], [23, 31, "Role"]]}
+{"id": 267, "text": "Court Case Management System, External system used by the Criminal Justice community to manage case information from initial arrest through final disposition.", "labels": [[0, 28, "Agent"], [54, 84, "Agent"], [30, 45, "Agent"]]}
+{"id": 272, "text": "Detention Facility Officer, Person responsible for processing a Defendant into custody.", "labels": [[0, 26, "Role"]]}
+{"id": 277, "text": "Magistrate, Person responsible for informing the Defendant of their right to an appointed counsel and determination of indigent status.", "labels": [[0, 10, "Role"], [45, 58, "Role"]]}
+{"id": 282, "text": "Office of Attorney Appointments receives/reviews the Request for Appointed Counsel.", "labels": [[0, 31, "Role"]]}
+{"id": 288, "text": "Display a list of emoticons to choose from when the user wants to include an emoticon in the message he is writing.", "labels": [[48, 56, "Role"]]}
+{"id": 293, "text": "The system shall have a Graphical User Interface (GUI) that allows the operator to view system status, issue commands to change device status, configure the system, export log data, and generate reports.", "labels": [[0, 10, "Agent"], [24, 54, "Agent"], [67, 79, "Role"]]}
+{"id": 305, "text": "Ability to assign analysts to user groups created by the administrator", "labels": [[30, 41, "Role"], [53, 70, "Role"]]}
+{"id": 319, "text": "The system shall allow all users to have different access levels to the projects.", "labels": [[0, 10, "Agent"], [23, 32, "Role"]]}
+{"id": 324, "text": "The system shall allow the analysts to request a new classification type of goals and also allow the project manager to create that classification type.", "labels": [[0, 10, "Agent"], [23, 35, "Role"], [97, 116, "Role"]]}
+{"id": 329, "text": "The system shall provide the ability to delete a scenario from a project without deleting it from the system", "labels": [[0, 10, "Agent"], [98, 108, "Agent"]]}
+{"id": 334, "text": "The Clarus system shall collect, quality control, and disseminate environmental data.", "labels": [[0, 17, "Agent"]]}
+{"id": 339, "text": "The Clarus system shall allow access to new surface transportation related observed environmental data.", "labels": [[0, 17, "Agent"]]}
+{"id": 344, "text": "The Clarus system shall acquire and disseminate National Weather Service (NWS) watches, warnings, and advisories.", "labels": [[0, 17, "Agent"]]}
+{"id": 349, "text": "The Clarus system shall accept environmental data from railway systems or in situ ESS along tracks.", "labels": [[0, 17, "Agent"], [55, 70, "Role"], [77, 98, "Role"]]}
+{"id": 354, "text": "The Clarus system shall accept environmental data from transit vehicles.", "labels": [[0, 17, "Agent"], [55, 71, "Role"]]}
+{"id": 359, "text": "The Clarus system shall provide notification of data quality conditions to data collectors.", "labels": [[0, 17, "Agent"], [75, 90, "Role"]]}
+{"id": 364, "text": "The Clarus system shall record the methods applied when deriving quality control information.", "labels": [[0, 17, "Agent"]]}
+{"id": 369, "text": "The Clarus system shall be able to base its quality control process on historical environmental data.", "labels": [[0, 17, "Agent"]]}
+{"id": 374, "text": "The Clarus system shall be able to disseminate data based on spatial queries.", "labels": [[0, 17, "Agent"]]}
+{"id": 379, "text": "The Clarus system shall be able to restrict environmental data publication based on source.", "labels": [[0, 17, "Agent"]]}
+{"id": 384, "text": "The Clarus system shall acquire, process, and disseminate atmospheric data.", "labels": [[0, 17, "Agent"]]}
+{"id": 389, "text": "The Clarus system shall acquire, process, and disseminate hydrologic metadata.", "labels": [[0, 17, "Agent"]]}
+{"id": 394, "text": "The Clarus system shall accept data through a Clarus standard interface.", "labels": [[0, 17, "Agent"], [44, 71, "Role"]]}
+{"id": 399, "text": "The Clarus system shall transfer data as efficiently as possible.", "labels": [[0, 17, "Agent"]]}
+{"id": 404, "text": "The Clarus system shall enable environmental data queries by location reference.", "labels": [[0, 17, "Agent"]]}
+{"id": 409, "text": "The Clarus system shall allow users to create a data subscription request.", "labels": [[0, 17, "Agent"], [30, 35, "Role"]]}
+{"id": 414, "text": "The Clarus system shall disseminate data in response to a scheduled request.", "labels": [[0, 17, "Agent"]]}
+{"id": 419, "text": "The Clarus system shall be able to publish environmental data at three times the volume rate that it collects it.", "labels": [[0, 17, "Agent"]]}
+{"id": 424, "text": "The Clarus system shall be able to complete an automated quality control check of environmental data within ten seconds of data receipt.", "labels": [[0, 17, "Agent"]]}
+{"id": 429, "text": "The Clarus system shall be able to support six thousand registered users.", "labels": [[0, 17, "Agent"]]}
+{"id": 434, "text": "The Clarus program shall provide an environment that has redundant communication for the Clarus system.", "labels": [[0, 18, "Agent"], [85, 102, "Agent"]]}
+{"id": 439, "text": "The Clarus program shall define data quality assurance methods and criteria.", "labels": [[0, 18, "Agent"]]}
+{"id": 444, "text": "The Clarus program standards shall support multiple methods of data delivery to users.", "labels": [[0, 28, "Role"], [80, 85, "Role"]]}
+{"id": 449, "text": "The product should allow the grid to be oriented by the user. Rotation, zoom and move functions should be employed.", "labels": [[0, 11, "Agent"], [52, 60, "Role"]]}
+{"id": 454, "text": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.", "labels": [[81, 87, "Role"], [92, 99, "Role"], [0, 12, "Agent"]]}
+{"id": 459, "text": "The VSP will submit the claim to VMIU field office to enter those into the database", "labels": [[0, 7, "Agent"], [33, 50, "Agent"]]}
+{"id": 464, "text": "To understand the satisfaction of client the MSIU Admin team will get client feedback from some of the clients and send those documents to field office to enter those into database.", "labels": [[41, 60, "Agent"], [91, 110, "Role"], [139, 151, "Agent"]]}
+{"id": 469, "text": "All employees shall be allowed to use the Daily Reminders.", "labels": [[4, 13, "Role"]]}
+{"id": 474, "text": "Systems supporting OM must be able to exchange aggregated data.", "labels": [[0, 21, "Agent"]]}
+{"id": 480, "text": "Systems supporting OM must have the ability to print questionnaires for multiple uses, including taking to the field, use during phone interviews, etc.", "labels": [[0, 21, "Agent"]]}
+{"id": 485, "text": "Systems supporting OM should provide a manual or automatic means of updating the status of case records as the case definition changes.", "labels": [[0, 21, "Agent"]]}
+{"id": 490, "text": "The user shall be able to switch between predefined project lists.", "labels": [[0, 8, "Role"]]}
+{"id": 495, "text": "The system shall be capable of creating cost and deterioration elicitation records for Pontis users.", "labels": [[0, 10, "Agent"], [87, 99, "Role"]]}
+{"id": 500, "text": "The user shall be able to edit or delete existing programs.", "labels": [[0, 8, "Role"]]}
+{"id": 505, "text": "The administrator shall be able to create and edit new application roles.", "labels": [[0, 17, "Role"]]}
+{"id": 510, "text": "The user shall be able to modify his or her basic account profile.", "labels": [[0, 8, "Role"]]}
+{"id": 515, "text": "The system shall be capable of authorizing access to Pontis functionalities depending on the user\u2019s privileges during log-in process.", "labels": [[0, 10, "Agent"]]}
+{"id": 520, "text": "The user locates a solution to a problem with the help function.", "labels": [[0, 8, "Role"], [46, 63, "Agent"]]}
+{"id": 527, "text": "User SHOULD be able to specify when he is to start a research project; i.e. when the web sites he visits subsequently are to be permanently stored.", "labels": [[0, 4, "Role"]]}
+{"id": 532, "text": "Watershed uploaders have responsibility to upload local data requiring write access to space allocated to their specific watershed.", "labels": [[0, 19, "Role"]]}
+{"id": 544, "text": "The system shall display all the products that can be configured.", "labels": [[0, 10, "Agent"]]}
+{"id": 549, "text": "The system shall allow user to update the configuration to resolve conflict in the current configuration.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 554, "text": "The system shall enable user to enter the search text on the screen.", "labels": [[0, 10, "Agent"], [24, 28, "Role"]]}
+{"id": 559, "text": "The system shall notify the user when no matching product is found on the search.", "labels": [[0, 10, "Agent"], [24, 32, "Role"]]}
+{"id": 564, "text": "The system shall allow user to select the order from the order history.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 569, "text": "The system shall allow user to select the support type he wants.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 574, "text": "The system shall display the FAQ\u2019s upon request.", "labels": [[0, 10, "Agent"]]}
+{"id": 579, "text": "The system shall provide shopping cart during online purchase.", "labels": [[0, 10, "Agent"]]}
+{"id": 584, "text": "The system shall display tentative duration for shipping.", "labels": [[0, 10, "Agent"]]}
+{"id": 589, "text": "The system shall display available payment methods for payment.", "labels": [[0, 10, "Agent"]]}
+{"id": 594, "text": "The system shall allow user to change shipping, payment method.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 599, "text": "The system shall allow user to select the financing option.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 604, "text": "The system shall allow user to confirm the purchase.", "labels": [[0, 10, "Agent"], [23, 27, "Role"]]}
+{"id": 609, "text": "The system shall provide handicap access.", "labels": [[0, 10, "Agent"]]}
+{"id": 614, "text": "The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.", "labels": [[0, 10, "Agent"]]}
+{"id": 619, "text": "The system shall use secure sockets in all transactions that include any confidential customer information.", "labels": [[0, 10, "Agent"]]}
+{"id": 624, "text": "The system shall allow a user to make public emergency point-to-point voice calls.", "labels": [[0, 10, "Agent"], [23, 30, "Role"]]}
+{"id": 629, "text": "ETCS shall be able to supervise train and shunting movements.", "labels": [[0, 4, "Agent"]]}
+{"id": 635, "text": "Once received onboard the national values shall remain valid even if the onboard equipment is switched off.", "labels": [[69, 90, "Agent"]]}
+{"id": 640, "text": "The DUAP Input Services shall be able to collect probe vehicle data from The Rapid Transit using the \u201cThe Rapid Transit\u201d interface.", "labels": [[0, 23, "Role"], [97, 130, "Agent"], [73, 90, "Agent"]]}
+{"id": 645, "text": "The DUAP Input Services shall be able to collect probe vehicle data from the car rental fleets using the car rental fleets\u2019 interfaces.", "labels": [[0, 23, "Role"], [101, 134, "Role"], [73, 94, "Role"]]}
+{"id": 650, "text": "The DUAP Input Services shall be able to collect weather data from MDOT Aeronautics Automated Weather Observing System (AWOS) using the AWOS interface.", "labels": [[0, 23, "Role"], [132, 150, "Agent"], [67, 125, "Agent"]]}
+{"id": 655, "text": "The DUAP Input Services shall be able to collect roadway traffic data from the Western Michigan Traffic Management System (WMTMS) using the WMTMS interface.", "labels": [[0, 23, "Role"], [136, 155, "Agent"], [75, 129, "Agent"]]}
+{"id": 660, "text": "The DUAP Input Services shall be able to collect traffic data from the Statewide TMC system using the Statewide TMC interface.", "labels": [[0, 23, "Role"], [98, 125, "Agent"], [67, 91, "Agent"]]}
+{"id": 665, "text": "The DUAP System shall log Input Services data transactions.", "labels": [[0, 15, "Agent"]]}
+{"id": 670, "text": "The DUAP System shall derive traffic data from probe vehicle data.", "labels": [[0, 15, "Agent"]]}
+{"id": 675, "text": "The DUAP Presentation Services shall include a user interface for browsing traffic information.", "labels": [[0, 30, "Role"]]}
+{"id": 680, "text": "The System shall provide the capability to operate in an Open Mode, within which authorized customers shall be allowed read-only access to requested Data Products. This is the nominal system mode.", "labels": [[0, 10, "Agent"]]}
+{"id": 685, "text": "The System shall be capable of defining Data Products for Ingest.", "labels": [[0, 10, "Agent"]]}
+{"id": 690, "text": "The System shall be capable of rendering Platte Carre projections.", "labels": [[0, 10, "Agent"]]}
+{"id": 695, "text": "The System shall be capable of generating NOAA-Unique and Tailored Data Products with Government-specified grid spacing.", "labels": [[0, 10, "Agent"]]}
+{"id": 707, "text": "Prompts a request for resubmission to the Content Originator if an error of transmission or receipt occurs", "labels": [[38, 60, "Role"]]}
+{"id": 715, "text": "Has the option of sending a configurable automatic system confirmation receipt of SIP to producer based on type of resource, file, producer, etc.", "labels": [[89, 97, "Role"]]}
+{"id": 725, "text": "Receives AIPs from Ingest.", "labels": [[19, 25, "Agent"]]}
+{"id": 737, "text": "The query request may require data to be sourced from different storage locations.", "labels": [[0, 17, "Agent"], [54, 81, "Role"]]}
+{"id": 748, "text": "Maintains configuration management of the system hardware and software.", "labels": [[38, 70, "Agent"]]}
+{"id": 766, "text": "Submits change requests, procedures and tools to Archive Information Update.", "labels": [[49, 75, "Agent"]]}
+{"id": 771, "text": "Coordinates the removal of an AIP with the maintenance of metadata held in other systems.  Provides an alert that other systems need to be updated.", "labels": [[75, 88, "Agent"], [114, 127, "Agent"]]}
+{"id": 778, "text": "Actors in the capacity of course administrator or professor should be able to enable multiple file uploads on a page of his or her choosing.", "labels": [[0, 59, "Role"]]}
+{"id": 783, "text": "Actors in the role of course administrators should have the ability to determine which of these components have feeds and to whom these feeds should pertain.", "labels": [[0, 43, "Role"]]}
+{"id": 788, "text": "The system must display a search box on every page after an actor has logged in.", "labels": [[0, 10, "Agent"], [57, 65, "Role"]]}
+{"id": 793, "text": "Course administrators should be able to post grades for an assignment based on the ratio of points earned to points possible.", "labels": [[0, 21, "Role"]]}
+{"id": 798, "text": "The system should maintain a history of grades for a particular assignment if the course administrator changes them.", "labels": [[0, 10, "Agent"], [78, 102, "Role"]]}
+{"id": 803, "text": "Students should be able to select in their preferences whether notifications are sent to their mobile telephone (via SMS) or e-mail account.", "labels": [[0, 8, "Role"]]}
+{"id": 808, "text": "The system should be backed up with a frequency that ensures system and course data is protected.", "labels": [[0, 10, "Agent"]]}
+{"id": 813, "text": "The system will be used to track and analyze long-term trends in permitted and actual water use and to assist in identifying underlying causes for these trends.", "labels": [[0, 10, "Agent"]]}
+{"id": 818, "text": "The system will provide standard reports that are published as hardcopy or web-accessible documents.", "labels": [[0, 10, "Agent"]]}
+{"id": 828, "text": "Provide the ability for applicants or District staff to compare the percentage a permit is over-pumping, based on use type, against the regional average for the same use type.", "labels": [[24, 52, "Role"]]}
+{"id": 834, "text": "The CAISO shall from time to time undertake performance tests, with or without prior notification.", "labels": [[0, 9, "Agent"]]}
+{"id": 839, "text": "Developers: in order to be sure they are developing the right project that fulfills requirements provided in this document.", "labels": [[0, 10, "Role"]]}
+{"id": 844, "text": "User can create a new database locked by a Master Key.", "labels": [[0, 4, "Role"]]}
+{"id": 849, "text": "Advanced end users: users that are familiar with programming and can personalize their database by creating auto-types, using command line options and generally can use features and maybe expand their use by adding more functions.", "labels": [[0, 18, "Role"], [20, 25, "Role"]]}
+{"id": 854, "text": "Industry: for one-time passwords that can be used for testing controls or for expired entries to gain access in particular systems and programs.", "labels": [[0, 8, "Role"]]}
+{"id": 859, "text": "Service Registry encapsulates the resource and service information for each CDN.", "labels": [[0, 16, "Agent"], [71, 79, "Role"]]}
+{"id": 864, "text": "Policy Repository returns existing peering policies to the PA during the establishment of long-term peering arrangements.", "labels": [[0, 17, "Agent"], [55, 61, "Agent"]]}
+{"id": 869, "text": "Service Registry: Registers available local resources at the CDN provider and updates them.", "labels": [[0, 16, "Agent"], [57, 73, "Agent"]]}
+{"id": 874, "text": "Web server sends initialization request to the mediator to trigger peering.", "labels": [[0, 10, "Role"], [43, 55, "Role"]]}
+{"id": 879, "text": "Local Peering Agent communicates with the Peering Agent of peers to discover external resources.", "labels": [[0, 19, "Agent"], [38, 64, "Role"]]}
+{"id": 884, "text": "If the user requests can not be accepted according the provider policies, service requirements are not passed to the local Peering Agent.", "labels": [[3, 20, "Role"], [113, 136, "Agent"]]}
+{"id": 889, "text": "Peering Agent exchange accounting information to perform billing based on negotiated relationships.", "labels": [[0, 13, "Agent"]]}
+{"id": 894, "text": "User can click on [ Logout ] link, so that he/she logged out from the system.", "labels": [[0, 4, "Role"], [66, 76, "Agent"]]}
+{"id": 899, "text": "Staff is willing to accept, learn, and utilize the new system.", "labels": [[0, 5, "Role"], [47, 61, "Agent"]]}
+{"id": 904, "text": "Students will have the ability of attending an online class and be able to see the professor and colleagues and interact with each other.", "labels": [[0, 8, "Role"], [79, 107, "Role"], [126, 136, "Role"]]}
+{"id": 910, "text": "The students overall login should allow them access to the appropriate folder, and their account should only have Read, Write, and Delete privileges", "labels": [[0, 12, "Role"]]}
+{"id": 915, "text": "If professor makes a change or ads to the syllabus or any other document the change will be instantly distributed to all students that have those documents in their space.", "labels": [[3, 12, "Role"], [117, 129, "Role"]]}
+{"id": 920, "text": "A Guest is a person that is not connected to the VUB-network nor logged into the PMS.", "labels": [[0, 7, "Role"], [11, 19, "Role"], [77, 84, "Agent"], [45, 60, "Agent"]]}
+{"id": 925, "text": "The user can change his account information (eg. password, e-mail address,. . . ).", "labels": [[0, 8, "Role"]]}
+{"id": 930, "text": "A Moderator can decide to upgrade a Member (of his own department) to become a Publisher.", "labels": [[0, 11, "Role"], [34, 42, "Role"], [77, 88, "Role"]]}
+{"id": 935, "text": "The users of the PMS are expected to be academic personnel and students with various technical backgrounds.", "labels": [[0, 20, "Role"], [40, 106, "Role"]]}
+{"id": 940, "text": "Director: A member of the Construction Junction staff who can perform the same Inventory Management functions as a Manager, plus view, create, modify and delete Inventory Management users.", "labels": [[0, 8, "Role"], [10, 53, "Role"], [113, 122, "Role"]]}
+{"id": 945, "text": "Decon Associate: A member of the Construction Junction staff who executes a deconstruction and/or strip out job and brings the items for processing at the receiving dock.", "labels": [[0, 15, "Role"], [17, 60, "Role"]]}
+{"id": 950, "text": "Primary Contact: An individual who is the primary contact for a donation. The individual may be the actual donor or be acting on behalf of one.", "labels": [[0, 15, "Role"], [17, 30, "Role"], [74, 89, "Role"], [96, 112, "Role"]]}
+{"id": 955, "text": "The system should allow Construction Junction staff to view a list of all items that are currently flagged as blastworthy that haven\u201ft yet been included in an e-Blast.", "labels": [[0, 10, "Agent"], [24, 51, "Role"]]}
+{"id": 960, "text": "Customer Wish List \u2013 Provide users with the ability to notify Construction Junction of items that they would like to purchase and be notified when/if those items become available.", "labels": [[0, 18, "Agent"], [29, 34, "Role"], [62, 83, "Agent"]]}
+{"id": 965, "text": "Management Processes shall provide a development and training environment with the ability to migrate configurations to a production environment.", "labels": [[0, 20, "Agent"]]}
+{"id": 970, "text": "Management Processes are part of an enterprise-level Library Automation System.", "labels": [[0, 20, "Role"], [33, 78, "Agent"]]}
+{"id": 976, "text": "The system provides a utility and reports for identifying item records to purge, based on customizable criteria such as: an item has been in status \"missing\" for more than X months.", "labels": [[0, 10, "Agent"]]}
+{"id": 981, "text": "System upgrades and updates include written guidelines for updating servers and clients.", "labels": [[0, 6, "Agent"]]}
+{"id": 987, "text": "System provides a single console with access to all configuration files.", "labels": [[0, 6, "Agent"]]}
+{"id": 992, "text": "Staff can be given permission to schedule tasks, reports, and data exports.", "labels": [[0, 5, "Role"]]}
+{"id": 999, "text": "Ability to define and select four types of printers: receipt printer, standard printer, label printer, and forms printer.", "labels": [[43, 51, "Role"], [53, 68, "Role"], [70, 86, "Role"], [88, 101, "Role"], [107, 120, "Role"]]}
+{"id": 1004, "text": "User is given the option to run additional pre-processors for the IC/BC data, such as, LDAS or supply own custom pre-processor or skip this option.", "labels": [[0, 4, "Role"]]}
+{"id": 1009, "text": "Users are allowed to compress one or more objects (files or archives) in one or more compressed archive volumes (sizing less or equally to the original ones)in one of the offered for compression by PeaZip formats.", "labels": [[0, 5, "Role"]]}
+{"id": 1014, "text": "The user will give a search-term that will search through a database of compatible torrent websites that are added by the development team.", "labels": [[0, 8, "Role"]]}
+{"id": 1019, "text": "The software will use hyperlinks to allow the user to open websites in their default web browser.", "labels": [[0, 12, "Agent"], [42, 50, "Role"]]}
+{"id": 1024, "text": "The tools shall be able to run on multiple machines but will not provide functionality for dealing with hardware failures (out of scope)", "labels": [[0, 9, "Role"]]}
+{"id": 1029, "text": "A con\ufb01guration must be provided explicitly, errors should be generated in the absence of a con\ufb01guration.", "labels": [[0, 14, "Role"]]}
+{"id": 1034, "text": "The Project Team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments.", "labels": [[0, 16, "Agent"], [98, 118, "Role"]]}
+{"id": 1039, "text": "The ELSS must capture all data necessary for recording the fishing activities undertaken by a UK fishing vessel.", "labels": [[0, 8, "Agent"], [92, 111, "Role"]]}
+{"id": 1044, "text": "The ELSS must provide data capture screens for the entry of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations\u2019 ERS system.", "labels": [[0, 8, "Agent"], [153, 197, "Agent"]]}
+{"id": 1049, "text": "The ELSS must only permit correction messages to be generated and sent for reports sent during a current trip up to the submission of the End of Fishing report for that voyage", "labels": [[0, 8, "Agent"]]}
+{"id": 1054, "text": "ELSS must retain all logbook reports and any corrections on the system at least until the end of each trip, i.e. on submission of the electronic landing declaration or of a transhipment report.", "labels": [[0, 4, "Agent"]]}
+{"id": 1059, "text": "The system shall include digital programmable thermostats, which shall be used to monitor and regulate the temperature of an enclosed space.", "labels": [[0, 10, "Agent"]]}
+{"id": 1064, "text": "The thermostats may be controlled individually or collectively, so that temperature can be controlled at different levels in different home spaces.", "labels": [[0, 15, "Role"]]}
+{"id": 1069, "text": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home.", "labels": [[0, 22, "Agent"], [37, 42, "Role"], [75, 121, "Agent"]]}
+{"id": 1075, "text": "Mashbot will allow for the association of Mashbot accounts with external service accounts.", "labels": [[0, 7, "Agent"]]}
+{"id": 1080, "text": "A member should be able to monitor trending topics regarding their campaign", "labels": [[0, 8, "Role"]]}
+{"id": 1085, "text": "The users have the ability to bulk rotate pages in different documents.", "labels": [[0, 9, "Role"]]}
+{"id": 1090, "text": "Users are allowed to make modifications on PDFsam\u2019s working environment, in order to adapt to their preferences and cover their needs more sufficiently.", "labels": [[0, 5, "Role"]]}
+{"id": 1095, "text": "Architecture Vision defines overall architecture guiding principles, goals and objectives and desired traits.", "labels": [[0, 19, "Agent"]]}
+{"id": 1383, "text": "Ability to request the TV program / channel to which the end-users online buddy is watching at the moment.", "labels": []}
+{"id": 1398, "text": "Ability to insert a new privacy policy to the repository", "labels": []}
+{"id": 1407, "text": "Ability to add, delete and update goals", "labels": []}
+{"id": 1412, "text": "Ability to add, delete and update access control policies such as subject, object, action.", "labels": []}
+{"id": 1630, "text": "View watershed descriptive data", "labels": []}
+{"id": 1635, "text": "Browse, visualize, and download agricultural modeling data and results", "labels": []}
+{"id": 1795, "text": "Validate content based on submitter, expected format, file quality, duplication (e.g., existence of object in repository), and completeness.", "labels": []}
+{"id": 1808, "text": "Maintains log of messages sent concerning resubmissions.", "labels": []}
+{"id": 1814, "text": "Verifies the validity of the submission based on submitter, expected format, file quality, duplication (e.g., existence of object in repository), and completeness.", "labels": []}
+{"id": 1826, "text": "Keeps an audit trail of all actions.", "labels": []}
+{"id": 1835, "text": "Keeps an audit trail of all actions.", "labels": []}
+{"id": 1844, "text": "Has capability to inventory, report on and migrate the contents of the repository.", "labels": []}
+{"id": 1849, "text": "Submission volumes and schedules are managed and monitored.", "labels": []}
+{"id": 1854, "text": "Audits system operations, performance and usage.", "labels": []}
+{"id": 1916, "text": "Create heat map indicating who was over-pumping, who was not over-pumping, or who was using their water credits.", "labels": []}
+{"id": 1925, "text": "Testing records shall include the dates of the tests, the duration of the tests, and an indication of whether the tests met the requirements of this Black Start Testing section.", "labels": []}
+{"id": 2093, "text": "System reports for each record type: current record number, current number of records, number deleted, and number purged.", "labels": []}

@@ -1,7 +1,9 @@
 import logging
 import pickle
+from pathlib import Path
 from test.rules.utils.load_dataset import load_dataset
 
+from src import ROOT_DIR
 from src.deeplearning.entity.infer.utils import get_list_bio, get_series_bio
 from src.deeplearning.entity.infer.wrapper import (
     ActorWrapper,
@@ -59,22 +61,36 @@ def test_token_correct():
 
 
 def test_measure_bert_actor_prec():
-    data = list(
-        load_dataset("pretrained_data/2022/actor/divided/split_dev.jsonl")
-    )
-    sents = [d[1] for d in data]
-    labels = [d[2] for d in data]
-    logger.info(f"First items: sent {sents[0]}")
-    logger.info(f"First items: label {labels[0]}")
+    total_result = list()
+    for i in range(1):
+        data = list(
+            load_dataset(
+                f"pretrained_data/2022_Kfold/actor/{i}/split_dev.jsonl"
+            )
+        )
+        sents = [d[1] for d in data]
+        labels = [d[2] for d in data]
+        logger.info(f"First items: sent {sents[0]}")
+        logger.info(f"First items: label {labels[0]}")
 
-    wrapper = ActorWrapper()
-    results = wrapper.process(sents, labels)
-    logger.info(f"First result: {results[0]}")
+        data2 = str(Path(ROOT_DIR) / f"pretrained_data/2022_Kfold/actor/{i}/")
+        model = str(
+            Path(ROOT_DIR) / f"pretrained_model/2022_Kfold/actor/{i}/output/"
+        )
+        label = str(
+            Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/labels.txt"
+        )
 
-    pred_entities, true_entities = get_series_bio(results)
+        wrapper = ActorWrapper(data=data2, model=model, label=label)
+        results = wrapper.process(sents, labels)
+        logger.info(f"First result: {results[0]}")
 
+        total_result.extend(results)
+
+    pred_entities, true_entities = get_series_bio(total_result)
     print(classification_report(true_entities, pred_entities))
 
+    # Previous Actor
     #            precision    recall  f1-score   support
     #
     #      Role    0.80745   0.83871   0.82278       155

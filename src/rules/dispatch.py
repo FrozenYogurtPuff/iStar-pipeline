@@ -13,7 +13,7 @@ from src.deeplearning.entity.infer.utils import (
 )
 from src.rules.config import actor_plugins
 from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
-from src.utils.spacy import get_token_idx, include_elem, match_noun_chunk
+from src.utils.spacy_utils import get_token_idx, include_elem, match_noun_chunk
 from src.utils.typing import Alignment, EntityFix, RulePlugins
 
 logger = logging.getLogger(__name__)

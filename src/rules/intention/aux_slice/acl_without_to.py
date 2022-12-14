@@ -2,7 +2,7 @@ import logging
 
 from spacy.tokens import Span, Token
 
-from src.utils.spacy import token_not_first
+from src.utils.spacy_utils import token_not_first
 
 logger = logging.getLogger(__name__)
 

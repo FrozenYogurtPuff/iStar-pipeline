@@ -29,7 +29,9 @@ logger = logging.getLogger("__file__")
 
 
 def load_pickle(filename):
-    completeName = os.path.join("./pretrained_data/2022/relation/", filename)
+    completeName = os.path.join(
+        "./pretrained_data/2022_Kfold/relation/", filename
+    )
     with open(completeName, "rb") as pkl_file:
         data = pickle.load(pkl_file)
     return data
@@ -73,7 +75,7 @@ class infer_from_trained(object):
             lower_case = True
             model_name = "BERT"
             self.net = Model.from_pretrained(
-                pretrained_model_name_or_path="pretrained_model/2022/relation/"
+                pretrained_model_name_or_path="pretrained_model/2022_Kfold/relation/"
                 + model,
                 force_download=False,
                 model_size=args.model_size,
@@ -341,7 +343,8 @@ class FewRel(object):
             )
 
         if os.path.isfile(
-            "./pretrained_data/2022/relation/%s_tokenizer.pkl" % model_name
+            "./pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
+            % model_name
         ):
             self.tokenizer = load_pickle("%s_tokenizer.pkl" % model_name)
             logger.info("Loaded tokenizer from saved file.")
@@ -363,7 +366,7 @@ class FewRel(object):
             )
             save_as_pickle("%s_tokenizer.pkl" % model_name, self.tokenizer)
             logger.info(
-                "Saved %s tokenizer at ./pretrained_data/2022/relation/%s_tokenizer.pkl"
+                "Saved %s tokenizer at ./pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
                 % (model_name, model_name)
             )
 
@@ -375,11 +378,11 @@ class FewRel(object):
 
         if self.args.use_pretrained_blanks == 1:
             logger.info(
-                "Loading model pre-trained on blanks at ./pretrained_data/2022/relation/test_checkpoint_%d.pth.tar..."
+                "Loading model pre-trained on blanks at ./pretrained_data/2022_Kfold/relation/test_checkpoint_%d.pth.tar..."
                 % args.model_no
             )
             checkpoint_path = (
-                "./pretrained_data/2022/relation/test_checkpoint_%d.pth.tar"
+                "./pretrained_data/2022_Kfold/relation/test_checkpoint_%d.pth.tar"
                 % self.args.model_no
             )
             checkpoint = torch.load(checkpoint_path)

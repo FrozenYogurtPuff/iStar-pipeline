@@ -8,7 +8,7 @@ from spacy.tokens import Doc
 from src.deeplearning.entity.infer.utils import get_series_bio
 from src.deeplearning.entity.infer.wrapper import ActorWrapper, \
     IntentionWrapper
-from src.utils.spacy import char_idx_to_word_idx, get_spacy
+from src.utils.spacy_utils import char_idx_to_word_idx, get_spacy
 from test.rules.utils.load_dataset import load_dataset
 
 

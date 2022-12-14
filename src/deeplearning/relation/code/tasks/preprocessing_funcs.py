@@ -100,6 +100,9 @@ def preprocess_istar(args):
     import json
     from itertools import combinations
 
+    # K-fold
+    K = 10
+
     sents, relations = [], []
     data_path = args.train_data  # 'target json'
     logger.info("Reading training file %s..." % data_path)
@@ -171,12 +174,24 @@ def preprocess_istar(args):
     df_all["relations_id"] = df_all.progress_apply(
         lambda x: rm.rel2idx[x["relations"]], axis=1
     )
-    df_train = df_all.sample(frac=0.8)
-    df_test = df_all.drop(df_train.index)
-    save_as_pickle("df_train.pkl", df_train)
-    save_as_pickle("df_test.pkl", df_test)
+
+    # df_train = df_all.sample(frac=0.8)
+    # df_test = df_all.drop(df_train.index)
+    # save_as_pickle("df_train.pkl", df_train)
+    # save_as_pickle("df_test.pkl", df_test)
+
     save_as_pickle("relations.pkl", rm)
-    return df_train, df_test, rm
+
+    df_group = df_all.groupby(df_all.index % 10)
+
+    for i in range(K):
+        df_test = df_group.get_group(i)
+        df_train = df_all.drop(df_test.index)
+        save_as_pickle(f"{i}/df_train.pkl", df_train)
+        save_as_pickle(f"{i}/df_test.pkl", df_test)
+
+    # return df_train, df_test, rm
+    return None
 
 
 class Relations_Mapper(object):
@@ -546,23 +561,35 @@ def load_dataloaders(args):
 
     # SemEval 采用监督学习
     if args.task == "semeval" or args.task == "istar":
+        select = 0
+
         # 加载数据集
-        relations_path = "./data/relations.pkl"
-        train_path = "./data/df_train.pkl"
-        test_path = "./data/df_test.pkl"
+        relations_path = f"./pretrained_data/2022_Kfold/relation/relations.pkl"
+        train_path = (
+            f"./pretrained_data/2022_Kfold/relation/{select}/df_train.pkl"
+        )
+        test_path = (
+            f"./pretrained_data/2022_Kfold/relation/{select}/df_test.pkl"
+        )
         if (
             os.path.isfile(relations_path)
             and os.path.isfile(train_path)
             and os.path.isfile(test_path)
         ):
             rm = load_pickle("relations.pkl")
-            df_train = load_pickle("df_train.pkl")
-            df_test = load_pickle("df_test.pkl")
+            df_train = load_pickle(f"{select}/df_train.pkl")
+            df_test = load_pickle(f"{select}/df_test.pkl")
             logger.info("Loaded preproccessed data.")
         elif args.task == "semeval":
             df_train, df_test, rm = preprocess_semeval2010_8(args)
+        elif args.task == "istar":
+            preprocess_istar(args)
         else:
-            df_train, df_test, rm = preprocess_istar(args)
+            raise Exception("Illegal task condition")
+
+        rm = load_pickle(f"relations.pkl")
+        df_train = load_pickle(f"{select}/df_train.pkl")
+        df_test = load_pickle(f"{select}/df_test.pkl")
 
         train_set = semeval_dataset(
             df_train, tokenizer=tokenizer, e1_id=e1_id, e2_id=e2_id

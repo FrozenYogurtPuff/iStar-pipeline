@@ -24,7 +24,7 @@ logger = logging.getLogger(__file__)
 
 def load_state(net, optimizer, scheduler, args, load_best=False):
     """Loads saved model and optimizer states if exists"""
-    base_path = "./pretrained_data/2022/relation/"
+    base_path = "./pretrained_data/2022_Kfold/relation/"
     amp_checkpoint = None
     checkpoint_path = os.path.join(
         base_path, "task_test_checkpoint_%d.pth.tar" % args.model_no

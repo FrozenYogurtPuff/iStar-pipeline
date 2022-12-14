@@ -5,7 +5,7 @@ from spacy_alignments import tokenizations
 
 from src.deeplearning.entity.infer.wrapper import IntentionWrapper
 from src.rules.intention.find_object import find_object
-from src.utils.spacy import char_idx_to_word, get_spacy
+from src.utils.spacy_utils import char_idx_to_word, get_spacy
 
 logger = logging.getLogger(__name__)
 

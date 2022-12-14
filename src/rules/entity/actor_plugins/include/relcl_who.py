@@ -4,7 +4,7 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.spacy import token_not_last
+from src.utils.spacy_utils import token_not_last
 from src.utils.typing import RuleReturn
 
 

@@ -2,7 +2,7 @@ import logging
 from test.rules.inspect.utils import cache_nlp, dep_list, if_inside
 from test.rules.utils.load_dataset import load_dataset
 
-from src.utils.spacy import get_spacy
+from src.utils.spacy_utils import get_spacy
 
 logger = logging.getLogger(__name__)
 

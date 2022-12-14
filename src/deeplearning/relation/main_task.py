@@ -34,7 +34,7 @@ parser.add_argument(
 parser.add_argument(
     "--train_data",
     type=str,
-    default="./pretrained_data/2022/relation/admin.jsonl",
+    default="./pretrained_data/2022_Kfold/relation/admin.jsonl",
     help="training data .txt file path",
 )
 parser.add_argument(

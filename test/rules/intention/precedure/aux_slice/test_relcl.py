@@ -2,7 +2,7 @@ import logging
 from test.rules.utils.load_dataset import load_dataset
 
 from src.rules.intention.aux_slice.relcl import relcl
-from src.utils.spacy import char_idx_to_word_idx, get_spacy
+from src.utils.spacy_utils import char_idx_to_word_idx, get_spacy
 
 logger = logging.getLogger(__name__)
 

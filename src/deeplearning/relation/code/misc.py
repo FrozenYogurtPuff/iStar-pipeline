@@ -11,14 +11,19 @@ from itertools import permutations
 
 
 def load_pickle(filename):
-    completeName = os.path.join("./pretrained_data/2022/relation/", filename)
+    completeName = os.path.join(
+        "./pretrained_data/2022_Kfold/relation/", filename
+    )
     with open(completeName, "rb") as pkl_file:
         data = pickle.load(pkl_file)
     return data
 
 
 def save_as_pickle(filename, data):
-    completeName = os.path.join("./pretrained_data/2022/relation/", filename)
+    completeName = os.path.join(
+        "./pretrained_data/2022_Kfold/relation/", filename
+    )
+    os.makedirs(completeName.rsplit("/", 1)[0], exist_ok=True)
     with open(completeName, "wb") as output:
         pickle.dump(data, output)
 

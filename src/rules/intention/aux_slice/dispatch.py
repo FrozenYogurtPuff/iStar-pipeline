@@ -3,7 +3,7 @@ import logging
 from spacy.tokens import Span, Token
 
 from src.rules.config import intention_aux_slice_plugins
-from src.utils.spacy import get_token_idx, include_elem, token_not_last
+from src.utils.spacy_utils import get_token_idx, include_elem, token_not_last
 from src.utils.typing import IntentionAuxPlugins, SeqSlicesTuple
 
 logger = logging.getLogger(__name__)

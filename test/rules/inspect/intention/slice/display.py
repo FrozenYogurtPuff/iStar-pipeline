@@ -7,7 +7,7 @@ from spacy import displacy, tokens
 from spacy.tokens import Doc, Span
 from tqdm import tqdm
 
-from src.utils.spacy import char_idx_to_word_idx, get_spacy
+from src.utils.spacy_utils import char_idx_to_word_idx, get_spacy
 
 logger = logging.getLogger(__name__)
 

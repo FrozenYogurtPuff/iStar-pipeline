@@ -260,7 +260,8 @@ class pretrain_dataset(Dataset):
             model_name = "BioBERT"
 
         tokenizer_path = (
-            "../pretrained_data/2022/relation/%s_tokenizer.pkl" % (model_name)
+            "../pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
+            % (model_name)
         )
         if os.path.isfile(tokenizer_path):
             self.tokenizer = load_pickle("%s_tokenizer.pkl" % (model_name))
@@ -281,7 +282,7 @@ class pretrain_dataset(Dataset):
             )
             save_as_pickle("%s_tokenizer.pkl" % (model_name), self.tokenizer)
             logger.info(
-                "Saved %s tokenizer at ./pretrained_data/2022/relation/%s_tokenizer.pkl"
+                "Saved %s tokenizer at ./pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
                 % (model_name, model_name)
             )
 
@@ -610,7 +611,7 @@ class Pad_Sequence:
 
 def load_dataloaders(args, max_length=50000):
 
-    if not os.path.isfile("./pretrained_data/2022/relation/D.pkl"):
+    if not os.path.isfile("./pretrained_data/2022_Kfold/relation/D.pkl"):
         logger.info("Loading pre-training data...")
         with open(args.pretrain_data, "r", encoding="utf8") as f:
             text = f.readlines()
@@ -645,7 +646,7 @@ def load_dataloaders(args, max_length=50000):
         save_as_pickle("D.pkl", D)
         logger.info(
             "Saved pre-training corpus to %s"
-            % "./pretrained_data/2022/relation/D.pkl"
+            % "./pretrained_data/2022_Kfold/relation/D.pkl"
         )
     else:
         logger.info("Loaded pre-training data from saved file")
