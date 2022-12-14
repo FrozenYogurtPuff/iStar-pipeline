@@ -32,7 +32,7 @@ logger = logging.getLogger("__file__")
 
 def load_pickle(filename):
     completeName = os.path.join(
-        f"./pretrained_data/2022_Kfold/relation/{kfold.select}/", filename
+        f"./pretrained_data/2022_Kfold/relation/", filename
     )
     with open(completeName, "rb") as pkl_file:
         data = pickle.load(pkl_file)
@@ -344,7 +344,7 @@ class FewRel(object):
             )
 
         if os.path.isfile(
-            f"./pretrained_data/2022_Kfold/relation/{kfold.select}/%s_tokenizer.pkl"
+            f"./pretrained_data/2022_Kfold/relation/%s_tokenizer.pkl"
             % model_name
         ):
             self.tokenizer = load_pickle("%s_tokenizer.pkl" % model_name)

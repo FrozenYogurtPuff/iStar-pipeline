@@ -299,15 +299,18 @@ def train_and_fit(args):
 
         if (epoch % 1) == 0:
             save_as_pickle(
-                "task_test_losses_per_epoch_%d.pkl" % args.model_no,
+                f"{kfold.select}/task_test_losses_per_epoch_%d.pkl"
+                % args.model_no,
                 losses_per_epoch,
             )
             save_as_pickle(
-                "task_train_accuracy_per_epoch_%d.pkl" % args.model_no,
+                f"{kfold.select}/task_train_accuracy_per_epoch_%d.pkl"
+                % args.model_no,
                 accuracy_per_epoch,
             )
             save_as_pickle(
-                "task_test_f1_per_epoch_%d.pkl" % args.model_no,
+                f"{kfold.select}/task_test_f1_per_epoch_%d.pkl"
+                % args.model_no,
                 test_f1_per_epoch,
             )
             torch.save(
