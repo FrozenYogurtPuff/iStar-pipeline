@@ -164,7 +164,7 @@ if __name__ == "__main__":
         inferer = infer_from_trained(args, detect_entities=False)
         tp, fp, tn, fn = 0, 0, 0, 0
         with open(
-            f"pretrained_data/2022/relation/{i}/df_test.pkl", "rb"
+            f"pretrained_data/2022_Kfold/relation/{i}/df_test.pkl", "rb"
         ) as pkl_file:
             test = pickle.load(pkl_file)
             for index, row in test.iterrows():
