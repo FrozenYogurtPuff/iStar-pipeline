@@ -12,7 +12,6 @@ from argparse import ArgumentParser
 
 from src.deeplearning.relation import kfold
 from src.deeplearning.relation.code.tasks.infer import infer_from_trained
-from src.deeplearning.relation.code.tasks.trainer import train_and_fit
 
 """
 This fine-tunes the BERT model on SemEval, FewRel tasks
@@ -160,7 +159,7 @@ if __name__ == "__main__":
     p_all, r_all, f1_all = list(), list(), list()
     for i in range(K):
         kfold.select = i
-        net = train_and_fit(args)
+        # net = train_and_fit(args)
         inferer = infer_from_trained(args, detect_entities=False)
         tp, fp, tn, fn = 0, 0, 0, 0
         with open(
@@ -189,6 +188,7 @@ if __name__ == "__main__":
             p = tp / (tp + fp)
             r = tp / (tp + fn)
             f1 = 2 * p * r / (p + r)
+            print(i, p, r, f1)
 
         p_all.append(p)
         r_all.append(r)

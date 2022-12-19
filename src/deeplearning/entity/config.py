@@ -3,14 +3,14 @@ from pathlib import Path
 
 from src import ROOT_DIR
 
-ACTOR_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/0/")
+ACTOR_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/0/")
 ACTOR_MODEL_TYPE = "bert"
 ACTOR_MODEL_NAME_OR_PATH = "bert-base-cased"
 ACTOR_OUTPUT_DIR = str(
-    Path(ROOT_DIR) / "pretrained_model/2022_Kfold/actor/0/output/"
+    Path(ROOT_DIR) / "pretrained_model/2022_Kfold/actor/10/0/"
 )
 ACTOR_LABEL = str(
-    Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/labels.txt"
+    Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
 )
 
 ACTOR_COMBINED_DATA_DIR = str(
@@ -35,10 +35,14 @@ RESOURCE_LABEL = str(
 )
 
 # Infer - Intention
-INTENTION_DATA_DIR = str(Path(ROOT_DIR) / "pretrained_data/2022/task/verb/")
+INTENTION_DATA_DIR = str(
+    Path(ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/0/"
+)
 INTENTION_MODEL_TYPE = "bert"
 INTENTION_MODEL_NAME_OR_PATH = "bert-base-cased"
-INTENTION_OUTPUT_DIR = str(Path(ROOT_DIR) / "pretrained_model/2022/task/verb/")
+INTENTION_OUTPUT_DIR = str(
+    Path(ROOT_DIR) / "pretrained_model/2022_Kfold/intention/10/0/"
+)
 INTENTION_LABEL = str(
-    Path(ROOT_DIR) / "pretrained_data/2022/task/verb/labels.txt"
+    Path(ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
 )

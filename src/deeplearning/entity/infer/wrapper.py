@@ -80,6 +80,6 @@ class ResourceWrapper(Wrapper):
 
 
 class IntentionWrapper(Wrapper):
-    def __init__(self):
+    def __init__(self, data=None, model=None, label=None):
         super().__init__()
-        self.inferrer = InferIntention()
+        self.inferrer = InferIntention(data, model, label)

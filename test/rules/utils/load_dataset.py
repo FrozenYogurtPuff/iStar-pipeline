@@ -19,7 +19,13 @@ def load_dataset(
             assert isinstance(sent, str)
 
             anno = list()
-            for label in a["labels"]:
-                s, e, lab = label
+            # for label in a["labels"]:
+            #     s, e, lab = label
+            for item in a["entities"]:
+                s, e, lab = (
+                    item["start_offset"],
+                    item["end_offset"],
+                    item["label"],
+                )
                 anno.append((s, e, lab))
             yield idx, sent, anno

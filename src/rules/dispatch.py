@@ -65,6 +65,7 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
         label_m, prob = b.matrix_find_prob_max(bert_start, bert_end)
         mapping_bio = label_mapping_bio(label_m)
 
+        # 标签是否连续，即除去第一个 B-X 其它是否为 I-X
         constituous_label = True
         if b.preds[bert_start] not in mapping_bio:
             constituous_label = False
@@ -77,9 +78,11 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
             f"constituous: {constituous_label}, prob: {prob}, type_ok: {is_entity_type_ok(label, label_m)}"
         )
 
+        # 若标签不连续但概率高则保留 BERT 意见
         if not constituous_label and prob > 0.8:
             return label_m
 
+        # 当 BERT 非 O 标签与 规则不同，且非 O 标签概率低时选择规则
         if prob < 0.4 and not is_entity_type_ok(label, label_m):
             return label
 
@@ -146,19 +149,23 @@ def dispatch(
     collector: list[Collector | None] = list()
     result: list[EntityFix] = list()
 
-    for func in funcs:
-        packs = func(s)
-        for token, label in set(packs):
-            # if `noun_chunk`, use noun chunks instead of tokens
-            if noun_chunk:
-                c = match_noun_chunk(token, s)
-                if c:
-                    logger.debug(f"Noun chunk hit: {c}")
-                    collector.append((c, label))
+    INCLUDE = True
+    EXCLUDE = True
+
+    if INCLUDE:
+        for func in funcs:
+            packs = func(s)
+            for token, label in set(packs):
+                # if `noun_chunk`, use noun chunks instead of tokens
+                if noun_chunk:
+                    c = match_noun_chunk(token, s)
+                    if c:
+                        logger.debug(f"Noun chunk hit: {c}")
+                        collector.append((c, label))
+                    else:
+                        collector.append((token, label))
                 else:
                     collector.append((token, label))
-            else:
-                collector.append((token, label))
 
     logger.info(collector)
     logger.debug(s2b)
@@ -191,6 +198,7 @@ def dispatch(
     if not add_all:
         result = bert_func(result, b)
 
-    result.extend(exclude_intention_verb(s, b, s2b))
+    if EXCLUDE:
+        result.extend(exclude_intention_verb(s, b, s2b))
 
     return result

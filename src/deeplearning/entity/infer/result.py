@@ -55,7 +55,9 @@ class BertResult:
     def apply_fix(self: BertResult, fixes: list[EntityFix]) -> BertResult:
         new_inst = copy.deepcopy(self)
         for hyb, ali, bali, lab in fixes:
-            assert len(bali) in [1, 2]
+            # assert len(bali) in [1, 2]
+            if len(bali) == 0:
+                continue
             if lab == "Both":
                 lab_m, avg = self.matrix_find_prob_max(bali[0], bali[-1])
                 lab = lab_m

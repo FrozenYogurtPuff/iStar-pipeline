@@ -375,7 +375,7 @@ class InferBase(ABC):
                     matrix[i].append(res.tolist())
                     preds_list[i].append(label_map[preds_argmax[i][j]])
                     trues_list[i].append(label_map[trues[i][j]])
-            assert len(tokens) == len(matrix[i])
+            # assert len(tokens) == len(matrix[i])
             tokens_bert.append(tokens)
 
         return preds_list, trues_list, matrix, tokens_bert, self.labels

@@ -30,6 +30,8 @@ def calc_metrics(true_entities, pred_entities) -> float:
         total_pred += nb_pred
         total_true += nb_true
 
+    if total_true == 0:
+        return 0
     return total_correct / total_true
 
 

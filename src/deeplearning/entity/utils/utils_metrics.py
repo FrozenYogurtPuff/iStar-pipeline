@@ -377,6 +377,35 @@ def classification_report(true_entities, pred_entities, digits=5):
     return report
 
 
+def compact_classification_report(true_entities, pred_entities):
+    """Build a text report showing the main classification metrics."""
+    d1 = defaultdict(set)
+    d2 = defaultdict(set)
+    for e in true_entities:
+        d1[e[0]].add((e[1], e[2]))
+    for e in pred_entities:
+        d2[e[0]].add((e[1], e[2]))
+
+    types, ps, rs, f1s, s = [], [], [], [], []
+    for type_name, type_true_entities in sorted(d1.items()):
+        type_pred_entities = d2[type_name]
+        nb_correct = len(type_true_entities & type_pred_entities)
+        nb_pred = len(type_pred_entities)
+        nb_true = len(type_true_entities)
+
+        p = nb_correct / nb_pred if nb_pred > 0 else 0
+        r = nb_correct / nb_true if nb_true > 0 else 0
+        f1 = 2 * p * r / (p + r) if p + r > 0 else 0
+
+        types.append(type_name)
+        ps.append(p)
+        rs.append(r)
+        f1s.append(f1)
+        s.append(nb_true)
+
+    return types, ps, rs, f1s
+
+
 def convert_span_to_bio(starts, ends):
     labels = []
     for start, end in zip(starts, ends):

@@ -20,7 +20,7 @@ logging.disable(logging.CRITICAL)
 
 def test_measure_bert_actor_prec():
     data = list(
-        load_dataset("pretrained_data/2022/actor/divided/split_dev.jsonl")
+        load_dataset("pretrained_data/2022_Kfold/actor/10/9/split_dev.jsonl")
     )
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
@@ -35,7 +35,7 @@ def test_measure_bert_actor_prec():
 
 def test_measure_bert_actor_rules_prec():
     data = list(
-        load_dataset("pretrained_data/2022/actor/divided/split_dev.jsonl")
+        load_dataset("pretrained_data/2022_Kfold/actor/10/0/split_dev.jsonl")
     )
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
