@@ -19,13 +19,18 @@ def load_dataset(
             assert isinstance(sent, str)
 
             anno = list()
-            # for label in a["labels"]:
-            #     s, e, lab = label
-            for item in a["entities"]:
-                s, e, lab = (
-                    item["start_offset"],
-                    item["end_offset"],
-                    item["label"],
-                )
-                anno.append((s, e, lab))
+            if "labels" in a:
+                for label in a["labels"]:
+                    s, e, lab = label
+                    anno.append((s, e, lab))
+            elif "entities" in a:
+                for item in a["entities"]:
+                    s, e, lab = (
+                        item["start_offset"],
+                        item["end_offset"],
+                        item["label"],
+                    )
+                    anno.append((s, e, lab))
+            else:
+                raise Exception("Illegal dataset format")
             yield idx, sent, anno

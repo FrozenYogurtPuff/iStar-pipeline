@@ -60,9 +60,12 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
     def prob_check_bert(sample: EntityFix) -> str | None:
         bert_idx = sample.bert_idxes
         label = sample.label
+        o_threshold = 0.7
+        # smooth_threshold = 0.4
 
         bert_start, bert_end = bert_idx[0], bert_idx[-1]
-        label_m, prob = b.matrix_find_prob_max(bert_start, bert_end)
+        prob_list = b.matrix_find_prob_avg(bert_start, bert_end)
+        label_m, prob, _ = prob_list[0]
         mapping_bio = label_mapping_bio(label_m)
 
         # 标签是否连续，即除去第一个 B-X 其它是否为 I-X
@@ -74,17 +77,19 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
                 constituous_label = False
 
         logger.debug(f"label: {label}, label_m: {label_m}")
-        logger.debug(
-            f"constituous: {constituous_label}, prob: {prob}, type_ok: {is_entity_type_ok(label, label_m)}"
-        )
+        logger.debug(f"constituous: {constituous_label}, prob: {prob}")
 
-        # 若标签不连续但概率高则保留 BERT 意见
-        if not constituous_label and prob > 0.8:
-            return label_m
+        # assert label == "Both"
+        if label_m == "O" and prob < o_threshold:
+            if label == "Both":
+                new_type, _, _ = prob_list[1]
+            else:
+                new_type = label
+            return new_type
 
-        # 当 BERT 非 O 标签与 规则不同，且非 O 标签概率低时选择规则
-        if prob < 0.4 and not is_entity_type_ok(label, label_m):
-            return label
+        # Threshold
+        # if label_m != "O" and prob > smooth_threshold:
+        #     return label_m
 
         return None
 
@@ -117,6 +122,25 @@ def exclude_actor(
     return exclude_list
 
 
+# E(I) for Actor version
+def exclude_intention_verb_for_actor(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith("NN"):
+            print(sp[e].tag_, sp[s : e + 1])
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+# E(I)* version
 def exclude_intention_verb(
     sp: Span, b: BertResult | None, s2b: list[Alignment] | None
 ) -> list[EntityFix]:
@@ -124,11 +148,36 @@ def exclude_intention_verb(
     assert b is not None
     pred_entities, _ = get_series_bio([b])
     for label, s, e in pred_entities:
-        # if sp[e].tag_.startswith("JJ"):
-        #     if e - 1 > 0 and sp[e - 1].lower_ not in ["am", "is", "are", "be", "was", "were"]:
-        #         bert_idx = get_s2b_idx(s2b, [s, e])
-        #         exclude_list.append(EntityFix(sp[s:e + 1], [s, e], bert_idx, "O"))
-        if not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith("NN"):
+        if sp[e].tag_.startswith("JJ"):
+            if sp[e].has_head() and sp[e].head.lower_ in [
+                "am",
+                "is",
+                "are",
+                "be",
+                "was",
+                "were",
+            ]:
+                pass
+            elif e - 1 > 0 and sp[e - 1].lower_ in [
+                "am",
+                "is",
+                "are",
+                "be",
+                "was",
+                "were",
+            ]:
+                pass
+            else:
+                print("去掉", sp[e].head, sp[s : e + 1])
+                assert s2b is not None
+                bert_idx = get_s2b_idx(s2b, [s, e])
+                exclude_list.append(
+                    EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+                )
+        elif not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith(
+            "NN"
+        ):
+            print(sp[e].tag_, sp[s : e + 1])
             assert s2b is not None
             bert_idx = get_s2b_idx(s2b, [s, e])
             exclude_list.append(
@@ -150,7 +199,9 @@ def dispatch(
     result: list[EntityFix] = list()
 
     INCLUDE = True
-    EXCLUDE = True
+    EXCLUDE = False
+
+    # print("INCLUDE" if INCLUDE else "" + " " + "EXCLUDE" if EXCLUDE else "")
 
     if INCLUDE:
         for func in funcs:

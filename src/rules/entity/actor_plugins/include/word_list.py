@@ -29,15 +29,15 @@ def word_list(s: Span) -> RuleReturn:
 
     for token in s:
         select = False
-        # if token.lower_.startswith(
-        #     (
-        #         "system",       # mainly fake classification
-        #         "module",       # no hit
-        #         "server",       # no hit
-        #         "administrator"  # no hit
-        #     )
-        # ):
-        #     select = True
+        if token.lower_.startswith(
+            (
+                "system",  # mainly fake classification
+                "module",  # no hit
+                "server",  # no hit
+                "administrator",  # no hit
+            )
+        ):
+            select = True
 
         if select:
             cur = (token, *token.conjuncts)

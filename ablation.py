@@ -24,6 +24,7 @@ K = 10
 
 
 def test_ae_bert():
+    all_data = dict()
     for i in tqdm(range(K)):
         data = list(
             load_dataset(f"pretrained_data/2022_Kfold/actor/10/{i}/split_dev.jsonl")
@@ -48,10 +49,27 @@ def test_ae_bert():
         print(f'Fold {i}')
         for t, p, r, f1 in zip(types, ps, rs, f1s):
             print(t, p, r, f1, sep='\t')
+            if t not in all_data:
+                all_data[t] = dict()
+                all_data[t]["p"] = list()
+                all_data[t]["r"] = list()
+                all_data[t]["f1"] = list()
+            all_data[t]["p"].append(p)
+            all_data[t]["r"].append(r)
+            all_data[t]["f1"].append(f1)
+
+    print('Avg')
+    for key in all_data:
+        length = len(all_data[key]["p"])
+        sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(
+            all_data[key]["r"]), sum(all_data[key]["f1"])
+        avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+        print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
 def test_ae_bert_rules():
     # CAUTION: Check `EXCLUDE=False`
+    all_data = dict()
     for i in tqdm(range(K)):
         data = list(
             load_dataset(f"pretrained_data/2022_Kfold/actor/10/{i}/split_dev.jsonl")
@@ -81,9 +99,25 @@ def test_ae_bert_rules():
         print(f'Fold {i}')
         for t, p, r, f1 in zip(types, ps, rs, f1s):
             print(t, p, r, f1, sep='\t')
+            if t not in all_data:
+                all_data[t] = dict()
+                all_data[t]["p"] = list()
+                all_data[t]["r"] = list()
+                all_data[t]["f1"] = list()
+            all_data[t]["p"].append(p)
+            all_data[t]["r"].append(r)
+            all_data[t]["f1"].append(f1)
+
+    print('Avg')
+    for key in all_data:
+        length = len(all_data[key]["p"])
+        sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(all_data[key]["r"]), sum(all_data[key]["f1"])
+        avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+        print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
 def test_ie_bert():
+    all_data = dict()
     for i in tqdm(range(K)):
         data = list(
             load_dataset(f"pretrained_data/2022_Kfold/intention/10/{i}/split_dev.jsonl")
@@ -108,10 +142,27 @@ def test_ie_bert():
         print(f'Fold {i}')
         for t, p, r, f1 in zip(types, ps, rs, f1s):
             print(t, p, r, f1, sep='\t')
+            if t not in all_data:
+                all_data[t] = dict()
+                all_data[t]["p"] = list()
+                all_data[t]["r"] = list()
+                all_data[t]["f1"] = list()
+            all_data[t]["p"].append(p)
+            all_data[t]["r"].append(r)
+            all_data[t]["f1"].append(f1)
+
+    print('Avg')
+    for key in all_data:
+        length = len(all_data[key]["p"])
+        sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(
+            all_data[key]["r"]), sum(all_data[key]["f1"])
+        avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+        print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
 def test_ie_bert_rules():
     # CAUTION: Check `EXCLUDE=False`
+    all_data = dict()
     for i in tqdm(range(K)):
         data = list(
             load_dataset(f"pretrained_data/2022_Kfold/intention/10/{i}/split_dev.jsonl")
@@ -141,6 +192,22 @@ def test_ie_bert_rules():
         print(f'Fold {i}')
         for t, p, r, f1 in zip(types, ps, rs, f1s):
             print(t, p, r, f1, sep='\t')
+            if t not in all_data:
+                all_data[t] = dict()
+                all_data[t]["p"] = list()
+                all_data[t]["r"] = list()
+                all_data[t]["f1"] = list()
+            all_data[t]["p"].append(p)
+            all_data[t]["r"].append(r)
+            all_data[t]["f1"].append(f1)
+
+    print('Avg')
+    for key in all_data:
+        length = len(all_data[key]["p"])
+        sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(
+            all_data[key]["r"]), sum(all_data[key]["f1"])
+        avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+        print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
 def test_ar_bert():

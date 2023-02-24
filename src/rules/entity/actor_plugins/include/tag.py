@@ -66,12 +66,12 @@ def tag_label(tag: str, head_dep: str) -> str | None:
 
 
 def tag_head_label(tag: str, head_dep: str) -> str | None:
-    # if (tag, head_dep) in [
-    #     ("DT", "nsubj"),        # soso, caused mainly BERT-classification failed
-    #     ("HYPH", "nsubj"),        # no hit
-    #     ("NNP", "nsubj"),        # few
-    # ]:
-    #     return both
+    if (tag, head_dep) in [
+        #     ("DT", "nsubj"),        # soso, caused mainly BERT-classification failed
+        #     ("HYPH", "nsubj"),        # no hit
+        ("NNP", "nsubj"),  # few
+    ]:
+        return both
     # elif (tag, head_dep) in [
     #     ("NNS", "poss"),            # no hit
     # ]:

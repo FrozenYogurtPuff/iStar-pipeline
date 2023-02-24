@@ -49,6 +49,9 @@ def label_mapping_bio(lab: str) -> tuple[str, str]:
 
 def label_mapping_de_bio(lab: str) -> tuple[str, bool]:
     def label_check() -> str:
+        if lab == "O":
+            return lab
+
         if not lab.startswith("B-") and not lab.startswith("I-"):
             logger.error(f"Illegal label-bio {lab}")
             raise LabelTypeException("Unexpected label-bio type")

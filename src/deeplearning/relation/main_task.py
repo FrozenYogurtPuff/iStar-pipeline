@@ -9,6 +9,7 @@ import itertools
 import logging
 import pickle
 from argparse import ArgumentParser
+from typing import Any
 
 from src.deeplearning.relation import kfold
 from src.deeplearning.relation.code.tasks.infer import infer_from_trained
@@ -92,7 +93,11 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-def proceed_sentence(text: str, entities: list):
+def preload():
+    return infer_from_trained(args, detect_entities=True)
+
+
+def proceed_sentence(text: str, entities: list, infer: Any):
     ret = list()
     for en1, en2 in itertools.combinations(entities, 2):
         s1, e1 = en1["startOffset"], en1["endOffset"]
@@ -109,7 +114,6 @@ def proceed_sentence(text: str, entities: list):
             + text[e2:]
         )
         print(sentence)
-        infer = infer_from_trained(args, detect_entities=True)
         result = infer.infer_sentence(sentence)
         print(result)
         if result == 1:

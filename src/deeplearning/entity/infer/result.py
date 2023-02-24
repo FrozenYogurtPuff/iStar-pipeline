@@ -23,12 +23,14 @@ class BertResult:
     tokens: list[str]
     labels: list[str]  # labels.txt -like label index
 
-    def matrix_find_prob_max(self, start: int, end: int) -> tuple[str, float]:
+    def matrix_find_prob_avg(
+        self, start: int, end: int
+    ) -> list[tuple[str, float, int]]:
         logger.debug(f"Matrix find: {start} - {end}")
         data: dict[str, list[int]] = dict()  # { 'Actor': [1, 2], ... }
         for i, la in enumerate(self.labels):
-            if la == "O":
-                continue
+            # if la == "O":
+            #     continue
             key_l, _ = label_mapping_de_bio(la)
 
             if key_l in data:
@@ -36,21 +38,17 @@ class BertResult:
             else:
                 data[key_l] = [i]
 
-        max_value, max_type = 0.0, None
+        result: list[tuple[str, float, int]] = list()
         for key_d in data:
-            temp_value, temp_type = 0.0, key_d
+            temp_value = 0.0
             idx = data[key_d]
             for tok in self.matrix[start : end + 1]:
                 for i in idx:
                     temp_value += tok[i]
-            if temp_value > max_value:
-                max_value, max_type = temp_value, temp_type
+            result.append((key_d, temp_value / (end - start + 1), len(idx)))
 
-        logger.debug(f"Matrix type: {max_type}")
-        avg_value = max_value / (end - start + 1)
-
-        assert max_type is not None
-        return max_type, avg_value
+        result.sort(key=lambda x: x[1], reverse=True)
+        return result
 
     def apply_fix(self: BertResult, fixes: list[EntityFix]) -> BertResult:
         new_inst = copy.deepcopy(self)
@@ -58,13 +56,20 @@ class BertResult:
             # assert len(bali) in [1, 2]
             if len(bali) == 0:
                 continue
+
             if lab == "Both":
-                lab_m, avg = self.matrix_find_prob_max(bali[0], bali[-1])
-                lab = lab_m
+                for lab_m, _, _ in self.matrix_find_prob_avg(
+                    bali[0], bali[-1]
+                ):
+                    if lab_m != "O":
+                        lab = lab_m
+                        break
 
             key = bali[0]
             mapping = label_mapping_bio(lab)
-            new_inst.preds[key] = mapping[0]
+
+            if new_inst.preds[key] != mapping[1]:
+                new_inst.preds[key] = mapping[0]
 
             if len(bali) == 2 and bali[0] != bali[-1]:
                 for i in range(key + 1, bali[-1] + 1):
