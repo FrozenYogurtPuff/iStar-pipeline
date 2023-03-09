@@ -31,10 +31,12 @@ def word_list(s: Span) -> RuleReturn:
         select = False
         if token.lower_.startswith(
             (
-                "system",  # mainly fake classification
-                "module",  # no hit
-                "server",  # no hit
-                "administrator",  # no hit
+                # "system",  # mainly fake classification
+                # "module",  # no hit
+                # "server",  # no hit
+                # "administrator",  # no hit
+                # "user",
+                # "admin"
             )
         ):
             select = True

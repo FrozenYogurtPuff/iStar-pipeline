@@ -38,12 +38,12 @@ role: str = "Role"
 
 
 def dep_label(dep: str, head_dep: str) -> str | None:
-    # if (dep, head_dep) in [
-    #     ("compound", "nsubj"),      # NG
-    #     ("compound", "poss"),       # no hit
-    #     ("det", "nsubj"),           # NG
-    # ]:
-    #     return both
+    if (dep, head_dep) in [
+        ("compound", "nsubj"),  # NG
+        ("compound", "poss"),  # no hit
+        ("det", "nsubj"),  # NG
+    ]:
+        return both
     # elif (dep, head_dep) in []:
     #     return agent
     # elif (dep, head_dep) in [
@@ -55,17 +55,17 @@ def dep_label(dep: str, head_dep: str) -> str | None:
 
 
 def dep_head_label(dep: str, head_dep: str) -> str | None:
-    # if (dep, head_dep) in [
-    #     ("compound", "nsubj"),  # NG
-    #     ("det", "nsubj"),       # NG
-    # ]:
-    #     return both
+    if (dep, head_dep) in [
+        ("compound", "nsubj"),  # NG
+        ("det", "nsubj"),  # NG
+    ]:
+        return both
     # elif (dep, head_dep) in []:
     #     return agent
-    # elif (dep, head_dep) in [
-    #     ("case", "nsubj"),      # no hit
-    # ]:
-    #     return role
+    elif (dep, head_dep) in [
+        ("case", "nsubj"),  # no hit
+    ]:
+        return both
 
     return None
 

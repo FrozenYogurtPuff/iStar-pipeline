@@ -51,7 +51,7 @@ COPY poetry.lock pyproject.toml en_core_web_lg-3.2.0-py3-none-any.whl ./
 RUN poetry install --no-dev
 
 # Install spacy
-RUN pip install en_core_web_lg-3.4.0-py3-none-any.whl --no-deps
+RUN pip install en_core_web_lg-3.2.0-py3-none-any.whl --no-deps
 
 
 # Artifact Evaluation

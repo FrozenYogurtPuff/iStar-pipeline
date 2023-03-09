@@ -17,11 +17,11 @@ def ner(s: Span) -> RuleReturn:
     result = list()
 
     for ent in s.ents:
-        # if ent.label_ in ["PERSON"]:    # no hit
-        #     result.append((ent, agent))
+        if ent.label_ in ["PERSON"]:  # no hit
+            result.append((ent, both))
         if ent.label_ in [
             # "ORG",      # NG
-            "GPE"  # slightly approve
+            # "GPE"  # slightly approve
         ]:
             result.append((ent, both))
 

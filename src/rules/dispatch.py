@@ -11,7 +11,10 @@ from src.deeplearning.entity.infer.utils import (
     get_series_bio,
     label_mapping_bio,
 )
-from src.rules.config import actor_plugins
+from src.rules.config import (  # nopycln: import
+    actor_plugins,
+    intention_plugins,
+)
 from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
 from src.utils.spacy_utils import get_token_idx, include_elem, match_noun_chunk
 from src.utils.typing import Alignment, EntityFix, RulePlugins
@@ -60,7 +63,7 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
     def prob_check_bert(sample: EntityFix) -> str | None:
         bert_idx = sample.bert_idxes
         label = sample.label
-        o_threshold = 0.7
+        threshold = 0.7
         # smooth_threshold = 0.4
 
         bert_start, bert_end = bert_idx[0], bert_idx[-1]
@@ -80,7 +83,7 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
         logger.debug(f"constituous: {constituous_label}, prob: {prob}")
 
         # assert label == "Both"
-        if label_m == "O" and prob < o_threshold:
+        if label_m == "O" and prob < threshold:
             if label == "Both":
                 new_type, _, _ = prob_list[1]
             else:
@@ -88,7 +91,7 @@ def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
             return new_type
 
         # Threshold
-        # if label_m != "O" and prob > smooth_threshold:
+        # if not constituous_label and prob > threshold:
         #     return label_m
 
         return None
@@ -174,6 +177,7 @@ def exclude_intention_verb(
                 exclude_list.append(
                     EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
                 )
+                ...
         elif not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith(
             "NN"
         ):
@@ -198,8 +202,8 @@ def dispatch(
     collector: list[Collector | None] = list()
     result: list[EntityFix] = list()
 
-    INCLUDE = True
-    EXCLUDE = False
+    INCLUDE = False
+    EXCLUDE = True
 
     # print("INCLUDE" if INCLUDE else "" + " " + "EXCLUDE" if EXCLUDE else "")
 

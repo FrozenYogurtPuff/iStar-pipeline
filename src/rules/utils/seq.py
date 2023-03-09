@@ -11,7 +11,16 @@ class FixEntityLabelException(Exception):
 
 # 判定一个函数是否「相同」
 def is_entity_type_ok(fix: str, spa: str) -> bool:
-    if fix not in ["Actor", "Both", "Role", "Resource", "Core", "Aux", "Cond"]:
+    if fix not in [
+        "Actor",
+        "Both",
+        "Role",
+        "Resource",
+        "Core",
+        "Aux",
+        "Cond",
+        "Agent",
+    ]:
         raise FixEntityLabelException("Illegal FixEntityLabel " + fix)
 
     if fix == "Both":

@@ -1,25 +1,57 @@
 # Entity Rules
-from src.rules.entity.actor_plugins.include import dative_propn
-from src.rules.entity.actor_plugins.include import dep as actor_dep
-from src.rules.entity.actor_plugins.include import relcl_who
-from src.rules.entity.actor_plugins.include import tag as actor_tag
-from src.rules.entity.resource_plugins import agent_dative_adp, poss_propn
-from src.rules.entity.resource_plugins import word_list as resource_word_list
-from src.rules.intention.aux_slice import acl_without_to as awt_slice
-from src.rules.intention.aux_slice import agent
-from src.rules.intention.aux_slice import relcl as relcl_slice
-from src.rules.intention.intention_plugins import acl_to
+from src.rules.entity.actor_plugins.include import relcl_who  # nopycln: import
+from src.rules.entity.actor_plugins.include import xcomp_ask  # nopycln: import
+from src.rules.entity.actor_plugins.include import (  # nopycln: import
+    be_nsubj,
+    by_sb,
+    dative_propn,
+)
+from src.rules.entity.actor_plugins.include import (
+    dep as actor_dep,  # nopycln: import
+)
+from src.rules.entity.actor_plugins.include import (
+    ner as actor_ner,  # nopycln: import
+)
+from src.rules.entity.actor_plugins.include import (
+    tag as actor_tag,  # nopycln: import
+)
+
+# from src.rules.entity.actor_plugins.include import (
+#     word_list as actor_word_list,  # nopycln: import
+# )
+from src.rules.entity.resource_plugins import (  # nopycln: import
+    agent_dative_adp,
+    poss_propn,
+)
+from src.rules.entity.resource_plugins import (
+    word_list as resource_word_list,  # nopycln: import
+)
+from src.rules.intention.aux_slice import (
+    acl_without_to as awt_slice,  # nopycln: import
+)
+from src.rules.intention.aux_slice import agent  # nopycln: import
+from src.rules.intention.aux_slice import (
+    relcl as relcl_slice,  # nopycln: import
+)
+from src.rules.intention.intention_plugins import (  # nopycln: import
+    acl_to,
+    acl_without_to,
+    advcl,
+    pcomp_ing,
+    relcl,
+    xcomp_to,
+)
 from src.utils.typing import IntentionAuxPlugins, RulePlugins
 
 actor_plugins: RulePlugins = (
-    dative_propn,
-    relcl_who,
+    # dative_propn,
+    # relcl_who,
     actor_tag,
     actor_dep,
     # actor_word_list,
-    # actor_ner,
+    actor_ner,
     # xcomp_ask,
-    # be_nsubj,
+    be_nsubj,
     # by_sb,
 )
 

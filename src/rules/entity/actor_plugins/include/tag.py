@@ -48,39 +48,39 @@ role: str = "Role"
 
 
 def tag_label(tag: str, head_dep: str) -> str | None:
-    # if (tag, head_dep) in [
-    #     ("DT", "nsubj"),      # NG
-    #     ("HYPH", "nsubj"),    # no hit
-    #     ("NNP", "nsubj"),     # soso
-    # ]:
-    #     return both
-    # elif (tag, head_dep) in [
-    #     ("NNP", "acl"),         # soso
-    #     ("NNS", "poss"),        # no hit
-    # ]:
-    #     return agent
-    # elif (tag, head_dep) in [("POS", "nsubj")]:   # just 's, soso
-    #     return role
+    if (tag, head_dep) in [
+        ("DT", "nsubj"),  # NG
+        ("HYPH", "nsubj"),  # no hit
+        ("NNP", "nsubj"),  # soso
+    ]:
+        return both
+    elif (tag, head_dep) in [
+        ("NNP", "acl"),  # soso
+        ("NNS", "poss"),  # no hit
+    ]:
+        return both
+    elif (tag, head_dep) in [("POS", "nsubj")]:  # just 's, soso
+        return both
 
     return None
 
 
 def tag_head_label(tag: str, head_dep: str) -> str | None:
     if (tag, head_dep) in [
-        #     ("DT", "nsubj"),        # soso, caused mainly BERT-classification failed
-        #     ("HYPH", "nsubj"),        # no hit
+        ("DT", "nsubj"),  # soso, caused mainly BERT-classification failed
+        ("HYPH", "nsubj"),  # no hit
         ("NNP", "nsubj"),  # few
     ]:
         return both
-    # elif (tag, head_dep) in [
-    #     ("NNS", "poss"),            # no hit
-    # ]:
-    #     return agent
-    # elif (tag, head_dep) in [
-    #     ("POS", "nsubj"),    # no hit
-    #     ("VBZ", "appos"),    # no hit
-    # ]:
-    #     return role
+    elif (tag, head_dep) in [
+        ("NNS", "poss"),  # no hit
+    ]:
+        return both
+    elif (tag, head_dep) in [
+        ("POS", "nsubj"),  # no hit
+        ("VBZ", "appos"),  # no hit
+    ]:
+        return both
 
     return None
 
