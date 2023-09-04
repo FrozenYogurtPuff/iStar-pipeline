@@ -5,12 +5,12 @@
 
 import logging
 
-from src.utils.typing import RuleReturn, Span
+from src.utils.typing import Span
 
 
 # [Anna]'s home.
 # -> Anna (poss, NOUN)
-def poss_propn(s: Span) -> RuleReturn:
+def poss_propn(s: Span):
     # 'Both' is a special case for both
     resource: str = "Resource"
     result = list()

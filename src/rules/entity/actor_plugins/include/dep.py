@@ -28,8 +28,6 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 logger = logging.getLogger(__name__)
 
 both: str = "Both"
@@ -38,16 +36,16 @@ role: str = "Role"
 
 
 def dep_label(dep: str, head_dep: str) -> str | None:
-    if (dep, head_dep) in [
-        ("compound", "nsubj"),  # NG
-        ("compound", "poss"),  # no hit
-        ("det", "nsubj"),  # NG
-    ]:
-        return both
+    # if (dep, head_dep) in [
+    #     ("compound", "nsubj"),
+    #     ("compound", "poss"),
+    #     ("det", "nsubj"),
+    # ]:
+    #     return both
     # elif (dep, head_dep) in []:
     #     return agent
     # elif (dep, head_dep) in [
-    #     ("case", "agent"),      # no hit
+    #     ("case", "agent"),
     # ]:
     #     return role
 
@@ -55,22 +53,22 @@ def dep_label(dep: str, head_dep: str) -> str | None:
 
 
 def dep_head_label(dep: str, head_dep: str) -> str | None:
-    if (dep, head_dep) in [
-        ("compound", "nsubj"),  # NG
-        ("det", "nsubj"),  # NG
-    ]:
-        return both
+    # if (dep, head_dep) in [
+    #     ("compound", "nsubj"),
+    #     ("det", "nsubj"),
+    # ]:
+    #     return both
     # elif (dep, head_dep) in []:
     #     return agent
-    elif (dep, head_dep) in [
-        ("case", "nsubj"),  # no hit
-    ]:
-        return both
+    # elif (dep, head_dep) in [
+    #     ("case", "nsubj"),
+    # ]:
+    #     return both
 
     return None
 
 
-def dep_base(s: Span) -> RuleReturn:
+def dep_base(s: Span):
     result = list()
 
     for token in s:

@@ -1,5 +1,8 @@
 from collections.abc import Callable, Sequence
-from typing import NamedTuple, TypeAlias
+from typing import TYPE_CHECKING, Any, NamedTuple, TypeAlias, Union
+
+if TYPE_CHECKING:
+    from src.deeplearning.entity.infer.result import BertResult
 
 from spacy.tokens import Span, Token
 
@@ -18,22 +21,28 @@ DatasetEntityLabel: TypeAlias = tuple[int, int, str]
 DatasetIntentionLabel: TypeAlias = tuple[int, int, str]
 DatasetUnionLabel: TypeAlias = tuple[int, int, str]
 
-# Rule
-# Entity
-# ( [Student, Parents], "Actor" )
-# ( [Student, tickets], ("Actor", "Resource") )
-RuleReturn: TypeAlias = Sequence[tuple[Token | Span, str]]
-RulePlugin: TypeAlias = Callable[[Span], RuleReturn]
-RulePlugins: TypeAlias = Sequence[RulePlugin]
-
-
 # (Student, [1], [1, 2], "Actor")
 class EntityFix(NamedTuple):
-    token: Token | Span
+    token: Any
     idxes: Alignment
     bert_idxes: Alignment
     label: str
 
+
+# Rule
+# Entity
+# ( [Student, Parents], "Actor" )
+# ( [Student, tickets], ("Actor", "Resource") )
+# RuleReturn: TypeAlias = Sequence[tuple[int, int, str]]
+RuleReturn: TypeAlias = Sequence[EntityFix]
+RulePlugin: TypeAlias = Callable[
+    [Span, BertResult | None, Union[list[Alignment], None]], RuleReturn
+]
+RulePlugins: TypeAlias = Sequence[RulePlugin]
+
+# Relation
+RelationReturn: TypeAlias = int | None
+RelationPlugin: TypeAlias = Callable[[Span, Span, Span], RelationReturn]
 
 # Slices for Aux
 # [(1, 3), (2, 11)]  [], not [)

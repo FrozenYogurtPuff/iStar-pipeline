@@ -19,7 +19,7 @@ def get_spacy():
     global global_nlp
 
     if global_nlp is None:
-        global_nlp = spacy.load("en_core_web_lg")
+        global_nlp = spacy.load("en_core_web_trf")
     return global_nlp
 
 

@@ -23,6 +23,10 @@ def load_dataset(
                 for label in a["labels"]:
                     s, e, lab = label
                     anno.append((s, e, lab))
+            elif "label" in a:
+                for label in a["label"]:
+                    s, e, lab = label
+                    anno.append((s, e, lab))
             elif "entities" in a:
                 for item in a["entities"]:
                     s, e, lab = (

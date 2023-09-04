@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 
 import spacy
+from spacy.matcher import PhraseMatcher
 from tqdm import tqdm
 from sklearn.metrics import classification_report as cr
 
@@ -18,7 +19,12 @@ from src.deeplearning.entity.utils.utils_metrics import classification_report, \
 from src.deeplearning.relation import kfold
 from src.deeplearning.relation.code.tasks.infer import infer_from_trained
 from src.rules.config import intention_plugins
+from src.rules.entity.actor_plugins.include import xcomp_ask, be_nsubj, by_sb
 from src.rules.entity.dispatch import get_rule_fixes
+from test.rules.inspect.entity_rules import dative_propn, relcl_who, tag_base, \
+    ner, prep_sb, acomp_template, acl_to, able_to, nsubjpass_head
+from test.rules.inspect.relation_rules import default, agent_pobj, \
+    conj_exclude, nsubj_attr, consists, nsubj_pobj
 from test.rules.utils.load_dataset import load_dataset
 
 
@@ -59,10 +65,12 @@ def test_ae_bert():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        wrapper = ActorWrapper(data=data2, model=model, label=label)
-        results = wrapper.process(sents, labels)
+        # wrapper = ActorWrapper(data=data2, model=model, label=label)
+        # results = wrapper.process(sents, labels)
+        with open(f"cache/ae_bert_{i}.bin", "rb") as file:
+            results = pickle.load(file)
 
-        results = transtype(results)
+        # results = transtype(results)
 
         pred_entities, true_entities = get_series_bio(results)
         types, ps, rs, f1s = compact_classification_report(true_entities,
@@ -90,6 +98,14 @@ def test_ae_bert():
 
 
 def test_ae_bert_rules():
+    # action_plugins_new = (
+    #     dative_propn,
+    #     relcl_who,
+    #     tag_base,
+    #     ner,
+    #     prep_sb,
+    # )
+
     # CAUTION: Check `EXCLUDE=False`
     all_data = dict()
     for i in tqdm(range(K)):
@@ -109,8 +125,10 @@ def test_ae_bert_rules():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        wrapper = ActorWrapper(data=data2, model=model, label=label)
-        results = wrapper.process(sents, labels)
+        # wrapper = ActorWrapper(data=data2, model=model, label=label)
+        # results = wrapper.process(sents, labels)
+        with open(f"cache/ae_bert_{i}.bin", "rb") as file:
+            results = pickle.load(file)
 
         new_pred_entities = list()
         for sent, result in zip(sents, results):
@@ -164,8 +182,10 @@ def test_ie_bert():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        wrapper = IntentionWrapper(data=data2, model=model, label=label)
-        results = wrapper.process(sents, labels)
+        # wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        # results = wrapper.process(sents, labels)
+        with open(f"cache/ie_bert_{i}.bin", "rb") as file:
+            results = pickle.load(file)
 
         pred_entities, true_entities = get_series_bio(results)
         types, ps, rs, f1s = compact_classification_report(true_entities,
@@ -193,6 +213,10 @@ def test_ie_bert():
 
 
 def test_ie_bert_rules():
+    # intention_plugins_new = (
+    #     acl_to,
+    # )
+
     # CAUTION: Check `EXCLUDE=False`
     all_data = dict()
     for i in tqdm(range(K)):
@@ -213,12 +237,14 @@ def test_ie_bert_rules():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        wrapper = IntentionWrapper(data=data2, model=model, label=label)
-        results = wrapper.process(sents, labels)
+        # wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        # results = wrapper.process(sents, labels)
+        with open(f"cache/ie_bert_{i}.bin", "rb") as file:
+            results = pickle.load(file)
 
         new_pred_entities = list()
         for sent, result in zip(sents, results):
-            res = get_rule_fixes(sent, result, intention_plugins)
+            res = get_rule_fixes(sent, result)
             new_pred_entities.append(res)
 
         pred_entities, true_entities = get_series_bio(new_pred_entities)
@@ -246,9 +272,13 @@ def test_ie_bert_rules():
         print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
+
 def test_ar_bert():
     p_all, r_all, f1_all = list(), list(), list()
     preds_list, trues_list = list(), list()
+    with open("cache/ar_dict.bin", "rb") as file:
+        bert_dict = pickle.load(file)
+
     for i in range(K):
         kfold.select = i
         args = argparse.Namespace(
@@ -268,7 +298,8 @@ def test_ar_bert():
                 sents = row["sents"]
                 relations = row["relations"]
                 trues = row["relations_id"]  # no: 1; dependency: 0; isa: 2; part-of: 3
-                preds = inferer.infer_sentence(sents, detect_entities=False)
+                # preds = inferer.infer_sentence(sents, detect_entities=False)
+                preds = bert_dict[sents]
 
                 preds_list.append(preds)
                 trues_list.append(trues)
@@ -297,6 +328,8 @@ def test_ar_bert():
 
     print(sum(p_all) / K, sum(r_all) / K, sum(f1_all) / K)
     print(cr(trues_list, preds_list, digits=8))
+    # with open("ar_dict.bin", "wb") as file:
+    #     pickle.dump(bert_dict, file)
 
 
 def find_children(token, dep=None, pos=None, tag=None, text=None):
@@ -342,9 +375,18 @@ def match(stat, e11, e22):
 
 
 def test_ar_bert_rules():
+    with open("cache/ar_dict.bin", "rb") as file:
+        ar_dict = pickle.load(file)
+    ar_rules = (
+        conj_exclude,
+        nsubj_attr,
+        consists,
+        agent_pobj,
+        nsubj_pobj,
+    )
     p_all, r_all, f1_all = list(), list(), list()
     preds_list, trues_list = list(), list()
-    nlp = spacy.load('en_core_web_lg')
+    nlp = spacy.load('en_core_web_trf')
     for i in range(K):
         kfold.select = i
         args = argparse.Namespace(
@@ -355,7 +397,8 @@ def test_ar_bert_rules():
                    max_norm=1.0, fp16=0, num_epochs=25, lr=7e-05,
                    model_no=0, model_size='bert-base-uncased', train=0,
                    infer=1))
-        inferer = infer_from_trained(args, detect_entities=False)
+
+        # inferer = infer_from_trained(args, detect_entities=False)
         tp, fp, tn, fn = 0, 0, 0, 0
         with open(f"pretrained_data/2022_Kfold/relation/{i}/df_test.pkl",
                   'rb') as pkl_file:
@@ -364,24 +407,53 @@ def test_ar_bert_rules():
                 sents = row["sents"]
                 relations = row["relations"]
                 trues = row["relations_id"]  # no: 1; dependency: 0; isa: 2
-                preds = inferer.infer_sentence(sents, detect_entities=False)
-                e1 = re.search(r'\[E1](.*)\[/E1]', sents)
-                if not e1:
-                    raise "Illegal: No e1!"
-                e1 = e1.group(1)
+                # try:
+                preds = ar_dict[sents]
+                # except KeyError:
+                #     preds = inferer.infer_sentence(sents, detect_entities=False)
 
-                e2 = re.search(r'\[E2](.*)\[/E2]', sents)
-                if not e2:
-                    raise "Illegal: No e2!"
-                e2 = e2.group(1)
+                e1_raw = re.search(r'\[E1](.*)\[/E1]', sents).group(1)
+                e2_raw = re.search(r'\[E2](.*)\[/E2]', sents).group(1)
+                e1_idx, e2_idx = None, None
+                for idx, tok in enumerate(sents.split(' ')):
+                    if '[E1]' in tok:
+                        e1_idx = idx
+                    if '[E2]' in tok:
+                        e2_idx = idx
+                assert e1_idx is not None
+                assert e2_idx is not None
+                sent = nlp(
+                    sents.replace(
+                        '[E1]', ''
+                    ).replace(
+                        '[/E1]', ''
+                    ).replace(
+                        '[E2]', ''
+                    ).replace(
+                        '[/E2]', ''
+                    )
+                )[:]
+                matcher = PhraseMatcher(nlp.vocab, attr="ORTH")
+                matcher.add("e1", [nlp(e1_raw)])
+                matches = matcher(sent, as_spans=True)
+                check = True
+                if not matches:
+                    check = False
+                else:
+                    e1 = min(matches, key=lambda t: abs(t.start - e1_idx))
+                matcher.remove("e1")
+                matcher.add("e2", [nlp(e2_raw)])
+                matches = matcher(sent, as_spans=True)
+                if not matches:
+                    check = False
+                else:
+                    e2 = min(matches, key=lambda t: abs(t.start - e2_idx))
 
-                raw_sent = sents.replace('[E1]', '').replace('[/E1]',
-                                                             '').replace(
-                    '[E2]', '').replace('[/E2]', '')
-                text = nlp(raw_sent)
-
-                if match(text, e1, e2):
-                    preds = 0
+                if check:
+                    for func in ar_rules:
+                        result = func(sent, e1, e2)
+                        if result:
+                            preds = result
 
                 preds_list.append(preds)
                 trues_list.append(trues)
@@ -413,7 +485,7 @@ def test_ar_bert_rules():
 
 
 def test_ar_rules_precision():
-    nlp = spacy.load('en_core_web_lg')
+    nlp = spacy.load('en_core_web_trf')
     for i in range(K):
         tp, fp, tn, fn = 0, 0, 0, 0
         with open(f"pretrained_data/2022_Kfold/relation/{i}/df_test.pkl",

@@ -8,8 +8,6 @@ from src.deeplearning.entity.utils.utils_metrics import (
     classification_report,
     token_classification_report,
 )
-from src.rules.config import intention_plugins
-from src.rules.intention.dispatch import get_rule_fixes
 
 logger = logging.getLogger(__name__)
 
@@ -52,9 +50,9 @@ def test_measure_bert_intention_prec():
     #  Core    0.84214   0.89464   0.86759      1435
 
     new_pred_entities: list[BertResult] = list()
-    for sent, result in zip(sents, results):
-        res = get_rule_fixes(sent, result, intention_plugins, is_slice=True)
-        new_pred_entities.append(res)
+    # for sent, result in zip(sents, results):
+    # res = get_rule_fixes(sent, result, intention_plugins, is_slice=True)
+    # new_pred_entities.append(res)
 
     logger.info("------After------")
 

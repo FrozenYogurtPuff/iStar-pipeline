@@ -4,10 +4,8 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
 
-
-def xcomp_ask(s: Span) -> RuleReturn:
+def xcomp_ask(s: Span):
     both: str = "Both"
     result = list()
 

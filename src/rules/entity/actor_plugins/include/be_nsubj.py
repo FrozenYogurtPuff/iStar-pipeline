@@ -5,11 +5,10 @@ import logging
 from spacy.tokens import Span
 
 from src.utils.spacy_utils import token_not_last
-from src.utils.typing import RuleReturn
 
 
 # be able to
-def be_nsubj(s: Span) -> RuleReturn:
+def be_nsubj(s: Span):
     both: str = "Both"
     result = list()
 

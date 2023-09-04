@@ -19,11 +19,11 @@
 
 import logging
 
-from src.utils.typing import RuleReturn, Span
+from src.utils.typing import Span
 
 
 # system, interface, etc.
-def word_list(s: Span) -> RuleReturn:
+def word_list(s: Span):
     both: str = "Both"
     result = list()
 
@@ -31,10 +31,10 @@ def word_list(s: Span) -> RuleReturn:
         select = False
         if token.lower_.startswith(
             (
-                # "system",  # mainly fake classification
-                # "module",  # no hit
-                # "server",  # no hit
-                # "administrator",  # no hit
+                # "system",
+                # "module",
+                # "server",
+                # "administrator",
                 # "user",
                 # "admin"
             )

@@ -3,11 +3,9 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 
 # ask sb. to do sth.
-def xcomp_to(s: Span) -> RuleReturn:
+def xcomp_to(s: Span):
     core: str = "Core"
     result = list()
 

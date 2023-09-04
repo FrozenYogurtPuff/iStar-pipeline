@@ -3,11 +3,9 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 
 # Mashbot will provide an interface for authenticating a user account to an external service account .
-def pcomp_ing(s: Span) -> RuleReturn:
+def pcomp_ing(s: Span):
     core: str = "Core"
     result = list()
 

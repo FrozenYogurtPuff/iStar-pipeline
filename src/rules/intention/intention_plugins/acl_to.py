@@ -3,10 +3,8 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
 
-
-def acl_to(s: Span) -> RuleReturn:
+def acl_to(s: Span):
     core: str = "Core"
     result = list()
 

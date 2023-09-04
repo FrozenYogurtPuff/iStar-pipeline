@@ -6,14 +6,12 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 # Show things to [Anna].
 # to (ADP, dative) -> Anna (pobj)
 
 # carried out by [immigrants].
 # by (ADP, agent) -> immigrants (pobj)
-def agent_dative_adp(s: Span) -> RuleReturn:
+def agent_dative_adp(s: Span):
     resource: str = "Resource"
     result = list()
 

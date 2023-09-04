@@ -1,11 +1,9 @@
 import logging
 from pathlib import Path
-from test.rules.utils.load_dataset import load_dataset
 from typing import Any
 
 from spacy import displacy, tokens
 from spacy.tokens import Doc, Span
-from tqdm import tqdm
 
 from src.utils.spacy_utils import char_idx_to_word_idx, get_spacy
 
@@ -51,15 +49,21 @@ def display_ent(doc: Doc, annotates: Any, idx: int) -> None:
 if __name__ == "__main__":
     # data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     # data = list(load_dataset("pretrained_data/2022/task/all/all.jsonl"))
-    data = list(load_dataset("pretrained_data/2022/actor/divided/all.jsonl"))
+    # data = list(load_dataset("pretrained_data/2022/actor/divided/all.jsonl"))
     nlp = get_spacy()
-
-    for i, sent, anno in tqdm(data):
-        sent_processed = nlp(sent)
-        if if_inside(sent_processed[:]):
-            # display_dep(sent_processed, i)
-            display_ent(sent_processed, anno, i)
-            # print(i)
+    display_dep(
+        nlp(
+            "This feature will allow the user or administrator to view details."
+        ),
+        114514,
+    )
+    #
+    # for i, sent, anno in tqdm(data):
+    #     sent_processed = nlp(sent)
+    #     if if_inside(sent_processed[:]):
+    #         # display_dep(sent_processed, i)
+    #         display_ent(sent_processed, anno, i)
+    #         # print(i)
 
 # TODO: advcl 与 Cond
 # TODO: nsubj时查找verb的conj进行分句

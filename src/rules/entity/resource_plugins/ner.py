@@ -9,12 +9,12 @@
 
 import logging
 
-from src.utils.typing import RuleReturn, Span
+from src.utils.typing import Span
 
 logger = logging.getLogger(__name__)
 
 
-def ner(s: Span) -> RuleReturn:
+def ner(s: Span):
     resource: str = "Resource"
     result = list()
 

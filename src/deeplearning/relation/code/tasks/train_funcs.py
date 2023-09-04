@@ -7,11 +7,13 @@ Created on Thu Nov 28 09:37:26 2019
 """
 import logging
 import os
+from pathlib import Path
 
 import torch
 from sklearn.metrics import f1_score, precision_score, recall_score
 from tqdm import tqdm
 
+from src import ROOT_DIR
 from src.deeplearning.relation import kfold
 
 from ..misc import load_pickle
@@ -26,7 +28,9 @@ logger = logging.getLogger(__file__)
 
 def load_state(net, optimizer, scheduler, args, load_best=False):
     """Loads saved model and optimizer states if exists"""
-    base_path = f"./pretrained_data/2022_Kfold/relation/{kfold.select}/"
+    base_path = (
+        Path(ROOT_DIR) / f"pretrained_data/2022_Kfold/relation/{kfold.select}/"
+    ).resolve()
     amp_checkpoint = None
     checkpoint_path = os.path.join(
         base_path, "task_test_checkpoint_%d.pth.tar" % args.model_no

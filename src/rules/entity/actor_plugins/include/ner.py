@@ -6,22 +6,22 @@
 
 import logging
 
-from src.utils.typing import RuleReturn, Span
+from src.utils.typing import Span
 
 logger = logging.getLogger(__name__)
 
 
-def ner(s: Span) -> RuleReturn:
+def ner(s: Span):
     both: str = "Both"
     agent: str = "Agent"
     result = list()
 
     for ent in s.ents:
-        if ent.label_ in ["PERSON"]:  # no hit
-            result.append((ent, both))
+        # if ent.label_ in ["PERSON"]:
+        #     result.append((ent, both))
         if ent.label_ in [
-            # "ORG",      # NG
-            # "GPE"  # slightly approve
+            # "ORG",
+            # "GPE"
         ]:
             result.append((ent, both))
 

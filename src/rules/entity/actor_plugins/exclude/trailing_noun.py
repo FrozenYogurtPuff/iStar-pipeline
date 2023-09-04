@@ -2,12 +2,10 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 
 # TODO: 这个好像没用了吧，考虑去掉
 # All / The without any noun
-def trailing_noun(s: Span) -> RuleReturn:
+def trailing_noun(s: Span):
     no_label: str = "O"
     result = list()
 

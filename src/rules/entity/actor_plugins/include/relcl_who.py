@@ -5,12 +5,11 @@ import logging
 from spacy.tokens import Span
 
 from src.utils.spacy_utils import token_not_last
-from src.utils.typing import RuleReturn
 
 
 # [Auditors] who chase the dreams.
 # Auditors -> chase (relcl)
-def relcl_who(s: Span) -> RuleReturn:
+def relcl_who(s: Span):
     both: str = "Both"
     result = list()
 

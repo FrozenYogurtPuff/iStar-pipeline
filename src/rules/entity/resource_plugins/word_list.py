@@ -19,11 +19,11 @@
 
 import logging
 
-from src.utils.typing import RuleReturn, Span
+from src.utils.typing import Span
 
 
 # system, interface, etc.
-def word_list(s: Span) -> RuleReturn:
+def word_list(s: Span):
     resource: str = "Resource"
     result = list()
 

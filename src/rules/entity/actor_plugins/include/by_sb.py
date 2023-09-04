@@ -4,13 +4,11 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 logger = logging.getLogger(__name__)
 
 
 # be able to
-def by_sb(s: Span) -> RuleReturn:
+def by_sb(s: Span):
     both: str = "Both"
     result = list()
 

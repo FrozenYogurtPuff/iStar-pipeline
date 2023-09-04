@@ -3,10 +3,8 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
 
-
-def relcl(s: Span) -> RuleReturn:
+def relcl(s: Span):
     aux: str = "Aux"
     result = list()
 

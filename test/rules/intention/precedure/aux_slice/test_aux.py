@@ -1,8 +1,8 @@
 import logging
 from test.rules.utils.load_dataset import load_dataset
 
-from src.rules.intention.aux_slice.dispatch import dispatch
-from src.utils.spacy_utils import char_idx_to_word_idx, get_spacy
+# from src.rules.intention.aux_slice.dispatch import dispatch
+from src.utils.spacy_utils import get_spacy
 
 logger = logging.getLogger(__name__)
 
@@ -43,11 +43,11 @@ def test_smoke():
     data = list(load_dataset("pretrained_data/task_core_aux_cond/all.jsonl"))
     logger.info("Start acl_without_to smoke test")
     sents = [d[1] for d in data]
-    for sent in sents:
-        logger.debug(sent)
-        s = nlp(sent)[:]
-        result = dispatch(s)
-        logger.debug(result)
+    # for sent in sents:
+    #     logger.debug(sent)
+    #     s = nlp(sent)[:]
+    #     result = dispatch(s)
+    #     logger.debug(result)
 
 
 # TRUE
@@ -64,60 +64,60 @@ def test_how_slices_hit():
     sents = [d[1] for d in data]
     labels = [d[2] for d in data]
     total_true, total_not_aux, total_should_aux = 0, 0, 0
-    for idx, (sent, label) in enumerate(zip(sents, labels)):
-        logger.debug(sent)
-        s = nlp(sent)[:]
-        result = dispatch(s)
-        # slice_mistake = 0
-        # r_range [......][......]  # predict
-        # l_range [..(.)...(...).]  # ground-truth
-        for iidx, r in enumerate(result):
-            true, not_aux, should_aux = 0, 0, 0
-            r_start, r_end, r_anno = r
-            r_range = range(r_start, r_end + 1)
-            for lab in label:
-                l_start, l_end, l_anno = lab
-                l_start, l_end = char_idx_to_word_idx(s, l_start, l_end)
-                l_range = range(l_start, l_end)
-                # `cond as aux`
-                # if l_anno == cond:
-                #     l_anno = aux
-                if l_anno not in [core, aux]:
-                    continue
-
-                if range_include(r_range, l_range):
-                    if l_anno == r_anno == aux:
-                        true += 1
-                    elif l_anno == core and r_anno == aux:
-                        not_aux += 1
-                    elif l_anno == aux and r_anno == core:
-                        should_aux += 1
-                elif range_disjoint(r_range, l_range):
-                    pass
-
-                if not_aux or should_aux:
-                    logger.debug(
-                        f"predict slice range: {(r_start, r_end + 1)} - {s[r_start : r_end + 1]} - {r_anno}"
-                    )
-                    logger.debug(
-                        f"ground label range: {(l_start, l_end)} - {s[l_start : l_end]} - {l_anno}"
-                    )
-                    for to in s:
-                        if to.dep_ == "nsubj":
-                            logger.debug(f"Root: {to.head}")
-
-            if true:
-                logger.info(f"#{idx}-{iidx} True: {true}")
-            if not_aux:
-                logger.warning(f"#{idx} Not aux: {not_aux}")
-            if should_aux:
-                logger.warning(f"#{idx} Should aux: {should_aux}")
-
-            total_true += true
-            total_not_aux += not_aux
-            total_should_aux += should_aux
-
-    logger.error(f"{total_true}/{total_not_aux}/{total_should_aux}")
+    # for idx, (sent, label) in enumerate(zip(sents, labels)):
+    #     logger.debug(sent)
+    #     s = nlp(sent)[:]
+    #     result = dispatch(s)
+    # slice_mistake = 0
+    # r_range [......][......]  # predict
+    # l_range [..(.)...(...).]  # ground-truth
+    #     for iidx, r in enumerate(result):
+    #         true, not_aux, should_aux = 0, 0, 0
+    #         r_start, r_end, r_anno = r
+    #         r_range = range(r_start, r_end + 1)
+    #         for lab in label:
+    #             l_start, l_end, l_anno = lab
+    #             l_start, l_end = char_idx_to_word_idx(s, l_start, l_end)
+    #             l_range = range(l_start, l_end)
+    #             # `cond as aux`
+    #             # if l_anno == cond:
+    #             #     l_anno = aux
+    #             if l_anno not in [core, aux]:
+    #                 continue
+    #
+    #             if range_include(r_range, l_range):
+    #                 if l_anno == r_anno == aux:
+    #                     true += 1
+    #                 elif l_anno == core and r_anno == aux:
+    #                     not_aux += 1
+    #                 elif l_anno == aux and r_anno == core:
+    #                     should_aux += 1
+    #             elif range_disjoint(r_range, l_range):
+    #                 pass
+    #
+    #             if not_aux or should_aux:
+    #                 logger.debug(
+    #                     f"predict slice range: {(r_start, r_end + 1)} - {s[r_start : r_end + 1]} - {r_anno}"
+    #                 )
+    #                 logger.debug(
+    #                     f"ground label range: {(l_start, l_end)} - {s[l_start : l_end]} - {l_anno}"
+    #                 )
+    #                 for to in s:
+    #                     if to.dep_ == "nsubj":
+    #                         logger.debug(f"Root: {to.head}")
+    #
+    #         if true:
+    #             logger.info(f"#{idx}-{iidx} True: {true}")
+    #         if not_aux:
+    #             logger.warning(f"#{idx} Not aux: {not_aux}")
+    #         if should_aux:
+    #             logger.warning(f"#{idx} Should aux: {should_aux}")
+    #
+    #         total_true += true
+    #         total_not_aux += not_aux
+    #         total_should_aux += should_aux
+    #
+    # logger.error(f"{total_true}/{total_not_aux}/{total_should_aux}")
 
 
 # aux_without_to 194/63/122

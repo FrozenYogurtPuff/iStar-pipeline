@@ -3,10 +3,8 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
 
-
-def advcl(s: Span) -> RuleReturn:
+def advcl(s: Span):
     both: str = "Both"
     result = list()
 

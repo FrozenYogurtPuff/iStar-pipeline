@@ -38,8 +38,6 @@ import logging
 
 from spacy.tokens import Span
 
-from src.utils.typing import RuleReturn
-
 logger = logging.getLogger(__name__)
 
 both: str = "Both"
@@ -49,43 +47,43 @@ role: str = "Role"
 
 def tag_label(tag: str, head_dep: str) -> str | None:
     if (tag, head_dep) in [
-        ("DT", "nsubj"),  # NG
-        ("HYPH", "nsubj"),  # no hit
-        ("NNP", "nsubj"),  # soso
+        #     ("DT", "nsubj"),
+        #     ("HYPH", "nsubj"),
+        ("NNP", "nsubj"),
     ]:
         return both
-    elif (tag, head_dep) in [
-        ("NNP", "acl"),  # soso
-        ("NNS", "poss"),  # no hit
-    ]:
-        return both
-    elif (tag, head_dep) in [("POS", "nsubj")]:  # just 's, soso
-        return both
+    # elif (tag, head_dep) in [
+    #     ("NNP", "acl"),
+    #     ("NNS", "poss"),
+    # ]:
+    #     return both
+    # elif (tag, head_dep) in [("POS", "nsubj")]:
+    #     return both
 
     return None
 
 
 def tag_head_label(tag: str, head_dep: str) -> str | None:
-    if (tag, head_dep) in [
-        ("DT", "nsubj"),  # soso, caused mainly BERT-classification failed
-        ("HYPH", "nsubj"),  # no hit
-        ("NNP", "nsubj"),  # few
-    ]:
-        return both
-    elif (tag, head_dep) in [
-        ("NNS", "poss"),  # no hit
-    ]:
-        return both
-    elif (tag, head_dep) in [
-        ("POS", "nsubj"),  # no hit
-        ("VBZ", "appos"),  # no hit
-    ]:
-        return both
+    # if (tag, head_dep) in [
+    #     ("DT", "nsubj"),
+    #     ("HYPH", "nsubj"),
+    #     ("NNP", "nsubj"),
+    # ]:
+    #     return both
+    # elif (tag, head_dep) in [
+    #     ("NNS", "poss"),
+    # ]:
+    #     return both
+    # elif (tag, head_dep) in [
+    #     ("POS", "nsubj"),
+    #     ("VBZ", "appos"),
+    # ]:
+    #     return both
 
     return None
 
 
-def tag_base(s: Span) -> RuleReturn:
+def tag_base(s: Span):
     result = list()
 
     for token in s:

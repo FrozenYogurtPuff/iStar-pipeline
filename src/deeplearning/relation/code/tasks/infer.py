@@ -11,11 +11,13 @@ import os
 import pickle
 import re
 from itertools import permutations
+from pathlib import Path
 
 import spacy
 import torch
 from tqdm import tqdm
 
+from src import ROOT_DIR
 from src.deeplearning.relation import kfold
 
 from ..misc import save_as_pickle
@@ -31,9 +33,8 @@ logger = logging.getLogger("__file__")
 
 
 def load_pickle(filename):
-    completeName = os.path.join(
-        f"./pretrained_data/2022_Kfold/relation/", filename
-    )
+    base_dir = Path(ROOT_DIR) / "pretrained_data/2022_Kfold/relation/"
+    completeName = base_dir / filename
     with open(completeName, "rb") as pkl_file:
         data = pickle.load(pkl_file)
     return data

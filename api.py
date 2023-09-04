@@ -61,8 +61,6 @@ def intention_entity():
             spacy_start = b2s[start][0]
             spacy_end = b2s[end][-1]
             span = sent[spacy_start:spacy_end+1]
-            # TODO: 推入普通字符串而非 Verb - Obj
-            # TODO: 判断 Goal (1) 与 Quality (2)
             # cur.append((tag, span.start_char, span.end_char))
             start_char = span.start_char
             end_char = span.end_char
@@ -104,6 +102,54 @@ def actor_relation():
         result = proceed_sentence(text, entities, infer)
         print(result)
         return jsonify(result)
+
+
+@app.route('/similar', methods=['POST'])
+def calculate_similar():
+    if request.method == "POST":
+        json = request.get_json()
+        print(json)
+        entity_list = json.get("entities")
+        query_list = json.get("queries")
+        entities = [
+            {
+                "name": entity["name"],
+                "id": entity["id"],
+                "vec": nlp(entity["name"]),
+                "type": entity["type"]
+            }
+            for entity in entity_list
+        ]
+        queries = [
+            {
+                "name": query["name"],
+                "id": query["idx"],
+                "vec": nlp(query["name"]),
+                "type": query["type"]
+            }
+            for query in filter(
+                lambda item: item["type"] in ["Actor", "Agent", "Role"],
+                query_list
+            )
+        ]
+
+        ret = list()
+
+        for query in queries:
+            query["similarity"] = []
+            if query["type"] not in ["Actor", "Agent", "Role"]:
+                continue
+            for entity in entities:
+                if entity["type"] not in ["Actor", "Agent", "Role"]:
+                    continue
+                sim = query["vec"].similarity(entity["vec"])
+                query["similarity"].append((sim, entity))
+            query["similarity"].sort(reverse=True)
+            # Threshold 0.9
+            if query["similarity"] and query["similarity"][0][0] > 0.9:
+                ret.append((query["id"], query["similarity"][0][1]["id"]))
+        print(ret)
+        return jsonify(ret)
 
 
 if __name__ == '__main__':

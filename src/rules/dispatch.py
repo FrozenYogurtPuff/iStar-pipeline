@@ -1,122 +1,138 @@
 from __future__ import annotations
 
 import logging
-from collections import Counter
-from typing import Callable
 
 from spacy.tokens import Span, Token
 
 from src.deeplearning.entity.infer.result import BertResult
-from src.deeplearning.entity.infer.utils import (
-    get_series_bio,
-    label_mapping_bio,
-)
-from src.rules.config import (  # nopycln: import
-    actor_plugins,
-    intention_plugins,
-)
-from src.rules.utils.seq import get_s2b_idx, is_entity_type_ok
-from src.utils.spacy_utils import get_token_idx, include_elem, match_noun_chunk
+from src.deeplearning.entity.infer.utils import get_series_bio
+from src.rules.utils.seq import get_s2b_idx
+from src.utils.spacy_utils import get_token_idx
 from src.utils.typing import Alignment, EntityFix, RulePlugins
 
 logger = logging.getLogger(__name__)
 
 Collector = tuple[Token | Span, str]
 
-
-def collect_filter(
-    data: list[Collector | None], sample: Collector
-) -> list[Collector]:
-    t, lab = sample
-    ret = [sample]
-    for idx, item in enumerate(data[:]):
-        assert item is not None
-        tok, lab = item
-        if include_elem(tok, t):
-            ret.append(item)
-            data[idx] = None
-    while None in data:
-        data.remove(None)
-    return ret
-
-
-def simple_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
-    def simple_check_bert(sample: EntityFix, bert: list[str]) -> bool:
-        bert_idx = sample.bert_idxes
-        label = sample.label
-        for num in bert_idx:
-            if not is_entity_type_ok(label, bert[num]):
-                return True
-        return False
-
-    preds = b.preds
-
-    new_list: list[EntityFix] = list()
-    for item in res:
-        if not simple_check_bert(item, preds):
-            continue
-        new_list.append(item)
-    return new_list
-
-
-def prob_bert_merge(res: list[EntityFix], b: BertResult) -> list[EntityFix]:
-    def prob_check_bert(sample: EntityFix) -> str | None:
-        bert_idx = sample.bert_idxes
-        label = sample.label
-        threshold = 0.7
-        # smooth_threshold = 0.4
-
-        bert_start, bert_end = bert_idx[0], bert_idx[-1]
-        prob_list = b.matrix_find_prob_avg(bert_start, bert_end)
-        label_m, prob, _ = prob_list[0]
-        mapping_bio = label_mapping_bio(label_m)
-
-        # 标签是否连续，即除去第一个 B-X 其它是否为 I-X
-        constituous_label = True
-        if b.preds[bert_start] not in mapping_bio:
-            constituous_label = False
-        for i in range(bert_start + 1, bert_end + 1):
-            if b.preds[i] != mapping_bio[1]:
-                constituous_label = False
-
-        logger.debug(f"label: {label}, label_m: {label_m}")
-        logger.debug(f"constituous: {constituous_label}, prob: {prob}")
-
-        # assert label == "Both"
-        if label_m == "O" and prob < threshold:
-            if label == "Both":
-                new_type, _, _ = prob_list[1]
-            else:
-                new_type = label
-            return new_type
-
-        # Threshold
-        # if not constituous_label and prob > threshold:
-        #     return label_m
-
-        return None
-
-    new_list: list[EntityFix] = list()
-    for item in res:
-        item_token, item_idx, item_bidx, item_label = item
-        # if return label, then need fix
-        fix_label = prob_check_bert(item)
-        if fix_label:
-            new_list.append(
-                EntityFix(item_token, item_idx, item_bidx, fix_label)
-            )
-    return new_list
-
-
 # Filter: Result -> Partial Result
 def exclude_actor(
-    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
 ) -> list[EntityFix]:
     exclude_list = list()
     assert b is not None
     pred_entities, _ = get_series_bio([b])
     for label, s, e in pred_entities:
         if sp[e].pos_ not in ["NOUN", "PROPN"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def no_pron(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ == "PRON":
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def no_parentheses(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        pre, post = False, False
+        for i in range(0, s):
+            if "(" in sp[i].lower_:
+                pre = True
+            if ")" in sp[i].lower_:
+                pre = False
+        for i in range(len(sp) - 1, s, -1):
+            if ")" in sp[i].lower_:
+                post = True
+            if "(" in sp[i].lower_:
+                post = False
+        if pre and post:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+    return exclude_list
+
+
+def no_such_as(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        head = sp[e]
+        such_as = False
+        while head.dep_ != "ROOT" and head.has_head():
+            if (
+                head.lower_ == "as"
+                and head.i > 0
+                and head.nbor(-1).lower_ == "such"
+            ):
+                such_as = True
+            head = head.head
+        if such_as:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def no_ie(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        head = sp[e]
+        ie = False
+        while head.dep_ != "ROOT" and head.has_head():
+            for child in head.children:
+                if child.lower_ == "i.e.":
+                    ie = True
+            head = head.head
+        if ie:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def no_allow(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].lower_.startswith("allow"):
             assert s2b is not None
             bert_idx = get_s2b_idx(s2b, [s, e])
             exclude_list.append(
@@ -133,13 +149,16 @@ def exclude_intention_verb_for_actor(
     assert b is not None
     pred_entities, _ = get_series_bio([b])
     for label, s, e in pred_entities:
+        # if label == "Role":
+        #     continue
         if not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith("NN"):
-            print(sp[e].tag_, sp[s : e + 1])
             assert s2b is not None
             bert_idx = get_s2b_idx(s2b, [s, e])
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
+            print(sp[s : e + 1])
+            print(sp.sent)
     return exclude_list
 
 
@@ -151,37 +170,57 @@ def exclude_intention_verb(
     assert b is not None
     pred_entities, _ = get_series_bio([b])
     for label, s, e in pred_entities:
-        if sp[e].tag_.startswith("JJ"):
-            if sp[e].has_head() and sp[e].head.lower_ in [
-                "am",
-                "is",
-                "are",
-                "be",
-                "was",
-                "were",
-            ]:
-                pass
-            elif e - 1 > 0 and sp[e - 1].lower_ in [
-                "am",
-                "is",
-                "are",
-                "be",
-                "was",
-                "were",
-            ]:
-                pass
-            else:
-                print("去掉", sp[e].head, sp[s : e + 1])
-                assert s2b is not None
-                bert_idx = get_s2b_idx(s2b, [s, e])
-                exclude_list.append(
-                    EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
-                )
-                ...
-        elif not sp[e].tag_.startswith("VB") and not sp[e].tag_.startswith(
-            "NN"
+        # if sp[e].tag_.startswith("JJ"):
+        #     if sp[e].has_head() and sp[e].head.lower_ in [
+        #         "am",
+        #         "is",
+        #         "are",
+        #         "be",
+        #         "was",
+        #         "were",
+        #     ]:
+        #         pass
+        #     elif e - 1 > 0 and sp[e - 1].lower_ in [
+        #         "am",
+        #         "is",
+        #         "are",
+        #         "be",
+        #         "was",
+        #         "were",
+        #     ]:
+        #         pass
+        #     else:
+        #         print("去掉", sp[e].head, sp[s : e + 1])
+        #         assert s2b is not None
+        #         bert_idx = get_s2b_idx(s2b, [s, e])
+        #         exclude_list.append(
+        #             EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+        #         )
+        #         ...
+        if (
+            not sp[e].tag_.startswith("VB")
+            and not sp[e].tag_.startswith("NN")
+            and not sp[e].tag_.startswith("JJ")
         ):
-            print(sp[e].tag_, sp[s : e + 1])
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+
+    return exclude_list
+
+
+def exclude_single_det(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ == "DET":
             assert s2b is not None
             bert_idx = get_s2b_idx(s2b, [s, e])
             exclude_list.append(
@@ -190,70 +229,293 @@ def exclude_intention_verb(
     return exclude_list
 
 
+def exclude_trailing_stuff(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].lower_ in ["to"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+        elif sp[e].dep_ in ["cc", "prep"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            new_bert_idx = get_s2b_idx(s2b, [s, e - 1])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            exclude_list.append(
+                EntityFix(sp[s:e], [s, e - 1], new_bert_idx, label)
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+    return exclude_list
+
+
+def exclude_single_pron(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ == "PRON":
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+    return exclude_list
+
+
+def all_propn_agent(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        flag = True
+        for i in range(s, e + 1):
+            if sp[e].pos_ != "PROPN":
+                flag = False
+        if flag:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "Agent")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+    return exclude_list
+
+
+def correct_be(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if s > 0 and sp[s - 1].lower_ == "be" and sp[s].pos_ == "ADJ":
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            new_bert_idx = get_s2b_idx(s2b, [s - 1, s - 1])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            exclude_list.append(
+                EntityFix(sp[s - 1 : e], [s - 1, s - 1], new_bert_idx, "Core")
+            )
+    return exclude_list
+
+
+def correct_allow(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].lower_ == "allow" and sp[e + 1].pos_.startswith("V"):
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            new_bert_idx = get_s2b_idx(s2b, [e + 1, e + 1])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            exclude_list.append(
+                EntityFix(
+                    sp[e + 1 : e + 2], [e + 1, e + 1], new_bert_idx, "Core"
+                )
+            )
+    return exclude_list
+
+
+def be_able(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ == "AUX" and sp[e + 1].lower_ in ["able", "required"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def no_aux(
+    sp: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if sp[e].pos_ == "AUX" and sp[e].lower_ != "be":
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+    return exclude_list
+
+
+def after_neg(
+    sp: Span, b: BertResult | None, s2b: list[Alignment] | None
+) -> list[EntityFix]:
+    exclude_list = list()
+    assert b is not None
+    pred_entities, _ = get_series_bio([b])
+    for label, s, e in pred_entities:
+        if s > 0 and sp[s - 1].lower_ in ["without"]:
+            assert s2b is not None
+            bert_idx = get_s2b_idx(s2b, [s, e])
+            exclude_list.append(
+                EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
+            )
+            print(sp[s : e + 1])
+            print(sp.sent)
+    return exclude_list
+
+
+def xcomp_ask(
+    s: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    both: str = "Both"
+    result = list()
+
+    for token in s:
+        if token.dep_ == "xcomp":
+            head = token.head
+            for child in head.children:
+                if child.dep_ == "dobj":
+                    idx = get_token_idx(child)
+                    bert_idx = get_s2b_idx(s2b, idx)
+                    result.append(EntityFix(child, idx, bert_idx, "Both"))
+
+    return result
+
+
+def tag_base(
+    s: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    def tag_label(tag: str, head_dep: str) -> str | None:
+        both: str = "Both"
+
+        if (tag, head_dep) in [
+            #     ("DT", "nsubj"),
+            ("HYPH", "nsubj"),
+            ("NNP", "nsubj"),
+        ]:
+            return both
+        elif (tag, head_dep) in [
+            #     ("NNP", "acl"),
+            ("NNS", "poss"),
+        ]:
+            return both
+        elif (tag, head_dep) in [("POS", "nsubj")]:
+            return both
+
+        return None
+
+    def tag_head_label(tag: str, head_dep: str) -> str | None:
+        both: str = "Both"
+        if (tag, head_dep) in [
+            #     ("DT", "nsubj"),
+            ("HYPH", "nsubj"),
+            #     ("NNP", "nsubj"),
+        ]:
+            return both
+        elif (tag, head_dep) in [
+            ("NNS", "poss"),
+        ]:
+            return both
+        elif (tag, head_dep) in [
+            ("POS", "nsubj"),
+            #     ("VBZ", "appos"),
+        ]:
+            return both
+
+        return None
+
+    result = list()
+
+    for token in s:
+        tag = token.tag_
+        head_dep = token.head.dep_
+        label = tag_label(tag, head_dep)
+        if label:
+            idx = get_token_idx(token)
+            bert_idx = get_s2b_idx(s2b, idx)
+            result.append(EntityFix(token, idx, bert_idx, "Both"))
+            print(token)
+            print(token.sent)
+        head_label = tag_head_label(tag, head_dep)
+        if head_label:
+            idx = get_token_idx(token.head)
+            bert_idx = get_s2b_idx(s2b, idx)
+            result.append(EntityFix(token.head, idx, bert_idx, "Both"))
+            print(token)
+            print(token.sent)
+    return result
+
+
+def acl_to(
+    s: Span, b: BertResult | None, s2b: list[Alignment]
+) -> list[EntityFix]:
+    core: str = "Core"
+    result = list()
+
+    for token in s:
+        if token.dep_ == "acl":
+            for child in token.children:
+                if child.dep_ == "aux" and child.lower_ == "to":
+                    idx = get_token_idx(token)
+                    bert_idx = get_s2b_idx(s2b, idx)
+                    result.append(EntityFix(token, idx, bert_idx, "Core"))
+
+    return result
+
+
+funcs_ae = (
+    exclude_intention_verb_for_actor,
+    no_parentheses,
+    exclude_single_det,
+    exclude_trailing_stuff,
+    exclude_single_pron,
+    # tag_base,
+)
+
+funcs_ie = (
+    exclude_intention_verb,
+    no_parentheses,
+    after_neg,
+)
+
+
 def dispatch(
     s: Span,
     b: BertResult | None,
     s2b: list[Alignment] | None,
-    add_all: bool = False,
-    noun_chunk: bool = False,
-    funcs: RulePlugins = actor_plugins,
-    bert_func: Callable = prob_bert_merge,
+    funcs: RulePlugins = funcs_ae,
 ) -> list[EntityFix]:
-    collector: list[Collector | None] = list()
     result: list[EntityFix] = list()
 
-    INCLUDE = False
-    EXCLUDE = True
-
-    # print("INCLUDE" if INCLUDE else "" + " " + "EXCLUDE" if EXCLUDE else "")
-
-    if INCLUDE:
-        for func in funcs:
-            packs = func(s)
-            for token, label in set(packs):
-                # if `noun_chunk`, use noun chunks instead of tokens
-                if noun_chunk:
-                    c = match_noun_chunk(token, s)
-                    if c:
-                        logger.debug(f"Noun chunk hit: {c}")
-                        collector.append((c, label))
-                    else:
-                        collector.append((token, label))
-                else:
-                    collector.append((token, label))
-
-    logger.info(collector)
-    logger.debug(s2b)
-
-    while collector:
-        front = collector.pop()
-        assert front is not None
-        token, _ = front
-        group = collect_filter(collector, front)
-        labels = Counter([lab for _, lab in group]).most_common(2)
-
-        label = labels[0][0]
-
-        # add_all does not search bert_idx
-        idx = get_token_idx(token)
-        if add_all:
-            result.append(EntityFix(token, idx, [], label))
-        else:
-            assert s2b is not None
-
-            bert_idx = get_s2b_idx(s2b, idx)
-            logger.debug(idx)
-            logger.debug(bert_idx)
-            if not bert_idx:
-                continue
-            result.append(EntityFix(token, idx, bert_idx, label))
-
-    # hybrid bert to filter consequences
-    # `add_all` pass the raw result without considering bert
-    if not add_all:
-        result = bert_func(result, b)
-
-    if EXCLUDE:
-        result.extend(exclude_intention_verb(s, b, s2b))
+    for func in funcs:
+        res = func(s, b, s2b)
+        result.extend(res)
 
     return result

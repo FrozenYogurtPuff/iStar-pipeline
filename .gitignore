@@ -1,6 +1,8 @@
 __pycache__
 .idea
 pretrained_model
+cache
+visualize
 .ipynb_checkpoints
 **/cached_*
 .pytest_cache

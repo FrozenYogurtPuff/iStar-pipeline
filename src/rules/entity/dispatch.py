@@ -6,8 +6,7 @@ from typing import Callable
 import spacy_alignments as tokenizations
 
 from src.deeplearning.entity.infer.result import BertResult
-from src.rules.config import actor_plugins
-from src.rules.dispatch import dispatch, prob_bert_merge
+from src.rules.dispatch import dispatch
 from src.utils.spacy_utils import get_spacy
 from src.utils.typing import RulePlugins
 
@@ -25,9 +24,7 @@ def get_rule_fixes(
     s = nlp(sent)[:]
     spacy_tokens = [i.text for i in s]
     s2b, _ = tokenizations.get_alignments(spacy_tokens, b.tokens)
-    funcs = actor_plugins if funcs is None else funcs
-    bert_func = bert_func if bert_func else prob_bert_merge
 
-    result = dispatch(s, b, s2b, funcs=funcs, bert_func=bert_func)
+    result = dispatch(s, b, s2b)
     logger.debug(result)
     return b.apply_fix(result)

@@ -1,6 +1,6 @@
 from spacy import Language
 
-from src.utils.typing import Span
+from src.utils.typing import Span, Token
 
 nlp_dict: dict[str, Span] = dict()
 
@@ -127,8 +127,20 @@ def cache_nlp(nlp: Language, s: str) -> Span:
     return res
 
 
-def if_inside(sentence: Span, dep: str = "xcomp") -> bool:
+def if_inside(sentence: Span, dep: str) -> bool:
     for token in sentence:
         if token.dep_ == dep:
             return True
     return False
+
+
+def format_markdown(t: Token | Span):
+    ret = ""
+    if isinstance(t, Span):
+        t = t.root
+    for tok in t.sent:
+        if tok == t:
+            ret += f"**{tok}** "
+        else:
+            ret += f"{tok} "
+    return ret
