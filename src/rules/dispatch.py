@@ -510,12 +510,17 @@ def dispatch(
     s: Span,
     b: BertResult | None,
     s2b: list[Alignment] | None,
-    funcs: RulePlugins = funcs_ae,
+    funcs: RulePlugins = None,
+    desc: str = None,
 ) -> list[EntityFix]:
     result: list[EntityFix] = list()
 
-    for func in funcs:
-        res = func(s, b, s2b)
-        result.extend(res)
+    if (not funcs) and desc:
+        funcs = funcs_ae if "AE" else funcs_ie
+
+    if funcs:
+        for func in funcs:
+            res = func(s, b, s2b)
+            result.extend(res)
 
     return result

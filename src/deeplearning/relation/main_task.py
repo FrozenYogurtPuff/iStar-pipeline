@@ -9,10 +9,18 @@ import itertools
 import logging
 import pickle
 from argparse import ArgumentParser
+from test.rules.inspect.relation_rules import (
+    agent_pobj,
+    conj_exclude,
+    consists,
+    nsubj_attr,
+    nsubj_pobj,
+)
 from typing import Any
 
 from src.deeplearning.relation import kfold
 from src.deeplearning.relation.code.tasks.infer import infer_from_trained
+from src.utils.spacy_utils import char_idx_to_word, get_spacy
 
 """
 This fine-tunes the BERT model on SemEval, FewRel tasks
@@ -99,6 +107,16 @@ def preload():
 
 def proceed_sentence(text: str, entities: list, infer: Any):
     ret = list()
+    nlp = get_spacy()
+
+    ar_rules = (
+        conj_exclude,
+        nsubj_attr,
+        consists,
+        agent_pobj,
+        nsubj_pobj,
+    )
+
     for en1, en2 in itertools.combinations(entities, 2):
         s1, e1 = en1["startOffset"], en1["endOffset"]
         s2, e2 = en2["startOffset"], en2["endOffset"]
@@ -114,8 +132,18 @@ def proceed_sentence(text: str, entities: list, infer: Any):
             + text[e2:]
         )
         print(sentence)
-        result = infer.infer_sentence(sentence)
-        print(result)
+        result = infer.infer_sentence(sentence, detect_entities=False)
+
+        sent = nlp(text)
+        e1_phrase = char_idx_to_word(sent, s1, e1)
+        print(e1_phrase)
+        e2_phrase = char_idx_to_word(sent, s2, e2)
+        print(e2_phrase)
+        for func in ar_rules:
+            res = func(sent, e1_phrase, e2_phrase)
+            if res:
+                result = res
+
         if result == 1:
             continue
         label_id = -1

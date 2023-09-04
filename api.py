@@ -6,6 +6,7 @@ from spacy_alignments import tokenizations
 from src.deeplearning.entity.infer.utils import get_series_bio
 from src.deeplearning.entity.infer.wrapper import ActorWrapper, \
     IntentionWrapper
+from src.rules.entity.dispatch import get_rule_fixes
 from src.rules.intention.find_object import find_object
 from src.deeplearning.relation.main_task import proceed_sentence, preload
 
@@ -25,14 +26,16 @@ def actor_entity():
         text = json.get("text")
 
         results = a_wrapper.process(text)
-        pred_entities, _ = get_series_bio(results)
-        print(pred_entities)
+        new_pred_entities, _ = get_series_bio([
+            get_rule_fixes(text, results[0], desc="AE")
+        ])
+
         result = list()
         b_tokens = results[0].tokens
         sent = nlp(text)
         s_tokens = [i.text for i in sent]
         _, b2s = tokenizations.get_alignments(s_tokens, b_tokens)
-        for tag, start, end in pred_entities:
+        for tag, start, end in new_pred_entities:
             spacy_start = b2s[start][0]
             spacy_end = b2s[end][-1]
             span = sent[spacy_start:spacy_end+1]
@@ -48,14 +51,16 @@ def intention_entity():
         text = json.get("text")
 
         results = i_wrapper.process(text)
-        pred_entities, _ = get_series_bio(results)
-        print(pred_entities)
+        new_pred_entities, _ = get_series_bio([
+            get_rule_fixes(text, results[0], desc="IE")
+        ])
+
         result = list()
         b_tokens = results[0].tokens
         sent = nlp(text)
         s_tokens = [i.text for i in sent]
         _, b2s = tokenizations.get_alignments(s_tokens, b_tokens)
-        for tag, start, end in pred_entities:
+        for tag, start, end in new_pred_entities:
             if tag != "Core":
                 continue
             spacy_start = b2s[start][0]
@@ -100,6 +105,7 @@ def actor_relation():
         text = json.get("text")
         entities = json.get("entity")
         result = proceed_sentence(text, entities, infer)
+
         print(result)
         return jsonify(result)
 

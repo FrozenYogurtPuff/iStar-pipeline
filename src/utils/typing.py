@@ -36,7 +36,7 @@ class EntityFix(NamedTuple):
 # RuleReturn: TypeAlias = Sequence[tuple[int, int, str]]
 RuleReturn: TypeAlias = Sequence[EntityFix]
 RulePlugin: TypeAlias = Callable[
-    [Span, BertResult | None, Union[list[Alignment], None]], RuleReturn
+    [Span, Union["BertResult", None], Union[list[Alignment], None]], RuleReturn
 ]
 RulePlugins: TypeAlias = Sequence[RulePlugin]
 

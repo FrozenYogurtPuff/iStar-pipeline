@@ -18,6 +18,7 @@ def get_rule_fixes(
     b: BertResult,
     funcs: RulePlugins | None = None,
     bert_func: Callable = None,
+    desc: str = None,
 ) -> BertResult:
     nlp = get_spacy()
     logger.info(sent)
@@ -25,6 +26,6 @@ def get_rule_fixes(
     spacy_tokens = [i.text for i in s]
     s2b, _ = tokenizations.get_alignments(spacy_tokens, b.tokens)
 
-    result = dispatch(s, b, s2b)
+    result = dispatch(s, b, s2b, desc=desc)
     logger.debug(result)
     return b.apply_fix(result)
