@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 def test_dispatch():
-    nlp: spacy.language.Language = spacy.load("en_core_web_lg")
+    nlp: spacy.language.Language = spacy.load("en_core_web_trf")
     sents = [
         "Bought me these books.",
         "Show things to Anna.",
@@ -26,7 +26,7 @@ def test_dispatch():
 
 
 def test_dispatch_parallel():
-    nlp: spacy.language.Language = spacy.load("en_core_web_lg")
+    nlp: spacy.language.Language = spacy.load("en_core_web_trf")
     sents = [
         "Bought me these books.",
         "Show things to Anna.",

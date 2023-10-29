@@ -15,7 +15,7 @@ from src.utils.typing import RelationPlugin, Span
 
 logger = logging.getLogger(__name__)
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_trf")
 
 
 @pytest.mark.skip(reason="no way of currently testing this")

@@ -8,7 +8,7 @@
 # from src.rules.actor.dative_ADP import dative_ADP
 
 # def test_dative():
-#     nlp: spacy.language.Language = spacy.load('en_core_web_lg')
+#     nlp: spacy.language.Language = spacy.load('en_core_web_trf')
 #     sent = "Show things to Anna."
 #
 #     s = nlp(sent)

@@ -9,7 +9,7 @@ ALL_JSONL = "pretrained_data/2022/actor/divided/all.jsonl"
 SPLIT_OUTPUT = "pretrained_data/2022/actor/divided/split_dev.jsonl"
 
 if __name__ == "__main__":
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     fp = open(SPLIT_OUTPUT, "w")
 
     cache: dict[tuple[str, ...], Any] = dict()

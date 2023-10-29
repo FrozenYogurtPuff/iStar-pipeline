@@ -45,13 +45,13 @@ RUN curl -sSL https://install.python-poetry.org/ | python
 
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
-COPY poetry.lock pyproject.toml en_core_web_lg-3.2.0-py3-none-any.whl ./
+COPY poetry.lock pyproject.toml en_core_web_trf-3.2.0-py3-none-any.whl ./
 
 # install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
 RUN poetry install --no-dev
 
 # Install spacy
-RUN pip install en_core_web_lg-3.2.0-py3-none-any.whl --no-deps
+RUN pip install en_core_web_trf-3.2.0-py3-none-any.whl --no-deps
 
 
 # Artifact Evaluation

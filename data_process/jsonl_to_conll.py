@@ -13,7 +13,7 @@ SPLIT_OUTPUT = "../pretrained_data/2022/actor/divided_fix/split_dev.jsonl"
 PROPORTION = 80
 
 if __name__ == "__main__":
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     fp1 = open(OUTPUT1, "w")
     fp2 = open(OUTPUT2, "w")
     split = open(SPLIT_OUTPUT, "w")

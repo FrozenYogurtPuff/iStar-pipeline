@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def test_idx_valid():
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     sent = nlp("Just Monika.")[:]
     assert not idx_valid(sent, -1)
     assert not idx_valid(sent, [0, -1])
@@ -32,7 +32,7 @@ def test_idx_valid():
 
 
 def test_include_elem():
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     sent = nlp(
         "While the show is definitely cohesive, the seasons all manage to serve distinct purposes."
     )
@@ -91,7 +91,7 @@ def test_get_bio_sent_from_char_spans():
 
 
 def test_token_not_first():
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     sent = nlp(
         "What are some of the most underrated shows out there? We attempt to find the gems that might actually be worth your time."
     )
@@ -105,7 +105,7 @@ def test_token_not_first():
 
 
 def test_token_not_last():
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     sent = nlp(
         "And you don't seem to understand: a shame you seemed an honest man. And all the fears you hold so dear, will turn to whisper in your ear."
     )

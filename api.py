@@ -16,7 +16,7 @@ CORS(app)
 a_wrapper = ActorWrapper()
 i_wrapper = IntentionWrapper()
 infer = preload()
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_trf")
 
 
 @app.route('/ae', methods=['POST'])

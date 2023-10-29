@@ -3,7 +3,7 @@ from pathlib import Path
 import spacy
 from docx import Document
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_trf")
 
 
 def extract(document):

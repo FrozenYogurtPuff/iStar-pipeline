@@ -203,7 +203,7 @@ def test_measure_bert_relation_rules_prec():
     args = argparse.Namespace(**dict(task='istar', train_data='./pretrained_data/2022/relation/admin.jsonl', use_pretrained_blanks=0, num_classes=4, batch_size=32, gradient_acc_steps=1, max_norm=1.0, fp16=0, num_epochs=25, lr=7e-05, model_no=0, model_size='bert-base-uncased', train=0, infer=1))
     inferer = infer_from_trained(args, detect_entities=False)
     tp, fp, tn, fn = 0, 0, 0, 0
-    nlp = spacy.load('en_core_web_lg')
+    nlp = spacy.load('en_core_web_trf')
     with open("pretrained_data/2022/relation/df_test.pkl", 'rb') as pkl_file:
         test = pickle.load(pkl_file)
         for index, row in test.iterrows():

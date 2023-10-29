@@ -1,6 +1,6 @@
 import spacy
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_trf")
 
 sent1 = nlp("Teacher A and students need to be done.")
 sent2 = nlp(

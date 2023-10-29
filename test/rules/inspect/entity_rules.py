@@ -255,6 +255,6 @@
 #
 # if __name__ == "__main__":
 #     logging.getLogger("src").setLevel(logging.WARNING)
-#     nlp: spacy.language.Language = spacy.load("en_core_web_lg")
+#     nlp: spacy.language.Language = spacy.load("en_core_web_trf")
 #     check_match(nsubjpass_head)
 #     # check_bert_match()

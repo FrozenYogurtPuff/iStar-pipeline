@@ -11,7 +11,7 @@ BASE = "../pretrained_data/2022_Kfold/intention/10/"
 K = 10
 
 if __name__ == "__main__":
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_trf")
     INPUT = Path(BASE).joinpath("all.jsonl")
     fp_list = list()
 

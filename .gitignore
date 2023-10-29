@@ -7,5 +7,5 @@ visualize
 **/cached_*
 .pytest_cache
 .python-version
-en_core_web_lg-3.4.0-py3-none-any.whl
+en_core_web_trf-3.4.0-py3-none-any.whl
 pretrained_data/2022_Kfold/relation/**/task_*
