@@ -18,11 +18,11 @@ from src.deeplearning.entity.utils.utils_metrics import classification_report, \
     compact_classification_report
 from src.deeplearning.relation import kfold
 from src.deeplearning.relation.code.tasks.infer import infer_from_trained
-from src.rules.config import intention_plugins
-from src.rules.entity.actor_plugins.include import xcomp_ask, be_nsubj, by_sb
+# from src.rules.config import intention_plugins
+# from src.rules.entity.actor_plugins.include import xcomp_ask, be_nsubj, by_sb
 from src.rules.entity.dispatch import get_rule_fixes
-from test.rules.inspect.entity_rules import dative_propn, relcl_who, tag_base, \
-    ner, prep_sb, acomp_template, acl_to, able_to, nsubjpass_head
+# from test.rules.inspect.entity_rules import dative_propn, relcl_who, tag_base, \
+#     ner, prep_sb, acomp_template, acl_to, able_to, nsubjpass_head
 from test.rules.inspect.relation_rules import default, agent_pobj, \
     conj_exclude, nsubj_attr, consists, nsubj_pobj
 from test.rules.utils.load_dataset import load_dataset
@@ -33,6 +33,7 @@ logging.disable(logging.CRITICAL)
 K = 10
 
 
+# 用来支持 AE 测试里 Agent、Role 转 Actor 的
 def transtype(results: list[BertResult]) -> list[BertResult]:
     ret = list(results)
     for result in ret:
@@ -46,6 +47,7 @@ def transtype(results: list[BertResult]) -> list[BertResult]:
     return ret
 
 
+# AE 深度测试
 def test_ae_bert():
     all_data = dict()
     for i in tqdm(range(K)):
@@ -65,10 +67,10 @@ def test_ae_bert():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        # wrapper = ActorWrapper(data=data2, model=model, label=label)
-        # results = wrapper.process(sents, labels)
-        with open(f"cache/ae_bert_{i}.bin", "rb") as file:
-            results = pickle.load(file)
+        wrapper = ActorWrapper(data=data2, model=model, label=label)
+        results = wrapper.process(sents, labels)
+        # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
+        #     results = pickle.load(file)
 
         # results = transtype(results)
 
@@ -97,6 +99,7 @@ def test_ae_bert():
         print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
+# AE 深度+规则测试
 def test_ae_bert_rules():
     # action_plugins_new = (
     #     dative_propn,
@@ -125,14 +128,14 @@ def test_ae_bert_rules():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        # wrapper = ActorWrapper(data=data2, model=model, label=label)
-        # results = wrapper.process(sents, labels)
-        with open(f"cache/ae_bert_{i}.bin", "rb") as file:
-            results = pickle.load(file)
+        wrapper = ActorWrapper(data=data2, model=model, label=label)
+        results = wrapper.process(sents, labels)
+        # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
+        #     results = pickle.load(file)
 
         new_pred_entities = list()
         for sent, result in zip(sents, results):
-            res = get_rule_fixes(sent, result)
+            res = get_rule_fixes(sent, result, desc="AE")
             new_pred_entities.append(res)
 
         # new_pred_entities = transtype(new_pred_entities)
@@ -182,10 +185,10 @@ def test_ie_bert():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        # wrapper = IntentionWrapper(data=data2, model=model, label=label)
-        # results = wrapper.process(sents, labels)
-        with open(f"cache/ie_bert_{i}.bin", "rb") as file:
-            results = pickle.load(file)
+        wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        results = wrapper.process(sents, labels)
+        # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
+        #     results = pickle.load(file)
 
         pred_entities, true_entities = get_series_bio(results)
         types, ps, rs, f1s = compact_classification_report(true_entities,
@@ -237,14 +240,14 @@ def test_ie_bert_rules():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        # wrapper = IntentionWrapper(data=data2, model=model, label=label)
-        # results = wrapper.process(sents, labels)
-        with open(f"cache/ie_bert_{i}.bin", "rb") as file:
-            results = pickle.load(file)
+        wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        results = wrapper.process(sents, labels)
+        # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
+        #     results = pickle.load(file)
 
         new_pred_entities = list()
         for sent, result in zip(sents, results):
-            res = get_rule_fixes(sent, result)
+            res = get_rule_fixes(sent, result, desc="IE")
             new_pred_entities.append(res)
 
         pred_entities, true_entities = get_series_bio(new_pred_entities)
@@ -532,3 +535,18 @@ def test_ar_rules_precision():
             r = tp / (tp + fn) if tp + fn != 0 else 0
             f1 = 2 * p * r / (p + r) if p + r != 0 else 0
             print(i, p, r, f1, sep='\t')
+
+
+if __name__ == '__main__':
+    # AE model
+    test_ae_bert()
+    # AE model + rules
+    test_ae_bert_rules()
+    # IE model
+    test_ie_bert()
+    # IE model + rules
+    test_ie_bert_rules()
+    # AR model
+    test_ar_bert()
+    # AR model + rules
+    test_ar_bert_rules()

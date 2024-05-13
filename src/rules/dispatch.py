@@ -515,8 +515,8 @@ def dispatch(
 ) -> list[EntityFix]:
     result: list[EntityFix] = list()
 
-    if (not funcs) and desc:
-        funcs = funcs_ae if "AE" else funcs_ie
+    if (funcs is None) and desc:
+        funcs = funcs_ae if desc == "AE" else funcs_ie
 
     if funcs:
         for func in funcs:
