@@ -71,8 +71,8 @@ def no_parentheses(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
     return exclude_list
 
 
@@ -157,8 +157,8 @@ def exclude_intention_verb_for_actor(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
     return exclude_list
 
 
@@ -207,8 +207,8 @@ def exclude_intention_verb(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
 
     return exclude_list
 
@@ -242,8 +242,8 @@ def exclude_trailing_stuff(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
         elif sp[e].dep_ in ["cc", "prep"]:
             assert s2b is not None
             bert_idx = get_s2b_idx(s2b, [s, e])
@@ -254,8 +254,8 @@ def exclude_trailing_stuff(
             exclude_list.append(
                 EntityFix(sp[s:e], [s, e - 1], new_bert_idx, label)
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
     return exclude_list
 
 
@@ -272,8 +272,8 @@ def exclude_single_pron(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
     return exclude_list
 
 
@@ -386,8 +386,8 @@ def after_neg(
             exclude_list.append(
                 EntityFix(sp[s : e + 1], [s, e], bert_idx, "O")
             )
-            print(sp[s : e + 1])
-            print(sp.sent)
+            # print(sp[s : e + 1])
+            # print(sp.sent)
     return exclude_list
 
 
