@@ -26,6 +26,11 @@ def get_rule_fixes(
     spacy_tokens = [i.text for i in s]
     s2b, _ = tokenizations.get_alignments(spacy_tokens, b.tokens)
 
-    result = dispatch(s, b, s2b, desc=desc)
+    if desc is not None:
+        result = dispatch(s, b, s2b, desc=desc)
+    elif funcs is not None:
+        result = dispatch(s, b, s2b, funcs=funcs)
+    else:
+        result = dispatch(s, b, s2b)
     logger.debug(result)
     return b.apply_fix(result)

@@ -26,7 +26,7 @@ from src.rules.entity.dispatch import get_rule_fixes
 from test.rules.inspect.relation_rules import default, agent_pobj, \
     conj_exclude, nsubj_attr, consists, nsubj_pobj
 from test.rules.utils.load_dataset import load_dataset
-
+from src.rules.dispatch import exclude_intention_verb_for_actor, no_parentheses, exclude_single_det, exclude_trailing_stuff, exclude_single_pron, exclude_intention_verb, after_neg
 
 logging.disable(logging.CRITICAL)
 
@@ -165,6 +165,72 @@ def test_ae_bert_rules():
         print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
+def test_ae_bert_rules_per():
+    funcs_ae = (
+        exclude_intention_verb_for_actor,
+        no_parentheses,
+        exclude_single_det,
+        exclude_trailing_stuff,
+        exclude_single_pron,
+        # tag_base,
+    )
+
+    for func in funcs_ae:
+        all_data = dict()
+        for i in tqdm(range(K)):
+            data = list(
+                load_dataset(
+                    f"pretrained_data/2022_Kfold/actor/10/{i}/split_dev.jsonl")
+            )
+            sents = [d[1] for d in data]
+            labels = [d[2] for d in data]
+
+            data2 = str(
+                Path(ROOT_DIR) / f"pretrained_data/2022_Kfold/actor/10/{i}/")
+            model = str(
+                Path(ROOT_DIR) / f"pretrained_model/2022_Kfold/actor/10/{i}/"
+            )
+            label = str(
+                Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
+            )
+
+            wrapper = ActorWrapper(data=data2, model=model, label=label)
+            results = wrapper.process(sents, labels)
+            # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
+            #     results = pickle.load(file)
+
+            new_pred_entities = list()
+            for sent, result in zip(sents, results):
+                res = get_rule_fixes(sent, result, funcs=[func])
+                new_pred_entities.append(res)
+
+            # new_pred_entities = transtype(new_pred_entities)
+
+            pred_entities, true_entities = get_series_bio(new_pred_entities)
+            types, ps, rs, f1s = compact_classification_report(true_entities,
+                                                               pred_entities)
+
+            print(f'{func.__name__} Fold {i}')
+            for t, p, r, f1 in zip(types, ps, rs, f1s):
+                print(t, p, r, f1, sep='\t')
+                if t not in all_data:
+                    all_data[t] = dict()
+                    all_data[t]["p"] = list()
+                    all_data[t]["r"] = list()
+                    all_data[t]["f1"] = list()
+                all_data[t]["p"].append(p)
+                all_data[t]["r"].append(r)
+                all_data[t]["f1"].append(f1)
+
+        print(f'{func.__name__} Avg')
+        for key in all_data:
+            length = len(all_data[key]["p"])
+            sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(
+                all_data[key]["r"]), sum(all_data[key]["f1"])
+            avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+            print(key, avg_p, avg_r, avg_f1, sep='\t')
+
+
 def test_ie_bert():
     all_data = dict()
     for i in tqdm(range(K)):
@@ -274,6 +340,66 @@ def test_ie_bert_rules():
         avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
         print(key, avg_p, avg_r, avg_f1, sep='\t')
 
+
+def test_ie_bert_rules_per():
+    funcs_ie = (
+        exclude_intention_verb,
+        no_parentheses,
+        after_neg,
+    )
+    for func in funcs_ie:
+        all_data = dict()
+        for i in tqdm(range(K)):
+            data = list(
+                load_dataset(
+                    f"pretrained_data/2022_Kfold/intention/10/{i}/split_dev.jsonl")
+            )
+            sents = [d[1] for d in data]
+            labels = [d[2] for d in data]
+
+            data2 = str(
+                Path(ROOT_DIR) / f"pretrained_data/2022_Kfold/intention/10/{i}/")
+            model = str(
+                Path(ROOT_DIR) / f"pretrained_model/2022_Kfold/intention/10/{i}/"
+            )
+            label = str(
+                Path(
+                    ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
+            )
+
+            wrapper = IntentionWrapper(data=data2, model=model, label=label)
+            results = wrapper.process(sents, labels)
+            # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
+            #     results = pickle.load(file)
+
+            new_pred_entities = list()
+            for sent, result in zip(sents, results):
+                res = get_rule_fixes(sent, result, funcs=[func])
+                new_pred_entities.append(res)
+
+            pred_entities, true_entities = get_series_bio(new_pred_entities)
+            types, ps, rs, f1s = compact_classification_report(true_entities,
+                                                               pred_entities)
+
+            print(f'{func.__name__} Fold {i}')
+            for t, p, r, f1 in zip(types, ps, rs, f1s):
+                print(t, p, r, f1, sep='\t')
+                if t not in all_data:
+                    all_data[t] = dict()
+                    all_data[t]["p"] = list()
+                    all_data[t]["r"] = list()
+                    all_data[t]["f1"] = list()
+                all_data[t]["p"].append(p)
+                all_data[t]["r"].append(r)
+                all_data[t]["f1"].append(f1)
+
+        print(f'{func.__name__} Avg')
+        for key in all_data:
+            length = len(all_data[key]["p"])
+            sum_p, sum_r, sum_f1 = sum(all_data[key]["p"]), sum(
+                all_data[key]["r"]), sum(all_data[key]["f1"])
+            avg_p, avg_r, avg_f1 = sum_p / length, sum_r / length, sum_f1 / length
+            print(key, avg_p, avg_r, avg_f1, sep='\t')
 
 
 def test_ar_bert():
@@ -542,10 +668,14 @@ if __name__ == '__main__':
     test_ae_bert()
     # AE model + rules
     test_ae_bert_rules()
+    # AE model per rules
+    test_ae_bert_rules_per()
     # IE model
     test_ie_bert()
     # IE model + rules
     test_ie_bert_rules()
+    # IE model per rules
+    test_ie_bert_rules_per()
     # AR model
     test_ar_bert()
     # AR model + rules
