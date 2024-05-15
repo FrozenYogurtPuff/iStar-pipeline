@@ -31,6 +31,8 @@ from src.rules.dispatch import exclude_intention_verb_for_actor, no_parentheses,
 logging.disable(logging.CRITICAL)
 
 K = 10
+type_ = "albert"
+name = "albert-base-v2"
 
 
 # 用来支持 AE 测试里 Agent、Role 转 Actor 的
@@ -67,7 +69,7 @@ def test_ae_bert():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        wrapper = ActorWrapper(data=data2, model=model, label=label)
+        wrapper = ActorWrapper(data=data2, type_=type_, name=name, model=model, label=label)
         results = wrapper.process(sents, labels)
         # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
         #     results = pickle.load(file)
@@ -128,7 +130,7 @@ def test_ae_bert_rules():
             Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
         )
 
-        wrapper = ActorWrapper(data=data2, model=model, label=label)
+        wrapper = ActorWrapper(data=data2, type_=type_, name=name, model=model, label=label)
         results = wrapper.process(sents, labels)
         # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
         #     results = pickle.load(file)
@@ -194,7 +196,7 @@ def test_ae_bert_rules_per():
                 Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
             )
 
-            wrapper = ActorWrapper(data=data2, model=model, label=label)
+            wrapper = ActorWrapper(ddata=data2, type_=type_, name=name, model=model, label=label)
             results = wrapper.process(sents, labels)
             # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
             #     results = pickle.load(file)
@@ -251,7 +253,7 @@ def test_ie_bert():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        wrapper = IntentionWrapper(data=data2, type_=type_, name=name, model=model, label=label)
         results = wrapper.process(sents, labels)
         # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
         #     results = pickle.load(file)
@@ -306,7 +308,7 @@ def test_ie_bert_rules():
                 ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
         )
 
-        wrapper = IntentionWrapper(data=data2, model=model, label=label)
+        wrapper = IntentionWrapper(data=data2, type_=type_, name=name, model=model, label=label)
         results = wrapper.process(sents, labels)
         # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
         #     results = pickle.load(file)
@@ -367,7 +369,7 @@ def test_ie_bert_rules_per():
                     ROOT_DIR) / "pretrained_data/2022_Kfold/intention/10/labels.txt"
             )
 
-            wrapper = IntentionWrapper(data=data2, model=model, label=label)
+            wrapper = IntentionWrapper(data=data2, type_=type_, name=name, model=model, label=label)
             results = wrapper.process(sents, labels)
             # with open(f"cache/ie_bert_{i}.bin", "rb") as file:
             #     results = pickle.load(file)

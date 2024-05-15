@@ -62,15 +62,19 @@ class Wrapper(ABC):
 
 
 class ActorWrapper(Wrapper):
-    def __init__(self, data=None, model=None, label=None):
+    def __init__(
+        self, data=None, type_=None, name=None, model=None, label=None
+    ):
         super().__init__()
-        self.inferrer = InferActor(data, model, label)
+        self.inferrer = InferActor(data, type_, name, model, label)
 
 
 class ActorCombinedWrapper(Wrapper):
-    def __init__(self):
+    def __init__(
+        self, data=None, type_=None, name=None, model=None, label=None
+    ):
         super().__init__()
-        self.inferrer = InferCombinedActor()
+        self.inferrer = InferCombinedActor(data, type_, name, model, label)
 
 
 class ResourceWrapper(Wrapper):
@@ -80,6 +84,8 @@ class ResourceWrapper(Wrapper):
 
 
 class IntentionWrapper(Wrapper):
-    def __init__(self, data=None, model=None, label=None):
+    def __init__(
+        self, data=None, type_=None, name=None, model=None, label=None
+    ):
         super().__init__()
-        self.inferrer = InferIntention(data, model, label)
+        self.inferrer = InferIntention(data, type_, name, model, label)
