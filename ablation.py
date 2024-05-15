@@ -196,7 +196,7 @@ def test_ae_bert_rules_per():
                 Path(ROOT_DIR) / "pretrained_data/2022_Kfold/actor/10/labels.txt"
             )
 
-            wrapper = ActorWrapper(ddata=data2, type_=type_, name=name, model=model, label=label)
+            wrapper = ActorWrapper(data=data2, type_=type_, name=name, model=model, label=label)
             results = wrapper.process(sents, labels)
             # with open(f"cache/ae_bert_{i}.bin", "rb") as file:
             #     results = pickle.load(file)
